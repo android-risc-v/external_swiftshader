@@ -1014,6 +1014,41 @@ cc_defaults {
         "llvm/lib/Target/ARM/Thumb2SizeReduction.cpp",
         "llvm/lib/Target/ARM/ThumbRegisterInfo.cpp",
         "llvm/lib/Target/ARM/Utils/ARMBaseInfo.cpp",
+
+        ///////////////////////////////////////////////////////////////////////
+        // riscv
+        ///////////////////////////////////////////////////////////////////////
+        "llvm/lib/Target/RISCV/Utils/RISCVBaseInfo.cpp",
+        "llvm/lib/Target/RISCV/Utils/RISCVMatInt.cpp",
+        "llvm/lib/Target/RISCV/RISCVAsmPrinter.cpp",
+        "llvm/lib/Target/RISCV/RISCVCallLowering.cpp",
+        "llvm/lib/Target/RISCV/RISCVExpandPseudoInsts.cpp",
+        "llvm/lib/Target/RISCV/RISCVFrameLowering.cpp",
+        "llvm/lib/Target/RISCV/RISCVInstrInfo.cpp",
+        "llvm/lib/Target/RISCV/RISCVInstructionSelector.cpp",
+        "llvm/lib/Target/RISCV/RISCVISelDAGToDAG.cpp",
+        "llvm/lib/Target/RISCV/RISCVISelLowering.cpp",
+        "llvm/lib/Target/RISCV/RISCVLegalizerInfo.cpp",
+        "llvm/lib/Target/RISCV/RISCVMCInstLower.cpp",
+        "llvm/lib/Target/RISCV/RISCVMergeBaseOffset.cpp",
+        "llvm/lib/Target/RISCV/RISCVRegisterBankInfo.cpp",
+        "llvm/lib/Target/RISCV/RISCVRegisterInfo.cpp",
+        "llvm/lib/Target/RISCV/RISCVSubtarget.cpp",
+        "llvm/lib/Target/RISCV/RISCVTargetMachine.cpp",
+        "llvm/lib/Target/RISCV/RISCVTargetObjectFile.cpp",
+        "llvm/lib/Target/RISCV/RISCVTargetTransformInfo.cpp",
+        "llvm/lib/Target/RISCV/AsmParser/RISCVAsmParser.cpp",
+        "llvm/lib/Target/RISCV/Disassembler/RISCVDisassembler.cpp",
+        "llvm/lib/Target/RISCV/MCTargetDesc/RISCVAsmBackend.cpp",
+        "llvm/lib/Target/RISCV/MCTargetDesc/RISCVELFObjectWriter.cpp",
+        "llvm/lib/Target/RISCV/MCTargetDesc/RISCVELFStreamer.cpp",
+        "llvm/lib/Target/RISCV/MCTargetDesc/RISCVInstPrinter.cpp",
+        "llvm/lib/Target/RISCV/MCTargetDesc/RISCVMCAsmInfo.cpp",
+        "llvm/lib/Target/RISCV/MCTargetDesc/RISCVMCCodeEmitter.cpp",
+        "llvm/lib/Target/RISCV/MCTargetDesc/RISCVMCExpr.cpp",
+        "llvm/lib/Target/RISCV/MCTargetDesc/RISCVMCTargetDesc.cpp",
+        "llvm/lib/Target/RISCV/MCTargetDesc/RISCVTargetStreamer.cpp",
+        "llvm/lib/Target/RISCV/TargetInfo/RISCVTargetInfo.cpp",
     ],
 
     local_include_dirs: [
@@ -1021,10 +1056,12 @@ cc_defaults {
         "llvm/lib/Target/X86",
         "llvm/lib/Target/AArch64",
         "llvm/lib/Target/ARM",
+        "llvm/lib/Target/RISCV",
         "configs/common/lib/IR",
         "configs/common/lib/Target/AArch64",
         "configs/common/lib/Target/ARM",
         "configs/common/lib/Target/X86",
+        "configs/common/lib/Target/RISCV",
         "configs/common/lib/Transforms/InstCombine",
     ],
 
@@ -1040,6 +1077,12 @@ cc_defaults {
         "-Wno-unused-parameter",
         "-Wno-unused-variable",
     ],
+
+    sanitize: {
+        // HWASan slows down LLVM JIT compilation more than usual.
+        // b/193198227
+        hwaddress: false,
+    },
 }
 
 cc_library_static {

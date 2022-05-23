@@ -302,6 +302,8 @@
 #define LLVM_DEFAULT_TARGET_TRIPLE "armv7-linux-androideabi"
 #elif defined(__aarch64__)
 #define LLVM_DEFAULT_TARGET_TRIPLE "aarch64-linux-android"
+#elif defined(__riscv)
+#define LLVM_DEFAULT_TARGET_TRIPLE "riscv64-linux-android"
 #else
 #error "unknown architecture"
 #endif
