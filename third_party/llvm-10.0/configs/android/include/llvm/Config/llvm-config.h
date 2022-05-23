@@ -36,6 +36,8 @@
 #define LLVM_DEFAULT_TARGET_TRIPLE "armv7-linux-androideabi"
 #elif defined(__aarch64__)
 #define LLVM_DEFAULT_TARGET_TRIPLE "aarch64-linux-android"
+#elif defined(__riscv)
+#define LLVM_DEFAULT_TARGET_TRIPLE "riscv64-linux-android"
 #else
 #error "unknown architecture"
 #endif
@@ -55,6 +57,8 @@
 #define LLVM_HOST_TRIPLE "armv7-linux-androideabi"
 #elif defined(__aarch64__)
 #define LLVM_HOST_TRIPLE "aarch64-linux-android"
+#elif defined(__riscv)
+#define LLVM_HOST_TRIPLE "riscv64-linux-android"
 #else
 #error "unknown architecture"
 #endif
@@ -70,6 +74,8 @@
 #define LLVM_NATIVE_ARCH Mips
 #elif defined(__powerpc64__)
 #define LLVM_NATIVE_ARCH PowerPC
+#elif defined(__riscv)
+#define LLVM_NATIVE_ARCH RISCV
 #else
 #error "unknown architecture"
 #endif
@@ -85,6 +91,8 @@
 #define LLVM_NATIVE_ASMPARSER LLVMInitializeMipsAsmParser
 #elif defined(__powerpc64__)
 #define LLVM_NATIVE_ASMPARSER LLVMInitializePowerPCAsmParser
+#elif defined(__riscv)
+#define LLVM_NATIVE_ASMPARSER LLVMInitializeRISCVAsmParser
 #else
 #error "unknown architecture"
 #endif
@@ -100,6 +108,8 @@
 #define LLVM_NATIVE_ASMPRINTER LLVMInitializeMipsAsmPrinter
 #elif defined(__powerpc64__)
 #define LLVM_NATIVE_ASMPRINTER LLVMInitializePowerPCAsmPrinter
+#elif defined(__riscv)
+#define LLVM_NATIVE_ASMPRINTER LLVMInitializeRISCVAsmPrinter
 #else
 #error "unknown architecture"
 #endif
@@ -115,6 +125,8 @@
 #define LLVM_NATIVE_DISASSEMBLER LLVMInitializeMipsDisassembler
 #elif defined(__powerpc64__)
 #define LLVM_NATIVE_DISASSEMBLER LLVMInitializePowerPCDisassembler
+#elif defined(__riscv)
+#define LLVM_NATIVE_DISASSEMBLER LLVMInitializeRISCVDisassembler
 #else
 #error "unknown architecture"
 #endif
@@ -130,6 +142,8 @@
 #define LLVM_NATIVE_TARGET LLVMInitializeMipsTarget
 #elif defined(__powerpc64__)
 #define LLVM_NATIVE_TARGET LLVMInitializePowerPCTarget
+#elif defined(__riscv)
+#define LLVM_NATIVE_TARGET LLVMInitializeRISCVTarget
 #else
 #error "unknown architecture"
 #endif
@@ -145,6 +159,8 @@
 #define LLVM_NATIVE_TARGETINFO LLVMInitializeMipsTargetInfo
 #elif defined(__powerpc64__)
 #define LLVM_NATIVE_TARGETINFO LLVMInitializePowerPCTargetInfo
+#elif defined(__riscv)
+#define LLVM_NATIVE_TARGETINFO LLVMInitializeRISCVTargetInfo
 #else
 #error "unknown architecture"
 #endif
@@ -160,6 +176,8 @@
 #define LLVM_NATIVE_TARGETMC LLVMInitializeMipsTargetMC
 #elif defined(__powerpc64__)
 #define LLVM_NATIVE_TARGETMC LLVMInitializePowerPCTargetMC
+#elif defined(__riscv)
+#define LLVM_NATIVE_TARGETMC LLVMInitializeRISCVTargetMC
 #else
 #error "unknown architecture"
 #endif

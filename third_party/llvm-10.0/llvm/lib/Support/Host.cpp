@@ -1258,6 +1258,8 @@ StringRef sys::getHostCPUName() {
   
   return "generic";
 }
+#elif defined(__riscv)
+StringRef sys::getHostCPUName() { return "generic-rv64"; }
 #else
 StringRef sys::getHostCPUName() { return "generic"; }
 #endif
