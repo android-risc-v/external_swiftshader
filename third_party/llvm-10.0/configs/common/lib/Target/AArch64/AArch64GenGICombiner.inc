@@ -43,25 +43,33 @@ static Optional<uint64_t> getRuleIdxForIdentifier(StringRef RuleIdentifier) {
     if (memcmp(RuleIdentifier.data()+0, "copy_prop", 9) != 0)
       break;
     return 0;	 // "copy_prop"
+  case 10:	 // 1 string to match.
+    if (memcmp(RuleIdentifier.data()+0, "mul_to_shl", 10) != 0)
+      break;
+    return 1;	 // "mul_to_shl"
   case 15:	 // 1 string to match.
     if (memcmp(RuleIdentifier.data()+0, "extending_loads", 15) != 0)
       break;
-    return 2;	 // "extending_loads"
+    return 3;	 // "extending_loads"
   case 19:	 // 1 string to match.
     if (memcmp(RuleIdentifier.data()+0, "ptr_add_immed_chain", 19) != 0)
       break;
-    return 1;	 // "ptr_add_immed_chain"
+    return 2;	 // "ptr_add_immed_chain"
+  case 21:	 // 1 string to match.
+    if (memcmp(RuleIdentifier.data()+0, "fconstant_to_constant", 21) != 0)
+      break;
+    return 6;	 // "fconstant_to_constant"
   case 26:	 // 2 strings to match.
     switch (RuleIdentifier[0]) {
     default: break;
     case 'c':	 // 1 string to match.
       if (memcmp(RuleIdentifier.data()+1, "ombine_indexed_load_store", 25) != 0)
         break;
-      return 3;	 // "combine_indexed_load_store"
+      return 4;	 // "combine_indexed_load_store"
     case 'e':	 // 1 string to match.
       if (memcmp(RuleIdentifier.data()+1, "lide_br_by_inverting_cond", 25) != 0)
         break;
-      return 4;	 // "elide_br_by_inverting_cond"
+      return 5;	 // "elide_br_by_inverting_cond"
     }
     break;
   }
@@ -124,20 +132,23 @@ bool AArch64GenPreLegalizerCombinerHelper::tryCombineAll(
   (void)MBB; (void)MF; (void)MRI;
 
   // Match data
-  PtrAddChain MatchData1;
-  PreferredTuple MatchData2;
-  IndexedLoadStoreMatchInfo MatchData3;
+  unsigned MatchData1;
+  PtrAddChain MatchData2;
+  PreferredTuple MatchData3;
+  IndexedLoadStoreMatchInfo MatchData4;
 
   int Partition = -1;
   Partition = -1;
   switch (MIs[0]->getOpcode()) {
   case TargetOpcode::COPY: Partition = 0; break;
-  case TargetOpcode::G_PTR_ADD: Partition = 1; break;
-  case TargetOpcode::G_LOAD: Partition = 2; break;
-  case TargetOpcode::G_SEXTLOAD: Partition = 3; break;
-  case TargetOpcode::G_ZEXTLOAD: Partition = 4; break;
-  case TargetOpcode::G_STORE: Partition = 5; break;
-  case TargetOpcode::G_BR: Partition = 6; break;
+  case TargetOpcode::G_MUL: Partition = 1; break;
+  case TargetOpcode::G_PTR_ADD: Partition = 2; break;
+  case TargetOpcode::G_LOAD: Partition = 3; break;
+  case TargetOpcode::G_SEXTLOAD: Partition = 4; break;
+  case TargetOpcode::G_ZEXTLOAD: Partition = 5; break;
+  case TargetOpcode::G_STORE: Partition = 6; break;
+  case TargetOpcode::G_BR: Partition = 7; break;
+  case TargetOpcode::G_FCONSTANT: Partition = 8; break;
   }
   // Default case but without conflicting with potential default case in selection.
   if (Partition == -1) return false;
@@ -156,127 +167,157 @@ bool AArch64GenPreLegalizerCombinerHelper::tryCombineAll(
     }
     return false;
   }
-  if (Partition == 1 /* TargetOpcode::G_PTR_ADD */) {
-    // Leaf name: ptr_add_immed_chain
-    // Rule: ptr_add_immed_chain
+  if (Partition == 1 /* TargetOpcode::G_MUL */) {
+    // Leaf name: mul_to_shl
+    // Rule: mul_to_shl
     if (!isRuleDisabled(1)) {
       if (1
           && [&]() {
-           return Helper.matchPtrAddImmedChain(*MIs[0], MatchData1); 
+           return Helper.matchCombineMulToShl(*MIs[0], MatchData1); 
           return true;
       }()) {
-        Helper.applyPtrAddImmedChain(*MIs[0], MatchData1); 
+        Helper.applyCombineMulToShl(*MIs[0], MatchData1); 
         return true;
       }
     }
     return false;
   }
-  if (Partition == 2 /* TargetOpcode::G_LOAD */) {
-    // Leaf name: extending_loads
-    // Rule: extending_loads
+  if (Partition == 2 /* TargetOpcode::G_PTR_ADD */) {
+    // Leaf name: ptr_add_immed_chain
+    // Rule: ptr_add_immed_chain
     if (!isRuleDisabled(2)) {
       if (1
           && [&]() {
-           return Helper.matchCombineExtendingLoads(*MIs[0], MatchData2); 
+           return Helper.matchPtrAddImmedChain(*MIs[0], MatchData2); 
           return true;
       }()) {
-        Helper.applyCombineExtendingLoads(*MIs[0], MatchData2); 
-        return true;
-      }
-    }
-    // Leaf name: combine_indexed_load_store
-    // Rule: combine_indexed_load_store
-    if (!isRuleDisabled(3)) {
-      if (1
-          && [&]() {
-           return Helper.matchCombineIndexedLoadStore(*MIs[0], MatchData3); 
-          return true;
-      }()) {
-        Helper.applyCombineIndexedLoadStore(*MIs[0], MatchData3); 
+        Helper.applyPtrAddImmedChain(*MIs[0], MatchData2); 
         return true;
       }
     }
     return false;
   }
-  if (Partition == 3 /* TargetOpcode::G_SEXTLOAD */) {
+  if (Partition == 3 /* TargetOpcode::G_LOAD */) {
     // Leaf name: extending_loads
     // Rule: extending_loads
-    if (!isRuleDisabled(2)) {
+    if (!isRuleDisabled(3)) {
       if (1
           && [&]() {
-           return Helper.matchCombineExtendingLoads(*MIs[0], MatchData2); 
+           return Helper.matchCombineExtendingLoads(*MIs[0], MatchData3); 
           return true;
       }()) {
-        Helper.applyCombineExtendingLoads(*MIs[0], MatchData2); 
+        Helper.applyCombineExtendingLoads(*MIs[0], MatchData3); 
         return true;
       }
     }
     // Leaf name: combine_indexed_load_store
     // Rule: combine_indexed_load_store
-    if (!isRuleDisabled(3)) {
+    if (!isRuleDisabled(4)) {
       if (1
           && [&]() {
-           return Helper.matchCombineIndexedLoadStore(*MIs[0], MatchData3); 
+           return Helper.matchCombineIndexedLoadStore(*MIs[0], MatchData4); 
           return true;
       }()) {
-        Helper.applyCombineIndexedLoadStore(*MIs[0], MatchData3); 
+        Helper.applyCombineIndexedLoadStore(*MIs[0], MatchData4); 
         return true;
       }
     }
     return false;
   }
-  if (Partition == 4 /* TargetOpcode::G_ZEXTLOAD */) {
+  if (Partition == 4 /* TargetOpcode::G_SEXTLOAD */) {
     // Leaf name: extending_loads
     // Rule: extending_loads
-    if (!isRuleDisabled(2)) {
+    if (!isRuleDisabled(3)) {
       if (1
           && [&]() {
-           return Helper.matchCombineExtendingLoads(*MIs[0], MatchData2); 
+           return Helper.matchCombineExtendingLoads(*MIs[0], MatchData3); 
           return true;
       }()) {
-        Helper.applyCombineExtendingLoads(*MIs[0], MatchData2); 
+        Helper.applyCombineExtendingLoads(*MIs[0], MatchData3); 
         return true;
       }
     }
     // Leaf name: combine_indexed_load_store
     // Rule: combine_indexed_load_store
-    if (!isRuleDisabled(3)) {
+    if (!isRuleDisabled(4)) {
       if (1
           && [&]() {
-           return Helper.matchCombineIndexedLoadStore(*MIs[0], MatchData3); 
+           return Helper.matchCombineIndexedLoadStore(*MIs[0], MatchData4); 
           return true;
       }()) {
-        Helper.applyCombineIndexedLoadStore(*MIs[0], MatchData3); 
+        Helper.applyCombineIndexedLoadStore(*MIs[0], MatchData4); 
         return true;
       }
     }
     return false;
   }
-  if (Partition == 5 /* TargetOpcode::G_STORE */) {
+  if (Partition == 5 /* TargetOpcode::G_ZEXTLOAD */) {
+    // Leaf name: extending_loads
+    // Rule: extending_loads
+    if (!isRuleDisabled(3)) {
+      if (1
+          && [&]() {
+           return Helper.matchCombineExtendingLoads(*MIs[0], MatchData3); 
+          return true;
+      }()) {
+        Helper.applyCombineExtendingLoads(*MIs[0], MatchData3); 
+        return true;
+      }
+    }
     // Leaf name: combine_indexed_load_store
     // Rule: combine_indexed_load_store
-    if (!isRuleDisabled(3)) {
+    if (!isRuleDisabled(4)) {
       if (1
           && [&]() {
-           return Helper.matchCombineIndexedLoadStore(*MIs[0], MatchData3); 
+           return Helper.matchCombineIndexedLoadStore(*MIs[0], MatchData4); 
           return true;
       }()) {
-        Helper.applyCombineIndexedLoadStore(*MIs[0], MatchData3); 
+        Helper.applyCombineIndexedLoadStore(*MIs[0], MatchData4); 
         return true;
       }
     }
     return false;
   }
-  if (Partition == 6 /* TargetOpcode::G_BR */) {
+  if (Partition == 6 /* TargetOpcode::G_STORE */) {
+    // Leaf name: combine_indexed_load_store
+    // Rule: combine_indexed_load_store
+    if (!isRuleDisabled(4)) {
+      if (1
+          && [&]() {
+           return Helper.matchCombineIndexedLoadStore(*MIs[0], MatchData4); 
+          return true;
+      }()) {
+        Helper.applyCombineIndexedLoadStore(*MIs[0], MatchData4); 
+        return true;
+      }
+    }
+    return false;
+  }
+  if (Partition == 7 /* TargetOpcode::G_BR */) {
     // Leaf name: elide_br_by_inverting_cond
     // Rule: elide_br_by_inverting_cond
-    if (!isRuleDisabled(4)) {
+    if (!isRuleDisabled(5)) {
       if (1
           && [&]() {
            return Helper.matchElideBrByInvertingCond(*MIs[0]); 
           return true;
       }()) {
         Helper.applyElideBrByInvertingCond(*MIs[0]); 
+        return true;
+      }
+    }
+    return false;
+  }
+  if (Partition == 8 /* TargetOpcode::G_FCONSTANT */) {
+    // Leaf name: fconstant_to_constant
+    // Rule: fconstant_to_constant
+    if (!isRuleDisabled(6)) {
+      if (1
+          && [&]() {
+           return matchFConstantToConstant(*MIs[0], MRI); 
+          return true;
+      }()) {
+        applyFConstantToConstant(*MIs[0]); 
         return true;
       }
     }

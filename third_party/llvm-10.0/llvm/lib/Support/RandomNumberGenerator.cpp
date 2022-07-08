@@ -17,7 +17,7 @@
 #include "llvm/Support/Debug.h"
 #include "llvm/Support/raw_ostream.h"
 #ifdef _WIN32
-#include "llvm/Support/Windows/WindowsSupport.h"
+#include "Windows/WindowsSupport.h"
 #else
 #include "Unix/Unix.h"
 #endif

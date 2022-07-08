@@ -133,6 +133,7 @@ class VectorType;
       LE,           // Low-overhead loops, Loop End
 
       PREDICATE_CAST, // Predicate cast for MVE i1 types
+      VECTOR_REG_CAST, // Reinterpret the current contents of a vector register
 
       VCMP,         // Vector compare.
       VCMPZ,        // Vector compare to zero.
@@ -280,7 +281,11 @@ class VectorType;
       VST4_UPD,
       VST2LN_UPD,
       VST3LN_UPD,
-      VST4LN_UPD
+      VST4LN_UPD,
+
+      // Load/Store of dual registers
+      LDRD,
+      STRD
     };
 
   } // end namespace ARMISD
@@ -345,10 +350,7 @@ class VectorType;
                                         MachineMemOperand::Flags Flags,
                                         bool *Fast) const override;
 
-    EVT getOptimalMemOpType(uint64_t Size,
-                            unsigned DstAlign, unsigned SrcAlign,
-                            bool IsMemset, bool ZeroMemset,
-                            bool MemcpyStrSrc,
+    EVT getOptimalMemOpType(const MemOp &Op,
                             const AttributeList &FuncAttributes) const override;
 
     bool isTruncateFree(Type *SrcTy, Type *DstTy) const override;
@@ -734,6 +736,8 @@ class VectorType;
     SDValue LowerFSETCC(SDValue Op, SelectionDAG &DAG) const;
     void lowerABS(SDNode *N, SmallVectorImpl<SDValue> &Results,
                   SelectionDAG &DAG) const;
+    void LowerLOAD(SDNode *N, SmallVectorImpl<SDValue> &Results,
+                   SelectionDAG &DAG) const;
 
     Register getRegisterByName(const char* RegName, LLT VT,
                                const MachineFunction &MF) const override;

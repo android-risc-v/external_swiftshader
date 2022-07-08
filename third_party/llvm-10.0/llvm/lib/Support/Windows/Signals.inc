@@ -23,7 +23,7 @@
 #include "llvm/Support/raw_ostream.h"
 
 // The Windows.h header must be after LLVM and standard headers.
-#include "llvm/Support/Windows/WindowsSupport.h"
+#include "WindowsSupport.h"
 
 #ifdef __MINGW32__
  #include <imagehlp.h>
@@ -460,7 +460,7 @@ bool sys::RemoveFileOnSignal(StringRef Filename, std::string* ErrMsg) {
   if (FilesToRemove == NULL)
     FilesToRemove = new std::vector<std::string>;
 
-  FilesToRemove->push_back(Filename);
+  FilesToRemove->push_back(std::string(Filename));
 
   LeaveCriticalSection(&CriticalSection);
   return false;

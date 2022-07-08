@@ -406,7 +406,7 @@ unsigned resolveVariantSchedClassImpl(unsigned SchedClass,
 } // end namespace RISCV_MC
 
 struct RISCVGenMCSubtargetInfo : public MCSubtargetInfo {
-  RISCVGenMCSubtargetInfo(const Triple &TT,
+  RISCVGenMCSubtargetInfo(const Triple &TT, 
     StringRef CPU, StringRef FS, ArrayRef<SubtargetFeatureKV> PF,
     ArrayRef<SubtargetSubTypeKV> PD,
     const MCWriteProcResEntry *WPR,
@@ -418,7 +418,7 @@ struct RISCVGenMCSubtargetInfo : public MCSubtargetInfo {
 
   unsigned resolveVariantSchedClass(unsigned SchedClass,
       const MCInst *MI, unsigned CPUID) const override {
-    return RISCV_MC::resolveVariantSchedClassImpl(SchedClass, MI, CPUID);
+    return RISCV_MC::resolveVariantSchedClassImpl(SchedClass, MI, CPUID); 
   }
   unsigned getHwMode() const override;
 };
@@ -429,8 +429,8 @@ unsigned RISCVGenMCSubtargetInfo::getHwMode() const {
 }
 
 static inline MCSubtargetInfo *createRISCVMCSubtargetInfoImpl(const Triple &TT, StringRef CPU, StringRef FS) {
-  return new RISCVGenMCSubtargetInfo(TT, CPU, FS, RISCVFeatureKV, RISCVSubTypeKV,
-                      RISCVWriteProcResTable, RISCVWriteLatencyTable, RISCVReadAdvanceTable,
+  return new RISCVGenMCSubtargetInfo(TT, CPU, FS, RISCVFeatureKV, RISCVSubTypeKV, 
+                      RISCVWriteProcResTable, RISCVWriteLatencyTable, RISCVReadAdvanceTable, 
                       nullptr, nullptr, nullptr);
 }
 
@@ -530,8 +530,8 @@ extern const llvm::MCWriteProcResEntry RISCVWriteProcResTable[];
 extern const llvm::MCWriteLatencyEntry RISCVWriteLatencyTable[];
 extern const llvm::MCReadAdvanceEntry RISCVReadAdvanceTable[];
 RISCVGenSubtargetInfo::RISCVGenSubtargetInfo(const Triple &TT, StringRef CPU, StringRef FS)
-  : TargetSubtargetInfo(TT, CPU, FS, makeArrayRef(RISCVFeatureKV, 40), makeArrayRef(RISCVSubTypeKV, 4),
-                        RISCVWriteProcResTable, RISCVWriteLatencyTable, RISCVReadAdvanceTable,
+  : TargetSubtargetInfo(TT, CPU, FS, makeArrayRef(RISCVFeatureKV, 40), makeArrayRef(RISCVSubTypeKV, 4), 
+                        RISCVWriteProcResTable, RISCVWriteLatencyTable, RISCVReadAdvanceTable, 
                         nullptr, nullptr, nullptr) {}
 
 unsigned RISCVGenSubtargetInfo

@@ -25,7 +25,7 @@
 
 // These two headers must be included last, and make sure shlobj is required
 // after Windows.h to make sure it picks up our definition of _WIN32_WINNT
-#include "llvm/Support/Windows/WindowsSupport.h"
+#include "WindowsSupport.h"
 #include <shellapi.h>
 #include <shlobj.h>
 

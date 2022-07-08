@@ -8462,6 +8462,42 @@ unsigned fastEmit_ISD_MUL_MVT_v4i32_rr(MVT RetVT, unsigned Op0, bool Op0IsKill, 
   return 0;
 }
 
+unsigned fastEmit_ISD_MUL_MVT_nxv16i8_rr(MVT RetVT, unsigned Op0, bool Op0IsKill, unsigned Op1, bool Op1IsKill) {
+  if (RetVT.SimpleTy != MVT::nxv16i8)
+    return 0;
+  if ((Subtarget->hasSVE2())) {
+    return fastEmitInst_rr(AArch64::MUL_ZZZ_B, &AArch64::ZPRRegClass, Op0, Op0IsKill, Op1, Op1IsKill);
+  }
+  return 0;
+}
+
+unsigned fastEmit_ISD_MUL_MVT_nxv8i16_rr(MVT RetVT, unsigned Op0, bool Op0IsKill, unsigned Op1, bool Op1IsKill) {
+  if (RetVT.SimpleTy != MVT::nxv8i16)
+    return 0;
+  if ((Subtarget->hasSVE2())) {
+    return fastEmitInst_rr(AArch64::MUL_ZZZ_H, &AArch64::ZPRRegClass, Op0, Op0IsKill, Op1, Op1IsKill);
+  }
+  return 0;
+}
+
+unsigned fastEmit_ISD_MUL_MVT_nxv4i32_rr(MVT RetVT, unsigned Op0, bool Op0IsKill, unsigned Op1, bool Op1IsKill) {
+  if (RetVT.SimpleTy != MVT::nxv4i32)
+    return 0;
+  if ((Subtarget->hasSVE2())) {
+    return fastEmitInst_rr(AArch64::MUL_ZZZ_S, &AArch64::ZPRRegClass, Op0, Op0IsKill, Op1, Op1IsKill);
+  }
+  return 0;
+}
+
+unsigned fastEmit_ISD_MUL_MVT_nxv2i64_rr(MVT RetVT, unsigned Op0, bool Op0IsKill, unsigned Op1, bool Op1IsKill) {
+  if (RetVT.SimpleTy != MVT::nxv2i64)
+    return 0;
+  if ((Subtarget->hasSVE2())) {
+    return fastEmitInst_rr(AArch64::MUL_ZZZ_D, &AArch64::ZPRRegClass, Op0, Op0IsKill, Op1, Op1IsKill);
+  }
+  return 0;
+}
+
 unsigned fastEmit_ISD_MUL_rr(MVT VT, MVT RetVT, unsigned Op0, bool Op0IsKill, unsigned Op1, bool Op1IsKill) {
   switch (VT.SimpleTy) {
   case MVT::v8i8: return fastEmit_ISD_MUL_MVT_v8i8_rr(RetVT, Op0, Op0IsKill, Op1, Op1IsKill);
@@ -8470,6 +8506,10 @@ unsigned fastEmit_ISD_MUL_rr(MVT VT, MVT RetVT, unsigned Op0, bool Op0IsKill, un
   case MVT::v8i16: return fastEmit_ISD_MUL_MVT_v8i16_rr(RetVT, Op0, Op0IsKill, Op1, Op1IsKill);
   case MVT::v2i32: return fastEmit_ISD_MUL_MVT_v2i32_rr(RetVT, Op0, Op0IsKill, Op1, Op1IsKill);
   case MVT::v4i32: return fastEmit_ISD_MUL_MVT_v4i32_rr(RetVT, Op0, Op0IsKill, Op1, Op1IsKill);
+  case MVT::nxv16i8: return fastEmit_ISD_MUL_MVT_nxv16i8_rr(RetVT, Op0, Op0IsKill, Op1, Op1IsKill);
+  case MVT::nxv8i16: return fastEmit_ISD_MUL_MVT_nxv8i16_rr(RetVT, Op0, Op0IsKill, Op1, Op1IsKill);
+  case MVT::nxv4i32: return fastEmit_ISD_MUL_MVT_nxv4i32_rr(RetVT, Op0, Op0IsKill, Op1, Op1IsKill);
+  case MVT::nxv2i64: return fastEmit_ISD_MUL_MVT_nxv2i64_rr(RetVT, Op0, Op0IsKill, Op1, Op1IsKill);
   default: return 0;
   }
 }

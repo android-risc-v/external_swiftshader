@@ -181,7 +181,7 @@ JITGlobals *JITGlobals::get()
 			jitTargetMachineBuilder.getFeatures().AddFeature(feature.first(), feature.second);
 		}
 
-#if LLVM_VERSION_MAJOR >= 11 /* TODO(b/165000222): Unconditional after LLVM 11 upgrade */
+#if LLVM_VERSION_MAJOR >= 10 /* TODO(b/165000222): Unconditional after LLVM 10 upgrade */
 		jitTargetMachineBuilder.setCPU(std::string(llvm::sys::getHostCPUName()));
 #else
 		jitTargetMachineBuilder.setCPU(llvm::sys::getHostCPUName());

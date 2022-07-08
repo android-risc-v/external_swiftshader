@@ -60,7 +60,7 @@
 
 #ifdef _WIN32
 #include "llvm/Support/ConvertUTF.h"
-#include "llvm/Support/Windows/WindowsSupport.h"
+#include "Windows/WindowsSupport.h"
 #endif
 
 using namespace llvm;

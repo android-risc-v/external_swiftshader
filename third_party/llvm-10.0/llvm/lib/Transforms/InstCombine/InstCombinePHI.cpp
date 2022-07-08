@@ -218,21 +218,13 @@ Instruction *InstCombiner::FoldIntegerTypedPHI(PHINode &PN) {
     return nullptr;
 
   // If any of the operand that requires casting is a terminator
-  // instruction, do not do it. Similarly, do not do the transform if the value
-  // is PHI in a block with no insertion point, for example, a catchswitch
-  // block, since we will not be able to insert a cast after the PHI.
+  // instruction, do not do it.
   if (any_of(AvailablePtrVals, [&](Value *V) {
         if (V->getType() == IntToPtr->getType())
           return false;
+
         auto *Inst = dyn_cast<Instruction>(V);
-        if (!Inst)
-          return false;
-        if (Inst->isTerminator())
-          return true;
-        auto *BB = Inst->getParent();
-        if (isa<PHINode>(Inst) && BB->getFirstInsertionPt() == BB->end())
-          return true;
-        return false;
+        return Inst && Inst->isTerminator();
       }))
     return nullptr;
 
@@ -272,10 +264,8 @@ Instruction *InstCombiner::FoldIntegerTypedPHI(PHINode &PN) {
       if (auto *IncomingI = dyn_cast<Instruction>(IncomingVal)) {
         BasicBlock::iterator InsertPos(IncomingI);
         InsertPos++;
-        BasicBlock *BB = IncomingI->getParent();
         if (isa<PHINode>(IncomingI))
-          InsertPos = BB->getFirstInsertionPt();
-        assert(InsertPos != BB->end() && "should have checked above");
+          InsertPos = IncomingI->getParent()->getFirstInsertionPt();
         InsertNewInstBefore(CI, *InsertPos);
       } else {
         auto *InsertBB = &IncomingBB->getParent()->getEntryBlock();

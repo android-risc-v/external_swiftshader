@@ -19,115 +19,115 @@ static bool RISCVValidateMCOperand(const MCOperand &MCOp,
     break;
   case 1: {
   // uimm10_lsb00nonzero
-
+  
     int64_t Imm;
     if (!MCOp.evaluateAsConstantImm(Imm))
       return false;
     return isShiftedUInt<8, 2>(Imm) && (Imm != 0);
-
+  
   }
   case 2: {
   // simm6nonzero
-
+  
     int64_t Imm;
     if (MCOp.evaluateAsConstantImm(Imm))
       return (Imm != 0) && isInt<6>(Imm);
     return MCOp.isBareSymbolRef();
-
+  
   }
   case 3: {
   // simm6
-
+  
     int64_t Imm;
     if (MCOp.evaluateAsConstantImm(Imm))
       return isInt<6>(Imm);
     return MCOp.isBareSymbolRef();
-
+  
   }
   case 4: {
   // simm10_lsb0000nonzero
-
+  
     int64_t Imm;
     if (!MCOp.evaluateAsConstantImm(Imm))
       return false;
     return isShiftedInt<6, 4>(Imm) && (Imm != 0);
-
+  
   }
   case 5: {
   // simm9_lsb0
-
+  
     int64_t Imm;
     if (MCOp.evaluateAsConstantImm(Imm))
       return isShiftedInt<8, 1>(Imm);
     return MCOp.isBareSymbolRef();
 
-
+  
   }
   case 6: {
   // uimm8_lsb000
-
+  
     int64_t Imm;
     if (!MCOp.evaluateAsConstantImm(Imm))
       return false;
     return isShiftedUInt<5, 3>(Imm);
-
+  
   }
   case 7: {
   // uimm9_lsb000
-
+  
     int64_t Imm;
     if (!MCOp.evaluateAsConstantImm(Imm))
       return false;
     return isShiftedUInt<6, 3>(Imm);
-
+  
   }
   case 8: {
   // uimm7_lsb00
-
+  
     int64_t Imm;
     if (!MCOp.evaluateAsConstantImm(Imm))
       return false;
     return isShiftedUInt<5, 2>(Imm);
-
+  
   }
   case 9: {
   // uimm8_lsb00
-
+  
     int64_t Imm;
     if (!MCOp.evaluateAsConstantImm(Imm))
       return false;
     return isShiftedUInt<6, 2>(Imm);
-
+  
   }
   case 10: {
   // simm12_lsb0
-
+  
     int64_t Imm;
     if (MCOp.evaluateAsConstantImm(Imm))
       return isShiftedInt<11, 1>(Imm);
     return MCOp.isBareSymbolRef();
-
+  
   }
   case 11: {
   // c_lui_imm
-
+  
     int64_t Imm;
     if (MCOp.evaluateAsConstantImm(Imm))
       return (Imm != 0) && (isUInt<5>(Imm) ||
              (Imm >= 0xfffe0 && Imm <= 0xfffff));
     return MCOp.isBareSymbolRef();
-
+  
   }
   case 12: {
   // uimmlog2xlennonzero
-
+  
     int64_t Imm;
     if (!MCOp.evaluateAsConstantImm(Imm))
       return false;
     if (STI.getTargetTriple().isArch64Bit())
       return  isUInt<6>(Imm) && (Imm != 0);
     return isUInt<5>(Imm) && (Imm != 0);
-
+  
   }
   }
 }
@@ -219,7 +219,7 @@ static bool compressInst(MCInst& OutInst,
       (MI.getOperand(1).getReg() == RISCV::X0) &&
       (MI.getOperand(2).isImm()) &&
       (MI.getOperand(2).getImm() == 0)) {
-      // c.nop
+      // c.nop	
       OutInst.setOpcode(RISCV::C_NOP);
       OutInst.setLoc(MI.getLoc());
       return true;
@@ -436,7 +436,7 @@ static bool compressInst(MCInst& OutInst,
     } // case BNE
     case RISCV::EBREAK: {
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC]) {
-      // c.ebreak
+      // c.ebreak	
       OutInst.setOpcode(RISCV::C_EBREAK);
       OutInst.setLoc(MI.getLoc());
       return true;
@@ -915,7 +915,7 @@ static bool compressInst(MCInst& OutInst,
     } // case SW
     case RISCV::UNIMP: {
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC]) {
-      // c.unimp
+      // c.unimp	
       OutInst.setOpcode(RISCV::C_UNIMP);
       OutInst.setLoc(MI.getLoc());
       return true;
@@ -973,50 +973,50 @@ static bool RISCVValidateMCOperand(const MCOperand &MCOp,
     break;
   case 1: {
   // simm12
-
+  
     int64_t Imm;
     if (MCOp.evaluateAsConstantImm(Imm))
       return isInt<12>(Imm);
     return MCOp.isBareSymbolRef();
-
+  
   }
   case 2: {
   // simm13_lsb0
-
+  
     int64_t Imm;
     if (MCOp.evaluateAsConstantImm(Imm))
       return isShiftedInt<12, 1>(Imm);
     return MCOp.isBareSymbolRef();
-
+  
   }
   case 3: {
   // simm21_lsb0_jal
-
+  
     int64_t Imm;
     if (MCOp.evaluateAsConstantImm(Imm))
       return isShiftedInt<20, 1>(Imm);
     return MCOp.isBareSymbolRef();
-
+  
   }
   case 4: {
   // uimm20_lui
-
+  
     int64_t Imm;
     if (MCOp.evaluateAsConstantImm(Imm))
       return isUInt<20>(Imm);
     return MCOp.isBareSymbolRef();
-
+  
   }
   case 5: {
   // uimmlog2xlen
-
+  
     int64_t Imm;
     if (!MCOp.evaluateAsConstantImm(Imm))
       return false;
     if (STI.getTargetTriple().isArch64Bit())
       return  isUInt<6>(Imm);
     return isUInt<5>(Imm);
-
+  
   }
   }
 }
@@ -1255,7 +1255,7 @@ static bool uncompressInst(MCInst& OutInst,
     } // case C_BNEZ
     case RISCV::C_EBREAK: {
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC]) {
-      // ebreak
+      // ebreak	
       OutInst.setOpcode(RISCV::EBREAK);
       OutInst.setLoc(MI.getLoc());
       return true;
@@ -1864,7 +1864,7 @@ static bool uncompressInst(MCInst& OutInst,
     } // case C_SWSP
     case RISCV::C_UNIMP: {
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC]) {
-      // unimp
+      // unimp	
       OutInst.setOpcode(RISCV::UNIMP);
       OutInst.setLoc(MI.getLoc());
       return true;
@@ -1917,7 +1917,7 @@ static bool uncompressInst(MCInst& OutInst,
 static bool RISCVValidateMachineOperand(const MachineOperand &MO,
                   const RISCVSubtarget *Subtarget,
                   unsigned PredicateIndex) {
-  int64_t Imm = MO.getImm();
+  int64_t Imm = MO.getImm(); 
   switch (PredicateIndex) {
   default:
     llvm_unreachable("Unknown ImmLeaf Predicate kind");
@@ -1970,7 +1970,7 @@ static bool RISCVValidateMachineOperand(const MachineOperand &MO,
   }
   case 12: {
   // uimmlog2xlennonzero
-
+  
   if (Subtarget->is64Bit())
     return isUInt<6>(Imm) && (Imm != 0);
   return isUInt<5>(Imm) && (Imm != 0);
@@ -2030,7 +2030,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MI.getOperand(1).getReg() ==  MI.getOperand(0).getReg()) &&
       (MRI.getRegClass(RISCV::GPRNoX0RegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 1)) {
       // c.addi	$rd, $imm
       // Operand: rd_wb
@@ -2041,7 +2041,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MI.getOperand(0).getReg() == RISCV::X2) &&
       (MI.getOperand(1).getReg() == RISCV::X2) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 2)) {
       // c.addi16sp	$rd, $imm
       // Operand: rd_wb
@@ -2052,7 +2052,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::SPRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 3)) {
       // c.addi4spn	$rd, $rs1, $imm
       // Operand: rd
@@ -2063,7 +2063,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MI.getOperand(1).getReg() == RISCV::X0) &&
       (MRI.getRegClass(RISCV::GPRNoX0RegClassID).contains(MI.getOperand(0).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 4)) {
       // c.li	$rd, $imm
       // Operand: rd
@@ -2085,7 +2085,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
       (MI.getOperand(1).getReg() == RISCV::X0) &&
       (MI.getOperand(2).isImm()) &&
       (MI.getOperand(2).getImm() == 0)) {
-      // c.nop
+      // c.nop	
       return true;
     } // if
       break;
@@ -2095,7 +2095,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
       STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MI.getOperand(1).getReg() ==  MI.getOperand(0).getReg()) &&
       (MRI.getRegClass(RISCV::GPRNoX0RegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 4)) {
       // c.addiw	$rd, $imm
       // Operand: rd_wb
@@ -2107,7 +2107,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
       STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MI.getOperand(1).getReg() == RISCV::X0) &&
       (MRI.getRegClass(RISCV::GPRNoX0RegClassID).contains(MI.getOperand(0).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 4)) {
       // c.li	$rd, $imm
       // Operand: rd
@@ -2168,7 +2168,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MI.getOperand(1).getReg() ==  MI.getOperand(0).getReg()) &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 4)) {
       // c.andi	$rs1, $imm
       // Operand: rs1_wb
@@ -2182,7 +2182,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MI.getOperand(1).getReg() == RISCV::X0) &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(0).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 5)) {
       // c.beqz	$rs1, $imm
       // Operand: rs1
@@ -2195,7 +2195,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MI.getOperand(1).getReg() == RISCV::X0) &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(0).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 5)) {
       // c.bnez	$rs1, $imm
       // Operand: rs1
@@ -2206,7 +2206,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     } // case BNE
     case RISCV::EBREAK: {
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC]) {
-      // c.ebreak
+      // c.ebreak	
       return true;
     } // if
       break;
@@ -2216,7 +2216,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
       STI.getFeatureBits()[RISCV::FeatureStdExtD] &&
       (MRI.getRegClass(RISCV::FPR64CRegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 6)) {
       // c.fld	$rd, ${imm}(${rs1})
       // Operand: rd
@@ -2228,7 +2228,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
       STI.getFeatureBits()[RISCV::FeatureStdExtD] &&
       (MRI.getRegClass(RISCV::FPR64RegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::SPRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 7)) {
       // c.fldsp	$rd, ${imm}(${rs1})
       // Operand: rd
@@ -2244,7 +2244,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
       STI.getFeatureBits()[RISCV::FeatureStdExtF] &&
       (MRI.getRegClass(RISCV::FPR32CRegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 8)) {
       // c.flw	$rd, ${imm}(${rs1})
       // Operand: rd
@@ -2257,7 +2257,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
       STI.getFeatureBits()[RISCV::FeatureStdExtF] &&
       (MRI.getRegClass(RISCV::FPR32RegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::SPRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 9)) {
       // c.flwsp	$rd, ${imm}(${rs1})
       // Operand: rd
@@ -2272,7 +2272,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
       STI.getFeatureBits()[RISCV::FeatureStdExtD] &&
       (MRI.getRegClass(RISCV::FPR64CRegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 6)) {
       // c.fsd	$rs2, ${imm}(${rs1})
       // Operand: rs2
@@ -2284,7 +2284,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
       STI.getFeatureBits()[RISCV::FeatureStdExtD] &&
       (MRI.getRegClass(RISCV::FPR64RegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::SPRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 7)) {
       // c.fsdsp	$rs2, ${imm}(${rs1})
       // Operand: rs2
@@ -2300,7 +2300,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
       STI.getFeatureBits()[RISCV::FeatureStdExtF] &&
       (MRI.getRegClass(RISCV::FPR32CRegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 8)) {
       // c.fsw	$rs2, ${imm}(${rs1})
       // Operand: rs2
@@ -2313,7 +2313,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
       STI.getFeatureBits()[RISCV::FeatureStdExtF] &&
       (MRI.getRegClass(RISCV::FPR32RegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::SPRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 9)) {
       // c.fswsp	$rs2, ${imm}(${rs1})
       // Operand: rs2
@@ -2326,7 +2326,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     case RISCV::JAL: {
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MI.getOperand(0).getReg() == RISCV::X0) &&
-      MI.getOperand(1).isImm() &&
+      MI.getOperand(1).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(1), Subtarget, 10)) {
       // c.j	$offset
       // Operand: offset
@@ -2335,7 +2335,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     if (!STI.getFeatureBits()[RISCV::Feature64Bit] &&
       STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MI.getOperand(0).getReg() == RISCV::X1) &&
-      MI.getOperand(1).isImm() &&
+      MI.getOperand(1).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(1), Subtarget, 10)) {
       // c.jal	$offset
       // Operand: offset
@@ -2369,7 +2369,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
       STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 6)) {
       // c.ld	$rd, ${imm}(${rs1})
       // Operand: rd
@@ -2381,7 +2381,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
       STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MRI.getRegClass(RISCV::GPRNoX0RegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::SPRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 7)) {
       // c.ldsp	$rd, ${imm}(${rs1})
       // Operand: rd
@@ -2394,7 +2394,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     case RISCV::LUI: {
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MRI.getRegClass(RISCV::GPRNoX0X2RegClassID).contains(MI.getOperand(0).getReg())) &&
-      MI.getOperand(1).isImm() &&
+      MI.getOperand(1).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(1), Subtarget, 11)) {
       // c.lui	$rd, $imm
       // Operand: rd
@@ -2407,7 +2407,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 8)) {
       // c.lw	$rd, ${imm}(${rs1})
       // Operand: rd
@@ -2418,7 +2418,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MRI.getRegClass(RISCV::GPRNoX0RegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::SPRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 9)) {
       // c.lwsp	$rd, ${imm}(${rs1})
       // Operand: rd
@@ -2456,7 +2456,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
       STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 6)) {
       // c.sd	$rs2, ${imm}(${rs1})
       // Operand: rs2
@@ -2468,7 +2468,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
       STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MRI.getRegClass(RISCV::GPRRegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::SPRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 7)) {
       // c.sdsp	$rs2, ${imm}(${rs1})
       // Operand: rs2
@@ -2482,7 +2482,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MI.getOperand(1).getReg() ==  MI.getOperand(0).getReg()) &&
       (MRI.getRegClass(RISCV::GPRNoX0RegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 12)) {
       // c.slli	$rd, $imm
       // Operand: rd_wb
@@ -2496,7 +2496,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MI.getOperand(1).getReg() ==  MI.getOperand(0).getReg()) &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 12)) {
       // c.srai	$rs1, $imm
       // Operand: rs1_wb
@@ -2510,7 +2510,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MI.getOperand(1).getReg() ==  MI.getOperand(0).getReg()) &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 12)) {
       // c.srli	$rs1, $imm
       // Operand: rs1_wb
@@ -2551,7 +2551,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 8)) {
       // c.sw	$rs2, ${imm}(${rs1})
       // Operand: rs2
@@ -2562,7 +2562,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MRI.getRegClass(RISCV::GPRRegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::SPRegClassID).contains(MI.getOperand(1).getReg())) &&
-      MI.getOperand(2).isImm() &&
+      MI.getOperand(2).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(2), Subtarget, 9)) {
       // c.swsp	$rs2, ${imm}(${rs1})
       // Operand: rs2
@@ -2574,7 +2574,7 @@ static bool isCompressibleInst(const MachineInstr& MI,
     } // case SW
     case RISCV::UNIMP: {
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC]) {
-      // c.unimp
+      // c.unimp	
       return true;
     } // if
       break;
@@ -2607,3 +2607,4 @@ static bool isCompressibleInst(const MachineInstr& MI,
 }
 
 #endif //GEN_CHECK_COMPRESS_INSTR
+

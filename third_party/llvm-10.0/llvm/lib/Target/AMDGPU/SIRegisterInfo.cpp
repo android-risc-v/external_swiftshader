@@ -305,11 +305,6 @@ bool SIRegisterInfo::requiresVirtualBaseRegisters(
   return true;
 }
 
-bool SIRegisterInfo::trackLivenessAfterRegAlloc(const MachineFunction &MF) const {
-  // This helps catch bugs as verifier errors.
-  return true;
-}
-
 int64_t SIRegisterInfo::getMUBUFInstrOffset(const MachineInstr *MI) const {
   assert(SIInstrInfo::isMUBUF(*MI));
 
@@ -1396,7 +1391,7 @@ const TargetRegisterClass *SIRegisterInfo::getSubRegClass(
     return RC;
 
   // We can assume that each lane corresponds to one 32-bit register.
-  unsigned Count = getSubRegIndexLaneMask(SubIdx).getNumLanes();
+  unsigned Count = getNumChannelsFromSubReg(SubIdx);
   if (isSGPRClass(RC)) {
     switch (Count) {
     case 1:

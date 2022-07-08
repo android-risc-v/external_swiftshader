@@ -13,7 +13,7 @@ namespace llvm {
 namespace Intrinsic {
 enum ARMIntrinsics : unsigned {
 // Enum values for intrinsics
-    arm_cdp = 1498,                                   // llvm.arm.cdp
+    arm_cdp = 1597,                                   // llvm.arm.cdp
     arm_cdp2,                                  // llvm.arm.cdp2
     arm_clrex,                                 // llvm.arm.clrex
     arm_cls,                                   // llvm.arm.cls
@@ -110,10 +110,20 @@ enum ARMIntrinsics : unsigned {
     arm_mve_vctp32,                            // llvm.arm.mve.vctp32
     arm_mve_vctp64,                            // llvm.arm.mve.vctp64
     arm_mve_vctp8,                             // llvm.arm.mve.vctp8
+    arm_mve_vcvt_fix,                          // llvm.arm.mve.vcvt.fix
+    arm_mve_vcvt_fix_predicated,               // llvm.arm.mve.vcvt.fix.predicated
     arm_mve_vcvt_narrow,                       // llvm.arm.mve.vcvt.narrow
     arm_mve_vcvt_narrow_predicated,            // llvm.arm.mve.vcvt.narrow.predicated
+    arm_mve_vddup,                             // llvm.arm.mve.vddup
+    arm_mve_vddup_predicated,                  // llvm.arm.mve.vddup.predicated
+    arm_mve_vdwdup,                            // llvm.arm.mve.vdwdup
+    arm_mve_vdwdup_predicated,                 // llvm.arm.mve.vdwdup.predicated
     arm_mve_vhadd,                             // llvm.arm.mve.vhadd
     arm_mve_vhsub,                             // llvm.arm.mve.vhsub
+    arm_mve_vidup,                             // llvm.arm.mve.vidup
+    arm_mve_vidup_predicated,                  // llvm.arm.mve.vidup.predicated
+    arm_mve_viwdup,                            // llvm.arm.mve.viwdup
+    arm_mve_viwdup_predicated,                 // llvm.arm.mve.viwdup.predicated
     arm_mve_vld2q,                             // llvm.arm.mve.vld2q
     arm_mve_vld4q,                             // llvm.arm.mve.vld4q
     arm_mve_vldr_gather_base,                  // llvm.arm.mve.vldr.gather.base
@@ -122,6 +132,10 @@ enum ARMIntrinsics : unsigned {
     arm_mve_vldr_gather_base_wb_predicated,    // llvm.arm.mve.vldr.gather.base.wb.predicated
     arm_mve_vldr_gather_offset,                // llvm.arm.mve.vldr.gather.offset
     arm_mve_vldr_gather_offset_predicated,     // llvm.arm.mve.vldr.gather.offset.predicated
+    arm_mve_vmaxa_predicated,                  // llvm.arm.mve.vmaxa.predicated
+    arm_mve_vmaxnma_predicated,                // llvm.arm.mve.vmaxnma.predicated
+    arm_mve_vmina_predicated,                  // llvm.arm.mve.vmina.predicated
+    arm_mve_vminnma_predicated,                // llvm.arm.mve.vminnma.predicated
     arm_mve_vmldava,                           // llvm.arm.mve.vmldava
     arm_mve_vmldava_predicated,                // llvm.arm.mve.vmldava.predicated
     arm_mve_vmlldava,                          // llvm.arm.mve.vmlldava
@@ -135,6 +149,7 @@ enum ARMIntrinsics : unsigned {
     arm_mve_vqshl_imm_predicated,              // llvm.arm.mve.vqshl.imm.predicated
     arm_mve_vqshlu_imm,                        // llvm.arm.mve.vqshlu.imm
     arm_mve_vqshlu_imm_predicated,             // llvm.arm.mve.vqshlu.imm.predicated
+    arm_mve_vreinterpretq,                     // llvm.arm.mve.vreinterpretq
     arm_mve_vrhadd,                            // llvm.arm.mve.vrhadd
     arm_mve_vrmlldavha,                        // llvm.arm.mve.vrmlldavha
     arm_mve_vrmlldavha_predicated,             // llvm.arm.mve.vrmlldavha.predicated

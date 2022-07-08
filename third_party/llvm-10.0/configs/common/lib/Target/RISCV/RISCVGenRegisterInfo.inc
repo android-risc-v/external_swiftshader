@@ -199,104 +199,112 @@ extern const MCRegisterInfo::SubRegCoveredBits RISCVSubRegIdxRanges[] = {
   { 0, 32 },	// sub_32
 };
 
+
+#ifdef __GNUC__
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Woverlength-strings"
+#endif
 extern const char RISCVRegStrings[] = {
-  /* 0 */ 'X', '1', '0', 0,
-  /* 4 */ 'X', '2', '0', 0,
-  /* 8 */ 'X', '3', '0', 0,
-  /* 12 */ 'X', '0', 0,
-  /* 15 */ 'X', '1', '1', 0,
-  /* 19 */ 'X', '2', '1', 0,
-  /* 23 */ 'X', '3', '1', 0,
-  /* 27 */ 'X', '1', 0,
-  /* 30 */ 'X', '1', '2', 0,
-  /* 34 */ 'X', '2', '2', 0,
-  /* 38 */ 'X', '2', 0,
-  /* 41 */ 'X', '1', '3', 0,
-  /* 45 */ 'X', '2', '3', 0,
-  /* 49 */ 'X', '3', 0,
-  /* 52 */ 'X', '1', '4', 0,
-  /* 56 */ 'X', '2', '4', 0,
-  /* 60 */ 'X', '4', 0,
-  /* 63 */ 'X', '1', '5', 0,
-  /* 67 */ 'X', '2', '5', 0,
-  /* 71 */ 'X', '5', 0,
-  /* 74 */ 'X', '1', '6', 0,
-  /* 78 */ 'X', '2', '6', 0,
-  /* 82 */ 'X', '6', 0,
-  /* 85 */ 'X', '1', '7', 0,
-  /* 89 */ 'X', '2', '7', 0,
-  /* 93 */ 'X', '7', 0,
-  /* 96 */ 'X', '1', '8', 0,
-  /* 100 */ 'X', '2', '8', 0,
-  /* 104 */ 'X', '8', 0,
-  /* 107 */ 'X', '1', '9', 0,
-  /* 111 */ 'X', '2', '9', 0,
-  /* 115 */ 'X', '9', 0,
-  /* 118 */ 'F', '1', '0', '_', 'D', 0,
-  /* 124 */ 'F', '2', '0', '_', 'D', 0,
-  /* 130 */ 'F', '3', '0', '_', 'D', 0,
-  /* 136 */ 'F', '0', '_', 'D', 0,
-  /* 141 */ 'F', '1', '1', '_', 'D', 0,
-  /* 147 */ 'F', '2', '1', '_', 'D', 0,
-  /* 153 */ 'F', '3', '1', '_', 'D', 0,
-  /* 159 */ 'F', '1', '_', 'D', 0,
-  /* 164 */ 'F', '1', '2', '_', 'D', 0,
-  /* 170 */ 'F', '2', '2', '_', 'D', 0,
-  /* 176 */ 'F', '2', '_', 'D', 0,
-  /* 181 */ 'F', '1', '3', '_', 'D', 0,
-  /* 187 */ 'F', '2', '3', '_', 'D', 0,
-  /* 193 */ 'F', '3', '_', 'D', 0,
-  /* 198 */ 'F', '1', '4', '_', 'D', 0,
-  /* 204 */ 'F', '2', '4', '_', 'D', 0,
-  /* 210 */ 'F', '4', '_', 'D', 0,
-  /* 215 */ 'F', '1', '5', '_', 'D', 0,
-  /* 221 */ 'F', '2', '5', '_', 'D', 0,
-  /* 227 */ 'F', '5', '_', 'D', 0,
-  /* 232 */ 'F', '1', '6', '_', 'D', 0,
-  /* 238 */ 'F', '2', '6', '_', 'D', 0,
-  /* 244 */ 'F', '6', '_', 'D', 0,
-  /* 249 */ 'F', '1', '7', '_', 'D', 0,
-  /* 255 */ 'F', '2', '7', '_', 'D', 0,
-  /* 261 */ 'F', '7', '_', 'D', 0,
-  /* 266 */ 'F', '1', '8', '_', 'D', 0,
-  /* 272 */ 'F', '2', '8', '_', 'D', 0,
-  /* 278 */ 'F', '8', '_', 'D', 0,
-  /* 283 */ 'F', '1', '9', '_', 'D', 0,
-  /* 289 */ 'F', '2', '9', '_', 'D', 0,
-  /* 295 */ 'F', '9', '_', 'D', 0,
-  /* 300 */ 'F', '1', '0', '_', 'F', 0,
-  /* 306 */ 'F', '2', '0', '_', 'F', 0,
-  /* 312 */ 'F', '3', '0', '_', 'F', 0,
-  /* 318 */ 'F', '0', '_', 'F', 0,
-  /* 323 */ 'F', '1', '1', '_', 'F', 0,
-  /* 329 */ 'F', '2', '1', '_', 'F', 0,
-  /* 335 */ 'F', '3', '1', '_', 'F', 0,
-  /* 341 */ 'F', '1', '_', 'F', 0,
-  /* 346 */ 'F', '1', '2', '_', 'F', 0,
-  /* 352 */ 'F', '2', '2', '_', 'F', 0,
-  /* 358 */ 'F', '2', '_', 'F', 0,
-  /* 363 */ 'F', '1', '3', '_', 'F', 0,
-  /* 369 */ 'F', '2', '3', '_', 'F', 0,
-  /* 375 */ 'F', '3', '_', 'F', 0,
-  /* 380 */ 'F', '1', '4', '_', 'F', 0,
-  /* 386 */ 'F', '2', '4', '_', 'F', 0,
-  /* 392 */ 'F', '4', '_', 'F', 0,
-  /* 397 */ 'F', '1', '5', '_', 'F', 0,
-  /* 403 */ 'F', '2', '5', '_', 'F', 0,
-  /* 409 */ 'F', '5', '_', 'F', 0,
-  /* 414 */ 'F', '1', '6', '_', 'F', 0,
-  /* 420 */ 'F', '2', '6', '_', 'F', 0,
-  /* 426 */ 'F', '6', '_', 'F', 0,
-  /* 431 */ 'F', '1', '7', '_', 'F', 0,
-  /* 437 */ 'F', '2', '7', '_', 'F', 0,
-  /* 443 */ 'F', '7', '_', 'F', 0,
-  /* 448 */ 'F', '1', '8', '_', 'F', 0,
-  /* 454 */ 'F', '2', '8', '_', 'F', 0,
-  /* 460 */ 'F', '8', '_', 'F', 0,
-  /* 465 */ 'F', '1', '9', '_', 'F', 0,
-  /* 471 */ 'F', '2', '9', '_', 'F', 0,
-  /* 477 */ 'F', '9', '_', 'F', 0,
+  /* 0 */ "X10\0"
+  /* 4 */ "X20\0"
+  /* 8 */ "X30\0"
+  /* 12 */ "X0\0"
+  /* 15 */ "X11\0"
+  /* 19 */ "X21\0"
+  /* 23 */ "X31\0"
+  /* 27 */ "X1\0"
+  /* 30 */ "X12\0"
+  /* 34 */ "X22\0"
+  /* 38 */ "X2\0"
+  /* 41 */ "X13\0"
+  /* 45 */ "X23\0"
+  /* 49 */ "X3\0"
+  /* 52 */ "X14\0"
+  /* 56 */ "X24\0"
+  /* 60 */ "X4\0"
+  /* 63 */ "X15\0"
+  /* 67 */ "X25\0"
+  /* 71 */ "X5\0"
+  /* 74 */ "X16\0"
+  /* 78 */ "X26\0"
+  /* 82 */ "X6\0"
+  /* 85 */ "X17\0"
+  /* 89 */ "X27\0"
+  /* 93 */ "X7\0"
+  /* 96 */ "X18\0"
+  /* 100 */ "X28\0"
+  /* 104 */ "X8\0"
+  /* 107 */ "X19\0"
+  /* 111 */ "X29\0"
+  /* 115 */ "X9\0"
+  /* 118 */ "F10_D\0"
+  /* 124 */ "F20_D\0"
+  /* 130 */ "F30_D\0"
+  /* 136 */ "F0_D\0"
+  /* 141 */ "F11_D\0"
+  /* 147 */ "F21_D\0"
+  /* 153 */ "F31_D\0"
+  /* 159 */ "F1_D\0"
+  /* 164 */ "F12_D\0"
+  /* 170 */ "F22_D\0"
+  /* 176 */ "F2_D\0"
+  /* 181 */ "F13_D\0"
+  /* 187 */ "F23_D\0"
+  /* 193 */ "F3_D\0"
+  /* 198 */ "F14_D\0"
+  /* 204 */ "F24_D\0"
+  /* 210 */ "F4_D\0"
+  /* 215 */ "F15_D\0"
+  /* 221 */ "F25_D\0"
+  /* 227 */ "F5_D\0"
+  /* 232 */ "F16_D\0"
+  /* 238 */ "F26_D\0"
+  /* 244 */ "F6_D\0"
+  /* 249 */ "F17_D\0"
+  /* 255 */ "F27_D\0"
+  /* 261 */ "F7_D\0"
+  /* 266 */ "F18_D\0"
+  /* 272 */ "F28_D\0"
+  /* 278 */ "F8_D\0"
+  /* 283 */ "F19_D\0"
+  /* 289 */ "F29_D\0"
+  /* 295 */ "F9_D\0"
+  /* 300 */ "F10_F\0"
+  /* 306 */ "F20_F\0"
+  /* 312 */ "F30_F\0"
+  /* 318 */ "F0_F\0"
+  /* 323 */ "F11_F\0"
+  /* 329 */ "F21_F\0"
+  /* 335 */ "F31_F\0"
+  /* 341 */ "F1_F\0"
+  /* 346 */ "F12_F\0"
+  /* 352 */ "F22_F\0"
+  /* 358 */ "F2_F\0"
+  /* 363 */ "F13_F\0"
+  /* 369 */ "F23_F\0"
+  /* 375 */ "F3_F\0"
+  /* 380 */ "F14_F\0"
+  /* 386 */ "F24_F\0"
+  /* 392 */ "F4_F\0"
+  /* 397 */ "F15_F\0"
+  /* 403 */ "F25_F\0"
+  /* 409 */ "F5_F\0"
+  /* 414 */ "F16_F\0"
+  /* 420 */ "F26_F\0"
+  /* 426 */ "F6_F\0"
+  /* 431 */ "F17_F\0"
+  /* 437 */ "F27_F\0"
+  /* 443 */ "F7_F\0"
+  /* 448 */ "F18_F\0"
+  /* 454 */ "F28_F\0"
+  /* 460 */ "F8_F\0"
+  /* 465 */ "F19_F\0"
+  /* 471 */ "F29_F\0"
+  /* 477 */ "F9_F\0"
 };
+#ifdef __GNUC__
+#pragma GCC diagnostic pop
+#endif
 
 extern const MCRegisterDesc RISCVRegDesc[] = { // Descriptors
   { 3, 0, 0, 0, 0, 0 },
@@ -468,139 +476,147 @@ extern const MCPhysReg RISCVRegUnitRoots[][2] = {
 namespace {     // Register classes...
   // FPR32 Register Class...
   const MCPhysReg FPR32[] = {
-    RISCV::F0_F, RISCV::F1_F, RISCV::F2_F, RISCV::F3_F, RISCV::F4_F, RISCV::F5_F, RISCV::F6_F, RISCV::F7_F, RISCV::F10_F, RISCV::F11_F, RISCV::F12_F, RISCV::F13_F, RISCV::F14_F, RISCV::F15_F, RISCV::F16_F, RISCV::F17_F, RISCV::F28_F, RISCV::F29_F, RISCV::F30_F, RISCV::F31_F, RISCV::F8_F, RISCV::F9_F, RISCV::F18_F, RISCV::F19_F, RISCV::F20_F, RISCV::F21_F, RISCV::F22_F, RISCV::F23_F, RISCV::F24_F, RISCV::F25_F, RISCV::F26_F, RISCV::F27_F,
+    RISCV::F0_F, RISCV::F1_F, RISCV::F2_F, RISCV::F3_F, RISCV::F4_F, RISCV::F5_F, RISCV::F6_F, RISCV::F7_F, RISCV::F10_F, RISCV::F11_F, RISCV::F12_F, RISCV::F13_F, RISCV::F14_F, RISCV::F15_F, RISCV::F16_F, RISCV::F17_F, RISCV::F28_F, RISCV::F29_F, RISCV::F30_F, RISCV::F31_F, RISCV::F8_F, RISCV::F9_F, RISCV::F18_F, RISCV::F19_F, RISCV::F20_F, RISCV::F21_F, RISCV::F22_F, RISCV::F23_F, RISCV::F24_F, RISCV::F25_F, RISCV::F26_F, RISCV::F27_F, 
   };
 
   // FPR32 Bit set.
   const uint8_t FPR32Bits[] = {
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xfe, 0xff, 0xff, 0xff, 0x01,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xfe, 0xff, 0xff, 0xff, 0x01, 
   };
 
   // GPR Register Class...
   const MCPhysReg GPR[] = {
-    RISCV::X10, RISCV::X11, RISCV::X12, RISCV::X13, RISCV::X14, RISCV::X15, RISCV::X16, RISCV::X17, RISCV::X5, RISCV::X6, RISCV::X7, RISCV::X28, RISCV::X29, RISCV::X30, RISCV::X31, RISCV::X8, RISCV::X9, RISCV::X18, RISCV::X19, RISCV::X20, RISCV::X21, RISCV::X22, RISCV::X23, RISCV::X24, RISCV::X25, RISCV::X26, RISCV::X27, RISCV::X0, RISCV::X1, RISCV::X2, RISCV::X3, RISCV::X4,
+    RISCV::X10, RISCV::X11, RISCV::X12, RISCV::X13, RISCV::X14, RISCV::X15, RISCV::X16, RISCV::X17, RISCV::X5, RISCV::X6, RISCV::X7, RISCV::X28, RISCV::X29, RISCV::X30, RISCV::X31, RISCV::X8, RISCV::X9, RISCV::X18, RISCV::X19, RISCV::X20, RISCV::X21, RISCV::X22, RISCV::X23, RISCV::X24, RISCV::X25, RISCV::X26, RISCV::X27, RISCV::X0, RISCV::X1, RISCV::X2, RISCV::X3, RISCV::X4, 
   };
 
   // GPR Bit set.
   const uint8_t GPRBits[] = {
-    0xfe, 0xff, 0xff, 0xff, 0x01,
+    0xfe, 0xff, 0xff, 0xff, 0x01, 
   };
 
   // GPRNoX0 Register Class...
   const MCPhysReg GPRNoX0[] = {
-    RISCV::X10, RISCV::X11, RISCV::X12, RISCV::X13, RISCV::X14, RISCV::X15, RISCV::X16, RISCV::X17, RISCV::X5, RISCV::X6, RISCV::X7, RISCV::X28, RISCV::X29, RISCV::X30, RISCV::X31, RISCV::X8, RISCV::X9, RISCV::X18, RISCV::X19, RISCV::X20, RISCV::X21, RISCV::X22, RISCV::X23, RISCV::X24, RISCV::X25, RISCV::X26, RISCV::X27, RISCV::X1, RISCV::X2, RISCV::X3, RISCV::X4,
+    RISCV::X10, RISCV::X11, RISCV::X12, RISCV::X13, RISCV::X14, RISCV::X15, RISCV::X16, RISCV::X17, RISCV::X5, RISCV::X6, RISCV::X7, RISCV::X28, RISCV::X29, RISCV::X30, RISCV::X31, RISCV::X8, RISCV::X9, RISCV::X18, RISCV::X19, RISCV::X20, RISCV::X21, RISCV::X22, RISCV::X23, RISCV::X24, RISCV::X25, RISCV::X26, RISCV::X27, RISCV::X1, RISCV::X2, RISCV::X3, RISCV::X4, 
   };
 
   // GPRNoX0 Bit set.
   const uint8_t GPRNoX0Bits[] = {
-    0xfc, 0xff, 0xff, 0xff, 0x01,
+    0xfc, 0xff, 0xff, 0xff, 0x01, 
   };
 
   // GPRNoX0X2 Register Class...
   const MCPhysReg GPRNoX0X2[] = {
-    RISCV::X10, RISCV::X11, RISCV::X12, RISCV::X13, RISCV::X14, RISCV::X15, RISCV::X16, RISCV::X17, RISCV::X5, RISCV::X6, RISCV::X7, RISCV::X28, RISCV::X29, RISCV::X30, RISCV::X31, RISCV::X8, RISCV::X9, RISCV::X18, RISCV::X19, RISCV::X20, RISCV::X21, RISCV::X22, RISCV::X23, RISCV::X24, RISCV::X25, RISCV::X26, RISCV::X27, RISCV::X1, RISCV::X3, RISCV::X4,
+    RISCV::X10, RISCV::X11, RISCV::X12, RISCV::X13, RISCV::X14, RISCV::X15, RISCV::X16, RISCV::X17, RISCV::X5, RISCV::X6, RISCV::X7, RISCV::X28, RISCV::X29, RISCV::X30, RISCV::X31, RISCV::X8, RISCV::X9, RISCV::X18, RISCV::X19, RISCV::X20, RISCV::X21, RISCV::X22, RISCV::X23, RISCV::X24, RISCV::X25, RISCV::X26, RISCV::X27, RISCV::X1, RISCV::X3, RISCV::X4, 
   };
 
   // GPRNoX0X2 Bit set.
   const uint8_t GPRNoX0X2Bits[] = {
-    0xf4, 0xff, 0xff, 0xff, 0x01,
+    0xf4, 0xff, 0xff, 0xff, 0x01, 
   };
 
   // GPRTC Register Class...
   const MCPhysReg GPRTC[] = {
-    RISCV::X5, RISCV::X6, RISCV::X7, RISCV::X10, RISCV::X11, RISCV::X12, RISCV::X13, RISCV::X14, RISCV::X15, RISCV::X16, RISCV::X17, RISCV::X28, RISCV::X29, RISCV::X30, RISCV::X31,
+    RISCV::X5, RISCV::X6, RISCV::X7, RISCV::X10, RISCV::X11, RISCV::X12, RISCV::X13, RISCV::X14, RISCV::X15, RISCV::X16, RISCV::X17, RISCV::X28, RISCV::X29, RISCV::X30, RISCV::X31, 
   };
 
   // GPRTC Bit set.
   const uint8_t GPRTCBits[] = {
-    0xc0, 0xf9, 0x07, 0xe0, 0x01,
+    0xc0, 0xf9, 0x07, 0xe0, 0x01, 
   };
 
   // FPR32C Register Class...
   const MCPhysReg FPR32C[] = {
-    RISCV::F10_F, RISCV::F11_F, RISCV::F12_F, RISCV::F13_F, RISCV::F14_F, RISCV::F15_F, RISCV::F8_F, RISCV::F9_F,
+    RISCV::F10_F, RISCV::F11_F, RISCV::F12_F, RISCV::F13_F, RISCV::F14_F, RISCV::F15_F, RISCV::F8_F, RISCV::F9_F, 
   };
 
   // FPR32C Bit set.
   const uint8_t FPR32CBits[] = {
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xfe, 0x01,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xfe, 0x01, 
   };
 
   // GPRC Register Class...
   const MCPhysReg GPRC[] = {
-    RISCV::X10, RISCV::X11, RISCV::X12, RISCV::X13, RISCV::X14, RISCV::X15, RISCV::X8, RISCV::X9,
+    RISCV::X10, RISCV::X11, RISCV::X12, RISCV::X13, RISCV::X14, RISCV::X15, RISCV::X8, RISCV::X9, 
   };
 
   // GPRC Bit set.
   const uint8_t GPRCBits[] = {
-    0x00, 0xfe, 0x01,
+    0x00, 0xfe, 0x01, 
   };
 
   // GPRC_and_GPRTC Register Class...
   const MCPhysReg GPRC_and_GPRTC[] = {
-    RISCV::X10, RISCV::X11, RISCV::X12, RISCV::X13, RISCV::X14, RISCV::X15,
+    RISCV::X10, RISCV::X11, RISCV::X12, RISCV::X13, RISCV::X14, RISCV::X15, 
   };
 
   // GPRC_and_GPRTC Bit set.
   const uint8_t GPRC_and_GPRTCBits[] = {
-    0x00, 0xf8, 0x01,
+    0x00, 0xf8, 0x01, 
   };
 
   // GPRX0 Register Class...
   const MCPhysReg GPRX0[] = {
-    RISCV::X0,
+    RISCV::X0, 
   };
 
   // GPRX0 Bit set.
   const uint8_t GPRX0Bits[] = {
-    0x02,
+    0x02, 
   };
 
   // SP Register Class...
   const MCPhysReg SP[] = {
-    RISCV::X2,
+    RISCV::X2, 
   };
 
   // SP Bit set.
   const uint8_t SPBits[] = {
-    0x08,
+    0x08, 
   };
 
   // FPR64 Register Class...
   const MCPhysReg FPR64[] = {
-    RISCV::F0_D, RISCV::F1_D, RISCV::F2_D, RISCV::F3_D, RISCV::F4_D, RISCV::F5_D, RISCV::F6_D, RISCV::F7_D, RISCV::F10_D, RISCV::F11_D, RISCV::F12_D, RISCV::F13_D, RISCV::F14_D, RISCV::F15_D, RISCV::F16_D, RISCV::F17_D, RISCV::F28_D, RISCV::F29_D, RISCV::F30_D, RISCV::F31_D, RISCV::F8_D, RISCV::F9_D, RISCV::F18_D, RISCV::F19_D, RISCV::F20_D, RISCV::F21_D, RISCV::F22_D, RISCV::F23_D, RISCV::F24_D, RISCV::F25_D, RISCV::F26_D, RISCV::F27_D,
+    RISCV::F0_D, RISCV::F1_D, RISCV::F2_D, RISCV::F3_D, RISCV::F4_D, RISCV::F5_D, RISCV::F6_D, RISCV::F7_D, RISCV::F10_D, RISCV::F11_D, RISCV::F12_D, RISCV::F13_D, RISCV::F14_D, RISCV::F15_D, RISCV::F16_D, RISCV::F17_D, RISCV::F28_D, RISCV::F29_D, RISCV::F30_D, RISCV::F31_D, RISCV::F8_D, RISCV::F9_D, RISCV::F18_D, RISCV::F19_D, RISCV::F20_D, RISCV::F21_D, RISCV::F22_D, RISCV::F23_D, RISCV::F24_D, RISCV::F25_D, RISCV::F26_D, RISCV::F27_D, 
   };
 
   // FPR64 Bit set.
   const uint8_t FPR64Bits[] = {
-    0x00, 0x00, 0x00, 0x00, 0xfe, 0xff, 0xff, 0xff, 0x01,
+    0x00, 0x00, 0x00, 0x00, 0xfe, 0xff, 0xff, 0xff, 0x01, 
   };
 
   // FPR64C Register Class...
   const MCPhysReg FPR64C[] = {
-    RISCV::F10_D, RISCV::F11_D, RISCV::F12_D, RISCV::F13_D, RISCV::F14_D, RISCV::F15_D, RISCV::F8_D, RISCV::F9_D,
+    RISCV::F10_D, RISCV::F11_D, RISCV::F12_D, RISCV::F13_D, RISCV::F14_D, RISCV::F15_D, RISCV::F8_D, RISCV::F9_D, 
   };
 
   // FPR64C Bit set.
   const uint8_t FPR64CBits[] = {
-    0x00, 0x00, 0x00, 0x00, 0x00, 0xfe, 0x01,
+    0x00, 0x00, 0x00, 0x00, 0x00, 0xfe, 0x01, 
   };
 
 } // end anonymous namespace
 
+
+#ifdef __GNUC__
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Woverlength-strings"
+#endif
 extern const char RISCVRegClassStrings[] = {
-  /* 0 */ 'G', 'P', 'R', 'X', '0', 0,
-  /* 6 */ 'G', 'P', 'R', 'N', 'o', 'X', '0', 0,
-  /* 14 */ 'F', 'P', 'R', '3', '2', 0,
-  /* 20 */ 'G', 'P', 'R', 'N', 'o', 'X', '0', 'X', '2', 0,
-  /* 30 */ 'F', 'P', 'R', '6', '4', 0,
-  /* 36 */ 'F', 'P', 'R', '3', '2', 'C', 0,
-  /* 43 */ 'F', 'P', 'R', '6', '4', 'C', 0,
-  /* 50 */ 'G', 'P', 'R', 'C', 0,
-  /* 55 */ 'G', 'P', 'R', 'C', '_', 'a', 'n', 'd', '_', 'G', 'P', 'R', 'T', 'C', 0,
-  /* 70 */ 'S', 'P', 0,
-  /* 73 */ 'G', 'P', 'R', 0,
+  /* 0 */ "GPRX0\0"
+  /* 6 */ "GPRNoX0\0"
+  /* 14 */ "FPR32\0"
+  /* 20 */ "GPRNoX0X2\0"
+  /* 30 */ "FPR64\0"
+  /* 36 */ "FPR32C\0"
+  /* 43 */ "FPR64C\0"
+  /* 50 */ "GPRC\0"
+  /* 55 */ "GPRC_and_GPRTC\0"
+  /* 70 */ "SP\0"
+  /* 73 */ "GPR\0"
 };
+#ifdef __GNUC__
+#pragma GCC diagnostic pop
+#endif
 
 extern const MCRegisterClass RISCVMCRegisterClasses[] = {
   { FPR32, FPR32Bits, 14, 32, sizeof(FPR32Bits), RISCV::FPR32RegClassID, 1, true },
@@ -1227,53 +1243,53 @@ static const TargetRegisterInfo::RegClassInfo RegClassInfos[] = {
 static const TargetRegisterClass *const NullRegClasses[] = { nullptr };
 
 static const uint32_t FPR32SubClassMask[] = {
-  0x00000021,
+  0x00000021, 
   0x00000c00, // sub_32
 };
 
 static const uint32_t GPRSubClassMask[] = {
-  0x000003de,
+  0x000003de, 
 };
 
 static const uint32_t GPRNoX0SubClassMask[] = {
-  0x000002dc,
+  0x000002dc, 
 };
 
 static const uint32_t GPRNoX0X2SubClassMask[] = {
-  0x000000d8,
+  0x000000d8, 
 };
 
 static const uint32_t GPRTCSubClassMask[] = {
-  0x00000090,
+  0x00000090, 
 };
 
 static const uint32_t FPR32CSubClassMask[] = {
-  0x00000020,
+  0x00000020, 
   0x00000800, // sub_32
 };
 
 static const uint32_t GPRCSubClassMask[] = {
-  0x000000c0,
+  0x000000c0, 
 };
 
 static const uint32_t GPRC_and_GPRTCSubClassMask[] = {
-  0x00000080,
+  0x00000080, 
 };
 
 static const uint32_t GPRX0SubClassMask[] = {
-  0x00000100,
+  0x00000100, 
 };
 
 static const uint32_t SPSubClassMask[] = {
-  0x00000200,
+  0x00000200, 
 };
 
 static const uint32_t FPR64SubClassMask[] = {
-  0x00000c00,
+  0x00000c00, 
 };
 
 static const uint32_t FPR64CSubClassMask[] = {
-  0x00000800,
+  0x00000800, 
 };
 
 static const uint16_t SuperRegIdxSeqs[] = {

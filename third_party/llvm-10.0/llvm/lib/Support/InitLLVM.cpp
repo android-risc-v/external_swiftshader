@@ -15,7 +15,7 @@
 #include <string>
 
 #ifdef _WIN32
-#include "llvm/Support/Windows/WindowsSupport.h"
+#include "Windows/WindowsSupport.h"
 #endif
 
 using namespace llvm;

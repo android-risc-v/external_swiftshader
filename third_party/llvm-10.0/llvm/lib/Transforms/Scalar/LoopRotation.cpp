@@ -81,8 +81,10 @@ public:
   void getAnalysisUsage(AnalysisUsage &AU) const override {
     AU.addRequired<AssumptionCacheTracker>();
     AU.addRequired<TargetTransformInfoWrapperPass>();
-    if (EnableMSSALoopDependency)
+    if (EnableMSSALoopDependency) {
+      AU.addRequired<MemorySSAWrapperPass>();
       AU.addPreserved<MemorySSAWrapperPass>();
+    }
     getLoopAnalysisUsage(AU);
   }
 
@@ -99,18 +101,15 @@ public:
     const SimplifyQuery SQ = getBestSimplifyQuery(*this, F);
     Optional<MemorySSAUpdater> MSSAU;
     if (EnableMSSALoopDependency) {
-      // Not requiring MemorySSA and getting it only if available will split
-      // the loop pass pipeline when LoopRotate is being run first.
-      auto *MSSAA = getAnalysisIfAvailable<MemorySSAWrapperPass>();
-      if (MSSAA)
-        MSSAU = MemorySSAUpdater(&MSSAA->getMSSA());
+      MemorySSA *MSSA = &getAnalysis<MemorySSAWrapperPass>().getMSSA();
+      MSSAU = MemorySSAUpdater(MSSA);
     }
     return LoopRotation(L, LI, TTI, AC, &DT, &SE,
                         MSSAU.hasValue() ? MSSAU.getPointer() : nullptr, SQ,
                         false, MaxHeaderSize, false);
   }
 };
-}
+} // end namespace
 
 char LoopRotateLegacyPass::ID = 0;
 INITIALIZE_PASS_BEGIN(LoopRotateLegacyPass, "loop-rotate", "Rotate Loops",

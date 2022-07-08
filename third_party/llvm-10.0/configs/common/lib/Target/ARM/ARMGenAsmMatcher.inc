@@ -2607,19 +2607,13 @@ enum InstructionConversionKind {
   Convert__Reg1_1__Reg1_1__Reg1_2__CondCode2_0,
   Convert__Reg1_2__NEONi16splatNot1_3__Tie0_3_3__CondCode2_0,
   Convert__Reg1_2__NEONi32splatNot1_3__Tie0_3_3__CondCode2_0,
-  Convert__Reg1_2__imm_95_0__InvertedExpandImm0_161_3__VPTPredN2_0,
-  Convert__Reg1_2__imm_95_0__InvertedExpandImm8_161_3__VPTPredN2_0,
-  Convert__Reg1_2__imm_95_0__InvertedExpandImm0_321_3__VPTPredN2_0,
-  Convert__Reg1_2__imm_95_0__InvertedExpandImm8_321_3__VPTPredN2_0,
-  Convert__Reg1_2__imm_95_0__InvertedExpandImm16_321_3__VPTPredN2_0,
-  Convert__Reg1_2__imm_95_0__InvertedExpandImm24_321_3__VPTPredN2_0,
+  Convert__Reg1_2__Tie0_3_3__NEONi16splatNot1_3__VPTPredN2_0,
+  Convert__Reg1_2__Tie0_3_3__NEONi32splatNot1_3__VPTPredN2_0,
   Convert__Reg1_1__Reg1_2__Reg1_3__VPTPredR3_0,
   Convert__Reg1_2__NEONi16splat1_3__Tie0_1_1__CondCode2_0,
   Convert__Reg1_2__NEONi32splat1_3__Tie0_1_1__CondCode2_0,
-  Convert__Reg1_2__Tie0_1_1__ExpandImm01_3__VPTPredN2_0,
-  Convert__Reg1_2__Tie0_1_1__ExpandImm81_3__VPTPredN2_0,
-  Convert__Reg1_2__Tie0_1_1__ExpandImm161_3__VPTPredN2_0,
-  Convert__Reg1_2__Tie0_1_1__ExpandImm241_3__VPTPredN2_0,
+  Convert__Reg1_2__Tie0_1_1__NEONi16splat1_3__VPTPredN2_0,
+  Convert__Reg1_2__Tie0_1_1__NEONi32splat1_3__VPTPredN2_0,
   Convert__Reg1_1__Tie0_1_1__Reg1_2__Reg1_3__CondCode2_0,
   Convert__Reg1_2__Tie0_3_3__Reg1_3__Reg1_4__CondCode2_0,
   Convert__Reg1_1__Reg1_2__Reg1_3__ComplexRotationOdd1_4,
@@ -3622,32 +3616,20 @@ static const uint8_t ConversionTable[CVT_NUM_SIGNATURES][17] = {
   { CVT_95_Reg, 3, CVT_95_addNEONi16splatNotOperands, 4, CVT_Tied, Tie0_3_3, CVT_95_addCondCodeOperands, 1, CVT_Done },
   // Convert__Reg1_2__NEONi32splatNot1_3__Tie0_3_3__CondCode2_0
   { CVT_95_Reg, 3, CVT_95_addNEONi32splatNotOperands, 4, CVT_Tied, Tie0_3_3, CVT_95_addCondCodeOperands, 1, CVT_Done },
-  // Convert__Reg1_2__imm_95_0__InvertedExpandImm0_161_3__VPTPredN2_0
-  { CVT_95_Reg, 3, CVT_imm_95_0, 0, CVT_95_addImmOperands, 4, CVT_95_addVPTPredNOperands, 1, CVT_Done },
-  // Convert__Reg1_2__imm_95_0__InvertedExpandImm8_161_3__VPTPredN2_0
-  { CVT_95_Reg, 3, CVT_imm_95_0, 0, CVT_95_addImmOperands, 4, CVT_95_addVPTPredNOperands, 1, CVT_Done },
-  // Convert__Reg1_2__imm_95_0__InvertedExpandImm0_321_3__VPTPredN2_0
-  { CVT_95_Reg, 3, CVT_imm_95_0, 0, CVT_95_addImmOperands, 4, CVT_95_addVPTPredNOperands, 1, CVT_Done },
-  // Convert__Reg1_2__imm_95_0__InvertedExpandImm8_321_3__VPTPredN2_0
-  { CVT_95_Reg, 3, CVT_imm_95_0, 0, CVT_95_addImmOperands, 4, CVT_95_addVPTPredNOperands, 1, CVT_Done },
-  // Convert__Reg1_2__imm_95_0__InvertedExpandImm16_321_3__VPTPredN2_0
-  { CVT_95_Reg, 3, CVT_imm_95_0, 0, CVT_95_addImmOperands, 4, CVT_95_addVPTPredNOperands, 1, CVT_Done },
-  // Convert__Reg1_2__imm_95_0__InvertedExpandImm24_321_3__VPTPredN2_0
-  { CVT_95_Reg, 3, CVT_imm_95_0, 0, CVT_95_addImmOperands, 4, CVT_95_addVPTPredNOperands, 1, CVT_Done },
+  // Convert__Reg1_2__Tie0_3_3__NEONi16splatNot1_3__VPTPredN2_0
+  { CVT_95_Reg, 3, CVT_Tied, Tie0_3_3, CVT_95_addNEONi16splatNotOperands, 4, CVT_95_addVPTPredNOperands, 1, CVT_Done },
+  // Convert__Reg1_2__Tie0_3_3__NEONi32splatNot1_3__VPTPredN2_0
+  { CVT_95_Reg, 3, CVT_Tied, Tie0_3_3, CVT_95_addNEONi32splatNotOperands, 4, CVT_95_addVPTPredNOperands, 1, CVT_Done },
   // Convert__Reg1_1__Reg1_2__Reg1_3__VPTPredR3_0
   { CVT_95_Reg, 2, CVT_95_Reg, 3, CVT_95_Reg, 4, CVT_95_addVPTPredROperands, 1, CVT_Done },
   // Convert__Reg1_2__NEONi16splat1_3__Tie0_1_1__CondCode2_0
   { CVT_95_Reg, 3, CVT_95_addNEONi16splatOperands, 4, CVT_Tied, Tie0_1_1, CVT_95_addCondCodeOperands, 1, CVT_Done },
   // Convert__Reg1_2__NEONi32splat1_3__Tie0_1_1__CondCode2_0
   { CVT_95_Reg, 3, CVT_95_addNEONi32splatOperands, 4, CVT_Tied, Tie0_1_1, CVT_95_addCondCodeOperands, 1, CVT_Done },
-  // Convert__Reg1_2__Tie0_1_1__ExpandImm01_3__VPTPredN2_0
-  { CVT_95_Reg, 3, CVT_Tied, Tie0_1_1, CVT_95_addImmOperands, 4, CVT_95_addVPTPredNOperands, 1, CVT_Done },
-  // Convert__Reg1_2__Tie0_1_1__ExpandImm81_3__VPTPredN2_0
-  { CVT_95_Reg, 3, CVT_Tied, Tie0_1_1, CVT_95_addImmOperands, 4, CVT_95_addVPTPredNOperands, 1, CVT_Done },
-  // Convert__Reg1_2__Tie0_1_1__ExpandImm161_3__VPTPredN2_0
-  { CVT_95_Reg, 3, CVT_Tied, Tie0_1_1, CVT_95_addImmOperands, 4, CVT_95_addVPTPredNOperands, 1, CVT_Done },
-  // Convert__Reg1_2__Tie0_1_1__ExpandImm241_3__VPTPredN2_0
-  { CVT_95_Reg, 3, CVT_Tied, Tie0_1_1, CVT_95_addImmOperands, 4, CVT_95_addVPTPredNOperands, 1, CVT_Done },
+  // Convert__Reg1_2__Tie0_1_1__NEONi16splat1_3__VPTPredN2_0
+  { CVT_95_Reg, 3, CVT_Tied, Tie0_1_1, CVT_95_addNEONi16splatOperands, 4, CVT_95_addVPTPredNOperands, 1, CVT_Done },
+  // Convert__Reg1_2__Tie0_1_1__NEONi32splat1_3__VPTPredN2_0
+  { CVT_95_Reg, 3, CVT_Tied, Tie0_1_1, CVT_95_addNEONi32splatOperands, 4, CVT_95_addVPTPredNOperands, 1, CVT_Done },
   // Convert__Reg1_1__Tie0_1_1__Reg1_2__Reg1_3__CondCode2_0
   { CVT_95_Reg, 2, CVT_Tied, Tie0_1_1, CVT_95_Reg, 3, CVT_95_Reg, 4, CVT_95_addCondCodeOperands, 1, CVT_Done },
   // Convert__Reg1_2__Tie0_3_3__Reg1_3__Reg1_4__CondCode2_0
@@ -5848,23 +5830,13 @@ enum MatchClassKind {
   MCK_NEONi32vmovi16Replicate, // user defined class 'anonymous_5662'
   MCK_NEONi64vmovi16Replicate, // user defined class 'anonymous_5665'
   MCK_NEONi64vmovi32Replicate, // user defined class 'anonymous_5672'
-  MCK_ExpandImm0, // user defined class 'anonymous_6197'
-  MCK_ExpandImm8, // user defined class 'anonymous_6198'
-  MCK_ExpandImm16, // user defined class 'anonymous_6199'
-  MCK_ExpandImm24, // user defined class 'anonymous_6200'
-  MCK_InvertedExpandImm0_16, // user defined class 'anonymous_6201'
-  MCK_InvertedExpandImm8_16, // user defined class 'anonymous_6202'
-  MCK_InvertedExpandImm0_32, // user defined class 'anonymous_6203'
-  MCK_InvertedExpandImm8_32, // user defined class 'anonymous_6204'
-  MCK_InvertedExpandImm16_32, // user defined class 'anonymous_6205'
-  MCK_InvertedExpandImm24_32, // user defined class 'anonymous_6206'
-  MCK_MVEVectorIndex4, // user defined class 'anonymous_6484'
-  MCK_MVEVectorIndex8, // user defined class 'anonymous_6486'
-  MCK_MVEVectorIndex16, // user defined class 'anonymous_6488'
-  MCK_MVEVcvtImm32, // user defined class 'anonymous_6982'
-  MCK_MVEVcvtImm16, // user defined class 'anonymous_6984'
-  MCK_TMemImm7Shift0Offset, // user defined class 'anonymous_7320'
-  MCK_TMemImm7Shift1Offset, // user defined class 'anonymous_7323'
+  MCK_MVEVectorIndex4, // user defined class 'anonymous_6482'
+  MCK_MVEVectorIndex8, // user defined class 'anonymous_6484'
+  MCK_MVEVectorIndex16, // user defined class 'anonymous_6486'
+  MCK_MVEVcvtImm32, // user defined class 'anonymous_6999'
+  MCK_MVEVcvtImm16, // user defined class 'anonymous_7001'
+  MCK_TMemImm7Shift0Offset, // user defined class 'anonymous_7446'
+  MCK_TMemImm7Shift1Offset, // user defined class 'anonymous_7449'
   MCK_ConstPoolAsmImm, // user defined class 'const_pool_asm_operand'
   MCK_FBits16, // user defined class 'fbits16_asm_operand'
   MCK_FBits32, // user defined class 'fbits32_asm_operand'
@@ -8590,76 +8562,6 @@ static unsigned validateOperandClass(MCParsedAsmOperand &GOp, MatchClassKind Kin
       return MCTargetAsmParser::Match_Success;
     break;
     }
-  // 'ExpandImm0' class
-  case MCK_ExpandImm0: {
-    DiagnosticPredicate DP(Operand.isExpImm<0>());
-    if (DP.isMatch())
-      return MCTargetAsmParser::Match_Success;
-    break;
-    }
-  // 'ExpandImm8' class
-  case MCK_ExpandImm8: {
-    DiagnosticPredicate DP(Operand.isExpImm<8>());
-    if (DP.isMatch())
-      return MCTargetAsmParser::Match_Success;
-    break;
-    }
-  // 'ExpandImm16' class
-  case MCK_ExpandImm16: {
-    DiagnosticPredicate DP(Operand.isExpImm<16>());
-    if (DP.isMatch())
-      return MCTargetAsmParser::Match_Success;
-    break;
-    }
-  // 'ExpandImm24' class
-  case MCK_ExpandImm24: {
-    DiagnosticPredicate DP(Operand.isExpImm<24>());
-    if (DP.isMatch())
-      return MCTargetAsmParser::Match_Success;
-    break;
-    }
-  // 'InvertedExpandImm0_16' class
-  case MCK_InvertedExpandImm0_16: {
-    DiagnosticPredicate DP(Operand.isInvertedExpImm<0,16>());
-    if (DP.isMatch())
-      return MCTargetAsmParser::Match_Success;
-    break;
-    }
-  // 'InvertedExpandImm8_16' class
-  case MCK_InvertedExpandImm8_16: {
-    DiagnosticPredicate DP(Operand.isInvertedExpImm<8,16>());
-    if (DP.isMatch())
-      return MCTargetAsmParser::Match_Success;
-    break;
-    }
-  // 'InvertedExpandImm0_32' class
-  case MCK_InvertedExpandImm0_32: {
-    DiagnosticPredicate DP(Operand.isInvertedExpImm<0,32>());
-    if (DP.isMatch())
-      return MCTargetAsmParser::Match_Success;
-    break;
-    }
-  // 'InvertedExpandImm8_32' class
-  case MCK_InvertedExpandImm8_32: {
-    DiagnosticPredicate DP(Operand.isInvertedExpImm<8,32>());
-    if (DP.isMatch())
-      return MCTargetAsmParser::Match_Success;
-    break;
-    }
-  // 'InvertedExpandImm16_32' class
-  case MCK_InvertedExpandImm16_32: {
-    DiagnosticPredicate DP(Operand.isInvertedExpImm<16,32>());
-    if (DP.isMatch())
-      return MCTargetAsmParser::Match_Success;
-    break;
-    }
-  // 'InvertedExpandImm24_32' class
-  case MCK_InvertedExpandImm24_32: {
-    DiagnosticPredicate DP(Operand.isInvertedExpImm<24,32>());
-    if (DP.isMatch())
-      return MCTargetAsmParser::Match_Success;
-    break;
-    }
   // 'MVEVectorIndex4' class
   case MCK_MVEVectorIndex4: {
     DiagnosticPredicate DP(Operand.isVectorIndexInRange<4>());
@@ -9679,16 +9581,6 @@ const char *getMatchClassName(MatchClassKind Kind) {
   case MCK_NEONi32vmovi16Replicate: return "MCK_NEONi32vmovi16Replicate";
   case MCK_NEONi64vmovi16Replicate: return "MCK_NEONi64vmovi16Replicate";
   case MCK_NEONi64vmovi32Replicate: return "MCK_NEONi64vmovi32Replicate";
-  case MCK_ExpandImm0: return "MCK_ExpandImm0";
-  case MCK_ExpandImm8: return "MCK_ExpandImm8";
-  case MCK_ExpandImm16: return "MCK_ExpandImm16";
-  case MCK_ExpandImm24: return "MCK_ExpandImm24";
-  case MCK_InvertedExpandImm0_16: return "MCK_InvertedExpandImm0_16";
-  case MCK_InvertedExpandImm8_16: return "MCK_InvertedExpandImm8_16";
-  case MCK_InvertedExpandImm0_32: return "MCK_InvertedExpandImm0_32";
-  case MCK_InvertedExpandImm8_32: return "MCK_InvertedExpandImm8_32";
-  case MCK_InvertedExpandImm16_32: return "MCK_InvertedExpandImm16_32";
-  case MCK_InvertedExpandImm24_32: return "MCK_InvertedExpandImm24_32";
   case MCK_MVEVectorIndex4: return "MCK_MVEVectorIndex4";
   case MCK_MVEVectorIndex8: return "MCK_MVEVectorIndex8";
   case MCK_MVEVectorIndex16: return "MCK_MVEVectorIndex16";
@@ -11789,12 +11681,8 @@ static const MatchEntry MatchTable0[] = {
   { 2080 /* vand */, ARM::VANDd, Convert__Reg1_2__Reg1_2__Reg1_3__CondCode2_0, AMFBS_HasNEON, { MCK_CondCode, MCK__DOT_8, MCK_DPR, MCK_DPR }, },
   { 2080 /* vand */, ARM::VANDq, Convert__Reg1_1__Reg1_2__Reg1_3__CondCode2_0, AMFBS_HasNEON, { MCK_CondCode, MCK_QPR, MCK_QPR, MCK_QPR }, },
   { 2080 /* vand */, ARM::VANDd, Convert__Reg1_1__Reg1_2__Reg1_3__CondCode2_0, AMFBS_HasNEON, { MCK_CondCode, MCK_DPR, MCK_DPR, MCK_DPR }, },
-  { 2080 /* vand */, ARM::MVE_VANDIZ0v8i16, Convert__Reg1_2__imm_95_0__InvertedExpandImm0_161_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i16, MCK_MQPR, MCK_InvertedExpandImm0_16 }, },
-  { 2080 /* vand */, ARM::MVE_VANDIZ8v8i16, Convert__Reg1_2__imm_95_0__InvertedExpandImm8_161_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i16, MCK_MQPR, MCK_InvertedExpandImm8_16 }, },
-  { 2080 /* vand */, ARM::MVE_VANDIZ0v4i32, Convert__Reg1_2__imm_95_0__InvertedExpandImm0_321_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_InvertedExpandImm0_32 }, },
-  { 2080 /* vand */, ARM::MVE_VANDIZ8v4i32, Convert__Reg1_2__imm_95_0__InvertedExpandImm8_321_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_InvertedExpandImm8_32 }, },
-  { 2080 /* vand */, ARM::MVE_VANDIZ16v4i32, Convert__Reg1_2__imm_95_0__InvertedExpandImm16_321_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_InvertedExpandImm16_32 }, },
-  { 2080 /* vand */, ARM::MVE_VANDIZ24v4i32, Convert__Reg1_2__imm_95_0__InvertedExpandImm24_321_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_InvertedExpandImm24_32 }, },
+  { 2080 /* vand */, ARM::MVE_VBICimmi16, Convert__Reg1_2__Tie0_3_3__NEONi16splatNot1_3__VPTPredN2_0, AMFBS_HasMVEInt_IsThumb, { MCK_VPTPredN, MCK__DOT_i16, MCK_MQPR, MCK_NEONi16splatNot }, },
+  { 2080 /* vand */, ARM::MVE_VBICimmi32, Convert__Reg1_2__Tie0_3_3__NEONi32splatNot1_3__VPTPredN2_0, AMFBS_HasMVEInt_IsThumb, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_NEONi32splatNot }, },
   { 2080 /* vand */, ARM::MVE_VAND, Convert__Reg1_1__Reg1_2__Reg1_3__VPTPredR3_0, AMFBS_HasMVEInt, { MCK_VPTPredR, MCK_MQPR, MCK_MQPR, MCK_MQPR }, },
   { 2080 /* vand */, ARM::VANDq, Convert__Reg1_2__Reg1_3__Reg1_4__CondCode2_0, AMFBS_HasNEON, { MCK_CondCode, MCK__DOT_16, MCK_QPR, MCK_QPR, MCK_QPR }, },
   { 2080 /* vand */, ARM::VANDd, Convert__Reg1_2__Reg1_3__Reg1_4__CondCode2_0, AMFBS_HasNEON, { MCK_CondCode, MCK__DOT_16, MCK_DPR, MCK_DPR, MCK_DPR }, },
@@ -11823,12 +11711,8 @@ static const MatchEntry MatchTable0[] = {
   { 2085 /* vbic */, ARM::VBICiv2i32, Convert__Reg1_2__NEONi32splat1_3__Tie0_1_1__CondCode2_0, AMFBS_HasNEON, { MCK_CondCode, MCK__DOT_i32, MCK_DPR, MCK_NEONi32splat }, },
   { 2085 /* vbic */, ARM::VBICq, Convert__Reg1_1__Reg1_2__Reg1_3__CondCode2_0, AMFBS_HasNEON, { MCK_CondCode, MCK_QPR, MCK_QPR, MCK_QPR }, },
   { 2085 /* vbic */, ARM::VBICd, Convert__Reg1_1__Reg1_2__Reg1_3__CondCode2_0, AMFBS_HasNEON, { MCK_CondCode, MCK_DPR, MCK_DPR, MCK_DPR }, },
-  { 2085 /* vbic */, ARM::MVE_VBICIZ0v8i16, Convert__Reg1_2__Tie0_1_1__ExpandImm01_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i16, MCK_MQPR, MCK_ExpandImm0 }, },
-  { 2085 /* vbic */, ARM::MVE_VBICIZ8v8i16, Convert__Reg1_2__Tie0_1_1__ExpandImm81_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i16, MCK_MQPR, MCK_ExpandImm8 }, },
-  { 2085 /* vbic */, ARM::MVE_VBICIZ0v4i32, Convert__Reg1_2__Tie0_1_1__ExpandImm01_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_ExpandImm0 }, },
-  { 2085 /* vbic */, ARM::MVE_VBICIZ8v4i32, Convert__Reg1_2__Tie0_1_1__ExpandImm81_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_ExpandImm8 }, },
-  { 2085 /* vbic */, ARM::MVE_VBICIZ16v4i32, Convert__Reg1_2__Tie0_1_1__ExpandImm161_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_ExpandImm16 }, },
-  { 2085 /* vbic */, ARM::MVE_VBICIZ24v4i32, Convert__Reg1_2__Tie0_1_1__ExpandImm241_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_ExpandImm24 }, },
+  { 2085 /* vbic */, ARM::MVE_VBICimmi16, Convert__Reg1_2__Tie0_1_1__NEONi16splat1_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i16, MCK_MQPR, MCK_NEONi16splat }, },
+  { 2085 /* vbic */, ARM::MVE_VBICimmi32, Convert__Reg1_2__Tie0_1_1__NEONi32splat1_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_NEONi32splat }, },
   { 2085 /* vbic */, ARM::MVE_VBIC, Convert__Reg1_1__Reg1_2__Reg1_3__VPTPredR3_0, AMFBS_HasMVEInt, { MCK_VPTPredR, MCK_MQPR, MCK_MQPR, MCK_MQPR }, },
   { 2085 /* vbic */, ARM::VBICq, Convert__Reg1_2__Reg1_3__Reg1_4__CondCode2_0, AMFBS_HasNEON, { MCK_CondCode, MCK__DOT_16, MCK_QPR, MCK_QPR, MCK_QPR }, },
   { 2085 /* vbic */, ARM::VBICd, Convert__Reg1_2__Reg1_3__Reg1_4__CondCode2_0, AMFBS_HasNEON, { MCK_CondCode, MCK__DOT_16, MCK_DPR, MCK_DPR, MCK_DPR }, },
@@ -13519,12 +13403,8 @@ static const MatchEntry MatchTable0[] = {
   { 2893 /* vnmul */, ARM::VNMULH, Convert__Reg1_2__Reg1_3__Reg1_4__CondCode2_0, AMFBS_HasFullFP16, { MCK_CondCode, MCK__DOT_f16, MCK_HPR, MCK_HPR, MCK_HPR }, },
   { 2899 /* vorn */, ARM::VORNq, Convert__Reg1_1__Reg1_2__Reg1_3__CondCode2_0, AMFBS_HasNEON, { MCK_CondCode, MCK_QPR, MCK_QPR, MCK_QPR }, },
   { 2899 /* vorn */, ARM::VORNd, Convert__Reg1_1__Reg1_2__Reg1_3__CondCode2_0, AMFBS_HasNEON, { MCK_CondCode, MCK_DPR, MCK_DPR, MCK_DPR }, },
-  { 2899 /* vorn */, ARM::MVE_VORNIZ0v8i16, Convert__Reg1_2__imm_95_0__InvertedExpandImm0_161_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i16, MCK_MQPR, MCK_InvertedExpandImm0_16 }, },
-  { 2899 /* vorn */, ARM::MVE_VORNIZ8v8i16, Convert__Reg1_2__imm_95_0__InvertedExpandImm8_161_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i16, MCK_MQPR, MCK_InvertedExpandImm8_16 }, },
-  { 2899 /* vorn */, ARM::MVE_VORNIZ0v4i32, Convert__Reg1_2__imm_95_0__InvertedExpandImm0_321_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_InvertedExpandImm0_32 }, },
-  { 2899 /* vorn */, ARM::MVE_VORNIZ8v4i32, Convert__Reg1_2__imm_95_0__InvertedExpandImm8_321_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_InvertedExpandImm8_32 }, },
-  { 2899 /* vorn */, ARM::MVE_VORNIZ16v4i32, Convert__Reg1_2__imm_95_0__InvertedExpandImm16_321_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_InvertedExpandImm16_32 }, },
-  { 2899 /* vorn */, ARM::MVE_VORNIZ24v4i32, Convert__Reg1_2__imm_95_0__InvertedExpandImm24_321_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_InvertedExpandImm24_32 }, },
+  { 2899 /* vorn */, ARM::MVE_VORRimmi16, Convert__Reg1_2__Tie0_3_3__NEONi16splatNot1_3__VPTPredN2_0, AMFBS_HasMVEInt_IsThumb, { MCK_VPTPredN, MCK__DOT_i16, MCK_MQPR, MCK_NEONi16splatNot }, },
+  { 2899 /* vorn */, ARM::MVE_VORRimmi32, Convert__Reg1_2__Tie0_3_3__NEONi32splatNot1_3__VPTPredN2_0, AMFBS_HasMVEInt_IsThumb, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_NEONi32splatNot }, },
   { 2899 /* vorn */, ARM::MVE_VORN, Convert__Reg1_1__Reg1_2__Reg1_3__VPTPredR3_0, AMFBS_HasMVEInt, { MCK_VPTPredR, MCK_MQPR, MCK_MQPR, MCK_MQPR }, },
   { 2899 /* vorn */, ARM::MVE_VORN, Convert__Reg1_2__Reg1_3__Reg1_4__VPTPredR3_0, AMFBS_HasMVEInt_IsThumb, { MCK_VPTPredR, MCK__DOT_s16, MCK_MQPR, MCK_MQPR, MCK_MQPR }, },
   { 2899 /* vorn */, ARM::MVE_VORN, Convert__Reg1_2__Reg1_3__Reg1_4__VPTPredR3_0, AMFBS_HasMVEInt_IsThumb, { MCK_VPTPredR, MCK__DOT_s32, MCK_MQPR, MCK_MQPR, MCK_MQPR }, },
@@ -13553,12 +13433,8 @@ static const MatchEntry MatchTable0[] = {
   { 2904 /* vorr */, ARM::VORRd, Convert__Reg1_2__Reg1_2__Reg1_3__CondCode2_0, AMFBS_HasNEON, { MCK_CondCode, MCK__DOT_8, MCK_DPR, MCK_DPR }, },
   { 2904 /* vorr */, ARM::VORRq, Convert__Reg1_1__Reg1_2__Reg1_3__CondCode2_0, AMFBS_HasNEON, { MCK_CondCode, MCK_QPR, MCK_QPR, MCK_QPR }, },
   { 2904 /* vorr */, ARM::VORRd, Convert__Reg1_1__Reg1_2__Reg1_3__CondCode2_0, AMFBS_HasNEON, { MCK_CondCode, MCK_DPR, MCK_DPR, MCK_DPR }, },
-  { 2904 /* vorr */, ARM::MVE_VORRIZ0v8i16, Convert__Reg1_2__Tie0_1_1__ExpandImm01_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i16, MCK_MQPR, MCK_ExpandImm0 }, },
-  { 2904 /* vorr */, ARM::MVE_VORRIZ8v8i16, Convert__Reg1_2__Tie0_1_1__ExpandImm81_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i16, MCK_MQPR, MCK_ExpandImm8 }, },
-  { 2904 /* vorr */, ARM::MVE_VORRIZ0v4i32, Convert__Reg1_2__Tie0_1_1__ExpandImm01_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_ExpandImm0 }, },
-  { 2904 /* vorr */, ARM::MVE_VORRIZ8v4i32, Convert__Reg1_2__Tie0_1_1__ExpandImm81_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_ExpandImm8 }, },
-  { 2904 /* vorr */, ARM::MVE_VORRIZ16v4i32, Convert__Reg1_2__Tie0_1_1__ExpandImm161_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_ExpandImm16 }, },
-  { 2904 /* vorr */, ARM::MVE_VORRIZ24v4i32, Convert__Reg1_2__Tie0_1_1__ExpandImm241_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_ExpandImm24 }, },
+  { 2904 /* vorr */, ARM::MVE_VORRimmi16, Convert__Reg1_2__Tie0_1_1__NEONi16splat1_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i16, MCK_MQPR, MCK_NEONi16splat }, },
+  { 2904 /* vorr */, ARM::MVE_VORRimmi32, Convert__Reg1_2__Tie0_1_1__NEONi32splat1_3__VPTPredN2_0, AMFBS_HasMVEInt, { MCK_VPTPredN, MCK__DOT_i32, MCK_MQPR, MCK_NEONi32splat }, },
   { 2904 /* vorr */, ARM::MVE_VORR, Convert__Reg1_1__Reg1_2__Reg1_3__VPTPredR3_0, AMFBS_HasMVEInt, { MCK_VPTPredR, MCK_MQPR, MCK_MQPR, MCK_MQPR }, },
   { 2904 /* vorr */, ARM::VORRq, Convert__Reg1_2__Reg1_3__Reg1_4__CondCode2_0, AMFBS_HasNEON, { MCK_CondCode, MCK__DOT_16, MCK_QPR, MCK_QPR, MCK_QPR }, },
   { 2904 /* vorr */, ARM::VORRd, Convert__Reg1_2__Reg1_3__Reg1_4__CondCode2_0, AMFBS_HasNEON, { MCK_CondCode, MCK__DOT_16, MCK_DPR, MCK_DPR, MCK_DPR }, },

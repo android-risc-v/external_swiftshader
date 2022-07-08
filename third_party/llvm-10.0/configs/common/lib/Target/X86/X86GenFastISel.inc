@@ -200,137 +200,9 @@ unsigned fastEmit_ISD_ANY_EXTEND_MVT_i8_r(MVT RetVT, unsigned Op0, bool Op0IsKil
   return fastEmitInst_r(X86::MOVZX32rr8, &X86::GR32RegClass, Op0, Op0IsKill);
 }
 
-unsigned fastEmit_ISD_ANY_EXTEND_MVT_v2i1_r(MVT RetVT, unsigned Op0, bool Op0IsKill) {
-  if (RetVT.SimpleTy != MVT::v2i64)
-    return 0;
-  if ((Subtarget->hasDQI()) && (Subtarget->hasVLX())) {
-    return fastEmitInst_r(X86::VPMOVM2QZ128rr, &X86::VR128XRegClass, Op0, Op0IsKill);
-  }
-  return 0;
-}
-
-unsigned fastEmit_ISD_ANY_EXTEND_MVT_v4i1_MVT_v4i32_r(unsigned Op0, bool Op0IsKill) {
-  if ((Subtarget->hasDQI()) && (Subtarget->hasVLX())) {
-    return fastEmitInst_r(X86::VPMOVM2DZ128rr, &X86::VR128XRegClass, Op0, Op0IsKill);
-  }
-  return 0;
-}
-
-unsigned fastEmit_ISD_ANY_EXTEND_MVT_v4i1_MVT_v4i64_r(unsigned Op0, bool Op0IsKill) {
-  if ((Subtarget->hasDQI()) && (Subtarget->hasVLX())) {
-    return fastEmitInst_r(X86::VPMOVM2QZ256rr, &X86::VR256XRegClass, Op0, Op0IsKill);
-  }
-  return 0;
-}
-
-unsigned fastEmit_ISD_ANY_EXTEND_MVT_v4i1_r(MVT RetVT, unsigned Op0, bool Op0IsKill) {
-switch (RetVT.SimpleTy) {
-  case MVT::v4i32: return fastEmit_ISD_ANY_EXTEND_MVT_v4i1_MVT_v4i32_r(Op0, Op0IsKill);
-  case MVT::v4i64: return fastEmit_ISD_ANY_EXTEND_MVT_v4i1_MVT_v4i64_r(Op0, Op0IsKill);
-  default: return 0;
-}
-}
-
-unsigned fastEmit_ISD_ANY_EXTEND_MVT_v8i1_MVT_v8i16_r(unsigned Op0, bool Op0IsKill) {
-  if ((Subtarget->hasBWI()) && (Subtarget->hasVLX())) {
-    return fastEmitInst_r(X86::VPMOVM2WZ128rr, &X86::VR128XRegClass, Op0, Op0IsKill);
-  }
-  return 0;
-}
-
-unsigned fastEmit_ISD_ANY_EXTEND_MVT_v8i1_MVT_v8i32_r(unsigned Op0, bool Op0IsKill) {
-  if ((Subtarget->hasDQI()) && (Subtarget->hasVLX())) {
-    return fastEmitInst_r(X86::VPMOVM2DZ256rr, &X86::VR256XRegClass, Op0, Op0IsKill);
-  }
-  return 0;
-}
-
-unsigned fastEmit_ISD_ANY_EXTEND_MVT_v8i1_MVT_v8i64_r(unsigned Op0, bool Op0IsKill) {
-  if ((Subtarget->hasDQI())) {
-    return fastEmitInst_r(X86::VPMOVM2QZrr, &X86::VR512RegClass, Op0, Op0IsKill);
-  }
-  return 0;
-}
-
-unsigned fastEmit_ISD_ANY_EXTEND_MVT_v8i1_r(MVT RetVT, unsigned Op0, bool Op0IsKill) {
-switch (RetVT.SimpleTy) {
-  case MVT::v8i16: return fastEmit_ISD_ANY_EXTEND_MVT_v8i1_MVT_v8i16_r(Op0, Op0IsKill);
-  case MVT::v8i32: return fastEmit_ISD_ANY_EXTEND_MVT_v8i1_MVT_v8i32_r(Op0, Op0IsKill);
-  case MVT::v8i64: return fastEmit_ISD_ANY_EXTEND_MVT_v8i1_MVT_v8i64_r(Op0, Op0IsKill);
-  default: return 0;
-}
-}
-
-unsigned fastEmit_ISD_ANY_EXTEND_MVT_v16i1_MVT_v16i8_r(unsigned Op0, bool Op0IsKill) {
-  if ((Subtarget->hasBWI()) && (Subtarget->hasVLX())) {
-    return fastEmitInst_r(X86::VPMOVM2BZ128rr, &X86::VR128XRegClass, Op0, Op0IsKill);
-  }
-  return 0;
-}
-
-unsigned fastEmit_ISD_ANY_EXTEND_MVT_v16i1_MVT_v16i16_r(unsigned Op0, bool Op0IsKill) {
-  if ((Subtarget->hasBWI()) && (Subtarget->hasVLX())) {
-    return fastEmitInst_r(X86::VPMOVM2WZ256rr, &X86::VR256XRegClass, Op0, Op0IsKill);
-  }
-  return 0;
-}
-
-unsigned fastEmit_ISD_ANY_EXTEND_MVT_v16i1_MVT_v16i32_r(unsigned Op0, bool Op0IsKill) {
-  if ((Subtarget->hasDQI())) {
-    return fastEmitInst_r(X86::VPMOVM2DZrr, &X86::VR512RegClass, Op0, Op0IsKill);
-  }
-  return 0;
-}
-
-unsigned fastEmit_ISD_ANY_EXTEND_MVT_v16i1_r(MVT RetVT, unsigned Op0, bool Op0IsKill) {
-switch (RetVT.SimpleTy) {
-  case MVT::v16i8: return fastEmit_ISD_ANY_EXTEND_MVT_v16i1_MVT_v16i8_r(Op0, Op0IsKill);
-  case MVT::v16i16: return fastEmit_ISD_ANY_EXTEND_MVT_v16i1_MVT_v16i16_r(Op0, Op0IsKill);
-  case MVT::v16i32: return fastEmit_ISD_ANY_EXTEND_MVT_v16i1_MVT_v16i32_r(Op0, Op0IsKill);
-  default: return 0;
-}
-}
-
-unsigned fastEmit_ISD_ANY_EXTEND_MVT_v32i1_MVT_v32i8_r(unsigned Op0, bool Op0IsKill) {
-  if ((Subtarget->hasBWI()) && (Subtarget->hasVLX())) {
-    return fastEmitInst_r(X86::VPMOVM2BZ256rr, &X86::VR256XRegClass, Op0, Op0IsKill);
-  }
-  return 0;
-}
-
-unsigned fastEmit_ISD_ANY_EXTEND_MVT_v32i1_MVT_v32i16_r(unsigned Op0, bool Op0IsKill) {
-  if ((Subtarget->hasBWI())) {
-    return fastEmitInst_r(X86::VPMOVM2WZrr, &X86::VR512RegClass, Op0, Op0IsKill);
-  }
-  return 0;
-}
-
-unsigned fastEmit_ISD_ANY_EXTEND_MVT_v32i1_r(MVT RetVT, unsigned Op0, bool Op0IsKill) {
-switch (RetVT.SimpleTy) {
-  case MVT::v32i8: return fastEmit_ISD_ANY_EXTEND_MVT_v32i1_MVT_v32i8_r(Op0, Op0IsKill);
-  case MVT::v32i16: return fastEmit_ISD_ANY_EXTEND_MVT_v32i1_MVT_v32i16_r(Op0, Op0IsKill);
-  default: return 0;
-}
-}
-
-unsigned fastEmit_ISD_ANY_EXTEND_MVT_v64i1_r(MVT RetVT, unsigned Op0, bool Op0IsKill) {
-  if (RetVT.SimpleTy != MVT::v64i8)
-    return 0;
-  if ((Subtarget->hasBWI())) {
-    return fastEmitInst_r(X86::VPMOVM2BZrr, &X86::VR512RegClass, Op0, Op0IsKill);
-  }
-  return 0;
-}
-
 unsigned fastEmit_ISD_ANY_EXTEND_r(MVT VT, MVT RetVT, unsigned Op0, bool Op0IsKill) {
   switch (VT.SimpleTy) {
   case MVT::i8: return fastEmit_ISD_ANY_EXTEND_MVT_i8_r(RetVT, Op0, Op0IsKill);
-  case MVT::v2i1: return fastEmit_ISD_ANY_EXTEND_MVT_v2i1_r(RetVT, Op0, Op0IsKill);
-  case MVT::v4i1: return fastEmit_ISD_ANY_EXTEND_MVT_v4i1_r(RetVT, Op0, Op0IsKill);
-  case MVT::v8i1: return fastEmit_ISD_ANY_EXTEND_MVT_v8i1_r(RetVT, Op0, Op0IsKill);
-  case MVT::v16i1: return fastEmit_ISD_ANY_EXTEND_MVT_v16i1_r(RetVT, Op0, Op0IsKill);
-  case MVT::v32i1: return fastEmit_ISD_ANY_EXTEND_MVT_v32i1_r(RetVT, Op0, Op0IsKill);
-  case MVT::v64i1: return fastEmit_ISD_ANY_EXTEND_MVT_v64i1_r(RetVT, Op0, Op0IsKill);
   default: return 0;
   }
 }
@@ -1225,6 +1097,124 @@ unsigned fastEmit_ISD_FSQRT_r(MVT VT, MVT RetVT, unsigned Op0, bool Op0IsKill) {
   case MVT::v2f64: return fastEmit_ISD_FSQRT_MVT_v2f64_r(RetVT, Op0, Op0IsKill);
   case MVT::v4f64: return fastEmit_ISD_FSQRT_MVT_v4f64_r(RetVT, Op0, Op0IsKill);
   case MVT::v8f64: return fastEmit_ISD_FSQRT_MVT_v8f64_r(RetVT, Op0, Op0IsKill);
+  default: return 0;
+  }
+}
+
+// FastEmit functions for ISD::LLRINT.
+
+unsigned fastEmit_ISD_LLRINT_MVT_f32_r(MVT RetVT, unsigned Op0, bool Op0IsKill) {
+  if (RetVT.SimpleTy != MVT::i64)
+    return 0;
+  if ((Subtarget->hasAVX512())) {
+    return fastEmitInst_r(X86::VCVTSS2SI64Zrr, &X86::GR64RegClass, Op0, Op0IsKill);
+  }
+  if ((Subtarget->hasSSE1() && !Subtarget->hasAVX())) {
+    return fastEmitInst_r(X86::CVTSS2SI64rr, &X86::GR64RegClass, Op0, Op0IsKill);
+  }
+  if ((Subtarget->hasAVX() && !Subtarget->hasAVX512())) {
+    return fastEmitInst_r(X86::VCVTSS2SI64rr, &X86::GR64RegClass, Op0, Op0IsKill);
+  }
+  return 0;
+}
+
+unsigned fastEmit_ISD_LLRINT_MVT_f64_r(MVT RetVT, unsigned Op0, bool Op0IsKill) {
+  if (RetVT.SimpleTy != MVT::i64)
+    return 0;
+  if ((Subtarget->hasAVX512())) {
+    return fastEmitInst_r(X86::VCVTSD2SI64Zrr, &X86::GR64RegClass, Op0, Op0IsKill);
+  }
+  if ((Subtarget->hasSSE2() && !Subtarget->hasAVX())) {
+    return fastEmitInst_r(X86::CVTSD2SI64rr, &X86::GR64RegClass, Op0, Op0IsKill);
+  }
+  if ((Subtarget->hasAVX() && !Subtarget->hasAVX512())) {
+    return fastEmitInst_r(X86::VCVTSD2SI64rr, &X86::GR64RegClass, Op0, Op0IsKill);
+  }
+  return 0;
+}
+
+unsigned fastEmit_ISD_LLRINT_r(MVT VT, MVT RetVT, unsigned Op0, bool Op0IsKill) {
+  switch (VT.SimpleTy) {
+  case MVT::f32: return fastEmit_ISD_LLRINT_MVT_f32_r(RetVT, Op0, Op0IsKill);
+  case MVT::f64: return fastEmit_ISD_LLRINT_MVT_f64_r(RetVT, Op0, Op0IsKill);
+  default: return 0;
+  }
+}
+
+// FastEmit functions for ISD::LRINT.
+
+unsigned fastEmit_ISD_LRINT_MVT_f32_MVT_i32_r(unsigned Op0, bool Op0IsKill) {
+  if ((Subtarget->hasAVX512())) {
+    return fastEmitInst_r(X86::VCVTSS2SIZrr, &X86::GR32RegClass, Op0, Op0IsKill);
+  }
+  if ((Subtarget->hasSSE1() && !Subtarget->hasAVX())) {
+    return fastEmitInst_r(X86::CVTSS2SIrr, &X86::GR32RegClass, Op0, Op0IsKill);
+  }
+  if ((Subtarget->hasAVX() && !Subtarget->hasAVX512())) {
+    return fastEmitInst_r(X86::VCVTSS2SIrr, &X86::GR32RegClass, Op0, Op0IsKill);
+  }
+  return 0;
+}
+
+unsigned fastEmit_ISD_LRINT_MVT_f32_MVT_i64_r(unsigned Op0, bool Op0IsKill) {
+  if ((Subtarget->hasAVX512())) {
+    return fastEmitInst_r(X86::VCVTSS2SI64Zrr, &X86::GR64RegClass, Op0, Op0IsKill);
+  }
+  if ((Subtarget->hasSSE1() && !Subtarget->hasAVX())) {
+    return fastEmitInst_r(X86::CVTSS2SI64rr, &X86::GR64RegClass, Op0, Op0IsKill);
+  }
+  if ((Subtarget->hasAVX() && !Subtarget->hasAVX512())) {
+    return fastEmitInst_r(X86::VCVTSS2SI64rr, &X86::GR64RegClass, Op0, Op0IsKill);
+  }
+  return 0;
+}
+
+unsigned fastEmit_ISD_LRINT_MVT_f32_r(MVT RetVT, unsigned Op0, bool Op0IsKill) {
+switch (RetVT.SimpleTy) {
+  case MVT::i32: return fastEmit_ISD_LRINT_MVT_f32_MVT_i32_r(Op0, Op0IsKill);
+  case MVT::i64: return fastEmit_ISD_LRINT_MVT_f32_MVT_i64_r(Op0, Op0IsKill);
+  default: return 0;
+}
+}
+
+unsigned fastEmit_ISD_LRINT_MVT_f64_MVT_i32_r(unsigned Op0, bool Op0IsKill) {
+  if ((Subtarget->hasAVX512())) {
+    return fastEmitInst_r(X86::VCVTSD2SIZrr, &X86::GR32RegClass, Op0, Op0IsKill);
+  }
+  if ((Subtarget->hasSSE2() && !Subtarget->hasAVX())) {
+    return fastEmitInst_r(X86::CVTSD2SIrr, &X86::GR32RegClass, Op0, Op0IsKill);
+  }
+  if ((Subtarget->hasAVX() && !Subtarget->hasAVX512())) {
+    return fastEmitInst_r(X86::VCVTSD2SIrr, &X86::GR32RegClass, Op0, Op0IsKill);
+  }
+  return 0;
+}
+
+unsigned fastEmit_ISD_LRINT_MVT_f64_MVT_i64_r(unsigned Op0, bool Op0IsKill) {
+  if ((Subtarget->hasAVX512())) {
+    return fastEmitInst_r(X86::VCVTSD2SI64Zrr, &X86::GR64RegClass, Op0, Op0IsKill);
+  }
+  if ((Subtarget->hasSSE2() && !Subtarget->hasAVX())) {
+    return fastEmitInst_r(X86::CVTSD2SI64rr, &X86::GR64RegClass, Op0, Op0IsKill);
+  }
+  if ((Subtarget->hasAVX() && !Subtarget->hasAVX512())) {
+    return fastEmitInst_r(X86::VCVTSD2SI64rr, &X86::GR64RegClass, Op0, Op0IsKill);
+  }
+  return 0;
+}
+
+unsigned fastEmit_ISD_LRINT_MVT_f64_r(MVT RetVT, unsigned Op0, bool Op0IsKill) {
+switch (RetVT.SimpleTy) {
+  case MVT::i32: return fastEmit_ISD_LRINT_MVT_f64_MVT_i32_r(Op0, Op0IsKill);
+  case MVT::i64: return fastEmit_ISD_LRINT_MVT_f64_MVT_i64_r(Op0, Op0IsKill);
+  default: return 0;
+}
+}
+
+unsigned fastEmit_ISD_LRINT_r(MVT VT, MVT RetVT, unsigned Op0, bool Op0IsKill) {
+  switch (VT.SimpleTy) {
+  case MVT::f32: return fastEmit_ISD_LRINT_MVT_f32_r(RetVT, Op0, Op0IsKill);
+  case MVT::f64: return fastEmit_ISD_LRINT_MVT_f64_r(RetVT, Op0, Op0IsKill);
   default: return 0;
   }
 }
@@ -6874,6 +6864,8 @@ unsigned fastEmit_r(MVT VT, MVT RetVT, unsigned Opcode, unsigned Op0, bool Op0Is
   case ISD::FP_TO_SINT: return fastEmit_ISD_FP_TO_SINT_r(VT, RetVT, Op0, Op0IsKill);
   case ISD::FP_TO_UINT: return fastEmit_ISD_FP_TO_UINT_r(VT, RetVT, Op0, Op0IsKill);
   case ISD::FSQRT: return fastEmit_ISD_FSQRT_r(VT, RetVT, Op0, Op0IsKill);
+  case ISD::LLRINT: return fastEmit_ISD_LLRINT_r(VT, RetVT, Op0, Op0IsKill);
+  case ISD::LRINT: return fastEmit_ISD_LRINT_r(VT, RetVT, Op0, Op0IsKill);
   case ISD::SCALAR_TO_VECTOR: return fastEmit_ISD_SCALAR_TO_VECTOR_r(VT, RetVT, Op0, Op0IsKill);
   case ISD::SIGN_EXTEND: return fastEmit_ISD_SIGN_EXTEND_r(VT, RetVT, Op0, Op0IsKill);
   case ISD::SIGN_EXTEND_VECTOR_INREG: return fastEmit_ISD_SIGN_EXTEND_VECTOR_INREG_r(VT, RetVT, Op0, Op0IsKill);

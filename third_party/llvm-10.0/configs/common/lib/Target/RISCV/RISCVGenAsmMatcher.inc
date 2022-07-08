@@ -54,6 +54,7 @@
   Match_InvalidFenceArg,
   Match_InvalidImmXLenLI,
   Match_InvalidImmZero,
+  Match_InvalidPseudoJumpSymbol,
   Match_InvalidSImm10Lsb0000NonZero,
   Match_InvalidSImm12,
   Match_InvalidSImm12Lsb0,
@@ -729,6 +730,7 @@ enum InstructionConversionKind {
   Convert__regX0__Reg1_0__imm_95_0,
   Convert__regX0__Reg1_0__SImm121_1,
   Convert__regX0__Reg1_2__SImm121_0,
+  Convert__Reg1_1__PseudoJumpSymbol1_0,
   Convert__Reg1_0__BareSymbol1_1,
   Convert__Reg1_0__ImmXLenLI1_1,
   Convert__Reg1_0__AtomicMemOpOperand1_1,
@@ -900,6 +902,8 @@ static const uint8_t ConversionTable[CVT_NUM_SIGNATURES][11] = {
   { CVT_regX0, 0, CVT_95_Reg, 1, CVT_95_addImmOperands, 2, CVT_Done },
   // Convert__regX0__Reg1_2__SImm121_0
   { CVT_regX0, 0, CVT_95_Reg, 3, CVT_95_addImmOperands, 1, CVT_Done },
+  // Convert__Reg1_1__PseudoJumpSymbol1_0
+  { CVT_95_Reg, 2, CVT_95_addImmOperands, 1, CVT_Done },
   // Convert__Reg1_0__BareSymbol1_1
   { CVT_95_Reg, 1, CVT_95_addImmOperands, 2, CVT_Done },
   // Convert__Reg1_0__ImmXLenLI1_1
@@ -1192,6 +1196,7 @@ enum MatchClassKind {
   MCK_FenceArg, // user defined class 'FenceArg'
   MCK_Imm, // user defined class 'ImmAsmOperand'
   MCK_ImmZero, // user defined class 'ImmZeroAsmOperand'
+  MCK_PseudoJumpSymbol, // user defined class 'PseudoJumpSymbol'
   MCK_SImm21Lsb0JAL, // user defined class 'Simm21Lsb0JALAsmOperand'
   MCK_TPRelAddSymbol, // user defined class 'TPRelAddSymbol'
   MCK_UImmLog2XLen, // user defined class 'UImmLog2XLenAsmOperand'
@@ -1387,6 +1392,15 @@ static unsigned validateOperandClass(MCParsedAsmOperand &GOp, MatchClassKind Kin
       return MCTargetAsmParser::Match_Success;
     if (DP.isNearMatch())
       return RISCVAsmParser::Match_InvalidImmZero;
+    break;
+    }
+  // 'PseudoJumpSymbol' class
+  case MCK_PseudoJumpSymbol: {
+    DiagnosticPredicate DP(Operand.isPseudoJumpSymbol());
+    if (DP.isMatch())
+      return MCTargetAsmParser::Match_Success;
+    if (DP.isNearMatch())
+      return RISCVAsmParser::Match_InvalidPseudoJumpSymbol;
     break;
     }
   // 'SImm21Lsb0JAL' class
@@ -1710,6 +1724,7 @@ const char *getMatchClassName(MatchClassKind Kind) {
   case MCK_FenceArg: return "MCK_FenceArg";
   case MCK_Imm: return "MCK_Imm";
   case MCK_ImmZero: return "MCK_ImmZero";
+  case MCK_PseudoJumpSymbol: return "MCK_PseudoJumpSymbol";
   case MCK_SImm21Lsb0JAL: return "MCK_SImm21Lsb0JAL";
   case MCK_TPRelAddSymbol: return "MCK_TPRelAddSymbol";
   case MCK_UImmLog2XLen: return "MCK_UImmLog2XLen";
@@ -1833,18 +1848,18 @@ static const char *const MnemonicTable =
     "fnmsub.d\010fnmsub.s\005frcsr\007frflags\004frrm\004frsr\005fscsr\003fs"
     "d\007fsflags\010fsflagsi\007fsgnj.d\007fsgnj.s\010fsgnjn.d\010fsgnjn.s\010"
     "fsgnjx.d\010fsgnjx.s\007fsqrt.d\007fsqrt.s\004fsrm\005fsrmi\004fssr\006"
-    "fsub.d\006fsub.s\003fsw\001j\003jal\004jalr\002jr\002la\tla.tls.gd\tla."
-    "tls.ie\002lb\003lbu\002ld\002lh\003lhu\002li\003lla\004lr.d\007lr.d.aq\t"
-    "lr.d.aqrl\007lr.d.rl\004lr.w\007lr.w.aq\tlr.w.aqrl\007lr.w.rl\003lui\002"
-    "lw\003lwu\004mret\003mul\004mulh\006mulhsu\005mulhu\004mulw\002mv\003ne"
-    "g\004negw\003nop\003not\002or\003ori\007rdcycle\010rdcycleh\trdinstret\n"
-    "rdinstreth\006rdtime\007rdtimeh\003rem\004remu\005remuw\004remw\003ret\002"
-    "sb\004sc.d\007sc.d.aq\tsc.d.aqrl\007sc.d.rl\004sc.w\007sc.w.aq\tsc.w.aq"
-    "rl\007sc.w.rl\002sd\004seqz\006sext.w\nsfence.vma\003sgt\004sgtu\004sgt"
-    "z\002sh\003sll\004slli\005slliw\004sllw\003slt\004slti\005sltiu\004sltu"
-    "\004sltz\004snez\003sra\004srai\005sraiw\004sraw\004sret\003srl\004srli"
-    "\005srliw\004srlw\003sub\004subw\002sw\004tail\005unimp\004uret\003wfi\003"
-    "xor\004xori";
+    "fsub.d\006fsub.s\003fsw\001j\003jal\004jalr\002jr\004jump\002la\tla.tls"
+    ".gd\tla.tls.ie\002lb\003lbu\002ld\002lh\003lhu\002li\003lla\004lr.d\007"
+    "lr.d.aq\tlr.d.aqrl\007lr.d.rl\004lr.w\007lr.w.aq\tlr.w.aqrl\007lr.w.rl\003"
+    "lui\002lw\003lwu\004mret\003mul\004mulh\006mulhsu\005mulhu\004mulw\002m"
+    "v\003neg\004negw\003nop\003not\002or\003ori\007rdcycle\010rdcycleh\trdi"
+    "nstret\nrdinstreth\006rdtime\007rdtimeh\003rem\004remu\005remuw\004remw"
+    "\003ret\002sb\004sc.d\007sc.d.aq\tsc.d.aqrl\007sc.d.rl\004sc.w\007sc.w."
+    "aq\tsc.w.aqrl\007sc.w.rl\002sd\004seqz\006sext.w\nsfence.vma\003sgt\004"
+    "sgtu\004sgtz\002sh\003sll\004slli\005slliw\004sllw\003slt\004slti\005sl"
+    "tiu\004sltu\004sltz\004snez\003sra\004srai\005sraiw\004sraw\004sret\003"
+    "srl\004srli\005srliw\004srlw\003sub\004subw\002sw\004tail\005unimp\004u"
+    "ret\003wfi\003xor\004xori";
 
 // Feature bitsets.
 enum : uint8_t {
@@ -2257,130 +2272,131 @@ static const MatchEntry MatchTable0[] = {
   { 2054 /* jr */, RISCV::JALR, Convert__regX0__Reg1_0__imm_95_0, AMFBS_None, { MCK_GPR }, },
   { 2054 /* jr */, RISCV::JALR, Convert__regX0__Reg1_0__SImm121_1, AMFBS_None, { MCK_GPR, MCK_SImm12 }, },
   { 2054 /* jr */, RISCV::JALR, Convert__regX0__Reg1_2__SImm121_0, AMFBS_None, { MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2057 /* la */, RISCV::PseudoLA, Convert__Reg1_0__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol }, },
-  { 2060 /* la.tls.gd */, RISCV::PseudoLA_TLS_GD, Convert__Reg1_0__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol }, },
-  { 2070 /* la.tls.ie */, RISCV::PseudoLA_TLS_IE, Convert__Reg1_0__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol }, },
-  { 2080 /* lb */, RISCV::PseudoLB, Convert__Reg1_0__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol }, },
-  { 2080 /* lb */, RISCV::LB, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_None, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2080 /* lb */, RISCV::LB, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_None, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2083 /* lbu */, RISCV::PseudoLBU, Convert__Reg1_0__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol }, },
-  { 2083 /* lbu */, RISCV::LBU, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_None, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2083 /* lbu */, RISCV::LBU, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_None, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2087 /* ld */, RISCV::PseudoLD, Convert__Reg1_0__BareSymbol1_1, AMFBS_IsRV64, { MCK_GPR, MCK_BareSymbol }, },
-  { 2087 /* ld */, RISCV::LD, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_IsRV64, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2087 /* ld */, RISCV::LD, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_IsRV64, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2090 /* lh */, RISCV::PseudoLH, Convert__Reg1_0__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol }, },
-  { 2090 /* lh */, RISCV::LH, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_None, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2090 /* lh */, RISCV::LH, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_None, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2093 /* lhu */, RISCV::PseudoLHU, Convert__Reg1_0__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol }, },
-  { 2093 /* lhu */, RISCV::LHU, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_None, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2093 /* lhu */, RISCV::LHU, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_None, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2097 /* li */, RISCV::PseudoLI, Convert__Reg1_0__ImmXLenLI1_1, AMFBS_None, { MCK_GPR, MCK_ImmXLenLI }, },
-  { 2100 /* lla */, RISCV::PseudoLLA, Convert__Reg1_0__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol }, },
-  { 2104 /* lr.d */, RISCV::LR_D, Convert__Reg1_0__AtomicMemOpOperand1_1, AMFBS_HasStdExtA_IsRV64, { MCK_GPR, MCK_AtomicMemOpOperand }, },
-  { 2109 /* lr.d.aq */, RISCV::LR_D_AQ, Convert__Reg1_0__AtomicMemOpOperand1_1, AMFBS_HasStdExtA_IsRV64, { MCK_GPR, MCK_AtomicMemOpOperand }, },
-  { 2117 /* lr.d.aqrl */, RISCV::LR_D_AQ_RL, Convert__Reg1_0__AtomicMemOpOperand1_1, AMFBS_HasStdExtA_IsRV64, { MCK_GPR, MCK_AtomicMemOpOperand }, },
-  { 2127 /* lr.d.rl */, RISCV::LR_D_RL, Convert__Reg1_0__AtomicMemOpOperand1_1, AMFBS_HasStdExtA_IsRV64, { MCK_GPR, MCK_AtomicMemOpOperand }, },
-  { 2135 /* lr.w */, RISCV::LR_W, Convert__Reg1_0__AtomicMemOpOperand1_1, AMFBS_HasStdExtA, { MCK_GPR, MCK_AtomicMemOpOperand }, },
-  { 2140 /* lr.w.aq */, RISCV::LR_W_AQ, Convert__Reg1_0__AtomicMemOpOperand1_1, AMFBS_HasStdExtA, { MCK_GPR, MCK_AtomicMemOpOperand }, },
-  { 2148 /* lr.w.aqrl */, RISCV::LR_W_AQ_RL, Convert__Reg1_0__AtomicMemOpOperand1_1, AMFBS_HasStdExtA, { MCK_GPR, MCK_AtomicMemOpOperand }, },
-  { 2158 /* lr.w.rl */, RISCV::LR_W_RL, Convert__Reg1_0__AtomicMemOpOperand1_1, AMFBS_HasStdExtA, { MCK_GPR, MCK_AtomicMemOpOperand }, },
-  { 2166 /* lui */, RISCV::LUI, Convert__Reg1_0__UImm20LUI1_1, AMFBS_None, { MCK_GPR, MCK_UImm20LUI }, },
-  { 2170 /* lw */, RISCV::PseudoLW, Convert__Reg1_0__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol }, },
-  { 2170 /* lw */, RISCV::LW, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_None, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2170 /* lw */, RISCV::LW, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_None, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2173 /* lwu */, RISCV::PseudoLWU, Convert__Reg1_0__BareSymbol1_1, AMFBS_IsRV64, { MCK_GPR, MCK_BareSymbol }, },
-  { 2173 /* lwu */, RISCV::LWU, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_IsRV64, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2173 /* lwu */, RISCV::LWU, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_IsRV64, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2177 /* mret */, RISCV::MRET, Convert__imm_95_0__imm_95_0, AMFBS_None, {  }, },
-  { 2182 /* mul */, RISCV::MUL, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_HasStdExtM, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2186 /* mulh */, RISCV::MULH, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_HasStdExtM, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2191 /* mulhsu */, RISCV::MULHSU, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_HasStdExtM, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2198 /* mulhu */, RISCV::MULHU, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_HasStdExtM, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2204 /* mulw */, RISCV::MULW, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_HasStdExtM_IsRV64, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2209 /* mv */, RISCV::ADDI, Convert__Reg1_0__Reg1_1__imm_95_0, AMFBS_None, { MCK_GPR, MCK_GPR }, },
-  { 2212 /* neg */, RISCV::SUB, Convert__Reg1_0__regX0__Reg1_1, AMFBS_None, { MCK_GPR, MCK_GPR }, },
-  { 2216 /* negw */, RISCV::SUBW, Convert__Reg1_0__regX0__Reg1_1, AMFBS_IsRV64, { MCK_GPR, MCK_GPR }, },
-  { 2221 /* nop */, RISCV::ADDI, Convert__regX0__regX0__imm_95_0, AMFBS_None, {  }, },
-  { 2225 /* not */, RISCV::XORI, Convert__Reg1_0__Reg1_1__imm_95__MINUS_1, AMFBS_None, { MCK_GPR, MCK_GPR }, },
-  { 2229 /* or */, RISCV::OR, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2229 /* or */, RISCV::ORI, Convert__Reg1_0__Reg1_1__SImm121_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_SImm12 }, },
-  { 2232 /* ori */, RISCV::ORI, Convert__Reg1_0__Reg1_1__SImm121_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_SImm12 }, },
-  { 2236 /* rdcycle */, RISCV::CSRRS, Convert__Reg1_0__imm_95_3072__regX0, AMFBS_None, { MCK_GPR }, },
-  { 2244 /* rdcycleh */, RISCV::CSRRS, Convert__Reg1_0__imm_95_3200__regX0, AMFBS_IsRV32, { MCK_GPR }, },
-  { 2253 /* rdinstret */, RISCV::CSRRS, Convert__Reg1_0__imm_95_3074__regX0, AMFBS_None, { MCK_GPR }, },
-  { 2263 /* rdinstreth */, RISCV::CSRRS, Convert__Reg1_0__imm_95_3202__regX0, AMFBS_IsRV32, { MCK_GPR }, },
-  { 2274 /* rdtime */, RISCV::CSRRS, Convert__Reg1_0__imm_95_3073__regX0, AMFBS_None, { MCK_GPR }, },
-  { 2281 /* rdtimeh */, RISCV::CSRRS, Convert__Reg1_0__imm_95_3201__regX0, AMFBS_IsRV32, { MCK_GPR }, },
-  { 2289 /* rem */, RISCV::REM, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_HasStdExtM, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2293 /* remu */, RISCV::REMU, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_HasStdExtM, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2298 /* remuw */, RISCV::REMUW, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_HasStdExtM_IsRV64, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2304 /* remw */, RISCV::REMW, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_HasStdExtM_IsRV64, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2309 /* ret */, RISCV::JALR, Convert__regX0__regX1__imm_95_0, AMFBS_None, {  }, },
-  { 2313 /* sb */, RISCV::PseudoSB, Convert__Reg1_0__Reg1_2__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol, MCK_GPR }, },
-  { 2313 /* sb */, RISCV::SB, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_None, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2313 /* sb */, RISCV::SB, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_None, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2316 /* sc.d */, RISCV::SC_D, Convert__Reg1_0__AtomicMemOpOperand1_2__Reg1_1, AMFBS_HasStdExtA_IsRV64, { MCK_GPR, MCK_GPR, MCK_AtomicMemOpOperand }, },
-  { 2321 /* sc.d.aq */, RISCV::SC_D_AQ, Convert__Reg1_0__AtomicMemOpOperand1_2__Reg1_1, AMFBS_HasStdExtA_IsRV64, { MCK_GPR, MCK_GPR, MCK_AtomicMemOpOperand }, },
-  { 2329 /* sc.d.aqrl */, RISCV::SC_D_AQ_RL, Convert__Reg1_0__AtomicMemOpOperand1_2__Reg1_1, AMFBS_HasStdExtA_IsRV64, { MCK_GPR, MCK_GPR, MCK_AtomicMemOpOperand }, },
-  { 2339 /* sc.d.rl */, RISCV::SC_D_RL, Convert__Reg1_0__AtomicMemOpOperand1_2__Reg1_1, AMFBS_HasStdExtA_IsRV64, { MCK_GPR, MCK_GPR, MCK_AtomicMemOpOperand }, },
-  { 2347 /* sc.w */, RISCV::SC_W, Convert__Reg1_0__AtomicMemOpOperand1_2__Reg1_1, AMFBS_HasStdExtA, { MCK_GPR, MCK_GPR, MCK_AtomicMemOpOperand }, },
-  { 2352 /* sc.w.aq */, RISCV::SC_W_AQ, Convert__Reg1_0__AtomicMemOpOperand1_2__Reg1_1, AMFBS_HasStdExtA, { MCK_GPR, MCK_GPR, MCK_AtomicMemOpOperand }, },
-  { 2360 /* sc.w.aqrl */, RISCV::SC_W_AQ_RL, Convert__Reg1_0__AtomicMemOpOperand1_2__Reg1_1, AMFBS_HasStdExtA, { MCK_GPR, MCK_GPR, MCK_AtomicMemOpOperand }, },
-  { 2370 /* sc.w.rl */, RISCV::SC_W_RL, Convert__Reg1_0__AtomicMemOpOperand1_2__Reg1_1, AMFBS_HasStdExtA, { MCK_GPR, MCK_GPR, MCK_AtomicMemOpOperand }, },
-  { 2378 /* sd */, RISCV::PseudoSD, Convert__Reg1_0__Reg1_2__BareSymbol1_1, AMFBS_IsRV64, { MCK_GPR, MCK_BareSymbol, MCK_GPR }, },
-  { 2378 /* sd */, RISCV::SD, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_IsRV64, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2378 /* sd */, RISCV::SD, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_IsRV64, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2381 /* seqz */, RISCV::SLTIU, Convert__Reg1_0__Reg1_1__imm_95_1, AMFBS_None, { MCK_GPR, MCK_GPR }, },
-  { 2386 /* sext.w */, RISCV::ADDIW, Convert__Reg1_0__Reg1_1__imm_95_0, AMFBS_IsRV64, { MCK_GPR, MCK_GPR }, },
-  { 2393 /* sfence.vma */, RISCV::SFENCE_VMA, Convert__regX0__regX0, AMFBS_None, {  }, },
-  { 2393 /* sfence.vma */, RISCV::SFENCE_VMA, Convert__Reg1_0__regX0, AMFBS_None, { MCK_GPR }, },
-  { 2393 /* sfence.vma */, RISCV::SFENCE_VMA, Convert__Reg1_0__Reg1_1, AMFBS_None, { MCK_GPR, MCK_GPR }, },
-  { 2404 /* sgt */, RISCV::SLT, Convert__Reg1_0__Reg1_2__Reg1_1, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2408 /* sgtu */, RISCV::SLTU, Convert__Reg1_0__Reg1_2__Reg1_1, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2413 /* sgtz */, RISCV::SLT, Convert__Reg1_0__regX0__Reg1_1, AMFBS_None, { MCK_GPR, MCK_GPR }, },
-  { 2418 /* sh */, RISCV::PseudoSH, Convert__Reg1_0__Reg1_2__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol, MCK_GPR }, },
-  { 2418 /* sh */, RISCV::SH, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_None, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2418 /* sh */, RISCV::SH, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_None, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2421 /* sll */, RISCV::SLL, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2421 /* sll */, RISCV::SLLI, Convert__Reg1_0__Reg1_1__UImmLog2XLen1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_UImmLog2XLen }, },
-  { 2425 /* slli */, RISCV::SLLI, Convert__Reg1_0__Reg1_1__UImmLog2XLen1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_UImmLog2XLen }, },
-  { 2430 /* slliw */, RISCV::SLLIW, Convert__Reg1_0__Reg1_1__UImm51_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_UImm5 }, },
-  { 2436 /* sllw */, RISCV::SLLW, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2436 /* sllw */, RISCV::SLLIW, Convert__Reg1_0__Reg1_1__UImm51_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_UImm5 }, },
-  { 2441 /* slt */, RISCV::SLT, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2441 /* slt */, RISCV::SLTI, Convert__Reg1_0__Reg1_1__SImm121_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_SImm12 }, },
-  { 2445 /* slti */, RISCV::SLTI, Convert__Reg1_0__Reg1_1__SImm121_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_SImm12 }, },
-  { 2450 /* sltiu */, RISCV::SLTIU, Convert__Reg1_0__Reg1_1__SImm121_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_SImm12 }, },
-  { 2456 /* sltu */, RISCV::SLTU, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2456 /* sltu */, RISCV::SLTIU, Convert__Reg1_0__Reg1_1__SImm121_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_SImm12 }, },
-  { 2461 /* sltz */, RISCV::SLT, Convert__Reg1_0__Reg1_1__regX0, AMFBS_None, { MCK_GPR, MCK_GPR }, },
-  { 2466 /* snez */, RISCV::SLTU, Convert__Reg1_0__regX0__Reg1_1, AMFBS_None, { MCK_GPR, MCK_GPR }, },
-  { 2471 /* sra */, RISCV::SRA, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2471 /* sra */, RISCV::SRAI, Convert__Reg1_0__Reg1_1__UImmLog2XLen1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_UImmLog2XLen }, },
-  { 2475 /* srai */, RISCV::SRAI, Convert__Reg1_0__Reg1_1__UImmLog2XLen1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_UImmLog2XLen }, },
-  { 2480 /* sraiw */, RISCV::SRAIW, Convert__Reg1_0__Reg1_1__UImm51_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_UImm5 }, },
-  { 2486 /* sraw */, RISCV::SRAW, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2486 /* sraw */, RISCV::SRAIW, Convert__Reg1_0__Reg1_1__UImm51_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_UImm5 }, },
-  { 2491 /* sret */, RISCV::SRET, Convert__imm_95_0__imm_95_0, AMFBS_None, {  }, },
-  { 2496 /* srl */, RISCV::SRL, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2496 /* srl */, RISCV::SRLI, Convert__Reg1_0__Reg1_1__UImmLog2XLen1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_UImmLog2XLen }, },
-  { 2500 /* srli */, RISCV::SRLI, Convert__Reg1_0__Reg1_1__UImmLog2XLen1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_UImmLog2XLen }, },
-  { 2505 /* srliw */, RISCV::SRLIW, Convert__Reg1_0__Reg1_1__UImm51_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_UImm5 }, },
-  { 2511 /* srlw */, RISCV::SRLW, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2511 /* srlw */, RISCV::SRLIW, Convert__Reg1_0__Reg1_1__UImm51_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_UImm5 }, },
-  { 2516 /* sub */, RISCV::SUB, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2520 /* subw */, RISCV::SUBW, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2525 /* sw */, RISCV::PseudoSW, Convert__Reg1_0__Reg1_2__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol, MCK_GPR }, },
-  { 2525 /* sw */, RISCV::SW, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_None, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2525 /* sw */, RISCV::SW, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_None, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
-  { 2528 /* tail */, RISCV::PseudoTAIL, Convert__CallSymbol1_0, AMFBS_None, { MCK_CallSymbol }, },
-  { 2533 /* unimp */, RISCV::UNIMP, Convert_NoOperands, AMFBS_None, {  }, },
-  { 2539 /* uret */, RISCV::URET, Convert__imm_95_0__imm_95_0, AMFBS_None, {  }, },
-  { 2544 /* wfi */, RISCV::WFI, Convert__imm_95_0__imm_95_0, AMFBS_None, {  }, },
-  { 2548 /* xor */, RISCV::XOR, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
-  { 2548 /* xor */, RISCV::XORI, Convert__Reg1_0__Reg1_1__SImm121_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_SImm12 }, },
-  { 2552 /* xori */, RISCV::XORI, Convert__Reg1_0__Reg1_1__SImm121_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_SImm12 }, },
+  { 2057 /* jump */, RISCV::PseudoJump, Convert__Reg1_1__PseudoJumpSymbol1_0, AMFBS_None, { MCK_PseudoJumpSymbol, MCK_GPR }, },
+  { 2062 /* la */, RISCV::PseudoLA, Convert__Reg1_0__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol }, },
+  { 2065 /* la.tls.gd */, RISCV::PseudoLA_TLS_GD, Convert__Reg1_0__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol }, },
+  { 2075 /* la.tls.ie */, RISCV::PseudoLA_TLS_IE, Convert__Reg1_0__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol }, },
+  { 2085 /* lb */, RISCV::PseudoLB, Convert__Reg1_0__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol }, },
+  { 2085 /* lb */, RISCV::LB, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_None, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2085 /* lb */, RISCV::LB, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_None, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2088 /* lbu */, RISCV::PseudoLBU, Convert__Reg1_0__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol }, },
+  { 2088 /* lbu */, RISCV::LBU, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_None, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2088 /* lbu */, RISCV::LBU, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_None, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2092 /* ld */, RISCV::PseudoLD, Convert__Reg1_0__BareSymbol1_1, AMFBS_IsRV64, { MCK_GPR, MCK_BareSymbol }, },
+  { 2092 /* ld */, RISCV::LD, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_IsRV64, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2092 /* ld */, RISCV::LD, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_IsRV64, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2095 /* lh */, RISCV::PseudoLH, Convert__Reg1_0__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol }, },
+  { 2095 /* lh */, RISCV::LH, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_None, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2095 /* lh */, RISCV::LH, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_None, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2098 /* lhu */, RISCV::PseudoLHU, Convert__Reg1_0__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol }, },
+  { 2098 /* lhu */, RISCV::LHU, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_None, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2098 /* lhu */, RISCV::LHU, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_None, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2102 /* li */, RISCV::PseudoLI, Convert__Reg1_0__ImmXLenLI1_1, AMFBS_None, { MCK_GPR, MCK_ImmXLenLI }, },
+  { 2105 /* lla */, RISCV::PseudoLLA, Convert__Reg1_0__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol }, },
+  { 2109 /* lr.d */, RISCV::LR_D, Convert__Reg1_0__AtomicMemOpOperand1_1, AMFBS_HasStdExtA_IsRV64, { MCK_GPR, MCK_AtomicMemOpOperand }, },
+  { 2114 /* lr.d.aq */, RISCV::LR_D_AQ, Convert__Reg1_0__AtomicMemOpOperand1_1, AMFBS_HasStdExtA_IsRV64, { MCK_GPR, MCK_AtomicMemOpOperand }, },
+  { 2122 /* lr.d.aqrl */, RISCV::LR_D_AQ_RL, Convert__Reg1_0__AtomicMemOpOperand1_1, AMFBS_HasStdExtA_IsRV64, { MCK_GPR, MCK_AtomicMemOpOperand }, },
+  { 2132 /* lr.d.rl */, RISCV::LR_D_RL, Convert__Reg1_0__AtomicMemOpOperand1_1, AMFBS_HasStdExtA_IsRV64, { MCK_GPR, MCK_AtomicMemOpOperand }, },
+  { 2140 /* lr.w */, RISCV::LR_W, Convert__Reg1_0__AtomicMemOpOperand1_1, AMFBS_HasStdExtA, { MCK_GPR, MCK_AtomicMemOpOperand }, },
+  { 2145 /* lr.w.aq */, RISCV::LR_W_AQ, Convert__Reg1_0__AtomicMemOpOperand1_1, AMFBS_HasStdExtA, { MCK_GPR, MCK_AtomicMemOpOperand }, },
+  { 2153 /* lr.w.aqrl */, RISCV::LR_W_AQ_RL, Convert__Reg1_0__AtomicMemOpOperand1_1, AMFBS_HasStdExtA, { MCK_GPR, MCK_AtomicMemOpOperand }, },
+  { 2163 /* lr.w.rl */, RISCV::LR_W_RL, Convert__Reg1_0__AtomicMemOpOperand1_1, AMFBS_HasStdExtA, { MCK_GPR, MCK_AtomicMemOpOperand }, },
+  { 2171 /* lui */, RISCV::LUI, Convert__Reg1_0__UImm20LUI1_1, AMFBS_None, { MCK_GPR, MCK_UImm20LUI }, },
+  { 2175 /* lw */, RISCV::PseudoLW, Convert__Reg1_0__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol }, },
+  { 2175 /* lw */, RISCV::LW, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_None, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2175 /* lw */, RISCV::LW, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_None, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2178 /* lwu */, RISCV::PseudoLWU, Convert__Reg1_0__BareSymbol1_1, AMFBS_IsRV64, { MCK_GPR, MCK_BareSymbol }, },
+  { 2178 /* lwu */, RISCV::LWU, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_IsRV64, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2178 /* lwu */, RISCV::LWU, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_IsRV64, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2182 /* mret */, RISCV::MRET, Convert__imm_95_0__imm_95_0, AMFBS_None, {  }, },
+  { 2187 /* mul */, RISCV::MUL, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_HasStdExtM, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2191 /* mulh */, RISCV::MULH, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_HasStdExtM, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2196 /* mulhsu */, RISCV::MULHSU, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_HasStdExtM, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2203 /* mulhu */, RISCV::MULHU, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_HasStdExtM, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2209 /* mulw */, RISCV::MULW, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_HasStdExtM_IsRV64, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2214 /* mv */, RISCV::ADDI, Convert__Reg1_0__Reg1_1__imm_95_0, AMFBS_None, { MCK_GPR, MCK_GPR }, },
+  { 2217 /* neg */, RISCV::SUB, Convert__Reg1_0__regX0__Reg1_1, AMFBS_None, { MCK_GPR, MCK_GPR }, },
+  { 2221 /* negw */, RISCV::SUBW, Convert__Reg1_0__regX0__Reg1_1, AMFBS_IsRV64, { MCK_GPR, MCK_GPR }, },
+  { 2226 /* nop */, RISCV::ADDI, Convert__regX0__regX0__imm_95_0, AMFBS_None, {  }, },
+  { 2230 /* not */, RISCV::XORI, Convert__Reg1_0__Reg1_1__imm_95__MINUS_1, AMFBS_None, { MCK_GPR, MCK_GPR }, },
+  { 2234 /* or */, RISCV::OR, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2234 /* or */, RISCV::ORI, Convert__Reg1_0__Reg1_1__SImm121_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_SImm12 }, },
+  { 2237 /* ori */, RISCV::ORI, Convert__Reg1_0__Reg1_1__SImm121_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_SImm12 }, },
+  { 2241 /* rdcycle */, RISCV::CSRRS, Convert__Reg1_0__imm_95_3072__regX0, AMFBS_None, { MCK_GPR }, },
+  { 2249 /* rdcycleh */, RISCV::CSRRS, Convert__Reg1_0__imm_95_3200__regX0, AMFBS_IsRV32, { MCK_GPR }, },
+  { 2258 /* rdinstret */, RISCV::CSRRS, Convert__Reg1_0__imm_95_3074__regX0, AMFBS_None, { MCK_GPR }, },
+  { 2268 /* rdinstreth */, RISCV::CSRRS, Convert__Reg1_0__imm_95_3202__regX0, AMFBS_IsRV32, { MCK_GPR }, },
+  { 2279 /* rdtime */, RISCV::CSRRS, Convert__Reg1_0__imm_95_3073__regX0, AMFBS_None, { MCK_GPR }, },
+  { 2286 /* rdtimeh */, RISCV::CSRRS, Convert__Reg1_0__imm_95_3201__regX0, AMFBS_IsRV32, { MCK_GPR }, },
+  { 2294 /* rem */, RISCV::REM, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_HasStdExtM, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2298 /* remu */, RISCV::REMU, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_HasStdExtM, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2303 /* remuw */, RISCV::REMUW, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_HasStdExtM_IsRV64, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2309 /* remw */, RISCV::REMW, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_HasStdExtM_IsRV64, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2314 /* ret */, RISCV::JALR, Convert__regX0__regX1__imm_95_0, AMFBS_None, {  }, },
+  { 2318 /* sb */, RISCV::PseudoSB, Convert__Reg1_0__Reg1_2__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol, MCK_GPR }, },
+  { 2318 /* sb */, RISCV::SB, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_None, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2318 /* sb */, RISCV::SB, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_None, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2321 /* sc.d */, RISCV::SC_D, Convert__Reg1_0__AtomicMemOpOperand1_2__Reg1_1, AMFBS_HasStdExtA_IsRV64, { MCK_GPR, MCK_GPR, MCK_AtomicMemOpOperand }, },
+  { 2326 /* sc.d.aq */, RISCV::SC_D_AQ, Convert__Reg1_0__AtomicMemOpOperand1_2__Reg1_1, AMFBS_HasStdExtA_IsRV64, { MCK_GPR, MCK_GPR, MCK_AtomicMemOpOperand }, },
+  { 2334 /* sc.d.aqrl */, RISCV::SC_D_AQ_RL, Convert__Reg1_0__AtomicMemOpOperand1_2__Reg1_1, AMFBS_HasStdExtA_IsRV64, { MCK_GPR, MCK_GPR, MCK_AtomicMemOpOperand }, },
+  { 2344 /* sc.d.rl */, RISCV::SC_D_RL, Convert__Reg1_0__AtomicMemOpOperand1_2__Reg1_1, AMFBS_HasStdExtA_IsRV64, { MCK_GPR, MCK_GPR, MCK_AtomicMemOpOperand }, },
+  { 2352 /* sc.w */, RISCV::SC_W, Convert__Reg1_0__AtomicMemOpOperand1_2__Reg1_1, AMFBS_HasStdExtA, { MCK_GPR, MCK_GPR, MCK_AtomicMemOpOperand }, },
+  { 2357 /* sc.w.aq */, RISCV::SC_W_AQ, Convert__Reg1_0__AtomicMemOpOperand1_2__Reg1_1, AMFBS_HasStdExtA, { MCK_GPR, MCK_GPR, MCK_AtomicMemOpOperand }, },
+  { 2365 /* sc.w.aqrl */, RISCV::SC_W_AQ_RL, Convert__Reg1_0__AtomicMemOpOperand1_2__Reg1_1, AMFBS_HasStdExtA, { MCK_GPR, MCK_GPR, MCK_AtomicMemOpOperand }, },
+  { 2375 /* sc.w.rl */, RISCV::SC_W_RL, Convert__Reg1_0__AtomicMemOpOperand1_2__Reg1_1, AMFBS_HasStdExtA, { MCK_GPR, MCK_GPR, MCK_AtomicMemOpOperand }, },
+  { 2383 /* sd */, RISCV::PseudoSD, Convert__Reg1_0__Reg1_2__BareSymbol1_1, AMFBS_IsRV64, { MCK_GPR, MCK_BareSymbol, MCK_GPR }, },
+  { 2383 /* sd */, RISCV::SD, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_IsRV64, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2383 /* sd */, RISCV::SD, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_IsRV64, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2386 /* seqz */, RISCV::SLTIU, Convert__Reg1_0__Reg1_1__imm_95_1, AMFBS_None, { MCK_GPR, MCK_GPR }, },
+  { 2391 /* sext.w */, RISCV::ADDIW, Convert__Reg1_0__Reg1_1__imm_95_0, AMFBS_IsRV64, { MCK_GPR, MCK_GPR }, },
+  { 2398 /* sfence.vma */, RISCV::SFENCE_VMA, Convert__regX0__regX0, AMFBS_None, {  }, },
+  { 2398 /* sfence.vma */, RISCV::SFENCE_VMA, Convert__Reg1_0__regX0, AMFBS_None, { MCK_GPR }, },
+  { 2398 /* sfence.vma */, RISCV::SFENCE_VMA, Convert__Reg1_0__Reg1_1, AMFBS_None, { MCK_GPR, MCK_GPR }, },
+  { 2409 /* sgt */, RISCV::SLT, Convert__Reg1_0__Reg1_2__Reg1_1, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2413 /* sgtu */, RISCV::SLTU, Convert__Reg1_0__Reg1_2__Reg1_1, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2418 /* sgtz */, RISCV::SLT, Convert__Reg1_0__regX0__Reg1_1, AMFBS_None, { MCK_GPR, MCK_GPR }, },
+  { 2423 /* sh */, RISCV::PseudoSH, Convert__Reg1_0__Reg1_2__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol, MCK_GPR }, },
+  { 2423 /* sh */, RISCV::SH, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_None, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2423 /* sh */, RISCV::SH, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_None, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2426 /* sll */, RISCV::SLL, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2426 /* sll */, RISCV::SLLI, Convert__Reg1_0__Reg1_1__UImmLog2XLen1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_UImmLog2XLen }, },
+  { 2430 /* slli */, RISCV::SLLI, Convert__Reg1_0__Reg1_1__UImmLog2XLen1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_UImmLog2XLen }, },
+  { 2435 /* slliw */, RISCV::SLLIW, Convert__Reg1_0__Reg1_1__UImm51_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_UImm5 }, },
+  { 2441 /* sllw */, RISCV::SLLW, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2441 /* sllw */, RISCV::SLLIW, Convert__Reg1_0__Reg1_1__UImm51_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_UImm5 }, },
+  { 2446 /* slt */, RISCV::SLT, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2446 /* slt */, RISCV::SLTI, Convert__Reg1_0__Reg1_1__SImm121_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_SImm12 }, },
+  { 2450 /* slti */, RISCV::SLTI, Convert__Reg1_0__Reg1_1__SImm121_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_SImm12 }, },
+  { 2455 /* sltiu */, RISCV::SLTIU, Convert__Reg1_0__Reg1_1__SImm121_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_SImm12 }, },
+  { 2461 /* sltu */, RISCV::SLTU, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2461 /* sltu */, RISCV::SLTIU, Convert__Reg1_0__Reg1_1__SImm121_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_SImm12 }, },
+  { 2466 /* sltz */, RISCV::SLT, Convert__Reg1_0__Reg1_1__regX0, AMFBS_None, { MCK_GPR, MCK_GPR }, },
+  { 2471 /* snez */, RISCV::SLTU, Convert__Reg1_0__regX0__Reg1_1, AMFBS_None, { MCK_GPR, MCK_GPR }, },
+  { 2476 /* sra */, RISCV::SRA, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2476 /* sra */, RISCV::SRAI, Convert__Reg1_0__Reg1_1__UImmLog2XLen1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_UImmLog2XLen }, },
+  { 2480 /* srai */, RISCV::SRAI, Convert__Reg1_0__Reg1_1__UImmLog2XLen1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_UImmLog2XLen }, },
+  { 2485 /* sraiw */, RISCV::SRAIW, Convert__Reg1_0__Reg1_1__UImm51_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_UImm5 }, },
+  { 2491 /* sraw */, RISCV::SRAW, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2491 /* sraw */, RISCV::SRAIW, Convert__Reg1_0__Reg1_1__UImm51_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_UImm5 }, },
+  { 2496 /* sret */, RISCV::SRET, Convert__imm_95_0__imm_95_0, AMFBS_None, {  }, },
+  { 2501 /* srl */, RISCV::SRL, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2501 /* srl */, RISCV::SRLI, Convert__Reg1_0__Reg1_1__UImmLog2XLen1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_UImmLog2XLen }, },
+  { 2505 /* srli */, RISCV::SRLI, Convert__Reg1_0__Reg1_1__UImmLog2XLen1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_UImmLog2XLen }, },
+  { 2510 /* srliw */, RISCV::SRLIW, Convert__Reg1_0__Reg1_1__UImm51_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_UImm5 }, },
+  { 2516 /* srlw */, RISCV::SRLW, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2516 /* srlw */, RISCV::SRLIW, Convert__Reg1_0__Reg1_1__UImm51_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_UImm5 }, },
+  { 2521 /* sub */, RISCV::SUB, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2525 /* subw */, RISCV::SUBW, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_IsRV64, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2530 /* sw */, RISCV::PseudoSW, Convert__Reg1_0__Reg1_2__BareSymbol1_1, AMFBS_None, { MCK_GPR, MCK_BareSymbol, MCK_GPR }, },
+  { 2530 /* sw */, RISCV::SW, Convert__Reg1_0__Reg1_2__imm_95_0, AMFBS_None, { MCK_GPR, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2530 /* sw */, RISCV::SW, Convert__Reg1_0__Reg1_3__SImm121_1, AMFBS_None, { MCK_GPR, MCK_SImm12, MCK__40_, MCK_GPR, MCK__41_ }, },
+  { 2533 /* tail */, RISCV::PseudoTAIL, Convert__CallSymbol1_0, AMFBS_None, { MCK_CallSymbol }, },
+  { 2538 /* unimp */, RISCV::UNIMP, Convert_NoOperands, AMFBS_None, {  }, },
+  { 2544 /* uret */, RISCV::URET, Convert__imm_95_0__imm_95_0, AMFBS_None, {  }, },
+  { 2549 /* wfi */, RISCV::WFI, Convert__imm_95_0__imm_95_0, AMFBS_None, {  }, },
+  { 2553 /* xor */, RISCV::XOR, Convert__Reg1_0__Reg1_1__Reg1_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_GPR }, },
+  { 2553 /* xor */, RISCV::XORI, Convert__Reg1_0__Reg1_1__SImm121_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_SImm12 }, },
+  { 2557 /* xori */, RISCV::XORI, Convert__Reg1_0__Reg1_1__SImm121_2, AMFBS_None, { MCK_GPR, MCK_GPR, MCK_SImm12 }, },
 };
 
 #include "llvm/Support/Debug.h"
@@ -2425,7 +2441,7 @@ MatchInstructionImpl(const OperandVector &Operands,
   auto MnemonicRange = std::equal_range(Start, End, Mnemonic, LessOpcode());
 
   DEBUG_WITH_TYPE("asm-matcher", dbgs() << "AsmMatcher: found " <<
-  std::distance(MnemonicRange.first, MnemonicRange.second) <<
+  std::distance(MnemonicRange.first, MnemonicRange.second) << 
   " encodings with mnemonic '" << Mnemonic << "'\n");
 
   // Return a more specific error code if no mnemonics match.
@@ -2612,7 +2628,7 @@ namespace {
   };
 } // end anonymous namespace
 
-static const OperandMatchEntry OperandMatchTable[133] = {
+static const OperandMatchEntry OperandMatchTable[134] = {
   /* Operand List Mnemonic, Mask, Operand Class, Features */
   { 0 /* add */, 8 /* 3 */, MCK_TPRelAddSymbol, AMFBS_None },
   { 20 /* amoadd.d */, 4 /* 2 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA_IsRV64 },
@@ -2715,38 +2731,39 @@ static const OperandMatchEntry OperandMatchTable[133] = {
   { 2043 /* j */, 1 /* 0 */, MCK_SImm21Lsb0JAL, AMFBS_None },
   { 2045 /* jal */, 1 /* 0 */, MCK_SImm21Lsb0JAL, AMFBS_None },
   { 2045 /* jal */, 2 /* 1 */, MCK_SImm21Lsb0JAL, AMFBS_None },
-  { 2057 /* la */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
-  { 2060 /* la.tls.gd */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
-  { 2070 /* la.tls.ie */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
-  { 2080 /* lb */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
-  { 2083 /* lbu */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
-  { 2087 /* ld */, 2 /* 1 */, MCK_BareSymbol, AMFBS_IsRV64 },
-  { 2090 /* lh */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
-  { 2093 /* lhu */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
-  { 2100 /* lla */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
-  { 2104 /* lr.d */, 2 /* 1 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA_IsRV64 },
-  { 2109 /* lr.d.aq */, 2 /* 1 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA_IsRV64 },
-  { 2117 /* lr.d.aqrl */, 2 /* 1 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA_IsRV64 },
-  { 2127 /* lr.d.rl */, 2 /* 1 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA_IsRV64 },
-  { 2135 /* lr.w */, 2 /* 1 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA },
-  { 2140 /* lr.w.aq */, 2 /* 1 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA },
-  { 2148 /* lr.w.aqrl */, 2 /* 1 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA },
-  { 2158 /* lr.w.rl */, 2 /* 1 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA },
-  { 2170 /* lw */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
-  { 2173 /* lwu */, 2 /* 1 */, MCK_BareSymbol, AMFBS_IsRV64 },
-  { 2313 /* sb */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
-  { 2316 /* sc.d */, 4 /* 2 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA_IsRV64 },
-  { 2321 /* sc.d.aq */, 4 /* 2 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA_IsRV64 },
-  { 2329 /* sc.d.aqrl */, 4 /* 2 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA_IsRV64 },
-  { 2339 /* sc.d.rl */, 4 /* 2 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA_IsRV64 },
-  { 2347 /* sc.w */, 4 /* 2 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA },
-  { 2352 /* sc.w.aq */, 4 /* 2 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA },
-  { 2360 /* sc.w.aqrl */, 4 /* 2 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA },
-  { 2370 /* sc.w.rl */, 4 /* 2 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA },
-  { 2378 /* sd */, 2 /* 1 */, MCK_BareSymbol, AMFBS_IsRV64 },
-  { 2418 /* sh */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
-  { 2525 /* sw */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
-  { 2528 /* tail */, 1 /* 0 */, MCK_CallSymbol, AMFBS_None },
+  { 2057 /* jump */, 1 /* 0 */, MCK_PseudoJumpSymbol, AMFBS_None },
+  { 2062 /* la */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
+  { 2065 /* la.tls.gd */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
+  { 2075 /* la.tls.ie */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
+  { 2085 /* lb */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
+  { 2088 /* lbu */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
+  { 2092 /* ld */, 2 /* 1 */, MCK_BareSymbol, AMFBS_IsRV64 },
+  { 2095 /* lh */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
+  { 2098 /* lhu */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
+  { 2105 /* lla */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
+  { 2109 /* lr.d */, 2 /* 1 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA_IsRV64 },
+  { 2114 /* lr.d.aq */, 2 /* 1 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA_IsRV64 },
+  { 2122 /* lr.d.aqrl */, 2 /* 1 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA_IsRV64 },
+  { 2132 /* lr.d.rl */, 2 /* 1 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA_IsRV64 },
+  { 2140 /* lr.w */, 2 /* 1 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA },
+  { 2145 /* lr.w.aq */, 2 /* 1 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA },
+  { 2153 /* lr.w.aqrl */, 2 /* 1 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA },
+  { 2163 /* lr.w.rl */, 2 /* 1 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA },
+  { 2175 /* lw */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
+  { 2178 /* lwu */, 2 /* 1 */, MCK_BareSymbol, AMFBS_IsRV64 },
+  { 2318 /* sb */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
+  { 2321 /* sc.d */, 4 /* 2 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA_IsRV64 },
+  { 2326 /* sc.d.aq */, 4 /* 2 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA_IsRV64 },
+  { 2334 /* sc.d.aqrl */, 4 /* 2 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA_IsRV64 },
+  { 2344 /* sc.d.rl */, 4 /* 2 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA_IsRV64 },
+  { 2352 /* sc.w */, 4 /* 2 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA },
+  { 2357 /* sc.w.aq */, 4 /* 2 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA },
+  { 2365 /* sc.w.aqrl */, 4 /* 2 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA },
+  { 2375 /* sc.w.rl */, 4 /* 2 */, MCK_AtomicMemOpOperand, AMFBS_HasStdExtA },
+  { 2383 /* sd */, 2 /* 1 */, MCK_BareSymbol, AMFBS_IsRV64 },
+  { 2423 /* sh */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
+  { 2530 /* sw */, 2 /* 1 */, MCK_BareSymbol, AMFBS_None },
+  { 2533 /* tail */, 1 /* 0 */, MCK_CallSymbol, AMFBS_None },
 };
 
 OperandMatchResultTy RISCVAsmParser::
@@ -2762,6 +2779,8 @@ tryCustomParseOperand(OperandVector &Operands,
     return parseCSRSystemRegister(Operands);
   case MCK_CallSymbol:
     return parseCallSymbol(Operands);
+  case MCK_PseudoJumpSymbol:
+    return parsePseudoJumpSymbol(Operands);
   case MCK_SImm21Lsb0JAL:
     return parseJALOffset(Operands);
   case MCK_TPRelAddSymbol:
@@ -2859,3 +2878,4 @@ static std::string RISCVMnemonicSpellCheck(StringRef S, const FeatureBitset &FBS
 }
 
 #endif // GET_MNEMONIC_SPELL_CHECKER
+

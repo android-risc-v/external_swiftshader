@@ -678,90 +678,110 @@ enum {
   GPR64common_and_GPR64noipRegClassID = 21,
   tcGPR64RegClassID = 22,
   GPR64noip_and_tcGPR64RegClassID = 23,
-  GPR64argRegClassID = 24,
-  rtcGPR64RegClassID = 25,
-  GPR64sponlyRegClassID = 26,
-  DDRegClassID = 27,
-  XSeqPairsClassRegClassID = 28,
-  XSeqPairsClass_with_subo64_in_GPR64commonRegClassID = 29,
-  XSeqPairsClass_with_subo64_in_GPR64noipRegClassID = 30,
-  XSeqPairsClass_with_sube64_in_GPR64noipRegClassID = 31,
-  XSeqPairsClass_with_sube64_in_tcGPR64RegClassID = 32,
-  XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64RegClassID = 33,
-  XSeqPairsClass_with_subo64_in_tcGPR64RegClassID = 34,
-  XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64RegClassID = 35,
-  XSeqPairsClass_with_sub_32_in_GPR32argRegClassID = 36,
-  XSeqPairsClass_with_sube64_in_rtcGPR64RegClassID = 37,
-  FPR128RegClassID = 38,
-  ZPRRegClassID = 39,
-  FPR128_loRegClassID = 40,
-  ZPR_4bRegClassID = 41,
-  ZPR_3bRegClassID = 42,
-  DDDRegClassID = 43,
-  DDDDRegClassID = 44,
-  QQRegClassID = 45,
-  ZPR2RegClassID = 46,
-  QQ_with_qsub0_in_FPR128_loRegClassID = 47,
-  QQ_with_qsub1_in_FPR128_loRegClassID = 48,
-  ZPR2_with_zsub1_in_ZPR_4bRegClassID = 49,
-  ZPR2_with_zsub_in_FPR128_loRegClassID = 50,
-  QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_loRegClassID = 51,
-  ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4bRegClassID = 52,
-  ZPR2_with_zsub0_in_ZPR_3bRegClassID = 53,
-  ZPR2_with_zsub1_in_ZPR_3bRegClassID = 54,
-  ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3bRegClassID = 55,
-  QQQRegClassID = 56,
-  ZPR3RegClassID = 57,
-  QQQ_with_qsub0_in_FPR128_loRegClassID = 58,
-  QQQ_with_qsub1_in_FPR128_loRegClassID = 59,
-  QQQ_with_qsub2_in_FPR128_loRegClassID = 60,
-  ZPR3_with_zsub1_in_ZPR_4bRegClassID = 61,
-  ZPR3_with_zsub2_in_ZPR_4bRegClassID = 62,
-  ZPR3_with_zsub_in_FPR128_loRegClassID = 63,
-  QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_loRegClassID = 64,
-  QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loRegClassID = 65,
-  ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bRegClassID = 66,
-  ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClassID = 67,
-  QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loRegClassID = 68,
-  ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4bRegClassID = 69,
-  ZPR3_with_zsub0_in_ZPR_3bRegClassID = 70,
-  ZPR3_with_zsub1_in_ZPR_3bRegClassID = 71,
-  ZPR3_with_zsub2_in_ZPR_3bRegClassID = 72,
-  ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3bRegClassID = 73,
-  ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3bRegClassID = 74,
-  ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3bRegClassID = 75,
-  QQQQRegClassID = 76,
-  ZPR4RegClassID = 77,
-  QQQQ_with_qsub0_in_FPR128_loRegClassID = 78,
-  QQQQ_with_qsub1_in_FPR128_loRegClassID = 79,
-  QQQQ_with_qsub2_in_FPR128_loRegClassID = 80,
-  QQQQ_with_qsub3_in_FPR128_loRegClassID = 81,
-  ZPR4_with_zsub1_in_ZPR_4bRegClassID = 82,
-  ZPR4_with_zsub2_in_ZPR_4bRegClassID = 83,
-  ZPR4_with_zsub3_in_ZPR_4bRegClassID = 84,
-  ZPR4_with_zsub_in_FPR128_loRegClassID = 85,
-  QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_loRegClassID = 86,
-  QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClassID = 87,
-  QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClassID = 88,
-  ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bRegClassID = 89,
-  ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClassID = 90,
-  ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClassID = 91,
-  QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClassID = 92,
-  QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClassID = 93,
-  ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClassID = 94,
-  ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClassID = 95,
-  QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClassID = 96,
-  ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClassID = 97,
-  ZPR4_with_zsub0_in_ZPR_3bRegClassID = 98,
-  ZPR4_with_zsub1_in_ZPR_3bRegClassID = 99,
-  ZPR4_with_zsub2_in_ZPR_3bRegClassID = 100,
-  ZPR4_with_zsub3_in_ZPR_3bRegClassID = 101,
-  ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3bRegClassID = 102,
-  ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bRegClassID = 103,
-  ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3bRegClassID = 104,
-  ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bRegClassID = 105,
-  ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3bRegClassID = 106,
-  ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3bRegClassID = 107,
+  FPR64_loRegClassID = 24,
+  GPR64argRegClassID = 25,
+  rtcGPR64RegClassID = 26,
+  GPR64sponlyRegClassID = 27,
+  DDRegClassID = 28,
+  DD_with_dsub0_in_FPR64_loRegClassID = 29,
+  DD_with_dsub1_in_FPR64_loRegClassID = 30,
+  XSeqPairsClassRegClassID = 31,
+  DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_loRegClassID = 32,
+  XSeqPairsClass_with_subo64_in_GPR64commonRegClassID = 33,
+  XSeqPairsClass_with_subo64_in_GPR64noipRegClassID = 34,
+  XSeqPairsClass_with_sube64_in_GPR64noipRegClassID = 35,
+  XSeqPairsClass_with_sube64_in_tcGPR64RegClassID = 36,
+  XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64RegClassID = 37,
+  XSeqPairsClass_with_subo64_in_tcGPR64RegClassID = 38,
+  XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64RegClassID = 39,
+  XSeqPairsClass_with_sub_32_in_GPR32argRegClassID = 40,
+  XSeqPairsClass_with_sube64_in_rtcGPR64RegClassID = 41,
+  FPR128RegClassID = 42,
+  ZPRRegClassID = 43,
+  FPR128_loRegClassID = 44,
+  ZPR_4bRegClassID = 45,
+  ZPR_3bRegClassID = 46,
+  DDDRegClassID = 47,
+  DDD_with_dsub0_in_FPR64_loRegClassID = 48,
+  DDD_with_dsub1_in_FPR64_loRegClassID = 49,
+  DDD_with_dsub2_in_FPR64_loRegClassID = 50,
+  DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_loRegClassID = 51,
+  DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loRegClassID = 52,
+  DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loRegClassID = 53,
+  DDDDRegClassID = 54,
+  DDDD_with_dsub0_in_FPR64_loRegClassID = 55,
+  DDDD_with_dsub1_in_FPR64_loRegClassID = 56,
+  DDDD_with_dsub2_in_FPR64_loRegClassID = 57,
+  DDDD_with_dsub3_in_FPR64_loRegClassID = 58,
+  DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_loRegClassID = 59,
+  DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClassID = 60,
+  DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClassID = 61,
+  DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClassID = 62,
+  DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClassID = 63,
+  DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClassID = 64,
+  QQRegClassID = 65,
+  ZPR2RegClassID = 66,
+  QQ_with_dsub_in_FPR64_loRegClassID = 67,
+  QQ_with_qsub1_in_FPR128_loRegClassID = 68,
+  ZPR2_with_dsub_in_FPR64_loRegClassID = 69,
+  ZPR2_with_zsub1_in_ZPR_4bRegClassID = 70,
+  QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_loRegClassID = 71,
+  ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4bRegClassID = 72,
+  ZPR2_with_zsub0_in_ZPR_3bRegClassID = 73,
+  ZPR2_with_zsub1_in_ZPR_3bRegClassID = 74,
+  ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3bRegClassID = 75,
+  QQQRegClassID = 76,
+  ZPR3RegClassID = 77,
+  QQQ_with_dsub_in_FPR64_loRegClassID = 78,
+  QQQ_with_qsub1_in_FPR128_loRegClassID = 79,
+  QQQ_with_qsub2_in_FPR128_loRegClassID = 80,
+  ZPR3_with_dsub_in_FPR64_loRegClassID = 81,
+  ZPR3_with_zsub1_in_ZPR_4bRegClassID = 82,
+  ZPR3_with_zsub2_in_ZPR_4bRegClassID = 83,
+  QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_loRegClassID = 84,
+  QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loRegClassID = 85,
+  ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClassID = 86,
+  ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bRegClassID = 87,
+  QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_loRegClassID = 88,
+  ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4bRegClassID = 89,
+  ZPR3_with_zsub0_in_ZPR_3bRegClassID = 90,
+  ZPR3_with_zsub1_in_ZPR_3bRegClassID = 91,
+  ZPR3_with_zsub2_in_ZPR_3bRegClassID = 92,
+  ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3bRegClassID = 93,
+  ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3bRegClassID = 94,
+  ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3bRegClassID = 95,
+  QQQQRegClassID = 96,
+  ZPR4RegClassID = 97,
+  QQQQ_with_dsub_in_FPR64_loRegClassID = 98,
+  QQQQ_with_qsub1_in_FPR128_loRegClassID = 99,
+  QQQQ_with_qsub2_in_FPR128_loRegClassID = 100,
+  QQQQ_with_qsub3_in_FPR128_loRegClassID = 101,
+  ZPR4_with_dsub_in_FPR64_loRegClassID = 102,
+  ZPR4_with_zsub1_in_ZPR_4bRegClassID = 103,
+  ZPR4_with_zsub2_in_ZPR_4bRegClassID = 104,
+  ZPR4_with_zsub3_in_ZPR_4bRegClassID = 105,
+  QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_loRegClassID = 106,
+  QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClassID = 107,
+  QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClassID = 108,
+  ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClassID = 109,
+  ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bRegClassID = 110,
+  ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClassID = 111,
+  QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClassID = 112,
+  QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClassID = 113,
+  ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClassID = 114,
+  ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClassID = 115,
+  QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClassID = 116,
+  ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClassID = 117,
+  ZPR4_with_zsub0_in_ZPR_3bRegClassID = 118,
+  ZPR4_with_zsub1_in_ZPR_3bRegClassID = 119,
+  ZPR4_with_zsub2_in_ZPR_3bRegClassID = 120,
+  ZPR4_with_zsub3_in_ZPR_3bRegClassID = 121,
+  ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3bRegClassID = 122,
+  ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3bRegClassID = 123,
+  ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bRegClassID = 124,
+  ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3bRegClassID = 125,
+  ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bRegClassID = 126,
+  ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3bRegClassID = 127,
 
   };
 } // end namespace AArch64
@@ -1214,315 +1234,323 @@ extern const MCRegisterInfo::SubRegCoveredBits AArch64SubRegIdxRanges[] = {
   { 65535, 65534 },	// zsub2_then_zsub_zsub3_then_zsub
 };
 
+
+#ifdef __GNUC__
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Woverlength-strings"
+#endif
 extern const char AArch64RegStrings[] = {
-  /* 0 */ 'B', '1', '0', 0,
-  /* 4 */ 'D', '7', '_', 'D', '8', '_', 'D', '9', '_', 'D', '1', '0', 0,
-  /* 17 */ 'H', '1', '0', 0,
-  /* 21 */ 'P', '1', '0', 0,
-  /* 25 */ 'Q', '7', '_', 'Q', '8', '_', 'Q', '9', '_', 'Q', '1', '0', 0,
-  /* 38 */ 'S', '1', '0', 0,
-  /* 42 */ 'W', '1', '0', 0,
-  /* 46 */ 'X', '1', '0', 0,
-  /* 50 */ 'Z', '7', '_', 'Z', '8', '_', 'Z', '9', '_', 'Z', '1', '0', 0,
-  /* 63 */ 'B', '2', '0', 0,
-  /* 67 */ 'D', '1', '7', '_', 'D', '1', '8', '_', 'D', '1', '9', '_', 'D', '2', '0', 0,
-  /* 83 */ 'H', '2', '0', 0,
-  /* 87 */ 'Q', '1', '7', '_', 'Q', '1', '8', '_', 'Q', '1', '9', '_', 'Q', '2', '0', 0,
-  /* 103 */ 'S', '2', '0', 0,
-  /* 107 */ 'W', '2', '0', 0,
-  /* 111 */ 'X', '2', '0', 0,
-  /* 115 */ 'Z', '1', '7', '_', 'Z', '1', '8', '_', 'Z', '1', '9', '_', 'Z', '2', '0', 0,
-  /* 131 */ 'B', '3', '0', 0,
-  /* 135 */ 'D', '2', '7', '_', 'D', '2', '8', '_', 'D', '2', '9', '_', 'D', '3', '0', 0,
-  /* 151 */ 'H', '3', '0', 0,
-  /* 155 */ 'Q', '2', '7', '_', 'Q', '2', '8', '_', 'Q', '2', '9', '_', 'Q', '3', '0', 0,
-  /* 171 */ 'S', '3', '0', 0,
-  /* 175 */ 'W', '3', '0', 0,
-  /* 179 */ 'Z', '2', '7', '_', 'Z', '2', '8', '_', 'Z', '2', '9', '_', 'Z', '3', '0', 0,
-  /* 195 */ 'B', '0', 0,
-  /* 198 */ 'D', '2', '9', '_', 'D', '3', '0', '_', 'D', '3', '1', '_', 'D', '0', 0,
-  /* 213 */ 'H', '0', 0,
-  /* 216 */ 'P', '0', 0,
-  /* 219 */ 'Q', '2', '9', '_', 'Q', '3', '0', '_', 'Q', '3', '1', '_', 'Q', '0', 0,
-  /* 234 */ 'S', '0', 0,
-  /* 237 */ 'W', '0', 0,
-  /* 240 */ 'X', '0', 0,
-  /* 243 */ 'Z', '2', '9', '_', 'Z', '3', '0', '_', 'Z', '3', '1', '_', 'Z', '0', 0,
-  /* 258 */ 'B', '1', '1', 0,
-  /* 262 */ 'D', '8', '_', 'D', '9', '_', 'D', '1', '0', '_', 'D', '1', '1', 0,
-  /* 276 */ 'H', '1', '1', 0,
-  /* 280 */ 'P', '1', '1', 0,
-  /* 284 */ 'Q', '8', '_', 'Q', '9', '_', 'Q', '1', '0', '_', 'Q', '1', '1', 0,
-  /* 298 */ 'S', '1', '1', 0,
-  /* 302 */ 'W', '1', '0', '_', 'W', '1', '1', 0,
-  /* 310 */ 'X', '1', '0', '_', 'X', '1', '1', 0,
-  /* 318 */ 'Z', '8', '_', 'Z', '9', '_', 'Z', '1', '0', '_', 'Z', '1', '1', 0,
-  /* 332 */ 'B', '2', '1', 0,
-  /* 336 */ 'D', '1', '8', '_', 'D', '1', '9', '_', 'D', '2', '0', '_', 'D', '2', '1', 0,
-  /* 352 */ 'H', '2', '1', 0,
-  /* 356 */ 'Q', '1', '8', '_', 'Q', '1', '9', '_', 'Q', '2', '0', '_', 'Q', '2', '1', 0,
-  /* 372 */ 'S', '2', '1', 0,
-  /* 376 */ 'W', '2', '0', '_', 'W', '2', '1', 0,
-  /* 384 */ 'X', '2', '0', '_', 'X', '2', '1', 0,
-  /* 392 */ 'Z', '1', '8', '_', 'Z', '1', '9', '_', 'Z', '2', '0', '_', 'Z', '2', '1', 0,
-  /* 408 */ 'B', '3', '1', 0,
-  /* 412 */ 'D', '2', '8', '_', 'D', '2', '9', '_', 'D', '3', '0', '_', 'D', '3', '1', 0,
-  /* 428 */ 'H', '3', '1', 0,
-  /* 432 */ 'Q', '2', '8', '_', 'Q', '2', '9', '_', 'Q', '3', '0', '_', 'Q', '3', '1', 0,
-  /* 448 */ 'S', '3', '1', 0,
-  /* 452 */ 'Z', '2', '8', '_', 'Z', '2', '9', '_', 'Z', '3', '0', '_', 'Z', '3', '1', 0,
-  /* 468 */ 'B', '1', 0,
-  /* 471 */ 'D', '3', '0', '_', 'D', '3', '1', '_', 'D', '0', '_', 'D', '1', 0,
-  /* 485 */ 'H', '1', 0,
-  /* 488 */ 'P', '1', 0,
-  /* 491 */ 'Q', '3', '0', '_', 'Q', '3', '1', '_', 'Q', '0', '_', 'Q', '1', 0,
-  /* 505 */ 'S', '1', 0,
-  /* 508 */ 'W', '0', '_', 'W', '1', 0,
-  /* 514 */ 'X', '0', '_', 'X', '1', 0,
-  /* 520 */ 'Z', '3', '0', '_', 'Z', '3', '1', '_', 'Z', '0', '_', 'Z', '1', 0,
-  /* 534 */ 'B', '1', '2', 0,
-  /* 538 */ 'D', '9', '_', 'D', '1', '0', '_', 'D', '1', '1', '_', 'D', '1', '2', 0,
-  /* 553 */ 'H', '1', '2', 0,
-  /* 557 */ 'P', '1', '2', 0,
-  /* 561 */ 'Q', '9', '_', 'Q', '1', '0', '_', 'Q', '1', '1', '_', 'Q', '1', '2', 0,
-  /* 576 */ 'S', '1', '2', 0,
-  /* 580 */ 'W', '1', '2', 0,
-  /* 584 */ 'X', '1', '2', 0,
-  /* 588 */ 'Z', '9', '_', 'Z', '1', '0', '_', 'Z', '1', '1', '_', 'Z', '1', '2', 0,
-  /* 603 */ 'B', '2', '2', 0,
-  /* 607 */ 'D', '1', '9', '_', 'D', '2', '0', '_', 'D', '2', '1', '_', 'D', '2', '2', 0,
-  /* 623 */ 'H', '2', '2', 0,
-  /* 627 */ 'Q', '1', '9', '_', 'Q', '2', '0', '_', 'Q', '2', '1', '_', 'Q', '2', '2', 0,
-  /* 643 */ 'S', '2', '2', 0,
-  /* 647 */ 'W', '2', '2', 0,
-  /* 651 */ 'X', '2', '2', 0,
-  /* 655 */ 'Z', '1', '9', '_', 'Z', '2', '0', '_', 'Z', '2', '1', '_', 'Z', '2', '2', 0,
-  /* 671 */ 'B', '2', 0,
-  /* 674 */ 'D', '3', '1', '_', 'D', '0', '_', 'D', '1', '_', 'D', '2', 0,
-  /* 687 */ 'H', '2', 0,
-  /* 690 */ 'P', '2', 0,
-  /* 693 */ 'Q', '3', '1', '_', 'Q', '0', '_', 'Q', '1', '_', 'Q', '2', 0,
-  /* 706 */ 'S', '2', 0,
-  /* 709 */ 'W', '2', 0,
-  /* 712 */ 'X', '2', 0,
-  /* 715 */ 'Z', '3', '1', '_', 'Z', '0', '_', 'Z', '1', '_', 'Z', '2', 0,
-  /* 728 */ 'B', '1', '3', 0,
-  /* 732 */ 'D', '1', '0', '_', 'D', '1', '1', '_', 'D', '1', '2', '_', 'D', '1', '3', 0,
-  /* 748 */ 'H', '1', '3', 0,
-  /* 752 */ 'P', '1', '3', 0,
-  /* 756 */ 'Q', '1', '0', '_', 'Q', '1', '1', '_', 'Q', '1', '2', '_', 'Q', '1', '3', 0,
-  /* 772 */ 'S', '1', '3', 0,
-  /* 776 */ 'W', '1', '2', '_', 'W', '1', '3', 0,
-  /* 784 */ 'X', '1', '2', '_', 'X', '1', '3', 0,
-  /* 792 */ 'Z', '1', '0', '_', 'Z', '1', '1', '_', 'Z', '1', '2', '_', 'Z', '1', '3', 0,
-  /* 808 */ 'B', '2', '3', 0,
-  /* 812 */ 'D', '2', '0', '_', 'D', '2', '1', '_', 'D', '2', '2', '_', 'D', '2', '3', 0,
-  /* 828 */ 'H', '2', '3', 0,
-  /* 832 */ 'Q', '2', '0', '_', 'Q', '2', '1', '_', 'Q', '2', '2', '_', 'Q', '2', '3', 0,
-  /* 848 */ 'S', '2', '3', 0,
-  /* 852 */ 'W', '2', '2', '_', 'W', '2', '3', 0,
-  /* 860 */ 'X', '2', '2', '_', 'X', '2', '3', 0,
-  /* 868 */ 'Z', '2', '0', '_', 'Z', '2', '1', '_', 'Z', '2', '2', '_', 'Z', '2', '3', 0,
-  /* 884 */ 'B', '3', 0,
-  /* 887 */ 'D', '0', '_', 'D', '1', '_', 'D', '2', '_', 'D', '3', 0,
-  /* 899 */ 'H', '3', 0,
-  /* 902 */ 'P', '3', 0,
-  /* 905 */ 'Q', '0', '_', 'Q', '1', '_', 'Q', '2', '_', 'Q', '3', 0,
-  /* 917 */ 'S', '3', 0,
-  /* 920 */ 'W', '2', '_', 'W', '3', 0,
-  /* 926 */ 'X', '2', '_', 'X', '3', 0,
-  /* 932 */ 'Z', '0', '_', 'Z', '1', '_', 'Z', '2', '_', 'Z', '3', 0,
-  /* 944 */ 'B', '1', '4', 0,
-  /* 948 */ 'D', '1', '1', '_', 'D', '1', '2', '_', 'D', '1', '3', '_', 'D', '1', '4', 0,
-  /* 964 */ 'H', '1', '4', 0,
-  /* 968 */ 'P', '1', '4', 0,
-  /* 972 */ 'Q', '1', '1', '_', 'Q', '1', '2', '_', 'Q', '1', '3', '_', 'Q', '1', '4', 0,
-  /* 988 */ 'S', '1', '4', 0,
-  /* 992 */ 'W', '1', '4', 0,
-  /* 996 */ 'X', '1', '4', 0,
-  /* 1000 */ 'Z', '1', '1', '_', 'Z', '1', '2', '_', 'Z', '1', '3', '_', 'Z', '1', '4', 0,
-  /* 1016 */ 'B', '2', '4', 0,
-  /* 1020 */ 'D', '2', '1', '_', 'D', '2', '2', '_', 'D', '2', '3', '_', 'D', '2', '4', 0,
-  /* 1036 */ 'H', '2', '4', 0,
-  /* 1040 */ 'Q', '2', '1', '_', 'Q', '2', '2', '_', 'Q', '2', '3', '_', 'Q', '2', '4', 0,
-  /* 1056 */ 'S', '2', '4', 0,
-  /* 1060 */ 'W', '2', '4', 0,
-  /* 1064 */ 'X', '2', '4', 0,
-  /* 1068 */ 'Z', '2', '1', '_', 'Z', '2', '2', '_', 'Z', '2', '3', '_', 'Z', '2', '4', 0,
-  /* 1084 */ 'B', '4', 0,
-  /* 1087 */ 'D', '1', '_', 'D', '2', '_', 'D', '3', '_', 'D', '4', 0,
-  /* 1099 */ 'H', '4', 0,
-  /* 1102 */ 'P', '4', 0,
-  /* 1105 */ 'Q', '1', '_', 'Q', '2', '_', 'Q', '3', '_', 'Q', '4', 0,
-  /* 1117 */ 'S', '4', 0,
-  /* 1120 */ 'W', '4', 0,
-  /* 1123 */ 'X', '4', 0,
-  /* 1126 */ 'Z', '1', '_', 'Z', '2', '_', 'Z', '3', '_', 'Z', '4', 0,
-  /* 1138 */ 'B', '1', '5', 0,
-  /* 1142 */ 'D', '1', '2', '_', 'D', '1', '3', '_', 'D', '1', '4', '_', 'D', '1', '5', 0,
-  /* 1158 */ 'H', '1', '5', 0,
-  /* 1162 */ 'P', '1', '5', 0,
-  /* 1166 */ 'Q', '1', '2', '_', 'Q', '1', '3', '_', 'Q', '1', '4', '_', 'Q', '1', '5', 0,
-  /* 1182 */ 'S', '1', '5', 0,
-  /* 1186 */ 'W', '1', '4', '_', 'W', '1', '5', 0,
-  /* 1194 */ 'X', '1', '4', '_', 'X', '1', '5', 0,
-  /* 1202 */ 'Z', '1', '2', '_', 'Z', '1', '3', '_', 'Z', '1', '4', '_', 'Z', '1', '5', 0,
-  /* 1218 */ 'B', '2', '5', 0,
-  /* 1222 */ 'D', '2', '2', '_', 'D', '2', '3', '_', 'D', '2', '4', '_', 'D', '2', '5', 0,
-  /* 1238 */ 'H', '2', '5', 0,
-  /* 1242 */ 'Q', '2', '2', '_', 'Q', '2', '3', '_', 'Q', '2', '4', '_', 'Q', '2', '5', 0,
-  /* 1258 */ 'S', '2', '5', 0,
-  /* 1262 */ 'W', '2', '4', '_', 'W', '2', '5', 0,
-  /* 1270 */ 'X', '2', '4', '_', 'X', '2', '5', 0,
-  /* 1278 */ 'Z', '2', '2', '_', 'Z', '2', '3', '_', 'Z', '2', '4', '_', 'Z', '2', '5', 0,
-  /* 1294 */ 'B', '5', 0,
-  /* 1297 */ 'D', '2', '_', 'D', '3', '_', 'D', '4', '_', 'D', '5', 0,
-  /* 1309 */ 'H', '5', 0,
-  /* 1312 */ 'P', '5', 0,
-  /* 1315 */ 'Q', '2', '_', 'Q', '3', '_', 'Q', '4', '_', 'Q', '5', 0,
-  /* 1327 */ 'S', '5', 0,
-  /* 1330 */ 'W', '4', '_', 'W', '5', 0,
-  /* 1336 */ 'X', '4', '_', 'X', '5', 0,
-  /* 1342 */ 'Z', '2', '_', 'Z', '3', '_', 'Z', '4', '_', 'Z', '5', 0,
-  /* 1354 */ 'B', '1', '6', 0,
-  /* 1358 */ 'D', '1', '3', '_', 'D', '1', '4', '_', 'D', '1', '5', '_', 'D', '1', '6', 0,
-  /* 1374 */ 'H', '1', '6', 0,
-  /* 1378 */ 'Q', '1', '3', '_', 'Q', '1', '4', '_', 'Q', '1', '5', '_', 'Q', '1', '6', 0,
-  /* 1394 */ 'S', '1', '6', 0,
-  /* 1398 */ 'W', '1', '6', 0,
-  /* 1402 */ 'X', '1', '6', 0,
-  /* 1406 */ 'Z', '1', '3', '_', 'Z', '1', '4', '_', 'Z', '1', '5', '_', 'Z', '1', '6', 0,
-  /* 1422 */ 'B', '2', '6', 0,
-  /* 1426 */ 'D', '2', '3', '_', 'D', '2', '4', '_', 'D', '2', '5', '_', 'D', '2', '6', 0,
-  /* 1442 */ 'H', '2', '6', 0,
-  /* 1446 */ 'Q', '2', '3', '_', 'Q', '2', '4', '_', 'Q', '2', '5', '_', 'Q', '2', '6', 0,
-  /* 1462 */ 'S', '2', '6', 0,
-  /* 1466 */ 'W', '2', '6', 0,
-  /* 1470 */ 'X', '2', '6', 0,
-  /* 1474 */ 'Z', '2', '3', '_', 'Z', '2', '4', '_', 'Z', '2', '5', '_', 'Z', '2', '6', 0,
-  /* 1490 */ 'B', '6', 0,
-  /* 1493 */ 'D', '3', '_', 'D', '4', '_', 'D', '5', '_', 'D', '6', 0,
-  /* 1505 */ 'H', '6', 0,
-  /* 1508 */ 'P', '6', 0,
-  /* 1511 */ 'Q', '3', '_', 'Q', '4', '_', 'Q', '5', '_', 'Q', '6', 0,
-  /* 1523 */ 'S', '6', 0,
-  /* 1526 */ 'W', '6', 0,
-  /* 1529 */ 'X', '6', 0,
-  /* 1532 */ 'Z', '3', '_', 'Z', '4', '_', 'Z', '5', '_', 'Z', '6', 0,
-  /* 1544 */ 'B', '1', '7', 0,
-  /* 1548 */ 'D', '1', '4', '_', 'D', '1', '5', '_', 'D', '1', '6', '_', 'D', '1', '7', 0,
-  /* 1564 */ 'H', '1', '7', 0,
-  /* 1568 */ 'Q', '1', '4', '_', 'Q', '1', '5', '_', 'Q', '1', '6', '_', 'Q', '1', '7', 0,
-  /* 1584 */ 'S', '1', '7', 0,
-  /* 1588 */ 'W', '1', '6', '_', 'W', '1', '7', 0,
-  /* 1596 */ 'X', '1', '6', '_', 'X', '1', '7', 0,
-  /* 1604 */ 'Z', '1', '4', '_', 'Z', '1', '5', '_', 'Z', '1', '6', '_', 'Z', '1', '7', 0,
-  /* 1620 */ 'B', '2', '7', 0,
-  /* 1624 */ 'D', '2', '4', '_', 'D', '2', '5', '_', 'D', '2', '6', '_', 'D', '2', '7', 0,
-  /* 1640 */ 'H', '2', '7', 0,
-  /* 1644 */ 'Q', '2', '4', '_', 'Q', '2', '5', '_', 'Q', '2', '6', '_', 'Q', '2', '7', 0,
-  /* 1660 */ 'S', '2', '7', 0,
-  /* 1664 */ 'W', '2', '6', '_', 'W', '2', '7', 0,
-  /* 1672 */ 'X', '2', '6', '_', 'X', '2', '7', 0,
-  /* 1680 */ 'Z', '2', '4', '_', 'Z', '2', '5', '_', 'Z', '2', '6', '_', 'Z', '2', '7', 0,
-  /* 1696 */ 'B', '7', 0,
-  /* 1699 */ 'D', '4', '_', 'D', '5', '_', 'D', '6', '_', 'D', '7', 0,
-  /* 1711 */ 'H', '7', 0,
-  /* 1714 */ 'P', '7', 0,
-  /* 1717 */ 'Q', '4', '_', 'Q', '5', '_', 'Q', '6', '_', 'Q', '7', 0,
-  /* 1729 */ 'S', '7', 0,
-  /* 1732 */ 'W', '6', '_', 'W', '7', 0,
-  /* 1738 */ 'X', '6', '_', 'X', '7', 0,
-  /* 1744 */ 'Z', '4', '_', 'Z', '5', '_', 'Z', '6', '_', 'Z', '7', 0,
-  /* 1756 */ 'B', '1', '8', 0,
-  /* 1760 */ 'D', '1', '5', '_', 'D', '1', '6', '_', 'D', '1', '7', '_', 'D', '1', '8', 0,
-  /* 1776 */ 'H', '1', '8', 0,
-  /* 1780 */ 'Q', '1', '5', '_', 'Q', '1', '6', '_', 'Q', '1', '7', '_', 'Q', '1', '8', 0,
-  /* 1796 */ 'S', '1', '8', 0,
-  /* 1800 */ 'W', '1', '8', 0,
-  /* 1804 */ 'X', '1', '8', 0,
-  /* 1808 */ 'Z', '1', '5', '_', 'Z', '1', '6', '_', 'Z', '1', '7', '_', 'Z', '1', '8', 0,
-  /* 1824 */ 'B', '2', '8', 0,
-  /* 1828 */ 'D', '2', '5', '_', 'D', '2', '6', '_', 'D', '2', '7', '_', 'D', '2', '8', 0,
-  /* 1844 */ 'H', '2', '8', 0,
-  /* 1848 */ 'Q', '2', '5', '_', 'Q', '2', '6', '_', 'Q', '2', '7', '_', 'Q', '2', '8', 0,
-  /* 1864 */ 'S', '2', '8', 0,
-  /* 1868 */ 'W', '2', '8', 0,
-  /* 1872 */ 'X', '2', '8', 0,
-  /* 1876 */ 'Z', '2', '5', '_', 'Z', '2', '6', '_', 'Z', '2', '7', '_', 'Z', '2', '8', 0,
-  /* 1892 */ 'B', '8', 0,
-  /* 1895 */ 'D', '5', '_', 'D', '6', '_', 'D', '7', '_', 'D', '8', 0,
-  /* 1907 */ 'H', '8', 0,
-  /* 1910 */ 'P', '8', 0,
-  /* 1913 */ 'Q', '5', '_', 'Q', '6', '_', 'Q', '7', '_', 'Q', '8', 0,
-  /* 1925 */ 'S', '8', 0,
-  /* 1928 */ 'W', '8', 0,
-  /* 1931 */ 'X', '8', 0,
-  /* 1934 */ 'Z', '5', '_', 'Z', '6', '_', 'Z', '7', '_', 'Z', '8', 0,
-  /* 1946 */ 'B', '1', '9', 0,
-  /* 1950 */ 'D', '1', '6', '_', 'D', '1', '7', '_', 'D', '1', '8', '_', 'D', '1', '9', 0,
-  /* 1966 */ 'H', '1', '9', 0,
-  /* 1970 */ 'Q', '1', '6', '_', 'Q', '1', '7', '_', 'Q', '1', '8', '_', 'Q', '1', '9', 0,
-  /* 1986 */ 'S', '1', '9', 0,
-  /* 1990 */ 'W', '1', '8', '_', 'W', '1', '9', 0,
-  /* 1998 */ 'X', '1', '8', '_', 'X', '1', '9', 0,
-  /* 2006 */ 'Z', '1', '6', '_', 'Z', '1', '7', '_', 'Z', '1', '8', '_', 'Z', '1', '9', 0,
-  /* 2022 */ 'B', '2', '9', 0,
-  /* 2026 */ 'D', '2', '6', '_', 'D', '2', '7', '_', 'D', '2', '8', '_', 'D', '2', '9', 0,
-  /* 2042 */ 'H', '2', '9', 0,
-  /* 2046 */ 'Q', '2', '6', '_', 'Q', '2', '7', '_', 'Q', '2', '8', '_', 'Q', '2', '9', 0,
-  /* 2062 */ 'S', '2', '9', 0,
-  /* 2066 */ 'W', '2', '8', '_', 'W', '2', '9', 0,
-  /* 2074 */ 'Z', '2', '6', '_', 'Z', '2', '7', '_', 'Z', '2', '8', '_', 'Z', '2', '9', 0,
-  /* 2090 */ 'B', '9', 0,
-  /* 2093 */ 'D', '6', '_', 'D', '7', '_', 'D', '8', '_', 'D', '9', 0,
-  /* 2105 */ 'H', '9', 0,
-  /* 2108 */ 'P', '9', 0,
-  /* 2111 */ 'Q', '6', '_', 'Q', '7', '_', 'Q', '8', '_', 'Q', '9', 0,
-  /* 2123 */ 'S', '9', 0,
-  /* 2126 */ 'W', '8', '_', 'W', '9', 0,
-  /* 2132 */ 'X', '8', '_', 'X', '9', 0,
-  /* 2138 */ 'Z', '6', '_', 'Z', '7', '_', 'Z', '8', '_', 'Z', '9', 0,
-  /* 2150 */ 'Z', '1', '0', '_', 'H', 'I', 0,
-  /* 2157 */ 'Z', '2', '0', '_', 'H', 'I', 0,
-  /* 2164 */ 'Z', '3', '0', '_', 'H', 'I', 0,
-  /* 2171 */ 'Z', '0', '_', 'H', 'I', 0,
-  /* 2177 */ 'Z', '1', '1', '_', 'H', 'I', 0,
-  /* 2184 */ 'Z', '2', '1', '_', 'H', 'I', 0,
-  /* 2191 */ 'Z', '3', '1', '_', 'H', 'I', 0,
-  /* 2198 */ 'Z', '1', '_', 'H', 'I', 0,
-  /* 2204 */ 'Z', '1', '2', '_', 'H', 'I', 0,
-  /* 2211 */ 'Z', '2', '2', '_', 'H', 'I', 0,
-  /* 2218 */ 'Z', '2', '_', 'H', 'I', 0,
-  /* 2224 */ 'Z', '1', '3', '_', 'H', 'I', 0,
-  /* 2231 */ 'Z', '2', '3', '_', 'H', 'I', 0,
-  /* 2238 */ 'Z', '3', '_', 'H', 'I', 0,
-  /* 2244 */ 'Z', '1', '4', '_', 'H', 'I', 0,
-  /* 2251 */ 'Z', '2', '4', '_', 'H', 'I', 0,
-  /* 2258 */ 'Z', '4', '_', 'H', 'I', 0,
-  /* 2264 */ 'Z', '1', '5', '_', 'H', 'I', 0,
-  /* 2271 */ 'Z', '2', '5', '_', 'H', 'I', 0,
-  /* 2278 */ 'Z', '5', '_', 'H', 'I', 0,
-  /* 2284 */ 'Z', '1', '6', '_', 'H', 'I', 0,
-  /* 2291 */ 'Z', '2', '6', '_', 'H', 'I', 0,
-  /* 2298 */ 'Z', '6', '_', 'H', 'I', 0,
-  /* 2304 */ 'Z', '1', '7', '_', 'H', 'I', 0,
-  /* 2311 */ 'Z', '2', '7', '_', 'H', 'I', 0,
-  /* 2318 */ 'Z', '7', '_', 'H', 'I', 0,
-  /* 2324 */ 'Z', '1', '8', '_', 'H', 'I', 0,
-  /* 2331 */ 'Z', '2', '8', '_', 'H', 'I', 0,
-  /* 2338 */ 'Z', '8', '_', 'H', 'I', 0,
-  /* 2344 */ 'Z', '1', '9', '_', 'H', 'I', 0,
-  /* 2351 */ 'Z', '2', '9', '_', 'H', 'I', 0,
-  /* 2358 */ 'Z', '9', '_', 'H', 'I', 0,
-  /* 2364 */ 'X', '2', '8', '_', 'F', 'P', 0,
-  /* 2371 */ 'W', 'S', 'P', 0,
-  /* 2375 */ 'F', 'F', 'R', 0,
-  /* 2379 */ 'L', 'R', 0,
-  /* 2382 */ 'W', '3', '0', '_', 'W', 'Z', 'R', 0,
-  /* 2390 */ 'L', 'R', '_', 'X', 'Z', 'R', 0,
-  /* 2397 */ 'N', 'Z', 'C', 'V', 0,
+  /* 0 */ "B10\0"
+  /* 4 */ "D7_D8_D9_D10\0"
+  /* 17 */ "H10\0"
+  /* 21 */ "P10\0"
+  /* 25 */ "Q7_Q8_Q9_Q10\0"
+  /* 38 */ "S10\0"
+  /* 42 */ "W10\0"
+  /* 46 */ "X10\0"
+  /* 50 */ "Z7_Z8_Z9_Z10\0"
+  /* 63 */ "B20\0"
+  /* 67 */ "D17_D18_D19_D20\0"
+  /* 83 */ "H20\0"
+  /* 87 */ "Q17_Q18_Q19_Q20\0"
+  /* 103 */ "S20\0"
+  /* 107 */ "W20\0"
+  /* 111 */ "X20\0"
+  /* 115 */ "Z17_Z18_Z19_Z20\0"
+  /* 131 */ "B30\0"
+  /* 135 */ "D27_D28_D29_D30\0"
+  /* 151 */ "H30\0"
+  /* 155 */ "Q27_Q28_Q29_Q30\0"
+  /* 171 */ "S30\0"
+  /* 175 */ "W30\0"
+  /* 179 */ "Z27_Z28_Z29_Z30\0"
+  /* 195 */ "B0\0"
+  /* 198 */ "D29_D30_D31_D0\0"
+  /* 213 */ "H0\0"
+  /* 216 */ "P0\0"
+  /* 219 */ "Q29_Q30_Q31_Q0\0"
+  /* 234 */ "S0\0"
+  /* 237 */ "W0\0"
+  /* 240 */ "X0\0"
+  /* 243 */ "Z29_Z30_Z31_Z0\0"
+  /* 258 */ "B11\0"
+  /* 262 */ "D8_D9_D10_D11\0"
+  /* 276 */ "H11\0"
+  /* 280 */ "P11\0"
+  /* 284 */ "Q8_Q9_Q10_Q11\0"
+  /* 298 */ "S11\0"
+  /* 302 */ "W10_W11\0"
+  /* 310 */ "X10_X11\0"
+  /* 318 */ "Z8_Z9_Z10_Z11\0"
+  /* 332 */ "B21\0"
+  /* 336 */ "D18_D19_D20_D21\0"
+  /* 352 */ "H21\0"
+  /* 356 */ "Q18_Q19_Q20_Q21\0"
+  /* 372 */ "S21\0"
+  /* 376 */ "W20_W21\0"
+  /* 384 */ "X20_X21\0"
+  /* 392 */ "Z18_Z19_Z20_Z21\0"
+  /* 408 */ "B31\0"
+  /* 412 */ "D28_D29_D30_D31\0"
+  /* 428 */ "H31\0"
+  /* 432 */ "Q28_Q29_Q30_Q31\0"
+  /* 448 */ "S31\0"
+  /* 452 */ "Z28_Z29_Z30_Z31\0"
+  /* 468 */ "B1\0"
+  /* 471 */ "D30_D31_D0_D1\0"
+  /* 485 */ "H1\0"
+  /* 488 */ "P1\0"
+  /* 491 */ "Q30_Q31_Q0_Q1\0"
+  /* 505 */ "S1\0"
+  /* 508 */ "W0_W1\0"
+  /* 514 */ "X0_X1\0"
+  /* 520 */ "Z30_Z31_Z0_Z1\0"
+  /* 534 */ "B12\0"
+  /* 538 */ "D9_D10_D11_D12\0"
+  /* 553 */ "H12\0"
+  /* 557 */ "P12\0"
+  /* 561 */ "Q9_Q10_Q11_Q12\0"
+  /* 576 */ "S12\0"
+  /* 580 */ "W12\0"
+  /* 584 */ "X12\0"
+  /* 588 */ "Z9_Z10_Z11_Z12\0"
+  /* 603 */ "B22\0"
+  /* 607 */ "D19_D20_D21_D22\0"
+  /* 623 */ "H22\0"
+  /* 627 */ "Q19_Q20_Q21_Q22\0"
+  /* 643 */ "S22\0"
+  /* 647 */ "W22\0"
+  /* 651 */ "X22\0"
+  /* 655 */ "Z19_Z20_Z21_Z22\0"
+  /* 671 */ "B2\0"
+  /* 674 */ "D31_D0_D1_D2\0"
+  /* 687 */ "H2\0"
+  /* 690 */ "P2\0"
+  /* 693 */ "Q31_Q0_Q1_Q2\0"
+  /* 706 */ "S2\0"
+  /* 709 */ "W2\0"
+  /* 712 */ "X2\0"
+  /* 715 */ "Z31_Z0_Z1_Z2\0"
+  /* 728 */ "B13\0"
+  /* 732 */ "D10_D11_D12_D13\0"
+  /* 748 */ "H13\0"
+  /* 752 */ "P13\0"
+  /* 756 */ "Q10_Q11_Q12_Q13\0"
+  /* 772 */ "S13\0"
+  /* 776 */ "W12_W13\0"
+  /* 784 */ "X12_X13\0"
+  /* 792 */ "Z10_Z11_Z12_Z13\0"
+  /* 808 */ "B23\0"
+  /* 812 */ "D20_D21_D22_D23\0"
+  /* 828 */ "H23\0"
+  /* 832 */ "Q20_Q21_Q22_Q23\0"
+  /* 848 */ "S23\0"
+  /* 852 */ "W22_W23\0"
+  /* 860 */ "X22_X23\0"
+  /* 868 */ "Z20_Z21_Z22_Z23\0"
+  /* 884 */ "B3\0"
+  /* 887 */ "D0_D1_D2_D3\0"
+  /* 899 */ "H3\0"
+  /* 902 */ "P3\0"
+  /* 905 */ "Q0_Q1_Q2_Q3\0"
+  /* 917 */ "S3\0"
+  /* 920 */ "W2_W3\0"
+  /* 926 */ "X2_X3\0"
+  /* 932 */ "Z0_Z1_Z2_Z3\0"
+  /* 944 */ "B14\0"
+  /* 948 */ "D11_D12_D13_D14\0"
+  /* 964 */ "H14\0"
+  /* 968 */ "P14\0"
+  /* 972 */ "Q11_Q12_Q13_Q14\0"
+  /* 988 */ "S14\0"
+  /* 992 */ "W14\0"
+  /* 996 */ "X14\0"
+  /* 1000 */ "Z11_Z12_Z13_Z14\0"
+  /* 1016 */ "B24\0"
+  /* 1020 */ "D21_D22_D23_D24\0"
+  /* 1036 */ "H24\0"
+  /* 1040 */ "Q21_Q22_Q23_Q24\0"
+  /* 1056 */ "S24\0"
+  /* 1060 */ "W24\0"
+  /* 1064 */ "X24\0"
+  /* 1068 */ "Z21_Z22_Z23_Z24\0"
+  /* 1084 */ "B4\0"
+  /* 1087 */ "D1_D2_D3_D4\0"
+  /* 1099 */ "H4\0"
+  /* 1102 */ "P4\0"
+  /* 1105 */ "Q1_Q2_Q3_Q4\0"
+  /* 1117 */ "S4\0"
+  /* 1120 */ "W4\0"
+  /* 1123 */ "X4\0"
+  /* 1126 */ "Z1_Z2_Z3_Z4\0"
+  /* 1138 */ "B15\0"
+  /* 1142 */ "D12_D13_D14_D15\0"
+  /* 1158 */ "H15\0"
+  /* 1162 */ "P15\0"
+  /* 1166 */ "Q12_Q13_Q14_Q15\0"
+  /* 1182 */ "S15\0"
+  /* 1186 */ "W14_W15\0"
+  /* 1194 */ "X14_X15\0"
+  /* 1202 */ "Z12_Z13_Z14_Z15\0"
+  /* 1218 */ "B25\0"
+  /* 1222 */ "D22_D23_D24_D25\0"
+  /* 1238 */ "H25\0"
+  /* 1242 */ "Q22_Q23_Q24_Q25\0"
+  /* 1258 */ "S25\0"
+  /* 1262 */ "W24_W25\0"
+  /* 1270 */ "X24_X25\0"
+  /* 1278 */ "Z22_Z23_Z24_Z25\0"
+  /* 1294 */ "B5\0"
+  /* 1297 */ "D2_D3_D4_D5\0"
+  /* 1309 */ "H5\0"
+  /* 1312 */ "P5\0"
+  /* 1315 */ "Q2_Q3_Q4_Q5\0"
+  /* 1327 */ "S5\0"
+  /* 1330 */ "W4_W5\0"
+  /* 1336 */ "X4_X5\0"
+  /* 1342 */ "Z2_Z3_Z4_Z5\0"
+  /* 1354 */ "B16\0"
+  /* 1358 */ "D13_D14_D15_D16\0"
+  /* 1374 */ "H16\0"
+  /* 1378 */ "Q13_Q14_Q15_Q16\0"
+  /* 1394 */ "S16\0"
+  /* 1398 */ "W16\0"
+  /* 1402 */ "X16\0"
+  /* 1406 */ "Z13_Z14_Z15_Z16\0"
+  /* 1422 */ "B26\0"
+  /* 1426 */ "D23_D24_D25_D26\0"
+  /* 1442 */ "H26\0"
+  /* 1446 */ "Q23_Q24_Q25_Q26\0"
+  /* 1462 */ "S26\0"
+  /* 1466 */ "W26\0"
+  /* 1470 */ "X26\0"
+  /* 1474 */ "Z23_Z24_Z25_Z26\0"
+  /* 1490 */ "B6\0"
+  /* 1493 */ "D3_D4_D5_D6\0"
+  /* 1505 */ "H6\0"
+  /* 1508 */ "P6\0"
+  /* 1511 */ "Q3_Q4_Q5_Q6\0"
+  /* 1523 */ "S6\0"
+  /* 1526 */ "W6\0"
+  /* 1529 */ "X6\0"
+  /* 1532 */ "Z3_Z4_Z5_Z6\0"
+  /* 1544 */ "B17\0"
+  /* 1548 */ "D14_D15_D16_D17\0"
+  /* 1564 */ "H17\0"
+  /* 1568 */ "Q14_Q15_Q16_Q17\0"
+  /* 1584 */ "S17\0"
+  /* 1588 */ "W16_W17\0"
+  /* 1596 */ "X16_X17\0"
+  /* 1604 */ "Z14_Z15_Z16_Z17\0"
+  /* 1620 */ "B27\0"
+  /* 1624 */ "D24_D25_D26_D27\0"
+  /* 1640 */ "H27\0"
+  /* 1644 */ "Q24_Q25_Q26_Q27\0"
+  /* 1660 */ "S27\0"
+  /* 1664 */ "W26_W27\0"
+  /* 1672 */ "X26_X27\0"
+  /* 1680 */ "Z24_Z25_Z26_Z27\0"
+  /* 1696 */ "B7\0"
+  /* 1699 */ "D4_D5_D6_D7\0"
+  /* 1711 */ "H7\0"
+  /* 1714 */ "P7\0"
+  /* 1717 */ "Q4_Q5_Q6_Q7\0"
+  /* 1729 */ "S7\0"
+  /* 1732 */ "W6_W7\0"
+  /* 1738 */ "X6_X7\0"
+  /* 1744 */ "Z4_Z5_Z6_Z7\0"
+  /* 1756 */ "B18\0"
+  /* 1760 */ "D15_D16_D17_D18\0"
+  /* 1776 */ "H18\0"
+  /* 1780 */ "Q15_Q16_Q17_Q18\0"
+  /* 1796 */ "S18\0"
+  /* 1800 */ "W18\0"
+  /* 1804 */ "X18\0"
+  /* 1808 */ "Z15_Z16_Z17_Z18\0"
+  /* 1824 */ "B28\0"
+  /* 1828 */ "D25_D26_D27_D28\0"
+  /* 1844 */ "H28\0"
+  /* 1848 */ "Q25_Q26_Q27_Q28\0"
+  /* 1864 */ "S28\0"
+  /* 1868 */ "W28\0"
+  /* 1872 */ "X28\0"
+  /* 1876 */ "Z25_Z26_Z27_Z28\0"
+  /* 1892 */ "B8\0"
+  /* 1895 */ "D5_D6_D7_D8\0"
+  /* 1907 */ "H8\0"
+  /* 1910 */ "P8\0"
+  /* 1913 */ "Q5_Q6_Q7_Q8\0"
+  /* 1925 */ "S8\0"
+  /* 1928 */ "W8\0"
+  /* 1931 */ "X8\0"
+  /* 1934 */ "Z5_Z6_Z7_Z8\0"
+  /* 1946 */ "B19\0"
+  /* 1950 */ "D16_D17_D18_D19\0"
+  /* 1966 */ "H19\0"
+  /* 1970 */ "Q16_Q17_Q18_Q19\0"
+  /* 1986 */ "S19\0"
+  /* 1990 */ "W18_W19\0"
+  /* 1998 */ "X18_X19\0"
+  /* 2006 */ "Z16_Z17_Z18_Z19\0"
+  /* 2022 */ "B29\0"
+  /* 2026 */ "D26_D27_D28_D29\0"
+  /* 2042 */ "H29\0"
+  /* 2046 */ "Q26_Q27_Q28_Q29\0"
+  /* 2062 */ "S29\0"
+  /* 2066 */ "W28_W29\0"
+  /* 2074 */ "Z26_Z27_Z28_Z29\0"
+  /* 2090 */ "B9\0"
+  /* 2093 */ "D6_D7_D8_D9\0"
+  /* 2105 */ "H9\0"
+  /* 2108 */ "P9\0"
+  /* 2111 */ "Q6_Q7_Q8_Q9\0"
+  /* 2123 */ "S9\0"
+  /* 2126 */ "W8_W9\0"
+  /* 2132 */ "X8_X9\0"
+  /* 2138 */ "Z6_Z7_Z8_Z9\0"
+  /* 2150 */ "Z10_HI\0"
+  /* 2157 */ "Z20_HI\0"
+  /* 2164 */ "Z30_HI\0"
+  /* 2171 */ "Z0_HI\0"
+  /* 2177 */ "Z11_HI\0"
+  /* 2184 */ "Z21_HI\0"
+  /* 2191 */ "Z31_HI\0"
+  /* 2198 */ "Z1_HI\0"
+  /* 2204 */ "Z12_HI\0"
+  /* 2211 */ "Z22_HI\0"
+  /* 2218 */ "Z2_HI\0"
+  /* 2224 */ "Z13_HI\0"
+  /* 2231 */ "Z23_HI\0"
+  /* 2238 */ "Z3_HI\0"
+  /* 2244 */ "Z14_HI\0"
+  /* 2251 */ "Z24_HI\0"
+  /* 2258 */ "Z4_HI\0"
+  /* 2264 */ "Z15_HI\0"
+  /* 2271 */ "Z25_HI\0"
+  /* 2278 */ "Z5_HI\0"
+  /* 2284 */ "Z16_HI\0"
+  /* 2291 */ "Z26_HI\0"
+  /* 2298 */ "Z6_HI\0"
+  /* 2304 */ "Z17_HI\0"
+  /* 2311 */ "Z27_HI\0"
+  /* 2318 */ "Z7_HI\0"
+  /* 2324 */ "Z18_HI\0"
+  /* 2331 */ "Z28_HI\0"
+  /* 2338 */ "Z8_HI\0"
+  /* 2344 */ "Z19_HI\0"
+  /* 2351 */ "Z29_HI\0"
+  /* 2358 */ "Z9_HI\0"
+  /* 2364 */ "X28_FP\0"
+  /* 2371 */ "WSP\0"
+  /* 2375 */ "FFR\0"
+  /* 2379 */ "LR\0"
+  /* 2382 */ "W30_WZR\0"
+  /* 2390 */ "LR_XZR\0"
+  /* 2397 */ "NZCV\0"
 };
+#ifdef __GNUC__
+#pragma GCC diagnostic pop
+#endif
 
 extern const MCRegisterDesc AArch64RegDesc[] = { // Descriptors
   { 3, 0, 0, 0, 0, 0 },
@@ -2515,6 +2543,16 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xff, 0xff, 0x04, 
   };
 
+  // FPR64_lo Register Class...
+  const MCPhysReg FPR64_lo[] = {
+    AArch64::D0, AArch64::D1, AArch64::D2, AArch64::D3, AArch64::D4, AArch64::D5, AArch64::D6, AArch64::D7, AArch64::D8, AArch64::D9, AArch64::D10, AArch64::D11, AArch64::D12, AArch64::D13, AArch64::D14, AArch64::D15, 
+  };
+
+  // FPR64_lo Bit set.
+  const uint8_t FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0xfe, 0xff, 0x01, 
+  };
+
   // GPR64arg Register Class...
   const MCPhysReg GPR64arg[] = {
     AArch64::X0, AArch64::X1, AArch64::X2, AArch64::X3, AArch64::X4, AArch64::X5, AArch64::X6, AArch64::X7, 
@@ -2555,6 +2593,26 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0xff, 0xff, 0x1f, 
   };
 
+  // DD_with_dsub0_in_FPR64_lo Register Class...
+  const MCPhysReg DD_with_dsub0_in_FPR64_lo[] = {
+    AArch64::D0_D1, AArch64::D1_D2, AArch64::D2_D3, AArch64::D3_D4, AArch64::D4_D5, AArch64::D5_D6, AArch64::D6_D7, AArch64::D7_D8, AArch64::D8_D9, AArch64::D9_D10, AArch64::D10_D11, AArch64::D11_D12, AArch64::D12_D13, AArch64::D13_D14, AArch64::D14_D15, AArch64::D15_D16, 
+  };
+
+  // DD_with_dsub0_in_FPR64_lo Bit set.
+  const uint8_t DD_with_dsub0_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x1f, 
+  };
+
+  // DD_with_dsub1_in_FPR64_lo Register Class...
+  const MCPhysReg DD_with_dsub1_in_FPR64_lo[] = {
+    AArch64::D0_D1, AArch64::D1_D2, AArch64::D2_D3, AArch64::D3_D4, AArch64::D4_D5, AArch64::D5_D6, AArch64::D6_D7, AArch64::D7_D8, AArch64::D8_D9, AArch64::D9_D10, AArch64::D10_D11, AArch64::D11_D12, AArch64::D12_D13, AArch64::D13_D14, AArch64::D14_D15, AArch64::D31_D0, 
+  };
+
+  // DD_with_dsub1_in_FPR64_lo Bit set.
+  const uint8_t DD_with_dsub1_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x0f, 0x00, 0x10, 
+  };
+
   // XSeqPairsClass Register Class...
   const MCPhysReg XSeqPairsClass[] = {
     AArch64::X0_X1, AArch64::X2_X3, AArch64::X4_X5, AArch64::X6_X7, AArch64::X8_X9, AArch64::X10_X11, AArch64::X12_X13, AArch64::X14_X15, AArch64::X16_X17, AArch64::X18_X19, AArch64::X20_X21, AArch64::X22_X23, AArch64::X24_X25, AArch64::X26_X27, AArch64::X28_FP, AArch64::LR_XZR, 
@@ -2563,6 +2621,16 @@ namespace {     // Register classes...
   // XSeqPairsClass Bit set.
   const uint8_t XSeqPairsClassBits[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x1f, 
+  };
+
+  // DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_lo Register Class...
+  const MCPhysReg DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_lo[] = {
+    AArch64::D0_D1, AArch64::D1_D2, AArch64::D2_D3, AArch64::D3_D4, AArch64::D4_D5, AArch64::D5_D6, AArch64::D6_D7, AArch64::D7_D8, AArch64::D8_D9, AArch64::D9_D10, AArch64::D10_D11, AArch64::D11_D12, AArch64::D12_D13, AArch64::D13_D14, AArch64::D14_D15, 
+  };
+
+  // DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_lo Bit set.
+  const uint8_t DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x0f, 
   };
 
   // XSeqPairsClass_with_subo64_in_GPR64common Register Class...
@@ -2715,6 +2783,66 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0xff, 0xff, 0x1f, 
   };
 
+  // DDD_with_dsub0_in_FPR64_lo Register Class...
+  const MCPhysReg DDD_with_dsub0_in_FPR64_lo[] = {
+    AArch64::D0_D1_D2, AArch64::D1_D2_D3, AArch64::D2_D3_D4, AArch64::D3_D4_D5, AArch64::D4_D5_D6, AArch64::D5_D6_D7, AArch64::D6_D7_D8, AArch64::D7_D8_D9, AArch64::D8_D9_D10, AArch64::D9_D10_D11, AArch64::D10_D11_D12, AArch64::D11_D12_D13, AArch64::D12_D13_D14, AArch64::D13_D14_D15, AArch64::D14_D15_D16, AArch64::D15_D16_D17, 
+  };
+
+  // DDD_with_dsub0_in_FPR64_lo Bit set.
+  const uint8_t DDD_with_dsub0_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x1f, 
+  };
+
+  // DDD_with_dsub1_in_FPR64_lo Register Class...
+  const MCPhysReg DDD_with_dsub1_in_FPR64_lo[] = {
+    AArch64::D0_D1_D2, AArch64::D1_D2_D3, AArch64::D2_D3_D4, AArch64::D3_D4_D5, AArch64::D4_D5_D6, AArch64::D5_D6_D7, AArch64::D6_D7_D8, AArch64::D7_D8_D9, AArch64::D8_D9_D10, AArch64::D9_D10_D11, AArch64::D10_D11_D12, AArch64::D11_D12_D13, AArch64::D12_D13_D14, AArch64::D13_D14_D15, AArch64::D14_D15_D16, AArch64::D31_D0_D1, 
+  };
+
+  // DDD_with_dsub1_in_FPR64_lo Bit set.
+  const uint8_t DDD_with_dsub1_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x0f, 0x00, 0x10, 
+  };
+
+  // DDD_with_dsub2_in_FPR64_lo Register Class...
+  const MCPhysReg DDD_with_dsub2_in_FPR64_lo[] = {
+    AArch64::D0_D1_D2, AArch64::D1_D2_D3, AArch64::D2_D3_D4, AArch64::D3_D4_D5, AArch64::D4_D5_D6, AArch64::D5_D6_D7, AArch64::D6_D7_D8, AArch64::D7_D8_D9, AArch64::D8_D9_D10, AArch64::D9_D10_D11, AArch64::D10_D11_D12, AArch64::D11_D12_D13, AArch64::D12_D13_D14, AArch64::D13_D14_D15, AArch64::D30_D31_D0, AArch64::D31_D0_D1, 
+  };
+
+  // DDD_with_dsub2_in_FPR64_lo Bit set.
+  const uint8_t DDD_with_dsub2_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x07, 0x00, 0x18, 
+  };
+
+  // DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo Register Class...
+  const MCPhysReg DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo[] = {
+    AArch64::D0_D1_D2, AArch64::D1_D2_D3, AArch64::D2_D3_D4, AArch64::D3_D4_D5, AArch64::D4_D5_D6, AArch64::D5_D6_D7, AArch64::D6_D7_D8, AArch64::D7_D8_D9, AArch64::D8_D9_D10, AArch64::D9_D10_D11, AArch64::D10_D11_D12, AArch64::D11_D12_D13, AArch64::D12_D13_D14, AArch64::D13_D14_D15, AArch64::D14_D15_D16, 
+  };
+
+  // DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo Bit set.
+  const uint8_t DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x0f, 
+  };
+
+  // DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo Register Class...
+  const MCPhysReg DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo[] = {
+    AArch64::D0_D1_D2, AArch64::D1_D2_D3, AArch64::D2_D3_D4, AArch64::D3_D4_D5, AArch64::D4_D5_D6, AArch64::D5_D6_D7, AArch64::D6_D7_D8, AArch64::D7_D8_D9, AArch64::D8_D9_D10, AArch64::D9_D10_D11, AArch64::D10_D11_D12, AArch64::D11_D12_D13, AArch64::D12_D13_D14, AArch64::D13_D14_D15, AArch64::D31_D0_D1, 
+  };
+
+  // DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo Bit set.
+  const uint8_t DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x07, 0x00, 0x10, 
+  };
+
+  // DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo Register Class...
+  const MCPhysReg DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo[] = {
+    AArch64::D0_D1_D2, AArch64::D1_D2_D3, AArch64::D2_D3_D4, AArch64::D3_D4_D5, AArch64::D4_D5_D6, AArch64::D5_D6_D7, AArch64::D6_D7_D8, AArch64::D7_D8_D9, AArch64::D8_D9_D10, AArch64::D9_D10_D11, AArch64::D10_D11_D12, AArch64::D11_D12_D13, AArch64::D12_D13_D14, AArch64::D13_D14_D15, 
+  };
+
+  // DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo Bit set.
+  const uint8_t DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x07, 
+  };
+
   // DDDD Register Class...
   const MCPhysReg DDDD[] = {
     AArch64::D0_D1_D2_D3, AArch64::D1_D2_D3_D4, AArch64::D2_D3_D4_D5, AArch64::D3_D4_D5_D6, AArch64::D4_D5_D6_D7, AArch64::D5_D6_D7_D8, AArch64::D6_D7_D8_D9, AArch64::D7_D8_D9_D10, AArch64::D8_D9_D10_D11, AArch64::D9_D10_D11_D12, AArch64::D10_D11_D12_D13, AArch64::D11_D12_D13_D14, AArch64::D12_D13_D14_D15, AArch64::D13_D14_D15_D16, AArch64::D14_D15_D16_D17, AArch64::D15_D16_D17_D18, AArch64::D16_D17_D18_D19, AArch64::D17_D18_D19_D20, AArch64::D18_D19_D20_D21, AArch64::D19_D20_D21_D22, AArch64::D20_D21_D22_D23, AArch64::D21_D22_D23_D24, AArch64::D22_D23_D24_D25, AArch64::D23_D24_D25_D26, AArch64::D24_D25_D26_D27, AArch64::D25_D26_D27_D28, AArch64::D26_D27_D28_D29, AArch64::D27_D28_D29_D30, AArch64::D28_D29_D30_D31, AArch64::D29_D30_D31_D0, AArch64::D30_D31_D0_D1, AArch64::D31_D0_D1_D2, 
@@ -2723,6 +2851,106 @@ namespace {     // Register classes...
   // DDDD Bit set.
   const uint8_t DDDDBits[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0xff, 0xff, 0x1f, 
+  };
+
+  // DDDD_with_dsub0_in_FPR64_lo Register Class...
+  const MCPhysReg DDDD_with_dsub0_in_FPR64_lo[] = {
+    AArch64::D0_D1_D2_D3, AArch64::D1_D2_D3_D4, AArch64::D2_D3_D4_D5, AArch64::D3_D4_D5_D6, AArch64::D4_D5_D6_D7, AArch64::D5_D6_D7_D8, AArch64::D6_D7_D8_D9, AArch64::D7_D8_D9_D10, AArch64::D8_D9_D10_D11, AArch64::D9_D10_D11_D12, AArch64::D10_D11_D12_D13, AArch64::D11_D12_D13_D14, AArch64::D12_D13_D14_D15, AArch64::D13_D14_D15_D16, AArch64::D14_D15_D16_D17, AArch64::D15_D16_D17_D18, 
+  };
+
+  // DDDD_with_dsub0_in_FPR64_lo Bit set.
+  const uint8_t DDDD_with_dsub0_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x1f, 
+  };
+
+  // DDDD_with_dsub1_in_FPR64_lo Register Class...
+  const MCPhysReg DDDD_with_dsub1_in_FPR64_lo[] = {
+    AArch64::D0_D1_D2_D3, AArch64::D1_D2_D3_D4, AArch64::D2_D3_D4_D5, AArch64::D3_D4_D5_D6, AArch64::D4_D5_D6_D7, AArch64::D5_D6_D7_D8, AArch64::D6_D7_D8_D9, AArch64::D7_D8_D9_D10, AArch64::D8_D9_D10_D11, AArch64::D9_D10_D11_D12, AArch64::D10_D11_D12_D13, AArch64::D11_D12_D13_D14, AArch64::D12_D13_D14_D15, AArch64::D13_D14_D15_D16, AArch64::D14_D15_D16_D17, AArch64::D31_D0_D1_D2, 
+  };
+
+  // DDDD_with_dsub1_in_FPR64_lo Bit set.
+  const uint8_t DDDD_with_dsub1_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x0f, 0x00, 0x10, 
+  };
+
+  // DDDD_with_dsub2_in_FPR64_lo Register Class...
+  const MCPhysReg DDDD_with_dsub2_in_FPR64_lo[] = {
+    AArch64::D0_D1_D2_D3, AArch64::D1_D2_D3_D4, AArch64::D2_D3_D4_D5, AArch64::D3_D4_D5_D6, AArch64::D4_D5_D6_D7, AArch64::D5_D6_D7_D8, AArch64::D6_D7_D8_D9, AArch64::D7_D8_D9_D10, AArch64::D8_D9_D10_D11, AArch64::D9_D10_D11_D12, AArch64::D10_D11_D12_D13, AArch64::D11_D12_D13_D14, AArch64::D12_D13_D14_D15, AArch64::D13_D14_D15_D16, AArch64::D30_D31_D0_D1, AArch64::D31_D0_D1_D2, 
+  };
+
+  // DDDD_with_dsub2_in_FPR64_lo Bit set.
+  const uint8_t DDDD_with_dsub2_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x07, 0x00, 0x18, 
+  };
+
+  // DDDD_with_dsub3_in_FPR64_lo Register Class...
+  const MCPhysReg DDDD_with_dsub3_in_FPR64_lo[] = {
+    AArch64::D0_D1_D2_D3, AArch64::D1_D2_D3_D4, AArch64::D2_D3_D4_D5, AArch64::D3_D4_D5_D6, AArch64::D4_D5_D6_D7, AArch64::D5_D6_D7_D8, AArch64::D6_D7_D8_D9, AArch64::D7_D8_D9_D10, AArch64::D8_D9_D10_D11, AArch64::D9_D10_D11_D12, AArch64::D10_D11_D12_D13, AArch64::D11_D12_D13_D14, AArch64::D12_D13_D14_D15, AArch64::D29_D30_D31_D0, AArch64::D30_D31_D0_D1, AArch64::D31_D0_D1_D2, 
+  };
+
+  // DDDD_with_dsub3_in_FPR64_lo Bit set.
+  const uint8_t DDDD_with_dsub3_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x03, 0x00, 0x1c, 
+  };
+
+  // DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo Register Class...
+  const MCPhysReg DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo[] = {
+    AArch64::D0_D1_D2_D3, AArch64::D1_D2_D3_D4, AArch64::D2_D3_D4_D5, AArch64::D3_D4_D5_D6, AArch64::D4_D5_D6_D7, AArch64::D5_D6_D7_D8, AArch64::D6_D7_D8_D9, AArch64::D7_D8_D9_D10, AArch64::D8_D9_D10_D11, AArch64::D9_D10_D11_D12, AArch64::D10_D11_D12_D13, AArch64::D11_D12_D13_D14, AArch64::D12_D13_D14_D15, AArch64::D13_D14_D15_D16, AArch64::D14_D15_D16_D17, 
+  };
+
+  // DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo Bit set.
+  const uint8_t DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x0f, 
+  };
+
+  // DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo Register Class...
+  const MCPhysReg DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo[] = {
+    AArch64::D0_D1_D2_D3, AArch64::D1_D2_D3_D4, AArch64::D2_D3_D4_D5, AArch64::D3_D4_D5_D6, AArch64::D4_D5_D6_D7, AArch64::D5_D6_D7_D8, AArch64::D6_D7_D8_D9, AArch64::D7_D8_D9_D10, AArch64::D8_D9_D10_D11, AArch64::D9_D10_D11_D12, AArch64::D10_D11_D12_D13, AArch64::D11_D12_D13_D14, AArch64::D12_D13_D14_D15, AArch64::D13_D14_D15_D16, AArch64::D31_D0_D1_D2, 
+  };
+
+  // DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo Bit set.
+  const uint8_t DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x07, 0x00, 0x10, 
+  };
+
+  // DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo Register Class...
+  const MCPhysReg DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo[] = {
+    AArch64::D0_D1_D2_D3, AArch64::D1_D2_D3_D4, AArch64::D2_D3_D4_D5, AArch64::D3_D4_D5_D6, AArch64::D4_D5_D6_D7, AArch64::D5_D6_D7_D8, AArch64::D6_D7_D8_D9, AArch64::D7_D8_D9_D10, AArch64::D8_D9_D10_D11, AArch64::D9_D10_D11_D12, AArch64::D10_D11_D12_D13, AArch64::D11_D12_D13_D14, AArch64::D12_D13_D14_D15, AArch64::D30_D31_D0_D1, AArch64::D31_D0_D1_D2, 
+  };
+
+  // DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo Bit set.
+  const uint8_t DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x03, 0x00, 0x18, 
+  };
+
+  // DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo Register Class...
+  const MCPhysReg DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo[] = {
+    AArch64::D0_D1_D2_D3, AArch64::D1_D2_D3_D4, AArch64::D2_D3_D4_D5, AArch64::D3_D4_D5_D6, AArch64::D4_D5_D6_D7, AArch64::D5_D6_D7_D8, AArch64::D6_D7_D8_D9, AArch64::D7_D8_D9_D10, AArch64::D8_D9_D10_D11, AArch64::D9_D10_D11_D12, AArch64::D10_D11_D12_D13, AArch64::D11_D12_D13_D14, AArch64::D12_D13_D14_D15, AArch64::D13_D14_D15_D16, 
+  };
+
+  // DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo Bit set.
+  const uint8_t DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x07, 
+  };
+
+  // DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo Register Class...
+  const MCPhysReg DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo[] = {
+    AArch64::D0_D1_D2_D3, AArch64::D1_D2_D3_D4, AArch64::D2_D3_D4_D5, AArch64::D3_D4_D5_D6, AArch64::D4_D5_D6_D7, AArch64::D5_D6_D7_D8, AArch64::D6_D7_D8_D9, AArch64::D7_D8_D9_D10, AArch64::D8_D9_D10_D11, AArch64::D9_D10_D11_D12, AArch64::D10_D11_D12_D13, AArch64::D11_D12_D13_D14, AArch64::D12_D13_D14_D15, AArch64::D31_D0_D1_D2, 
+  };
+
+  // DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo Bit set.
+  const uint8_t DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x03, 0x00, 0x10, 
+  };
+
+  // DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo Register Class...
+  const MCPhysReg DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo[] = {
+    AArch64::D0_D1_D2_D3, AArch64::D1_D2_D3_D4, AArch64::D2_D3_D4_D5, AArch64::D3_D4_D5_D6, AArch64::D4_D5_D6_D7, AArch64::D5_D6_D7_D8, AArch64::D6_D7_D8_D9, AArch64::D7_D8_D9_D10, AArch64::D8_D9_D10_D11, AArch64::D9_D10_D11_D12, AArch64::D10_D11_D12_D13, AArch64::D11_D12_D13_D14, AArch64::D12_D13_D14_D15, 
+  };
+
+  // DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo Bit set.
+  const uint8_t DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x03, 
   };
 
   // QQ Register Class...
@@ -2745,13 +2973,13 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0xff, 0xff, 0x1f, 
   };
 
-  // QQ_with_qsub0_in_FPR128_lo Register Class...
-  const MCPhysReg QQ_with_qsub0_in_FPR128_lo[] = {
+  // QQ_with_dsub_in_FPR64_lo Register Class...
+  const MCPhysReg QQ_with_dsub_in_FPR64_lo[] = {
     AArch64::Q0_Q1, AArch64::Q1_Q2, AArch64::Q2_Q3, AArch64::Q3_Q4, AArch64::Q4_Q5, AArch64::Q5_Q6, AArch64::Q6_Q7, AArch64::Q7_Q8, AArch64::Q8_Q9, AArch64::Q9_Q10, AArch64::Q10_Q11, AArch64::Q11_Q12, AArch64::Q12_Q13, AArch64::Q13_Q14, AArch64::Q14_Q15, AArch64::Q15_Q16, 
   };
 
-  // QQ_with_qsub0_in_FPR128_lo Bit set.
-  const uint8_t QQ_with_qsub0_in_FPR128_loBits[] = {
+  // QQ_with_dsub_in_FPR64_lo Bit set.
+  const uint8_t QQ_with_dsub_in_FPR64_loBits[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x1f, 
   };
 
@@ -2765,6 +2993,16 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x0f, 0x00, 0x10, 
   };
 
+  // ZPR2_with_dsub_in_FPR64_lo Register Class...
+  const MCPhysReg ZPR2_with_dsub_in_FPR64_lo[] = {
+    AArch64::Z0_Z1, AArch64::Z1_Z2, AArch64::Z2_Z3, AArch64::Z3_Z4, AArch64::Z4_Z5, AArch64::Z5_Z6, AArch64::Z6_Z7, AArch64::Z7_Z8, AArch64::Z8_Z9, AArch64::Z9_Z10, AArch64::Z10_Z11, AArch64::Z11_Z12, AArch64::Z12_Z13, AArch64::Z13_Z14, AArch64::Z14_Z15, AArch64::Z15_Z16, 
+  };
+
+  // ZPR2_with_dsub_in_FPR64_lo Bit set.
+  const uint8_t ZPR2_with_dsub_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x1f, 
+  };
+
   // ZPR2_with_zsub1_in_ZPR_4b Register Class...
   const MCPhysReg ZPR2_with_zsub1_in_ZPR_4b[] = {
     AArch64::Z0_Z1, AArch64::Z1_Z2, AArch64::Z2_Z3, AArch64::Z3_Z4, AArch64::Z4_Z5, AArch64::Z5_Z6, AArch64::Z6_Z7, AArch64::Z7_Z8, AArch64::Z8_Z9, AArch64::Z9_Z10, AArch64::Z10_Z11, AArch64::Z11_Z12, AArch64::Z12_Z13, AArch64::Z13_Z14, AArch64::Z14_Z15, AArch64::Z31_Z0, 
@@ -2775,33 +3013,23 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x0f, 0x00, 0x10, 
   };
 
-  // ZPR2_with_zsub_in_FPR128_lo Register Class...
-  const MCPhysReg ZPR2_with_zsub_in_FPR128_lo[] = {
-    AArch64::Z0_Z1, AArch64::Z1_Z2, AArch64::Z2_Z3, AArch64::Z3_Z4, AArch64::Z4_Z5, AArch64::Z5_Z6, AArch64::Z6_Z7, AArch64::Z7_Z8, AArch64::Z8_Z9, AArch64::Z9_Z10, AArch64::Z10_Z11, AArch64::Z11_Z12, AArch64::Z12_Z13, AArch64::Z13_Z14, AArch64::Z14_Z15, AArch64::Z15_Z16, 
-  };
-
-  // ZPR2_with_zsub_in_FPR128_lo Bit set.
-  const uint8_t ZPR2_with_zsub_in_FPR128_loBits[] = {
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x1f, 
-  };
-
-  // QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_lo Register Class...
-  const MCPhysReg QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_lo[] = {
+  // QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo Register Class...
+  const MCPhysReg QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo[] = {
     AArch64::Q0_Q1, AArch64::Q1_Q2, AArch64::Q2_Q3, AArch64::Q3_Q4, AArch64::Q4_Q5, AArch64::Q5_Q6, AArch64::Q6_Q7, AArch64::Q7_Q8, AArch64::Q8_Q9, AArch64::Q9_Q10, AArch64::Q10_Q11, AArch64::Q11_Q12, AArch64::Q12_Q13, AArch64::Q13_Q14, AArch64::Q14_Q15, 
   };
 
-  // QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_lo Bit set.
-  const uint8_t QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_loBits[] = {
+  // QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo Bit set.
+  const uint8_t QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_loBits[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x0f, 
   };
 
-  // ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b Register Class...
-  const MCPhysReg ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b[] = {
+  // ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b Register Class...
+  const MCPhysReg ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b[] = {
     AArch64::Z0_Z1, AArch64::Z1_Z2, AArch64::Z2_Z3, AArch64::Z3_Z4, AArch64::Z4_Z5, AArch64::Z5_Z6, AArch64::Z6_Z7, AArch64::Z7_Z8, AArch64::Z8_Z9, AArch64::Z9_Z10, AArch64::Z10_Z11, AArch64::Z11_Z12, AArch64::Z12_Z13, AArch64::Z13_Z14, AArch64::Z14_Z15, 
   };
 
-  // ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b Bit set.
-  const uint8_t ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4bBits[] = {
+  // ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b Bit set.
+  const uint8_t ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4bBits[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x0f, 
   };
 
@@ -2825,13 +3053,13 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x0f, 0x00, 0x00, 0x10, 
   };
 
-  // ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b Register Class...
-  const MCPhysReg ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b[] = {
+  // ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b Register Class...
+  const MCPhysReg ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b[] = {
     AArch64::Z0_Z1, AArch64::Z1_Z2, AArch64::Z2_Z3, AArch64::Z3_Z4, AArch64::Z4_Z5, AArch64::Z5_Z6, AArch64::Z6_Z7, 
   };
 
-  // ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b Bit set.
-  const uint8_t ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3bBits[] = {
+  // ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b Bit set.
+  const uint8_t ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3bBits[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x0f, 
   };
 
@@ -2855,13 +3083,13 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0xff, 0xff, 0x1f, 
   };
 
-  // QQQ_with_qsub0_in_FPR128_lo Register Class...
-  const MCPhysReg QQQ_with_qsub0_in_FPR128_lo[] = {
+  // QQQ_with_dsub_in_FPR64_lo Register Class...
+  const MCPhysReg QQQ_with_dsub_in_FPR64_lo[] = {
     AArch64::Q0_Q1_Q2, AArch64::Q1_Q2_Q3, AArch64::Q2_Q3_Q4, AArch64::Q3_Q4_Q5, AArch64::Q4_Q5_Q6, AArch64::Q5_Q6_Q7, AArch64::Q6_Q7_Q8, AArch64::Q7_Q8_Q9, AArch64::Q8_Q9_Q10, AArch64::Q9_Q10_Q11, AArch64::Q10_Q11_Q12, AArch64::Q11_Q12_Q13, AArch64::Q12_Q13_Q14, AArch64::Q13_Q14_Q15, AArch64::Q14_Q15_Q16, AArch64::Q15_Q16_Q17, 
   };
 
-  // QQQ_with_qsub0_in_FPR128_lo Bit set.
-  const uint8_t QQQ_with_qsub0_in_FPR128_loBits[] = {
+  // QQQ_with_dsub_in_FPR64_lo Bit set.
+  const uint8_t QQQ_with_dsub_in_FPR64_loBits[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x1f, 
   };
 
@@ -2885,6 +3113,16 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x07, 0x00, 0x18, 
   };
 
+  // ZPR3_with_dsub_in_FPR64_lo Register Class...
+  const MCPhysReg ZPR3_with_dsub_in_FPR64_lo[] = {
+    AArch64::Z0_Z1_Z2, AArch64::Z1_Z2_Z3, AArch64::Z2_Z3_Z4, AArch64::Z3_Z4_Z5, AArch64::Z4_Z5_Z6, AArch64::Z5_Z6_Z7, AArch64::Z6_Z7_Z8, AArch64::Z7_Z8_Z9, AArch64::Z8_Z9_Z10, AArch64::Z9_Z10_Z11, AArch64::Z10_Z11_Z12, AArch64::Z11_Z12_Z13, AArch64::Z12_Z13_Z14, AArch64::Z13_Z14_Z15, AArch64::Z14_Z15_Z16, AArch64::Z15_Z16_Z17, 
+  };
+
+  // ZPR3_with_dsub_in_FPR64_lo Bit set.
+  const uint8_t ZPR3_with_dsub_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x1f, 
+  };
+
   // ZPR3_with_zsub1_in_ZPR_4b Register Class...
   const MCPhysReg ZPR3_with_zsub1_in_ZPR_4b[] = {
     AArch64::Z0_Z1_Z2, AArch64::Z1_Z2_Z3, AArch64::Z2_Z3_Z4, AArch64::Z3_Z4_Z5, AArch64::Z4_Z5_Z6, AArch64::Z5_Z6_Z7, AArch64::Z6_Z7_Z8, AArch64::Z7_Z8_Z9, AArch64::Z8_Z9_Z10, AArch64::Z9_Z10_Z11, AArch64::Z10_Z11_Z12, AArch64::Z11_Z12_Z13, AArch64::Z12_Z13_Z14, AArch64::Z13_Z14_Z15, AArch64::Z14_Z15_Z16, AArch64::Z31_Z0_Z1, 
@@ -2905,23 +3143,13 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x07, 0x00, 0x18, 
   };
 
-  // ZPR3_with_zsub_in_FPR128_lo Register Class...
-  const MCPhysReg ZPR3_with_zsub_in_FPR128_lo[] = {
-    AArch64::Z0_Z1_Z2, AArch64::Z1_Z2_Z3, AArch64::Z2_Z3_Z4, AArch64::Z3_Z4_Z5, AArch64::Z4_Z5_Z6, AArch64::Z5_Z6_Z7, AArch64::Z6_Z7_Z8, AArch64::Z7_Z8_Z9, AArch64::Z8_Z9_Z10, AArch64::Z9_Z10_Z11, AArch64::Z10_Z11_Z12, AArch64::Z11_Z12_Z13, AArch64::Z12_Z13_Z14, AArch64::Z13_Z14_Z15, AArch64::Z14_Z15_Z16, AArch64::Z15_Z16_Z17, 
-  };
-
-  // ZPR3_with_zsub_in_FPR128_lo Bit set.
-  const uint8_t ZPR3_with_zsub_in_FPR128_loBits[] = {
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x1f, 
-  };
-
-  // QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo Register Class...
-  const MCPhysReg QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo[] = {
+  // QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo Register Class...
+  const MCPhysReg QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo[] = {
     AArch64::Q0_Q1_Q2, AArch64::Q1_Q2_Q3, AArch64::Q2_Q3_Q4, AArch64::Q3_Q4_Q5, AArch64::Q4_Q5_Q6, AArch64::Q5_Q6_Q7, AArch64::Q6_Q7_Q8, AArch64::Q7_Q8_Q9, AArch64::Q8_Q9_Q10, AArch64::Q9_Q10_Q11, AArch64::Q10_Q11_Q12, AArch64::Q11_Q12_Q13, AArch64::Q12_Q13_Q14, AArch64::Q13_Q14_Q15, AArch64::Q14_Q15_Q16, 
   };
 
-  // QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo Bit set.
-  const uint8_t QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_loBits[] = {
+  // QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo Bit set.
+  const uint8_t QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_loBits[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x0f, 
   };
 
@@ -2935,6 +3163,16 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x07, 0x00, 0x10, 
   };
 
+  // ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b Register Class...
+  const MCPhysReg ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b[] = {
+    AArch64::Z0_Z1_Z2, AArch64::Z1_Z2_Z3, AArch64::Z2_Z3_Z4, AArch64::Z3_Z4_Z5, AArch64::Z4_Z5_Z6, AArch64::Z5_Z6_Z7, AArch64::Z6_Z7_Z8, AArch64::Z7_Z8_Z9, AArch64::Z8_Z9_Z10, AArch64::Z9_Z10_Z11, AArch64::Z10_Z11_Z12, AArch64::Z11_Z12_Z13, AArch64::Z12_Z13_Z14, AArch64::Z13_Z14_Z15, AArch64::Z14_Z15_Z16, 
+  };
+
+  // ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b Bit set.
+  const uint8_t ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4bBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x0f, 
+  };
+
   // ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b Register Class...
   const MCPhysReg ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b[] = {
     AArch64::Z0_Z1_Z2, AArch64::Z1_Z2_Z3, AArch64::Z2_Z3_Z4, AArch64::Z3_Z4_Z5, AArch64::Z4_Z5_Z6, AArch64::Z5_Z6_Z7, AArch64::Z6_Z7_Z8, AArch64::Z7_Z8_Z9, AArch64::Z8_Z9_Z10, AArch64::Z9_Z10_Z11, AArch64::Z10_Z11_Z12, AArch64::Z11_Z12_Z13, AArch64::Z12_Z13_Z14, AArch64::Z13_Z14_Z15, AArch64::Z31_Z0_Z1, 
@@ -2945,33 +3183,23 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x07, 0x00, 0x10, 
   };
 
-  // ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b Register Class...
-  const MCPhysReg ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b[] = {
-    AArch64::Z0_Z1_Z2, AArch64::Z1_Z2_Z3, AArch64::Z2_Z3_Z4, AArch64::Z3_Z4_Z5, AArch64::Z4_Z5_Z6, AArch64::Z5_Z6_Z7, AArch64::Z6_Z7_Z8, AArch64::Z7_Z8_Z9, AArch64::Z8_Z9_Z10, AArch64::Z9_Z10_Z11, AArch64::Z10_Z11_Z12, AArch64::Z11_Z12_Z13, AArch64::Z12_Z13_Z14, AArch64::Z13_Z14_Z15, AArch64::Z14_Z15_Z16, 
-  };
-
-  // ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b Bit set.
-  const uint8_t ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4bBits[] = {
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x0f, 
-  };
-
-  // QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo Register Class...
-  const MCPhysReg QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo[] = {
+  // QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo Register Class...
+  const MCPhysReg QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo[] = {
     AArch64::Q0_Q1_Q2, AArch64::Q1_Q2_Q3, AArch64::Q2_Q3_Q4, AArch64::Q3_Q4_Q5, AArch64::Q4_Q5_Q6, AArch64::Q5_Q6_Q7, AArch64::Q6_Q7_Q8, AArch64::Q7_Q8_Q9, AArch64::Q8_Q9_Q10, AArch64::Q9_Q10_Q11, AArch64::Q10_Q11_Q12, AArch64::Q11_Q12_Q13, AArch64::Q12_Q13_Q14, AArch64::Q13_Q14_Q15, 
   };
 
-  // QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo Bit set.
-  const uint8_t QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loBits[] = {
+  // QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo Bit set.
+  const uint8_t QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_loBits[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x07, 
   };
 
-  // ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b Register Class...
-  const MCPhysReg ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b[] = {
+  // ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b Register Class...
+  const MCPhysReg ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b[] = {
     AArch64::Z0_Z1_Z2, AArch64::Z1_Z2_Z3, AArch64::Z2_Z3_Z4, AArch64::Z3_Z4_Z5, AArch64::Z4_Z5_Z6, AArch64::Z5_Z6_Z7, AArch64::Z6_Z7_Z8, AArch64::Z7_Z8_Z9, AArch64::Z8_Z9_Z10, AArch64::Z9_Z10_Z11, AArch64::Z10_Z11_Z12, AArch64::Z11_Z12_Z13, AArch64::Z12_Z13_Z14, AArch64::Z13_Z14_Z15, 
   };
 
-  // ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b Bit set.
-  const uint8_t ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4bBits[] = {
+  // ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b Bit set.
+  const uint8_t ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4bBits[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x07, 
   };
 
@@ -3005,6 +3233,16 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x07, 0x00, 0x00, 0x18, 
   };
 
+  // ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b Register Class...
+  const MCPhysReg ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b[] = {
+    AArch64::Z0_Z1_Z2, AArch64::Z1_Z2_Z3, AArch64::Z2_Z3_Z4, AArch64::Z3_Z4_Z5, AArch64::Z4_Z5_Z6, AArch64::Z5_Z6_Z7, AArch64::Z6_Z7_Z8, 
+  };
+
+  // ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b Bit set.
+  const uint8_t ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3bBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x0f, 
+  };
+
   // ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b Register Class...
   const MCPhysReg ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b[] = {
     AArch64::Z0_Z1_Z2, AArch64::Z1_Z2_Z3, AArch64::Z2_Z3_Z4, AArch64::Z3_Z4_Z5, AArch64::Z4_Z5_Z6, AArch64::Z5_Z6_Z7, AArch64::Z31_Z0_Z1, 
@@ -3015,23 +3253,13 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x07, 0x00, 0x00, 0x10, 
   };
 
-  // ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b Register Class...
-  const MCPhysReg ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b[] = {
-    AArch64::Z0_Z1_Z2, AArch64::Z1_Z2_Z3, AArch64::Z2_Z3_Z4, AArch64::Z3_Z4_Z5, AArch64::Z4_Z5_Z6, AArch64::Z5_Z6_Z7, AArch64::Z6_Z7_Z8, 
-  };
-
-  // ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b Bit set.
-  const uint8_t ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3bBits[] = {
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x0f, 
-  };
-
-  // ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b Register Class...
-  const MCPhysReg ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b[] = {
+  // ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b Register Class...
+  const MCPhysReg ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b[] = {
     AArch64::Z0_Z1_Z2, AArch64::Z1_Z2_Z3, AArch64::Z2_Z3_Z4, AArch64::Z3_Z4_Z5, AArch64::Z4_Z5_Z6, AArch64::Z5_Z6_Z7, 
   };
 
-  // ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b Bit set.
-  const uint8_t ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3bBits[] = {
+  // ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b Bit set.
+  const uint8_t ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3bBits[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x07, 
   };
 
@@ -3055,13 +3283,13 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0xff, 0xff, 0x1f, 
   };
 
-  // QQQQ_with_qsub0_in_FPR128_lo Register Class...
-  const MCPhysReg QQQQ_with_qsub0_in_FPR128_lo[] = {
+  // QQQQ_with_dsub_in_FPR64_lo Register Class...
+  const MCPhysReg QQQQ_with_dsub_in_FPR64_lo[] = {
     AArch64::Q0_Q1_Q2_Q3, AArch64::Q1_Q2_Q3_Q4, AArch64::Q2_Q3_Q4_Q5, AArch64::Q3_Q4_Q5_Q6, AArch64::Q4_Q5_Q6_Q7, AArch64::Q5_Q6_Q7_Q8, AArch64::Q6_Q7_Q8_Q9, AArch64::Q7_Q8_Q9_Q10, AArch64::Q8_Q9_Q10_Q11, AArch64::Q9_Q10_Q11_Q12, AArch64::Q10_Q11_Q12_Q13, AArch64::Q11_Q12_Q13_Q14, AArch64::Q12_Q13_Q14_Q15, AArch64::Q13_Q14_Q15_Q16, AArch64::Q14_Q15_Q16_Q17, AArch64::Q15_Q16_Q17_Q18, 
   };
 
-  // QQQQ_with_qsub0_in_FPR128_lo Bit set.
-  const uint8_t QQQQ_with_qsub0_in_FPR128_loBits[] = {
+  // QQQQ_with_dsub_in_FPR64_lo Bit set.
+  const uint8_t QQQQ_with_dsub_in_FPR64_loBits[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x1f, 
   };
 
@@ -3095,6 +3323,16 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x03, 0x00, 0x1c, 
   };
 
+  // ZPR4_with_dsub_in_FPR64_lo Register Class...
+  const MCPhysReg ZPR4_with_dsub_in_FPR64_lo[] = {
+    AArch64::Z0_Z1_Z2_Z3, AArch64::Z1_Z2_Z3_Z4, AArch64::Z2_Z3_Z4_Z5, AArch64::Z3_Z4_Z5_Z6, AArch64::Z4_Z5_Z6_Z7, AArch64::Z5_Z6_Z7_Z8, AArch64::Z6_Z7_Z8_Z9, AArch64::Z7_Z8_Z9_Z10, AArch64::Z8_Z9_Z10_Z11, AArch64::Z9_Z10_Z11_Z12, AArch64::Z10_Z11_Z12_Z13, AArch64::Z11_Z12_Z13_Z14, AArch64::Z12_Z13_Z14_Z15, AArch64::Z13_Z14_Z15_Z16, AArch64::Z14_Z15_Z16_Z17, AArch64::Z15_Z16_Z17_Z18, 
+  };
+
+  // ZPR4_with_dsub_in_FPR64_lo Bit set.
+  const uint8_t ZPR4_with_dsub_in_FPR64_loBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x1f, 
+  };
+
   // ZPR4_with_zsub1_in_ZPR_4b Register Class...
   const MCPhysReg ZPR4_with_zsub1_in_ZPR_4b[] = {
     AArch64::Z0_Z1_Z2_Z3, AArch64::Z1_Z2_Z3_Z4, AArch64::Z2_Z3_Z4_Z5, AArch64::Z3_Z4_Z5_Z6, AArch64::Z4_Z5_Z6_Z7, AArch64::Z5_Z6_Z7_Z8, AArch64::Z6_Z7_Z8_Z9, AArch64::Z7_Z8_Z9_Z10, AArch64::Z8_Z9_Z10_Z11, AArch64::Z9_Z10_Z11_Z12, AArch64::Z10_Z11_Z12_Z13, AArch64::Z11_Z12_Z13_Z14, AArch64::Z12_Z13_Z14_Z15, AArch64::Z13_Z14_Z15_Z16, AArch64::Z14_Z15_Z16_Z17, AArch64::Z31_Z0_Z1_Z2, 
@@ -3125,23 +3363,13 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x03, 0x00, 0x1c, 
   };
 
-  // ZPR4_with_zsub_in_FPR128_lo Register Class...
-  const MCPhysReg ZPR4_with_zsub_in_FPR128_lo[] = {
-    AArch64::Z0_Z1_Z2_Z3, AArch64::Z1_Z2_Z3_Z4, AArch64::Z2_Z3_Z4_Z5, AArch64::Z3_Z4_Z5_Z6, AArch64::Z4_Z5_Z6_Z7, AArch64::Z5_Z6_Z7_Z8, AArch64::Z6_Z7_Z8_Z9, AArch64::Z7_Z8_Z9_Z10, AArch64::Z8_Z9_Z10_Z11, AArch64::Z9_Z10_Z11_Z12, AArch64::Z10_Z11_Z12_Z13, AArch64::Z11_Z12_Z13_Z14, AArch64::Z12_Z13_Z14_Z15, AArch64::Z13_Z14_Z15_Z16, AArch64::Z14_Z15_Z16_Z17, AArch64::Z15_Z16_Z17_Z18, 
-  };
-
-  // ZPR4_with_zsub_in_FPR128_lo Bit set.
-  const uint8_t ZPR4_with_zsub_in_FPR128_loBits[] = {
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x1f, 
-  };
-
-  // QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo Register Class...
-  const MCPhysReg QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo[] = {
+  // QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo Register Class...
+  const MCPhysReg QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo[] = {
     AArch64::Q0_Q1_Q2_Q3, AArch64::Q1_Q2_Q3_Q4, AArch64::Q2_Q3_Q4_Q5, AArch64::Q3_Q4_Q5_Q6, AArch64::Q4_Q5_Q6_Q7, AArch64::Q5_Q6_Q7_Q8, AArch64::Q6_Q7_Q8_Q9, AArch64::Q7_Q8_Q9_Q10, AArch64::Q8_Q9_Q10_Q11, AArch64::Q9_Q10_Q11_Q12, AArch64::Q10_Q11_Q12_Q13, AArch64::Q11_Q12_Q13_Q14, AArch64::Q12_Q13_Q14_Q15, AArch64::Q13_Q14_Q15_Q16, AArch64::Q14_Q15_Q16_Q17, 
   };
 
-  // QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo Bit set.
-  const uint8_t QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_loBits[] = {
+  // QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo Bit set.
+  const uint8_t QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_loBits[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x0f, 
   };
 
@@ -3165,6 +3393,16 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x03, 0x00, 0x18, 
   };
 
+  // ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b Register Class...
+  const MCPhysReg ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b[] = {
+    AArch64::Z0_Z1_Z2_Z3, AArch64::Z1_Z2_Z3_Z4, AArch64::Z2_Z3_Z4_Z5, AArch64::Z3_Z4_Z5_Z6, AArch64::Z4_Z5_Z6_Z7, AArch64::Z5_Z6_Z7_Z8, AArch64::Z6_Z7_Z8_Z9, AArch64::Z7_Z8_Z9_Z10, AArch64::Z8_Z9_Z10_Z11, AArch64::Z9_Z10_Z11_Z12, AArch64::Z10_Z11_Z12_Z13, AArch64::Z11_Z12_Z13_Z14, AArch64::Z12_Z13_Z14_Z15, AArch64::Z13_Z14_Z15_Z16, AArch64::Z14_Z15_Z16_Z17, 
+  };
+
+  // ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b Bit set.
+  const uint8_t ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x0f, 
+  };
+
   // ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b Register Class...
   const MCPhysReg ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b[] = {
     AArch64::Z0_Z1_Z2_Z3, AArch64::Z1_Z2_Z3_Z4, AArch64::Z2_Z3_Z4_Z5, AArch64::Z3_Z4_Z5_Z6, AArch64::Z4_Z5_Z6_Z7, AArch64::Z5_Z6_Z7_Z8, AArch64::Z6_Z7_Z8_Z9, AArch64::Z7_Z8_Z9_Z10, AArch64::Z8_Z9_Z10_Z11, AArch64::Z9_Z10_Z11_Z12, AArch64::Z10_Z11_Z12_Z13, AArch64::Z11_Z12_Z13_Z14, AArch64::Z12_Z13_Z14_Z15, AArch64::Z13_Z14_Z15_Z16, AArch64::Z31_Z0_Z1_Z2, 
@@ -3185,23 +3423,13 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x03, 0x00, 0x18, 
   };
 
-  // ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b Register Class...
-  const MCPhysReg ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b[] = {
-    AArch64::Z0_Z1_Z2_Z3, AArch64::Z1_Z2_Z3_Z4, AArch64::Z2_Z3_Z4_Z5, AArch64::Z3_Z4_Z5_Z6, AArch64::Z4_Z5_Z6_Z7, AArch64::Z5_Z6_Z7_Z8, AArch64::Z6_Z7_Z8_Z9, AArch64::Z7_Z8_Z9_Z10, AArch64::Z8_Z9_Z10_Z11, AArch64::Z9_Z10_Z11_Z12, AArch64::Z10_Z11_Z12_Z13, AArch64::Z11_Z12_Z13_Z14, AArch64::Z12_Z13_Z14_Z15, AArch64::Z13_Z14_Z15_Z16, AArch64::Z14_Z15_Z16_Z17, 
-  };
-
-  // ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b Bit set.
-  const uint8_t ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bBits[] = {
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x0f, 
-  };
-
-  // QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo Register Class...
-  const MCPhysReg QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo[] = {
+  // QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo Register Class...
+  const MCPhysReg QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo[] = {
     AArch64::Q0_Q1_Q2_Q3, AArch64::Q1_Q2_Q3_Q4, AArch64::Q2_Q3_Q4_Q5, AArch64::Q3_Q4_Q5_Q6, AArch64::Q4_Q5_Q6_Q7, AArch64::Q5_Q6_Q7_Q8, AArch64::Q6_Q7_Q8_Q9, AArch64::Q7_Q8_Q9_Q10, AArch64::Q8_Q9_Q10_Q11, AArch64::Q9_Q10_Q11_Q12, AArch64::Q10_Q11_Q12_Q13, AArch64::Q11_Q12_Q13_Q14, AArch64::Q12_Q13_Q14_Q15, AArch64::Q13_Q14_Q15_Q16, 
   };
 
-  // QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo Bit set.
-  const uint8_t QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loBits[] = {
+  // QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo Bit set.
+  const uint8_t QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_loBits[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x07, 
   };
 
@@ -3215,6 +3443,16 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x03, 0x00, 0x10, 
   };
 
+  // ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b Register Class...
+  const MCPhysReg ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b[] = {
+    AArch64::Z0_Z1_Z2_Z3, AArch64::Z1_Z2_Z3_Z4, AArch64::Z2_Z3_Z4_Z5, AArch64::Z3_Z4_Z5_Z6, AArch64::Z4_Z5_Z6_Z7, AArch64::Z5_Z6_Z7_Z8, AArch64::Z6_Z7_Z8_Z9, AArch64::Z7_Z8_Z9_Z10, AArch64::Z8_Z9_Z10_Z11, AArch64::Z9_Z10_Z11_Z12, AArch64::Z10_Z11_Z12_Z13, AArch64::Z11_Z12_Z13_Z14, AArch64::Z12_Z13_Z14_Z15, AArch64::Z13_Z14_Z15_Z16, 
+  };
+
+  // ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b Bit set.
+  const uint8_t ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4bBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x07, 
+  };
+
   // ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b Register Class...
   const MCPhysReg ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b[] = {
     AArch64::Z0_Z1_Z2_Z3, AArch64::Z1_Z2_Z3_Z4, AArch64::Z2_Z3_Z4_Z5, AArch64::Z3_Z4_Z5_Z6, AArch64::Z4_Z5_Z6_Z7, AArch64::Z5_Z6_Z7_Z8, AArch64::Z6_Z7_Z8_Z9, AArch64::Z7_Z8_Z9_Z10, AArch64::Z8_Z9_Z10_Z11, AArch64::Z9_Z10_Z11_Z12, AArch64::Z10_Z11_Z12_Z13, AArch64::Z11_Z12_Z13_Z14, AArch64::Z12_Z13_Z14_Z15, AArch64::Z31_Z0_Z1_Z2, 
@@ -3225,33 +3463,23 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x03, 0x00, 0x10, 
   };
 
-  // ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b Register Class...
-  const MCPhysReg ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b[] = {
-    AArch64::Z0_Z1_Z2_Z3, AArch64::Z1_Z2_Z3_Z4, AArch64::Z2_Z3_Z4_Z5, AArch64::Z3_Z4_Z5_Z6, AArch64::Z4_Z5_Z6_Z7, AArch64::Z5_Z6_Z7_Z8, AArch64::Z6_Z7_Z8_Z9, AArch64::Z7_Z8_Z9_Z10, AArch64::Z8_Z9_Z10_Z11, AArch64::Z9_Z10_Z11_Z12, AArch64::Z10_Z11_Z12_Z13, AArch64::Z11_Z12_Z13_Z14, AArch64::Z12_Z13_Z14_Z15, AArch64::Z13_Z14_Z15_Z16, 
-  };
-
-  // ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b Bit set.
-  const uint8_t ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4bBits[] = {
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x07, 
-  };
-
-  // QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo Register Class...
-  const MCPhysReg QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo[] = {
+  // QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo Register Class...
+  const MCPhysReg QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo[] = {
     AArch64::Q0_Q1_Q2_Q3, AArch64::Q1_Q2_Q3_Q4, AArch64::Q2_Q3_Q4_Q5, AArch64::Q3_Q4_Q5_Q6, AArch64::Q4_Q5_Q6_Q7, AArch64::Q5_Q6_Q7_Q8, AArch64::Q6_Q7_Q8_Q9, AArch64::Q7_Q8_Q9_Q10, AArch64::Q8_Q9_Q10_Q11, AArch64::Q9_Q10_Q11_Q12, AArch64::Q10_Q11_Q12_Q13, AArch64::Q11_Q12_Q13_Q14, AArch64::Q12_Q13_Q14_Q15, 
   };
 
-  // QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo Bit set.
-  const uint8_t QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loBits[] = {
+  // QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo Bit set.
+  const uint8_t QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_loBits[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x03, 
   };
 
-  // ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b Register Class...
-  const MCPhysReg ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b[] = {
+  // ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b Register Class...
+  const MCPhysReg ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b[] = {
     AArch64::Z0_Z1_Z2_Z3, AArch64::Z1_Z2_Z3_Z4, AArch64::Z2_Z3_Z4_Z5, AArch64::Z3_Z4_Z5_Z6, AArch64::Z4_Z5_Z6_Z7, AArch64::Z5_Z6_Z7_Z8, AArch64::Z6_Z7_Z8_Z9, AArch64::Z7_Z8_Z9_Z10, AArch64::Z8_Z9_Z10_Z11, AArch64::Z9_Z10_Z11_Z12, AArch64::Z10_Z11_Z12_Z13, AArch64::Z11_Z12_Z13_Z14, AArch64::Z12_Z13_Z14_Z15, 
   };
 
-  // ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b Bit set.
-  const uint8_t ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4bBits[] = {
+  // ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b Bit set.
+  const uint8_t ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4bBits[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0xff, 0x03, 
   };
 
@@ -3295,6 +3523,16 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x03, 0x00, 0x00, 0x1c, 
   };
 
+  // ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b Register Class...
+  const MCPhysReg ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b[] = {
+    AArch64::Z0_Z1_Z2_Z3, AArch64::Z1_Z2_Z3_Z4, AArch64::Z2_Z3_Z4_Z5, AArch64::Z3_Z4_Z5_Z6, AArch64::Z4_Z5_Z6_Z7, AArch64::Z5_Z6_Z7_Z8, AArch64::Z6_Z7_Z8_Z9, 
+  };
+
+  // ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b Bit set.
+  const uint8_t ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3bBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x0f, 
+  };
+
   // ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b Register Class...
   const MCPhysReg ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b[] = {
     AArch64::Z0_Z1_Z2_Z3, AArch64::Z1_Z2_Z3_Z4, AArch64::Z2_Z3_Z4_Z5, AArch64::Z3_Z4_Z5_Z6, AArch64::Z4_Z5_Z6_Z7, AArch64::Z5_Z6_Z7_Z8, AArch64::Z31_Z0_Z1_Z2, 
@@ -3315,14 +3553,14 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x03, 0x00, 0x00, 0x18, 
   };
 
-  // ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b Register Class...
-  const MCPhysReg ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b[] = {
-    AArch64::Z0_Z1_Z2_Z3, AArch64::Z1_Z2_Z3_Z4, AArch64::Z2_Z3_Z4_Z5, AArch64::Z3_Z4_Z5_Z6, AArch64::Z4_Z5_Z6_Z7, AArch64::Z5_Z6_Z7_Z8, AArch64::Z6_Z7_Z8_Z9, 
+  // ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b Register Class...
+  const MCPhysReg ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b[] = {
+    AArch64::Z0_Z1_Z2_Z3, AArch64::Z1_Z2_Z3_Z4, AArch64::Z2_Z3_Z4_Z5, AArch64::Z3_Z4_Z5_Z6, AArch64::Z4_Z5_Z6_Z7, AArch64::Z5_Z6_Z7_Z8, 
   };
 
-  // ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b Bit set.
-  const uint8_t ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3bBits[] = {
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x0f, 
+  // ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b Bit set.
+  const uint8_t ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3bBits[] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x07, 
   };
 
   // ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b Register Class...
@@ -3335,213 +3573,242 @@ namespace {     // Register classes...
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x03, 0x00, 0x00, 0x10, 
   };
 
-  // ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b Register Class...
-  const MCPhysReg ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b[] = {
-    AArch64::Z0_Z1_Z2_Z3, AArch64::Z1_Z2_Z3_Z4, AArch64::Z2_Z3_Z4_Z5, AArch64::Z3_Z4_Z5_Z6, AArch64::Z4_Z5_Z6_Z7, AArch64::Z5_Z6_Z7_Z8, 
-  };
-
-  // ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b Bit set.
-  const uint8_t ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3bBits[] = {
-    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x07, 
-  };
-
-  // ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b Register Class...
-  const MCPhysReg ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b[] = {
+  // ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b Register Class...
+  const MCPhysReg ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b[] = {
     AArch64::Z0_Z1_Z2_Z3, AArch64::Z1_Z2_Z3_Z4, AArch64::Z2_Z3_Z4_Z5, AArch64::Z3_Z4_Z5_Z6, AArch64::Z4_Z5_Z6_Z7, 
   };
 
-  // ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b Bit set.
-  const uint8_t ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3bBits[] = {
+  // ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b Bit set.
+  const uint8_t ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3bBits[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x03, 
   };
 
 } // end anonymous namespace
 
+
+#ifdef __GNUC__
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Woverlength-strings"
+#endif
 extern const char AArch64RegClassStrings[] = {
-  /* 0 */ 'F', 'P', 'R', '3', '2', 0,
-  /* 6 */ 'G', 'P', 'R', '3', '2', 0,
-  /* 12 */ 'Z', 'P', 'R', '2', 0,
-  /* 17 */ 'Z', 'P', 'R', '3', 0,
-  /* 22 */ 'F', 'P', 'R', '6', '4', 0,
-  /* 28 */ 'X', 'S', 'e', 'q', 'P', 'a', 'i', 'r', 's', 'C', 'l', 'a', 's', 's', '_', 'w', 'i', 't', 'h', '_', 's', 'u', 'b', 'e', '6', '4', '_', 'i', 'n', '_', 'G', 'P', 'R', '6', '4', 'n', 'o', 'i', 'p', '_', 'a', 'n', 'd', '_', 't', 'c', 'G', 'P', 'R', '6', '4', 0,
-  /* 80 */ 'X', 'S', 'e', 'q', 'P', 'a', 'i', 'r', 's', 'C', 'l', 'a', 's', 's', '_', 'w', 'i', 't', 'h', '_', 's', 'u', 'b', 'o', '6', '4', '_', 'i', 'n', '_', 'G', 'P', 'R', '6', '4', 'n', 'o', 'i', 'p', '_', 'a', 'n', 'd', '_', 't', 'c', 'G', 'P', 'R', '6', '4', 0,
-  /* 132 */ 'X', 'S', 'e', 'q', 'P', 'a', 'i', 'r', 's', 'C', 'l', 'a', 's', 's', '_', 'w', 'i', 't', 'h', '_', 's', 'u', 'b', 'e', '6', '4', '_', 'i', 'n', '_', 't', 'c', 'G', 'P', 'R', '6', '4', 0,
-  /* 170 */ 'X', 'S', 'e', 'q', 'P', 'a', 'i', 'r', 's', 'C', 'l', 'a', 's', 's', '_', 'w', 'i', 't', 'h', '_', 's', 'u', 'b', 'o', '6', '4', '_', 'i', 'n', '_', 't', 'c', 'G', 'P', 'R', '6', '4', 0,
-  /* 208 */ 'X', 'S', 'e', 'q', 'P', 'a', 'i', 'r', 's', 'C', 'l', 'a', 's', 's', '_', 'w', 'i', 't', 'h', '_', 's', 'u', 'b', 'e', '6', '4', '_', 'i', 'n', '_', 'r', 't', 'c', 'G', 'P', 'R', '6', '4', 0,
-  /* 247 */ 'Z', 'P', 'R', '4', 0,
-  /* 252 */ 'F', 'P', 'R', '1', '6', 0,
-  /* 258 */ 'F', 'P', 'R', '1', '2', '8', 0,
-  /* 265 */ 'F', 'P', 'R', '8', 0,
-  /* 270 */ 'D', 'D', 'D', 'D', 0,
-  /* 275 */ 'Q', 'Q', 'Q', 'Q', 0,
-  /* 280 */ 'C', 'C', 'R', 0,
-  /* 284 */ 'P', 'P', 'R', 0,
-  /* 288 */ 'Z', 'P', 'R', 0,
-  /* 292 */ 'P', 'P', 'R', '_', '3', 'b', 0,
-  /* 299 */ 'Z', 'P', 'R', '2', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '0', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '3', 'b', 0,
-  /* 325 */ 'Z', 'P', 'R', '3', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '0', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '3', 'b', 0,
-  /* 351 */ 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '0', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '3', 'b', 0,
-  /* 377 */ 'Z', 'P', 'R', '2', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '2', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '1', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '3', 'b', 0,
-  /* 435 */ 'Z', 'P', 'R', '3', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '3', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '1', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '3', 'b', 0,
-  /* 493 */ 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '1', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '3', 'b', 0,
-  /* 551 */ 'Z', 'P', 'R', '3', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '1', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '3', 'b', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '3', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '2', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '3', 'b', 0,
-  /* 607 */ 'Z', 'P', 'R', '3', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '3', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '2', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '3', 'b', 0,
-  /* 665 */ 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '1', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '3', 'b', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '2', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '3', 'b', 0,
-  /* 721 */ 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '2', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '3', 'b', 0,
-  /* 779 */ 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '1', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '3', 'b', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '3', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '3', 'b', 0,
-  /* 835 */ 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '2', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '3', 'b', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '3', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '3', 'b', 0,
-  /* 891 */ 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '3', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '3', 'b', 0,
-  /* 949 */ 'Z', 'P', 'R', '2', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '2', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '1', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '4', 'b', 0,
-  /* 1007 */ 'Z', 'P', 'R', '3', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '3', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '1', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '4', 'b', 0,
-  /* 1065 */ 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '1', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '4', 'b', 0,
-  /* 1123 */ 'Z', 'P', 'R', '3', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '1', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '4', 'b', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '3', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '2', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '4', 'b', 0,
-  /* 1179 */ 'Z', 'P', 'R', '3', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '3', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '2', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '4', 'b', 0,
-  /* 1237 */ 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '1', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '4', 'b', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '2', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '4', 'b', 0,
-  /* 1293 */ 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '2', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '4', 'b', 0,
-  /* 1351 */ 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '1', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '4', 'b', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '3', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '4', 'b', 0,
-  /* 1407 */ 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '2', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '4', 'b', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '3', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '4', 'b', 0,
-  /* 1463 */ 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '3', '_', 'i', 'n', '_', 'Z', 'P', 'R', '_', '4', 'b', 0,
-  /* 1521 */ 'X', 'S', 'e', 'q', 'P', 'a', 'i', 'r', 's', 'C', 'l', 'a', 's', 's', '_', 'w', 'i', 't', 'h', '_', 's', 'u', 'b', '_', '3', '2', '_', 'i', 'n', '_', 'G', 'P', 'R', '3', '2', 'a', 'r', 'g', 0,
-  /* 1560 */ 'W', 'S', 'e', 'q', 'P', 'a', 'i', 'r', 's', 'C', 'l', 'a', 's', 's', '_', 'w', 'i', 't', 'h', '_', 's', 'u', 'b', 'e', '3', '2', '_', 'i', 'n', '_', 'G', 'P', 'R', '3', '2', 'a', 'r', 'g', 0,
-  /* 1599 */ 'G', 'P', 'R', '6', '4', 'a', 'r', 'g', 0,
-  /* 1608 */ 'G', 'P', 'R', '3', '2', 'a', 'l', 'l', 0,
-  /* 1617 */ 'G', 'P', 'R', '6', '4', 'a', 'l', 'l', 0,
-  /* 1626 */ 'W', 'S', 'e', 'q', 'P', 'a', 'i', 'r', 's', 'C', 'l', 'a', 's', 's', '_', 'w', 'i', 't', 'h', '_', 's', 'u', 'b', 'o', '3', '2', '_', 'i', 'n', '_', 'G', 'P', 'R', '3', '2', 'c', 'o', 'm', 'm', 'o', 'n', 0,
-  /* 1668 */ 'X', 'S', 'e', 'q', 'P', 'a', 'i', 'r', 's', 'C', 'l', 'a', 's', 's', '_', 'w', 'i', 't', 'h', '_', 's', 'u', 'b', 'o', '6', '4', '_', 'i', 'n', '_', 'G', 'P', 'R', '6', '4', 'c', 'o', 'm', 'm', 'o', 'n', 0,
-  /* 1710 */ 'Q', 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '0', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', 0,
-  /* 1739 */ 'Q', 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '0', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Q', 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '1', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', 0,
-  /* 1801 */ 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '0', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '1', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', 0,
-  /* 1861 */ 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '0', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '1', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', 0,
-  /* 1919 */ 'Q', 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '0', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Q', 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '2', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', 0,
-  /* 1981 */ 'Q', 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '1', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Q', 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '2', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', 0,
-  /* 2043 */ 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '0', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '2', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', 0,
-  /* 2103 */ 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '1', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '2', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', 0,
-  /* 2163 */ 'Q', 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '0', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Q', 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '3', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', 0,
-  /* 2225 */ 'Q', 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '1', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Q', 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '3', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', 0,
-  /* 2287 */ 'Q', 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '2', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', '_', 'a', 'n', 'd', '_', 'Q', 'Q', 'Q', 'Q', '_', 'w', 'i', 't', 'h', '_', 'q', 's', 'u', 'b', '3', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', 0,
-  /* 2349 */ 'Z', 'P', 'R', '2', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', 0,
-  /* 2377 */ 'Z', 'P', 'R', '3', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', 0,
-  /* 2405 */ 'Z', 'P', 'R', '4', '_', 'w', 'i', 't', 'h', '_', 'z', 's', 'u', 'b', '_', 'i', 'n', '_', 'F', 'P', 'R', '1', '2', '8', '_', 'l', 'o', 0,
-  /* 2433 */ 'G', 'P', 'R', '6', '4', 'c', 'o', 'm', 'm', 'o', 'n', '_', 'a', 'n', 'd', '_', 'G', 'P', 'R', '6', '4', 'n', 'o', 'i', 'p', 0,
-  /* 2459 */ 'X', 'S', 'e', 'q', 'P', 'a', 'i', 'r', 's', 'C', 'l', 'a', 's', 's', '_', 'w', 'i', 't', 'h', '_', 's', 'u', 'b', 'e', '6', '4', '_', 'i', 'n', '_', 'G', 'P', 'R', '6', '4', 'n', 'o', 'i', 'p', 0,
-  /* 2499 */ 'X', 'S', 'e', 'q', 'P', 'a', 'i', 'r', 's', 'C', 'l', 'a', 's', 's', '_', 'w', 'i', 't', 'h', '_', 's', 'u', 'b', 'o', '6', '4', '_', 'i', 'n', '_', 'G', 'P', 'R', '6', '4', 'n', 'o', 'i', 'p', 0,
-  /* 2539 */ 'G', 'P', 'R', '3', '2', 's', 'p', 0,
-  /* 2547 */ 'G', 'P', 'R', '6', '4', 's', 'p', 0,
-  /* 2555 */ 'W', 'S', 'e', 'q', 'P', 'a', 'i', 'r', 's', 'C', 'l', 'a', 's', 's', 0,
-  /* 2570 */ 'X', 'S', 'e', 'q', 'P', 'a', 'i', 'r', 's', 'C', 'l', 'a', 's', 's', 0,
-  /* 2585 */ 'G', 'P', 'R', '3', '2', 's', 'p', 'o', 'n', 'l', 'y', 0,
-  /* 2597 */ 'G', 'P', 'R', '6', '4', 's', 'p', 'o', 'n', 'l', 'y', 0,
+  /* 0 */ "FPR32\0"
+  /* 6 */ "GPR32\0"
+  /* 12 */ "ZPR2\0"
+  /* 17 */ "ZPR3\0"
+  /* 22 */ "FPR64\0"
+  /* 28 */ "XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64\0"
+  /* 80 */ "XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64\0"
+  /* 132 */ "XSeqPairsClass_with_sube64_in_tcGPR64\0"
+  /* 170 */ "XSeqPairsClass_with_subo64_in_tcGPR64\0"
+  /* 208 */ "XSeqPairsClass_with_sube64_in_rtcGPR64\0"
+  /* 247 */ "ZPR4\0"
+  /* 252 */ "FPR16\0"
+  /* 258 */ "FPR128\0"
+  /* 265 */ "FPR8\0"
+  /* 270 */ "DDDD\0"
+  /* 275 */ "QQQQ\0"
+  /* 280 */ "CCR\0"
+  /* 284 */ "PPR\0"
+  /* 288 */ "ZPR\0"
+  /* 292 */ "PPR_3b\0"
+  /* 299 */ "ZPR2_with_zsub0_in_ZPR_3b\0"
+  /* 325 */ "ZPR3_with_zsub0_in_ZPR_3b\0"
+  /* 351 */ "ZPR4_with_zsub0_in_ZPR_3b\0"
+  /* 377 */ "ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b\0"
+  /* 434 */ "ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b\0"
+  /* 491 */ "ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b\0"
+  /* 548 */ "ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b\0"
+  /* 604 */ "ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b\0"
+  /* 661 */ "ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b\0"
+  /* 717 */ "ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b\0"
+  /* 774 */ "ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b\0"
+  /* 830 */ "ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b\0"
+  /* 886 */ "ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b\0"
+  /* 943 */ "ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b\0"
+  /* 1000 */ "ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b\0"
+  /* 1057 */ "ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b\0"
+  /* 1114 */ "ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b\0"
+  /* 1170 */ "ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b\0"
+  /* 1227 */ "ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b\0"
+  /* 1283 */ "ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b\0"
+  /* 1340 */ "ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b\0"
+  /* 1396 */ "ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b\0"
+  /* 1452 */ "ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b\0"
+  /* 1509 */ "XSeqPairsClass_with_sub_32_in_GPR32arg\0"
+  /* 1548 */ "WSeqPairsClass_with_sube32_in_GPR32arg\0"
+  /* 1587 */ "GPR64arg\0"
+  /* 1596 */ "GPR32all\0"
+  /* 1605 */ "GPR64all\0"
+  /* 1614 */ "WSeqPairsClass_with_subo32_in_GPR32common\0"
+  /* 1656 */ "XSeqPairsClass_with_subo64_in_GPR64common\0"
+  /* 1698 */ "DDDD_with_dsub0_in_FPR64_lo\0"
+  /* 1726 */ "DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo\0"
+  /* 1786 */ "DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo\0"
+  /* 1844 */ "DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_lo\0"
+  /* 1900 */ "DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo\0"
+  /* 1960 */ "DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo\0"
+  /* 2020 */ "DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo\0"
+  /* 2078 */ "DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo\0"
+  /* 2136 */ "DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo\0"
+  /* 2196 */ "DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo\0"
+  /* 2256 */ "DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo\0"
+  /* 2316 */ "ZPR2_with_dsub_in_FPR64_lo\0"
+  /* 2343 */ "ZPR3_with_dsub_in_FPR64_lo\0"
+  /* 2370 */ "ZPR4_with_dsub_in_FPR64_lo\0"
+  /* 2397 */ "QQQQ_with_dsub_in_FPR64_lo\0"
+  /* 2424 */ "QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo\0"
+  /* 2484 */ "QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo\0"
+  /* 2542 */ "QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo\0"
+  /* 2598 */ "QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo\0"
+  /* 2658 */ "QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo\0"
+  /* 2720 */ "QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo\0"
+  /* 2778 */ "QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo\0"
+  /* 2838 */ "QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo\0"
+  /* 2898 */ "QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo\0"
+  /* 2960 */ "QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo\0"
+  /* 3022 */ "GPR64common_and_GPR64noip\0"
+  /* 3048 */ "XSeqPairsClass_with_sube64_in_GPR64noip\0"
+  /* 3088 */ "XSeqPairsClass_with_subo64_in_GPR64noip\0"
+  /* 3128 */ "GPR32sp\0"
+  /* 3136 */ "GPR64sp\0"
+  /* 3144 */ "WSeqPairsClass\0"
+  /* 3159 */ "XSeqPairsClass\0"
+  /* 3174 */ "GPR32sponly\0"
+  /* 3186 */ "GPR64sponly\0"
 };
+#ifdef __GNUC__
+#pragma GCC diagnostic pop
+#endif
 
 extern const MCRegisterClass AArch64MCRegisterClasses[] = {
   { FPR8, FPR8Bits, 265, 32, sizeof(FPR8Bits), AArch64::FPR8RegClassID, 1, true },
   { FPR16, FPR16Bits, 252, 32, sizeof(FPR16Bits), AArch64::FPR16RegClassID, 1, true },
   { PPR, PPRBits, 284, 16, sizeof(PPRBits), AArch64::PPRRegClassID, 1, true },
   { PPR_3b, PPR_3bBits, 292, 8, sizeof(PPR_3bBits), AArch64::PPR_3bRegClassID, 1, true },
-  { GPR32all, GPR32allBits, 1608, 33, sizeof(GPR32allBits), AArch64::GPR32allRegClassID, 1, true },
+  { GPR32all, GPR32allBits, 1596, 33, sizeof(GPR32allBits), AArch64::GPR32allRegClassID, 1, true },
   { FPR32, FPR32Bits, 0, 32, sizeof(FPR32Bits), AArch64::FPR32RegClassID, 1, true },
   { GPR32, GPR32Bits, 6, 32, sizeof(GPR32Bits), AArch64::GPR32RegClassID, 1, true },
-  { GPR32sp, GPR32spBits, 2539, 32, sizeof(GPR32spBits), AArch64::GPR32spRegClassID, 1, true },
-  { GPR32common, GPR32commonBits, 1656, 31, sizeof(GPR32commonBits), AArch64::GPR32commonRegClassID, 1, true },
-  { GPR32arg, GPR32argBits, 1551, 8, sizeof(GPR32argBits), AArch64::GPR32argRegClassID, 1, true },
+  { GPR32sp, GPR32spBits, 3128, 32, sizeof(GPR32spBits), AArch64::GPR32spRegClassID, 1, true },
+  { GPR32common, GPR32commonBits, 1644, 31, sizeof(GPR32commonBits), AArch64::GPR32commonRegClassID, 1, true },
+  { GPR32arg, GPR32argBits, 1539, 8, sizeof(GPR32argBits), AArch64::GPR32argRegClassID, 1, true },
   { CCR, CCRBits, 280, 1, sizeof(CCRBits), AArch64::CCRRegClassID, -1, false },
-  { GPR32sponly, GPR32sponlyBits, 2585, 1, sizeof(GPR32sponlyBits), AArch64::GPR32sponlyRegClassID, 1, true },
-  { WSeqPairsClass, WSeqPairsClassBits, 2555, 16, sizeof(WSeqPairsClassBits), AArch64::WSeqPairsClassRegClassID, 1, true },
-  { WSeqPairsClass_with_subo32_in_GPR32common, WSeqPairsClass_with_subo32_in_GPR32commonBits, 1626, 15, sizeof(WSeqPairsClass_with_subo32_in_GPR32commonBits), AArch64::WSeqPairsClass_with_subo32_in_GPR32commonRegClassID, 1, true },
-  { WSeqPairsClass_with_sube32_in_GPR32arg, WSeqPairsClass_with_sube32_in_GPR32argBits, 1560, 4, sizeof(WSeqPairsClass_with_sube32_in_GPR32argBits), AArch64::WSeqPairsClass_with_sube32_in_GPR32argRegClassID, 1, true },
-  { GPR64all, GPR64allBits, 1617, 33, sizeof(GPR64allBits), AArch64::GPR64allRegClassID, 1, true },
+  { GPR32sponly, GPR32sponlyBits, 3174, 1, sizeof(GPR32sponlyBits), AArch64::GPR32sponlyRegClassID, 1, true },
+  { WSeqPairsClass, WSeqPairsClassBits, 3144, 16, sizeof(WSeqPairsClassBits), AArch64::WSeqPairsClassRegClassID, 1, true },
+  { WSeqPairsClass_with_subo32_in_GPR32common, WSeqPairsClass_with_subo32_in_GPR32commonBits, 1614, 15, sizeof(WSeqPairsClass_with_subo32_in_GPR32commonBits), AArch64::WSeqPairsClass_with_subo32_in_GPR32commonRegClassID, 1, true },
+  { WSeqPairsClass_with_sube32_in_GPR32arg, WSeqPairsClass_with_sube32_in_GPR32argBits, 1548, 4, sizeof(WSeqPairsClass_with_sube32_in_GPR32argBits), AArch64::WSeqPairsClass_with_sube32_in_GPR32argRegClassID, 1, true },
+  { GPR64all, GPR64allBits, 1605, 33, sizeof(GPR64allBits), AArch64::GPR64allRegClassID, 1, true },
   { FPR64, FPR64Bits, 22, 32, sizeof(FPR64Bits), AArch64::FPR64RegClassID, 1, true },
   { GPR64, GPR64Bits, 74, 32, sizeof(GPR64Bits), AArch64::GPR64RegClassID, 1, true },
-  { GPR64sp, GPR64spBits, 2547, 32, sizeof(GPR64spBits), AArch64::GPR64spRegClassID, 1, true },
-  { GPR64common, GPR64commonBits, 1698, 31, sizeof(GPR64commonBits), AArch64::GPR64commonRegClassID, 1, true },
-  { GPR64noip, GPR64noipBits, 2449, 29, sizeof(GPR64noipBits), AArch64::GPR64noipRegClassID, 1, true },
-  { GPR64common_and_GPR64noip, GPR64common_and_GPR64noipBits, 2433, 28, sizeof(GPR64common_and_GPR64noipBits), AArch64::GPR64common_and_GPR64noipRegClassID, 1, true },
+  { GPR64sp, GPR64spBits, 3136, 32, sizeof(GPR64spBits), AArch64::GPR64spRegClassID, 1, true },
+  { GPR64common, GPR64commonBits, 1686, 31, sizeof(GPR64commonBits), AArch64::GPR64commonRegClassID, 1, true },
+  { GPR64noip, GPR64noipBits, 3038, 29, sizeof(GPR64noipBits), AArch64::GPR64noipRegClassID, 1, true },
+  { GPR64common_and_GPR64noip, GPR64common_and_GPR64noipBits, 3022, 28, sizeof(GPR64common_and_GPR64noipBits), AArch64::GPR64common_and_GPR64noipRegClassID, 1, true },
   { tcGPR64, tcGPR64Bits, 72, 19, sizeof(tcGPR64Bits), AArch64::tcGPR64RegClassID, 1, true },
   { GPR64noip_and_tcGPR64, GPR64noip_and_tcGPR64Bits, 58, 17, sizeof(GPR64noip_and_tcGPR64Bits), AArch64::GPR64noip_and_tcGPR64RegClassID, 1, true },
-  { GPR64arg, GPR64argBits, 1599, 8, sizeof(GPR64argBits), AArch64::GPR64argRegClassID, 1, true },
+  { FPR64_lo, FPR64_loBits, 1717, 16, sizeof(FPR64_loBits), AArch64::FPR64_loRegClassID, 1, true },
+  { GPR64arg, GPR64argBits, 1587, 8, sizeof(GPR64argBits), AArch64::GPR64argRegClassID, 1, true },
   { rtcGPR64, rtcGPR64Bits, 238, 2, sizeof(rtcGPR64Bits), AArch64::rtcGPR64RegClassID, 1, true },
-  { GPR64sponly, GPR64sponlyBits, 2597, 1, sizeof(GPR64sponlyBits), AArch64::GPR64sponlyRegClassID, 1, true },
+  { GPR64sponly, GPR64sponlyBits, 3186, 1, sizeof(GPR64sponlyBits), AArch64::GPR64sponlyRegClassID, 1, true },
   { DD, DDBits, 272, 32, sizeof(DDBits), AArch64::DDRegClassID, 1, true },
-  { XSeqPairsClass, XSeqPairsClassBits, 2570, 16, sizeof(XSeqPairsClassBits), AArch64::XSeqPairsClassRegClassID, 1, true },
-  { XSeqPairsClass_with_subo64_in_GPR64common, XSeqPairsClass_with_subo64_in_GPR64commonBits, 1668, 15, sizeof(XSeqPairsClass_with_subo64_in_GPR64commonBits), AArch64::XSeqPairsClass_with_subo64_in_GPR64commonRegClassID, 1, true },
-  { XSeqPairsClass_with_subo64_in_GPR64noip, XSeqPairsClass_with_subo64_in_GPR64noipBits, 2499, 15, sizeof(XSeqPairsClass_with_subo64_in_GPR64noipBits), AArch64::XSeqPairsClass_with_subo64_in_GPR64noipRegClassID, 1, true },
-  { XSeqPairsClass_with_sube64_in_GPR64noip, XSeqPairsClass_with_sube64_in_GPR64noipBits, 2459, 14, sizeof(XSeqPairsClass_with_sube64_in_GPR64noipBits), AArch64::XSeqPairsClass_with_sube64_in_GPR64noipRegClassID, 1, true },
+  { DD_with_dsub0_in_FPR64_lo, DD_with_dsub0_in_FPR64_loBits, 1700, 16, sizeof(DD_with_dsub0_in_FPR64_loBits), AArch64::DD_with_dsub0_in_FPR64_loRegClassID, 1, true },
+  { DD_with_dsub1_in_FPR64_lo, DD_with_dsub1_in_FPR64_loBits, 1760, 16, sizeof(DD_with_dsub1_in_FPR64_loBits), AArch64::DD_with_dsub1_in_FPR64_loRegClassID, 1, true },
+  { XSeqPairsClass, XSeqPairsClassBits, 3159, 16, sizeof(XSeqPairsClassBits), AArch64::XSeqPairsClassRegClassID, 1, true },
+  { DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_lo, DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_loBits, 1844, 15, sizeof(DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_loBits), AArch64::DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_loRegClassID, 1, true },
+  { XSeqPairsClass_with_subo64_in_GPR64common, XSeqPairsClass_with_subo64_in_GPR64commonBits, 1656, 15, sizeof(XSeqPairsClass_with_subo64_in_GPR64commonBits), AArch64::XSeqPairsClass_with_subo64_in_GPR64commonRegClassID, 1, true },
+  { XSeqPairsClass_with_subo64_in_GPR64noip, XSeqPairsClass_with_subo64_in_GPR64noipBits, 3088, 15, sizeof(XSeqPairsClass_with_subo64_in_GPR64noipBits), AArch64::XSeqPairsClass_with_subo64_in_GPR64noipRegClassID, 1, true },
+  { XSeqPairsClass_with_sube64_in_GPR64noip, XSeqPairsClass_with_sube64_in_GPR64noipBits, 3048, 14, sizeof(XSeqPairsClass_with_sube64_in_GPR64noipBits), AArch64::XSeqPairsClass_with_sube64_in_GPR64noipRegClassID, 1, true },
   { XSeqPairsClass_with_sube64_in_tcGPR64, XSeqPairsClass_with_sube64_in_tcGPR64Bits, 132, 10, sizeof(XSeqPairsClass_with_sube64_in_tcGPR64Bits), AArch64::XSeqPairsClass_with_sube64_in_tcGPR64RegClassID, 1, true },
   { XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64, XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64Bits, 28, 9, sizeof(XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64Bits), AArch64::XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64RegClassID, 1, true },
   { XSeqPairsClass_with_subo64_in_tcGPR64, XSeqPairsClass_with_subo64_in_tcGPR64Bits, 170, 9, sizeof(XSeqPairsClass_with_subo64_in_tcGPR64Bits), AArch64::XSeqPairsClass_with_subo64_in_tcGPR64RegClassID, 1, true },
   { XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64, XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64Bits, 80, 8, sizeof(XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64Bits), AArch64::XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64RegClassID, 1, true },
-  { XSeqPairsClass_with_sub_32_in_GPR32arg, XSeqPairsClass_with_sub_32_in_GPR32argBits, 1521, 4, sizeof(XSeqPairsClass_with_sub_32_in_GPR32argBits), AArch64::XSeqPairsClass_with_sub_32_in_GPR32argRegClassID, 1, true },
+  { XSeqPairsClass_with_sub_32_in_GPR32arg, XSeqPairsClass_with_sub_32_in_GPR32argBits, 1509, 4, sizeof(XSeqPairsClass_with_sub_32_in_GPR32argBits), AArch64::XSeqPairsClass_with_sub_32_in_GPR32argRegClassID, 1, true },
   { XSeqPairsClass_with_sube64_in_rtcGPR64, XSeqPairsClass_with_sube64_in_rtcGPR64Bits, 208, 1, sizeof(XSeqPairsClass_with_sube64_in_rtcGPR64Bits), AArch64::XSeqPairsClass_with_sube64_in_rtcGPR64RegClassID, 1, true },
   { FPR128, FPR128Bits, 258, 32, sizeof(FPR128Bits), AArch64::FPR128RegClassID, 1, true },
   { ZPR, ZPRBits, 288, 32, sizeof(ZPRBits), AArch64::ZPRRegClassID, 1, true },
-  { FPR128_lo, FPR128_loBits, 1729, 16, sizeof(FPR128_loBits), AArch64::FPR128_loRegClassID, 1, true },
-  { ZPR_4b, ZPR_4bBits, 1000, 16, sizeof(ZPR_4bBits), AArch64::ZPR_4bRegClassID, 1, true },
+  { FPR128_lo, FPR128_loBits, 2474, 16, sizeof(FPR128_loBits), AArch64::FPR128_loRegClassID, 1, true },
+  { ZPR_4b, ZPR_4bBits, 993, 16, sizeof(ZPR_4bBits), AArch64::ZPR_4bRegClassID, 1, true },
   { ZPR_3b, ZPR_3bBits, 318, 8, sizeof(ZPR_3bBits), AArch64::ZPR_3bRegClassID, 1, true },
   { DDD, DDDBits, 271, 32, sizeof(DDDBits), AArch64::DDDRegClassID, 1, true },
+  { DDD_with_dsub0_in_FPR64_lo, DDD_with_dsub0_in_FPR64_loBits, 1699, 16, sizeof(DDD_with_dsub0_in_FPR64_loBits), AArch64::DDD_with_dsub0_in_FPR64_loRegClassID, 1, true },
+  { DDD_with_dsub1_in_FPR64_lo, DDD_with_dsub1_in_FPR64_loBits, 1759, 16, sizeof(DDD_with_dsub1_in_FPR64_loBits), AArch64::DDD_with_dsub1_in_FPR64_loRegClassID, 1, true },
+  { DDD_with_dsub2_in_FPR64_lo, DDD_with_dsub2_in_FPR64_loBits, 1933, 16, sizeof(DDD_with_dsub2_in_FPR64_loBits), AArch64::DDD_with_dsub2_in_FPR64_loRegClassID, 1, true },
+  { DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo, DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_loBits, 1786, 15, sizeof(DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_loBits), AArch64::DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_loRegClassID, 1, true },
+  { DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo, DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loBits, 2078, 15, sizeof(DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loBits), AArch64::DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loRegClassID, 1, true },
+  { DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo, DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loBits, 2020, 14, sizeof(DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loBits), AArch64::DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loRegClassID, 1, true },
   { DDDD, DDDDBits, 270, 32, sizeof(DDDDBits), AArch64::DDDDRegClassID, 1, true },
+  { DDDD_with_dsub0_in_FPR64_lo, DDDD_with_dsub0_in_FPR64_loBits, 1698, 16, sizeof(DDDD_with_dsub0_in_FPR64_loBits), AArch64::DDDD_with_dsub0_in_FPR64_loRegClassID, 1, true },
+  { DDDD_with_dsub1_in_FPR64_lo, DDDD_with_dsub1_in_FPR64_loBits, 1758, 16, sizeof(DDDD_with_dsub1_in_FPR64_loBits), AArch64::DDDD_with_dsub1_in_FPR64_loRegClassID, 1, true },
+  { DDDD_with_dsub2_in_FPR64_lo, DDDD_with_dsub2_in_FPR64_loBits, 1932, 16, sizeof(DDDD_with_dsub2_in_FPR64_loBits), AArch64::DDDD_with_dsub2_in_FPR64_loRegClassID, 1, true },
+  { DDDD_with_dsub3_in_FPR64_lo, DDDD_with_dsub3_in_FPR64_loBits, 2168, 16, sizeof(DDDD_with_dsub3_in_FPR64_loBits), AArch64::DDDD_with_dsub3_in_FPR64_loRegClassID, 1, true },
+  { DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo, DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_loBits, 1726, 15, sizeof(DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_loBits), AArch64::DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_loRegClassID, 1, true },
+  { DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo, DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loBits, 1960, 15, sizeof(DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loBits), AArch64::DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClassID, 1, true },
+  { DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo, DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loBits, 2256, 15, sizeof(DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loBits), AArch64::DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClassID, 1, true },
+  { DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo, DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loBits, 1900, 14, sizeof(DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loBits), AArch64::DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClassID, 1, true },
+  { DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo, DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loBits, 2196, 14, sizeof(DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loBits), AArch64::DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClassID, 1, true },
+  { DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo, DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loBits, 2136, 13, sizeof(DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loBits), AArch64::DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClassID, 1, true },
   { QQ, QQBits, 277, 32, sizeof(QQBits), AArch64::QQRegClassID, 1, true },
   { ZPR2, ZPR2Bits, 12, 32, sizeof(ZPR2Bits), AArch64::ZPR2RegClassID, 1, true },
-  { QQ_with_qsub0_in_FPR128_lo, QQ_with_qsub0_in_FPR128_loBits, 1712, 16, sizeof(QQ_with_qsub0_in_FPR128_loBits), AArch64::QQ_with_qsub0_in_FPR128_loRegClassID, 1, true },
-  { QQ_with_qsub1_in_FPR128_lo, QQ_with_qsub1_in_FPR128_loBits, 1774, 16, sizeof(QQ_with_qsub1_in_FPR128_loBits), AArch64::QQ_with_qsub1_in_FPR128_loRegClassID, 1, true },
-  { ZPR2_with_zsub1_in_ZPR_4b, ZPR2_with_zsub1_in_ZPR_4bBits, 981, 16, sizeof(ZPR2_with_zsub1_in_ZPR_4bBits), AArch64::ZPR2_with_zsub1_in_ZPR_4bRegClassID, 1, true },
-  { ZPR2_with_zsub_in_FPR128_lo, ZPR2_with_zsub_in_FPR128_loBits, 2349, 16, sizeof(ZPR2_with_zsub_in_FPR128_loBits), AArch64::ZPR2_with_zsub_in_FPR128_loRegClassID, 1, true },
-  { QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_lo, QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_loBits, 1861, 15, sizeof(QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_loBits), AArch64::QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_loRegClassID, 1, true },
-  { ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b, ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4bBits, 949, 15, sizeof(ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4bBits), AArch64::ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4bRegClassID, 1, true },
+  { QQ_with_dsub_in_FPR64_lo, QQ_with_dsub_in_FPR64_loBits, 2399, 16, sizeof(QQ_with_dsub_in_FPR64_loBits), AArch64::QQ_with_dsub_in_FPR64_loRegClassID, 1, true },
+  { QQ_with_qsub1_in_FPR128_lo, QQ_with_qsub1_in_FPR128_loBits, 2457, 16, sizeof(QQ_with_qsub1_in_FPR128_loBits), AArch64::QQ_with_qsub1_in_FPR128_loRegClassID, 1, true },
+  { ZPR2_with_dsub_in_FPR64_lo, ZPR2_with_dsub_in_FPR64_loBits, 2316, 16, sizeof(ZPR2_with_dsub_in_FPR64_loBits), AArch64::ZPR2_with_dsub_in_FPR64_loRegClassID, 1, true },
+  { ZPR2_with_zsub1_in_ZPR_4b, ZPR2_with_zsub1_in_ZPR_4bBits, 974, 16, sizeof(ZPR2_with_zsub1_in_ZPR_4bBits), AArch64::ZPR2_with_zsub1_in_ZPR_4bRegClassID, 1, true },
+  { QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo, QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_loBits, 2542, 15, sizeof(QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_loBits), AArch64::QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_loRegClassID, 1, true },
+  { ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b, ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4bBits, 943, 15, sizeof(ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4bBits), AArch64::ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4bRegClassID, 1, true },
   { ZPR2_with_zsub0_in_ZPR_3b, ZPR2_with_zsub0_in_ZPR_3bBits, 299, 8, sizeof(ZPR2_with_zsub0_in_ZPR_3bBits), AArch64::ZPR2_with_zsub0_in_ZPR_3bRegClassID, 1, true },
-  { ZPR2_with_zsub1_in_ZPR_3b, ZPR2_with_zsub1_in_ZPR_3bBits, 409, 8, sizeof(ZPR2_with_zsub1_in_ZPR_3bBits), AArch64::ZPR2_with_zsub1_in_ZPR_3bRegClassID, 1, true },
-  { ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b, ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3bBits, 377, 7, sizeof(ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3bBits), AArch64::ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3bRegClassID, 1, true },
+  { ZPR2_with_zsub1_in_ZPR_3b, ZPR2_with_zsub1_in_ZPR_3bBits, 408, 8, sizeof(ZPR2_with_zsub1_in_ZPR_3bBits), AArch64::ZPR2_with_zsub1_in_ZPR_3bRegClassID, 1, true },
+  { ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b, ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3bBits, 377, 7, sizeof(ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3bBits), AArch64::ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3bRegClassID, 1, true },
   { QQQ, QQQBits, 276, 32, sizeof(QQQBits), AArch64::QQQRegClassID, 1, true },
   { ZPR3, ZPR3Bits, 17, 32, sizeof(ZPR3Bits), AArch64::ZPR3RegClassID, 1, true },
-  { QQQ_with_qsub0_in_FPR128_lo, QQQ_with_qsub0_in_FPR128_loBits, 1711, 16, sizeof(QQQ_with_qsub0_in_FPR128_loBits), AArch64::QQQ_with_qsub0_in_FPR128_loRegClassID, 1, true },
-  { QQQ_with_qsub1_in_FPR128_lo, QQQ_with_qsub1_in_FPR128_loBits, 1773, 16, sizeof(QQQ_with_qsub1_in_FPR128_loBits), AArch64::QQQ_with_qsub1_in_FPR128_loRegClassID, 1, true },
-  { QQQ_with_qsub2_in_FPR128_lo, QQQ_with_qsub2_in_FPR128_loBits, 1953, 16, sizeof(QQQ_with_qsub2_in_FPR128_loBits), AArch64::QQQ_with_qsub2_in_FPR128_loRegClassID, 1, true },
-  { ZPR3_with_zsub1_in_ZPR_4b, ZPR3_with_zsub1_in_ZPR_4bBits, 1039, 16, sizeof(ZPR3_with_zsub1_in_ZPR_4bBits), AArch64::ZPR3_with_zsub1_in_ZPR_4bRegClassID, 1, true },
-  { ZPR3_with_zsub2_in_ZPR_4b, ZPR3_with_zsub2_in_ZPR_4bBits, 1153, 16, sizeof(ZPR3_with_zsub2_in_ZPR_4bBits), AArch64::ZPR3_with_zsub2_in_ZPR_4bRegClassID, 1, true },
-  { ZPR3_with_zsub_in_FPR128_lo, ZPR3_with_zsub_in_FPR128_loBits, 2377, 16, sizeof(ZPR3_with_zsub_in_FPR128_loBits), AArch64::ZPR3_with_zsub_in_FPR128_loRegClassID, 1, true },
-  { QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo, QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_loBits, 1801, 15, sizeof(QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_loBits), AArch64::QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_loRegClassID, 1, true },
-  { QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo, QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loBits, 2103, 15, sizeof(QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loBits), AArch64::QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loRegClassID, 1, true },
-  { ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b, ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bBits, 1123, 15, sizeof(ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bBits), AArch64::ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bRegClassID, 1, true },
-  { ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b, ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4bBits, 1007, 15, sizeof(ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4bBits), AArch64::ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClassID, 1, true },
-  { QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo, QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loBits, 2043, 14, sizeof(QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loBits), AArch64::QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loRegClassID, 1, true },
-  { ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b, ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4bBits, 1179, 14, sizeof(ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4bBits), AArch64::ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4bRegClassID, 1, true },
+  { QQQ_with_dsub_in_FPR64_lo, QQQ_with_dsub_in_FPR64_loBits, 2398, 16, sizeof(QQQ_with_dsub_in_FPR64_loBits), AArch64::QQQ_with_dsub_in_FPR64_loRegClassID, 1, true },
+  { QQQ_with_qsub1_in_FPR128_lo, QQQ_with_qsub1_in_FPR128_loBits, 2456, 16, sizeof(QQQ_with_qsub1_in_FPR128_loBits), AArch64::QQQ_with_qsub1_in_FPR128_loRegClassID, 1, true },
+  { QQQ_with_qsub2_in_FPR128_lo, QQQ_with_qsub2_in_FPR128_loBits, 2630, 16, sizeof(QQQ_with_qsub2_in_FPR128_loBits), AArch64::QQQ_with_qsub2_in_FPR128_loRegClassID, 1, true },
+  { ZPR3_with_dsub_in_FPR64_lo, ZPR3_with_dsub_in_FPR64_loBits, 2343, 16, sizeof(ZPR3_with_dsub_in_FPR64_loBits), AArch64::ZPR3_with_dsub_in_FPR64_loRegClassID, 1, true },
+  { ZPR3_with_zsub1_in_ZPR_4b, ZPR3_with_zsub1_in_ZPR_4bBits, 1031, 16, sizeof(ZPR3_with_zsub1_in_ZPR_4bBits), AArch64::ZPR3_with_zsub1_in_ZPR_4bRegClassID, 1, true },
+  { ZPR3_with_zsub2_in_ZPR_4b, ZPR3_with_zsub2_in_ZPR_4bBits, 1144, 16, sizeof(ZPR3_with_zsub2_in_ZPR_4bBits), AArch64::ZPR3_with_zsub2_in_ZPR_4bRegClassID, 1, true },
+  { QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo, QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_loBits, 2484, 15, sizeof(QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_loBits), AArch64::QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_loRegClassID, 1, true },
+  { QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo, QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loBits, 2778, 15, sizeof(QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loBits), AArch64::QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loRegClassID, 1, true },
+  { ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b, ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4bBits, 1000, 15, sizeof(ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4bBits), AArch64::ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClassID, 1, true },
+  { ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b, ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bBits, 1114, 15, sizeof(ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bBits), AArch64::ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bRegClassID, 1, true },
+  { QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo, QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_loBits, 2720, 14, sizeof(QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_loBits), AArch64::QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_loRegClassID, 1, true },
+  { ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b, ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4bBits, 1170, 14, sizeof(ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4bBits), AArch64::ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4bRegClassID, 1, true },
   { ZPR3_with_zsub0_in_ZPR_3b, ZPR3_with_zsub0_in_ZPR_3bBits, 325, 8, sizeof(ZPR3_with_zsub0_in_ZPR_3bBits), AArch64::ZPR3_with_zsub0_in_ZPR_3bRegClassID, 1, true },
-  { ZPR3_with_zsub1_in_ZPR_3b, ZPR3_with_zsub1_in_ZPR_3bBits, 467, 8, sizeof(ZPR3_with_zsub1_in_ZPR_3bBits), AArch64::ZPR3_with_zsub1_in_ZPR_3bRegClassID, 1, true },
-  { ZPR3_with_zsub2_in_ZPR_3b, ZPR3_with_zsub2_in_ZPR_3bBits, 581, 8, sizeof(ZPR3_with_zsub2_in_ZPR_3bBits), AArch64::ZPR3_with_zsub2_in_ZPR_3bRegClassID, 1, true },
-  { ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b, ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3bBits, 551, 7, sizeof(ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3bBits), AArch64::ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3bRegClassID, 1, true },
-  { ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b, ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3bBits, 435, 7, sizeof(ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3bBits), AArch64::ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3bRegClassID, 1, true },
-  { ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b, ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3bBits, 607, 6, sizeof(ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3bBits), AArch64::ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3bRegClassID, 1, true },
+  { ZPR3_with_zsub1_in_ZPR_3b, ZPR3_with_zsub1_in_ZPR_3bBits, 465, 8, sizeof(ZPR3_with_zsub1_in_ZPR_3bBits), AArch64::ZPR3_with_zsub1_in_ZPR_3bRegClassID, 1, true },
+  { ZPR3_with_zsub2_in_ZPR_3b, ZPR3_with_zsub2_in_ZPR_3bBits, 578, 8, sizeof(ZPR3_with_zsub2_in_ZPR_3bBits), AArch64::ZPR3_with_zsub2_in_ZPR_3bRegClassID, 1, true },
+  { ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b, ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3bBits, 434, 7, sizeof(ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3bBits), AArch64::ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3bRegClassID, 1, true },
+  { ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b, ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3bBits, 548, 7, sizeof(ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3bBits), AArch64::ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3bRegClassID, 1, true },
+  { ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b, ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3bBits, 604, 6, sizeof(ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3bBits), AArch64::ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3bRegClassID, 1, true },
   { QQQQ, QQQQBits, 275, 32, sizeof(QQQQBits), AArch64::QQQQRegClassID, 1, true },
   { ZPR4, ZPR4Bits, 247, 32, sizeof(ZPR4Bits), AArch64::ZPR4RegClassID, 1, true },
-  { QQQQ_with_qsub0_in_FPR128_lo, QQQQ_with_qsub0_in_FPR128_loBits, 1710, 16, sizeof(QQQQ_with_qsub0_in_FPR128_loBits), AArch64::QQQQ_with_qsub0_in_FPR128_loRegClassID, 1, true },
-  { QQQQ_with_qsub1_in_FPR128_lo, QQQQ_with_qsub1_in_FPR128_loBits, 1772, 16, sizeof(QQQQ_with_qsub1_in_FPR128_loBits), AArch64::QQQQ_with_qsub1_in_FPR128_loRegClassID, 1, true },
-  { QQQQ_with_qsub2_in_FPR128_lo, QQQQ_with_qsub2_in_FPR128_loBits, 1952, 16, sizeof(QQQQ_with_qsub2_in_FPR128_loBits), AArch64::QQQQ_with_qsub2_in_FPR128_loRegClassID, 1, true },
-  { QQQQ_with_qsub3_in_FPR128_lo, QQQQ_with_qsub3_in_FPR128_loBits, 2196, 16, sizeof(QQQQ_with_qsub3_in_FPR128_loBits), AArch64::QQQQ_with_qsub3_in_FPR128_loRegClassID, 1, true },
-  { ZPR4_with_zsub1_in_ZPR_4b, ZPR4_with_zsub1_in_ZPR_4bBits, 1097, 16, sizeof(ZPR4_with_zsub1_in_ZPR_4bBits), AArch64::ZPR4_with_zsub1_in_ZPR_4bRegClassID, 1, true },
-  { ZPR4_with_zsub2_in_ZPR_4b, ZPR4_with_zsub2_in_ZPR_4bBits, 1267, 16, sizeof(ZPR4_with_zsub2_in_ZPR_4bBits), AArch64::ZPR4_with_zsub2_in_ZPR_4bRegClassID, 1, true },
-  { ZPR4_with_zsub3_in_ZPR_4b, ZPR4_with_zsub3_in_ZPR_4bBits, 1381, 16, sizeof(ZPR4_with_zsub3_in_ZPR_4bBits), AArch64::ZPR4_with_zsub3_in_ZPR_4bRegClassID, 1, true },
-  { ZPR4_with_zsub_in_FPR128_lo, ZPR4_with_zsub_in_FPR128_loBits, 2405, 16, sizeof(ZPR4_with_zsub_in_FPR128_loBits), AArch64::ZPR4_with_zsub_in_FPR128_loRegClassID, 1, true },
-  { QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo, QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_loBits, 1739, 15, sizeof(QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_loBits), AArch64::QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_loRegClassID, 1, true },
-  { QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo, QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loBits, 1981, 15, sizeof(QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loBits), AArch64::QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClassID, 1, true },
-  { QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo, QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loBits, 2287, 15, sizeof(QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loBits), AArch64::QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClassID, 1, true },
-  { ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b, ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bBits, 1237, 15, sizeof(ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bBits), AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bRegClassID, 1, true },
-  { ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b, ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bBits, 1407, 15, sizeof(ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bBits), AArch64::ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClassID, 1, true },
-  { ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b, ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bBits, 1065, 15, sizeof(ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bBits), AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClassID, 1, true },
-  { QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo, QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loBits, 1919, 14, sizeof(QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loBits), AArch64::QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClassID, 1, true },
-  { QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo, QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loBits, 2225, 14, sizeof(QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loBits), AArch64::QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClassID, 1, true },
-  { ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b, ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bBits, 1351, 14, sizeof(ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bBits), AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClassID, 1, true },
-  { ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b, ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4bBits, 1293, 14, sizeof(ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4bBits), AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClassID, 1, true },
-  { QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo, QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loBits, 2163, 13, sizeof(QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loBits), AArch64::QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClassID, 1, true },
-  { ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b, ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4bBits, 1463, 13, sizeof(ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4bBits), AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClassID, 1, true },
+  { QQQQ_with_dsub_in_FPR64_lo, QQQQ_with_dsub_in_FPR64_loBits, 2397, 16, sizeof(QQQQ_with_dsub_in_FPR64_loBits), AArch64::QQQQ_with_dsub_in_FPR64_loRegClassID, 1, true },
+  { QQQQ_with_qsub1_in_FPR128_lo, QQQQ_with_qsub1_in_FPR128_loBits, 2455, 16, sizeof(QQQQ_with_qsub1_in_FPR128_loBits), AArch64::QQQQ_with_qsub1_in_FPR128_loRegClassID, 1, true },
+  { QQQQ_with_qsub2_in_FPR128_lo, QQQQ_with_qsub2_in_FPR128_loBits, 2629, 16, sizeof(QQQQ_with_qsub2_in_FPR128_loBits), AArch64::QQQQ_with_qsub2_in_FPR128_loRegClassID, 1, true },
+  { QQQQ_with_qsub3_in_FPR128_lo, QQQQ_with_qsub3_in_FPR128_loBits, 2869, 16, sizeof(QQQQ_with_qsub3_in_FPR128_loBits), AArch64::QQQQ_with_qsub3_in_FPR128_loRegClassID, 1, true },
+  { ZPR4_with_dsub_in_FPR64_lo, ZPR4_with_dsub_in_FPR64_loBits, 2370, 16, sizeof(ZPR4_with_dsub_in_FPR64_loBits), AArch64::ZPR4_with_dsub_in_FPR64_loRegClassID, 1, true },
+  { ZPR4_with_zsub1_in_ZPR_4b, ZPR4_with_zsub1_in_ZPR_4bBits, 1088, 16, sizeof(ZPR4_with_zsub1_in_ZPR_4bBits), AArch64::ZPR4_with_zsub1_in_ZPR_4bRegClassID, 1, true },
+  { ZPR4_with_zsub2_in_ZPR_4b, ZPR4_with_zsub2_in_ZPR_4bBits, 1257, 16, sizeof(ZPR4_with_zsub2_in_ZPR_4bBits), AArch64::ZPR4_with_zsub2_in_ZPR_4bRegClassID, 1, true },
+  { ZPR4_with_zsub3_in_ZPR_4b, ZPR4_with_zsub3_in_ZPR_4bBits, 1370, 16, sizeof(ZPR4_with_zsub3_in_ZPR_4bBits), AArch64::ZPR4_with_zsub3_in_ZPR_4bRegClassID, 1, true },
+  { QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo, QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_loBits, 2424, 15, sizeof(QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_loBits), AArch64::QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_loRegClassID, 1, true },
+  { QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo, QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loBits, 2658, 15, sizeof(QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loBits), AArch64::QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClassID, 1, true },
+  { QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo, QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loBits, 2960, 15, sizeof(QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loBits), AArch64::QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClassID, 1, true },
+  { ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b, ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bBits, 1057, 15, sizeof(ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bBits), AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClassID, 1, true },
+  { ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b, ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bBits, 1227, 15, sizeof(ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bBits), AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bRegClassID, 1, true },
+  { ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b, ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bBits, 1396, 15, sizeof(ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bBits), AArch64::ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClassID, 1, true },
+  { QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo, QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_loBits, 2598, 14, sizeof(QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_loBits), AArch64::QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClassID, 1, true },
+  { QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo, QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loBits, 2898, 14, sizeof(QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loBits), AArch64::QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClassID, 1, true },
+  { ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b, ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4bBits, 1283, 14, sizeof(ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4bBits), AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClassID, 1, true },
+  { ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b, ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bBits, 1340, 14, sizeof(ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bBits), AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClassID, 1, true },
+  { QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo, QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_loBits, 2838, 13, sizeof(QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_loBits), AArch64::QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClassID, 1, true },
+  { ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b, ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4bBits, 1452, 13, sizeof(ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4bBits), AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClassID, 1, true },
   { ZPR4_with_zsub0_in_ZPR_3b, ZPR4_with_zsub0_in_ZPR_3bBits, 351, 8, sizeof(ZPR4_with_zsub0_in_ZPR_3bBits), AArch64::ZPR4_with_zsub0_in_ZPR_3bRegClassID, 1, true },
-  { ZPR4_with_zsub1_in_ZPR_3b, ZPR4_with_zsub1_in_ZPR_3bBits, 525, 8, sizeof(ZPR4_with_zsub1_in_ZPR_3bBits), AArch64::ZPR4_with_zsub1_in_ZPR_3bRegClassID, 1, true },
-  { ZPR4_with_zsub2_in_ZPR_3b, ZPR4_with_zsub2_in_ZPR_3bBits, 695, 8, sizeof(ZPR4_with_zsub2_in_ZPR_3bBits), AArch64::ZPR4_with_zsub2_in_ZPR_3bRegClassID, 1, true },
-  { ZPR4_with_zsub3_in_ZPR_3b, ZPR4_with_zsub3_in_ZPR_3bBits, 809, 8, sizeof(ZPR4_with_zsub3_in_ZPR_3bBits), AArch64::ZPR4_with_zsub3_in_ZPR_3bRegClassID, 1, true },
-  { ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b, ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3bBits, 665, 7, sizeof(ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3bBits), AArch64::ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3bRegClassID, 1, true },
-  { ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b, ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bBits, 835, 7, sizeof(ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bBits), AArch64::ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bRegClassID, 1, true },
-  { ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b, ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3bBits, 493, 7, sizeof(ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3bBits), AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3bRegClassID, 1, true },
-  { ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b, ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bBits, 779, 6, sizeof(ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bBits), AArch64::ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bRegClassID, 1, true },
-  { ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b, ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3bBits, 721, 6, sizeof(ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3bBits), AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3bRegClassID, 1, true },
-  { ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b, ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3bBits, 891, 5, sizeof(ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3bBits), AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3bRegClassID, 1, true },
+  { ZPR4_with_zsub1_in_ZPR_3b, ZPR4_with_zsub1_in_ZPR_3bBits, 522, 8, sizeof(ZPR4_with_zsub1_in_ZPR_3bBits), AArch64::ZPR4_with_zsub1_in_ZPR_3bRegClassID, 1, true },
+  { ZPR4_with_zsub2_in_ZPR_3b, ZPR4_with_zsub2_in_ZPR_3bBits, 691, 8, sizeof(ZPR4_with_zsub2_in_ZPR_3bBits), AArch64::ZPR4_with_zsub2_in_ZPR_3bRegClassID, 1, true },
+  { ZPR4_with_zsub3_in_ZPR_3b, ZPR4_with_zsub3_in_ZPR_3bBits, 804, 8, sizeof(ZPR4_with_zsub3_in_ZPR_3bBits), AArch64::ZPR4_with_zsub3_in_ZPR_3bRegClassID, 1, true },
+  { ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b, ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3bBits, 491, 7, sizeof(ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3bBits), AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3bRegClassID, 1, true },
+  { ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b, ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3bBits, 661, 7, sizeof(ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3bBits), AArch64::ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3bRegClassID, 1, true },
+  { ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b, ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bBits, 830, 7, sizeof(ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bBits), AArch64::ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bRegClassID, 1, true },
+  { ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b, ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3bBits, 717, 6, sizeof(ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3bBits), AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3bRegClassID, 1, true },
+  { ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b, ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bBits, 774, 6, sizeof(ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bBits), AArch64::ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bRegClassID, 1, true },
+  { ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b, ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3bBits, 886, 5, sizeof(ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3bBits), AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3bRegClassID, 1, true },
 };
 
 // AArch64 Dwarf<->LLVM register mappings.
@@ -4969,7 +5236,7 @@ extern const uint16_t AArch64RegEncodingTable[] = {
   31,
 };
 static inline void InitAArch64MCRegisterInfo(MCRegisterInfo *RI, unsigned RA, unsigned DwarfFlavour = 0, unsigned EHFlavour = 0, unsigned PC = 0) {
-  RI->InitMCRegisterInfo(AArch64RegDesc, 629, RA, PC, AArch64MCRegisterClasses, 108, AArch64RegUnitRoots, 115, AArch64RegDiffLists, AArch64LaneMaskLists, AArch64RegStrings, AArch64RegClassStrings, AArch64SubRegIdxLists, 100,
+  RI->InitMCRegisterInfo(AArch64RegDesc, 629, RA, PC, AArch64MCRegisterClasses, 128, AArch64RegUnitRoots, 115, AArch64RegDiffLists, AArch64LaneMaskLists, AArch64RegStrings, AArch64RegClassStrings, AArch64SubRegIdxLists, 100,
 AArch64SubRegIdxRanges, AArch64RegEncodingTable);
 
   switch (DwarfFlavour) {
@@ -5070,11 +5337,15 @@ namespace AArch64 { // Register classes
   extern const TargetRegisterClass GPR64common_and_GPR64noipRegClass;
   extern const TargetRegisterClass tcGPR64RegClass;
   extern const TargetRegisterClass GPR64noip_and_tcGPR64RegClass;
+  extern const TargetRegisterClass FPR64_loRegClass;
   extern const TargetRegisterClass GPR64argRegClass;
   extern const TargetRegisterClass rtcGPR64RegClass;
   extern const TargetRegisterClass GPR64sponlyRegClass;
   extern const TargetRegisterClass DDRegClass;
+  extern const TargetRegisterClass DD_with_dsub0_in_FPR64_loRegClass;
+  extern const TargetRegisterClass DD_with_dsub1_in_FPR64_loRegClass;
   extern const TargetRegisterClass XSeqPairsClassRegClass;
+  extern const TargetRegisterClass DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_loRegClass;
   extern const TargetRegisterClass XSeqPairsClass_with_subo64_in_GPR64commonRegClass;
   extern const TargetRegisterClass XSeqPairsClass_with_subo64_in_GPR64noipRegClass;
   extern const TargetRegisterClass XSeqPairsClass_with_sube64_in_GPR64noipRegClass;
@@ -5090,70 +5361,86 @@ namespace AArch64 { // Register classes
   extern const TargetRegisterClass ZPR_4bRegClass;
   extern const TargetRegisterClass ZPR_3bRegClass;
   extern const TargetRegisterClass DDDRegClass;
+  extern const TargetRegisterClass DDD_with_dsub0_in_FPR64_loRegClass;
+  extern const TargetRegisterClass DDD_with_dsub1_in_FPR64_loRegClass;
+  extern const TargetRegisterClass DDD_with_dsub2_in_FPR64_loRegClass;
+  extern const TargetRegisterClass DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_loRegClass;
+  extern const TargetRegisterClass DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loRegClass;
+  extern const TargetRegisterClass DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loRegClass;
   extern const TargetRegisterClass DDDDRegClass;
+  extern const TargetRegisterClass DDDD_with_dsub0_in_FPR64_loRegClass;
+  extern const TargetRegisterClass DDDD_with_dsub1_in_FPR64_loRegClass;
+  extern const TargetRegisterClass DDDD_with_dsub2_in_FPR64_loRegClass;
+  extern const TargetRegisterClass DDDD_with_dsub3_in_FPR64_loRegClass;
+  extern const TargetRegisterClass DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_loRegClass;
+  extern const TargetRegisterClass DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClass;
+  extern const TargetRegisterClass DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClass;
+  extern const TargetRegisterClass DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClass;
+  extern const TargetRegisterClass DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClass;
+  extern const TargetRegisterClass DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClass;
   extern const TargetRegisterClass QQRegClass;
   extern const TargetRegisterClass ZPR2RegClass;
-  extern const TargetRegisterClass QQ_with_qsub0_in_FPR128_loRegClass;
+  extern const TargetRegisterClass QQ_with_dsub_in_FPR64_loRegClass;
   extern const TargetRegisterClass QQ_with_qsub1_in_FPR128_loRegClass;
+  extern const TargetRegisterClass ZPR2_with_dsub_in_FPR64_loRegClass;
   extern const TargetRegisterClass ZPR2_with_zsub1_in_ZPR_4bRegClass;
-  extern const TargetRegisterClass ZPR2_with_zsub_in_FPR128_loRegClass;
-  extern const TargetRegisterClass QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_loRegClass;
-  extern const TargetRegisterClass ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4bRegClass;
+  extern const TargetRegisterClass QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_loRegClass;
+  extern const TargetRegisterClass ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4bRegClass;
   extern const TargetRegisterClass ZPR2_with_zsub0_in_ZPR_3bRegClass;
   extern const TargetRegisterClass ZPR2_with_zsub1_in_ZPR_3bRegClass;
-  extern const TargetRegisterClass ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3bRegClass;
+  extern const TargetRegisterClass ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3bRegClass;
   extern const TargetRegisterClass QQQRegClass;
   extern const TargetRegisterClass ZPR3RegClass;
-  extern const TargetRegisterClass QQQ_with_qsub0_in_FPR128_loRegClass;
+  extern const TargetRegisterClass QQQ_with_dsub_in_FPR64_loRegClass;
   extern const TargetRegisterClass QQQ_with_qsub1_in_FPR128_loRegClass;
   extern const TargetRegisterClass QQQ_with_qsub2_in_FPR128_loRegClass;
+  extern const TargetRegisterClass ZPR3_with_dsub_in_FPR64_loRegClass;
   extern const TargetRegisterClass ZPR3_with_zsub1_in_ZPR_4bRegClass;
   extern const TargetRegisterClass ZPR3_with_zsub2_in_ZPR_4bRegClass;
-  extern const TargetRegisterClass ZPR3_with_zsub_in_FPR128_loRegClass;
-  extern const TargetRegisterClass QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_loRegClass;
+  extern const TargetRegisterClass QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_loRegClass;
   extern const TargetRegisterClass QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loRegClass;
+  extern const TargetRegisterClass ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClass;
   extern const TargetRegisterClass ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bRegClass;
-  extern const TargetRegisterClass ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClass;
-  extern const TargetRegisterClass QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loRegClass;
-  extern const TargetRegisterClass ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4bRegClass;
+  extern const TargetRegisterClass QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_loRegClass;
+  extern const TargetRegisterClass ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4bRegClass;
   extern const TargetRegisterClass ZPR3_with_zsub0_in_ZPR_3bRegClass;
   extern const TargetRegisterClass ZPR3_with_zsub1_in_ZPR_3bRegClass;
   extern const TargetRegisterClass ZPR3_with_zsub2_in_ZPR_3bRegClass;
+  extern const TargetRegisterClass ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3bRegClass;
   extern const TargetRegisterClass ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3bRegClass;
-  extern const TargetRegisterClass ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3bRegClass;
-  extern const TargetRegisterClass ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3bRegClass;
+  extern const TargetRegisterClass ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3bRegClass;
   extern const TargetRegisterClass QQQQRegClass;
   extern const TargetRegisterClass ZPR4RegClass;
-  extern const TargetRegisterClass QQQQ_with_qsub0_in_FPR128_loRegClass;
+  extern const TargetRegisterClass QQQQ_with_dsub_in_FPR64_loRegClass;
   extern const TargetRegisterClass QQQQ_with_qsub1_in_FPR128_loRegClass;
   extern const TargetRegisterClass QQQQ_with_qsub2_in_FPR128_loRegClass;
   extern const TargetRegisterClass QQQQ_with_qsub3_in_FPR128_loRegClass;
+  extern const TargetRegisterClass ZPR4_with_dsub_in_FPR64_loRegClass;
   extern const TargetRegisterClass ZPR4_with_zsub1_in_ZPR_4bRegClass;
   extern const TargetRegisterClass ZPR4_with_zsub2_in_ZPR_4bRegClass;
   extern const TargetRegisterClass ZPR4_with_zsub3_in_ZPR_4bRegClass;
-  extern const TargetRegisterClass ZPR4_with_zsub_in_FPR128_loRegClass;
-  extern const TargetRegisterClass QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_loRegClass;
+  extern const TargetRegisterClass QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_loRegClass;
   extern const TargetRegisterClass QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClass;
   extern const TargetRegisterClass QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClass;
+  extern const TargetRegisterClass ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClass;
   extern const TargetRegisterClass ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bRegClass;
   extern const TargetRegisterClass ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClass;
-  extern const TargetRegisterClass ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClass;
-  extern const TargetRegisterClass QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClass;
+  extern const TargetRegisterClass QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClass;
   extern const TargetRegisterClass QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClass;
+  extern const TargetRegisterClass ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClass;
   extern const TargetRegisterClass ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClass;
-  extern const TargetRegisterClass ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClass;
-  extern const TargetRegisterClass QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClass;
-  extern const TargetRegisterClass ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClass;
+  extern const TargetRegisterClass QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClass;
+  extern const TargetRegisterClass ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClass;
   extern const TargetRegisterClass ZPR4_with_zsub0_in_ZPR_3bRegClass;
   extern const TargetRegisterClass ZPR4_with_zsub1_in_ZPR_3bRegClass;
   extern const TargetRegisterClass ZPR4_with_zsub2_in_ZPR_3bRegClass;
   extern const TargetRegisterClass ZPR4_with_zsub3_in_ZPR_3bRegClass;
+  extern const TargetRegisterClass ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3bRegClass;
   extern const TargetRegisterClass ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3bRegClass;
   extern const TargetRegisterClass ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bRegClass;
-  extern const TargetRegisterClass ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3bRegClass;
+  extern const TargetRegisterClass ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3bRegClass;
   extern const TargetRegisterClass ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bRegClass;
-  extern const TargetRegisterClass ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3bRegClass;
-  extern const TargetRegisterClass ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3bRegClass;
+  extern const TargetRegisterClass ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3bRegClass;
 } // end namespace AArch64
 
 } // end namespace llvm
@@ -5183,9 +5470,10 @@ static const MVT::SimpleValueType VTLists[] = {
   /* 7 */ MVT::f64, MVT::i64, MVT::v2f32, MVT::v1f64, MVT::v8i8, MVT::v4i16, MVT::v2i32, MVT::v1i64, MVT::v4f16, MVT::Other,
   /* 17 */ MVT::v16i8, MVT::v8i16, MVT::v4i32, MVT::v2i64, MVT::v4f32, MVT::v2f64, MVT::f128, MVT::v8f16, MVT::Other,
   /* 26 */ MVT::v16i8, MVT::v8i16, MVT::v4i32, MVT::v2i64, MVT::v4f32, MVT::v2f64, MVT::v8f16, MVT::Other,
-  /* 34 */ MVT::nxv16i1, MVT::nxv8i1, MVT::nxv4i1, MVT::nxv2i1, MVT::Other,
-  /* 39 */ MVT::nxv16i8, MVT::nxv8i16, MVT::nxv4i32, MVT::nxv2i64, MVT::nxv2f16, MVT::nxv4f16, MVT::nxv8f16, MVT::nxv2f32, MVT::nxv4f32, MVT::nxv2f64, MVT::Other,
-  /* 50 */ MVT::Untyped, MVT::Other,
+  /* 34 */ MVT::v8i8, MVT::v4i16, MVT::v2i32, MVT::v1i64, MVT::v4f16, MVT::v2f32, MVT::v1f64, MVT::Other,
+  /* 42 */ MVT::nxv16i1, MVT::nxv8i1, MVT::nxv4i1, MVT::nxv2i1, MVT::Other,
+  /* 47 */ MVT::nxv16i8, MVT::nxv8i16, MVT::nxv4i32, MVT::nxv2i64, MVT::nxv2f16, MVT::nxv4f16, MVT::nxv8f16, MVT::nxv2f32, MVT::nxv4f32, MVT::nxv2f64, MVT::Other,
+  /* 58 */ MVT::Untyped, MVT::Other,
 };
 
 static const char *const SubRegIndexNameTable[] = { "bsub", "dsub", "dsub0", "dsub1", "dsub2", "dsub3", "hsub", "qhisub", "qsub", "qsub0", "qsub1", "qsub2", "qsub3", "ssub", "sub_32", "sube32", "sube64", "subo32", "subo64", "zsub", "zsub0", "zsub1", "zsub2", "zsub3", "zsub_hi", "dsub1_then_bsub", "dsub1_then_hsub", "dsub1_then_ssub", "dsub3_then_bsub", "dsub3_then_hsub", "dsub3_then_ssub", "dsub2_then_bsub", "dsub2_then_hsub", "dsub2_then_ssub", "qsub1_then_bsub", "qsub1_then_dsub", "qsub1_then_hsub", "qsub1_then_ssub", "qsub3_then_bsub", "qsub3_then_dsub", "qsub3_then_hsub", "qsub3_then_ssub", "qsub2_then_bsub", "qsub2_then_dsub", "qsub2_then_hsub", "qsub2_then_ssub", "subo64_then_sub_32", "zsub1_then_bsub", "zsub1_then_dsub", "zsub1_then_hsub", "zsub1_then_ssub", "zsub1_then_zsub", "zsub1_then_zsub_hi", "zsub3_then_bsub", "zsub3_then_dsub", "zsub3_then_hsub", "zsub3_then_ssub", "zsub3_then_zsub", "zsub3_then_zsub_hi", "zsub2_then_bsub", "zsub2_then_dsub", "zsub2_then_hsub", "zsub2_then_ssub", "zsub2_then_zsub", "zsub2_then_zsub_hi", "dsub0_dsub1", "dsub0_dsub1_dsub2", "dsub1_dsub2", "dsub1_dsub2_dsub3", "dsub2_dsub3", "dsub_qsub1_then_dsub", "dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub", "dsub_qsub1_then_dsub_qsub2_then_dsub", "qsub0_qsub1", "qsub0_qsub1_qsub2", "qsub1_qsub2", "qsub1_qsub2_qsub3", "qsub2_qsub3", "qsub1_then_dsub_qsub2_then_dsub", "qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub", "qsub2_then_dsub_qsub3_then_dsub", "sub_32_subo64_then_sub_32", "dsub_zsub1_then_dsub", "zsub_zsub1_then_zsub", "dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub", "dsub_zsub1_then_dsub_zsub2_then_dsub", "zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub", "zsub_zsub1_then_zsub_zsub2_then_zsub", "zsub0_zsub1", "zsub0_zsub1_zsub2", "zsub1_zsub2", "zsub1_zsub2_zsub3", "zsub2_zsub3", "zsub1_then_dsub_zsub2_then_dsub", "zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub", "zsub1_then_zsub_zsub2_then_zsub", "zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub", "zsub2_then_dsub_zsub3_then_dsub", "zsub2_then_zsub_zsub3_then_zsub", "" };
@@ -5298,10 +5586,10 @@ static const LaneBitmask SubRegIndexLaneMaskTable[] = {
 
 static const TargetRegisterInfo::RegClassInfo RegClassInfos[] = {
   // Mode = 0 (Default)
-  { 8, 8, 8, VTLists+50 },    // FPR8
+  { 8, 8, 8, VTLists+58 },    // FPR8
   { 16, 16, 16, VTLists+5 },    // FPR16
-  { 16, 16, 16, VTLists+34 },    // PPR
-  { 16, 16, 16, VTLists+34 },    // PPR_3b
+  { 16, 16, 16, VTLists+42 },    // PPR
+  { 16, 16, 16, VTLists+42 },    // PPR_3b
   { 32, 32, 32, VTLists+1 },    // GPR32all
   { 32, 32, 32, VTLists+0 },    // FPR32
   { 32, 32, 32, VTLists+1 },    // GPR32
@@ -5310,9 +5598,9 @@ static const TargetRegisterInfo::RegClassInfo RegClassInfos[] = {
   { 32, 32, 32, VTLists+1 },    // GPR32arg
   { 32, 32, 32, VTLists+1 },    // CCR
   { 32, 32, 32, VTLists+1 },    // GPR32sponly
-  { 64, 64, 32, VTLists+50 },    // WSeqPairsClass
-  { 64, 64, 32, VTLists+50 },    // WSeqPairsClass_with_subo32_in_GPR32common
-  { 64, 64, 32, VTLists+50 },    // WSeqPairsClass_with_sube32_in_GPR32arg
+  { 64, 64, 32, VTLists+58 },    // WSeqPairsClass
+  { 64, 64, 32, VTLists+58 },    // WSeqPairsClass_with_subo32_in_GPR32common
+  { 64, 64, 32, VTLists+58 },    // WSeqPairsClass_with_sube32_in_GPR32arg
   { 64, 64, 64, VTLists+3 },    // GPR64all
   { 64, 64, 64, VTLists+7 },    // FPR64
   { 64, 64, 64, VTLists+3 },    // GPR64
@@ -5322,120 +5610,140 @@ static const TargetRegisterInfo::RegClassInfo RegClassInfos[] = {
   { 64, 64, 64, VTLists+3 },    // GPR64common_and_GPR64noip
   { 64, 64, 64, VTLists+3 },    // tcGPR64
   { 64, 64, 64, VTLists+3 },    // GPR64noip_and_tcGPR64
+  { 64, 64, 64, VTLists+34 },    // FPR64_lo
   { 64, 64, 64, VTLists+3 },    // GPR64arg
   { 64, 64, 64, VTLists+3 },    // rtcGPR64
   { 64, 64, 64, VTLists+3 },    // GPR64sponly
-  { 128, 128, 64, VTLists+50 },    // DD
-  { 128, 128, 64, VTLists+50 },    // XSeqPairsClass
-  { 128, 128, 64, VTLists+50 },    // XSeqPairsClass_with_subo64_in_GPR64common
-  { 128, 128, 64, VTLists+50 },    // XSeqPairsClass_with_subo64_in_GPR64noip
-  { 128, 128, 64, VTLists+50 },    // XSeqPairsClass_with_sube64_in_GPR64noip
-  { 128, 128, 64, VTLists+50 },    // XSeqPairsClass_with_sube64_in_tcGPR64
-  { 128, 128, 64, VTLists+50 },    // XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64
-  { 128, 128, 64, VTLists+50 },    // XSeqPairsClass_with_subo64_in_tcGPR64
-  { 128, 128, 64, VTLists+50 },    // XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64
-  { 128, 128, 64, VTLists+50 },    // XSeqPairsClass_with_sub_32_in_GPR32arg
-  { 128, 128, 64, VTLists+50 },    // XSeqPairsClass_with_sube64_in_rtcGPR64
+  { 128, 128, 64, VTLists+58 },    // DD
+  { 128, 128, 64, VTLists+58 },    // DD_with_dsub0_in_FPR64_lo
+  { 128, 128, 64, VTLists+58 },    // DD_with_dsub1_in_FPR64_lo
+  { 128, 128, 64, VTLists+58 },    // XSeqPairsClass
+  { 128, 128, 64, VTLists+58 },    // DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_lo
+  { 128, 128, 64, VTLists+58 },    // XSeqPairsClass_with_subo64_in_GPR64common
+  { 128, 128, 64, VTLists+58 },    // XSeqPairsClass_with_subo64_in_GPR64noip
+  { 128, 128, 64, VTLists+58 },    // XSeqPairsClass_with_sube64_in_GPR64noip
+  { 128, 128, 64, VTLists+58 },    // XSeqPairsClass_with_sube64_in_tcGPR64
+  { 128, 128, 64, VTLists+58 },    // XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64
+  { 128, 128, 64, VTLists+58 },    // XSeqPairsClass_with_subo64_in_tcGPR64
+  { 128, 128, 64, VTLists+58 },    // XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64
+  { 128, 128, 64, VTLists+58 },    // XSeqPairsClass_with_sub_32_in_GPR32arg
+  { 128, 128, 64, VTLists+58 },    // XSeqPairsClass_with_sube64_in_rtcGPR64
   { 128, 128, 128, VTLists+17 },    // FPR128
-  { 128, 128, 128, VTLists+39 },    // ZPR
+  { 128, 128, 128, VTLists+47 },    // ZPR
   { 128, 128, 128, VTLists+26 },    // FPR128_lo
-  { 128, 128, 128, VTLists+39 },    // ZPR_4b
-  { 128, 128, 128, VTLists+39 },    // ZPR_3b
-  { 192, 192, 64, VTLists+50 },    // DDD
-  { 256, 256, 64, VTLists+50 },    // DDDD
-  { 256, 256, 128, VTLists+50 },    // QQ
-  { 256, 256, 128, VTLists+50 },    // ZPR2
-  { 256, 256, 128, VTLists+50 },    // QQ_with_qsub0_in_FPR128_lo
-  { 256, 256, 128, VTLists+50 },    // QQ_with_qsub1_in_FPR128_lo
-  { 256, 256, 128, VTLists+50 },    // ZPR2_with_zsub1_in_ZPR_4b
-  { 256, 256, 128, VTLists+50 },    // ZPR2_with_zsub_in_FPR128_lo
-  { 256, 256, 128, VTLists+50 },    // QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_lo
-  { 256, 256, 128, VTLists+50 },    // ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
-  { 256, 256, 128, VTLists+50 },    // ZPR2_with_zsub0_in_ZPR_3b
-  { 256, 256, 128, VTLists+50 },    // ZPR2_with_zsub1_in_ZPR_3b
-  { 256, 256, 128, VTLists+50 },    // ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
-  { 384, 384, 128, VTLists+50 },    // QQQ
-  { 384, 384, 128, VTLists+50 },    // ZPR3
-  { 384, 384, 128, VTLists+50 },    // QQQ_with_qsub0_in_FPR128_lo
-  { 384, 384, 128, VTLists+50 },    // QQQ_with_qsub1_in_FPR128_lo
-  { 384, 384, 128, VTLists+50 },    // QQQ_with_qsub2_in_FPR128_lo
-  { 384, 384, 128, VTLists+50 },    // ZPR3_with_zsub1_in_ZPR_4b
-  { 384, 384, 128, VTLists+50 },    // ZPR3_with_zsub2_in_ZPR_4b
-  { 384, 384, 128, VTLists+50 },    // ZPR3_with_zsub_in_FPR128_lo
-  { 384, 384, 128, VTLists+50 },    // QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
-  { 384, 384, 128, VTLists+50 },    // QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-  { 384, 384, 128, VTLists+50 },    // ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-  { 384, 384, 128, VTLists+50 },    // ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-  { 384, 384, 128, VTLists+50 },    // QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-  { 384, 384, 128, VTLists+50 },    // ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
-  { 384, 384, 128, VTLists+50 },    // ZPR3_with_zsub0_in_ZPR_3b
-  { 384, 384, 128, VTLists+50 },    // ZPR3_with_zsub1_in_ZPR_3b
-  { 384, 384, 128, VTLists+50 },    // ZPR3_with_zsub2_in_ZPR_3b
-  { 384, 384, 128, VTLists+50 },    // ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-  { 384, 384, 128, VTLists+50 },    // ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-  { 384, 384, 128, VTLists+50 },    // ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-  { 512, 512, 128, VTLists+50 },    // QQQQ
-  { 512, 512, 128, VTLists+50 },    // ZPR4
-  { 512, 512, 128, VTLists+50 },    // QQQQ_with_qsub0_in_FPR128_lo
-  { 512, 512, 128, VTLists+50 },    // QQQQ_with_qsub1_in_FPR128_lo
-  { 512, 512, 128, VTLists+50 },    // QQQQ_with_qsub2_in_FPR128_lo
-  { 512, 512, 128, VTLists+50 },    // QQQQ_with_qsub3_in_FPR128_lo
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub1_in_ZPR_4b
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub2_in_ZPR_4b
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub3_in_ZPR_4b
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub_in_FPR128_lo
-  { 512, 512, 128, VTLists+50 },    // QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-  { 512, 512, 128, VTLists+50 },    // QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-  { 512, 512, 128, VTLists+50 },    // QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-  { 512, 512, 128, VTLists+50 },    // QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-  { 512, 512, 128, VTLists+50 },    // QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-  { 512, 512, 128, VTLists+50 },    // QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub0_in_ZPR_3b
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub1_in_ZPR_3b
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub2_in_ZPR_3b
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub3_in_ZPR_3b
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-  { 512, 512, 128, VTLists+50 },    // ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+  { 128, 128, 128, VTLists+47 },    // ZPR_4b
+  { 128, 128, 128, VTLists+47 },    // ZPR_3b
+  { 192, 192, 64, VTLists+58 },    // DDD
+  { 192, 192, 64, VTLists+58 },    // DDD_with_dsub0_in_FPR64_lo
+  { 192, 192, 64, VTLists+58 },    // DDD_with_dsub1_in_FPR64_lo
+  { 192, 192, 64, VTLists+58 },    // DDD_with_dsub2_in_FPR64_lo
+  { 192, 192, 64, VTLists+58 },    // DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo
+  { 192, 192, 64, VTLists+58 },    // DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+  { 192, 192, 64, VTLists+58 },    // DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+  { 256, 256, 64, VTLists+58 },    // DDDD
+  { 256, 256, 64, VTLists+58 },    // DDDD_with_dsub0_in_FPR64_lo
+  { 256, 256, 64, VTLists+58 },    // DDDD_with_dsub1_in_FPR64_lo
+  { 256, 256, 64, VTLists+58 },    // DDDD_with_dsub2_in_FPR64_lo
+  { 256, 256, 64, VTLists+58 },    // DDDD_with_dsub3_in_FPR64_lo
+  { 256, 256, 64, VTLists+58 },    // DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+  { 256, 256, 64, VTLists+58 },    // DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+  { 256, 256, 64, VTLists+58 },    // DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+  { 256, 256, 64, VTLists+58 },    // DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+  { 256, 256, 64, VTLists+58 },    // DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+  { 256, 256, 64, VTLists+58 },    // DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+  { 256, 256, 128, VTLists+58 },    // QQ
+  { 256, 256, 128, VTLists+58 },    // ZPR2
+  { 256, 256, 128, VTLists+58 },    // QQ_with_dsub_in_FPR64_lo
+  { 256, 256, 128, VTLists+58 },    // QQ_with_qsub1_in_FPR128_lo
+  { 256, 256, 128, VTLists+58 },    // ZPR2_with_dsub_in_FPR64_lo
+  { 256, 256, 128, VTLists+58 },    // ZPR2_with_zsub1_in_ZPR_4b
+  { 256, 256, 128, VTLists+58 },    // QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo
+  { 256, 256, 128, VTLists+58 },    // ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+  { 256, 256, 128, VTLists+58 },    // ZPR2_with_zsub0_in_ZPR_3b
+  { 256, 256, 128, VTLists+58 },    // ZPR2_with_zsub1_in_ZPR_3b
+  { 256, 256, 128, VTLists+58 },    // ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+  { 384, 384, 128, VTLists+58 },    // QQQ
+  { 384, 384, 128, VTLists+58 },    // ZPR3
+  { 384, 384, 128, VTLists+58 },    // QQQ_with_dsub_in_FPR64_lo
+  { 384, 384, 128, VTLists+58 },    // QQQ_with_qsub1_in_FPR128_lo
+  { 384, 384, 128, VTLists+58 },    // QQQ_with_qsub2_in_FPR128_lo
+  { 384, 384, 128, VTLists+58 },    // ZPR3_with_dsub_in_FPR64_lo
+  { 384, 384, 128, VTLists+58 },    // ZPR3_with_zsub1_in_ZPR_4b
+  { 384, 384, 128, VTLists+58 },    // ZPR3_with_zsub2_in_ZPR_4b
+  { 384, 384, 128, VTLists+58 },    // QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
+  { 384, 384, 128, VTLists+58 },    // QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+  { 384, 384, 128, VTLists+58 },    // ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+  { 384, 384, 128, VTLists+58 },    // ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+  { 384, 384, 128, VTLists+58 },    // QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
+  { 384, 384, 128, VTLists+58 },    // ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+  { 384, 384, 128, VTLists+58 },    // ZPR3_with_zsub0_in_ZPR_3b
+  { 384, 384, 128, VTLists+58 },    // ZPR3_with_zsub1_in_ZPR_3b
+  { 384, 384, 128, VTLists+58 },    // ZPR3_with_zsub2_in_ZPR_3b
+  { 384, 384, 128, VTLists+58 },    // ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+  { 384, 384, 128, VTLists+58 },    // ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+  { 384, 384, 128, VTLists+58 },    // ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+  { 512, 512, 128, VTLists+58 },    // QQQQ
+  { 512, 512, 128, VTLists+58 },    // ZPR4
+  { 512, 512, 128, VTLists+58 },    // QQQQ_with_dsub_in_FPR64_lo
+  { 512, 512, 128, VTLists+58 },    // QQQQ_with_qsub1_in_FPR128_lo
+  { 512, 512, 128, VTLists+58 },    // QQQQ_with_qsub2_in_FPR128_lo
+  { 512, 512, 128, VTLists+58 },    // QQQQ_with_qsub3_in_FPR128_lo
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_dsub_in_FPR64_lo
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_zsub1_in_ZPR_4b
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_zsub2_in_ZPR_4b
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_zsub3_in_ZPR_4b
+  { 512, 512, 128, VTLists+58 },    // QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+  { 512, 512, 128, VTLists+58 },    // QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+  { 512, 512, 128, VTLists+58 },    // QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+  { 512, 512, 128, VTLists+58 },    // QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+  { 512, 512, 128, VTLists+58 },    // QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+  { 512, 512, 128, VTLists+58 },    // QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_zsub0_in_ZPR_3b
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_zsub1_in_ZPR_3b
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_zsub2_in_ZPR_3b
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_zsub3_in_ZPR_3b
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+  { 512, 512, 128, VTLists+58 },    // ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
 };
 
 static const TargetRegisterClass *const NullRegClasses[] = { nullptr };
 
 static const uint32_t FPR8SubClassMask[] = {
   0x00000001, 0x00000000, 0x00000000, 0x00000000, 
-  0x08010022, 0xffffffc0, 0xffffffff, 0x00000fff, // bsub
-  0x08000000, 0x00001800, 0x00000000, 0x00000000, // dsub1_then_bsub
-  0x00000000, 0x00001000, 0x00000000, 0x00000000, // dsub3_then_bsub
-  0x00000000, 0x00001800, 0x00000000, 0x00000000, // dsub2_then_bsub
-  0x00000000, 0x1d09a000, 0x31c3d013, 0x00000001, // qsub1_then_bsub
-  0x00000000, 0x00000000, 0x31c3d000, 0x00000001, // qsub3_then_bsub
-  0x00000000, 0x1d000000, 0x31c3d013, 0x00000001, // qsub2_then_bsub
-  0x00000000, 0xe2f64000, 0xce3c2fec, 0x00000ffe, // zsub1_then_bsub
-  0x00000000, 0x00000000, 0xce3c2000, 0x00000ffe, // zsub3_then_bsub
-  0x00000000, 0xe2000000, 0xce3c2fec, 0x00000ffe, // zsub2_then_bsub
+  0x71010022, 0xfffffc01, 0xffffffff, 0xffffffff, // bsub
+  0x70000000, 0xffff8001, 0x00000001, 0x00000000, // dsub1_then_bsub
+  0x00000000, 0xffc00000, 0x00000001, 0x00000000, // dsub3_then_bsub
+  0x00000000, 0xffff8000, 0x00000001, 0x00000000, // dsub2_then_bsub
+  0x00000000, 0x00000000, 0x0131d09a, 0x00131c3d, // qsub1_then_bsub
+  0x00000000, 0x00000000, 0x00000000, 0x00131c3d, // qsub3_then_bsub
+  0x00000000, 0x00000000, 0x0131d000, 0x00131c3d, // qsub2_then_bsub
+  0x00000000, 0x00000000, 0xfece2f64, 0xffece3c2, // zsub1_then_bsub
+  0x00000000, 0x00000000, 0x00000000, 0xffece3c2, // zsub3_then_bsub
+  0x00000000, 0x00000000, 0xfece2000, 0xffece3c2, // zsub2_then_bsub
 };
 
 static const uint32_t FPR16SubClassMask[] = {
   0x00000002, 0x00000000, 0x00000000, 0x00000000, 
-  0x08010020, 0xffffffc0, 0xffffffff, 0x00000fff, // hsub
-  0x08000000, 0x00001800, 0x00000000, 0x00000000, // dsub1_then_hsub
-  0x00000000, 0x00001000, 0x00000000, 0x00000000, // dsub3_then_hsub
-  0x00000000, 0x00001800, 0x00000000, 0x00000000, // dsub2_then_hsub
-  0x00000000, 0x1d09a000, 0x31c3d013, 0x00000001, // qsub1_then_hsub
-  0x00000000, 0x00000000, 0x31c3d000, 0x00000001, // qsub3_then_hsub
-  0x00000000, 0x1d000000, 0x31c3d013, 0x00000001, // qsub2_then_hsub
-  0x00000000, 0xe2f64000, 0xce3c2fec, 0x00000ffe, // zsub1_then_hsub
-  0x00000000, 0x00000000, 0xce3c2000, 0x00000ffe, // zsub3_then_hsub
-  0x00000000, 0xe2000000, 0xce3c2fec, 0x00000ffe, // zsub2_then_hsub
+  0x71010020, 0xfffffc01, 0xffffffff, 0xffffffff, // hsub
+  0x70000000, 0xffff8001, 0x00000001, 0x00000000, // dsub1_then_hsub
+  0x00000000, 0xffc00000, 0x00000001, 0x00000000, // dsub3_then_hsub
+  0x00000000, 0xffff8000, 0x00000001, 0x00000000, // dsub2_then_hsub
+  0x00000000, 0x00000000, 0x0131d09a, 0x00131c3d, // qsub1_then_hsub
+  0x00000000, 0x00000000, 0x00000000, 0x00131c3d, // qsub3_then_hsub
+  0x00000000, 0x00000000, 0x0131d000, 0x00131c3d, // qsub2_then_hsub
+  0x00000000, 0x00000000, 0xfece2f64, 0xffece3c2, // zsub1_then_hsub
+  0x00000000, 0x00000000, 0x00000000, 0xffece3c2, // zsub3_then_hsub
+  0x00000000, 0x00000000, 0xfece2000, 0xffece3c2, // zsub2_then_hsub
 };
 
 static const uint32_t PPRSubClassMask[] = {
@@ -5448,56 +5756,56 @@ static const uint32_t PPR_3bSubClassMask[] = {
 
 static const uint32_t GPR32allSubClassMask[] = {
   0x00000bd0, 0x00000000, 0x00000000, 0x00000000, 
-  0xf7fe8000, 0x0000003f, 0x00000000, 0x00000000, // sub_32
+  0x8efe8000, 0x000003fe, 0x00000000, 0x00000000, // sub_32
   0x00007000, 0x00000000, 0x00000000, 0x00000000, // sube32
   0x00007000, 0x00000000, 0x00000000, 0x00000000, // subo32
-  0xf0000000, 0x0000003f, 0x00000000, 0x00000000, // subo64_then_sub_32
+  0x80000000, 0x000003fe, 0x00000000, 0x00000000, // subo64_then_sub_32
 };
 
 static const uint32_t FPR32SubClassMask[] = {
   0x00000020, 0x00000000, 0x00000000, 0x00000000, 
-  0x08010000, 0xffffffc0, 0xffffffff, 0x00000fff, // ssub
-  0x08000000, 0x00001800, 0x00000000, 0x00000000, // dsub1_then_ssub
-  0x00000000, 0x00001000, 0x00000000, 0x00000000, // dsub3_then_ssub
-  0x00000000, 0x00001800, 0x00000000, 0x00000000, // dsub2_then_ssub
-  0x00000000, 0x1d09a000, 0x31c3d013, 0x00000001, // qsub1_then_ssub
-  0x00000000, 0x00000000, 0x31c3d000, 0x00000001, // qsub3_then_ssub
-  0x00000000, 0x1d000000, 0x31c3d013, 0x00000001, // qsub2_then_ssub
-  0x00000000, 0xe2f64000, 0xce3c2fec, 0x00000ffe, // zsub1_then_ssub
-  0x00000000, 0x00000000, 0xce3c2000, 0x00000ffe, // zsub3_then_ssub
-  0x00000000, 0xe2000000, 0xce3c2fec, 0x00000ffe, // zsub2_then_ssub
+  0x71010000, 0xfffffc01, 0xffffffff, 0xffffffff, // ssub
+  0x70000000, 0xffff8001, 0x00000001, 0x00000000, // dsub1_then_ssub
+  0x00000000, 0xffc00000, 0x00000001, 0x00000000, // dsub3_then_ssub
+  0x00000000, 0xffff8000, 0x00000001, 0x00000000, // dsub2_then_ssub
+  0x00000000, 0x00000000, 0x0131d09a, 0x00131c3d, // qsub1_then_ssub
+  0x00000000, 0x00000000, 0x00000000, 0x00131c3d, // qsub3_then_ssub
+  0x00000000, 0x00000000, 0x0131d000, 0x00131c3d, // qsub2_then_ssub
+  0x00000000, 0x00000000, 0xfece2f64, 0xffece3c2, // zsub1_then_ssub
+  0x00000000, 0x00000000, 0x00000000, 0xffece3c2, // zsub3_then_ssub
+  0x00000000, 0x00000000, 0xfece2000, 0xffece3c2, // zsub2_then_ssub
 };
 
 static const uint32_t GPR32SubClassMask[] = {
   0x00000340, 0x00000000, 0x00000000, 0x00000000, 
-  0xf3fa0000, 0x0000003f, 0x00000000, 0x00000000, // sub_32
+  0x86fa0000, 0x000003fe, 0x00000000, 0x00000000, // sub_32
   0x00007000, 0x00000000, 0x00000000, 0x00000000, // sube32
   0x00007000, 0x00000000, 0x00000000, 0x00000000, // subo32
-  0xf0000000, 0x0000003f, 0x00000000, 0x00000000, // subo64_then_sub_32
+  0x80000000, 0x000003fe, 0x00000000, 0x00000000, // subo64_then_sub_32
 };
 
 static const uint32_t GPR32spSubClassMask[] = {
   0x00000b80, 0x00000000, 0x00000000, 0x00000000, 
-  0xf7ec0000, 0x0000003f, 0x00000000, 0x00000000, // sub_32
+  0x8eec0000, 0x000003fe, 0x00000000, 0x00000000, // sub_32
   0x00007000, 0x00000000, 0x00000000, 0x00000000, // sube32
   0x00006000, 0x00000000, 0x00000000, 0x00000000, // subo32
-  0xa0000000, 0x0000003f, 0x00000000, 0x00000000, // subo64_then_sub_32
+  0x00000000, 0x000003fa, 0x00000000, 0x00000000, // subo64_then_sub_32
 };
 
 static const uint32_t GPR32commonSubClassMask[] = {
   0x00000300, 0x00000000, 0x00000000, 0x00000000, 
-  0xf3e80000, 0x0000003f, 0x00000000, 0x00000000, // sub_32
+  0x86e80000, 0x000003fe, 0x00000000, 0x00000000, // sub_32
   0x00007000, 0x00000000, 0x00000000, 0x00000000, // sube32
   0x00006000, 0x00000000, 0x00000000, 0x00000000, // subo32
-  0xa0000000, 0x0000003f, 0x00000000, 0x00000000, // subo64_then_sub_32
+  0x00000000, 0x000003fa, 0x00000000, 0x00000000, // subo64_then_sub_32
 };
 
 static const uint32_t GPR32argSubClassMask[] = {
   0x00000200, 0x00000000, 0x00000000, 0x00000000, 
-  0x01000000, 0x00000010, 0x00000000, 0x00000000, // sub_32
+  0x02000000, 0x00000100, 0x00000000, 0x00000000, // sub_32
   0x00004000, 0x00000000, 0x00000000, 0x00000000, // sube32
   0x00004000, 0x00000000, 0x00000000, 0x00000000, // subo32
-  0x00000000, 0x00000010, 0x00000000, 0x00000000, // subo64_then_sub_32
+  0x00000000, 0x00000100, 0x00000000, 0x00000000, // subo64_then_sub_32
 };
 
 static const uint32_t CCRSubClassMask[] = {
@@ -5506,580 +5814,754 @@ static const uint32_t CCRSubClassMask[] = {
 
 static const uint32_t GPR32sponlySubClassMask[] = {
   0x00000800, 0x00000000, 0x00000000, 0x00000000, 
-  0x04000000, 0x00000000, 0x00000000, 0x00000000, // sub_32
+  0x08000000, 0x00000000, 0x00000000, 0x00000000, // sub_32
 };
 
 static const uint32_t WSeqPairsClassSubClassMask[] = {
   0x00007000, 0x00000000, 0x00000000, 0x00000000, 
-  0xf0000000, 0x0000003f, 0x00000000, 0x00000000, // sub_32_subo64_then_sub_32
+  0x80000000, 0x000003fe, 0x00000000, 0x00000000, // sub_32_subo64_then_sub_32
 };
 
 static const uint32_t WSeqPairsClass_with_subo32_in_GPR32commonSubClassMask[] = {
   0x00006000, 0x00000000, 0x00000000, 0x00000000, 
-  0xa0000000, 0x0000003f, 0x00000000, 0x00000000, // sub_32_subo64_then_sub_32
+  0x00000000, 0x000003fa, 0x00000000, 0x00000000, // sub_32_subo64_then_sub_32
 };
 
 static const uint32_t WSeqPairsClass_with_sube32_in_GPR32argSubClassMask[] = {
   0x00004000, 0x00000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000010, 0x00000000, 0x00000000, // sub_32_subo64_then_sub_32
+  0x00000000, 0x00000100, 0x00000000, 0x00000000, // sub_32_subo64_then_sub_32
 };
 
 static const uint32_t GPR64allSubClassMask[] = {
-  0x07fe8000, 0x00000000, 0x00000000, 0x00000000, 
-  0xf0000000, 0x0000003f, 0x00000000, 0x00000000, // sube64
-  0xf0000000, 0x0000003f, 0x00000000, 0x00000000, // subo64
+  0x0efe8000, 0x00000000, 0x00000000, 0x00000000, 
+  0x80000000, 0x000003fe, 0x00000000, 0x00000000, // sube64
+  0x80000000, 0x000003fe, 0x00000000, 0x00000000, // subo64
 };
 
 static const uint32_t FPR64SubClassMask[] = {
-  0x00010000, 0x00000000, 0x00000000, 0x00000000, 
-  0x00000000, 0xffffe7c0, 0xffffffff, 0x00000fff, // dsub
-  0x08000000, 0x00001800, 0x00000000, 0x00000000, // dsub0
-  0x08000000, 0x00001800, 0x00000000, 0x00000000, // dsub1
-  0x00000000, 0x00001800, 0x00000000, 0x00000000, // dsub2
-  0x00000000, 0x00001000, 0x00000000, 0x00000000, // dsub3
-  0x00000000, 0x1d09a000, 0x31c3d013, 0x00000001, // qsub1_then_dsub
-  0x00000000, 0x00000000, 0x31c3d000, 0x00000001, // qsub3_then_dsub
-  0x00000000, 0x1d000000, 0x31c3d013, 0x00000001, // qsub2_then_dsub
-  0x00000000, 0xe2f64000, 0xce3c2fec, 0x00000ffe, // zsub1_then_dsub
-  0x00000000, 0x00000000, 0xce3c2000, 0x00000ffe, // zsub3_then_dsub
-  0x00000000, 0xe2000000, 0xce3c2fec, 0x00000ffe, // zsub2_then_dsub
+  0x01010000, 0x00000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00007c00, 0xfffffffe, 0xffffffff, // dsub
+  0x70000000, 0xffff8001, 0x00000001, 0x00000000, // dsub0
+  0x70000000, 0xffff8001, 0x00000001, 0x00000000, // dsub1
+  0x00000000, 0xffff8000, 0x00000001, 0x00000000, // dsub2
+  0x00000000, 0xffc00000, 0x00000001, 0x00000000, // dsub3
+  0x00000000, 0x00000000, 0x0131d09a, 0x00131c3d, // qsub1_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0x00131c3d, // qsub3_then_dsub
+  0x00000000, 0x00000000, 0x0131d000, 0x00131c3d, // qsub2_then_dsub
+  0x00000000, 0x00000000, 0xfece2f64, 0xffece3c2, // zsub1_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xffece3c2, // zsub3_then_dsub
+  0x00000000, 0x00000000, 0xfece2000, 0xffece3c2, // zsub2_then_dsub
 };
 
 static const uint32_t GPR64SubClassMask[] = {
-  0x03fa0000, 0x00000000, 0x00000000, 0x00000000, 
-  0xf0000000, 0x0000003f, 0x00000000, 0x00000000, // sube64
-  0xf0000000, 0x0000003f, 0x00000000, 0x00000000, // subo64
+  0x06fa0000, 0x00000000, 0x00000000, 0x00000000, 
+  0x80000000, 0x000003fe, 0x00000000, 0x00000000, // sube64
+  0x80000000, 0x000003fe, 0x00000000, 0x00000000, // subo64
 };
 
 static const uint32_t GPR64spSubClassMask[] = {
-  0x07ec0000, 0x00000000, 0x00000000, 0x00000000, 
-  0xf0000000, 0x0000003f, 0x00000000, 0x00000000, // sube64
-  0xa0000000, 0x0000003f, 0x00000000, 0x00000000, // subo64
+  0x0eec0000, 0x00000000, 0x00000000, 0x00000000, 
+  0x80000000, 0x000003fe, 0x00000000, 0x00000000, // sube64
+  0x00000000, 0x000003fa, 0x00000000, 0x00000000, // subo64
 };
 
 static const uint32_t GPR64commonSubClassMask[] = {
-  0x03e80000, 0x00000000, 0x00000000, 0x00000000, 
-  0xf0000000, 0x0000003f, 0x00000000, 0x00000000, // sube64
-  0xa0000000, 0x0000003f, 0x00000000, 0x00000000, // subo64
+  0x06e80000, 0x00000000, 0x00000000, 0x00000000, 
+  0x80000000, 0x000003fe, 0x00000000, 0x00000000, // sube64
+  0x00000000, 0x000003fa, 0x00000000, 0x00000000, // subo64
 };
 
 static const uint32_t GPR64noipSubClassMask[] = {
-  0x01b00000, 0x00000000, 0x00000000, 0x00000000, 
-  0x80000000, 0x0000001a, 0x00000000, 0x00000000, // sube64
-  0xc0000000, 0x0000001a, 0x00000000, 0x00000000, // subo64
+  0x02b00000, 0x00000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x000001a8, 0x00000000, 0x00000000, // sube64
+  0x00000000, 0x000001ac, 0x00000000, 0x00000000, // subo64
 };
 
 static const uint32_t GPR64common_and_GPR64noipSubClassMask[] = {
-  0x01a00000, 0x00000000, 0x00000000, 0x00000000, 
-  0x80000000, 0x0000001a, 0x00000000, 0x00000000, // sube64
-  0x80000000, 0x0000001a, 0x00000000, 0x00000000, // subo64
+  0x02a00000, 0x00000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x000001a8, 0x00000000, 0x00000000, // sube64
+  0x00000000, 0x000001a8, 0x00000000, 0x00000000, // subo64
 };
 
 static const uint32_t tcGPR64SubClassMask[] = {
-  0x03c00000, 0x00000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x0000003f, 0x00000000, 0x00000000, // sube64
-  0x00000000, 0x0000003c, 0x00000000, 0x00000000, // subo64
+  0x06c00000, 0x00000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x000003f0, 0x00000000, 0x00000000, // sube64
+  0x00000000, 0x000003c0, 0x00000000, 0x00000000, // subo64
 };
 
 static const uint32_t GPR64noip_and_tcGPR64SubClassMask[] = {
-  0x01800000, 0x00000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x0000001a, 0x00000000, 0x00000000, // sube64
-  0x00000000, 0x00000018, 0x00000000, 0x00000000, // subo64
+  0x02800000, 0x00000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x000001a0, 0x00000000, 0x00000000, // sube64
+  0x00000000, 0x00000180, 0x00000000, 0x00000000, // subo64
+};
+
+static const uint32_t FPR64_loSubClassMask[] = {
+  0x01000000, 0x00000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00007000, 0xa7524ba8, 0xa4752444, // dsub
+  0x20000000, 0x48a90001, 0x00000001, 0x00000000, // dsub0
+  0x40000000, 0xd93a0001, 0x00000001, 0x00000000, // dsub1
+  0x00000000, 0xf2340000, 0x00000001, 0x00000000, // dsub2
+  0x00000000, 0xa4000000, 0x00000001, 0x00000000, // dsub3
+  0x00000000, 0x00000000, 0x01308090, 0x00130c08, // qsub1_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0x00121020, // qsub3_then_dsub
+  0x00000000, 0x00000000, 0x01210000, 0x00131810, // qsub2_then_dsub
+  0x00000000, 0x00000000, 0xeec40f40, 0xecec6080, // zsub1_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xffe88200, // zsub3_then_dsub
+  0x00000000, 0x00000000, 0xfe880000, 0xfdecc100, // zsub2_then_dsub
 };
 
 static const uint32_t GPR64argSubClassMask[] = {
-  0x01000000, 0x00000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000010, 0x00000000, 0x00000000, // sube64
-  0x00000000, 0x00000010, 0x00000000, 0x00000000, // subo64
+  0x02000000, 0x00000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000100, 0x00000000, 0x00000000, // sube64
+  0x00000000, 0x00000100, 0x00000000, 0x00000000, // subo64
 };
 
 static const uint32_t rtcGPR64SubClassMask[] = {
-  0x02000000, 0x00000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000020, 0x00000000, 0x00000000, // sube64
-  0x00000000, 0x00000020, 0x00000000, 0x00000000, // subo64
+  0x04000000, 0x00000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000200, 0x00000000, 0x00000000, // sube64
+  0x00000000, 0x00000200, 0x00000000, 0x00000000, // subo64
 };
 
 static const uint32_t GPR64sponlySubClassMask[] = {
-  0x04000000, 0x00000000, 0x00000000, 0x00000000, 
+  0x08000000, 0x00000000, 0x00000000, 0x00000000, 
 };
 
 static const uint32_t DDSubClassMask[] = {
-  0x08000000, 0x00000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00001800, 0x00000000, 0x00000000, // dsub0_dsub1
-  0x00000000, 0x00001800, 0x00000000, 0x00000000, // dsub1_dsub2
-  0x00000000, 0x00001000, 0x00000000, 0x00000000, // dsub2_dsub3
-  0x00000000, 0x1d09a000, 0x31c3d013, 0x00000001, // dsub_qsub1_then_dsub
-  0x00000000, 0x1d000000, 0x31c3d013, 0x00000001, // qsub1_then_dsub_qsub2_then_dsub
-  0x00000000, 0x00000000, 0x31c3d000, 0x00000001, // qsub2_then_dsub_qsub3_then_dsub
-  0x00000000, 0xe2f64000, 0xce3c2fec, 0x00000ffe, // dsub_zsub1_then_dsub
-  0x00000000, 0xe2000000, 0xce3c2fec, 0x00000ffe, // zsub1_then_dsub_zsub2_then_dsub
-  0x00000000, 0x00000000, 0xce3c2000, 0x00000ffe, // zsub2_then_dsub_zsub3_then_dsub
+  0x70000000, 0x00000001, 0x00000000, 0x00000000, 
+  0x00000000, 0xffff8000, 0x00000001, 0x00000000, // dsub0_dsub1
+  0x00000000, 0xffff8000, 0x00000001, 0x00000000, // dsub1_dsub2
+  0x00000000, 0xffc00000, 0x00000001, 0x00000000, // dsub2_dsub3
+  0x00000000, 0x00000000, 0x0131d09a, 0x00131c3d, // dsub_qsub1_then_dsub
+  0x00000000, 0x00000000, 0x0131d000, 0x00131c3d, // qsub1_then_dsub_qsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0x00131c3d, // qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0xfece2f64, 0xffece3c2, // dsub_zsub1_then_dsub
+  0x00000000, 0x00000000, 0xfece2000, 0xffece3c2, // zsub1_then_dsub_zsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xffece3c2, // zsub2_then_dsub_zsub3_then_dsub
+};
+
+static const uint32_t DD_with_dsub0_in_FPR64_loSubClassMask[] = {
+  0x20000000, 0x00000001, 0x00000000, 0x00000000, 
+  0x00000000, 0x48a90000, 0x00000001, 0x00000000, // dsub0_dsub1
+  0x00000000, 0xd93a0000, 0x00000001, 0x00000000, // dsub1_dsub2
+  0x00000000, 0xf2000000, 0x00000001, 0x00000000, // dsub2_dsub3
+  0x00000000, 0x00000000, 0x01104088, 0x00110404, // dsub_qsub1_then_dsub
+  0x00000000, 0x00000000, 0x01308000, 0x00130c08, // qsub1_then_dsub_qsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0x00131810, // qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0xa6420b20, 0xa4642040, // dsub_zsub1_then_dsub
+  0x00000000, 0x00000000, 0xeec40000, 0xecec6080, // zsub1_then_dsub_zsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xfdecc100, // zsub2_then_dsub_zsub3_then_dsub
+};
+
+static const uint32_t DD_with_dsub1_in_FPR64_loSubClassMask[] = {
+  0x40000000, 0x00000001, 0x00000000, 0x00000000, 
+  0x00000000, 0xd93a0000, 0x00000001, 0x00000000, // dsub0_dsub1
+  0x00000000, 0xf2340000, 0x00000001, 0x00000000, // dsub1_dsub2
+  0x00000000, 0xa4000000, 0x00000001, 0x00000000, // dsub2_dsub3
+  0x00000000, 0x00000000, 0x01308090, 0x00130c08, // dsub_qsub1_then_dsub
+  0x00000000, 0x00000000, 0x01210000, 0x00131810, // qsub1_then_dsub_qsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0x00121020, // qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0xeec40f40, 0xecec6080, // dsub_zsub1_then_dsub
+  0x00000000, 0x00000000, 0xfe880000, 0xfdecc100, // zsub1_then_dsub_zsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xffe88200, // zsub2_then_dsub_zsub3_then_dsub
 };
 
 static const uint32_t XSeqPairsClassSubClassMask[] = {
-  0xf0000000, 0x0000003f, 0x00000000, 0x00000000, 
+  0x80000000, 0x000003fe, 0x00000000, 0x00000000, 
+};
+
+static const uint32_t DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0x00000001, 0x00000000, 0x00000000, 
+  0x00000000, 0x48280000, 0x00000001, 0x00000000, // dsub0_dsub1
+  0x00000000, 0xd0300000, 0x00000001, 0x00000000, // dsub1_dsub2
+  0x00000000, 0xa0000000, 0x00000001, 0x00000000, // dsub2_dsub3
+  0x00000000, 0x00000000, 0x01100080, 0x00110400, // dsub_qsub1_then_dsub
+  0x00000000, 0x00000000, 0x01200000, 0x00130800, // qsub1_then_dsub_qsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0x00121000, // qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0xa6400b00, 0xa4642000, // dsub_zsub1_then_dsub
+  0x00000000, 0x00000000, 0xee800000, 0xecec4000, // zsub1_then_dsub_zsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xfde88000, // zsub2_then_dsub_zsub3_then_dsub
 };
 
 static const uint32_t XSeqPairsClass_with_subo64_in_GPR64commonSubClassMask[] = {
-  0xa0000000, 0x0000003f, 0x00000000, 0x00000000, 
+  0x00000000, 0x000003fa, 0x00000000, 0x00000000, 
 };
 
 static const uint32_t XSeqPairsClass_with_subo64_in_GPR64noipSubClassMask[] = {
-  0xc0000000, 0x0000001a, 0x00000000, 0x00000000, 
+  0x00000000, 0x000001ac, 0x00000000, 0x00000000, 
 };
 
 static const uint32_t XSeqPairsClass_with_sube64_in_GPR64noipSubClassMask[] = {
-  0x80000000, 0x0000001a, 0x00000000, 0x00000000, 
+  0x00000000, 0x000001a8, 0x00000000, 0x00000000, 
 };
 
 static const uint32_t XSeqPairsClass_with_sube64_in_tcGPR64SubClassMask[] = {
-  0x00000000, 0x0000003f, 0x00000000, 0x00000000, 
+  0x00000000, 0x000003f0, 0x00000000, 0x00000000, 
 };
 
 static const uint32_t XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64SubClassMask[] = {
-  0x00000000, 0x0000001a, 0x00000000, 0x00000000, 
+  0x00000000, 0x000001a0, 0x00000000, 0x00000000, 
 };
 
 static const uint32_t XSeqPairsClass_with_subo64_in_tcGPR64SubClassMask[] = {
-  0x00000000, 0x0000003c, 0x00000000, 0x00000000, 
+  0x00000000, 0x000003c0, 0x00000000, 0x00000000, 
 };
 
 static const uint32_t XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64SubClassMask[] = {
-  0x00000000, 0x00000018, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000180, 0x00000000, 0x00000000, 
 };
 
 static const uint32_t XSeqPairsClass_with_sub_32_in_GPR32argSubClassMask[] = {
-  0x00000000, 0x00000010, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000100, 0x00000000, 0x00000000, 
 };
 
 static const uint32_t XSeqPairsClass_with_sube64_in_rtcGPR64SubClassMask[] = {
-  0x00000000, 0x00000020, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000200, 0x00000000, 0x00000000, 
 };
 
 static const uint32_t FPR128SubClassMask[] = {
-  0x00000000, 0x00000140, 0x00000000, 0x00000000, 
-  0x00000000, 0x1d09a000, 0x31c3d013, 0x00000001, // qsub0
-  0x00000000, 0x1d09a000, 0x31c3d013, 0x00000001, // qsub1
-  0x00000000, 0x1d000000, 0x31c3d013, 0x00000001, // qsub2
-  0x00000000, 0x00000000, 0x31c3d000, 0x00000001, // qsub3
-  0x00000000, 0xe2f64680, 0xce3c2fec, 0x00000ffe, // zsub
-  0x00000000, 0xe2f64000, 0xce3c2fec, 0x00000ffe, // zsub1_then_zsub
-  0x00000000, 0x00000000, 0xce3c2000, 0x00000ffe, // zsub3_then_zsub
-  0x00000000, 0xe2000000, 0xce3c2fec, 0x00000ffe, // zsub2_then_zsub
+  0x00000000, 0x00001400, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x0131d09a, 0x00131c3d, // qsub0
+  0x00000000, 0x00000000, 0x0131d09a, 0x00131c3d, // qsub1
+  0x00000000, 0x00000000, 0x0131d000, 0x00131c3d, // qsub2
+  0x00000000, 0x00000000, 0x00000000, 0x00131c3d, // qsub3
+  0x00000000, 0x00006800, 0xfece2f64, 0xffece3c2, // zsub
+  0x00000000, 0x00000000, 0xfece2f64, 0xffece3c2, // zsub1_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0xffece3c2, // zsub3_then_zsub
+  0x00000000, 0x00000000, 0xfece2000, 0xffece3c2, // zsub2_then_zsub
 };
 
 static const uint32_t ZPRSubClassMask[] = {
-  0x00000000, 0x00000680, 0x00000000, 0x00000000, 
-  0x00000000, 0xe2f64000, 0xce3c2fec, 0x00000ffe, // zsub0
-  0x00000000, 0xe2f64000, 0xce3c2fec, 0x00000ffe, // zsub1
-  0x00000000, 0xe2000000, 0xce3c2fec, 0x00000ffe, // zsub2
-  0x00000000, 0x00000000, 0xce3c2000, 0x00000ffe, // zsub3
+  0x00000000, 0x00006800, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000000, 0xfece2f64, 0xffece3c2, // zsub0
+  0x00000000, 0x00000000, 0xfece2f64, 0xffece3c2, // zsub1
+  0x00000000, 0x00000000, 0xfece2000, 0xffece3c2, // zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xffece3c2, // zsub3
 };
 
 static const uint32_t FPR128_loSubClassMask[] = {
-  0x00000000, 0x00000100, 0x00000000, 0x00000000, 
-  0x00000000, 0x04088000, 0x10404011, 0x00000001, // qsub0
-  0x00000000, 0x08090000, 0x30c08013, 0x00000001, // qsub1
-  0x00000000, 0x10000000, 0x31810012, 0x00000001, // qsub2
-  0x00000000, 0x00000000, 0x21020000, 0x00000001, // qsub3
-  0x00000000, 0x80b40600, 0x88200c68, 0x00000d06, // zsub
-  0x00000000, 0x20f20000, 0xca040eec, 0x00000f4e, // zsub1_then_zsub
-  0x00000000, 0x00000000, 0x44100000, 0x00000ffe, // zsub3_then_zsub
-  0x00000000, 0x40000000, 0xc6080fe4, 0x00000fde, // zsub2_then_zsub
+  0x00000000, 0x00001000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x01104088, 0x00110404, // qsub0
+  0x00000000, 0x00000000, 0x01308090, 0x00130c08, // qsub1
+  0x00000000, 0x00000000, 0x01210000, 0x00131810, // qsub2
+  0x00000000, 0x00000000, 0x00000000, 0x00121020, // qsub3
+  0x00000000, 0x00006000, 0xa6420b20, 0xa4642040, // zsub
+  0x00000000, 0x00000000, 0xeec40f40, 0xecec6080, // zsub1_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0xffe88200, // zsub3_then_zsub
+  0x00000000, 0x00000000, 0xfe880000, 0xfdecc100, // zsub2_then_zsub
 };
 
 static const uint32_t ZPR_4bSubClassMask[] = {
-  0x00000000, 0x00000600, 0x00000000, 0x00000000, 
-  0x00000000, 0x80b40000, 0x88200c68, 0x00000d06, // zsub0
-  0x00000000, 0x20f20000, 0xca040eec, 0x00000f4e, // zsub1
-  0x00000000, 0x40000000, 0xc6080fe4, 0x00000fde, // zsub2
-  0x00000000, 0x00000000, 0x44100000, 0x00000ffe, // zsub3
+  0x00000000, 0x00006000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000000, 0xa6420b20, 0xa4642040, // zsub0
+  0x00000000, 0x00000000, 0xeec40f40, 0xecec6080, // zsub1
+  0x00000000, 0x00000000, 0xfe880000, 0xfdecc100, // zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xffe88200, // zsub3
 };
 
 static const uint32_t ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00000400, 0x00000000, 0x00000000, 
-  0x00000000, 0x00a00000, 0x00000c40, 0x00000d04, // zsub0
-  0x00000000, 0x00c00000, 0x00000e80, 0x00000f48, // zsub1
-  0x00000000, 0x00000000, 0x00000b00, 0x00000ed0, // zsub2
-  0x00000000, 0x00000000, 0x00000000, 0x00000aa0, // zsub3
+  0x00000000, 0x00004000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000000, 0xa4000a00, 0xa4400000, // zsub0
+  0x00000000, 0x00000000, 0xe8000c00, 0xec800000, // zsub1
+  0x00000000, 0x00000000, 0xd0000000, 0xf9000000, // zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xd2000000, // zsub3
 };
 
 static const uint32_t DDDSubClassMask[] = {
-  0x00000000, 0x00000800, 0x00000000, 0x00000000, 
-  0x00000000, 0x00001000, 0x00000000, 0x00000000, // dsub0_dsub1_dsub2
-  0x00000000, 0x00001000, 0x00000000, 0x00000000, // dsub1_dsub2_dsub3
-  0x00000000, 0x1d000000, 0x31c3d013, 0x00000001, // dsub_qsub1_then_dsub_qsub2_then_dsub
-  0x00000000, 0x00000000, 0x31c3d000, 0x00000001, // qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-  0x00000000, 0xe2000000, 0xce3c2fec, 0x00000ffe, // dsub_zsub1_then_dsub_zsub2_then_dsub
-  0x00000000, 0x00000000, 0xce3c2000, 0x00000ffe, // zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+  0x00000000, 0x003f8000, 0x00000000, 0x00000000, 
+  0x00000000, 0xffc00000, 0x00000001, 0x00000000, // dsub0_dsub1_dsub2
+  0x00000000, 0xffc00000, 0x00000001, 0x00000000, // dsub1_dsub2_dsub3
+  0x00000000, 0x00000000, 0x0131d000, 0x00131c3d, // dsub_qsub1_then_dsub_qsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0x00131c3d, // qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0xfece2000, 0xffece3c2, // dsub_zsub1_then_dsub_zsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xffece3c2, // zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+};
+
+static const uint32_t DDD_with_dsub0_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0x00290000, 0x00000000, 0x00000000, 
+  0x00000000, 0x48800000, 0x00000001, 0x00000000, // dsub0_dsub1_dsub2
+  0x00000000, 0xd9000000, 0x00000001, 0x00000000, // dsub1_dsub2_dsub3
+  0x00000000, 0x00000000, 0x01104000, 0x00110404, // dsub_qsub1_then_dsub_qsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0x00130c08, // qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0xa6420000, 0xa4642040, // dsub_zsub1_then_dsub_zsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xecec6080, // zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+};
+
+static const uint32_t DDD_with_dsub1_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0x003a0000, 0x00000000, 0x00000000, 
+  0x00000000, 0xd9000000, 0x00000001, 0x00000000, // dsub0_dsub1_dsub2
+  0x00000000, 0xf2000000, 0x00000001, 0x00000000, // dsub1_dsub2_dsub3
+  0x00000000, 0x00000000, 0x01308000, 0x00130c08, // dsub_qsub1_then_dsub_qsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0x00131810, // qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0xeec40000, 0xecec6080, // dsub_zsub1_then_dsub_zsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xfdecc100, // zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+};
+
+static const uint32_t DDD_with_dsub2_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0x00340000, 0x00000000, 0x00000000, 
+  0x00000000, 0xf2000000, 0x00000001, 0x00000000, // dsub0_dsub1_dsub2
+  0x00000000, 0xa4000000, 0x00000001, 0x00000000, // dsub1_dsub2_dsub3
+  0x00000000, 0x00000000, 0x01210000, 0x00131810, // dsub_qsub1_then_dsub_qsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0x00121020, // qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0xfe880000, 0xfdecc100, // dsub_zsub1_then_dsub_zsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xffe88200, // zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+};
+
+static const uint32_t DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0x00280000, 0x00000000, 0x00000000, 
+  0x00000000, 0x48000000, 0x00000001, 0x00000000, // dsub0_dsub1_dsub2
+  0x00000000, 0xd0000000, 0x00000001, 0x00000000, // dsub1_dsub2_dsub3
+  0x00000000, 0x00000000, 0x01100000, 0x00110400, // dsub_qsub1_then_dsub_qsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0x00130800, // qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0xa6400000, 0xa4642000, // dsub_zsub1_then_dsub_zsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xecec4000, // zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+};
+
+static const uint32_t DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0x00300000, 0x00000000, 0x00000000, 
+  0x00000000, 0xd0000000, 0x00000001, 0x00000000, // dsub0_dsub1_dsub2
+  0x00000000, 0xa0000000, 0x00000001, 0x00000000, // dsub1_dsub2_dsub3
+  0x00000000, 0x00000000, 0x01200000, 0x00130800, // dsub_qsub1_then_dsub_qsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0x00121000, // qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0xee800000, 0xecec4000, // dsub_zsub1_then_dsub_zsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xfde88000, // zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+};
+
+static const uint32_t DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0x00200000, 0x00000000, 0x00000000, 
+  0x00000000, 0x40000000, 0x00000001, 0x00000000, // dsub0_dsub1_dsub2
+  0x00000000, 0x80000000, 0x00000001, 0x00000000, // dsub1_dsub2_dsub3
+  0x00000000, 0x00000000, 0x01000000, 0x00110000, // dsub_qsub1_then_dsub_qsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0x00120000, // qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0xa6000000, 0xa4640000, // dsub_zsub1_then_dsub_zsub2_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xece80000, // zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
 };
 
 static const uint32_t DDDDSubClassMask[] = {
-  0x00000000, 0x00001000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x31c3d000, 0x00000001, // dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-  0x00000000, 0x00000000, 0xce3c2000, 0x00000ffe, // dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+  0x00000000, 0xffc00000, 0x00000001, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00131c3d, // dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xffece3c2, // dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+};
+
+static const uint32_t DDDD_with_dsub0_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0x48800000, 0x00000001, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00110404, // dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xa4642040, // dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+};
+
+static const uint32_t DDDD_with_dsub1_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0xd9000000, 0x00000001, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00130c08, // dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xecec6080, // dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+};
+
+static const uint32_t DDDD_with_dsub2_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0xf2000000, 0x00000001, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00131810, // dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xfdecc100, // dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+};
+
+static const uint32_t DDDD_with_dsub3_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0xa4000000, 0x00000001, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00121020, // dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xffe88200, // dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+};
+
+static const uint32_t DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0x48000000, 0x00000001, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00110400, // dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xa4642000, // dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+};
+
+static const uint32_t DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0xd0000000, 0x00000001, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00130800, // dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xecec4000, // dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+};
+
+static const uint32_t DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0xa0000000, 0x00000001, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00121000, // dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xfde88000, // dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+};
+
+static const uint32_t DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0x40000000, 0x00000001, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00110000, // dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xa4640000, // dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+};
+
+static const uint32_t DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0x80000000, 0x00000001, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00120000, // dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xece80000, // dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+};
+
+static const uint32_t DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0x00000000, 0x00000001, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00100000, // dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+  0x00000000, 0x00000000, 0x00000000, 0xa4600000, // dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
 };
 
 static const uint32_t QQSubClassMask[] = {
-  0x00000000, 0x0009a000, 0x00000000, 0x00000000, 
-  0x00000000, 0x1d000000, 0x31c3d013, 0x00000001, // qsub0_qsub1
-  0x00000000, 0x1d000000, 0x31c3d013, 0x00000001, // qsub1_qsub2
-  0x00000000, 0x00000000, 0x31c3d000, 0x00000001, // qsub2_qsub3
-  0x00000000, 0xe2f64000, 0xce3c2fec, 0x00000ffe, // zsub_zsub1_then_zsub
-  0x00000000, 0xe2000000, 0xce3c2fec, 0x00000ffe, // zsub1_then_zsub_zsub2_then_zsub
-  0x00000000, 0x00000000, 0xce3c2000, 0x00000ffe, // zsub2_then_zsub_zsub3_then_zsub
+  0x00000000, 0x00000000, 0x0000009a, 0x00000000, 
+  0x00000000, 0x00000000, 0x0131d000, 0x00131c3d, // qsub0_qsub1
+  0x00000000, 0x00000000, 0x0131d000, 0x00131c3d, // qsub1_qsub2
+  0x00000000, 0x00000000, 0x00000000, 0x00131c3d, // qsub2_qsub3
+  0x00000000, 0x00000000, 0xfece2f64, 0xffece3c2, // zsub_zsub1_then_zsub
+  0x00000000, 0x00000000, 0xfece2000, 0xffece3c2, // zsub1_then_zsub_zsub2_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0xffece3c2, // zsub2_then_zsub_zsub3_then_zsub
 };
 
 static const uint32_t ZPR2SubClassMask[] = {
-  0x00000000, 0x00f64000, 0x00000000, 0x00000000, 
-  0x00000000, 0xe2000000, 0xce3c2fec, 0x00000ffe, // zsub0_zsub1
-  0x00000000, 0xe2000000, 0xce3c2fec, 0x00000ffe, // zsub1_zsub2
-  0x00000000, 0x00000000, 0xce3c2000, 0x00000ffe, // zsub2_zsub3
+  0x00000000, 0x00000000, 0x00000f64, 0x00000000, 
+  0x00000000, 0x00000000, 0xfece2000, 0xffece3c2, // zsub0_zsub1
+  0x00000000, 0x00000000, 0xfece2000, 0xffece3c2, // zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xffece3c2, // zsub2_zsub3
 };
 
-static const uint32_t QQ_with_qsub0_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x00088000, 0x00000000, 0x00000000, 
-  0x00000000, 0x04000000, 0x10404011, 0x00000001, // qsub0_qsub1
-  0x00000000, 0x08000000, 0x30c08013, 0x00000001, // qsub1_qsub2
-  0x00000000, 0x00000000, 0x31810000, 0x00000001, // qsub2_qsub3
-  0x00000000, 0x80b40000, 0x88200c68, 0x00000d06, // zsub_zsub1_then_zsub
-  0x00000000, 0x20000000, 0xca040eec, 0x00000f4e, // zsub1_then_zsub_zsub2_then_zsub
-  0x00000000, 0x00000000, 0xc6080000, 0x00000fde, // zsub2_then_zsub_zsub3_then_zsub
+static const uint32_t QQ_with_dsub_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0x00000000, 0x00000088, 0x00000000, 
+  0x00000000, 0x00000000, 0x01104000, 0x00110404, // qsub0_qsub1
+  0x00000000, 0x00000000, 0x01308000, 0x00130c08, // qsub1_qsub2
+  0x00000000, 0x00000000, 0x00000000, 0x00131810, // qsub2_qsub3
+  0x00000000, 0x00000000, 0xa6420b20, 0xa4642040, // zsub_zsub1_then_zsub
+  0x00000000, 0x00000000, 0xeec40000, 0xecec6080, // zsub1_then_zsub_zsub2_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0xfdecc100, // zsub2_then_zsub_zsub3_then_zsub
 };
 
 static const uint32_t QQ_with_qsub1_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x00090000, 0x00000000, 0x00000000, 
-  0x00000000, 0x08000000, 0x30c08013, 0x00000001, // qsub0_qsub1
-  0x00000000, 0x10000000, 0x31810012, 0x00000001, // qsub1_qsub2
-  0x00000000, 0x00000000, 0x21020000, 0x00000001, // qsub2_qsub3
-  0x00000000, 0x20f20000, 0xca040eec, 0x00000f4e, // zsub_zsub1_then_zsub
-  0x00000000, 0x40000000, 0xc6080fe4, 0x00000fde, // zsub1_then_zsub_zsub2_then_zsub
-  0x00000000, 0x00000000, 0x44100000, 0x00000ffe, // zsub2_then_zsub_zsub3_then_zsub
+  0x00000000, 0x00000000, 0x00000090, 0x00000000, 
+  0x00000000, 0x00000000, 0x01308000, 0x00130c08, // qsub0_qsub1
+  0x00000000, 0x00000000, 0x01210000, 0x00131810, // qsub1_qsub2
+  0x00000000, 0x00000000, 0x00000000, 0x00121020, // qsub2_qsub3
+  0x00000000, 0x00000000, 0xeec40f40, 0xecec6080, // zsub_zsub1_then_zsub
+  0x00000000, 0x00000000, 0xfe880000, 0xfdecc100, // zsub1_then_zsub_zsub2_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0xffe88200, // zsub2_then_zsub_zsub3_then_zsub
+};
+
+static const uint32_t ZPR2_with_dsub_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0x00000000, 0x00000b20, 0x00000000, 
+  0x00000000, 0x00000000, 0xa6420000, 0xa4642040, // zsub0_zsub1
+  0x00000000, 0x00000000, 0xeec40000, 0xecec6080, // zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xfdecc100, // zsub2_zsub3
 };
 
 static const uint32_t ZPR2_with_zsub1_in_ZPR_4bSubClassMask[] = {
-  0x00000000, 0x00f20000, 0x00000000, 0x00000000, 
-  0x00000000, 0x20000000, 0xca040eec, 0x00000f4e, // zsub0_zsub1
-  0x00000000, 0x40000000, 0xc6080fe4, 0x00000fde, // zsub1_zsub2
-  0x00000000, 0x00000000, 0x44100000, 0x00000ffe, // zsub2_zsub3
+  0x00000000, 0x00000000, 0x00000f40, 0x00000000, 
+  0x00000000, 0x00000000, 0xeec40000, 0xecec6080, // zsub0_zsub1
+  0x00000000, 0x00000000, 0xfe880000, 0xfdecc100, // zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xffe88200, // zsub2_zsub3
 };
 
-static const uint32_t ZPR2_with_zsub_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x00b40000, 0x00000000, 0x00000000, 
-  0x00000000, 0x80000000, 0x88200c68, 0x00000d06, // zsub0_zsub1
-  0x00000000, 0x20000000, 0xca040eec, 0x00000f4e, // zsub1_zsub2
-  0x00000000, 0x00000000, 0xc6080000, 0x00000fde, // zsub2_zsub3
+static const uint32_t QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_loSubClassMask[] = {
+  0x00000000, 0x00000000, 0x00000080, 0x00000000, 
+  0x00000000, 0x00000000, 0x01100000, 0x00110400, // qsub0_qsub1
+  0x00000000, 0x00000000, 0x01200000, 0x00130800, // qsub1_qsub2
+  0x00000000, 0x00000000, 0x00000000, 0x00121000, // qsub2_qsub3
+  0x00000000, 0x00000000, 0xa6400b00, 0xa4642000, // zsub_zsub1_then_zsub
+  0x00000000, 0x00000000, 0xee800000, 0xecec4000, // zsub1_then_zsub_zsub2_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0xfde88000, // zsub2_then_zsub_zsub3_then_zsub
 };
 
-static const uint32_t QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x00080000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x10400011, 0x00000001, // qsub0_qsub1
-  0x00000000, 0x00000000, 0x30800012, 0x00000001, // qsub1_qsub2
-  0x00000000, 0x00000000, 0x21000000, 0x00000001, // qsub2_qsub3
-  0x00000000, 0x00b00000, 0x88000c68, 0x00000d06, // zsub_zsub1_then_zsub
-  0x00000000, 0x00000000, 0xc2000ee4, 0x00000f4e, // zsub1_then_zsub_zsub2_then_zsub
-  0x00000000, 0x00000000, 0x44000000, 0x00000fde, // zsub2_then_zsub_zsub3_then_zsub
-};
-
-static const uint32_t ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4bSubClassMask[] = {
-  0x00000000, 0x00b00000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x88000c68, 0x00000d06, // zsub0_zsub1
-  0x00000000, 0x00000000, 0xc2000ee4, 0x00000f4e, // zsub1_zsub2
-  0x00000000, 0x00000000, 0x44000000, 0x00000fde, // zsub2_zsub3
+static const uint32_t ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4bSubClassMask[] = {
+  0x00000000, 0x00000000, 0x00000b00, 0x00000000, 
+  0x00000000, 0x00000000, 0xa6400000, 0xa4642000, // zsub0_zsub1
+  0x00000000, 0x00000000, 0xee800000, 0xecec4000, // zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xfde88000, // zsub2_zsub3
 };
 
 static const uint32_t ZPR2_with_zsub0_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00a00000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000c40, 0x00000d04, // zsub0_zsub1
-  0x00000000, 0x00000000, 0x00000e80, 0x00000f48, // zsub1_zsub2
-  0x00000000, 0x00000000, 0x00000000, 0x00000ed0, // zsub2_zsub3
+  0x00000000, 0x00000000, 0x00000a00, 0x00000000, 
+  0x00000000, 0x00000000, 0xa4000000, 0xa4400000, // zsub0_zsub1
+  0x00000000, 0x00000000, 0xe8000000, 0xec800000, // zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xf9000000, // zsub2_zsub3
 };
 
 static const uint32_t ZPR2_with_zsub1_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00c00000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000e80, 0x00000f48, // zsub0_zsub1
-  0x00000000, 0x00000000, 0x00000b00, 0x00000ed0, // zsub1_zsub2
-  0x00000000, 0x00000000, 0x00000000, 0x00000aa0, // zsub2_zsub3
+  0x00000000, 0x00000000, 0x00000c00, 0x00000000, 
+  0x00000000, 0x00000000, 0xe8000000, 0xec800000, // zsub0_zsub1
+  0x00000000, 0x00000000, 0xd0000000, 0xf9000000, // zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xd2000000, // zsub2_zsub3
 };
 
-static const uint32_t ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00800000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000c00, 0x00000d00, // zsub0_zsub1
-  0x00000000, 0x00000000, 0x00000a00, 0x00000e40, // zsub1_zsub2
-  0x00000000, 0x00000000, 0x00000000, 0x00000a80, // zsub2_zsub3
+static const uint32_t ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3bSubClassMask[] = {
+  0x00000000, 0x00000000, 0x00000800, 0x00000000, 
+  0x00000000, 0x00000000, 0xa0000000, 0xa4000000, // zsub0_zsub1
+  0x00000000, 0x00000000, 0xc0000000, 0xe8000000, // zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xd0000000, // zsub2_zsub3
 };
 
 static const uint32_t QQQSubClassMask[] = {
-  0x00000000, 0x1d000000, 0x00000013, 0x00000000, 
-  0x00000000, 0x00000000, 0x31c3d000, 0x00000001, // qsub0_qsub1_qsub2
-  0x00000000, 0x00000000, 0x31c3d000, 0x00000001, // qsub1_qsub2_qsub3
-  0x00000000, 0xe2000000, 0xce3c2fec, 0x00000ffe, // zsub_zsub1_then_zsub_zsub2_then_zsub
-  0x00000000, 0x00000000, 0xce3c2000, 0x00000ffe, // zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+  0x00000000, 0x00000000, 0x0131d000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00131c3d, // qsub0_qsub1_qsub2
+  0x00000000, 0x00000000, 0x00000000, 0x00131c3d, // qsub1_qsub2_qsub3
+  0x00000000, 0x00000000, 0xfece2000, 0xffece3c2, // zsub_zsub1_then_zsub_zsub2_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0xffece3c2, // zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
 };
 
 static const uint32_t ZPR3SubClassMask[] = {
-  0x00000000, 0xe2000000, 0x00000fec, 0x00000000, 
-  0x00000000, 0x00000000, 0xce3c2000, 0x00000ffe, // zsub0_zsub1_zsub2
-  0x00000000, 0x00000000, 0xce3c2000, 0x00000ffe, // zsub1_zsub2_zsub3
+  0x00000000, 0x00000000, 0xfece2000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0xffece3c2, // zsub0_zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xffece3c2, // zsub1_zsub2_zsub3
 };
 
-static const uint32_t QQQ_with_qsub0_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x04000000, 0x00000011, 0x00000000, 
-  0x00000000, 0x00000000, 0x10404000, 0x00000001, // qsub0_qsub1_qsub2
-  0x00000000, 0x00000000, 0x30c08000, 0x00000001, // qsub1_qsub2_qsub3
-  0x00000000, 0x80000000, 0x88200c68, 0x00000d06, // zsub_zsub1_then_zsub_zsub2_then_zsub
-  0x00000000, 0x00000000, 0xca040000, 0x00000f4e, // zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+static const uint32_t QQQ_with_dsub_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0x00000000, 0x01104000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00110404, // qsub0_qsub1_qsub2
+  0x00000000, 0x00000000, 0x00000000, 0x00130c08, // qsub1_qsub2_qsub3
+  0x00000000, 0x00000000, 0xa6420000, 0xa4642040, // zsub_zsub1_then_zsub_zsub2_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0xecec6080, // zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
 };
 
 static const uint32_t QQQ_with_qsub1_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x08000000, 0x00000013, 0x00000000, 
-  0x00000000, 0x00000000, 0x30c08000, 0x00000001, // qsub0_qsub1_qsub2
-  0x00000000, 0x00000000, 0x31810000, 0x00000001, // qsub1_qsub2_qsub3
-  0x00000000, 0x20000000, 0xca040eec, 0x00000f4e, // zsub_zsub1_then_zsub_zsub2_then_zsub
-  0x00000000, 0x00000000, 0xc6080000, 0x00000fde, // zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+  0x00000000, 0x00000000, 0x01308000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00130c08, // qsub0_qsub1_qsub2
+  0x00000000, 0x00000000, 0x00000000, 0x00131810, // qsub1_qsub2_qsub3
+  0x00000000, 0x00000000, 0xeec40000, 0xecec6080, // zsub_zsub1_then_zsub_zsub2_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0xfdecc100, // zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
 };
 
 static const uint32_t QQQ_with_qsub2_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x10000000, 0x00000012, 0x00000000, 
-  0x00000000, 0x00000000, 0x31810000, 0x00000001, // qsub0_qsub1_qsub2
-  0x00000000, 0x00000000, 0x21020000, 0x00000001, // qsub1_qsub2_qsub3
-  0x00000000, 0x40000000, 0xc6080fe4, 0x00000fde, // zsub_zsub1_then_zsub_zsub2_then_zsub
-  0x00000000, 0x00000000, 0x44100000, 0x00000ffe, // zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+  0x00000000, 0x00000000, 0x01210000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00131810, // qsub0_qsub1_qsub2
+  0x00000000, 0x00000000, 0x00000000, 0x00121020, // qsub1_qsub2_qsub3
+  0x00000000, 0x00000000, 0xfe880000, 0xfdecc100, // zsub_zsub1_then_zsub_zsub2_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0xffe88200, // zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+};
+
+static const uint32_t ZPR3_with_dsub_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0x00000000, 0xa6420000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0xa4642040, // zsub0_zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xecec6080, // zsub1_zsub2_zsub3
 };
 
 static const uint32_t ZPR3_with_zsub1_in_ZPR_4bSubClassMask[] = {
-  0x00000000, 0x20000000, 0x00000eec, 0x00000000, 
-  0x00000000, 0x00000000, 0xca040000, 0x00000f4e, // zsub0_zsub1_zsub2
-  0x00000000, 0x00000000, 0xc6080000, 0x00000fde, // zsub1_zsub2_zsub3
+  0x00000000, 0x00000000, 0xeec40000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0xecec6080, // zsub0_zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xfdecc100, // zsub1_zsub2_zsub3
 };
 
 static const uint32_t ZPR3_with_zsub2_in_ZPR_4bSubClassMask[] = {
-  0x00000000, 0x40000000, 0x00000fe4, 0x00000000, 
-  0x00000000, 0x00000000, 0xc6080000, 0x00000fde, // zsub0_zsub1_zsub2
-  0x00000000, 0x00000000, 0x44100000, 0x00000ffe, // zsub1_zsub2_zsub3
+  0x00000000, 0x00000000, 0xfe880000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0xfdecc100, // zsub0_zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xffe88200, // zsub1_zsub2_zsub3
 };
 
-static const uint32_t ZPR3_with_zsub_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x80000000, 0x00000c68, 0x00000000, 
-  0x00000000, 0x00000000, 0x88200000, 0x00000d06, // zsub0_zsub1_zsub2
-  0x00000000, 0x00000000, 0xca040000, 0x00000f4e, // zsub1_zsub2_zsub3
-};
-
-static const uint32_t QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000011, 0x00000000, 
-  0x00000000, 0x00000000, 0x10400000, 0x00000001, // qsub0_qsub1_qsub2
-  0x00000000, 0x00000000, 0x30800000, 0x00000001, // qsub1_qsub2_qsub3
-  0x00000000, 0x00000000, 0x88000c68, 0x00000d06, // zsub_zsub1_then_zsub_zsub2_then_zsub
-  0x00000000, 0x00000000, 0xc2000000, 0x00000f4e, // zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+static const uint32_t QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_loSubClassMask[] = {
+  0x00000000, 0x00000000, 0x01100000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00110400, // qsub0_qsub1_qsub2
+  0x00000000, 0x00000000, 0x00000000, 0x00130800, // qsub1_qsub2_qsub3
+  0x00000000, 0x00000000, 0xa6400000, 0xa4642000, // zsub_zsub1_then_zsub_zsub2_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0xecec4000, // zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
 };
 
 static const uint32_t QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000012, 0x00000000, 
-  0x00000000, 0x00000000, 0x30800000, 0x00000001, // qsub0_qsub1_qsub2
-  0x00000000, 0x00000000, 0x21000000, 0x00000001, // qsub1_qsub2_qsub3
-  0x00000000, 0x00000000, 0xc2000ee4, 0x00000f4e, // zsub_zsub1_then_zsub_zsub2_then_zsub
-  0x00000000, 0x00000000, 0x44000000, 0x00000fde, // zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+  0x00000000, 0x00000000, 0x01200000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00130800, // qsub0_qsub1_qsub2
+  0x00000000, 0x00000000, 0x00000000, 0x00121000, // qsub1_qsub2_qsub3
+  0x00000000, 0x00000000, 0xee800000, 0xecec4000, // zsub_zsub1_then_zsub_zsub2_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0xfde88000, // zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+};
+
+static const uint32_t ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4bSubClassMask[] = {
+  0x00000000, 0x00000000, 0xa6400000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0xa4642000, // zsub0_zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xecec4000, // zsub1_zsub2_zsub3
 };
 
 static const uint32_t ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000ee4, 0x00000000, 
-  0x00000000, 0x00000000, 0xc2000000, 0x00000f4e, // zsub0_zsub1_zsub2
-  0x00000000, 0x00000000, 0x44000000, 0x00000fde, // zsub1_zsub2_zsub3
+  0x00000000, 0x00000000, 0xee800000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0xecec4000, // zsub0_zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xfde88000, // zsub1_zsub2_zsub3
 };
 
-static const uint32_t ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000c68, 0x00000000, 
-  0x00000000, 0x00000000, 0x88000000, 0x00000d06, // zsub0_zsub1_zsub2
-  0x00000000, 0x00000000, 0xc2000000, 0x00000f4e, // zsub1_zsub2_zsub3
+static const uint32_t QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_loSubClassMask[] = {
+  0x00000000, 0x00000000, 0x01000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00110000, // qsub0_qsub1_qsub2
+  0x00000000, 0x00000000, 0x00000000, 0x00120000, // qsub1_qsub2_qsub3
+  0x00000000, 0x00000000, 0xa6000000, 0xa4640000, // zsub_zsub1_then_zsub_zsub2_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0xece80000, // zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
 };
 
-static const uint32_t QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000010, 0x00000000, 
-  0x00000000, 0x00000000, 0x10000000, 0x00000001, // qsub0_qsub1_qsub2
-  0x00000000, 0x00000000, 0x20000000, 0x00000001, // qsub1_qsub2_qsub3
-  0x00000000, 0x00000000, 0x80000c60, 0x00000d06, // zsub_zsub1_then_zsub_zsub2_then_zsub
-  0x00000000, 0x00000000, 0x40000000, 0x00000f4e, // zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-};
-
-static const uint32_t ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000c60, 0x00000000, 
-  0x00000000, 0x00000000, 0x80000000, 0x00000d06, // zsub0_zsub1_zsub2
-  0x00000000, 0x00000000, 0x40000000, 0x00000f4e, // zsub1_zsub2_zsub3
+static const uint32_t ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4bSubClassMask[] = {
+  0x00000000, 0x00000000, 0xa6000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0xa4640000, // zsub0_zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xece80000, // zsub1_zsub2_zsub3
 };
 
 static const uint32_t ZPR3_with_zsub0_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000c40, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x00000d04, // zsub0_zsub1_zsub2
-  0x00000000, 0x00000000, 0x00000000, 0x00000f48, // zsub1_zsub2_zsub3
+  0x00000000, 0x00000000, 0xa4000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0xa4400000, // zsub0_zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xec800000, // zsub1_zsub2_zsub3
 };
 
 static const uint32_t ZPR3_with_zsub1_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000e80, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x00000f48, // zsub0_zsub1_zsub2
-  0x00000000, 0x00000000, 0x00000000, 0x00000ed0, // zsub1_zsub2_zsub3
+  0x00000000, 0x00000000, 0xe8000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0xec800000, // zsub0_zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xf9000000, // zsub1_zsub2_zsub3
 };
 
 static const uint32_t ZPR3_with_zsub2_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000b00, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x00000ed0, // zsub0_zsub1_zsub2
-  0x00000000, 0x00000000, 0x00000000, 0x00000aa0, // zsub1_zsub2_zsub3
+  0x00000000, 0x00000000, 0xd0000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0xf9000000, // zsub0_zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xd2000000, // zsub1_zsub2_zsub3
+};
+
+static const uint32_t ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3bSubClassMask[] = {
+  0x00000000, 0x00000000, 0xa0000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0xa4000000, // zsub0_zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xe8000000, // zsub1_zsub2_zsub3
 };
 
 static const uint32_t ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000a00, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x00000e40, // zsub0_zsub1_zsub2
-  0x00000000, 0x00000000, 0x00000000, 0x00000a80, // zsub1_zsub2_zsub3
+  0x00000000, 0x00000000, 0xc0000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0xe8000000, // zsub0_zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xd0000000, // zsub1_zsub2_zsub3
 };
 
-static const uint32_t ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000c00, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x00000d00, // zsub0_zsub1_zsub2
-  0x00000000, 0x00000000, 0x00000000, 0x00000e40, // zsub1_zsub2_zsub3
-};
-
-static const uint32_t ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000800, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x00000c00, // zsub0_zsub1_zsub2
-  0x00000000, 0x00000000, 0x00000000, 0x00000a00, // zsub1_zsub2_zsub3
+static const uint32_t ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3bSubClassMask[] = {
+  0x00000000, 0x00000000, 0x80000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0xa0000000, // zsub0_zsub1_zsub2
+  0x00000000, 0x00000000, 0x00000000, 0xc0000000, // zsub1_zsub2_zsub3
 };
 
 static const uint32_t QQQQSubClassMask[] = {
-  0x00000000, 0x00000000, 0x31c3d000, 0x00000001, 
-  0x00000000, 0x00000000, 0xce3c2000, 0x00000ffe, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0x00131c3d, 
+  0x00000000, 0x00000000, 0x00000000, 0xffece3c2, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
 };
 
 static const uint32_t ZPR4SubClassMask[] = {
-  0x00000000, 0x00000000, 0xce3c2000, 0x00000ffe, 
+  0x00000000, 0x00000000, 0x00000000, 0xffece3c2, 
 };
 
-static const uint32_t QQQQ_with_qsub0_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x00000000, 0x10404000, 0x00000001, 
-  0x00000000, 0x00000000, 0x88200000, 0x00000d06, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+static const uint32_t QQQQ_with_dsub_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0x00000000, 0x00000000, 0x00110404, 
+  0x00000000, 0x00000000, 0x00000000, 0xa4642040, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
 };
 
 static const uint32_t QQQQ_with_qsub1_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x00000000, 0x30c08000, 0x00000001, 
-  0x00000000, 0x00000000, 0xca040000, 0x00000f4e, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0x00130c08, 
+  0x00000000, 0x00000000, 0x00000000, 0xecec6080, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
 };
 
 static const uint32_t QQQQ_with_qsub2_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x00000000, 0x31810000, 0x00000001, 
-  0x00000000, 0x00000000, 0xc6080000, 0x00000fde, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0x00131810, 
+  0x00000000, 0x00000000, 0x00000000, 0xfdecc100, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
 };
 
 static const uint32_t QQQQ_with_qsub3_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x00000000, 0x21020000, 0x00000001, 
-  0x00000000, 0x00000000, 0x44100000, 0x00000ffe, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0x00121020, 
+  0x00000000, 0x00000000, 0x00000000, 0xffe88200, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+};
+
+static const uint32_t ZPR4_with_dsub_in_FPR64_loSubClassMask[] = {
+  0x00000000, 0x00000000, 0x00000000, 0xa4642040, 
 };
 
 static const uint32_t ZPR4_with_zsub1_in_ZPR_4bSubClassMask[] = {
-  0x00000000, 0x00000000, 0xca040000, 0x00000f4e, 
+  0x00000000, 0x00000000, 0x00000000, 0xecec6080, 
 };
 
 static const uint32_t ZPR4_with_zsub2_in_ZPR_4bSubClassMask[] = {
-  0x00000000, 0x00000000, 0xc6080000, 0x00000fde, 
+  0x00000000, 0x00000000, 0x00000000, 0xfdecc100, 
 };
 
 static const uint32_t ZPR4_with_zsub3_in_ZPR_4bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x44100000, 0x00000ffe, 
+  0x00000000, 0x00000000, 0x00000000, 0xffe88200, 
 };
 
-static const uint32_t ZPR4_with_zsub_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x00000000, 0x88200000, 0x00000d06, 
-};
-
-static const uint32_t QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x00000000, 0x10400000, 0x00000001, 
-  0x00000000, 0x00000000, 0x88000000, 0x00000d06, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+static const uint32_t QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_loSubClassMask[] = {
+  0x00000000, 0x00000000, 0x00000000, 0x00110400, 
+  0x00000000, 0x00000000, 0x00000000, 0xa4642000, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
 };
 
 static const uint32_t QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x00000000, 0x30800000, 0x00000001, 
-  0x00000000, 0x00000000, 0xc2000000, 0x00000f4e, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0x00130800, 
+  0x00000000, 0x00000000, 0x00000000, 0xecec4000, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
 };
 
 static const uint32_t QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x00000000, 0x21000000, 0x00000001, 
-  0x00000000, 0x00000000, 0x44000000, 0x00000fde, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0x00121000, 
+  0x00000000, 0x00000000, 0x00000000, 0xfde88000, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+};
+
+static const uint32_t ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bSubClassMask[] = {
+  0x00000000, 0x00000000, 0x00000000, 0xa4642000, 
 };
 
 static const uint32_t ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bSubClassMask[] = {
-  0x00000000, 0x00000000, 0xc2000000, 0x00000f4e, 
+  0x00000000, 0x00000000, 0x00000000, 0xecec4000, 
 };
 
 static const uint32_t ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x44000000, 0x00000fde, 
+  0x00000000, 0x00000000, 0x00000000, 0xfde88000, 
 };
 
-static const uint32_t ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x88000000, 0x00000d06, 
-};
-
-static const uint32_t QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x00000000, 0x10000000, 0x00000001, 
-  0x00000000, 0x00000000, 0x80000000, 0x00000d06, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+static const uint32_t QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_loSubClassMask[] = {
+  0x00000000, 0x00000000, 0x00000000, 0x00110000, 
+  0x00000000, 0x00000000, 0x00000000, 0xa4640000, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
 };
 
 static const uint32_t QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x00000000, 0x20000000, 0x00000001, 
-  0x00000000, 0x00000000, 0x40000000, 0x00000f4e, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+  0x00000000, 0x00000000, 0x00000000, 0x00120000, 
+  0x00000000, 0x00000000, 0x00000000, 0xece80000, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+};
+
+static const uint32_t ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4bSubClassMask[] = {
+  0x00000000, 0x00000000, 0x00000000, 0xa4640000, 
 };
 
 static const uint32_t ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x40000000, 0x00000f4e, 
+  0x00000000, 0x00000000, 0x00000000, 0xece80000, 
 };
 
-static const uint32_t ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x80000000, 0x00000d06, 
+static const uint32_t QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_loSubClassMask[] = {
+  0x00000000, 0x00000000, 0x00000000, 0x00100000, 
+  0x00000000, 0x00000000, 0x00000000, 0xa4600000, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
 };
 
-static const uint32_t QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00000001, 
-  0x00000000, 0x00000000, 0x00000000, 0x00000d06, // zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-};
-
-static const uint32_t ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00000d06, 
+static const uint32_t ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4bSubClassMask[] = {
+  0x00000000, 0x00000000, 0x00000000, 0xa4600000, 
 };
 
 static const uint32_t ZPR4_with_zsub0_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00000d04, 
+  0x00000000, 0x00000000, 0x00000000, 0xa4400000, 
 };
 
 static const uint32_t ZPR4_with_zsub1_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00000f48, 
+  0x00000000, 0x00000000, 0x00000000, 0xec800000, 
 };
 
 static const uint32_t ZPR4_with_zsub2_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00000ed0, 
+  0x00000000, 0x00000000, 0x00000000, 0xf9000000, 
 };
 
 static const uint32_t ZPR4_with_zsub3_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00000aa0, 
+  0x00000000, 0x00000000, 0x00000000, 0xd2000000, 
+};
+
+static const uint32_t ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3bSubClassMask[] = {
+  0x00000000, 0x00000000, 0x00000000, 0xa4000000, 
 };
 
 static const uint32_t ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00000e40, 
+  0x00000000, 0x00000000, 0x00000000, 0xe8000000, 
 };
 
 static const uint32_t ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00000a80, 
+  0x00000000, 0x00000000, 0x00000000, 0xd0000000, 
 };
 
-static const uint32_t ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00000d00, 
+static const uint32_t ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3bSubClassMask[] = {
+  0x00000000, 0x00000000, 0x00000000, 0xa0000000, 
 };
 
 static const uint32_t ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00000a00, 
+  0x00000000, 0x00000000, 0x00000000, 0xc0000000, 
 };
 
-static const uint32_t ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00000c00, 
-};
-
-static const uint32_t ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3bSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00000800, 
+static const uint32_t ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3bSubClassMask[] = {
+  0x00000000, 0x00000000, 0x00000000, 0x80000000, 
 };
 
 static const uint16_t SuperRegIdxSeqs[] = {
@@ -6201,6 +6683,11 @@ static const TargetRegisterClass *const GPR64noip_and_tcGPR64Superclasses[] = {
   nullptr
 };
 
+static const TargetRegisterClass *const FPR64_loSuperclasses[] = {
+  &AArch64::FPR64RegClass,
+  nullptr
+};
+
 static const TargetRegisterClass *const GPR64argSuperclasses[] = {
   &AArch64::GPR64allRegClass,
   &AArch64::GPR64RegClass,
@@ -6225,6 +6712,23 @@ static const TargetRegisterClass *const rtcGPR64Superclasses[] = {
 static const TargetRegisterClass *const GPR64sponlySuperclasses[] = {
   &AArch64::GPR64allRegClass,
   &AArch64::GPR64spRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const DD_with_dsub0_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const DD_with_dsub1_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDRegClass,
+  &AArch64::DD_with_dsub0_in_FPR64_loRegClass,
+  &AArch64::DD_with_dsub1_in_FPR64_loRegClass,
   nullptr
 };
 
@@ -6314,7 +6818,121 @@ static const TargetRegisterClass *const ZPR_3bSuperclasses[] = {
   nullptr
 };
 
-static const TargetRegisterClass *const QQ_with_qsub0_in_FPR128_loSuperclasses[] = {
+static const TargetRegisterClass *const DDD_with_dsub0_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDDRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const DDD_with_dsub1_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDDRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const DDD_with_dsub2_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDDRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDDRegClass,
+  &AArch64::DDD_with_dsub0_in_FPR64_loRegClass,
+  &AArch64::DDD_with_dsub1_in_FPR64_loRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDDRegClass,
+  &AArch64::DDD_with_dsub1_in_FPR64_loRegClass,
+  &AArch64::DDD_with_dsub2_in_FPR64_loRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDDRegClass,
+  &AArch64::DDD_with_dsub0_in_FPR64_loRegClass,
+  &AArch64::DDD_with_dsub1_in_FPR64_loRegClass,
+  &AArch64::DDD_with_dsub2_in_FPR64_loRegClass,
+  &AArch64::DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_loRegClass,
+  &AArch64::DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const DDDD_with_dsub0_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDDDRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const DDDD_with_dsub1_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDDDRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const DDDD_with_dsub2_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDDDRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const DDDD_with_dsub3_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDDDRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDDDRegClass,
+  &AArch64::DDDD_with_dsub0_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub1_in_FPR64_loRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDDDRegClass,
+  &AArch64::DDDD_with_dsub1_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub2_in_FPR64_loRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDDDRegClass,
+  &AArch64::DDDD_with_dsub2_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub3_in_FPR64_loRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDDDRegClass,
+  &AArch64::DDDD_with_dsub0_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub1_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub2_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDDDRegClass,
+  &AArch64::DDDD_with_dsub1_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub2_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub3_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loSuperclasses[] = {
+  &AArch64::DDDDRegClass,
+  &AArch64::DDDD_with_dsub0_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub1_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub2_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub3_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClass,
+  &AArch64::DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClass,
+  nullptr
+};
+
+static const TargetRegisterClass *const QQ_with_dsub_in_FPR64_loSuperclasses[] = {
   &AArch64::QQRegClass,
   nullptr
 };
@@ -6324,35 +6942,35 @@ static const TargetRegisterClass *const QQ_with_qsub1_in_FPR128_loSuperclasses[]
   nullptr
 };
 
+static const TargetRegisterClass *const ZPR2_with_dsub_in_FPR64_loSuperclasses[] = {
+  &AArch64::ZPR2RegClass,
+  nullptr
+};
+
 static const TargetRegisterClass *const ZPR2_with_zsub1_in_ZPR_4bSuperclasses[] = {
   &AArch64::ZPR2RegClass,
   nullptr
 };
 
-static const TargetRegisterClass *const ZPR2_with_zsub_in_FPR128_loSuperclasses[] = {
-  &AArch64::ZPR2RegClass,
-  nullptr
-};
-
-static const TargetRegisterClass *const QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_loSuperclasses[] = {
+static const TargetRegisterClass *const QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_loSuperclasses[] = {
   &AArch64::QQRegClass,
-  &AArch64::QQ_with_qsub0_in_FPR128_loRegClass,
+  &AArch64::QQ_with_dsub_in_FPR64_loRegClass,
   &AArch64::QQ_with_qsub1_in_FPR128_loRegClass,
   nullptr
 };
 
-static const TargetRegisterClass *const ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4bSuperclasses[] = {
+static const TargetRegisterClass *const ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4bSuperclasses[] = {
   &AArch64::ZPR2RegClass,
+  &AArch64::ZPR2_with_dsub_in_FPR64_loRegClass,
   &AArch64::ZPR2_with_zsub1_in_ZPR_4bRegClass,
-  &AArch64::ZPR2_with_zsub_in_FPR128_loRegClass,
   nullptr
 };
 
 static const TargetRegisterClass *const ZPR2_with_zsub0_in_ZPR_3bSuperclasses[] = {
   &AArch64::ZPR2RegClass,
+  &AArch64::ZPR2_with_dsub_in_FPR64_loRegClass,
   &AArch64::ZPR2_with_zsub1_in_ZPR_4bRegClass,
-  &AArch64::ZPR2_with_zsub_in_FPR128_loRegClass,
-  &AArch64::ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4bRegClass,
+  &AArch64::ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4bRegClass,
   nullptr
 };
 
@@ -6362,17 +6980,17 @@ static const TargetRegisterClass *const ZPR2_with_zsub1_in_ZPR_3bSuperclasses[] 
   nullptr
 };
 
-static const TargetRegisterClass *const ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3bSuperclasses[] = {
+static const TargetRegisterClass *const ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3bSuperclasses[] = {
   &AArch64::ZPR2RegClass,
+  &AArch64::ZPR2_with_dsub_in_FPR64_loRegClass,
   &AArch64::ZPR2_with_zsub1_in_ZPR_4bRegClass,
-  &AArch64::ZPR2_with_zsub_in_FPR128_loRegClass,
-  &AArch64::ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4bRegClass,
+  &AArch64::ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4bRegClass,
   &AArch64::ZPR2_with_zsub0_in_ZPR_3bRegClass,
   &AArch64::ZPR2_with_zsub1_in_ZPR_3bRegClass,
   nullptr
 };
 
-static const TargetRegisterClass *const QQQ_with_qsub0_in_FPR128_loSuperclasses[] = {
+static const TargetRegisterClass *const QQQ_with_dsub_in_FPR64_loSuperclasses[] = {
   &AArch64::QQQRegClass,
   nullptr
 };
@@ -6387,6 +7005,11 @@ static const TargetRegisterClass *const QQQ_with_qsub2_in_FPR128_loSuperclasses[
   nullptr
 };
 
+static const TargetRegisterClass *const ZPR3_with_dsub_in_FPR64_loSuperclasses[] = {
+  &AArch64::ZPR3RegClass,
+  nullptr
+};
+
 static const TargetRegisterClass *const ZPR3_with_zsub1_in_ZPR_4bSuperclasses[] = {
   &AArch64::ZPR3RegClass,
   nullptr
@@ -6397,14 +7020,9 @@ static const TargetRegisterClass *const ZPR3_with_zsub2_in_ZPR_4bSuperclasses[] 
   nullptr
 };
 
-static const TargetRegisterClass *const ZPR3_with_zsub_in_FPR128_loSuperclasses[] = {
-  &AArch64::ZPR3RegClass,
-  nullptr
-};
-
-static const TargetRegisterClass *const QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_loSuperclasses[] = {
+static const TargetRegisterClass *const QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_loSuperclasses[] = {
   &AArch64::QQQRegClass,
-  &AArch64::QQQ_with_qsub0_in_FPR128_loRegClass,
+  &AArch64::QQQ_with_dsub_in_FPR64_loRegClass,
   &AArch64::QQQ_with_qsub1_in_FPR128_loRegClass,
   nullptr
 };
@@ -6416,6 +7034,13 @@ static const TargetRegisterClass *const QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with
   nullptr
 };
 
+static const TargetRegisterClass *const ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4bSuperclasses[] = {
+  &AArch64::ZPR3RegClass,
+  &AArch64::ZPR3_with_dsub_in_FPR64_loRegClass,
+  &AArch64::ZPR3_with_zsub1_in_ZPR_4bRegClass,
+  nullptr
+};
+
 static const TargetRegisterClass *const ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bSuperclasses[] = {
   &AArch64::ZPR3RegClass,
   &AArch64::ZPR3_with_zsub1_in_ZPR_4bRegClass,
@@ -6423,41 +7048,34 @@ static const TargetRegisterClass *const ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_
   nullptr
 };
 
-static const TargetRegisterClass *const ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4bSuperclasses[] = {
-  &AArch64::ZPR3RegClass,
-  &AArch64::ZPR3_with_zsub1_in_ZPR_4bRegClass,
-  &AArch64::ZPR3_with_zsub_in_FPR128_loRegClass,
-  nullptr
-};
-
-static const TargetRegisterClass *const QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loSuperclasses[] = {
+static const TargetRegisterClass *const QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_loSuperclasses[] = {
   &AArch64::QQQRegClass,
-  &AArch64::QQQ_with_qsub0_in_FPR128_loRegClass,
+  &AArch64::QQQ_with_dsub_in_FPR64_loRegClass,
   &AArch64::QQQ_with_qsub1_in_FPR128_loRegClass,
   &AArch64::QQQ_with_qsub2_in_FPR128_loRegClass,
-  &AArch64::QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_loRegClass,
+  &AArch64::QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_loRegClass,
   &AArch64::QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loRegClass,
   nullptr
 };
 
-static const TargetRegisterClass *const ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4bSuperclasses[] = {
+static const TargetRegisterClass *const ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4bSuperclasses[] = {
   &AArch64::ZPR3RegClass,
+  &AArch64::ZPR3_with_dsub_in_FPR64_loRegClass,
   &AArch64::ZPR3_with_zsub1_in_ZPR_4bRegClass,
   &AArch64::ZPR3_with_zsub2_in_ZPR_4bRegClass,
-  &AArch64::ZPR3_with_zsub_in_FPR128_loRegClass,
+  &AArch64::ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClass,
   &AArch64::ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bRegClass,
-  &AArch64::ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClass,
   nullptr
 };
 
 static const TargetRegisterClass *const ZPR3_with_zsub0_in_ZPR_3bSuperclasses[] = {
   &AArch64::ZPR3RegClass,
+  &AArch64::ZPR3_with_dsub_in_FPR64_loRegClass,
   &AArch64::ZPR3_with_zsub1_in_ZPR_4bRegClass,
   &AArch64::ZPR3_with_zsub2_in_ZPR_4bRegClass,
-  &AArch64::ZPR3_with_zsub_in_FPR128_loRegClass,
+  &AArch64::ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClass,
   &AArch64::ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bRegClass,
-  &AArch64::ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClass,
-  &AArch64::ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4bRegClass,
+  &AArch64::ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4bRegClass,
   nullptr
 };
 
@@ -6475,6 +7093,19 @@ static const TargetRegisterClass *const ZPR3_with_zsub2_in_ZPR_3bSuperclasses[] 
   nullptr
 };
 
+static const TargetRegisterClass *const ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3bSuperclasses[] = {
+  &AArch64::ZPR3RegClass,
+  &AArch64::ZPR3_with_dsub_in_FPR64_loRegClass,
+  &AArch64::ZPR3_with_zsub1_in_ZPR_4bRegClass,
+  &AArch64::ZPR3_with_zsub2_in_ZPR_4bRegClass,
+  &AArch64::ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClass,
+  &AArch64::ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bRegClass,
+  &AArch64::ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4bRegClass,
+  &AArch64::ZPR3_with_zsub0_in_ZPR_3bRegClass,
+  &AArch64::ZPR3_with_zsub1_in_ZPR_3bRegClass,
+  nullptr
+};
+
 static const TargetRegisterClass *const ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3bSuperclasses[] = {
   &AArch64::ZPR3RegClass,
   &AArch64::ZPR3_with_zsub1_in_ZPR_4bRegClass,
@@ -6485,36 +7116,23 @@ static const TargetRegisterClass *const ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_
   nullptr
 };
 
-static const TargetRegisterClass *const ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3bSuperclasses[] = {
+static const TargetRegisterClass *const ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3bSuperclasses[] = {
   &AArch64::ZPR3RegClass,
+  &AArch64::ZPR3_with_dsub_in_FPR64_loRegClass,
   &AArch64::ZPR3_with_zsub1_in_ZPR_4bRegClass,
   &AArch64::ZPR3_with_zsub2_in_ZPR_4bRegClass,
-  &AArch64::ZPR3_with_zsub_in_FPR128_loRegClass,
+  &AArch64::ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClass,
   &AArch64::ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bRegClass,
-  &AArch64::ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClass,
-  &AArch64::ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4bRegClass,
-  &AArch64::ZPR3_with_zsub0_in_ZPR_3bRegClass,
-  &AArch64::ZPR3_with_zsub1_in_ZPR_3bRegClass,
-  nullptr
-};
-
-static const TargetRegisterClass *const ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3bSuperclasses[] = {
-  &AArch64::ZPR3RegClass,
-  &AArch64::ZPR3_with_zsub1_in_ZPR_4bRegClass,
-  &AArch64::ZPR3_with_zsub2_in_ZPR_4bRegClass,
-  &AArch64::ZPR3_with_zsub_in_FPR128_loRegClass,
-  &AArch64::ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bRegClass,
-  &AArch64::ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClass,
-  &AArch64::ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4bRegClass,
+  &AArch64::ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4bRegClass,
   &AArch64::ZPR3_with_zsub0_in_ZPR_3bRegClass,
   &AArch64::ZPR3_with_zsub1_in_ZPR_3bRegClass,
   &AArch64::ZPR3_with_zsub2_in_ZPR_3bRegClass,
+  &AArch64::ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3bRegClass,
   &AArch64::ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3bRegClass,
-  &AArch64::ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3bRegClass,
   nullptr
 };
 
-static const TargetRegisterClass *const QQQQ_with_qsub0_in_FPR128_loSuperclasses[] = {
+static const TargetRegisterClass *const QQQQ_with_dsub_in_FPR64_loSuperclasses[] = {
   &AArch64::QQQQRegClass,
   nullptr
 };
@@ -6534,6 +7152,11 @@ static const TargetRegisterClass *const QQQQ_with_qsub3_in_FPR128_loSuperclasses
   nullptr
 };
 
+static const TargetRegisterClass *const ZPR4_with_dsub_in_FPR64_loSuperclasses[] = {
+  &AArch64::ZPR4RegClass,
+  nullptr
+};
+
 static const TargetRegisterClass *const ZPR4_with_zsub1_in_ZPR_4bSuperclasses[] = {
   &AArch64::ZPR4RegClass,
   nullptr
@@ -6549,14 +7172,9 @@ static const TargetRegisterClass *const ZPR4_with_zsub3_in_ZPR_4bSuperclasses[] 
   nullptr
 };
 
-static const TargetRegisterClass *const ZPR4_with_zsub_in_FPR128_loSuperclasses[] = {
-  &AArch64::ZPR4RegClass,
-  nullptr
-};
-
-static const TargetRegisterClass *const QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_loSuperclasses[] = {
+static const TargetRegisterClass *const QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_loSuperclasses[] = {
   &AArch64::QQQQRegClass,
-  &AArch64::QQQQ_with_qsub0_in_FPR128_loRegClass,
+  &AArch64::QQQQ_with_dsub_in_FPR64_loRegClass,
   &AArch64::QQQQ_with_qsub1_in_FPR128_loRegClass,
   nullptr
 };
@@ -6575,6 +7193,13 @@ static const TargetRegisterClass *const QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_wi
   nullptr
 };
 
+static const TargetRegisterClass *const ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bSuperclasses[] = {
+  &AArch64::ZPR4RegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_loRegClass,
+  &AArch64::ZPR4_with_zsub1_in_ZPR_4bRegClass,
+  nullptr
+};
+
 static const TargetRegisterClass *const ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bSuperclasses[] = {
   &AArch64::ZPR4RegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_4bRegClass,
@@ -6589,19 +7214,12 @@ static const TargetRegisterClass *const ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_
   nullptr
 };
 
-static const TargetRegisterClass *const ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bSuperclasses[] = {
-  &AArch64::ZPR4RegClass,
-  &AArch64::ZPR4_with_zsub1_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_loRegClass,
-  nullptr
-};
-
-static const TargetRegisterClass *const QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loSuperclasses[] = {
+static const TargetRegisterClass *const QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_loSuperclasses[] = {
   &AArch64::QQQQRegClass,
-  &AArch64::QQQQ_with_qsub0_in_FPR128_loRegClass,
+  &AArch64::QQQQ_with_dsub_in_FPR64_loRegClass,
   &AArch64::QQQQ_with_qsub1_in_FPR128_loRegClass,
   &AArch64::QQQQ_with_qsub2_in_FPR128_loRegClass,
-  &AArch64::QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_loRegClass,
+  &AArch64::QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_loRegClass,
   &AArch64::QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClass,
   nullptr
 };
@@ -6616,6 +7234,16 @@ static const TargetRegisterClass *const QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_wi
   nullptr
 };
 
+static const TargetRegisterClass *const ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4bSuperclasses[] = {
+  &AArch64::ZPR4RegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_loRegClass,
+  &AArch64::ZPR4_with_zsub1_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_zsub2_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
+  nullptr
+};
+
 static const TargetRegisterClass *const ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bSuperclasses[] = {
   &AArch64::ZPR4RegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_4bRegClass,
@@ -6626,56 +7254,46 @@ static const TargetRegisterClass *const ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_
   nullptr
 };
 
-static const TargetRegisterClass *const ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4bSuperclasses[] = {
-  &AArch64::ZPR4RegClass,
-  &AArch64::ZPR4_with_zsub1_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub2_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_loRegClass,
-  &AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClass,
-  nullptr
-};
-
-static const TargetRegisterClass *const QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loSuperclasses[] = {
+static const TargetRegisterClass *const QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_loSuperclasses[] = {
   &AArch64::QQQQRegClass,
-  &AArch64::QQQQ_with_qsub0_in_FPR128_loRegClass,
+  &AArch64::QQQQ_with_dsub_in_FPR64_loRegClass,
   &AArch64::QQQQ_with_qsub1_in_FPR128_loRegClass,
   &AArch64::QQQQ_with_qsub2_in_FPR128_loRegClass,
   &AArch64::QQQQ_with_qsub3_in_FPR128_loRegClass,
-  &AArch64::QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_loRegClass,
+  &AArch64::QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_loRegClass,
   &AArch64::QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClass,
   &AArch64::QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClass,
-  &AArch64::QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClass,
+  &AArch64::QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClass,
   &AArch64::QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClass,
   nullptr
 };
 
-static const TargetRegisterClass *const ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4bSuperclasses[] = {
+static const TargetRegisterClass *const ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4bSuperclasses[] = {
   &AArch64::ZPR4RegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_loRegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub2_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub3_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_loRegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
   nullptr
 };
 
 static const TargetRegisterClass *const ZPR4_with_zsub0_in_ZPR_3bSuperclasses[] = {
   &AArch64::ZPR4RegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_loRegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub2_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub3_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_loRegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
   nullptr
 };
 
@@ -6704,6 +7322,23 @@ static const TargetRegisterClass *const ZPR4_with_zsub3_in_ZPR_3bSuperclasses[] 
   nullptr
 };
 
+static const TargetRegisterClass *const ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3bSuperclasses[] = {
+  &AArch64::ZPR4RegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_loRegClass,
+  &AArch64::ZPR4_with_zsub1_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_zsub2_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_zsub3_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_zsub0_in_ZPR_3bRegClass,
+  &AArch64::ZPR4_with_zsub1_in_ZPR_3bRegClass,
+  nullptr
+};
+
 static const TargetRegisterClass *const ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3bSuperclasses[] = {
   &AArch64::ZPR4RegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_4bRegClass,
@@ -6727,20 +7362,23 @@ static const TargetRegisterClass *const ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_
   nullptr
 };
 
-static const TargetRegisterClass *const ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3bSuperclasses[] = {
+static const TargetRegisterClass *const ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3bSuperclasses[] = {
   &AArch64::ZPR4RegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_loRegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub2_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub3_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_loRegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub0_in_ZPR_3bRegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_3bRegClass,
+  &AArch64::ZPR4_with_zsub2_in_ZPR_3bRegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3bRegClass,
+  &AArch64::ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3bRegClass,
   nullptr
 };
 
@@ -6760,47 +7398,27 @@ static const TargetRegisterClass *const ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_
   nullptr
 };
 
-static const TargetRegisterClass *const ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3bSuperclasses[] = {
+static const TargetRegisterClass *const ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3bSuperclasses[] = {
   &AArch64::ZPR4RegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_loRegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub2_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub3_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_loRegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub0_in_ZPR_3bRegClass,
-  &AArch64::ZPR4_with_zsub1_in_ZPR_3bRegClass,
-  &AArch64::ZPR4_with_zsub2_in_ZPR_3bRegClass,
-  &AArch64::ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3bRegClass,
-  nullptr
-};
-
-static const TargetRegisterClass *const ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3bSuperclasses[] = {
-  &AArch64::ZPR4RegClass,
-  &AArch64::ZPR4_with_zsub1_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub2_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub3_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_loRegClass,
-  &AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
   &AArch64::ZPR4_with_zsub0_in_ZPR_3bRegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_3bRegClass,
   &AArch64::ZPR4_with_zsub2_in_ZPR_3bRegClass,
   &AArch64::ZPR4_with_zsub3_in_ZPR_3bRegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3bRegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3bRegClass,
   &AArch64::ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3bRegClass,
+  &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3bRegClass,
   &AArch64::ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bRegClass,
-  &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3bRegClass,
   nullptr
 };
 
@@ -7178,6 +7796,18 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
+  extern const TargetRegisterClass FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[FPR64_loRegClassID],
+    FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 26,
+    LaneBitmask(0x00000001),
+    0,
+    false, /* HasDisjunctSubRegs */
+    false, /* CoveredBySubRegs */
+    FPR64_loSuperclasses,
+    nullptr
+  };
+
   extern const TargetRegisterClass GPR64argRegClass = {
     &AArch64MCRegisterClasses[GPR64argRegClassID],
     GPR64argSubClassMask,
@@ -7226,6 +7856,30 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
+  extern const TargetRegisterClass DD_with_dsub0_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DD_with_dsub0_in_FPR64_loRegClassID],
+    DD_with_dsub0_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 95,
+    LaneBitmask(0x00000081),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DD_with_dsub0_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
+  extern const TargetRegisterClass DD_with_dsub1_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DD_with_dsub1_in_FPR64_loRegClassID],
+    DD_with_dsub1_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 95,
+    LaneBitmask(0x00000081),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DD_with_dsub1_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
   extern const TargetRegisterClass XSeqPairsClassRegClass = {
     &AArch64MCRegisterClasses[XSeqPairsClassRegClassID],
     XSeqPairsClassSubClassMask,
@@ -7235,6 +7889,18 @@ namespace AArch64 {   // Register class instances
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
     NullRegClasses,
+    nullptr
+  };
+
+  extern const TargetRegisterClass DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_loRegClassID],
+    DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 95,
+    LaneBitmask(0x00000081),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_loSuperclasses,
     nullptr
   };
 
@@ -7418,6 +8084,78 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
+  extern const TargetRegisterClass DDD_with_dsub0_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DDD_with_dsub0_in_FPR64_loRegClassID],
+    DDD_with_dsub0_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 83,
+    LaneBitmask(0x00000281),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DDD_with_dsub0_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
+  extern const TargetRegisterClass DDD_with_dsub1_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DDD_with_dsub1_in_FPR64_loRegClassID],
+    DDD_with_dsub1_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 83,
+    LaneBitmask(0x00000281),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DDD_with_dsub1_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
+  extern const TargetRegisterClass DDD_with_dsub2_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DDD_with_dsub2_in_FPR64_loRegClassID],
+    DDD_with_dsub2_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 83,
+    LaneBitmask(0x00000281),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DDD_with_dsub2_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
+  extern const TargetRegisterClass DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_loRegClassID],
+    DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 83,
+    LaneBitmask(0x00000281),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
+  extern const TargetRegisterClass DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loRegClassID],
+    DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 83,
+    LaneBitmask(0x00000281),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
+  extern const TargetRegisterClass DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loRegClassID],
+    DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 83,
+    LaneBitmask(0x00000281),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
   extern const TargetRegisterClass DDDDRegClass = {
     &AArch64MCRegisterClasses[DDDDRegClassID],
     DDDDSubClassMask,
@@ -7427,6 +8165,126 @@ namespace AArch64 {   // Register class instances
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
     NullRegClasses,
+    nullptr
+  };
+
+  extern const TargetRegisterClass DDDD_with_dsub0_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DDDD_with_dsub0_in_FPR64_loRegClassID],
+    DDDD_with_dsub0_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 71,
+    LaneBitmask(0x00000381),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DDDD_with_dsub0_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
+  extern const TargetRegisterClass DDDD_with_dsub1_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DDDD_with_dsub1_in_FPR64_loRegClassID],
+    DDDD_with_dsub1_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 71,
+    LaneBitmask(0x00000381),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DDDD_with_dsub1_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
+  extern const TargetRegisterClass DDDD_with_dsub2_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DDDD_with_dsub2_in_FPR64_loRegClassID],
+    DDDD_with_dsub2_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 71,
+    LaneBitmask(0x00000381),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DDDD_with_dsub2_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
+  extern const TargetRegisterClass DDDD_with_dsub3_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DDDD_with_dsub3_in_FPR64_loRegClassID],
+    DDDD_with_dsub3_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 71,
+    LaneBitmask(0x00000381),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DDDD_with_dsub3_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
+  extern const TargetRegisterClass DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_loRegClassID],
+    DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 71,
+    LaneBitmask(0x00000381),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
+  extern const TargetRegisterClass DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClassID],
+    DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 71,
+    LaneBitmask(0x00000381),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
+  extern const TargetRegisterClass DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClassID],
+    DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 71,
+    LaneBitmask(0x00000381),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
+  extern const TargetRegisterClass DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClassID],
+    DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 71,
+    LaneBitmask(0x00000381),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
+  extern const TargetRegisterClass DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClassID],
+    DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 71,
+    LaneBitmask(0x00000381),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
+  extern const TargetRegisterClass DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClassID],
+    DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 71,
+    LaneBitmask(0x00000381),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loSuperclasses,
     nullptr
   };
 
@@ -7454,15 +8312,15 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
-  extern const TargetRegisterClass QQ_with_qsub0_in_FPR128_loRegClass = {
-    &AArch64MCRegisterClasses[QQ_with_qsub0_in_FPR128_loRegClassID],
-    QQ_with_qsub0_in_FPR128_loSubClassMask,
+  extern const TargetRegisterClass QQ_with_dsub_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[QQ_with_dsub_in_FPR64_loRegClassID],
+    QQ_with_dsub_in_FPR64_loSubClassMask,
     SuperRegIdxSeqs + 105,
     LaneBitmask(0x00000401),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
-    QQ_with_qsub0_in_FPR128_loSuperclasses,
+    QQ_with_dsub_in_FPR64_loSuperclasses,
     nullptr
   };
 
@@ -7478,6 +8336,18 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
+  extern const TargetRegisterClass ZPR2_with_dsub_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[ZPR2_with_dsub_in_FPR64_loRegClassID],
+    ZPR2_with_dsub_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 79,
+    LaneBitmask(0x0000C041),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    ZPR2_with_dsub_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
   extern const TargetRegisterClass ZPR2_with_zsub1_in_ZPR_4bRegClass = {
     &AArch64MCRegisterClasses[ZPR2_with_zsub1_in_ZPR_4bRegClassID],
     ZPR2_with_zsub1_in_ZPR_4bSubClassMask,
@@ -7490,39 +8360,27 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
-  extern const TargetRegisterClass ZPR2_with_zsub_in_FPR128_loRegClass = {
-    &AArch64MCRegisterClasses[ZPR2_with_zsub_in_FPR128_loRegClassID],
-    ZPR2_with_zsub_in_FPR128_loSubClassMask,
-    SuperRegIdxSeqs + 79,
-    LaneBitmask(0x0000C041),
-    0,
-    true, /* HasDisjunctSubRegs */
-    true, /* CoveredBySubRegs */
-    ZPR2_with_zsub_in_FPR128_loSuperclasses,
-    nullptr
-  };
-
-  extern const TargetRegisterClass QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_loRegClass = {
-    &AArch64MCRegisterClasses[QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_loRegClassID],
-    QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_loSubClassMask,
+  extern const TargetRegisterClass QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_loRegClass = {
+    &AArch64MCRegisterClasses[QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_loRegClassID],
+    QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_loSubClassMask,
     SuperRegIdxSeqs + 105,
     LaneBitmask(0x00000401),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
-    QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_loSuperclasses,
+    QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_loSuperclasses,
     nullptr
   };
 
-  extern const TargetRegisterClass ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4bRegClass = {
-    &AArch64MCRegisterClasses[ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4bRegClassID],
-    ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4bSubClassMask,
+  extern const TargetRegisterClass ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4bRegClass = {
+    &AArch64MCRegisterClasses[ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4bRegClassID],
+    ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4bSubClassMask,
     SuperRegIdxSeqs + 79,
     LaneBitmask(0x0000C041),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
-    ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4bSuperclasses,
+    ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4bSuperclasses,
     nullptr
   };
 
@@ -7550,15 +8408,15 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
-  extern const TargetRegisterClass ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3bRegClass = {
-    &AArch64MCRegisterClasses[ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3bRegClassID],
-    ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3bSubClassMask,
+  extern const TargetRegisterClass ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3bRegClass = {
+    &AArch64MCRegisterClasses[ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3bRegClassID],
+    ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3bSubClassMask,
     SuperRegIdxSeqs + 79,
     LaneBitmask(0x0000C041),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
-    ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3bSuperclasses,
+    ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3bSuperclasses,
     nullptr
   };
 
@@ -7586,15 +8444,15 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
-  extern const TargetRegisterClass QQQ_with_qsub0_in_FPR128_loRegClass = {
-    &AArch64MCRegisterClasses[QQQ_with_qsub0_in_FPR128_loRegClassID],
-    QQQ_with_qsub0_in_FPR128_loSubClassMask,
+  extern const TargetRegisterClass QQQ_with_dsub_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[QQQ_with_dsub_in_FPR64_loRegClassID],
+    QQQ_with_dsub_in_FPR64_loSubClassMask,
     SuperRegIdxSeqs + 90,
     LaneBitmask(0x00001401),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
-    QQQ_with_qsub0_in_FPR128_loSuperclasses,
+    QQQ_with_dsub_in_FPR64_loSuperclasses,
     nullptr
   };
 
@@ -7622,6 +8480,18 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
+  extern const TargetRegisterClass ZPR3_with_dsub_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[ZPR3_with_dsub_in_FPR64_loRegClassID],
+    ZPR3_with_dsub_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 76,
+    LaneBitmask(0x000CC041),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    ZPR3_with_dsub_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
   extern const TargetRegisterClass ZPR3_with_zsub1_in_ZPR_4bRegClass = {
     &AArch64MCRegisterClasses[ZPR3_with_zsub1_in_ZPR_4bRegClassID],
     ZPR3_with_zsub1_in_ZPR_4bSubClassMask,
@@ -7646,27 +8516,15 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
-  extern const TargetRegisterClass ZPR3_with_zsub_in_FPR128_loRegClass = {
-    &AArch64MCRegisterClasses[ZPR3_with_zsub_in_FPR128_loRegClassID],
-    ZPR3_with_zsub_in_FPR128_loSubClassMask,
-    SuperRegIdxSeqs + 76,
-    LaneBitmask(0x000CC041),
-    0,
-    true, /* HasDisjunctSubRegs */
-    true, /* CoveredBySubRegs */
-    ZPR3_with_zsub_in_FPR128_loSuperclasses,
-    nullptr
-  };
-
-  extern const TargetRegisterClass QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_loRegClass = {
-    &AArch64MCRegisterClasses[QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_loRegClassID],
-    QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_loSubClassMask,
+  extern const TargetRegisterClass QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_loRegClass = {
+    &AArch64MCRegisterClasses[QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_loRegClassID],
+    QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_loSubClassMask,
     SuperRegIdxSeqs + 90,
     LaneBitmask(0x00001401),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
-    QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_loSuperclasses,
+    QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_loSuperclasses,
     nullptr
   };
 
@@ -7682,6 +8540,18 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
+  extern const TargetRegisterClass ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClass = {
+    &AArch64MCRegisterClasses[ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClassID],
+    ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4bSubClassMask,
+    SuperRegIdxSeqs + 76,
+    LaneBitmask(0x000CC041),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4bSuperclasses,
+    nullptr
+  };
+
   extern const TargetRegisterClass ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bRegClass = {
     &AArch64MCRegisterClasses[ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bRegClassID],
     ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bSubClassMask,
@@ -7694,39 +8564,27 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
-  extern const TargetRegisterClass ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClass = {
-    &AArch64MCRegisterClasses[ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClassID],
-    ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4bSubClassMask,
-    SuperRegIdxSeqs + 76,
-    LaneBitmask(0x000CC041),
-    0,
-    true, /* HasDisjunctSubRegs */
-    true, /* CoveredBySubRegs */
-    ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4bSuperclasses,
-    nullptr
-  };
-
-  extern const TargetRegisterClass QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loRegClass = {
-    &AArch64MCRegisterClasses[QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loRegClassID],
-    QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loSubClassMask,
+  extern const TargetRegisterClass QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_loRegClass = {
+    &AArch64MCRegisterClasses[QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_loRegClassID],
+    QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_loSubClassMask,
     SuperRegIdxSeqs + 90,
     LaneBitmask(0x00001401),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
-    QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loSuperclasses,
+    QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_loSuperclasses,
     nullptr
   };
 
-  extern const TargetRegisterClass ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4bRegClass = {
-    &AArch64MCRegisterClasses[ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4bRegClassID],
-    ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4bSubClassMask,
+  extern const TargetRegisterClass ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4bRegClass = {
+    &AArch64MCRegisterClasses[ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4bRegClassID],
+    ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4bSubClassMask,
     SuperRegIdxSeqs + 76,
     LaneBitmask(0x000CC041),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
-    ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4bSuperclasses,
+    ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4bSuperclasses,
     nullptr
   };
 
@@ -7766,6 +8624,18 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
+  extern const TargetRegisterClass ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3bRegClass = {
+    &AArch64MCRegisterClasses[ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3bRegClassID],
+    ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3bSubClassMask,
+    SuperRegIdxSeqs + 76,
+    LaneBitmask(0x000CC041),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3bSuperclasses,
+    nullptr
+  };
+
   extern const TargetRegisterClass ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3bRegClass = {
     &AArch64MCRegisterClasses[ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3bRegClassID],
     ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3bSubClassMask,
@@ -7778,27 +8648,15 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
-  extern const TargetRegisterClass ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3bRegClass = {
-    &AArch64MCRegisterClasses[ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3bRegClassID],
-    ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3bSubClassMask,
+  extern const TargetRegisterClass ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3bRegClass = {
+    &AArch64MCRegisterClasses[ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3bRegClassID],
+    ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3bSubClassMask,
     SuperRegIdxSeqs + 76,
     LaneBitmask(0x000CC041),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
-    ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3bSuperclasses,
-    nullptr
-  };
-
-  extern const TargetRegisterClass ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3bRegClass = {
-    &AArch64MCRegisterClasses[ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3bRegClassID],
-    ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3bSubClassMask,
-    SuperRegIdxSeqs + 76,
-    LaneBitmask(0x000CC041),
-    0,
-    true, /* HasDisjunctSubRegs */
-    true, /* CoveredBySubRegs */
-    ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3bSuperclasses,
+    ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3bSuperclasses,
     nullptr
   };
 
@@ -7826,15 +8684,15 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
-  extern const TargetRegisterClass QQQQ_with_qsub0_in_FPR128_loRegClass = {
-    &AArch64MCRegisterClasses[QQQQ_with_qsub0_in_FPR128_loRegClassID],
-    QQQQ_with_qsub0_in_FPR128_loSubClassMask,
+  extern const TargetRegisterClass QQQQ_with_dsub_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[QQQQ_with_dsub_in_FPR64_loRegClassID],
+    QQQQ_with_dsub_in_FPR64_loSubClassMask,
     SuperRegIdxSeqs + 74,
     LaneBitmask(0x00001C01),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
-    QQQQ_with_qsub0_in_FPR128_loSuperclasses,
+    QQQQ_with_dsub_in_FPR64_loSuperclasses,
     nullptr
   };
 
@@ -7874,6 +8732,18 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
+  extern const TargetRegisterClass ZPR4_with_dsub_in_FPR64_loRegClass = {
+    &AArch64MCRegisterClasses[ZPR4_with_dsub_in_FPR64_loRegClassID],
+    ZPR4_with_dsub_in_FPR64_loSubClassMask,
+    SuperRegIdxSeqs + 1,
+    LaneBitmask(0x000FC041),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    ZPR4_with_dsub_in_FPR64_loSuperclasses,
+    nullptr
+  };
+
   extern const TargetRegisterClass ZPR4_with_zsub1_in_ZPR_4bRegClass = {
     &AArch64MCRegisterClasses[ZPR4_with_zsub1_in_ZPR_4bRegClassID],
     ZPR4_with_zsub1_in_ZPR_4bSubClassMask,
@@ -7910,27 +8780,15 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
-  extern const TargetRegisterClass ZPR4_with_zsub_in_FPR128_loRegClass = {
-    &AArch64MCRegisterClasses[ZPR4_with_zsub_in_FPR128_loRegClassID],
-    ZPR4_with_zsub_in_FPR128_loSubClassMask,
-    SuperRegIdxSeqs + 1,
-    LaneBitmask(0x000FC041),
-    0,
-    true, /* HasDisjunctSubRegs */
-    true, /* CoveredBySubRegs */
-    ZPR4_with_zsub_in_FPR128_loSuperclasses,
-    nullptr
-  };
-
-  extern const TargetRegisterClass QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_loRegClass = {
-    &AArch64MCRegisterClasses[QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_loRegClassID],
-    QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_loSubClassMask,
+  extern const TargetRegisterClass QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_loRegClass = {
+    &AArch64MCRegisterClasses[QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_loRegClassID],
+    QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_loSubClassMask,
     SuperRegIdxSeqs + 74,
     LaneBitmask(0x00001C01),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
-    QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_loSuperclasses,
+    QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_loSuperclasses,
     nullptr
   };
 
@@ -7958,6 +8816,18 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
+  extern const TargetRegisterClass ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClass = {
+    &AArch64MCRegisterClasses[ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClassID],
+    ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bSubClassMask,
+    SuperRegIdxSeqs + 1,
+    LaneBitmask(0x000FC041),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bSuperclasses,
+    nullptr
+  };
+
   extern const TargetRegisterClass ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bRegClass = {
     &AArch64MCRegisterClasses[ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bRegClassID],
     ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bSubClassMask,
@@ -7982,27 +8852,15 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
-  extern const TargetRegisterClass ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClass = {
-    &AArch64MCRegisterClasses[ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClassID],
-    ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bSubClassMask,
-    SuperRegIdxSeqs + 1,
-    LaneBitmask(0x000FC041),
-    0,
-    true, /* HasDisjunctSubRegs */
-    true, /* CoveredBySubRegs */
-    ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bSuperclasses,
-    nullptr
-  };
-
-  extern const TargetRegisterClass QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClass = {
-    &AArch64MCRegisterClasses[QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClassID],
-    QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loSubClassMask,
+  extern const TargetRegisterClass QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClass = {
+    &AArch64MCRegisterClasses[QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClassID],
+    QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_loSubClassMask,
     SuperRegIdxSeqs + 74,
     LaneBitmask(0x00001C01),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
-    QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loSuperclasses,
+    QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_loSuperclasses,
     nullptr
   };
 
@@ -8018,6 +8876,18 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
+  extern const TargetRegisterClass ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClass = {
+    &AArch64MCRegisterClasses[ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClassID],
+    ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4bSubClassMask,
+    SuperRegIdxSeqs + 1,
+    LaneBitmask(0x000FC041),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4bSuperclasses,
+    nullptr
+  };
+
   extern const TargetRegisterClass ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClass = {
     &AArch64MCRegisterClasses[ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClassID],
     ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bSubClassMask,
@@ -8030,39 +8900,27 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
-  extern const TargetRegisterClass ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClass = {
-    &AArch64MCRegisterClasses[ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClassID],
-    ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4bSubClassMask,
-    SuperRegIdxSeqs + 1,
-    LaneBitmask(0x000FC041),
-    0,
-    true, /* HasDisjunctSubRegs */
-    true, /* CoveredBySubRegs */
-    ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4bSuperclasses,
-    nullptr
-  };
-
-  extern const TargetRegisterClass QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClass = {
-    &AArch64MCRegisterClasses[QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClassID],
-    QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loSubClassMask,
+  extern const TargetRegisterClass QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClass = {
+    &AArch64MCRegisterClasses[QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClassID],
+    QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_loSubClassMask,
     SuperRegIdxSeqs + 74,
     LaneBitmask(0x00001C01),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
-    QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loSuperclasses,
+    QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_loSuperclasses,
     nullptr
   };
 
-  extern const TargetRegisterClass ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClass = {
-    &AArch64MCRegisterClasses[ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClassID],
-    ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4bSubClassMask,
+  extern const TargetRegisterClass ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClass = {
+    &AArch64MCRegisterClasses[ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClassID],
+    ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4bSubClassMask,
     SuperRegIdxSeqs + 1,
     LaneBitmask(0x000FC041),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
-    ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4bSuperclasses,
+    ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4bSuperclasses,
     nullptr
   };
 
@@ -8114,6 +8972,18 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
+  extern const TargetRegisterClass ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3bRegClass = {
+    &AArch64MCRegisterClasses[ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3bRegClassID],
+    ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3bSubClassMask,
+    SuperRegIdxSeqs + 1,
+    LaneBitmask(0x000FC041),
+    0,
+    true, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3bSuperclasses,
+    nullptr
+  };
+
   extern const TargetRegisterClass ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3bRegClass = {
     &AArch64MCRegisterClasses[ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3bRegClassID],
     ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3bSubClassMask,
@@ -8138,15 +9008,15 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
-  extern const TargetRegisterClass ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3bRegClass = {
-    &AArch64MCRegisterClasses[ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3bRegClassID],
-    ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3bSubClassMask,
+  extern const TargetRegisterClass ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3bRegClass = {
+    &AArch64MCRegisterClasses[ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3bRegClassID],
+    ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3bSubClassMask,
     SuperRegIdxSeqs + 1,
     LaneBitmask(0x000FC041),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
-    ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3bSuperclasses,
+    ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3bSuperclasses,
     nullptr
   };
 
@@ -8162,27 +9032,15 @@ namespace AArch64 {   // Register class instances
     nullptr
   };
 
-  extern const TargetRegisterClass ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3bRegClass = {
-    &AArch64MCRegisterClasses[ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3bRegClassID],
-    ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3bSubClassMask,
+  extern const TargetRegisterClass ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3bRegClass = {
+    &AArch64MCRegisterClasses[ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3bRegClassID],
+    ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3bSubClassMask,
     SuperRegIdxSeqs + 1,
     LaneBitmask(0x000FC041),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
-    ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3bSuperclasses,
-    nullptr
-  };
-
-  extern const TargetRegisterClass ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3bRegClass = {
-    &AArch64MCRegisterClasses[ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3bRegClassID],
-    ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3bSubClassMask,
-    SuperRegIdxSeqs + 1,
-    LaneBitmask(0x000FC041),
-    0,
-    true, /* HasDisjunctSubRegs */
-    true, /* CoveredBySubRegs */
-    ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3bSuperclasses,
+    ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3bSuperclasses,
     nullptr
   };
 
@@ -8214,11 +9072,15 @@ namespace {
     &AArch64::GPR64common_and_GPR64noipRegClass,
     &AArch64::tcGPR64RegClass,
     &AArch64::GPR64noip_and_tcGPR64RegClass,
+    &AArch64::FPR64_loRegClass,
     &AArch64::GPR64argRegClass,
     &AArch64::rtcGPR64RegClass,
     &AArch64::GPR64sponlyRegClass,
     &AArch64::DDRegClass,
+    &AArch64::DD_with_dsub0_in_FPR64_loRegClass,
+    &AArch64::DD_with_dsub1_in_FPR64_loRegClass,
     &AArch64::XSeqPairsClassRegClass,
+    &AArch64::DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_loRegClass,
     &AArch64::XSeqPairsClass_with_subo64_in_GPR64commonRegClass,
     &AArch64::XSeqPairsClass_with_subo64_in_GPR64noipRegClass,
     &AArch64::XSeqPairsClass_with_sube64_in_GPR64noipRegClass,
@@ -8234,70 +9096,86 @@ namespace {
     &AArch64::ZPR_4bRegClass,
     &AArch64::ZPR_3bRegClass,
     &AArch64::DDDRegClass,
+    &AArch64::DDD_with_dsub0_in_FPR64_loRegClass,
+    &AArch64::DDD_with_dsub1_in_FPR64_loRegClass,
+    &AArch64::DDD_with_dsub2_in_FPR64_loRegClass,
+    &AArch64::DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_loRegClass,
+    &AArch64::DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loRegClass,
+    &AArch64::DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loRegClass,
     &AArch64::DDDDRegClass,
+    &AArch64::DDDD_with_dsub0_in_FPR64_loRegClass,
+    &AArch64::DDDD_with_dsub1_in_FPR64_loRegClass,
+    &AArch64::DDDD_with_dsub2_in_FPR64_loRegClass,
+    &AArch64::DDDD_with_dsub3_in_FPR64_loRegClass,
+    &AArch64::DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_loRegClass,
+    &AArch64::DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClass,
+    &AArch64::DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClass,
+    &AArch64::DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClass,
+    &AArch64::DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClass,
+    &AArch64::DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClass,
     &AArch64::QQRegClass,
     &AArch64::ZPR2RegClass,
-    &AArch64::QQ_with_qsub0_in_FPR128_loRegClass,
+    &AArch64::QQ_with_dsub_in_FPR64_loRegClass,
     &AArch64::QQ_with_qsub1_in_FPR128_loRegClass,
+    &AArch64::ZPR2_with_dsub_in_FPR64_loRegClass,
     &AArch64::ZPR2_with_zsub1_in_ZPR_4bRegClass,
-    &AArch64::ZPR2_with_zsub_in_FPR128_loRegClass,
-    &AArch64::QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_loRegClass,
-    &AArch64::ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4bRegClass,
+    &AArch64::QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_loRegClass,
+    &AArch64::ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4bRegClass,
     &AArch64::ZPR2_with_zsub0_in_ZPR_3bRegClass,
     &AArch64::ZPR2_with_zsub1_in_ZPR_3bRegClass,
-    &AArch64::ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3bRegClass,
+    &AArch64::ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3bRegClass,
     &AArch64::QQQRegClass,
     &AArch64::ZPR3RegClass,
-    &AArch64::QQQ_with_qsub0_in_FPR128_loRegClass,
+    &AArch64::QQQ_with_dsub_in_FPR64_loRegClass,
     &AArch64::QQQ_with_qsub1_in_FPR128_loRegClass,
     &AArch64::QQQ_with_qsub2_in_FPR128_loRegClass,
+    &AArch64::ZPR3_with_dsub_in_FPR64_loRegClass,
     &AArch64::ZPR3_with_zsub1_in_ZPR_4bRegClass,
     &AArch64::ZPR3_with_zsub2_in_ZPR_4bRegClass,
-    &AArch64::ZPR3_with_zsub_in_FPR128_loRegClass,
-    &AArch64::QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_loRegClass,
+    &AArch64::QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_loRegClass,
     &AArch64::QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loRegClass,
+    &AArch64::ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClass,
     &AArch64::ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4bRegClass,
-    &AArch64::ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4bRegClass,
-    &AArch64::QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loRegClass,
-    &AArch64::ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4bRegClass,
+    &AArch64::QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_loRegClass,
+    &AArch64::ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4bRegClass,
     &AArch64::ZPR3_with_zsub0_in_ZPR_3bRegClass,
     &AArch64::ZPR3_with_zsub1_in_ZPR_3bRegClass,
     &AArch64::ZPR3_with_zsub2_in_ZPR_3bRegClass,
+    &AArch64::ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3bRegClass,
     &AArch64::ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3bRegClass,
-    &AArch64::ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3bRegClass,
-    &AArch64::ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3bRegClass,
+    &AArch64::ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3bRegClass,
     &AArch64::QQQQRegClass,
     &AArch64::ZPR4RegClass,
-    &AArch64::QQQQ_with_qsub0_in_FPR128_loRegClass,
+    &AArch64::QQQQ_with_dsub_in_FPR64_loRegClass,
     &AArch64::QQQQ_with_qsub1_in_FPR128_loRegClass,
     &AArch64::QQQQ_with_qsub2_in_FPR128_loRegClass,
     &AArch64::QQQQ_with_qsub3_in_FPR128_loRegClass,
+    &AArch64::ZPR4_with_dsub_in_FPR64_loRegClass,
     &AArch64::ZPR4_with_zsub1_in_ZPR_4bRegClass,
     &AArch64::ZPR4_with_zsub2_in_ZPR_4bRegClass,
     &AArch64::ZPR4_with_zsub3_in_ZPR_4bRegClass,
-    &AArch64::ZPR4_with_zsub_in_FPR128_loRegClass,
-    &AArch64::QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_loRegClass,
+    &AArch64::QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_loRegClass,
     &AArch64::QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClass,
     &AArch64::QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClass,
+    &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClass,
     &AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
     &AArch64::ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
-    &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4bRegClass,
-    &AArch64::QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClass,
+    &AArch64::QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_loRegClass,
     &AArch64::QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClass,
+    &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
     &AArch64::ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
-    &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4bRegClass,
-    &AArch64::QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClass,
-    &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
+    &AArch64::QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClass,
+    &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4bRegClass,
     &AArch64::ZPR4_with_zsub0_in_ZPR_3bRegClass,
     &AArch64::ZPR4_with_zsub1_in_ZPR_3bRegClass,
     &AArch64::ZPR4_with_zsub2_in_ZPR_3bRegClass,
     &AArch64::ZPR4_with_zsub3_in_ZPR_3bRegClass,
+    &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3bRegClass,
     &AArch64::ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3bRegClass,
     &AArch64::ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bRegClass,
-    &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3bRegClass,
+    &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3bRegClass,
     &AArch64::ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3bRegClass,
-    &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3bRegClass,
-    &AArch64::ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3bRegClass,
+    &AArch64::ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3bRegClass,
   };
 } // end anonymous namespace
 
@@ -9143,7 +10021,7 @@ LaneBitmask AArch64GenRegisterInfo::reverseComposeSubRegIndexLaneMaskImpl(unsign
 }
 
 const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const TargetRegisterClass *RC, unsigned Idx) const {
-  static const uint8_t Table[108][99] = {
+  static const uint8_t Table[128][99] = {
     {	// FPR8
       0,	// bsub
       0,	// dsub
@@ -11568,6 +12446,107 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
+    {	// FPR64_lo
+      25,	// bsub -> FPR64_lo
+      0,	// dsub
+      0,	// dsub0
+      0,	// dsub1
+      0,	// dsub2
+      0,	// dsub3
+      25,	// hsub -> FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      25,	// ssub -> FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      0,	// dsub1_then_bsub
+      0,	// dsub1_then_hsub
+      0,	// dsub1_then_ssub
+      0,	// dsub3_then_bsub
+      0,	// dsub3_then_hsub
+      0,	// dsub3_then_ssub
+      0,	// dsub2_then_bsub
+      0,	// dsub2_then_hsub
+      0,	// dsub2_then_ssub
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      0,	// dsub0_dsub1
+      0,	// dsub0_dsub1_dsub2
+      0,	// dsub1_dsub2
+      0,	// dsub1_dsub2_dsub3
+      0,	// dsub2_dsub3
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
     {	// GPR64arg
       0,	// bsub
       0,	// dsub
@@ -11583,7 +12562,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2
       0,	// qsub3
       0,	// ssub
-      25,	// sub_32 -> GPR64arg
+      26,	// sub_32 -> GPR64arg
       0,	// sube32
       0,	// sube64
       0,	// subo32
@@ -11684,7 +12663,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2
       0,	// qsub3
       0,	// ssub
-      26,	// sub_32 -> rtcGPR64
+      27,	// sub_32 -> rtcGPR64
       0,	// sube32
       0,	// sube64
       0,	// subo32
@@ -11785,7 +12764,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2
       0,	// qsub3
       0,	// ssub
-      27,	// sub_32 -> GPR64sponly
+      28,	// sub_32 -> GPR64sponly
       0,	// sube32
       0,	// sube64
       0,	// subo32
@@ -11872,20 +12851,20 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// DD
-      28,	// bsub -> DD
+      29,	// bsub -> DD
       0,	// dsub
-      28,	// dsub0 -> DD
-      28,	// dsub1 -> DD
+      29,	// dsub0 -> DD
+      29,	// dsub1 -> DD
       0,	// dsub2
       0,	// dsub3
-      28,	// hsub -> DD
+      29,	// hsub -> DD
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      28,	// ssub -> DD
+      29,	// ssub -> DD
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -11897,9 +12876,211 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2
       0,	// zsub3
       0,	// zsub_hi
-      28,	// dsub1_then_bsub -> DD
-      28,	// dsub1_then_hsub -> DD
-      28,	// dsub1_then_ssub -> DD
+      29,	// dsub1_then_bsub -> DD
+      29,	// dsub1_then_hsub -> DD
+      29,	// dsub1_then_ssub -> DD
+      0,	// dsub3_then_bsub
+      0,	// dsub3_then_hsub
+      0,	// dsub3_then_ssub
+      0,	// dsub2_then_bsub
+      0,	// dsub2_then_hsub
+      0,	// dsub2_then_ssub
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      0,	// dsub0_dsub1
+      0,	// dsub0_dsub1_dsub2
+      0,	// dsub1_dsub2
+      0,	// dsub1_dsub2_dsub3
+      0,	// dsub2_dsub3
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DD_with_dsub0_in_FPR64_lo
+      30,	// bsub -> DD_with_dsub0_in_FPR64_lo
+      0,	// dsub
+      30,	// dsub0 -> DD_with_dsub0_in_FPR64_lo
+      30,	// dsub1 -> DD_with_dsub0_in_FPR64_lo
+      0,	// dsub2
+      0,	// dsub3
+      30,	// hsub -> DD_with_dsub0_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      30,	// ssub -> DD_with_dsub0_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      30,	// dsub1_then_bsub -> DD_with_dsub0_in_FPR64_lo
+      30,	// dsub1_then_hsub -> DD_with_dsub0_in_FPR64_lo
+      30,	// dsub1_then_ssub -> DD_with_dsub0_in_FPR64_lo
+      0,	// dsub3_then_bsub
+      0,	// dsub3_then_hsub
+      0,	// dsub3_then_ssub
+      0,	// dsub2_then_bsub
+      0,	// dsub2_then_hsub
+      0,	// dsub2_then_ssub
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      0,	// dsub0_dsub1
+      0,	// dsub0_dsub1_dsub2
+      0,	// dsub1_dsub2
+      0,	// dsub1_dsub2_dsub3
+      0,	// dsub2_dsub3
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DD_with_dsub1_in_FPR64_lo
+      31,	// bsub -> DD_with_dsub1_in_FPR64_lo
+      0,	// dsub
+      31,	// dsub0 -> DD_with_dsub1_in_FPR64_lo
+      31,	// dsub1 -> DD_with_dsub1_in_FPR64_lo
+      0,	// dsub2
+      0,	// dsub3
+      31,	// hsub -> DD_with_dsub1_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      31,	// ssub -> DD_with_dsub1_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      31,	// dsub1_then_bsub -> DD_with_dsub1_in_FPR64_lo
+      31,	// dsub1_then_hsub -> DD_with_dsub1_in_FPR64_lo
+      31,	// dsub1_then_ssub -> DD_with_dsub1_in_FPR64_lo
       0,	// dsub3_then_bsub
       0,	// dsub3_then_hsub
       0,	// dsub3_then_ssub
@@ -11987,11 +13168,11 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2
       0,	// qsub3
       0,	// ssub
-      29,	// sub_32 -> XSeqPairsClass
+      32,	// sub_32 -> XSeqPairsClass
       0,	// sube32
-      29,	// sube64 -> XSeqPairsClass
+      32,	// sube64 -> XSeqPairsClass
       0,	// subo32
-      29,	// subo64 -> XSeqPairsClass
+      32,	// subo64 -> XSeqPairsClass
       0,	// zsub
       0,	// zsub0
       0,	// zsub1
@@ -12019,7 +13200,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_dsub
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
-      29,	// subo64_then_sub_32 -> XSeqPairsClass
+      32,	// subo64_then_sub_32 -> XSeqPairsClass
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
       0,	// zsub1_then_hsub
@@ -12054,7 +13235,108 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
-      29,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass
+      32,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_lo
+      33,	// bsub -> DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_lo
+      0,	// dsub
+      33,	// dsub0 -> DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_lo
+      33,	// dsub1 -> DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_lo
+      0,	// dsub2
+      0,	// dsub3
+      33,	// hsub -> DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      33,	// ssub -> DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      33,	// dsub1_then_bsub -> DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_lo
+      33,	// dsub1_then_hsub -> DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_lo
+      33,	// dsub1_then_ssub -> DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_lo
+      0,	// dsub3_then_bsub
+      0,	// dsub3_then_hsub
+      0,	// dsub3_then_ssub
+      0,	// dsub2_then_bsub
+      0,	// dsub2_then_hsub
+      0,	// dsub2_then_ssub
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      0,	// dsub0_dsub1
+      0,	// dsub0_dsub1_dsub2
+      0,	// dsub1_dsub2
+      0,	// dsub1_dsub2_dsub3
+      0,	// dsub2_dsub3
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
@@ -12088,11 +13370,11 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2
       0,	// qsub3
       0,	// ssub
-      30,	// sub_32 -> XSeqPairsClass_with_subo64_in_GPR64common
+      34,	// sub_32 -> XSeqPairsClass_with_subo64_in_GPR64common
       0,	// sube32
-      30,	// sube64 -> XSeqPairsClass_with_subo64_in_GPR64common
+      34,	// sube64 -> XSeqPairsClass_with_subo64_in_GPR64common
       0,	// subo32
-      30,	// subo64 -> XSeqPairsClass_with_subo64_in_GPR64common
+      34,	// subo64 -> XSeqPairsClass_with_subo64_in_GPR64common
       0,	// zsub
       0,	// zsub0
       0,	// zsub1
@@ -12120,7 +13402,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_dsub
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
-      30,	// subo64_then_sub_32 -> XSeqPairsClass_with_subo64_in_GPR64common
+      34,	// subo64_then_sub_32 -> XSeqPairsClass_with_subo64_in_GPR64common
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
       0,	// zsub1_then_hsub
@@ -12155,7 +13437,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
-      30,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass_with_subo64_in_GPR64common
+      34,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass_with_subo64_in_GPR64common
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
@@ -12189,11 +13471,11 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2
       0,	// qsub3
       0,	// ssub
-      31,	// sub_32 -> XSeqPairsClass_with_subo64_in_GPR64noip
+      35,	// sub_32 -> XSeqPairsClass_with_subo64_in_GPR64noip
       0,	// sube32
-      31,	// sube64 -> XSeqPairsClass_with_subo64_in_GPR64noip
+      35,	// sube64 -> XSeqPairsClass_with_subo64_in_GPR64noip
       0,	// subo32
-      31,	// subo64 -> XSeqPairsClass_with_subo64_in_GPR64noip
+      35,	// subo64 -> XSeqPairsClass_with_subo64_in_GPR64noip
       0,	// zsub
       0,	// zsub0
       0,	// zsub1
@@ -12221,7 +13503,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_dsub
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
-      31,	// subo64_then_sub_32 -> XSeqPairsClass_with_subo64_in_GPR64noip
+      35,	// subo64_then_sub_32 -> XSeqPairsClass_with_subo64_in_GPR64noip
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
       0,	// zsub1_then_hsub
@@ -12256,7 +13538,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
-      31,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass_with_subo64_in_GPR64noip
+      35,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass_with_subo64_in_GPR64noip
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
@@ -12290,11 +13572,11 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2
       0,	// qsub3
       0,	// ssub
-      32,	// sub_32 -> XSeqPairsClass_with_sube64_in_GPR64noip
+      36,	// sub_32 -> XSeqPairsClass_with_sube64_in_GPR64noip
       0,	// sube32
-      32,	// sube64 -> XSeqPairsClass_with_sube64_in_GPR64noip
+      36,	// sube64 -> XSeqPairsClass_with_sube64_in_GPR64noip
       0,	// subo32
-      32,	// subo64 -> XSeqPairsClass_with_sube64_in_GPR64noip
+      36,	// subo64 -> XSeqPairsClass_with_sube64_in_GPR64noip
       0,	// zsub
       0,	// zsub0
       0,	// zsub1
@@ -12322,7 +13604,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_dsub
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
-      32,	// subo64_then_sub_32 -> XSeqPairsClass_with_sube64_in_GPR64noip
+      36,	// subo64_then_sub_32 -> XSeqPairsClass_with_sube64_in_GPR64noip
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
       0,	// zsub1_then_hsub
@@ -12357,7 +13639,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
-      32,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass_with_sube64_in_GPR64noip
+      36,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass_with_sube64_in_GPR64noip
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
@@ -12391,11 +13673,11 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2
       0,	// qsub3
       0,	// ssub
-      33,	// sub_32 -> XSeqPairsClass_with_sube64_in_tcGPR64
+      37,	// sub_32 -> XSeqPairsClass_with_sube64_in_tcGPR64
       0,	// sube32
-      33,	// sube64 -> XSeqPairsClass_with_sube64_in_tcGPR64
+      37,	// sube64 -> XSeqPairsClass_with_sube64_in_tcGPR64
       0,	// subo32
-      33,	// subo64 -> XSeqPairsClass_with_sube64_in_tcGPR64
+      37,	// subo64 -> XSeqPairsClass_with_sube64_in_tcGPR64
       0,	// zsub
       0,	// zsub0
       0,	// zsub1
@@ -12423,7 +13705,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_dsub
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
-      33,	// subo64_then_sub_32 -> XSeqPairsClass_with_sube64_in_tcGPR64
+      37,	// subo64_then_sub_32 -> XSeqPairsClass_with_sube64_in_tcGPR64
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
       0,	// zsub1_then_hsub
@@ -12458,7 +13740,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
-      33,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass_with_sube64_in_tcGPR64
+      37,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass_with_sube64_in_tcGPR64
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
@@ -12492,11 +13774,11 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2
       0,	// qsub3
       0,	// ssub
-      34,	// sub_32 -> XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64
+      38,	// sub_32 -> XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64
       0,	// sube32
-      34,	// sube64 -> XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64
+      38,	// sube64 -> XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64
       0,	// subo32
-      34,	// subo64 -> XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64
+      38,	// subo64 -> XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64
       0,	// zsub
       0,	// zsub0
       0,	// zsub1
@@ -12524,7 +13806,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_dsub
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
-      34,	// subo64_then_sub_32 -> XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64
+      38,	// subo64_then_sub_32 -> XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
       0,	// zsub1_then_hsub
@@ -12559,7 +13841,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
-      34,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64
+      38,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass_with_sube64_in_GPR64noip_and_tcGPR64
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
@@ -12593,11 +13875,11 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2
       0,	// qsub3
       0,	// ssub
-      35,	// sub_32 -> XSeqPairsClass_with_subo64_in_tcGPR64
+      39,	// sub_32 -> XSeqPairsClass_with_subo64_in_tcGPR64
       0,	// sube32
-      35,	// sube64 -> XSeqPairsClass_with_subo64_in_tcGPR64
+      39,	// sube64 -> XSeqPairsClass_with_subo64_in_tcGPR64
       0,	// subo32
-      35,	// subo64 -> XSeqPairsClass_with_subo64_in_tcGPR64
+      39,	// subo64 -> XSeqPairsClass_with_subo64_in_tcGPR64
       0,	// zsub
       0,	// zsub0
       0,	// zsub1
@@ -12625,7 +13907,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_dsub
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
-      35,	// subo64_then_sub_32 -> XSeqPairsClass_with_subo64_in_tcGPR64
+      39,	// subo64_then_sub_32 -> XSeqPairsClass_with_subo64_in_tcGPR64
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
       0,	// zsub1_then_hsub
@@ -12660,7 +13942,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
-      35,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass_with_subo64_in_tcGPR64
+      39,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass_with_subo64_in_tcGPR64
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
@@ -12694,11 +13976,11 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2
       0,	// qsub3
       0,	// ssub
-      36,	// sub_32 -> XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64
+      40,	// sub_32 -> XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64
       0,	// sube32
-      36,	// sube64 -> XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64
+      40,	// sube64 -> XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64
       0,	// subo32
-      36,	// subo64 -> XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64
+      40,	// subo64 -> XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64
       0,	// zsub
       0,	// zsub0
       0,	// zsub1
@@ -12726,7 +14008,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_dsub
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
-      36,	// subo64_then_sub_32 -> XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64
+      40,	// subo64_then_sub_32 -> XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
       0,	// zsub1_then_hsub
@@ -12761,7 +14043,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
-      36,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64
+      40,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass_with_subo64_in_GPR64noip_and_tcGPR64
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
@@ -12795,11 +14077,11 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2
       0,	// qsub3
       0,	// ssub
-      37,	// sub_32 -> XSeqPairsClass_with_sub_32_in_GPR32arg
+      41,	// sub_32 -> XSeqPairsClass_with_sub_32_in_GPR32arg
       0,	// sube32
-      37,	// sube64 -> XSeqPairsClass_with_sub_32_in_GPR32arg
+      41,	// sube64 -> XSeqPairsClass_with_sub_32_in_GPR32arg
       0,	// subo32
-      37,	// subo64 -> XSeqPairsClass_with_sub_32_in_GPR32arg
+      41,	// subo64 -> XSeqPairsClass_with_sub_32_in_GPR32arg
       0,	// zsub
       0,	// zsub0
       0,	// zsub1
@@ -12827,7 +14109,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_dsub
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
-      37,	// subo64_then_sub_32 -> XSeqPairsClass_with_sub_32_in_GPR32arg
+      41,	// subo64_then_sub_32 -> XSeqPairsClass_with_sub_32_in_GPR32arg
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
       0,	// zsub1_then_hsub
@@ -12862,7 +14144,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
-      37,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass_with_sub_32_in_GPR32arg
+      41,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass_with_sub_32_in_GPR32arg
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
@@ -12896,11 +14178,11 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2
       0,	// qsub3
       0,	// ssub
-      38,	// sub_32 -> XSeqPairsClass_with_sube64_in_rtcGPR64
+      42,	// sub_32 -> XSeqPairsClass_with_sube64_in_rtcGPR64
       0,	// sube32
-      38,	// sube64 -> XSeqPairsClass_with_sube64_in_rtcGPR64
+      42,	// sube64 -> XSeqPairsClass_with_sube64_in_rtcGPR64
       0,	// subo32
-      38,	// subo64 -> XSeqPairsClass_with_sube64_in_rtcGPR64
+      42,	// subo64 -> XSeqPairsClass_with_sube64_in_rtcGPR64
       0,	// zsub
       0,	// zsub0
       0,	// zsub1
@@ -12928,7 +14210,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_dsub
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
-      38,	// subo64_then_sub_32 -> XSeqPairsClass_with_sube64_in_rtcGPR64
+      42,	// subo64_then_sub_32 -> XSeqPairsClass_with_sube64_in_rtcGPR64
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
       0,	// zsub1_then_hsub
@@ -12963,7 +14245,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
-      38,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass_with_sube64_in_rtcGPR64
+      42,	// sub_32_subo64_then_sub_32 -> XSeqPairsClass_with_sube64_in_rtcGPR64
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
@@ -12983,20 +14265,20 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// FPR128
-      39,	// bsub -> FPR128
-      39,	// dsub -> FPR128
+      43,	// bsub -> FPR128
+      43,	// dsub -> FPR128
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      39,	// hsub -> FPR128
+      43,	// hsub -> FPR128
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      39,	// ssub -> FPR128
+      43,	// ssub -> FPR128
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -13084,31 +14366,31 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// ZPR
-      40,	// bsub -> ZPR
-      40,	// dsub -> ZPR
+      44,	// bsub -> ZPR
+      44,	// dsub -> ZPR
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      40,	// hsub -> ZPR
+      44,	// hsub -> ZPR
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      40,	// ssub -> ZPR
+      44,	// ssub -> ZPR
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      40,	// zsub -> ZPR
+      44,	// zsub -> ZPR
       0,	// zsub0
       0,	// zsub1
       0,	// zsub2
       0,	// zsub3
-      40,	// zsub_hi -> ZPR
+      44,	// zsub_hi -> ZPR
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -13185,20 +14467,20 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// FPR128_lo
-      41,	// bsub -> FPR128_lo
-      41,	// dsub -> FPR128_lo
+      45,	// bsub -> FPR128_lo
+      45,	// dsub -> FPR128_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      41,	// hsub -> FPR128_lo
+      45,	// hsub -> FPR128_lo
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      41,	// ssub -> FPR128_lo
+      45,	// ssub -> FPR128_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -13286,31 +14568,31 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// ZPR_4b
-      42,	// bsub -> ZPR_4b
-      42,	// dsub -> ZPR_4b
+      46,	// bsub -> ZPR_4b
+      46,	// dsub -> ZPR_4b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      42,	// hsub -> ZPR_4b
+      46,	// hsub -> ZPR_4b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      42,	// ssub -> ZPR_4b
+      46,	// ssub -> ZPR_4b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      42,	// zsub -> ZPR_4b
+      46,	// zsub -> ZPR_4b
       0,	// zsub0
       0,	// zsub1
       0,	// zsub2
       0,	// zsub3
-      42,	// zsub_hi -> ZPR_4b
+      46,	// zsub_hi -> ZPR_4b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -13387,31 +14669,31 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// ZPR_3b
-      43,	// bsub -> ZPR_3b
-      43,	// dsub -> ZPR_3b
+      47,	// bsub -> ZPR_3b
+      47,	// dsub -> ZPR_3b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      43,	// hsub -> ZPR_3b
+      47,	// hsub -> ZPR_3b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      43,	// ssub -> ZPR_3b
+      47,	// ssub -> ZPR_3b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      43,	// zsub -> ZPR_3b
+      47,	// zsub -> ZPR_3b
       0,	// zsub0
       0,	// zsub1
       0,	// zsub2
       0,	// zsub3
-      43,	// zsub_hi -> ZPR_3b
+      47,	// zsub_hi -> ZPR_3b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -13488,20 +14770,20 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// DDD
-      44,	// bsub -> DDD
+      48,	// bsub -> DDD
       0,	// dsub
-      44,	// dsub0 -> DDD
-      44,	// dsub1 -> DDD
-      44,	// dsub2 -> DDD
+      48,	// dsub0 -> DDD
+      48,	// dsub1 -> DDD
+      48,	// dsub2 -> DDD
       0,	// dsub3
-      44,	// hsub -> DDD
+      48,	// hsub -> DDD
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      44,	// ssub -> DDD
+      48,	// ssub -> DDD
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -13513,15 +14795,15 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2
       0,	// zsub3
       0,	// zsub_hi
-      44,	// dsub1_then_bsub -> DDD
-      44,	// dsub1_then_hsub -> DDD
-      44,	// dsub1_then_ssub -> DDD
+      48,	// dsub1_then_bsub -> DDD
+      48,	// dsub1_then_hsub -> DDD
+      48,	// dsub1_then_ssub -> DDD
       0,	// dsub3_then_bsub
       0,	// dsub3_then_hsub
       0,	// dsub3_then_ssub
-      44,	// dsub2_then_bsub -> DDD
-      44,	// dsub2_then_hsub -> DDD
-      44,	// dsub2_then_ssub -> DDD
+      48,	// dsub2_then_bsub -> DDD
+      48,	// dsub2_then_hsub -> DDD
+      48,	// dsub2_then_ssub -> DDD
       0,	// qsub1_then_bsub
       0,	// qsub1_then_dsub
       0,	// qsub1_then_hsub
@@ -13553,9 +14835,615 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_ssub
       0,	// zsub2_then_zsub
       0,	// zsub2_then_zsub_hi
-      44,	// dsub0_dsub1 -> DDD
+      48,	// dsub0_dsub1 -> DDD
       0,	// dsub0_dsub1_dsub2
-      44,	// dsub1_dsub2 -> DDD
+      48,	// dsub1_dsub2 -> DDD
+      0,	// dsub1_dsub2_dsub3
+      0,	// dsub2_dsub3
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DDD_with_dsub0_in_FPR64_lo
+      49,	// bsub -> DDD_with_dsub0_in_FPR64_lo
+      0,	// dsub
+      49,	// dsub0 -> DDD_with_dsub0_in_FPR64_lo
+      49,	// dsub1 -> DDD_with_dsub0_in_FPR64_lo
+      49,	// dsub2 -> DDD_with_dsub0_in_FPR64_lo
+      0,	// dsub3
+      49,	// hsub -> DDD_with_dsub0_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      49,	// ssub -> DDD_with_dsub0_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      49,	// dsub1_then_bsub -> DDD_with_dsub0_in_FPR64_lo
+      49,	// dsub1_then_hsub -> DDD_with_dsub0_in_FPR64_lo
+      49,	// dsub1_then_ssub -> DDD_with_dsub0_in_FPR64_lo
+      0,	// dsub3_then_bsub
+      0,	// dsub3_then_hsub
+      0,	// dsub3_then_ssub
+      49,	// dsub2_then_bsub -> DDD_with_dsub0_in_FPR64_lo
+      49,	// dsub2_then_hsub -> DDD_with_dsub0_in_FPR64_lo
+      49,	// dsub2_then_ssub -> DDD_with_dsub0_in_FPR64_lo
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      49,	// dsub0_dsub1 -> DDD_with_dsub0_in_FPR64_lo
+      0,	// dsub0_dsub1_dsub2
+      49,	// dsub1_dsub2 -> DDD_with_dsub0_in_FPR64_lo
+      0,	// dsub1_dsub2_dsub3
+      0,	// dsub2_dsub3
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DDD_with_dsub1_in_FPR64_lo
+      50,	// bsub -> DDD_with_dsub1_in_FPR64_lo
+      0,	// dsub
+      50,	// dsub0 -> DDD_with_dsub1_in_FPR64_lo
+      50,	// dsub1 -> DDD_with_dsub1_in_FPR64_lo
+      50,	// dsub2 -> DDD_with_dsub1_in_FPR64_lo
+      0,	// dsub3
+      50,	// hsub -> DDD_with_dsub1_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      50,	// ssub -> DDD_with_dsub1_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      50,	// dsub1_then_bsub -> DDD_with_dsub1_in_FPR64_lo
+      50,	// dsub1_then_hsub -> DDD_with_dsub1_in_FPR64_lo
+      50,	// dsub1_then_ssub -> DDD_with_dsub1_in_FPR64_lo
+      0,	// dsub3_then_bsub
+      0,	// dsub3_then_hsub
+      0,	// dsub3_then_ssub
+      50,	// dsub2_then_bsub -> DDD_with_dsub1_in_FPR64_lo
+      50,	// dsub2_then_hsub -> DDD_with_dsub1_in_FPR64_lo
+      50,	// dsub2_then_ssub -> DDD_with_dsub1_in_FPR64_lo
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      50,	// dsub0_dsub1 -> DDD_with_dsub1_in_FPR64_lo
+      0,	// dsub0_dsub1_dsub2
+      50,	// dsub1_dsub2 -> DDD_with_dsub1_in_FPR64_lo
+      0,	// dsub1_dsub2_dsub3
+      0,	// dsub2_dsub3
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DDD_with_dsub2_in_FPR64_lo
+      51,	// bsub -> DDD_with_dsub2_in_FPR64_lo
+      0,	// dsub
+      51,	// dsub0 -> DDD_with_dsub2_in_FPR64_lo
+      51,	// dsub1 -> DDD_with_dsub2_in_FPR64_lo
+      51,	// dsub2 -> DDD_with_dsub2_in_FPR64_lo
+      0,	// dsub3
+      51,	// hsub -> DDD_with_dsub2_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      51,	// ssub -> DDD_with_dsub2_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      51,	// dsub1_then_bsub -> DDD_with_dsub2_in_FPR64_lo
+      51,	// dsub1_then_hsub -> DDD_with_dsub2_in_FPR64_lo
+      51,	// dsub1_then_ssub -> DDD_with_dsub2_in_FPR64_lo
+      0,	// dsub3_then_bsub
+      0,	// dsub3_then_hsub
+      0,	// dsub3_then_ssub
+      51,	// dsub2_then_bsub -> DDD_with_dsub2_in_FPR64_lo
+      51,	// dsub2_then_hsub -> DDD_with_dsub2_in_FPR64_lo
+      51,	// dsub2_then_ssub -> DDD_with_dsub2_in_FPR64_lo
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      51,	// dsub0_dsub1 -> DDD_with_dsub2_in_FPR64_lo
+      0,	// dsub0_dsub1_dsub2
+      51,	// dsub1_dsub2 -> DDD_with_dsub2_in_FPR64_lo
+      0,	// dsub1_dsub2_dsub3
+      0,	// dsub2_dsub3
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo
+      52,	// bsub -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo
+      0,	// dsub
+      52,	// dsub0 -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo
+      52,	// dsub1 -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo
+      52,	// dsub2 -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo
+      0,	// dsub3
+      52,	// hsub -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      52,	// ssub -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      52,	// dsub1_then_bsub -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo
+      52,	// dsub1_then_hsub -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo
+      52,	// dsub1_then_ssub -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo
+      0,	// dsub3_then_bsub
+      0,	// dsub3_then_hsub
+      0,	// dsub3_then_ssub
+      52,	// dsub2_then_bsub -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo
+      52,	// dsub2_then_hsub -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo
+      52,	// dsub2_then_ssub -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      52,	// dsub0_dsub1 -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo
+      0,	// dsub0_dsub1_dsub2
+      52,	// dsub1_dsub2 -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo
+      0,	// dsub1_dsub2_dsub3
+      0,	// dsub2_dsub3
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      53,	// bsub -> DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      0,	// dsub
+      53,	// dsub0 -> DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      53,	// dsub1 -> DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      53,	// dsub2 -> DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      0,	// dsub3
+      53,	// hsub -> DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      53,	// ssub -> DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      53,	// dsub1_then_bsub -> DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      53,	// dsub1_then_hsub -> DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      53,	// dsub1_then_ssub -> DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      0,	// dsub3_then_bsub
+      0,	// dsub3_then_hsub
+      0,	// dsub3_then_ssub
+      53,	// dsub2_then_bsub -> DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      53,	// dsub2_then_hsub -> DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      53,	// dsub2_then_ssub -> DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      53,	// dsub0_dsub1 -> DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      0,	// dsub0_dsub1_dsub2
+      53,	// dsub1_dsub2 -> DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      0,	// dsub1_dsub2_dsub3
+      0,	// dsub2_dsub3
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      54,	// bsub -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      0,	// dsub
+      54,	// dsub0 -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      54,	// dsub1 -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      54,	// dsub2 -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      0,	// dsub3
+      54,	// hsub -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      54,	// ssub -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      54,	// dsub1_then_bsub -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      54,	// dsub1_then_hsub -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      54,	// dsub1_then_ssub -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      0,	// dsub3_then_bsub
+      0,	// dsub3_then_hsub
+      0,	// dsub3_then_ssub
+      54,	// dsub2_then_bsub -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      54,	// dsub2_then_hsub -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      54,	// dsub2_then_ssub -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      54,	// dsub0_dsub1 -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+      0,	// dsub0_dsub1_dsub2
+      54,	// dsub1_dsub2 -> DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
       0,	// dsub_qsub1_then_dsub
@@ -13589,20 +15477,20 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// DDDD
-      45,	// bsub -> DDDD
+      55,	// bsub -> DDDD
       0,	// dsub
-      45,	// dsub0 -> DDDD
-      45,	// dsub1 -> DDDD
-      45,	// dsub2 -> DDDD
-      45,	// dsub3 -> DDDD
-      45,	// hsub -> DDDD
+      55,	// dsub0 -> DDDD
+      55,	// dsub1 -> DDDD
+      55,	// dsub2 -> DDDD
+      55,	// dsub3 -> DDDD
+      55,	// hsub -> DDDD
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      45,	// ssub -> DDDD
+      55,	// ssub -> DDDD
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -13614,15 +15502,15 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2
       0,	// zsub3
       0,	// zsub_hi
-      45,	// dsub1_then_bsub -> DDDD
-      45,	// dsub1_then_hsub -> DDDD
-      45,	// dsub1_then_ssub -> DDDD
-      45,	// dsub3_then_bsub -> DDDD
-      45,	// dsub3_then_hsub -> DDDD
-      45,	// dsub3_then_ssub -> DDDD
-      45,	// dsub2_then_bsub -> DDDD
-      45,	// dsub2_then_hsub -> DDDD
-      45,	// dsub2_then_ssub -> DDDD
+      55,	// dsub1_then_bsub -> DDDD
+      55,	// dsub1_then_hsub -> DDDD
+      55,	// dsub1_then_ssub -> DDDD
+      55,	// dsub3_then_bsub -> DDDD
+      55,	// dsub3_then_hsub -> DDDD
+      55,	// dsub3_then_ssub -> DDDD
+      55,	// dsub2_then_bsub -> DDDD
+      55,	// dsub2_then_hsub -> DDDD
+      55,	// dsub2_then_ssub -> DDDD
       0,	// qsub1_then_bsub
       0,	// qsub1_then_dsub
       0,	// qsub1_then_hsub
@@ -13654,11 +15542,1021 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_ssub
       0,	// zsub2_then_zsub
       0,	// zsub2_then_zsub_hi
-      45,	// dsub0_dsub1 -> DDDD
-      45,	// dsub0_dsub1_dsub2 -> DDDD
-      45,	// dsub1_dsub2 -> DDDD
-      45,	// dsub1_dsub2_dsub3 -> DDDD
-      45,	// dsub2_dsub3 -> DDDD
+      55,	// dsub0_dsub1 -> DDDD
+      55,	// dsub0_dsub1_dsub2 -> DDDD
+      55,	// dsub1_dsub2 -> DDDD
+      55,	// dsub1_dsub2_dsub3 -> DDDD
+      55,	// dsub2_dsub3 -> DDDD
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DDDD_with_dsub0_in_FPR64_lo
+      56,	// bsub -> DDDD_with_dsub0_in_FPR64_lo
+      0,	// dsub
+      56,	// dsub0 -> DDDD_with_dsub0_in_FPR64_lo
+      56,	// dsub1 -> DDDD_with_dsub0_in_FPR64_lo
+      56,	// dsub2 -> DDDD_with_dsub0_in_FPR64_lo
+      56,	// dsub3 -> DDDD_with_dsub0_in_FPR64_lo
+      56,	// hsub -> DDDD_with_dsub0_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      56,	// ssub -> DDDD_with_dsub0_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      56,	// dsub1_then_bsub -> DDDD_with_dsub0_in_FPR64_lo
+      56,	// dsub1_then_hsub -> DDDD_with_dsub0_in_FPR64_lo
+      56,	// dsub1_then_ssub -> DDDD_with_dsub0_in_FPR64_lo
+      56,	// dsub3_then_bsub -> DDDD_with_dsub0_in_FPR64_lo
+      56,	// dsub3_then_hsub -> DDDD_with_dsub0_in_FPR64_lo
+      56,	// dsub3_then_ssub -> DDDD_with_dsub0_in_FPR64_lo
+      56,	// dsub2_then_bsub -> DDDD_with_dsub0_in_FPR64_lo
+      56,	// dsub2_then_hsub -> DDDD_with_dsub0_in_FPR64_lo
+      56,	// dsub2_then_ssub -> DDDD_with_dsub0_in_FPR64_lo
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      56,	// dsub0_dsub1 -> DDDD_with_dsub0_in_FPR64_lo
+      56,	// dsub0_dsub1_dsub2 -> DDDD_with_dsub0_in_FPR64_lo
+      56,	// dsub1_dsub2 -> DDDD_with_dsub0_in_FPR64_lo
+      56,	// dsub1_dsub2_dsub3 -> DDDD_with_dsub0_in_FPR64_lo
+      56,	// dsub2_dsub3 -> DDDD_with_dsub0_in_FPR64_lo
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DDDD_with_dsub1_in_FPR64_lo
+      57,	// bsub -> DDDD_with_dsub1_in_FPR64_lo
+      0,	// dsub
+      57,	// dsub0 -> DDDD_with_dsub1_in_FPR64_lo
+      57,	// dsub1 -> DDDD_with_dsub1_in_FPR64_lo
+      57,	// dsub2 -> DDDD_with_dsub1_in_FPR64_lo
+      57,	// dsub3 -> DDDD_with_dsub1_in_FPR64_lo
+      57,	// hsub -> DDDD_with_dsub1_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      57,	// ssub -> DDDD_with_dsub1_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      57,	// dsub1_then_bsub -> DDDD_with_dsub1_in_FPR64_lo
+      57,	// dsub1_then_hsub -> DDDD_with_dsub1_in_FPR64_lo
+      57,	// dsub1_then_ssub -> DDDD_with_dsub1_in_FPR64_lo
+      57,	// dsub3_then_bsub -> DDDD_with_dsub1_in_FPR64_lo
+      57,	// dsub3_then_hsub -> DDDD_with_dsub1_in_FPR64_lo
+      57,	// dsub3_then_ssub -> DDDD_with_dsub1_in_FPR64_lo
+      57,	// dsub2_then_bsub -> DDDD_with_dsub1_in_FPR64_lo
+      57,	// dsub2_then_hsub -> DDDD_with_dsub1_in_FPR64_lo
+      57,	// dsub2_then_ssub -> DDDD_with_dsub1_in_FPR64_lo
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      57,	// dsub0_dsub1 -> DDDD_with_dsub1_in_FPR64_lo
+      57,	// dsub0_dsub1_dsub2 -> DDDD_with_dsub1_in_FPR64_lo
+      57,	// dsub1_dsub2 -> DDDD_with_dsub1_in_FPR64_lo
+      57,	// dsub1_dsub2_dsub3 -> DDDD_with_dsub1_in_FPR64_lo
+      57,	// dsub2_dsub3 -> DDDD_with_dsub1_in_FPR64_lo
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DDDD_with_dsub2_in_FPR64_lo
+      58,	// bsub -> DDDD_with_dsub2_in_FPR64_lo
+      0,	// dsub
+      58,	// dsub0 -> DDDD_with_dsub2_in_FPR64_lo
+      58,	// dsub1 -> DDDD_with_dsub2_in_FPR64_lo
+      58,	// dsub2 -> DDDD_with_dsub2_in_FPR64_lo
+      58,	// dsub3 -> DDDD_with_dsub2_in_FPR64_lo
+      58,	// hsub -> DDDD_with_dsub2_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      58,	// ssub -> DDDD_with_dsub2_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      58,	// dsub1_then_bsub -> DDDD_with_dsub2_in_FPR64_lo
+      58,	// dsub1_then_hsub -> DDDD_with_dsub2_in_FPR64_lo
+      58,	// dsub1_then_ssub -> DDDD_with_dsub2_in_FPR64_lo
+      58,	// dsub3_then_bsub -> DDDD_with_dsub2_in_FPR64_lo
+      58,	// dsub3_then_hsub -> DDDD_with_dsub2_in_FPR64_lo
+      58,	// dsub3_then_ssub -> DDDD_with_dsub2_in_FPR64_lo
+      58,	// dsub2_then_bsub -> DDDD_with_dsub2_in_FPR64_lo
+      58,	// dsub2_then_hsub -> DDDD_with_dsub2_in_FPR64_lo
+      58,	// dsub2_then_ssub -> DDDD_with_dsub2_in_FPR64_lo
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      58,	// dsub0_dsub1 -> DDDD_with_dsub2_in_FPR64_lo
+      58,	// dsub0_dsub1_dsub2 -> DDDD_with_dsub2_in_FPR64_lo
+      58,	// dsub1_dsub2 -> DDDD_with_dsub2_in_FPR64_lo
+      58,	// dsub1_dsub2_dsub3 -> DDDD_with_dsub2_in_FPR64_lo
+      58,	// dsub2_dsub3 -> DDDD_with_dsub2_in_FPR64_lo
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DDDD_with_dsub3_in_FPR64_lo
+      59,	// bsub -> DDDD_with_dsub3_in_FPR64_lo
+      0,	// dsub
+      59,	// dsub0 -> DDDD_with_dsub3_in_FPR64_lo
+      59,	// dsub1 -> DDDD_with_dsub3_in_FPR64_lo
+      59,	// dsub2 -> DDDD_with_dsub3_in_FPR64_lo
+      59,	// dsub3 -> DDDD_with_dsub3_in_FPR64_lo
+      59,	// hsub -> DDDD_with_dsub3_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      59,	// ssub -> DDDD_with_dsub3_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      59,	// dsub1_then_bsub -> DDDD_with_dsub3_in_FPR64_lo
+      59,	// dsub1_then_hsub -> DDDD_with_dsub3_in_FPR64_lo
+      59,	// dsub1_then_ssub -> DDDD_with_dsub3_in_FPR64_lo
+      59,	// dsub3_then_bsub -> DDDD_with_dsub3_in_FPR64_lo
+      59,	// dsub3_then_hsub -> DDDD_with_dsub3_in_FPR64_lo
+      59,	// dsub3_then_ssub -> DDDD_with_dsub3_in_FPR64_lo
+      59,	// dsub2_then_bsub -> DDDD_with_dsub3_in_FPR64_lo
+      59,	// dsub2_then_hsub -> DDDD_with_dsub3_in_FPR64_lo
+      59,	// dsub2_then_ssub -> DDDD_with_dsub3_in_FPR64_lo
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      59,	// dsub0_dsub1 -> DDDD_with_dsub3_in_FPR64_lo
+      59,	// dsub0_dsub1_dsub2 -> DDDD_with_dsub3_in_FPR64_lo
+      59,	// dsub1_dsub2 -> DDDD_with_dsub3_in_FPR64_lo
+      59,	// dsub1_dsub2_dsub3 -> DDDD_with_dsub3_in_FPR64_lo
+      59,	// dsub2_dsub3 -> DDDD_with_dsub3_in_FPR64_lo
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      60,	// bsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      0,	// dsub
+      60,	// dsub0 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      60,	// dsub1 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      60,	// dsub2 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      60,	// dsub3 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      60,	// hsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      60,	// ssub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      60,	// dsub1_then_bsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      60,	// dsub1_then_hsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      60,	// dsub1_then_ssub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      60,	// dsub3_then_bsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      60,	// dsub3_then_hsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      60,	// dsub3_then_ssub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      60,	// dsub2_then_bsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      60,	// dsub2_then_hsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      60,	// dsub2_then_ssub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      60,	// dsub0_dsub1 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      60,	// dsub0_dsub1_dsub2 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      60,	// dsub1_dsub2 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      60,	// dsub1_dsub2_dsub3 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      60,	// dsub2_dsub3 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      61,	// bsub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      0,	// dsub
+      61,	// dsub0 -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      61,	// dsub1 -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      61,	// dsub2 -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      61,	// dsub3 -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      61,	// hsub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      61,	// ssub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      61,	// dsub1_then_bsub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      61,	// dsub1_then_hsub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      61,	// dsub1_then_ssub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      61,	// dsub3_then_bsub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      61,	// dsub3_then_hsub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      61,	// dsub3_then_ssub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      61,	// dsub2_then_bsub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      61,	// dsub2_then_hsub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      61,	// dsub2_then_ssub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      61,	// dsub0_dsub1 -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      61,	// dsub0_dsub1_dsub2 -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      61,	// dsub1_dsub2 -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      61,	// dsub1_dsub2_dsub3 -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      61,	// dsub2_dsub3 -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      62,	// bsub -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      0,	// dsub
+      62,	// dsub0 -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      62,	// dsub1 -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      62,	// dsub2 -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      62,	// dsub3 -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      62,	// hsub -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      62,	// ssub -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      62,	// dsub1_then_bsub -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      62,	// dsub1_then_hsub -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      62,	// dsub1_then_ssub -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      62,	// dsub3_then_bsub -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      62,	// dsub3_then_hsub -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      62,	// dsub3_then_ssub -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      62,	// dsub2_then_bsub -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      62,	// dsub2_then_hsub -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      62,	// dsub2_then_ssub -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      62,	// dsub0_dsub1 -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      62,	// dsub0_dsub1_dsub2 -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      62,	// dsub1_dsub2 -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      62,	// dsub1_dsub2_dsub3 -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      62,	// dsub2_dsub3 -> DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      63,	// bsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      0,	// dsub
+      63,	// dsub0 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      63,	// dsub1 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      63,	// dsub2 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      63,	// dsub3 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      63,	// hsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      63,	// ssub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      63,	// dsub1_then_bsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      63,	// dsub1_then_hsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      63,	// dsub1_then_ssub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      63,	// dsub3_then_bsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      63,	// dsub3_then_hsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      63,	// dsub3_then_ssub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      63,	// dsub2_then_bsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      63,	// dsub2_then_hsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      63,	// dsub2_then_ssub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      63,	// dsub0_dsub1 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      63,	// dsub0_dsub1_dsub2 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      63,	// dsub1_dsub2 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      63,	// dsub1_dsub2_dsub3 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      63,	// dsub2_dsub3 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      64,	// bsub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      0,	// dsub
+      64,	// dsub0 -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      64,	// dsub1 -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      64,	// dsub2 -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      64,	// dsub3 -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      64,	// hsub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      64,	// ssub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      64,	// dsub1_then_bsub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      64,	// dsub1_then_hsub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      64,	// dsub1_then_ssub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      64,	// dsub3_then_bsub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      64,	// dsub3_then_hsub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      64,	// dsub3_then_ssub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      64,	// dsub2_then_bsub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      64,	// dsub2_then_hsub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      64,	// dsub2_then_ssub -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      64,	// dsub0_dsub1 -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      64,	// dsub0_dsub1_dsub2 -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      64,	// dsub1_dsub2 -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      64,	// dsub1_dsub2_dsub3 -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      64,	// dsub2_dsub3 -> DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      0,	// dsub_zsub1_then_dsub
+      0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      65,	// bsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      0,	// dsub
+      65,	// dsub0 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      65,	// dsub1 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      65,	// dsub2 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      65,	// dsub3 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      65,	// hsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      65,	// ssub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      0,	// zsub
+      0,	// zsub0
+      0,	// zsub1
+      0,	// zsub2
+      0,	// zsub3
+      0,	// zsub_hi
+      65,	// dsub1_then_bsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      65,	// dsub1_then_hsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      65,	// dsub1_then_ssub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      65,	// dsub3_then_bsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      65,	// dsub3_then_hsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      65,	// dsub3_then_ssub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      65,	// dsub2_then_bsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      65,	// dsub2_then_hsub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      65,	// dsub2_then_ssub -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      0,	// zsub1_then_bsub
+      0,	// zsub1_then_dsub
+      0,	// zsub1_then_hsub
+      0,	// zsub1_then_ssub
+      0,	// zsub1_then_zsub
+      0,	// zsub1_then_zsub_hi
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      65,	// dsub0_dsub1 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      65,	// dsub0_dsub1_dsub2 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      65,	// dsub1_dsub2 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      65,	// dsub1_dsub2_dsub3 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+      65,	// dsub2_dsub3 -> DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
       0,	// dsub_qsub1_then_dsub
       0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
@@ -13690,20 +16588,20 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// QQ
-      46,	// bsub -> QQ
-      46,	// dsub -> QQ
+      66,	// bsub -> QQ
+      66,	// dsub -> QQ
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      46,	// hsub -> QQ
+      66,	// hsub -> QQ
       0,	// qhisub
       0,	// qsub
-      46,	// qsub0 -> QQ
-      46,	// qsub1 -> QQ
+      66,	// qsub0 -> QQ
+      66,	// qsub1 -> QQ
       0,	// qsub2
       0,	// qsub3
-      46,	// ssub -> QQ
+      66,	// ssub -> QQ
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -13724,10 +16622,10 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      46,	// qsub1_then_bsub -> QQ
-      46,	// qsub1_then_dsub -> QQ
-      46,	// qsub1_then_hsub -> QQ
-      46,	// qsub1_then_ssub -> QQ
+      66,	// qsub1_then_bsub -> QQ
+      66,	// qsub1_then_dsub -> QQ
+      66,	// qsub1_then_hsub -> QQ
+      66,	// qsub1_then_ssub -> QQ
       0,	// qsub3_then_bsub
       0,	// qsub3_then_dsub
       0,	// qsub3_then_hsub
@@ -13760,7 +16658,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      46,	// dsub_qsub1_then_dsub -> QQ
+      66,	// dsub_qsub1_then_dsub -> QQ
       0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
       0,	// qsub0_qsub1
@@ -13791,31 +16689,31 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// ZPR2
-      47,	// bsub -> ZPR2
-      47,	// dsub -> ZPR2
+      67,	// bsub -> ZPR2
+      67,	// dsub -> ZPR2
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      47,	// hsub -> ZPR2
+      67,	// hsub -> ZPR2
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      47,	// ssub -> ZPR2
+      67,	// ssub -> ZPR2
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      47,	// zsub -> ZPR2
-      47,	// zsub0 -> ZPR2
-      47,	// zsub1 -> ZPR2
+      67,	// zsub -> ZPR2
+      67,	// zsub0 -> ZPR2
+      67,	// zsub1 -> ZPR2
       0,	// zsub2
       0,	// zsub3
-      47,	// zsub_hi -> ZPR2
+      67,	// zsub_hi -> ZPR2
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -13838,12 +16736,12 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      47,	// zsub1_then_bsub -> ZPR2
-      47,	// zsub1_then_dsub -> ZPR2
-      47,	// zsub1_then_hsub -> ZPR2
-      47,	// zsub1_then_ssub -> ZPR2
-      47,	// zsub1_then_zsub -> ZPR2
-      47,	// zsub1_then_zsub_hi -> ZPR2
+      67,	// zsub1_then_bsub -> ZPR2
+      67,	// zsub1_then_dsub -> ZPR2
+      67,	// zsub1_then_hsub -> ZPR2
+      67,	// zsub1_then_ssub -> ZPR2
+      67,	// zsub1_then_zsub -> ZPR2
+      67,	// zsub1_then_zsub_hi -> ZPR2
       0,	// zsub3_then_bsub
       0,	// zsub3_then_dsub
       0,	// zsub3_then_hsub
@@ -13873,8 +16771,8 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      47,	// dsub_zsub1_then_dsub -> ZPR2
-      47,	// zsub_zsub1_then_zsub -> ZPR2
+      67,	// dsub_zsub1_then_dsub -> ZPR2
+      67,	// zsub_zsub1_then_zsub -> ZPR2
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
       0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
@@ -13891,21 +16789,21 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
-    {	// QQ_with_qsub0_in_FPR128_lo
-      48,	// bsub -> QQ_with_qsub0_in_FPR128_lo
-      48,	// dsub -> QQ_with_qsub0_in_FPR128_lo
+    {	// QQ_with_dsub_in_FPR64_lo
+      68,	// bsub -> QQ_with_dsub_in_FPR64_lo
+      68,	// dsub -> QQ_with_dsub_in_FPR64_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      48,	// hsub -> QQ_with_qsub0_in_FPR128_lo
+      68,	// hsub -> QQ_with_dsub_in_FPR64_lo
       0,	// qhisub
       0,	// qsub
-      48,	// qsub0 -> QQ_with_qsub0_in_FPR128_lo
-      48,	// qsub1 -> QQ_with_qsub0_in_FPR128_lo
+      68,	// qsub0 -> QQ_with_dsub_in_FPR64_lo
+      68,	// qsub1 -> QQ_with_dsub_in_FPR64_lo
       0,	// qsub2
       0,	// qsub3
-      48,	// ssub -> QQ_with_qsub0_in_FPR128_lo
+      68,	// ssub -> QQ_with_dsub_in_FPR64_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -13926,10 +16824,10 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      48,	// qsub1_then_bsub -> QQ_with_qsub0_in_FPR128_lo
-      48,	// qsub1_then_dsub -> QQ_with_qsub0_in_FPR128_lo
-      48,	// qsub1_then_hsub -> QQ_with_qsub0_in_FPR128_lo
-      48,	// qsub1_then_ssub -> QQ_with_qsub0_in_FPR128_lo
+      68,	// qsub1_then_bsub -> QQ_with_dsub_in_FPR64_lo
+      68,	// qsub1_then_dsub -> QQ_with_dsub_in_FPR64_lo
+      68,	// qsub1_then_hsub -> QQ_with_dsub_in_FPR64_lo
+      68,	// qsub1_then_ssub -> QQ_with_dsub_in_FPR64_lo
       0,	// qsub3_then_bsub
       0,	// qsub3_then_dsub
       0,	// qsub3_then_hsub
@@ -13962,7 +16860,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      48,	// dsub_qsub1_then_dsub -> QQ_with_qsub0_in_FPR128_lo
+      68,	// dsub_qsub1_then_dsub -> QQ_with_dsub_in_FPR64_lo
       0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
       0,	// qsub0_qsub1
@@ -13993,20 +16891,20 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// QQ_with_qsub1_in_FPR128_lo
-      49,	// bsub -> QQ_with_qsub1_in_FPR128_lo
-      49,	// dsub -> QQ_with_qsub1_in_FPR128_lo
+      69,	// bsub -> QQ_with_qsub1_in_FPR128_lo
+      69,	// dsub -> QQ_with_qsub1_in_FPR128_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      49,	// hsub -> QQ_with_qsub1_in_FPR128_lo
+      69,	// hsub -> QQ_with_qsub1_in_FPR128_lo
       0,	// qhisub
       0,	// qsub
-      49,	// qsub0 -> QQ_with_qsub1_in_FPR128_lo
-      49,	// qsub1 -> QQ_with_qsub1_in_FPR128_lo
+      69,	// qsub0 -> QQ_with_qsub1_in_FPR128_lo
+      69,	// qsub1 -> QQ_with_qsub1_in_FPR128_lo
       0,	// qsub2
       0,	// qsub3
-      49,	// ssub -> QQ_with_qsub1_in_FPR128_lo
+      69,	// ssub -> QQ_with_qsub1_in_FPR128_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -14027,10 +16925,10 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      49,	// qsub1_then_bsub -> QQ_with_qsub1_in_FPR128_lo
-      49,	// qsub1_then_dsub -> QQ_with_qsub1_in_FPR128_lo
-      49,	// qsub1_then_hsub -> QQ_with_qsub1_in_FPR128_lo
-      49,	// qsub1_then_ssub -> QQ_with_qsub1_in_FPR128_lo
+      69,	// qsub1_then_bsub -> QQ_with_qsub1_in_FPR128_lo
+      69,	// qsub1_then_dsub -> QQ_with_qsub1_in_FPR128_lo
+      69,	// qsub1_then_hsub -> QQ_with_qsub1_in_FPR128_lo
+      69,	// qsub1_then_ssub -> QQ_with_qsub1_in_FPR128_lo
       0,	// qsub3_then_bsub
       0,	// qsub3_then_dsub
       0,	// qsub3_then_hsub
@@ -14063,7 +16961,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      49,	// dsub_qsub1_then_dsub -> QQ_with_qsub1_in_FPR128_lo
+      69,	// dsub_qsub1_then_dsub -> QQ_with_qsub1_in_FPR128_lo
       0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
       0,	// qsub0_qsub1
@@ -14077,6 +16975,107 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// sub_32_subo64_then_sub_32
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub0_zsub1
+      0,	// zsub0_zsub1_zsub2
+      0,	// zsub1_zsub2
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      0,	// zsub1_then_dsub_zsub2_then_dsub
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// ZPR2_with_dsub_in_FPR64_lo
+      70,	// bsub -> ZPR2_with_dsub_in_FPR64_lo
+      70,	// dsub -> ZPR2_with_dsub_in_FPR64_lo
+      0,	// dsub0
+      0,	// dsub1
+      0,	// dsub2
+      0,	// dsub3
+      70,	// hsub -> ZPR2_with_dsub_in_FPR64_lo
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      70,	// ssub -> ZPR2_with_dsub_in_FPR64_lo
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      70,	// zsub -> ZPR2_with_dsub_in_FPR64_lo
+      70,	// zsub0 -> ZPR2_with_dsub_in_FPR64_lo
+      70,	// zsub1 -> ZPR2_with_dsub_in_FPR64_lo
+      0,	// zsub2
+      0,	// zsub3
+      70,	// zsub_hi -> ZPR2_with_dsub_in_FPR64_lo
+      0,	// dsub1_then_bsub
+      0,	// dsub1_then_hsub
+      0,	// dsub1_then_ssub
+      0,	// dsub3_then_bsub
+      0,	// dsub3_then_hsub
+      0,	// dsub3_then_ssub
+      0,	// dsub2_then_bsub
+      0,	// dsub2_then_hsub
+      0,	// dsub2_then_ssub
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      70,	// zsub1_then_bsub -> ZPR2_with_dsub_in_FPR64_lo
+      70,	// zsub1_then_dsub -> ZPR2_with_dsub_in_FPR64_lo
+      70,	// zsub1_then_hsub -> ZPR2_with_dsub_in_FPR64_lo
+      70,	// zsub1_then_ssub -> ZPR2_with_dsub_in_FPR64_lo
+      70,	// zsub1_then_zsub -> ZPR2_with_dsub_in_FPR64_lo
+      70,	// zsub1_then_zsub_hi -> ZPR2_with_dsub_in_FPR64_lo
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      0,	// zsub2_then_bsub
+      0,	// zsub2_then_dsub
+      0,	// zsub2_then_hsub
+      0,	// zsub2_then_ssub
+      0,	// zsub2_then_zsub
+      0,	// zsub2_then_zsub_hi
+      0,	// dsub0_dsub1
+      0,	// dsub0_dsub1_dsub2
+      0,	// dsub1_dsub2
+      0,	// dsub1_dsub2_dsub3
+      0,	// dsub2_dsub3
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      70,	// dsub_zsub1_then_dsub -> ZPR2_with_dsub_in_FPR64_lo
+      70,	// zsub_zsub1_then_zsub -> ZPR2_with_dsub_in_FPR64_lo
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
       0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
@@ -14094,31 +17093,31 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// ZPR2_with_zsub1_in_ZPR_4b
-      50,	// bsub -> ZPR2_with_zsub1_in_ZPR_4b
-      50,	// dsub -> ZPR2_with_zsub1_in_ZPR_4b
+      71,	// bsub -> ZPR2_with_zsub1_in_ZPR_4b
+      71,	// dsub -> ZPR2_with_zsub1_in_ZPR_4b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      50,	// hsub -> ZPR2_with_zsub1_in_ZPR_4b
+      71,	// hsub -> ZPR2_with_zsub1_in_ZPR_4b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      50,	// ssub -> ZPR2_with_zsub1_in_ZPR_4b
+      71,	// ssub -> ZPR2_with_zsub1_in_ZPR_4b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      50,	// zsub -> ZPR2_with_zsub1_in_ZPR_4b
-      50,	// zsub0 -> ZPR2_with_zsub1_in_ZPR_4b
-      50,	// zsub1 -> ZPR2_with_zsub1_in_ZPR_4b
+      71,	// zsub -> ZPR2_with_zsub1_in_ZPR_4b
+      71,	// zsub0 -> ZPR2_with_zsub1_in_ZPR_4b
+      71,	// zsub1 -> ZPR2_with_zsub1_in_ZPR_4b
       0,	// zsub2
       0,	// zsub3
-      50,	// zsub_hi -> ZPR2_with_zsub1_in_ZPR_4b
+      71,	// zsub_hi -> ZPR2_with_zsub1_in_ZPR_4b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -14141,12 +17140,12 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      50,	// zsub1_then_bsub -> ZPR2_with_zsub1_in_ZPR_4b
-      50,	// zsub1_then_dsub -> ZPR2_with_zsub1_in_ZPR_4b
-      50,	// zsub1_then_hsub -> ZPR2_with_zsub1_in_ZPR_4b
-      50,	// zsub1_then_ssub -> ZPR2_with_zsub1_in_ZPR_4b
-      50,	// zsub1_then_zsub -> ZPR2_with_zsub1_in_ZPR_4b
-      50,	// zsub1_then_zsub_hi -> ZPR2_with_zsub1_in_ZPR_4b
+      71,	// zsub1_then_bsub -> ZPR2_with_zsub1_in_ZPR_4b
+      71,	// zsub1_then_dsub -> ZPR2_with_zsub1_in_ZPR_4b
+      71,	// zsub1_then_hsub -> ZPR2_with_zsub1_in_ZPR_4b
+      71,	// zsub1_then_ssub -> ZPR2_with_zsub1_in_ZPR_4b
+      71,	// zsub1_then_zsub -> ZPR2_with_zsub1_in_ZPR_4b
+      71,	// zsub1_then_zsub_hi -> ZPR2_with_zsub1_in_ZPR_4b
       0,	// zsub3_then_bsub
       0,	// zsub3_then_dsub
       0,	// zsub3_then_hsub
@@ -14176,8 +17175,8 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      50,	// dsub_zsub1_then_dsub -> ZPR2_with_zsub1_in_ZPR_4b
-      50,	// zsub_zsub1_then_zsub -> ZPR2_with_zsub1_in_ZPR_4b
+      71,	// dsub_zsub1_then_dsub -> ZPR2_with_zsub1_in_ZPR_4b
+      71,	// zsub_zsub1_then_zsub -> ZPR2_with_zsub1_in_ZPR_4b
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
       0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
@@ -14194,122 +17193,21 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
-    {	// ZPR2_with_zsub_in_FPR128_lo
-      51,	// bsub -> ZPR2_with_zsub_in_FPR128_lo
-      51,	// dsub -> ZPR2_with_zsub_in_FPR128_lo
+    {	// QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo
+      72,	// bsub -> QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo
+      72,	// dsub -> QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      51,	// hsub -> ZPR2_with_zsub_in_FPR128_lo
+      72,	// hsub -> QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo
       0,	// qhisub
       0,	// qsub
-      0,	// qsub0
-      0,	// qsub1
+      72,	// qsub0 -> QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo
+      72,	// qsub1 -> QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo
       0,	// qsub2
       0,	// qsub3
-      51,	// ssub -> ZPR2_with_zsub_in_FPR128_lo
-      0,	// sub_32
-      0,	// sube32
-      0,	// sube64
-      0,	// subo32
-      0,	// subo64
-      51,	// zsub -> ZPR2_with_zsub_in_FPR128_lo
-      51,	// zsub0 -> ZPR2_with_zsub_in_FPR128_lo
-      51,	// zsub1 -> ZPR2_with_zsub_in_FPR128_lo
-      0,	// zsub2
-      0,	// zsub3
-      51,	// zsub_hi -> ZPR2_with_zsub_in_FPR128_lo
-      0,	// dsub1_then_bsub
-      0,	// dsub1_then_hsub
-      0,	// dsub1_then_ssub
-      0,	// dsub3_then_bsub
-      0,	// dsub3_then_hsub
-      0,	// dsub3_then_ssub
-      0,	// dsub2_then_bsub
-      0,	// dsub2_then_hsub
-      0,	// dsub2_then_ssub
-      0,	// qsub1_then_bsub
-      0,	// qsub1_then_dsub
-      0,	// qsub1_then_hsub
-      0,	// qsub1_then_ssub
-      0,	// qsub3_then_bsub
-      0,	// qsub3_then_dsub
-      0,	// qsub3_then_hsub
-      0,	// qsub3_then_ssub
-      0,	// qsub2_then_bsub
-      0,	// qsub2_then_dsub
-      0,	// qsub2_then_hsub
-      0,	// qsub2_then_ssub
-      0,	// subo64_then_sub_32
-      51,	// zsub1_then_bsub -> ZPR2_with_zsub_in_FPR128_lo
-      51,	// zsub1_then_dsub -> ZPR2_with_zsub_in_FPR128_lo
-      51,	// zsub1_then_hsub -> ZPR2_with_zsub_in_FPR128_lo
-      51,	// zsub1_then_ssub -> ZPR2_with_zsub_in_FPR128_lo
-      51,	// zsub1_then_zsub -> ZPR2_with_zsub_in_FPR128_lo
-      51,	// zsub1_then_zsub_hi -> ZPR2_with_zsub_in_FPR128_lo
-      0,	// zsub3_then_bsub
-      0,	// zsub3_then_dsub
-      0,	// zsub3_then_hsub
-      0,	// zsub3_then_ssub
-      0,	// zsub3_then_zsub
-      0,	// zsub3_then_zsub_hi
-      0,	// zsub2_then_bsub
-      0,	// zsub2_then_dsub
-      0,	// zsub2_then_hsub
-      0,	// zsub2_then_ssub
-      0,	// zsub2_then_zsub
-      0,	// zsub2_then_zsub_hi
-      0,	// dsub0_dsub1
-      0,	// dsub0_dsub1_dsub2
-      0,	// dsub1_dsub2
-      0,	// dsub1_dsub2_dsub3
-      0,	// dsub2_dsub3
-      0,	// dsub_qsub1_then_dsub
-      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
-      0,	// qsub0_qsub1
-      0,	// qsub0_qsub1_qsub2
-      0,	// qsub1_qsub2
-      0,	// qsub1_qsub2_qsub3
-      0,	// qsub2_qsub3
-      0,	// qsub1_then_dsub_qsub2_then_dsub
-      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      0,	// qsub2_then_dsub_qsub3_then_dsub
-      0,	// sub_32_subo64_then_sub_32
-      51,	// dsub_zsub1_then_dsub -> ZPR2_with_zsub_in_FPR128_lo
-      51,	// zsub_zsub1_then_zsub -> ZPR2_with_zsub_in_FPR128_lo
-      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
-      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub
-      0,	// zsub0_zsub1
-      0,	// zsub0_zsub1_zsub2
-      0,	// zsub1_zsub2
-      0,	// zsub1_zsub2_zsub3
-      0,	// zsub2_zsub3
-      0,	// zsub1_then_dsub_zsub2_then_dsub
-      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      0,	// zsub1_then_zsub_zsub2_then_zsub
-      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-      0,	// zsub2_then_dsub_zsub3_then_dsub
-      0,	// zsub2_then_zsub_zsub3_then_zsub
-    },
-    {	// QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_lo
-      52,	// bsub -> QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_lo
-      52,	// dsub -> QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_lo
-      0,	// dsub0
-      0,	// dsub1
-      0,	// dsub2
-      0,	// dsub3
-      52,	// hsub -> QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_lo
-      0,	// qhisub
-      0,	// qsub
-      52,	// qsub0 -> QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_lo
-      52,	// qsub1 -> QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_lo
-      0,	// qsub2
-      0,	// qsub3
-      52,	// ssub -> QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_lo
+      72,	// ssub -> QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -14330,10 +17228,10 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      52,	// qsub1_then_bsub -> QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_lo
-      52,	// qsub1_then_dsub -> QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_lo
-      52,	// qsub1_then_hsub -> QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_lo
-      52,	// qsub1_then_ssub -> QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_lo
+      72,	// qsub1_then_bsub -> QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo
+      72,	// qsub1_then_dsub -> QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo
+      72,	// qsub1_then_hsub -> QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo
+      72,	// qsub1_then_ssub -> QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo
       0,	// qsub3_then_bsub
       0,	// qsub3_then_dsub
       0,	// qsub3_then_hsub
@@ -14366,7 +17264,7 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      52,	// dsub_qsub1_then_dsub -> QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_lo
+      72,	// dsub_qsub1_then_dsub -> QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo
       0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
       0,	// qsub0_qsub1
@@ -14396,32 +17294,32 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
-    {	// ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
-      53,	// bsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
-      53,	// dsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+    {	// ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+      73,	// bsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+      73,	// dsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      53,	// hsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+      73,	// hsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      53,	// ssub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+      73,	// ssub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      53,	// zsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
-      53,	// zsub0 -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
-      53,	// zsub1 -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+      73,	// zsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+      73,	// zsub0 -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+      73,	// zsub1 -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
       0,	// zsub2
       0,	// zsub3
-      53,	// zsub_hi -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+      73,	// zsub_hi -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -14444,12 +17342,12 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      53,	// zsub1_then_bsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
-      53,	// zsub1_then_dsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
-      53,	// zsub1_then_hsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
-      53,	// zsub1_then_ssub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
-      53,	// zsub1_then_zsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
-      53,	// zsub1_then_zsub_hi -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+      73,	// zsub1_then_bsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+      73,	// zsub1_then_dsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+      73,	// zsub1_then_hsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+      73,	// zsub1_then_ssub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+      73,	// zsub1_then_zsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+      73,	// zsub1_then_zsub_hi -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
       0,	// zsub3_then_bsub
       0,	// zsub3_then_dsub
       0,	// zsub3_then_hsub
@@ -14479,8 +17377,8 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      53,	// dsub_zsub1_then_dsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
-      53,	// zsub_zsub1_then_zsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+      73,	// dsub_zsub1_then_dsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+      73,	// zsub_zsub1_then_zsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
       0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
@@ -14498,31 +17396,31 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// ZPR2_with_zsub0_in_ZPR_3b
-      54,	// bsub -> ZPR2_with_zsub0_in_ZPR_3b
-      54,	// dsub -> ZPR2_with_zsub0_in_ZPR_3b
+      74,	// bsub -> ZPR2_with_zsub0_in_ZPR_3b
+      74,	// dsub -> ZPR2_with_zsub0_in_ZPR_3b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      54,	// hsub -> ZPR2_with_zsub0_in_ZPR_3b
+      74,	// hsub -> ZPR2_with_zsub0_in_ZPR_3b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      54,	// ssub -> ZPR2_with_zsub0_in_ZPR_3b
+      74,	// ssub -> ZPR2_with_zsub0_in_ZPR_3b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      54,	// zsub -> ZPR2_with_zsub0_in_ZPR_3b
-      54,	// zsub0 -> ZPR2_with_zsub0_in_ZPR_3b
-      54,	// zsub1 -> ZPR2_with_zsub0_in_ZPR_3b
+      74,	// zsub -> ZPR2_with_zsub0_in_ZPR_3b
+      74,	// zsub0 -> ZPR2_with_zsub0_in_ZPR_3b
+      74,	// zsub1 -> ZPR2_with_zsub0_in_ZPR_3b
       0,	// zsub2
       0,	// zsub3
-      54,	// zsub_hi -> ZPR2_with_zsub0_in_ZPR_3b
+      74,	// zsub_hi -> ZPR2_with_zsub0_in_ZPR_3b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -14545,12 +17443,12 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      54,	// zsub1_then_bsub -> ZPR2_with_zsub0_in_ZPR_3b
-      54,	// zsub1_then_dsub -> ZPR2_with_zsub0_in_ZPR_3b
-      54,	// zsub1_then_hsub -> ZPR2_with_zsub0_in_ZPR_3b
-      54,	// zsub1_then_ssub -> ZPR2_with_zsub0_in_ZPR_3b
-      54,	// zsub1_then_zsub -> ZPR2_with_zsub0_in_ZPR_3b
-      54,	// zsub1_then_zsub_hi -> ZPR2_with_zsub0_in_ZPR_3b
+      74,	// zsub1_then_bsub -> ZPR2_with_zsub0_in_ZPR_3b
+      74,	// zsub1_then_dsub -> ZPR2_with_zsub0_in_ZPR_3b
+      74,	// zsub1_then_hsub -> ZPR2_with_zsub0_in_ZPR_3b
+      74,	// zsub1_then_ssub -> ZPR2_with_zsub0_in_ZPR_3b
+      74,	// zsub1_then_zsub -> ZPR2_with_zsub0_in_ZPR_3b
+      74,	// zsub1_then_zsub_hi -> ZPR2_with_zsub0_in_ZPR_3b
       0,	// zsub3_then_bsub
       0,	// zsub3_then_dsub
       0,	// zsub3_then_hsub
@@ -14580,8 +17478,8 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      54,	// dsub_zsub1_then_dsub -> ZPR2_with_zsub0_in_ZPR_3b
-      54,	// zsub_zsub1_then_zsub -> ZPR2_with_zsub0_in_ZPR_3b
+      74,	// dsub_zsub1_then_dsub -> ZPR2_with_zsub0_in_ZPR_3b
+      74,	// zsub_zsub1_then_zsub -> ZPR2_with_zsub0_in_ZPR_3b
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
       0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
@@ -14599,31 +17497,31 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// ZPR2_with_zsub1_in_ZPR_3b
-      55,	// bsub -> ZPR2_with_zsub1_in_ZPR_3b
-      55,	// dsub -> ZPR2_with_zsub1_in_ZPR_3b
+      75,	// bsub -> ZPR2_with_zsub1_in_ZPR_3b
+      75,	// dsub -> ZPR2_with_zsub1_in_ZPR_3b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      55,	// hsub -> ZPR2_with_zsub1_in_ZPR_3b
+      75,	// hsub -> ZPR2_with_zsub1_in_ZPR_3b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      55,	// ssub -> ZPR2_with_zsub1_in_ZPR_3b
+      75,	// ssub -> ZPR2_with_zsub1_in_ZPR_3b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      55,	// zsub -> ZPR2_with_zsub1_in_ZPR_3b
-      55,	// zsub0 -> ZPR2_with_zsub1_in_ZPR_3b
-      55,	// zsub1 -> ZPR2_with_zsub1_in_ZPR_3b
+      75,	// zsub -> ZPR2_with_zsub1_in_ZPR_3b
+      75,	// zsub0 -> ZPR2_with_zsub1_in_ZPR_3b
+      75,	// zsub1 -> ZPR2_with_zsub1_in_ZPR_3b
       0,	// zsub2
       0,	// zsub3
-      55,	// zsub_hi -> ZPR2_with_zsub1_in_ZPR_3b
+      75,	// zsub_hi -> ZPR2_with_zsub1_in_ZPR_3b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -14646,12 +17544,12 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      55,	// zsub1_then_bsub -> ZPR2_with_zsub1_in_ZPR_3b
-      55,	// zsub1_then_dsub -> ZPR2_with_zsub1_in_ZPR_3b
-      55,	// zsub1_then_hsub -> ZPR2_with_zsub1_in_ZPR_3b
-      55,	// zsub1_then_ssub -> ZPR2_with_zsub1_in_ZPR_3b
-      55,	// zsub1_then_zsub -> ZPR2_with_zsub1_in_ZPR_3b
-      55,	// zsub1_then_zsub_hi -> ZPR2_with_zsub1_in_ZPR_3b
+      75,	// zsub1_then_bsub -> ZPR2_with_zsub1_in_ZPR_3b
+      75,	// zsub1_then_dsub -> ZPR2_with_zsub1_in_ZPR_3b
+      75,	// zsub1_then_hsub -> ZPR2_with_zsub1_in_ZPR_3b
+      75,	// zsub1_then_ssub -> ZPR2_with_zsub1_in_ZPR_3b
+      75,	// zsub1_then_zsub -> ZPR2_with_zsub1_in_ZPR_3b
+      75,	// zsub1_then_zsub_hi -> ZPR2_with_zsub1_in_ZPR_3b
       0,	// zsub3_then_bsub
       0,	// zsub3_then_dsub
       0,	// zsub3_then_hsub
@@ -14681,8 +17579,8 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      55,	// dsub_zsub1_then_dsub -> ZPR2_with_zsub1_in_ZPR_3b
-      55,	// zsub_zsub1_then_zsub -> ZPR2_with_zsub1_in_ZPR_3b
+      75,	// dsub_zsub1_then_dsub -> ZPR2_with_zsub1_in_ZPR_3b
+      75,	// zsub_zsub1_then_zsub -> ZPR2_with_zsub1_in_ZPR_3b
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
       0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
@@ -14699,32 +17597,32 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
-    {	// ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
-      56,	// bsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
-      56,	// dsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+    {	// ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+      76,	// bsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+      76,	// dsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      56,	// hsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+      76,	// hsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      56,	// ssub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+      76,	// ssub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      56,	// zsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
-      56,	// zsub0 -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
-      56,	// zsub1 -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+      76,	// zsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+      76,	// zsub0 -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+      76,	// zsub1 -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
       0,	// zsub2
       0,	// zsub3
-      56,	// zsub_hi -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+      76,	// zsub_hi -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -14747,12 +17645,12 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      56,	// zsub1_then_bsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
-      56,	// zsub1_then_dsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
-      56,	// zsub1_then_hsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
-      56,	// zsub1_then_ssub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
-      56,	// zsub1_then_zsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
-      56,	// zsub1_then_zsub_hi -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+      76,	// zsub1_then_bsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+      76,	// zsub1_then_dsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+      76,	// zsub1_then_hsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+      76,	// zsub1_then_ssub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+      76,	// zsub1_then_zsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+      76,	// zsub1_then_zsub_hi -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
       0,	// zsub3_then_bsub
       0,	// zsub3_then_dsub
       0,	// zsub3_then_hsub
@@ -14782,8 +17680,8 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      56,	// dsub_zsub1_then_dsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
-      56,	// zsub_zsub1_then_zsub -> ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+      76,	// dsub_zsub1_then_dsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+      76,	// zsub_zsub1_then_zsub -> ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub
       0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
@@ -14801,20 +17699,20 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// QQQ
-      57,	// bsub -> QQQ
-      57,	// dsub -> QQQ
+      77,	// bsub -> QQQ
+      77,	// dsub -> QQQ
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      57,	// hsub -> QQQ
+      77,	// hsub -> QQQ
       0,	// qhisub
       0,	// qsub
-      57,	// qsub0 -> QQQ
-      57,	// qsub1 -> QQQ
-      57,	// qsub2 -> QQQ
+      77,	// qsub0 -> QQQ
+      77,	// qsub1 -> QQQ
+      77,	// qsub2 -> QQQ
       0,	// qsub3
-      57,	// ssub -> QQQ
+      77,	// ssub -> QQQ
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -14835,18 +17733,18 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      57,	// qsub1_then_bsub -> QQQ
-      57,	// qsub1_then_dsub -> QQQ
-      57,	// qsub1_then_hsub -> QQQ
-      57,	// qsub1_then_ssub -> QQQ
+      77,	// qsub1_then_bsub -> QQQ
+      77,	// qsub1_then_dsub -> QQQ
+      77,	// qsub1_then_hsub -> QQQ
+      77,	// qsub1_then_ssub -> QQQ
       0,	// qsub3_then_bsub
       0,	// qsub3_then_dsub
       0,	// qsub3_then_hsub
       0,	// qsub3_then_ssub
-      57,	// qsub2_then_bsub -> QQQ
-      57,	// qsub2_then_dsub -> QQQ
-      57,	// qsub2_then_hsub -> QQQ
-      57,	// qsub2_then_ssub -> QQQ
+      77,	// qsub2_then_bsub -> QQQ
+      77,	// qsub2_then_dsub -> QQQ
+      77,	// qsub2_then_hsub -> QQQ
+      77,	// qsub2_then_ssub -> QQQ
       0,	// subo64_then_sub_32
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
@@ -14871,15 +17769,15 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      57,	// dsub_qsub1_then_dsub -> QQQ
+      77,	// dsub_qsub1_then_dsub -> QQQ
       0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      57,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQ
-      57,	// qsub0_qsub1 -> QQQ
+      77,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQ
+      77,	// qsub0_qsub1 -> QQQ
       0,	// qsub0_qsub1_qsub2
-      57,	// qsub1_qsub2 -> QQQ
+      77,	// qsub1_qsub2 -> QQQ
       0,	// qsub1_qsub2_qsub3
       0,	// qsub2_qsub3
-      57,	// qsub1_then_dsub_qsub2_then_dsub -> QQQ
+      77,	// qsub1_then_dsub_qsub2_then_dsub -> QQQ
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
@@ -14902,31 +17800,31 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// ZPR3
-      58,	// bsub -> ZPR3
-      58,	// dsub -> ZPR3
+      78,	// bsub -> ZPR3
+      78,	// dsub -> ZPR3
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      58,	// hsub -> ZPR3
+      78,	// hsub -> ZPR3
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      58,	// ssub -> ZPR3
+      78,	// ssub -> ZPR3
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      58,	// zsub -> ZPR3
-      58,	// zsub0 -> ZPR3
-      58,	// zsub1 -> ZPR3
-      58,	// zsub2 -> ZPR3
+      78,	// zsub -> ZPR3
+      78,	// zsub0 -> ZPR3
+      78,	// zsub1 -> ZPR3
+      78,	// zsub2 -> ZPR3
       0,	// zsub3
-      58,	// zsub_hi -> ZPR3
+      78,	// zsub_hi -> ZPR3
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -14949,24 +17847,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      58,	// zsub1_then_bsub -> ZPR3
-      58,	// zsub1_then_dsub -> ZPR3
-      58,	// zsub1_then_hsub -> ZPR3
-      58,	// zsub1_then_ssub -> ZPR3
-      58,	// zsub1_then_zsub -> ZPR3
-      58,	// zsub1_then_zsub_hi -> ZPR3
+      78,	// zsub1_then_bsub -> ZPR3
+      78,	// zsub1_then_dsub -> ZPR3
+      78,	// zsub1_then_hsub -> ZPR3
+      78,	// zsub1_then_ssub -> ZPR3
+      78,	// zsub1_then_zsub -> ZPR3
+      78,	// zsub1_then_zsub_hi -> ZPR3
       0,	// zsub3_then_bsub
       0,	// zsub3_then_dsub
       0,	// zsub3_then_hsub
       0,	// zsub3_then_ssub
       0,	// zsub3_then_zsub
       0,	// zsub3_then_zsub_hi
-      58,	// zsub2_then_bsub -> ZPR3
-      58,	// zsub2_then_dsub -> ZPR3
-      58,	// zsub2_then_hsub -> ZPR3
-      58,	// zsub2_then_ssub -> ZPR3
-      58,	// zsub2_then_zsub -> ZPR3
-      58,	// zsub2_then_zsub_hi -> ZPR3
+      78,	// zsub2_then_bsub -> ZPR3
+      78,	// zsub2_then_dsub -> ZPR3
+      78,	// zsub2_then_hsub -> ZPR3
+      78,	// zsub2_then_ssub -> ZPR3
+      78,	// zsub2_then_zsub -> ZPR3
+      78,	// zsub2_then_zsub_hi -> ZPR3
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -14984,39 +17882,39 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      58,	// dsub_zsub1_then_dsub -> ZPR3
-      58,	// zsub_zsub1_then_zsub -> ZPR3
+      78,	// dsub_zsub1_then_dsub -> ZPR3
+      78,	// zsub_zsub1_then_zsub -> ZPR3
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      58,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3
+      78,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3
       0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-      58,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3
-      58,	// zsub0_zsub1 -> ZPR3
+      78,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3
+      78,	// zsub0_zsub1 -> ZPR3
       0,	// zsub0_zsub1_zsub2
-      58,	// zsub1_zsub2 -> ZPR3
+      78,	// zsub1_zsub2 -> ZPR3
       0,	// zsub1_zsub2_zsub3
       0,	// zsub2_zsub3
-      58,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3
+      78,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3
       0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      58,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3
+      78,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3
       0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
-    {	// QQQ_with_qsub0_in_FPR128_lo
-      59,	// bsub -> QQQ_with_qsub0_in_FPR128_lo
-      59,	// dsub -> QQQ_with_qsub0_in_FPR128_lo
+    {	// QQQ_with_dsub_in_FPR64_lo
+      79,	// bsub -> QQQ_with_dsub_in_FPR64_lo
+      79,	// dsub -> QQQ_with_dsub_in_FPR64_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      59,	// hsub -> QQQ_with_qsub0_in_FPR128_lo
+      79,	// hsub -> QQQ_with_dsub_in_FPR64_lo
       0,	// qhisub
       0,	// qsub
-      59,	// qsub0 -> QQQ_with_qsub0_in_FPR128_lo
-      59,	// qsub1 -> QQQ_with_qsub0_in_FPR128_lo
-      59,	// qsub2 -> QQQ_with_qsub0_in_FPR128_lo
+      79,	// qsub0 -> QQQ_with_dsub_in_FPR64_lo
+      79,	// qsub1 -> QQQ_with_dsub_in_FPR64_lo
+      79,	// qsub2 -> QQQ_with_dsub_in_FPR64_lo
       0,	// qsub3
-      59,	// ssub -> QQQ_with_qsub0_in_FPR128_lo
+      79,	// ssub -> QQQ_with_dsub_in_FPR64_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -15037,18 +17935,18 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      59,	// qsub1_then_bsub -> QQQ_with_qsub0_in_FPR128_lo
-      59,	// qsub1_then_dsub -> QQQ_with_qsub0_in_FPR128_lo
-      59,	// qsub1_then_hsub -> QQQ_with_qsub0_in_FPR128_lo
-      59,	// qsub1_then_ssub -> QQQ_with_qsub0_in_FPR128_lo
+      79,	// qsub1_then_bsub -> QQQ_with_dsub_in_FPR64_lo
+      79,	// qsub1_then_dsub -> QQQ_with_dsub_in_FPR64_lo
+      79,	// qsub1_then_hsub -> QQQ_with_dsub_in_FPR64_lo
+      79,	// qsub1_then_ssub -> QQQ_with_dsub_in_FPR64_lo
       0,	// qsub3_then_bsub
       0,	// qsub3_then_dsub
       0,	// qsub3_then_hsub
       0,	// qsub3_then_ssub
-      59,	// qsub2_then_bsub -> QQQ_with_qsub0_in_FPR128_lo
-      59,	// qsub2_then_dsub -> QQQ_with_qsub0_in_FPR128_lo
-      59,	// qsub2_then_hsub -> QQQ_with_qsub0_in_FPR128_lo
-      59,	// qsub2_then_ssub -> QQQ_with_qsub0_in_FPR128_lo
+      79,	// qsub2_then_bsub -> QQQ_with_dsub_in_FPR64_lo
+      79,	// qsub2_then_dsub -> QQQ_with_dsub_in_FPR64_lo
+      79,	// qsub2_then_hsub -> QQQ_with_dsub_in_FPR64_lo
+      79,	// qsub2_then_ssub -> QQQ_with_dsub_in_FPR64_lo
       0,	// subo64_then_sub_32
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
@@ -15073,15 +17971,15 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      59,	// dsub_qsub1_then_dsub -> QQQ_with_qsub0_in_FPR128_lo
+      79,	// dsub_qsub1_then_dsub -> QQQ_with_dsub_in_FPR64_lo
       0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      59,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_qsub0_in_FPR128_lo
-      59,	// qsub0_qsub1 -> QQQ_with_qsub0_in_FPR128_lo
+      79,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_dsub_in_FPR64_lo
+      79,	// qsub0_qsub1 -> QQQ_with_dsub_in_FPR64_lo
       0,	// qsub0_qsub1_qsub2
-      59,	// qsub1_qsub2 -> QQQ_with_qsub0_in_FPR128_lo
+      79,	// qsub1_qsub2 -> QQQ_with_dsub_in_FPR64_lo
       0,	// qsub1_qsub2_qsub3
       0,	// qsub2_qsub3
-      59,	// qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_qsub0_in_FPR128_lo
+      79,	// qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_dsub_in_FPR64_lo
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
@@ -15104,20 +18002,20 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// QQQ_with_qsub1_in_FPR128_lo
-      60,	// bsub -> QQQ_with_qsub1_in_FPR128_lo
-      60,	// dsub -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// bsub -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// dsub -> QQQ_with_qsub1_in_FPR128_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      60,	// hsub -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// hsub -> QQQ_with_qsub1_in_FPR128_lo
       0,	// qhisub
       0,	// qsub
-      60,	// qsub0 -> QQQ_with_qsub1_in_FPR128_lo
-      60,	// qsub1 -> QQQ_with_qsub1_in_FPR128_lo
-      60,	// qsub2 -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// qsub0 -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// qsub1 -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// qsub2 -> QQQ_with_qsub1_in_FPR128_lo
       0,	// qsub3
-      60,	// ssub -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// ssub -> QQQ_with_qsub1_in_FPR128_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -15138,18 +18036,18 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      60,	// qsub1_then_bsub -> QQQ_with_qsub1_in_FPR128_lo
-      60,	// qsub1_then_dsub -> QQQ_with_qsub1_in_FPR128_lo
-      60,	// qsub1_then_hsub -> QQQ_with_qsub1_in_FPR128_lo
-      60,	// qsub1_then_ssub -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// qsub1_then_bsub -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// qsub1_then_dsub -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// qsub1_then_hsub -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// qsub1_then_ssub -> QQQ_with_qsub1_in_FPR128_lo
       0,	// qsub3_then_bsub
       0,	// qsub3_then_dsub
       0,	// qsub3_then_hsub
       0,	// qsub3_then_ssub
-      60,	// qsub2_then_bsub -> QQQ_with_qsub1_in_FPR128_lo
-      60,	// qsub2_then_dsub -> QQQ_with_qsub1_in_FPR128_lo
-      60,	// qsub2_then_hsub -> QQQ_with_qsub1_in_FPR128_lo
-      60,	// qsub2_then_ssub -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// qsub2_then_bsub -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// qsub2_then_dsub -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// qsub2_then_hsub -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// qsub2_then_ssub -> QQQ_with_qsub1_in_FPR128_lo
       0,	// subo64_then_sub_32
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
@@ -15174,15 +18072,15 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      60,	// dsub_qsub1_then_dsub -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// dsub_qsub1_then_dsub -> QQQ_with_qsub1_in_FPR128_lo
       0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      60,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_qsub1_in_FPR128_lo
-      60,	// qsub0_qsub1 -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// qsub0_qsub1 -> QQQ_with_qsub1_in_FPR128_lo
       0,	// qsub0_qsub1_qsub2
-      60,	// qsub1_qsub2 -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// qsub1_qsub2 -> QQQ_with_qsub1_in_FPR128_lo
       0,	// qsub1_qsub2_qsub3
       0,	// qsub2_qsub3
-      60,	// qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_qsub1_in_FPR128_lo
+      80,	// qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_qsub1_in_FPR128_lo
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
@@ -15205,20 +18103,20 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// QQQ_with_qsub2_in_FPR128_lo
-      61,	// bsub -> QQQ_with_qsub2_in_FPR128_lo
-      61,	// dsub -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// bsub -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// dsub -> QQQ_with_qsub2_in_FPR128_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      61,	// hsub -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// hsub -> QQQ_with_qsub2_in_FPR128_lo
       0,	// qhisub
       0,	// qsub
-      61,	// qsub0 -> QQQ_with_qsub2_in_FPR128_lo
-      61,	// qsub1 -> QQQ_with_qsub2_in_FPR128_lo
-      61,	// qsub2 -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// qsub0 -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// qsub1 -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// qsub2 -> QQQ_with_qsub2_in_FPR128_lo
       0,	// qsub3
-      61,	// ssub -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// ssub -> QQQ_with_qsub2_in_FPR128_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -15239,18 +18137,18 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      61,	// qsub1_then_bsub -> QQQ_with_qsub2_in_FPR128_lo
-      61,	// qsub1_then_dsub -> QQQ_with_qsub2_in_FPR128_lo
-      61,	// qsub1_then_hsub -> QQQ_with_qsub2_in_FPR128_lo
-      61,	// qsub1_then_ssub -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// qsub1_then_bsub -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// qsub1_then_dsub -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// qsub1_then_hsub -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// qsub1_then_ssub -> QQQ_with_qsub2_in_FPR128_lo
       0,	// qsub3_then_bsub
       0,	// qsub3_then_dsub
       0,	// qsub3_then_hsub
       0,	// qsub3_then_ssub
-      61,	// qsub2_then_bsub -> QQQ_with_qsub2_in_FPR128_lo
-      61,	// qsub2_then_dsub -> QQQ_with_qsub2_in_FPR128_lo
-      61,	// qsub2_then_hsub -> QQQ_with_qsub2_in_FPR128_lo
-      61,	// qsub2_then_ssub -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// qsub2_then_bsub -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// qsub2_then_dsub -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// qsub2_then_hsub -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// qsub2_then_ssub -> QQQ_with_qsub2_in_FPR128_lo
       0,	// subo64_then_sub_32
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
@@ -15275,15 +18173,15 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      61,	// dsub_qsub1_then_dsub -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// dsub_qsub1_then_dsub -> QQQ_with_qsub2_in_FPR128_lo
       0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      61,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_qsub2_in_FPR128_lo
-      61,	// qsub0_qsub1 -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// qsub0_qsub1 -> QQQ_with_qsub2_in_FPR128_lo
       0,	// qsub0_qsub1_qsub2
-      61,	// qsub1_qsub2 -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// qsub1_qsub2 -> QQQ_with_qsub2_in_FPR128_lo
       0,	// qsub1_qsub2_qsub3
       0,	// qsub2_qsub3
-      61,	// qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_qsub2_in_FPR128_lo
+      81,	// qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_qsub2_in_FPR128_lo
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
@@ -15305,32 +18203,32 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
-    {	// ZPR3_with_zsub1_in_ZPR_4b
-      62,	// bsub -> ZPR3_with_zsub1_in_ZPR_4b
-      62,	// dsub -> ZPR3_with_zsub1_in_ZPR_4b
+    {	// ZPR3_with_dsub_in_FPR64_lo
+      82,	// bsub -> ZPR3_with_dsub_in_FPR64_lo
+      82,	// dsub -> ZPR3_with_dsub_in_FPR64_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      62,	// hsub -> ZPR3_with_zsub1_in_ZPR_4b
+      82,	// hsub -> ZPR3_with_dsub_in_FPR64_lo
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      62,	// ssub -> ZPR3_with_zsub1_in_ZPR_4b
+      82,	// ssub -> ZPR3_with_dsub_in_FPR64_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      62,	// zsub -> ZPR3_with_zsub1_in_ZPR_4b
-      62,	// zsub0 -> ZPR3_with_zsub1_in_ZPR_4b
-      62,	// zsub1 -> ZPR3_with_zsub1_in_ZPR_4b
-      62,	// zsub2 -> ZPR3_with_zsub1_in_ZPR_4b
+      82,	// zsub -> ZPR3_with_dsub_in_FPR64_lo
+      82,	// zsub0 -> ZPR3_with_dsub_in_FPR64_lo
+      82,	// zsub1 -> ZPR3_with_dsub_in_FPR64_lo
+      82,	// zsub2 -> ZPR3_with_dsub_in_FPR64_lo
       0,	// zsub3
-      62,	// zsub_hi -> ZPR3_with_zsub1_in_ZPR_4b
+      82,	// zsub_hi -> ZPR3_with_dsub_in_FPR64_lo
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -15353,24 +18251,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      62,	// zsub1_then_bsub -> ZPR3_with_zsub1_in_ZPR_4b
-      62,	// zsub1_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b
-      62,	// zsub1_then_hsub -> ZPR3_with_zsub1_in_ZPR_4b
-      62,	// zsub1_then_ssub -> ZPR3_with_zsub1_in_ZPR_4b
-      62,	// zsub1_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b
-      62,	// zsub1_then_zsub_hi -> ZPR3_with_zsub1_in_ZPR_4b
+      82,	// zsub1_then_bsub -> ZPR3_with_dsub_in_FPR64_lo
+      82,	// zsub1_then_dsub -> ZPR3_with_dsub_in_FPR64_lo
+      82,	// zsub1_then_hsub -> ZPR3_with_dsub_in_FPR64_lo
+      82,	// zsub1_then_ssub -> ZPR3_with_dsub_in_FPR64_lo
+      82,	// zsub1_then_zsub -> ZPR3_with_dsub_in_FPR64_lo
+      82,	// zsub1_then_zsub_hi -> ZPR3_with_dsub_in_FPR64_lo
       0,	// zsub3_then_bsub
       0,	// zsub3_then_dsub
       0,	// zsub3_then_hsub
       0,	// zsub3_then_ssub
       0,	// zsub3_then_zsub
       0,	// zsub3_then_zsub_hi
-      62,	// zsub2_then_bsub -> ZPR3_with_zsub1_in_ZPR_4b
-      62,	// zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b
-      62,	// zsub2_then_hsub -> ZPR3_with_zsub1_in_ZPR_4b
-      62,	// zsub2_then_ssub -> ZPR3_with_zsub1_in_ZPR_4b
-      62,	// zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b
-      62,	// zsub2_then_zsub_hi -> ZPR3_with_zsub1_in_ZPR_4b
+      82,	// zsub2_then_bsub -> ZPR3_with_dsub_in_FPR64_lo
+      82,	// zsub2_then_dsub -> ZPR3_with_dsub_in_FPR64_lo
+      82,	// zsub2_then_hsub -> ZPR3_with_dsub_in_FPR64_lo
+      82,	// zsub2_then_ssub -> ZPR3_with_dsub_in_FPR64_lo
+      82,	// zsub2_then_zsub -> ZPR3_with_dsub_in_FPR64_lo
+      82,	// zsub2_then_zsub_hi -> ZPR3_with_dsub_in_FPR64_lo
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -15388,50 +18286,151 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      62,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b
-      62,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b
+      82,	// dsub_zsub1_then_dsub -> ZPR3_with_dsub_in_FPR64_lo
+      82,	// zsub_zsub1_then_zsub -> ZPR3_with_dsub_in_FPR64_lo
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      62,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b
+      82,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_dsub_in_FPR64_lo
       0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-      62,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b
-      62,	// zsub0_zsub1 -> ZPR3_with_zsub1_in_ZPR_4b
+      82,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_dsub_in_FPR64_lo
+      82,	// zsub0_zsub1 -> ZPR3_with_dsub_in_FPR64_lo
       0,	// zsub0_zsub1_zsub2
-      62,	// zsub1_zsub2 -> ZPR3_with_zsub1_in_ZPR_4b
+      82,	// zsub1_zsub2 -> ZPR3_with_dsub_in_FPR64_lo
       0,	// zsub1_zsub2_zsub3
       0,	// zsub2_zsub3
-      62,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b
+      82,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_dsub_in_FPR64_lo
       0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      62,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b
+      82,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_dsub_in_FPR64_lo
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// ZPR3_with_zsub1_in_ZPR_4b
+      83,	// bsub -> ZPR3_with_zsub1_in_ZPR_4b
+      83,	// dsub -> ZPR3_with_zsub1_in_ZPR_4b
+      0,	// dsub0
+      0,	// dsub1
+      0,	// dsub2
+      0,	// dsub3
+      83,	// hsub -> ZPR3_with_zsub1_in_ZPR_4b
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      83,	// ssub -> ZPR3_with_zsub1_in_ZPR_4b
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      83,	// zsub -> ZPR3_with_zsub1_in_ZPR_4b
+      83,	// zsub0 -> ZPR3_with_zsub1_in_ZPR_4b
+      83,	// zsub1 -> ZPR3_with_zsub1_in_ZPR_4b
+      83,	// zsub2 -> ZPR3_with_zsub1_in_ZPR_4b
+      0,	// zsub3
+      83,	// zsub_hi -> ZPR3_with_zsub1_in_ZPR_4b
+      0,	// dsub1_then_bsub
+      0,	// dsub1_then_hsub
+      0,	// dsub1_then_ssub
+      0,	// dsub3_then_bsub
+      0,	// dsub3_then_hsub
+      0,	// dsub3_then_ssub
+      0,	// dsub2_then_bsub
+      0,	// dsub2_then_hsub
+      0,	// dsub2_then_ssub
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      83,	// zsub1_then_bsub -> ZPR3_with_zsub1_in_ZPR_4b
+      83,	// zsub1_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b
+      83,	// zsub1_then_hsub -> ZPR3_with_zsub1_in_ZPR_4b
+      83,	// zsub1_then_ssub -> ZPR3_with_zsub1_in_ZPR_4b
+      83,	// zsub1_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b
+      83,	// zsub1_then_zsub_hi -> ZPR3_with_zsub1_in_ZPR_4b
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      83,	// zsub2_then_bsub -> ZPR3_with_zsub1_in_ZPR_4b
+      83,	// zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b
+      83,	// zsub2_then_hsub -> ZPR3_with_zsub1_in_ZPR_4b
+      83,	// zsub2_then_ssub -> ZPR3_with_zsub1_in_ZPR_4b
+      83,	// zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b
+      83,	// zsub2_then_zsub_hi -> ZPR3_with_zsub1_in_ZPR_4b
+      0,	// dsub0_dsub1
+      0,	// dsub0_dsub1_dsub2
+      0,	// dsub1_dsub2
+      0,	// dsub1_dsub2_dsub3
+      0,	// dsub2_dsub3
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      83,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b
+      83,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      83,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      83,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b
+      83,	// zsub0_zsub1 -> ZPR3_with_zsub1_in_ZPR_4b
+      0,	// zsub0_zsub1_zsub2
+      83,	// zsub1_zsub2 -> ZPR3_with_zsub1_in_ZPR_4b
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      83,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      83,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b
       0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// ZPR3_with_zsub2_in_ZPR_4b
-      63,	// bsub -> ZPR3_with_zsub2_in_ZPR_4b
-      63,	// dsub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// bsub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// dsub -> ZPR3_with_zsub2_in_ZPR_4b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      63,	// hsub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// hsub -> ZPR3_with_zsub2_in_ZPR_4b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      63,	// ssub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// ssub -> ZPR3_with_zsub2_in_ZPR_4b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      63,	// zsub -> ZPR3_with_zsub2_in_ZPR_4b
-      63,	// zsub0 -> ZPR3_with_zsub2_in_ZPR_4b
-      63,	// zsub1 -> ZPR3_with_zsub2_in_ZPR_4b
-      63,	// zsub2 -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub0 -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub1 -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub2 -> ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub3
-      63,	// zsub_hi -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub_hi -> ZPR3_with_zsub2_in_ZPR_4b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -15454,24 +18453,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      63,	// zsub1_then_bsub -> ZPR3_with_zsub2_in_ZPR_4b
-      63,	// zsub1_then_dsub -> ZPR3_with_zsub2_in_ZPR_4b
-      63,	// zsub1_then_hsub -> ZPR3_with_zsub2_in_ZPR_4b
-      63,	// zsub1_then_ssub -> ZPR3_with_zsub2_in_ZPR_4b
-      63,	// zsub1_then_zsub -> ZPR3_with_zsub2_in_ZPR_4b
-      63,	// zsub1_then_zsub_hi -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub1_then_bsub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub1_then_dsub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub1_then_hsub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub1_then_ssub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub1_then_zsub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub1_then_zsub_hi -> ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub3_then_bsub
       0,	// zsub3_then_dsub
       0,	// zsub3_then_hsub
       0,	// zsub3_then_ssub
       0,	// zsub3_then_zsub
       0,	// zsub3_then_zsub_hi
-      63,	// zsub2_then_bsub -> ZPR3_with_zsub2_in_ZPR_4b
-      63,	// zsub2_then_dsub -> ZPR3_with_zsub2_in_ZPR_4b
-      63,	// zsub2_then_hsub -> ZPR3_with_zsub2_in_ZPR_4b
-      63,	// zsub2_then_ssub -> ZPR3_with_zsub2_in_ZPR_4b
-      63,	// zsub2_then_zsub -> ZPR3_with_zsub2_in_ZPR_4b
-      63,	// zsub2_then_zsub_hi -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub2_then_bsub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub2_then_dsub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub2_then_hsub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub2_then_ssub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub2_then_zsub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub2_then_zsub_hi -> ZPR3_with_zsub2_in_ZPR_4b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -15489,140 +18488,39 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      63,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub2_in_ZPR_4b
-      63,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub2_in_ZPR_4b
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      63,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-      63,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub2_in_ZPR_4b
-      63,	// zsub0_zsub1 -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub0_zsub1 -> ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub0_zsub1_zsub2
-      63,	// zsub1_zsub2 -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub1_zsub2 -> ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub1_zsub2_zsub3
       0,	// zsub2_zsub3
-      63,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      63,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub2_in_ZPR_4b
+      84,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
-    {	// ZPR3_with_zsub_in_FPR128_lo
-      64,	// bsub -> ZPR3_with_zsub_in_FPR128_lo
-      64,	// dsub -> ZPR3_with_zsub_in_FPR128_lo
+    {	// QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
+      85,	// bsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
+      85,	// dsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      64,	// hsub -> ZPR3_with_zsub_in_FPR128_lo
+      85,	// hsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
       0,	// qhisub
       0,	// qsub
-      0,	// qsub0
-      0,	// qsub1
-      0,	// qsub2
+      85,	// qsub0 -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
+      85,	// qsub1 -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
+      85,	// qsub2 -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
       0,	// qsub3
-      64,	// ssub -> ZPR3_with_zsub_in_FPR128_lo
-      0,	// sub_32
-      0,	// sube32
-      0,	// sube64
-      0,	// subo32
-      0,	// subo64
-      64,	// zsub -> ZPR3_with_zsub_in_FPR128_lo
-      64,	// zsub0 -> ZPR3_with_zsub_in_FPR128_lo
-      64,	// zsub1 -> ZPR3_with_zsub_in_FPR128_lo
-      64,	// zsub2 -> ZPR3_with_zsub_in_FPR128_lo
-      0,	// zsub3
-      64,	// zsub_hi -> ZPR3_with_zsub_in_FPR128_lo
-      0,	// dsub1_then_bsub
-      0,	// dsub1_then_hsub
-      0,	// dsub1_then_ssub
-      0,	// dsub3_then_bsub
-      0,	// dsub3_then_hsub
-      0,	// dsub3_then_ssub
-      0,	// dsub2_then_bsub
-      0,	// dsub2_then_hsub
-      0,	// dsub2_then_ssub
-      0,	// qsub1_then_bsub
-      0,	// qsub1_then_dsub
-      0,	// qsub1_then_hsub
-      0,	// qsub1_then_ssub
-      0,	// qsub3_then_bsub
-      0,	// qsub3_then_dsub
-      0,	// qsub3_then_hsub
-      0,	// qsub3_then_ssub
-      0,	// qsub2_then_bsub
-      0,	// qsub2_then_dsub
-      0,	// qsub2_then_hsub
-      0,	// qsub2_then_ssub
-      0,	// subo64_then_sub_32
-      64,	// zsub1_then_bsub -> ZPR3_with_zsub_in_FPR128_lo
-      64,	// zsub1_then_dsub -> ZPR3_with_zsub_in_FPR128_lo
-      64,	// zsub1_then_hsub -> ZPR3_with_zsub_in_FPR128_lo
-      64,	// zsub1_then_ssub -> ZPR3_with_zsub_in_FPR128_lo
-      64,	// zsub1_then_zsub -> ZPR3_with_zsub_in_FPR128_lo
-      64,	// zsub1_then_zsub_hi -> ZPR3_with_zsub_in_FPR128_lo
-      0,	// zsub3_then_bsub
-      0,	// zsub3_then_dsub
-      0,	// zsub3_then_hsub
-      0,	// zsub3_then_ssub
-      0,	// zsub3_then_zsub
-      0,	// zsub3_then_zsub_hi
-      64,	// zsub2_then_bsub -> ZPR3_with_zsub_in_FPR128_lo
-      64,	// zsub2_then_dsub -> ZPR3_with_zsub_in_FPR128_lo
-      64,	// zsub2_then_hsub -> ZPR3_with_zsub_in_FPR128_lo
-      64,	// zsub2_then_ssub -> ZPR3_with_zsub_in_FPR128_lo
-      64,	// zsub2_then_zsub -> ZPR3_with_zsub_in_FPR128_lo
-      64,	// zsub2_then_zsub_hi -> ZPR3_with_zsub_in_FPR128_lo
-      0,	// dsub0_dsub1
-      0,	// dsub0_dsub1_dsub2
-      0,	// dsub1_dsub2
-      0,	// dsub1_dsub2_dsub3
-      0,	// dsub2_dsub3
-      0,	// dsub_qsub1_then_dsub
-      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
-      0,	// qsub0_qsub1
-      0,	// qsub0_qsub1_qsub2
-      0,	// qsub1_qsub2
-      0,	// qsub1_qsub2_qsub3
-      0,	// qsub2_qsub3
-      0,	// qsub1_then_dsub_qsub2_then_dsub
-      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      0,	// qsub2_then_dsub_qsub3_then_dsub
-      0,	// sub_32_subo64_then_sub_32
-      64,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub_in_FPR128_lo
-      64,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub_in_FPR128_lo
-      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      64,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub_in_FPR128_lo
-      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-      64,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub_in_FPR128_lo
-      64,	// zsub0_zsub1 -> ZPR3_with_zsub_in_FPR128_lo
-      0,	// zsub0_zsub1_zsub2
-      64,	// zsub1_zsub2 -> ZPR3_with_zsub_in_FPR128_lo
-      0,	// zsub1_zsub2_zsub3
-      0,	// zsub2_zsub3
-      64,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub_in_FPR128_lo
-      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      64,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub_in_FPR128_lo
-      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-      0,	// zsub2_then_dsub_zsub3_then_dsub
-      0,	// zsub2_then_zsub_zsub3_then_zsub
-    },
-    {	// QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
-      65,	// bsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
-      65,	// dsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
-      0,	// dsub0
-      0,	// dsub1
-      0,	// dsub2
-      0,	// dsub3
-      65,	// hsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
-      0,	// qhisub
-      0,	// qsub
-      65,	// qsub0 -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
-      65,	// qsub1 -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
-      65,	// qsub2 -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
-      0,	// qsub3
-      65,	// ssub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
+      85,	// ssub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -15643,18 +18541,18 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      65,	// qsub1_then_bsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
-      65,	// qsub1_then_dsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
-      65,	// qsub1_then_hsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
-      65,	// qsub1_then_ssub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
+      85,	// qsub1_then_bsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
+      85,	// qsub1_then_dsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
+      85,	// qsub1_then_hsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
+      85,	// qsub1_then_ssub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
       0,	// qsub3_then_bsub
       0,	// qsub3_then_dsub
       0,	// qsub3_then_hsub
       0,	// qsub3_then_ssub
-      65,	// qsub2_then_bsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
-      65,	// qsub2_then_dsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
-      65,	// qsub2_then_hsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
-      65,	// qsub2_then_ssub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
+      85,	// qsub2_then_bsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
+      85,	// qsub2_then_dsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
+      85,	// qsub2_then_hsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
+      85,	// qsub2_then_ssub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
       0,	// subo64_then_sub_32
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
@@ -15679,15 +18577,15 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      65,	// dsub_qsub1_then_dsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
+      85,	// dsub_qsub1_then_dsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
       0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      65,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
-      65,	// qsub0_qsub1 -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
+      85,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
+      85,	// qsub0_qsub1 -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
       0,	// qsub0_qsub1_qsub2
-      65,	// qsub1_qsub2 -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
+      85,	// qsub1_qsub2 -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
       0,	// qsub1_qsub2_qsub3
       0,	// qsub2_qsub3
-      65,	// qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
+      85,	// qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
@@ -15710,20 +18608,20 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      66,	// bsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      66,	// dsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// bsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// dsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      66,	// hsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// hsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// qhisub
       0,	// qsub
-      66,	// qsub0 -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      66,	// qsub1 -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      66,	// qsub2 -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// qsub0 -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// qsub1 -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// qsub2 -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// qsub3
-      66,	// ssub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// ssub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -15744,18 +18642,18 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      66,	// qsub1_then_bsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      66,	// qsub1_then_dsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      66,	// qsub1_then_hsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      66,	// qsub1_then_ssub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// qsub1_then_bsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// qsub1_then_dsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// qsub1_then_hsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// qsub1_then_ssub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// qsub3_then_bsub
       0,	// qsub3_then_dsub
       0,	// qsub3_then_hsub
       0,	// qsub3_then_ssub
-      66,	// qsub2_then_bsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      66,	// qsub2_then_dsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      66,	// qsub2_then_hsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      66,	// qsub2_then_ssub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// qsub2_then_bsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// qsub2_then_dsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// qsub2_then_hsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// qsub2_then_ssub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// subo64_then_sub_32
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
@@ -15780,15 +18678,15 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      66,	// dsub_qsub1_then_dsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// dsub_qsub1_then_dsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      66,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      66,	// qsub0_qsub1 -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// qsub0_qsub1 -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// qsub0_qsub1_qsub2
-      66,	// qsub1_qsub2 -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// qsub1_qsub2 -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// qsub1_qsub2_qsub3
       0,	// qsub2_qsub3
-      66,	// qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      86,	// qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
@@ -15806,36 +18704,137 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub1_then_dsub_zsub2_then_dsub
       0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub1_then_zsub_zsub2_then_zsub
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      87,	// bsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      87,	// dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      0,	// dsub0
+      0,	// dsub1
+      0,	// dsub2
+      0,	// dsub3
+      87,	// hsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      87,	// ssub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      87,	// zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      87,	// zsub0 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      87,	// zsub1 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      87,	// zsub2 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      0,	// zsub3
+      87,	// zsub_hi -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      0,	// dsub1_then_bsub
+      0,	// dsub1_then_hsub
+      0,	// dsub1_then_ssub
+      0,	// dsub3_then_bsub
+      0,	// dsub3_then_hsub
+      0,	// dsub3_then_ssub
+      0,	// dsub2_then_bsub
+      0,	// dsub2_then_hsub
+      0,	// dsub2_then_ssub
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      87,	// zsub1_then_bsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      87,	// zsub1_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      87,	// zsub1_then_hsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      87,	// zsub1_then_ssub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      87,	// zsub1_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      87,	// zsub1_then_zsub_hi -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      87,	// zsub2_then_bsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      87,	// zsub2_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      87,	// zsub2_then_hsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      87,	// zsub2_then_ssub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      87,	// zsub2_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      87,	// zsub2_then_zsub_hi -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      0,	// dsub0_dsub1
+      0,	// dsub0_dsub1_dsub2
+      0,	// dsub1_dsub2
+      0,	// dsub1_dsub2_dsub3
+      0,	// dsub2_dsub3
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      87,	// dsub_zsub1_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      87,	// zsub_zsub1_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      87,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      87,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      87,	// zsub0_zsub1 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      0,	// zsub0_zsub1_zsub2
+      87,	// zsub1_zsub2 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      87,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      87,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
       0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-      67,	// bsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-      67,	// dsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// bsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// dsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      67,	// hsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// hsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      67,	// ssub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// ssub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      67,	// zsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-      67,	// zsub0 -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-      67,	// zsub1 -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-      67,	// zsub2 -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub0 -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub1 -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub2 -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub3
-      67,	// zsub_hi -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub_hi -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -15858,24 +18857,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      67,	// zsub1_then_bsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-      67,	// zsub1_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-      67,	// zsub1_then_hsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-      67,	// zsub1_then_ssub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-      67,	// zsub1_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-      67,	// zsub1_then_zsub_hi -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub1_then_bsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub1_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub1_then_hsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub1_then_ssub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub1_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub1_then_zsub_hi -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub3_then_bsub
       0,	// zsub3_then_dsub
       0,	// zsub3_then_hsub
       0,	// zsub3_then_ssub
       0,	// zsub3_then_zsub
       0,	// zsub3_then_zsub_hi
-      67,	// zsub2_then_bsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-      67,	// zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-      67,	// zsub2_then_hsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-      67,	// zsub2_then_ssub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-      67,	// zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-      67,	// zsub2_then_zsub_hi -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub2_then_bsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub2_then_hsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub2_then_ssub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub2_then_zsub_hi -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -15893,140 +18892,39 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      67,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-      67,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      67,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-      67,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-      67,	// zsub0_zsub1 -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub0_zsub1 -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub0_zsub1_zsub2
-      67,	// zsub1_zsub2 -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub1_zsub2 -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub1_zsub2_zsub3
       0,	// zsub2_zsub3
-      67,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      67,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
+      88,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
-    {	// ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      68,	// bsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      68,	// dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+    {	// QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      89,	// bsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      89,	// dsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      68,	// hsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
+      89,	// hsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// qhisub
       0,	// qsub
-      0,	// qsub0
-      0,	// qsub1
-      0,	// qsub2
+      89,	// qsub0 -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      89,	// qsub1 -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      89,	// qsub2 -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// qsub3
-      68,	// ssub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      0,	// sub_32
-      0,	// sube32
-      0,	// sube64
-      0,	// subo32
-      0,	// subo64
-      68,	// zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      68,	// zsub0 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      68,	// zsub1 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      68,	// zsub2 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      0,	// zsub3
-      68,	// zsub_hi -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      0,	// dsub1_then_bsub
-      0,	// dsub1_then_hsub
-      0,	// dsub1_then_ssub
-      0,	// dsub3_then_bsub
-      0,	// dsub3_then_hsub
-      0,	// dsub3_then_ssub
-      0,	// dsub2_then_bsub
-      0,	// dsub2_then_hsub
-      0,	// dsub2_then_ssub
-      0,	// qsub1_then_bsub
-      0,	// qsub1_then_dsub
-      0,	// qsub1_then_hsub
-      0,	// qsub1_then_ssub
-      0,	// qsub3_then_bsub
-      0,	// qsub3_then_dsub
-      0,	// qsub3_then_hsub
-      0,	// qsub3_then_ssub
-      0,	// qsub2_then_bsub
-      0,	// qsub2_then_dsub
-      0,	// qsub2_then_hsub
-      0,	// qsub2_then_ssub
-      0,	// subo64_then_sub_32
-      68,	// zsub1_then_bsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      68,	// zsub1_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      68,	// zsub1_then_hsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      68,	// zsub1_then_ssub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      68,	// zsub1_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      68,	// zsub1_then_zsub_hi -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      0,	// zsub3_then_bsub
-      0,	// zsub3_then_dsub
-      0,	// zsub3_then_hsub
-      0,	// zsub3_then_ssub
-      0,	// zsub3_then_zsub
-      0,	// zsub3_then_zsub_hi
-      68,	// zsub2_then_bsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      68,	// zsub2_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      68,	// zsub2_then_hsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      68,	// zsub2_then_ssub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      68,	// zsub2_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      68,	// zsub2_then_zsub_hi -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      0,	// dsub0_dsub1
-      0,	// dsub0_dsub1_dsub2
-      0,	// dsub1_dsub2
-      0,	// dsub1_dsub2_dsub3
-      0,	// dsub2_dsub3
-      0,	// dsub_qsub1_then_dsub
-      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
-      0,	// qsub0_qsub1
-      0,	// qsub0_qsub1_qsub2
-      0,	// qsub1_qsub2
-      0,	// qsub1_qsub2_qsub3
-      0,	// qsub2_qsub3
-      0,	// qsub1_then_dsub_qsub2_then_dsub
-      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      0,	// qsub2_then_dsub_qsub3_then_dsub
-      0,	// sub_32_subo64_then_sub_32
-      68,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      68,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      68,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-      68,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      68,	// zsub0_zsub1 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      0,	// zsub0_zsub1_zsub2
-      68,	// zsub1_zsub2 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      0,	// zsub1_zsub2_zsub3
-      0,	// zsub2_zsub3
-      68,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      68,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-      0,	// zsub2_then_dsub_zsub3_then_dsub
-      0,	// zsub2_then_zsub_zsub3_then_zsub
-    },
-    {	// QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      69,	// bsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      69,	// dsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      0,	// dsub0
-      0,	// dsub1
-      0,	// dsub2
-      0,	// dsub3
-      69,	// hsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      0,	// qhisub
-      0,	// qsub
-      69,	// qsub0 -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      69,	// qsub1 -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      69,	// qsub2 -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      0,	// qsub3
-      69,	// ssub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      89,	// ssub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -16047,18 +18945,18 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      69,	// qsub1_then_bsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      69,	// qsub1_then_dsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      69,	// qsub1_then_hsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      69,	// qsub1_then_ssub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      89,	// qsub1_then_bsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      89,	// qsub1_then_dsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      89,	// qsub1_then_hsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      89,	// qsub1_then_ssub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// qsub3_then_bsub
       0,	// qsub3_then_dsub
       0,	// qsub3_then_hsub
       0,	// qsub3_then_ssub
-      69,	// qsub2_then_bsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      69,	// qsub2_then_dsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      69,	// qsub2_then_hsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      69,	// qsub2_then_ssub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      89,	// qsub2_then_bsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      89,	// qsub2_then_dsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      89,	// qsub2_then_hsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      89,	// qsub2_then_ssub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// subo64_then_sub_32
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
@@ -16083,15 +18981,15 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      69,	// dsub_qsub1_then_dsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      89,	// dsub_qsub1_then_dsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      69,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-      69,	// qsub0_qsub1 -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      89,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      89,	// qsub0_qsub1 -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// qsub0_qsub1_qsub2
-      69,	// qsub1_qsub2 -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      89,	// qsub1_qsub2 -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// qsub1_qsub2_qsub3
       0,	// qsub2_qsub3
-      69,	// qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+      89,	// qsub1_then_dsub_qsub2_then_dsub -> QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
@@ -16113,32 +19011,32 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
-    {	// ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
-      70,	// bsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
-      70,	// dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+    {	// ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// bsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      70,	// hsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// hsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      70,	// ssub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// ssub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      70,	// zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
-      70,	// zsub0 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
-      70,	// zsub1 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
-      70,	// zsub2 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub0 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub1 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub2 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub3
-      70,	// zsub_hi -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub_hi -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -16161,24 +19059,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      70,	// zsub1_then_bsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
-      70,	// zsub1_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
-      70,	// zsub1_then_hsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
-      70,	// zsub1_then_ssub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
-      70,	// zsub1_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
-      70,	// zsub1_then_zsub_hi -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub1_then_bsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub1_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub1_then_hsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub1_then_ssub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub1_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub1_then_zsub_hi -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub3_then_bsub
       0,	// zsub3_then_dsub
       0,	// zsub3_then_hsub
       0,	// zsub3_then_ssub
       0,	// zsub3_then_zsub
       0,	// zsub3_then_zsub_hi
-      70,	// zsub2_then_bsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
-      70,	// zsub2_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
-      70,	// zsub2_then_hsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
-      70,	// zsub2_then_ssub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
-      70,	// zsub2_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
-      70,	// zsub2_then_zsub_hi -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub2_then_bsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub2_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub2_then_hsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub2_then_ssub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub2_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub2_then_zsub_hi -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -16196,50 +19094,50 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      70,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
-      70,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// dsub_zsub1_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub_zsub1_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      70,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-      70,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
-      70,	// zsub0_zsub1 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub0_zsub1 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub0_zsub1_zsub2
-      70,	// zsub1_zsub2 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub1_zsub2 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub1_zsub2_zsub3
       0,	// zsub2_zsub3
-      70,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      70,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+      90,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
       0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// ZPR3_with_zsub0_in_ZPR_3b
-      71,	// bsub -> ZPR3_with_zsub0_in_ZPR_3b
-      71,	// dsub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// bsub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// dsub -> ZPR3_with_zsub0_in_ZPR_3b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      71,	// hsub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// hsub -> ZPR3_with_zsub0_in_ZPR_3b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      71,	// ssub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// ssub -> ZPR3_with_zsub0_in_ZPR_3b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      71,	// zsub -> ZPR3_with_zsub0_in_ZPR_3b
-      71,	// zsub0 -> ZPR3_with_zsub0_in_ZPR_3b
-      71,	// zsub1 -> ZPR3_with_zsub0_in_ZPR_3b
-      71,	// zsub2 -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub0 -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub1 -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub2 -> ZPR3_with_zsub0_in_ZPR_3b
       0,	// zsub3
-      71,	// zsub_hi -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub_hi -> ZPR3_with_zsub0_in_ZPR_3b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -16262,24 +19160,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      71,	// zsub1_then_bsub -> ZPR3_with_zsub0_in_ZPR_3b
-      71,	// zsub1_then_dsub -> ZPR3_with_zsub0_in_ZPR_3b
-      71,	// zsub1_then_hsub -> ZPR3_with_zsub0_in_ZPR_3b
-      71,	// zsub1_then_ssub -> ZPR3_with_zsub0_in_ZPR_3b
-      71,	// zsub1_then_zsub -> ZPR3_with_zsub0_in_ZPR_3b
-      71,	// zsub1_then_zsub_hi -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub1_then_bsub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub1_then_dsub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub1_then_hsub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub1_then_ssub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub1_then_zsub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub1_then_zsub_hi -> ZPR3_with_zsub0_in_ZPR_3b
       0,	// zsub3_then_bsub
       0,	// zsub3_then_dsub
       0,	// zsub3_then_hsub
       0,	// zsub3_then_ssub
       0,	// zsub3_then_zsub
       0,	// zsub3_then_zsub_hi
-      71,	// zsub2_then_bsub -> ZPR3_with_zsub0_in_ZPR_3b
-      71,	// zsub2_then_dsub -> ZPR3_with_zsub0_in_ZPR_3b
-      71,	// zsub2_then_hsub -> ZPR3_with_zsub0_in_ZPR_3b
-      71,	// zsub2_then_ssub -> ZPR3_with_zsub0_in_ZPR_3b
-      71,	// zsub2_then_zsub -> ZPR3_with_zsub0_in_ZPR_3b
-      71,	// zsub2_then_zsub_hi -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub2_then_bsub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub2_then_dsub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub2_then_hsub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub2_then_ssub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub2_then_zsub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub2_then_zsub_hi -> ZPR3_with_zsub0_in_ZPR_3b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -16297,50 +19195,50 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      71,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub0_in_ZPR_3b
-      71,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub0_in_ZPR_3b
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      71,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub0_in_ZPR_3b
       0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-      71,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub0_in_ZPR_3b
-      71,	// zsub0_zsub1 -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub0_zsub1 -> ZPR3_with_zsub0_in_ZPR_3b
       0,	// zsub0_zsub1_zsub2
-      71,	// zsub1_zsub2 -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub1_zsub2 -> ZPR3_with_zsub0_in_ZPR_3b
       0,	// zsub1_zsub2_zsub3
       0,	// zsub2_zsub3
-      71,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub0_in_ZPR_3b
       0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      71,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub0_in_ZPR_3b
+      91,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub0_in_ZPR_3b
       0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// ZPR3_with_zsub1_in_ZPR_3b
-      72,	// bsub -> ZPR3_with_zsub1_in_ZPR_3b
-      72,	// dsub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// bsub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// dsub -> ZPR3_with_zsub1_in_ZPR_3b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      72,	// hsub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// hsub -> ZPR3_with_zsub1_in_ZPR_3b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      72,	// ssub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// ssub -> ZPR3_with_zsub1_in_ZPR_3b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      72,	// zsub -> ZPR3_with_zsub1_in_ZPR_3b
-      72,	// zsub0 -> ZPR3_with_zsub1_in_ZPR_3b
-      72,	// zsub1 -> ZPR3_with_zsub1_in_ZPR_3b
-      72,	// zsub2 -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub0 -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub1 -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub2 -> ZPR3_with_zsub1_in_ZPR_3b
       0,	// zsub3
-      72,	// zsub_hi -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub_hi -> ZPR3_with_zsub1_in_ZPR_3b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -16363,24 +19261,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      72,	// zsub1_then_bsub -> ZPR3_with_zsub1_in_ZPR_3b
-      72,	// zsub1_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b
-      72,	// zsub1_then_hsub -> ZPR3_with_zsub1_in_ZPR_3b
-      72,	// zsub1_then_ssub -> ZPR3_with_zsub1_in_ZPR_3b
-      72,	// zsub1_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b
-      72,	// zsub1_then_zsub_hi -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub1_then_bsub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub1_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub1_then_hsub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub1_then_ssub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub1_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub1_then_zsub_hi -> ZPR3_with_zsub1_in_ZPR_3b
       0,	// zsub3_then_bsub
       0,	// zsub3_then_dsub
       0,	// zsub3_then_hsub
       0,	// zsub3_then_ssub
       0,	// zsub3_then_zsub
       0,	// zsub3_then_zsub_hi
-      72,	// zsub2_then_bsub -> ZPR3_with_zsub1_in_ZPR_3b
-      72,	// zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b
-      72,	// zsub2_then_hsub -> ZPR3_with_zsub1_in_ZPR_3b
-      72,	// zsub2_then_ssub -> ZPR3_with_zsub1_in_ZPR_3b
-      72,	// zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b
-      72,	// zsub2_then_zsub_hi -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub2_then_bsub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub2_then_hsub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub2_then_ssub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub2_then_zsub_hi -> ZPR3_with_zsub1_in_ZPR_3b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -16398,50 +19296,50 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      72,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b
-      72,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      72,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b
       0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-      72,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b
-      72,	// zsub0_zsub1 -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub0_zsub1 -> ZPR3_with_zsub1_in_ZPR_3b
       0,	// zsub0_zsub1_zsub2
-      72,	// zsub1_zsub2 -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub1_zsub2 -> ZPR3_with_zsub1_in_ZPR_3b
       0,	// zsub1_zsub2_zsub3
       0,	// zsub2_zsub3
-      72,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b
       0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      72,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b
+      92,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b
       0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// ZPR3_with_zsub2_in_ZPR_3b
-      73,	// bsub -> ZPR3_with_zsub2_in_ZPR_3b
-      73,	// dsub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// bsub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// dsub -> ZPR3_with_zsub2_in_ZPR_3b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      73,	// hsub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// hsub -> ZPR3_with_zsub2_in_ZPR_3b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      73,	// ssub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// ssub -> ZPR3_with_zsub2_in_ZPR_3b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      73,	// zsub -> ZPR3_with_zsub2_in_ZPR_3b
-      73,	// zsub0 -> ZPR3_with_zsub2_in_ZPR_3b
-      73,	// zsub1 -> ZPR3_with_zsub2_in_ZPR_3b
-      73,	// zsub2 -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub0 -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub1 -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub2 -> ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub3
-      73,	// zsub_hi -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub_hi -> ZPR3_with_zsub2_in_ZPR_3b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -16464,24 +19362,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      73,	// zsub1_then_bsub -> ZPR3_with_zsub2_in_ZPR_3b
-      73,	// zsub1_then_dsub -> ZPR3_with_zsub2_in_ZPR_3b
-      73,	// zsub1_then_hsub -> ZPR3_with_zsub2_in_ZPR_3b
-      73,	// zsub1_then_ssub -> ZPR3_with_zsub2_in_ZPR_3b
-      73,	// zsub1_then_zsub -> ZPR3_with_zsub2_in_ZPR_3b
-      73,	// zsub1_then_zsub_hi -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub1_then_bsub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub1_then_dsub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub1_then_hsub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub1_then_ssub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub1_then_zsub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub1_then_zsub_hi -> ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub3_then_bsub
       0,	// zsub3_then_dsub
       0,	// zsub3_then_hsub
       0,	// zsub3_then_ssub
       0,	// zsub3_then_zsub
       0,	// zsub3_then_zsub_hi
-      73,	// zsub2_then_bsub -> ZPR3_with_zsub2_in_ZPR_3b
-      73,	// zsub2_then_dsub -> ZPR3_with_zsub2_in_ZPR_3b
-      73,	// zsub2_then_hsub -> ZPR3_with_zsub2_in_ZPR_3b
-      73,	// zsub2_then_ssub -> ZPR3_with_zsub2_in_ZPR_3b
-      73,	// zsub2_then_zsub -> ZPR3_with_zsub2_in_ZPR_3b
-      73,	// zsub2_then_zsub_hi -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub2_then_bsub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub2_then_dsub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub2_then_hsub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub2_then_ssub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub2_then_zsub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub2_then_zsub_hi -> ZPR3_with_zsub2_in_ZPR_3b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -16499,50 +19397,151 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      73,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub2_in_ZPR_3b
-      73,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub2_in_ZPR_3b
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      73,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-      73,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub2_in_ZPR_3b
-      73,	// zsub0_zsub1 -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub0_zsub1 -> ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub0_zsub1_zsub2
-      73,	// zsub1_zsub2 -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub1_zsub2 -> ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub1_zsub2_zsub3
       0,	// zsub2_zsub3
-      73,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      73,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub2_in_ZPR_3b
+      93,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub2_in_ZPR_3b
+      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      0,	// zsub2_then_dsub_zsub3_then_dsub
+      0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      94,	// bsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      94,	// dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      0,	// dsub0
+      0,	// dsub1
+      0,	// dsub2
+      0,	// dsub3
+      94,	// hsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      94,	// ssub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      94,	// zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      94,	// zsub0 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      94,	// zsub1 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      94,	// zsub2 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      0,	// zsub3
+      94,	// zsub_hi -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      0,	// dsub1_then_bsub
+      0,	// dsub1_then_hsub
+      0,	// dsub1_then_ssub
+      0,	// dsub3_then_bsub
+      0,	// dsub3_then_hsub
+      0,	// dsub3_then_ssub
+      0,	// dsub2_then_bsub
+      0,	// dsub2_then_hsub
+      0,	// dsub2_then_ssub
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      94,	// zsub1_then_bsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      94,	// zsub1_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      94,	// zsub1_then_hsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      94,	// zsub1_then_ssub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      94,	// zsub1_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      94,	// zsub1_then_zsub_hi -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      0,	// zsub3_then_bsub
+      0,	// zsub3_then_dsub
+      0,	// zsub3_then_hsub
+      0,	// zsub3_then_ssub
+      0,	// zsub3_then_zsub
+      0,	// zsub3_then_zsub_hi
+      94,	// zsub2_then_bsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      94,	// zsub2_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      94,	// zsub2_then_hsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      94,	// zsub2_then_ssub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      94,	// zsub2_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      94,	// zsub2_then_zsub_hi -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      0,	// dsub0_dsub1
+      0,	// dsub0_dsub1_dsub2
+      0,	// dsub1_dsub2
+      0,	// dsub1_dsub2_dsub3
+      0,	// dsub2_dsub3
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      94,	// dsub_zsub1_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      94,	// zsub_zsub1_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      94,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
+      94,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      94,	// zsub0_zsub1 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      0,	// zsub0_zsub1_zsub2
+      94,	// zsub1_zsub2 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      0,	// zsub1_zsub2_zsub3
+      0,	// zsub2_zsub3
+      94,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
+      94,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
       0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-      74,	// bsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-      74,	// dsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// bsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// dsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      74,	// hsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// hsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      74,	// ssub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// ssub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      74,	// zsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-      74,	// zsub0 -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-      74,	// zsub1 -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-      74,	// zsub2 -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub0 -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub1 -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub2 -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub3
-      74,	// zsub_hi -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub_hi -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -16565,24 +19564,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      74,	// zsub1_then_bsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-      74,	// zsub1_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-      74,	// zsub1_then_hsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-      74,	// zsub1_then_ssub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-      74,	// zsub1_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-      74,	// zsub1_then_zsub_hi -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub1_then_bsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub1_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub1_then_hsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub1_then_ssub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub1_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub1_then_zsub_hi -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub3_then_bsub
       0,	// zsub3_then_dsub
       0,	// zsub3_then_hsub
       0,	// zsub3_then_ssub
       0,	// zsub3_then_zsub
       0,	// zsub3_then_zsub_hi
-      74,	// zsub2_then_bsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-      74,	// zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-      74,	// zsub2_then_hsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-      74,	// zsub2_then_ssub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-      74,	// zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-      74,	// zsub2_then_zsub_hi -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub2_then_bsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub2_then_hsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub2_then_ssub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub2_then_zsub_hi -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -16600,50 +19599,50 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      74,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-      74,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      74,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-      74,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-      74,	// zsub0_zsub1 -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub0_zsub1 -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub0_zsub1_zsub2
-      74,	// zsub1_zsub2 -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub1_zsub2 -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub1_zsub2_zsub3
       0,	// zsub2_zsub3
-      74,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      74,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
+      95,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
-    {	// ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-      75,	// bsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-      75,	// dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+    {	// ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+      96,	// bsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+      96,	// dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      75,	// hsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      96,	// hsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      75,	// ssub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      96,	// ssub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      75,	// zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-      75,	// zsub0 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-      75,	// zsub1 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-      75,	// zsub2 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      96,	// zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+      96,	// zsub0 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+      96,	// zsub1 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+      96,	// zsub2 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub3
-      75,	// zsub_hi -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      96,	// zsub_hi -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -16666,24 +19665,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      75,	// zsub1_then_bsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-      75,	// zsub1_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-      75,	// zsub1_then_hsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-      75,	// zsub1_then_ssub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-      75,	// zsub1_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-      75,	// zsub1_then_zsub_hi -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      96,	// zsub1_then_bsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+      96,	// zsub1_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+      96,	// zsub1_then_hsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+      96,	// zsub1_then_ssub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+      96,	// zsub1_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+      96,	// zsub1_then_zsub_hi -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub3_then_bsub
       0,	// zsub3_then_dsub
       0,	// zsub3_then_hsub
       0,	// zsub3_then_ssub
       0,	// zsub3_then_zsub
       0,	// zsub3_then_zsub_hi
-      75,	// zsub2_then_bsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-      75,	// zsub2_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-      75,	// zsub2_then_hsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-      75,	// zsub2_then_ssub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-      75,	// zsub2_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-      75,	// zsub2_then_zsub_hi -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      96,	// zsub2_then_bsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+      96,	// zsub2_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+      96,	// zsub2_then_hsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+      96,	// zsub2_then_ssub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+      96,	// zsub2_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+      96,	// zsub2_then_zsub_hi -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -16701,140 +19700,39 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      75,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-      75,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      96,	// dsub_zsub1_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+      96,	// zsub_zsub1_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      75,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      96,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-      75,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-      75,	// zsub0_zsub1 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      96,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+      96,	// zsub0_zsub1 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub0_zsub1_zsub2
-      75,	// zsub1_zsub2 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      96,	// zsub1_zsub2 -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub1_zsub2_zsub3
       0,	// zsub2_zsub3
-      75,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
+      96,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      75,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-      0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-      0,	// zsub2_then_dsub_zsub3_then_dsub
-      0,	// zsub2_then_zsub_zsub3_then_zsub
-    },
-    {	// ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      76,	// bsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      76,	// dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      0,	// dsub0
-      0,	// dsub1
-      0,	// dsub2
-      0,	// dsub3
-      76,	// hsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      0,	// qhisub
-      0,	// qsub
-      0,	// qsub0
-      0,	// qsub1
-      0,	// qsub2
-      0,	// qsub3
-      76,	// ssub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      0,	// sub_32
-      0,	// sube32
-      0,	// sube64
-      0,	// subo32
-      0,	// subo64
-      76,	// zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      76,	// zsub0 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      76,	// zsub1 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      76,	// zsub2 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      0,	// zsub3
-      76,	// zsub_hi -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      0,	// dsub1_then_bsub
-      0,	// dsub1_then_hsub
-      0,	// dsub1_then_ssub
-      0,	// dsub3_then_bsub
-      0,	// dsub3_then_hsub
-      0,	// dsub3_then_ssub
-      0,	// dsub2_then_bsub
-      0,	// dsub2_then_hsub
-      0,	// dsub2_then_ssub
-      0,	// qsub1_then_bsub
-      0,	// qsub1_then_dsub
-      0,	// qsub1_then_hsub
-      0,	// qsub1_then_ssub
-      0,	// qsub3_then_bsub
-      0,	// qsub3_then_dsub
-      0,	// qsub3_then_hsub
-      0,	// qsub3_then_ssub
-      0,	// qsub2_then_bsub
-      0,	// qsub2_then_dsub
-      0,	// qsub2_then_hsub
-      0,	// qsub2_then_ssub
-      0,	// subo64_then_sub_32
-      76,	// zsub1_then_bsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      76,	// zsub1_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      76,	// zsub1_then_hsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      76,	// zsub1_then_ssub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      76,	// zsub1_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      76,	// zsub1_then_zsub_hi -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      0,	// zsub3_then_bsub
-      0,	// zsub3_then_dsub
-      0,	// zsub3_then_hsub
-      0,	// zsub3_then_ssub
-      0,	// zsub3_then_zsub
-      0,	// zsub3_then_zsub_hi
-      76,	// zsub2_then_bsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      76,	// zsub2_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      76,	// zsub2_then_hsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      76,	// zsub2_then_ssub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      76,	// zsub2_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      76,	// zsub2_then_zsub_hi -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      0,	// dsub0_dsub1
-      0,	// dsub0_dsub1_dsub2
-      0,	// dsub1_dsub2
-      0,	// dsub1_dsub2_dsub3
-      0,	// dsub2_dsub3
-      0,	// dsub_qsub1_then_dsub
-      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
-      0,	// qsub0_qsub1
-      0,	// qsub0_qsub1_qsub2
-      0,	// qsub1_qsub2
-      0,	// qsub1_qsub2_qsub3
-      0,	// qsub2_qsub3
-      0,	// qsub1_then_dsub_qsub2_then_dsub
-      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      0,	// qsub2_then_dsub_qsub3_then_dsub
-      0,	// sub_32_subo64_then_sub_32
-      76,	// dsub_zsub1_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      76,	// zsub_zsub1_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      0,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      76,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      0,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
-      76,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      76,	// zsub0_zsub1 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      0,	// zsub0_zsub1_zsub2
-      76,	// zsub1_zsub2 -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      0,	// zsub1_zsub2_zsub3
-      0,	// zsub2_zsub3
-      76,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
-      0,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub
-      76,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+      96,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
       0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// QQQQ
-      77,	// bsub -> QQQQ
-      77,	// dsub -> QQQQ
+      97,	// bsub -> QQQQ
+      97,	// dsub -> QQQQ
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      77,	// hsub -> QQQQ
+      97,	// hsub -> QQQQ
       0,	// qhisub
       0,	// qsub
-      77,	// qsub0 -> QQQQ
-      77,	// qsub1 -> QQQQ
-      77,	// qsub2 -> QQQQ
-      77,	// qsub3 -> QQQQ
-      77,	// ssub -> QQQQ
+      97,	// qsub0 -> QQQQ
+      97,	// qsub1 -> QQQQ
+      97,	// qsub2 -> QQQQ
+      97,	// qsub3 -> QQQQ
+      97,	// ssub -> QQQQ
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -16855,18 +19753,18 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      77,	// qsub1_then_bsub -> QQQQ
-      77,	// qsub1_then_dsub -> QQQQ
-      77,	// qsub1_then_hsub -> QQQQ
-      77,	// qsub1_then_ssub -> QQQQ
-      77,	// qsub3_then_bsub -> QQQQ
-      77,	// qsub3_then_dsub -> QQQQ
-      77,	// qsub3_then_hsub -> QQQQ
-      77,	// qsub3_then_ssub -> QQQQ
-      77,	// qsub2_then_bsub -> QQQQ
-      77,	// qsub2_then_dsub -> QQQQ
-      77,	// qsub2_then_hsub -> QQQQ
-      77,	// qsub2_then_ssub -> QQQQ
+      97,	// qsub1_then_bsub -> QQQQ
+      97,	// qsub1_then_dsub -> QQQQ
+      97,	// qsub1_then_hsub -> QQQQ
+      97,	// qsub1_then_ssub -> QQQQ
+      97,	// qsub3_then_bsub -> QQQQ
+      97,	// qsub3_then_dsub -> QQQQ
+      97,	// qsub3_then_hsub -> QQQQ
+      97,	// qsub3_then_ssub -> QQQQ
+      97,	// qsub2_then_bsub -> QQQQ
+      97,	// qsub2_then_dsub -> QQQQ
+      97,	// qsub2_then_hsub -> QQQQ
+      97,	// qsub2_then_ssub -> QQQQ
       0,	// subo64_then_sub_32
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
@@ -16891,17 +19789,17 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      77,	// dsub_qsub1_then_dsub -> QQQQ
-      77,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ
-      77,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ
-      77,	// qsub0_qsub1 -> QQQQ
-      77,	// qsub0_qsub1_qsub2 -> QQQQ
-      77,	// qsub1_qsub2 -> QQQQ
-      77,	// qsub1_qsub2_qsub3 -> QQQQ
-      77,	// qsub2_qsub3 -> QQQQ
-      77,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ
-      77,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ
-      77,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ
+      97,	// dsub_qsub1_then_dsub -> QQQQ
+      97,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ
+      97,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ
+      97,	// qsub0_qsub1 -> QQQQ
+      97,	// qsub0_qsub1_qsub2 -> QQQQ
+      97,	// qsub1_qsub2 -> QQQQ
+      97,	// qsub1_qsub2_qsub3 -> QQQQ
+      97,	// qsub2_qsub3 -> QQQQ
+      97,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ
+      97,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ
+      97,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ
       0,	// sub_32_subo64_then_sub_32
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
@@ -16922,31 +19820,31 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// ZPR4
-      78,	// bsub -> ZPR4
-      78,	// dsub -> ZPR4
+      98,	// bsub -> ZPR4
+      98,	// dsub -> ZPR4
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      78,	// hsub -> ZPR4
+      98,	// hsub -> ZPR4
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      78,	// ssub -> ZPR4
+      98,	// ssub -> ZPR4
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      78,	// zsub -> ZPR4
-      78,	// zsub0 -> ZPR4
-      78,	// zsub1 -> ZPR4
-      78,	// zsub2 -> ZPR4
-      78,	// zsub3 -> ZPR4
-      78,	// zsub_hi -> ZPR4
+      98,	// zsub -> ZPR4
+      98,	// zsub0 -> ZPR4
+      98,	// zsub1 -> ZPR4
+      98,	// zsub2 -> ZPR4
+      98,	// zsub3 -> ZPR4
+      98,	// zsub_hi -> ZPR4
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -16969,24 +19867,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      78,	// zsub1_then_bsub -> ZPR4
-      78,	// zsub1_then_dsub -> ZPR4
-      78,	// zsub1_then_hsub -> ZPR4
-      78,	// zsub1_then_ssub -> ZPR4
-      78,	// zsub1_then_zsub -> ZPR4
-      78,	// zsub1_then_zsub_hi -> ZPR4
-      78,	// zsub3_then_bsub -> ZPR4
-      78,	// zsub3_then_dsub -> ZPR4
-      78,	// zsub3_then_hsub -> ZPR4
-      78,	// zsub3_then_ssub -> ZPR4
-      78,	// zsub3_then_zsub -> ZPR4
-      78,	// zsub3_then_zsub_hi -> ZPR4
-      78,	// zsub2_then_bsub -> ZPR4
-      78,	// zsub2_then_dsub -> ZPR4
-      78,	// zsub2_then_hsub -> ZPR4
-      78,	// zsub2_then_ssub -> ZPR4
-      78,	// zsub2_then_zsub -> ZPR4
-      78,	// zsub2_then_zsub_hi -> ZPR4
+      98,	// zsub1_then_bsub -> ZPR4
+      98,	// zsub1_then_dsub -> ZPR4
+      98,	// zsub1_then_hsub -> ZPR4
+      98,	// zsub1_then_ssub -> ZPR4
+      98,	// zsub1_then_zsub -> ZPR4
+      98,	// zsub1_then_zsub_hi -> ZPR4
+      98,	// zsub3_then_bsub -> ZPR4
+      98,	// zsub3_then_dsub -> ZPR4
+      98,	// zsub3_then_hsub -> ZPR4
+      98,	// zsub3_then_ssub -> ZPR4
+      98,	// zsub3_then_zsub -> ZPR4
+      98,	// zsub3_then_zsub_hi -> ZPR4
+      98,	// zsub2_then_bsub -> ZPR4
+      98,	// zsub2_then_dsub -> ZPR4
+      98,	// zsub2_then_hsub -> ZPR4
+      98,	// zsub2_then_ssub -> ZPR4
+      98,	// zsub2_then_zsub -> ZPR4
+      98,	// zsub2_then_zsub_hi -> ZPR4
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -17004,39 +19902,39 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      78,	// dsub_zsub1_then_dsub -> ZPR4
-      78,	// zsub_zsub1_then_zsub -> ZPR4
-      78,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4
-      78,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4
-      78,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4
-      78,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4
-      78,	// zsub0_zsub1 -> ZPR4
-      78,	// zsub0_zsub1_zsub2 -> ZPR4
-      78,	// zsub1_zsub2 -> ZPR4
-      78,	// zsub1_zsub2_zsub3 -> ZPR4
-      78,	// zsub2_zsub3 -> ZPR4
-      78,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4
-      78,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4
-      78,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4
-      78,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4
-      78,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4
-      78,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4
+      98,	// dsub_zsub1_then_dsub -> ZPR4
+      98,	// zsub_zsub1_then_zsub -> ZPR4
+      98,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4
+      98,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4
+      98,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4
+      98,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4
+      98,	// zsub0_zsub1 -> ZPR4
+      98,	// zsub0_zsub1_zsub2 -> ZPR4
+      98,	// zsub1_zsub2 -> ZPR4
+      98,	// zsub1_zsub2_zsub3 -> ZPR4
+      98,	// zsub2_zsub3 -> ZPR4
+      98,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4
+      98,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4
+      98,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4
+      98,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4
+      98,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4
+      98,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4
     },
-    {	// QQQQ_with_qsub0_in_FPR128_lo
-      79,	// bsub -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// dsub -> QQQQ_with_qsub0_in_FPR128_lo
+    {	// QQQQ_with_dsub_in_FPR64_lo
+      99,	// bsub -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// dsub -> QQQQ_with_dsub_in_FPR64_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      79,	// hsub -> QQQQ_with_qsub0_in_FPR128_lo
+      99,	// hsub -> QQQQ_with_dsub_in_FPR64_lo
       0,	// qhisub
       0,	// qsub
-      79,	// qsub0 -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub1 -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub2 -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub3 -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// ssub -> QQQQ_with_qsub0_in_FPR128_lo
+      99,	// qsub0 -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub1 -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub2 -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub3 -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// ssub -> QQQQ_with_dsub_in_FPR64_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -17057,18 +19955,18 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      79,	// qsub1_then_bsub -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub1_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub1_then_hsub -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub1_then_ssub -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub3_then_bsub -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub3_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub3_then_hsub -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub3_then_ssub -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub2_then_bsub -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub2_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub2_then_hsub -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub2_then_ssub -> QQQQ_with_qsub0_in_FPR128_lo
+      99,	// qsub1_then_bsub -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub1_then_dsub -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub1_then_hsub -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub1_then_ssub -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub3_then_bsub -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub3_then_dsub -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub3_then_hsub -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub3_then_ssub -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub2_then_bsub -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub2_then_dsub -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub2_then_hsub -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub2_then_ssub -> QQQQ_with_dsub_in_FPR64_lo
       0,	// subo64_then_sub_32
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
@@ -17093,17 +19991,17 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      79,	// dsub_qsub1_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub0_qsub1 -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub0_qsub1_qsub2 -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub1_qsub2 -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub1_qsub2_qsub3 -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub2_qsub3 -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo
-      79,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo
+      99,	// dsub_qsub1_then_dsub -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub0_qsub1 -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub0_qsub1_qsub2 -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub1_qsub2 -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub1_qsub2_qsub3 -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub2_qsub3 -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_dsub_in_FPR64_lo
+      99,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_dsub_in_FPR64_lo
       0,	// sub_32_subo64_then_sub_32
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
@@ -17124,20 +20022,20 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// QQQQ_with_qsub1_in_FPR128_lo
-      80,	// bsub -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// dsub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// bsub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// dsub -> QQQQ_with_qsub1_in_FPR128_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      80,	// hsub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// hsub -> QQQQ_with_qsub1_in_FPR128_lo
       0,	// qhisub
       0,	// qsub
-      80,	// qsub0 -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub1 -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub2 -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub3 -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// ssub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub0 -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub1 -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub2 -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub3 -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// ssub -> QQQQ_with_qsub1_in_FPR128_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -17158,18 +20056,18 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      80,	// qsub1_then_bsub -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub1_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub1_then_hsub -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub1_then_ssub -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub3_then_bsub -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub3_then_hsub -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub3_then_ssub -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub2_then_bsub -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub2_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub2_then_hsub -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub2_then_ssub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub1_then_bsub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub1_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub1_then_hsub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub1_then_ssub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub3_then_bsub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub3_then_hsub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub3_then_ssub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub2_then_bsub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub2_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub2_then_hsub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub2_then_ssub -> QQQQ_with_qsub1_in_FPR128_lo
       0,	// subo64_then_sub_32
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
@@ -17194,17 +20092,17 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      80,	// dsub_qsub1_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub0_qsub1 -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub0_qsub1_qsub2 -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub1_qsub2 -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub1_qsub2_qsub3 -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub2_qsub3 -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo
-      80,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// dsub_qsub1_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub0_qsub1 -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub0_qsub1_qsub2 -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub1_qsub2 -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub1_qsub2_qsub3 -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub2_qsub3 -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo
+      100,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo
       0,	// sub_32_subo64_then_sub_32
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
@@ -17225,20 +20123,20 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// QQQQ_with_qsub2_in_FPR128_lo
-      81,	// bsub -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// dsub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// bsub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// dsub -> QQQQ_with_qsub2_in_FPR128_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      81,	// hsub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// hsub -> QQQQ_with_qsub2_in_FPR128_lo
       0,	// qhisub
       0,	// qsub
-      81,	// qsub0 -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub1 -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub2 -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub3 -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// ssub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub0 -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub1 -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub2 -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub3 -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// ssub -> QQQQ_with_qsub2_in_FPR128_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -17259,18 +20157,18 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      81,	// qsub1_then_bsub -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub1_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub1_then_hsub -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub1_then_ssub -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub3_then_bsub -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub3_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub3_then_hsub -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub3_then_ssub -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub2_then_bsub -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub2_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub2_then_hsub -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub2_then_ssub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub1_then_bsub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub1_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub1_then_hsub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub1_then_ssub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub3_then_bsub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub3_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub3_then_hsub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub3_then_ssub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub2_then_bsub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub2_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub2_then_hsub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub2_then_ssub -> QQQQ_with_qsub2_in_FPR128_lo
       0,	// subo64_then_sub_32
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
@@ -17295,17 +20193,17 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      81,	// dsub_qsub1_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub0_qsub1 -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub0_qsub1_qsub2 -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub1_qsub2 -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub1_qsub2_qsub3 -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub2_qsub3 -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo
-      81,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// dsub_qsub1_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub0_qsub1 -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub0_qsub1_qsub2 -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub1_qsub2 -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub1_qsub2_qsub3 -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub2_qsub3 -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo
+      101,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo
       0,	// sub_32_subo64_then_sub_32
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
@@ -17326,20 +20224,20 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// QQQQ_with_qsub3_in_FPR128_lo
-      82,	// bsub -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// dsub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// bsub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// dsub -> QQQQ_with_qsub3_in_FPR128_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      82,	// hsub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// hsub -> QQQQ_with_qsub3_in_FPR128_lo
       0,	// qhisub
       0,	// qsub
-      82,	// qsub0 -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub1 -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub2 -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub3 -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// ssub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub0 -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub1 -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub2 -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub3 -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// ssub -> QQQQ_with_qsub3_in_FPR128_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -17360,18 +20258,18 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      82,	// qsub1_then_bsub -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub1_then_dsub -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub1_then_hsub -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub1_then_ssub -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub3_then_bsub -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub3_then_dsub -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub3_then_hsub -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub3_then_ssub -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub2_then_bsub -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub2_then_dsub -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub2_then_hsub -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub2_then_ssub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub1_then_bsub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub1_then_dsub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub1_then_hsub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub1_then_ssub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub3_then_bsub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub3_then_dsub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub3_then_hsub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub3_then_ssub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub2_then_bsub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub2_then_dsub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub2_then_hsub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub2_then_ssub -> QQQQ_with_qsub3_in_FPR128_lo
       0,	// subo64_then_sub_32
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
@@ -17396,17 +20294,17 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      82,	// dsub_qsub1_then_dsub -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub0_qsub1 -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub0_qsub1_qsub2 -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub1_qsub2 -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub1_qsub2_qsub3 -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub2_qsub3 -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub3_in_FPR128_lo
-      82,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// dsub_qsub1_then_dsub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub0_qsub1 -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub0_qsub1_qsub2 -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub1_qsub2 -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub1_qsub2_qsub3 -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub2_qsub3 -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub3_in_FPR128_lo
+      102,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub3_in_FPR128_lo
       0,	// sub_32_subo64_then_sub_32
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
@@ -17426,32 +20324,32 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
-    {	// ZPR4_with_zsub1_in_ZPR_4b
-      83,	// bsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// dsub -> ZPR4_with_zsub1_in_ZPR_4b
+    {	// ZPR4_with_dsub_in_FPR64_lo
+      103,	// bsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// dsub -> ZPR4_with_dsub_in_FPR64_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      83,	// hsub -> ZPR4_with_zsub1_in_ZPR_4b
+      103,	// hsub -> ZPR4_with_dsub_in_FPR64_lo
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      83,	// ssub -> ZPR4_with_zsub1_in_ZPR_4b
+      103,	// ssub -> ZPR4_with_dsub_in_FPR64_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      83,	// zsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub0 -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub1 -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub2 -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub3 -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b
+      103,	// zsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub0 -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub1 -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub2 -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub3 -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub_hi -> ZPR4_with_dsub_in_FPR64_lo
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -17474,24 +20372,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      83,	// zsub1_then_bsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub1_then_hsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub1_then_ssub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub1_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub3_then_bsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub3_then_hsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub3_then_ssub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub3_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub2_then_bsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub2_then_hsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub2_then_ssub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub2_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b
+      103,	// zsub1_then_bsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub1_then_dsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub1_then_hsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub1_then_ssub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub1_then_zsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub1_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub3_then_bsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub3_then_hsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub3_then_ssub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub3_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub2_then_bsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub2_then_hsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub2_then_ssub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub2_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -17509,50 +20407,151 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      83,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub0_zsub1 -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b
-      83,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b
+      103,	// dsub_zsub1_then_dsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub_zsub1_then_zsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub0_zsub1 -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub0_zsub1_zsub2 -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub1_zsub2 -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub1_zsub2_zsub3 -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub2_zsub3 -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo
+      103,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo
+    },
+    {	// ZPR4_with_zsub1_in_ZPR_4b
+      104,	// bsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// dsub -> ZPR4_with_zsub1_in_ZPR_4b
+      0,	// dsub0
+      0,	// dsub1
+      0,	// dsub2
+      0,	// dsub3
+      104,	// hsub -> ZPR4_with_zsub1_in_ZPR_4b
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      104,	// ssub -> ZPR4_with_zsub1_in_ZPR_4b
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      104,	// zsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub0 -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub1 -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub2 -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub3 -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b
+      0,	// dsub1_then_bsub
+      0,	// dsub1_then_hsub
+      0,	// dsub1_then_ssub
+      0,	// dsub3_then_bsub
+      0,	// dsub3_then_hsub
+      0,	// dsub3_then_ssub
+      0,	// dsub2_then_bsub
+      0,	// dsub2_then_hsub
+      0,	// dsub2_then_ssub
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      104,	// zsub1_then_bsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub1_then_hsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub1_then_ssub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub1_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub3_then_bsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub3_then_hsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub3_then_ssub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub3_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub2_then_bsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub2_then_hsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub2_then_ssub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub2_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b
+      0,	// dsub0_dsub1
+      0,	// dsub0_dsub1_dsub2
+      0,	// dsub1_dsub2
+      0,	// dsub1_dsub2_dsub3
+      0,	// dsub2_dsub3
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      104,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub0_zsub1 -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b
+      104,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b
     },
     {	// ZPR4_with_zsub2_in_ZPR_4b
-      84,	// bsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// dsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// bsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// dsub -> ZPR4_with_zsub2_in_ZPR_4b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      84,	// hsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// hsub -> ZPR4_with_zsub2_in_ZPR_4b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      84,	// ssub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// ssub -> ZPR4_with_zsub2_in_ZPR_4b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      84,	// zsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub0 -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub1 -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub2 -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub3 -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub_hi -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub0 -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub1 -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub2 -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub3 -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub_hi -> ZPR4_with_zsub2_in_ZPR_4b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -17575,24 +20574,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      84,	// zsub1_then_bsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub1_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub1_then_hsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub1_then_ssub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub1_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub1_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub3_then_bsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub3_then_hsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub3_then_ssub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub3_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub2_then_bsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub2_then_hsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub2_then_ssub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub2_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub1_then_bsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub1_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub1_then_hsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub1_then_ssub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub1_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub1_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub3_then_bsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub3_then_hsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub3_then_ssub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub3_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub2_then_bsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub2_then_hsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub2_then_ssub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub2_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_4b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -17610,50 +20609,50 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      84,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub0_zsub1 -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub1_zsub2 -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub2_zsub3 -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b
-      84,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub0_zsub1 -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub1_zsub2 -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub2_zsub3 -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b
+      105,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b
     },
     {	// ZPR4_with_zsub3_in_ZPR_4b
-      85,	// bsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// dsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// bsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// dsub -> ZPR4_with_zsub3_in_ZPR_4b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      85,	// hsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// hsub -> ZPR4_with_zsub3_in_ZPR_4b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      85,	// ssub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// ssub -> ZPR4_with_zsub3_in_ZPR_4b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      85,	// zsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub0 -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub1 -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub2 -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub3 -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub_hi -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub0 -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub1 -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub2 -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub3 -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub_hi -> ZPR4_with_zsub3_in_ZPR_4b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -17676,24 +20675,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      85,	// zsub1_then_bsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub1_then_dsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub1_then_hsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub1_then_ssub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub1_then_zsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub1_then_zsub_hi -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub3_then_bsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub3_then_dsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub3_then_hsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub3_then_ssub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub3_then_zsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub3_then_zsub_hi -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub2_then_bsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub2_then_dsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub2_then_hsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub2_then_ssub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub2_then_zsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub2_then_zsub_hi -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub1_then_bsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub1_then_dsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub1_then_hsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub1_then_ssub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub1_then_zsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub1_then_zsub_hi -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub3_then_bsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub3_then_dsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub3_then_hsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub3_then_ssub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub3_then_zsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub3_then_zsub_hi -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub2_then_bsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub2_then_dsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub2_then_hsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub2_then_ssub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub2_then_zsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub2_then_zsub_hi -> ZPR4_with_zsub3_in_ZPR_4b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -17711,140 +20710,39 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      85,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub0_zsub1 -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub1_zsub2 -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub2_zsub3 -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub3_in_ZPR_4b
-      85,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub0_zsub1 -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub1_zsub2 -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub2_zsub3 -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub3_in_ZPR_4b
+      106,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub3_in_ZPR_4b
     },
-    {	// ZPR4_with_zsub_in_FPR128_lo
-      86,	// bsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// dsub -> ZPR4_with_zsub_in_FPR128_lo
+    {	// QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// bsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      86,	// hsub -> ZPR4_with_zsub_in_FPR128_lo
+      107,	// hsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
       0,	// qhisub
       0,	// qsub
-      0,	// qsub0
-      0,	// qsub1
-      0,	// qsub2
-      0,	// qsub3
-      86,	// ssub -> ZPR4_with_zsub_in_FPR128_lo
-      0,	// sub_32
-      0,	// sube32
-      0,	// sube64
-      0,	// subo32
-      0,	// subo64
-      86,	// zsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub0 -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub1 -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub2 -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub3 -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub_hi -> ZPR4_with_zsub_in_FPR128_lo
-      0,	// dsub1_then_bsub
-      0,	// dsub1_then_hsub
-      0,	// dsub1_then_ssub
-      0,	// dsub3_then_bsub
-      0,	// dsub3_then_hsub
-      0,	// dsub3_then_ssub
-      0,	// dsub2_then_bsub
-      0,	// dsub2_then_hsub
-      0,	// dsub2_then_ssub
-      0,	// qsub1_then_bsub
-      0,	// qsub1_then_dsub
-      0,	// qsub1_then_hsub
-      0,	// qsub1_then_ssub
-      0,	// qsub3_then_bsub
-      0,	// qsub3_then_dsub
-      0,	// qsub3_then_hsub
-      0,	// qsub3_then_ssub
-      0,	// qsub2_then_bsub
-      0,	// qsub2_then_dsub
-      0,	// qsub2_then_hsub
-      0,	// qsub2_then_ssub
-      0,	// subo64_then_sub_32
-      86,	// zsub1_then_bsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub1_then_dsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub1_then_hsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub1_then_ssub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub1_then_zsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub1_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub3_then_bsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub3_then_hsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub3_then_ssub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub3_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub2_then_bsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub2_then_hsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub2_then_ssub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub2_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo
-      0,	// dsub0_dsub1
-      0,	// dsub0_dsub1_dsub2
-      0,	// dsub1_dsub2
-      0,	// dsub1_dsub2_dsub3
-      0,	// dsub2_dsub3
-      0,	// dsub_qsub1_then_dsub
-      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
-      0,	// qsub0_qsub1
-      0,	// qsub0_qsub1_qsub2
-      0,	// qsub1_qsub2
-      0,	// qsub1_qsub2_qsub3
-      0,	// qsub2_qsub3
-      0,	// qsub1_then_dsub_qsub2_then_dsub
-      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      0,	// qsub2_then_dsub_qsub3_then_dsub
-      0,	// sub_32_subo64_then_sub_32
-      86,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub0_zsub1 -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub1_zsub2 -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub2_zsub3 -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo
-      86,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo
-    },
-    {	// QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// bsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      0,	// dsub0
-      0,	// dsub1
-      0,	// dsub2
-      0,	// dsub3
-      87,	// hsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      0,	// qhisub
-      0,	// qsub
-      87,	// qsub0 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub1 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub2 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub3 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// ssub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub0 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub1 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub2 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub3 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// ssub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -17865,18 +20763,18 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      87,	// qsub1_then_bsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub1_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub1_then_hsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub1_then_ssub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub3_then_bsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub3_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub3_then_hsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub3_then_ssub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub2_then_bsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub2_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub2_then_hsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub2_then_ssub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub1_then_bsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub1_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub1_then_hsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub1_then_ssub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub3_then_bsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub3_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub3_then_hsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub3_then_ssub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub2_then_bsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub2_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub2_then_hsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub2_then_ssub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
       0,	// subo64_then_sub_32
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
@@ -17901,17 +20799,17 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      87,	// dsub_qsub1_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub0_qsub1 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub0_qsub1_qsub2 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub1_qsub2 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub1_qsub2_qsub3 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub2_qsub3 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
-      87,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// dsub_qsub1_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub0_qsub1 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub0_qsub1_qsub2 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub1_qsub2 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub1_qsub2_qsub3 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub2_qsub3 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+      107,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
       0,	// sub_32_subo64_then_sub_32
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
@@ -17932,20 +20830,20 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// bsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// bsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      88,	// hsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// hsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
       0,	// qhisub
       0,	// qsub
-      88,	// qsub0 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub1 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub2 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub3 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// ssub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub0 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub1 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub2 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub3 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// ssub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -17966,18 +20864,18 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      88,	// qsub1_then_bsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub1_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub1_then_hsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub1_then_ssub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub3_then_bsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub3_then_hsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub3_then_ssub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub2_then_bsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub2_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub2_then_hsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub2_then_ssub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub1_then_bsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub1_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub1_then_hsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub1_then_ssub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub3_then_bsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub3_then_hsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub3_then_ssub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub2_then_bsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub2_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub2_then_hsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub2_then_ssub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
       0,	// subo64_then_sub_32
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
@@ -18002,17 +20900,17 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      88,	// dsub_qsub1_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub0_qsub1 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub0_qsub1_qsub2 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub1_qsub2 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub1_qsub2_qsub3 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub2_qsub3 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      88,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// dsub_qsub1_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub0_qsub1 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub0_qsub1_qsub2 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub1_qsub2 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub1_qsub2_qsub3 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub2_qsub3 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      108,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
       0,	// sub_32_subo64_then_sub_32
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
@@ -18033,20 +20931,20 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// bsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// bsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      89,	// hsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// hsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
       0,	// qhisub
       0,	// qsub
-      89,	// qsub0 -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub1 -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub2 -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub3 -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// ssub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub0 -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub1 -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub2 -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub3 -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// ssub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -18067,18 +20965,18 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      89,	// qsub1_then_bsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub1_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub1_then_hsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub1_then_ssub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub3_then_bsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub3_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub3_then_hsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub3_then_ssub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub2_then_bsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub2_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub2_then_hsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub2_then_ssub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub1_then_bsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub1_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub1_then_hsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub1_then_ssub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub3_then_bsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub3_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub3_then_hsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub3_then_ssub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub2_then_bsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub2_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub2_then_hsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub2_then_ssub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
       0,	// subo64_then_sub_32
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
@@ -18103,17 +21001,17 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      89,	// dsub_qsub1_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub0_qsub1 -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub0_qsub1_qsub2 -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub1_qsub2 -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub1_qsub2_qsub3 -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub2_qsub3 -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      89,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// dsub_qsub1_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub0_qsub1 -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub0_qsub1_qsub2 -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub1_qsub2 -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub1_qsub2_qsub3 -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub2_qsub3 -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      109,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
       0,	// sub_32_subo64_then_sub_32
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
@@ -18133,32 +21031,32 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
-    {	// ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// bsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+    {	// ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      90,	// hsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      110,	// hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      90,	// ssub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      110,	// ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      90,	// zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub0 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub1 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub2 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub3 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      110,	// zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub0 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub1 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub2 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub3 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -18181,24 +21079,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      90,	// zsub1_then_bsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub1_then_hsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub1_then_ssub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub1_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub3_then_bsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub3_then_hsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub3_then_ssub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub3_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub2_then_bsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub2_then_hsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub2_then_ssub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub2_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      110,	// zsub1_then_bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub1_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub1_then_hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub1_then_ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub1_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub1_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub3_then_bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub3_then_hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub3_then_ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub3_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub2_then_bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub2_then_hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub2_then_ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub2_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -18216,50 +21114,151 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      90,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub0_zsub1 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
-      90,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      110,	// dsub_zsub1_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub_zsub1_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub0_zsub1 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub0_zsub1_zsub2 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub1_zsub2 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub1_zsub2_zsub3 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub2_zsub3 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      110,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+    },
+    {	// ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// bsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      0,	// dsub0
+      0,	// dsub1
+      0,	// dsub2
+      0,	// dsub3
+      111,	// hsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      111,	// ssub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      111,	// zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub0 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub1 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub2 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub3 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      0,	// dsub1_then_bsub
+      0,	// dsub1_then_hsub
+      0,	// dsub1_then_ssub
+      0,	// dsub3_then_bsub
+      0,	// dsub3_then_hsub
+      0,	// dsub3_then_ssub
+      0,	// dsub2_then_bsub
+      0,	// dsub2_then_hsub
+      0,	// dsub2_then_ssub
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      111,	// zsub1_then_bsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub1_then_hsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub1_then_ssub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub1_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub3_then_bsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub3_then_hsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub3_then_ssub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub3_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub2_then_bsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub2_then_hsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub2_then_ssub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub2_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      0,	// dsub0_dsub1
+      0,	// dsub0_dsub1_dsub2
+      0,	// dsub1_dsub2
+      0,	// dsub1_dsub2_dsub3
+      0,	// dsub2_dsub3
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      111,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub0_zsub1 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
+      111,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
     },
     {	// ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// bsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// bsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      91,	// hsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// hsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      91,	// ssub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// ssub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      91,	// zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub0 -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub1 -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub2 -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub3 -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub_hi -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub0 -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub1 -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub2 -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub3 -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub_hi -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -18282,24 +21281,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      91,	// zsub1_then_bsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub1_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub1_then_hsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub1_then_ssub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub1_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub1_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub3_then_bsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub3_then_hsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub3_then_ssub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub3_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub2_then_bsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub2_then_hsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub2_then_ssub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub2_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub1_then_bsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub1_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub1_then_hsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub1_then_ssub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub1_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub1_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub3_then_bsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub3_then_hsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub3_then_ssub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub3_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub2_then_bsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub2_then_hsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub2_then_ssub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub2_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -18317,140 +21316,39 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      91,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub0_zsub1 -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub1_zsub2 -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub2_zsub3 -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      91,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub0_zsub1 -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub1_zsub2 -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub2_zsub3 -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      112,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
     },
-    {	// ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+    {	// QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// bsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      92,	// hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
+      113,	// hsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
       0,	// qhisub
       0,	// qsub
-      0,	// qsub0
-      0,	// qsub1
-      0,	// qsub2
-      0,	// qsub3
-      92,	// ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      0,	// sub_32
-      0,	// sube32
-      0,	// sube64
-      0,	// subo32
-      0,	// subo64
-      92,	// zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub0 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub1 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub2 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub3 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      0,	// dsub1_then_bsub
-      0,	// dsub1_then_hsub
-      0,	// dsub1_then_ssub
-      0,	// dsub3_then_bsub
-      0,	// dsub3_then_hsub
-      0,	// dsub3_then_ssub
-      0,	// dsub2_then_bsub
-      0,	// dsub2_then_hsub
-      0,	// dsub2_then_ssub
-      0,	// qsub1_then_bsub
-      0,	// qsub1_then_dsub
-      0,	// qsub1_then_hsub
-      0,	// qsub1_then_ssub
-      0,	// qsub3_then_bsub
-      0,	// qsub3_then_dsub
-      0,	// qsub3_then_hsub
-      0,	// qsub3_then_ssub
-      0,	// qsub2_then_bsub
-      0,	// qsub2_then_dsub
-      0,	// qsub2_then_hsub
-      0,	// qsub2_then_ssub
-      0,	// subo64_then_sub_32
-      92,	// zsub1_then_bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub1_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub1_then_hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub1_then_ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub1_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub1_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub3_then_bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub3_then_hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub3_then_ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub3_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub2_then_bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub2_then_hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub2_then_ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub2_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      0,	// dsub0_dsub1
-      0,	// dsub0_dsub1_dsub2
-      0,	// dsub1_dsub2
-      0,	// dsub1_dsub2_dsub3
-      0,	// dsub2_dsub3
-      0,	// dsub_qsub1_then_dsub
-      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
-      0,	// qsub0_qsub1
-      0,	// qsub0_qsub1_qsub2
-      0,	// qsub1_qsub2
-      0,	// qsub1_qsub2_qsub3
-      0,	// qsub2_qsub3
-      0,	// qsub1_then_dsub_qsub2_then_dsub
-      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      0,	// qsub2_then_dsub_qsub3_then_dsub
-      0,	// sub_32_subo64_then_sub_32
-      92,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub0_zsub1 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub1_zsub2 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub2_zsub3 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-      92,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-    },
-    {	// QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// bsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      0,	// dsub0
-      0,	// dsub1
-      0,	// dsub2
-      0,	// dsub3
-      93,	// hsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      0,	// qhisub
-      0,	// qsub
-      93,	// qsub0 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub1 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub2 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub3 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// ssub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub0 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub1 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub2 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub3 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// ssub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -18471,18 +21369,18 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      93,	// qsub1_then_bsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub1_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub1_then_hsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub1_then_ssub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub3_then_bsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub3_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub3_then_hsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub3_then_ssub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub2_then_bsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub2_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub2_then_hsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub2_then_ssub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub1_then_bsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub1_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub1_then_hsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub1_then_ssub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub3_then_bsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub3_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub3_then_hsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub3_then_ssub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub2_then_bsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub2_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub2_then_hsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub2_then_ssub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
       0,	// subo64_then_sub_32
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
@@ -18507,17 +21405,17 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      93,	// dsub_qsub1_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub0_qsub1 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub0_qsub1_qsub2 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub1_qsub2 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub1_qsub2_qsub3 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub2_qsub3 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
-      93,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// dsub_qsub1_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub0_qsub1 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub0_qsub1_qsub2 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub1_qsub2 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub1_qsub2_qsub3 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub2_qsub3 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+      113,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
       0,	// sub_32_subo64_then_sub_32
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
@@ -18538,20 +21436,20 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
     {	// QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// bsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// bsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      94,	// hsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// hsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
       0,	// qhisub
       0,	// qsub
-      94,	// qsub0 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub1 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub2 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub3 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// ssub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub0 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub1 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub2 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub3 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// ssub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -18572,18 +21470,18 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      94,	// qsub1_then_bsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub1_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub1_then_hsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub1_then_ssub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub3_then_bsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub3_then_hsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub3_then_ssub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub2_then_bsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub2_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub2_then_hsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub2_then_ssub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub1_then_bsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub1_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub1_then_hsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub1_then_ssub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub3_then_bsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub3_then_hsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub3_then_ssub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub2_then_bsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub2_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub2_then_hsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub2_then_ssub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
       0,	// subo64_then_sub_32
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
@@ -18608,17 +21506,17 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      94,	// dsub_qsub1_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub0_qsub1 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub0_qsub1_qsub2 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub1_qsub2 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub1_qsub2_qsub3 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub2_qsub3 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      94,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// dsub_qsub1_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub0_qsub1 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub0_qsub1_qsub2 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub1_qsub2 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub1_qsub2_qsub3 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub2_qsub3 -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      114,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
       0,	// sub_32_subo64_then_sub_32
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
@@ -18637,33 +21535,134 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
+    },
+    {	// ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      0,	// dsub0
+      0,	// dsub1
+      0,	// dsub2
+      0,	// dsub3
+      115,	// hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      115,	// ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      115,	// zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub0 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub1 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub2 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub3 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      0,	// dsub1_then_bsub
+      0,	// dsub1_then_hsub
+      0,	// dsub1_then_ssub
+      0,	// dsub3_then_bsub
+      0,	// dsub3_then_hsub
+      0,	// dsub3_then_ssub
+      0,	// dsub2_then_bsub
+      0,	// dsub2_then_hsub
+      0,	// dsub2_then_ssub
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      115,	// zsub1_then_bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub1_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub1_then_hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub1_then_ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub1_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub1_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub3_then_bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub3_then_hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub3_then_ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub3_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub2_then_bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub2_then_hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub2_then_ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub2_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      0,	// dsub0_dsub1
+      0,	// dsub0_dsub1_dsub2
+      0,	// dsub1_dsub2
+      0,	// dsub1_dsub2_dsub3
+      0,	// dsub2_dsub3
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      115,	// dsub_zsub1_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub_zsub1_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub0_zsub1 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub0_zsub1_zsub2 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub1_zsub2 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub1_zsub2_zsub3 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub2_zsub3 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      115,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
     },
     {	// ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// bsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// bsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      95,	// hsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// hsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      95,	// ssub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// ssub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      95,	// zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub0 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub1 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub2 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub3 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub0 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub1 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub2 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub3 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -18686,24 +21685,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      95,	// zsub1_then_bsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub1_then_hsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub1_then_ssub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub1_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub3_then_bsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub3_then_hsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub3_then_ssub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub3_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub2_then_bsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub2_then_hsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub2_then_ssub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub2_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub1_then_bsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub1_then_hsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub1_then_ssub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub1_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub3_then_bsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub3_then_hsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub3_then_ssub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub3_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub2_then_bsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub2_then_hsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub2_then_ssub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub2_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -18721,140 +21720,39 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      95,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub0_zsub1 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-      95,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub0_zsub1 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
+      116,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
     },
-    {	// ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+    {	// QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// bsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      96,	// hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
+      117,	// hsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
       0,	// qhisub
       0,	// qsub
-      0,	// qsub0
-      0,	// qsub1
-      0,	// qsub2
-      0,	// qsub3
-      96,	// ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      0,	// sub_32
-      0,	// sube32
-      0,	// sube64
-      0,	// subo32
-      0,	// subo64
-      96,	// zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub0 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub1 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub2 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub3 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      0,	// dsub1_then_bsub
-      0,	// dsub1_then_hsub
-      0,	// dsub1_then_ssub
-      0,	// dsub3_then_bsub
-      0,	// dsub3_then_hsub
-      0,	// dsub3_then_ssub
-      0,	// dsub2_then_bsub
-      0,	// dsub2_then_hsub
-      0,	// dsub2_then_ssub
-      0,	// qsub1_then_bsub
-      0,	// qsub1_then_dsub
-      0,	// qsub1_then_hsub
-      0,	// qsub1_then_ssub
-      0,	// qsub3_then_bsub
-      0,	// qsub3_then_dsub
-      0,	// qsub3_then_hsub
-      0,	// qsub3_then_ssub
-      0,	// qsub2_then_bsub
-      0,	// qsub2_then_dsub
-      0,	// qsub2_then_hsub
-      0,	// qsub2_then_ssub
-      0,	// subo64_then_sub_32
-      96,	// zsub1_then_bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub1_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub1_then_hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub1_then_ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub1_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub1_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub3_then_bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub3_then_hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub3_then_ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub3_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub2_then_bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub2_then_hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub2_then_ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub2_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      0,	// dsub0_dsub1
-      0,	// dsub0_dsub1_dsub2
-      0,	// dsub1_dsub2
-      0,	// dsub1_dsub2_dsub3
-      0,	// dsub2_dsub3
-      0,	// dsub_qsub1_then_dsub
-      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
-      0,	// qsub0_qsub1
-      0,	// qsub0_qsub1_qsub2
-      0,	// qsub1_qsub2
-      0,	// qsub1_qsub2_qsub3
-      0,	// qsub2_qsub3
-      0,	// qsub1_then_dsub_qsub2_then_dsub
-      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      0,	// qsub2_then_dsub_qsub3_then_dsub
-      0,	// sub_32_subo64_then_sub_32
-      96,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub0_zsub1 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub1_zsub2 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub2_zsub3 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-      96,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-    },
-    {	// QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// bsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      0,	// dsub0
-      0,	// dsub1
-      0,	// dsub2
-      0,	// dsub3
-      97,	// hsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      0,	// qhisub
-      0,	// qsub
-      97,	// qsub0 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub1 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub2 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub3 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// ssub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub0 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub1 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub2 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub3 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// ssub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
       0,	// sub_32
       0,	// sube32
       0,	// sube64
@@ -18875,18 +21773,18 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub2_then_bsub
       0,	// dsub2_then_hsub
       0,	// dsub2_then_ssub
-      97,	// qsub1_then_bsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub1_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub1_then_hsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub1_then_ssub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub3_then_bsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub3_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub3_then_hsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub3_then_ssub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub2_then_bsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub2_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub2_then_hsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub2_then_ssub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub1_then_bsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub1_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub1_then_hsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub1_then_ssub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub3_then_bsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub3_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub3_then_hsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub3_then_ssub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub2_then_bsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub2_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub2_then_hsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub2_then_ssub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
       0,	// subo64_then_sub_32
       0,	// zsub1_then_bsub
       0,	// zsub1_then_dsub
@@ -18911,17 +21809,17 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// dsub1_dsub2
       0,	// dsub1_dsub2_dsub3
       0,	// dsub2_dsub3
-      97,	// dsub_qsub1_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub0_qsub1 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub0_qsub1_qsub2 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub1_qsub2 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub1_qsub2_qsub3 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub2_qsub3 -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-      97,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// dsub_qsub1_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// dsub_qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub0_qsub1 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub0_qsub1_qsub2 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub1_qsub2 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub1_qsub2_qsub3 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub2_qsub3 -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub1_then_dsub_qsub2_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+      117,	// qsub2_then_dsub_qsub3_then_dsub -> QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
       0,	// sub_32_subo64_then_sub_32
       0,	// dsub_zsub1_then_dsub
       0,	// zsub_zsub1_then_zsub
@@ -18941,32 +21839,32 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// zsub2_then_dsub_zsub3_then_dsub
       0,	// zsub2_then_zsub_zsub3_then_zsub
     },
-    {	// ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+    {	// ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      98,	// hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      98,	// ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      98,	// zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub0 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub1 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub2 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub3 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub0 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub1 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub2 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub3 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -18989,24 +21887,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      98,	// zsub1_then_bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub1_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub1_then_hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub1_then_ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub1_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub1_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub3_then_bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub3_then_hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub3_then_ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub3_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub2_then_bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub2_then_hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub2_then_ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub2_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub1_then_bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub1_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub1_then_hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub1_then_ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub1_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub1_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub3_then_bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub3_then_hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub3_then_ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub3_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub2_then_bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub2_then_hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub2_then_ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub2_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -19024,50 +21922,50 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      98,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub0_zsub1 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub1_zsub2 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub2_zsub3 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
-      98,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// dsub_zsub1_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub_zsub1_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub0_zsub1 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub0_zsub1_zsub2 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub1_zsub2 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub1_zsub2_zsub3 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub2_zsub3 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+      118,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
     },
     {	// ZPR4_with_zsub0_in_ZPR_3b
-      99,	// bsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// dsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// bsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// dsub -> ZPR4_with_zsub0_in_ZPR_3b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      99,	// hsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// hsub -> ZPR4_with_zsub0_in_ZPR_3b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      99,	// ssub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// ssub -> ZPR4_with_zsub0_in_ZPR_3b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      99,	// zsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub0 -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub1 -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub2 -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub3 -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub_hi -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub0 -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub1 -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub2 -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub3 -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub_hi -> ZPR4_with_zsub0_in_ZPR_3b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -19090,24 +21988,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      99,	// zsub1_then_bsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub1_then_dsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub1_then_hsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub1_then_ssub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub1_then_zsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub1_then_zsub_hi -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub3_then_bsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub3_then_dsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub3_then_hsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub3_then_ssub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub3_then_zsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub3_then_zsub_hi -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub2_then_bsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub2_then_dsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub2_then_hsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub2_then_ssub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub2_then_zsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub2_then_zsub_hi -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub1_then_bsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub1_then_dsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub1_then_hsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub1_then_ssub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub1_then_zsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub1_then_zsub_hi -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub3_then_bsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub3_then_dsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub3_then_hsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub3_then_ssub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub3_then_zsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub3_then_zsub_hi -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub2_then_bsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub2_then_dsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub2_then_hsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub2_then_ssub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub2_then_zsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub2_then_zsub_hi -> ZPR4_with_zsub0_in_ZPR_3b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -19125,50 +22023,50 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      99,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub0_zsub1 -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub1_zsub2 -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub2_zsub3 -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub0_in_ZPR_3b
-      99,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub0_zsub1 -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub1_zsub2 -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub2_zsub3 -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub0_in_ZPR_3b
+      119,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub0_in_ZPR_3b
     },
     {	// ZPR4_with_zsub1_in_ZPR_3b
-      100,	// bsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// dsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// bsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// dsub -> ZPR4_with_zsub1_in_ZPR_3b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      100,	// hsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// hsub -> ZPR4_with_zsub1_in_ZPR_3b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      100,	// ssub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// ssub -> ZPR4_with_zsub1_in_ZPR_3b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      100,	// zsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub0 -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub1 -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub2 -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub3 -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub0 -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub1 -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub2 -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub3 -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -19191,24 +22089,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      100,	// zsub1_then_bsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub1_then_hsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub1_then_ssub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub1_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub3_then_bsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub3_then_hsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub3_then_ssub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub3_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub2_then_bsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub2_then_hsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub2_then_ssub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub2_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub1_then_bsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub1_then_hsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub1_then_ssub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub1_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub3_then_bsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub3_then_hsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub3_then_ssub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub3_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub2_then_bsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub2_then_hsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub2_then_ssub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub2_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -19226,50 +22124,50 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      100,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub0_zsub1 -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b
-      100,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub0_zsub1 -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b
+      120,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b
     },
     {	// ZPR4_with_zsub2_in_ZPR_3b
-      101,	// bsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// dsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// bsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// dsub -> ZPR4_with_zsub2_in_ZPR_3b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      101,	// hsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// hsub -> ZPR4_with_zsub2_in_ZPR_3b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      101,	// ssub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// ssub -> ZPR4_with_zsub2_in_ZPR_3b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      101,	// zsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub0 -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub1 -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub2 -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub3 -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub_hi -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub0 -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub1 -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub2 -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub3 -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub_hi -> ZPR4_with_zsub2_in_ZPR_3b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -19292,24 +22190,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      101,	// zsub1_then_bsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub1_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub1_then_hsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub1_then_ssub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub1_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub1_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub3_then_bsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub3_then_hsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub3_then_ssub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub3_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub2_then_bsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub2_then_hsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub2_then_ssub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub2_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub1_then_bsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub1_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub1_then_hsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub1_then_ssub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub1_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub1_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub3_then_bsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub3_then_hsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub3_then_ssub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub3_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub2_then_bsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub2_then_hsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub2_then_ssub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub2_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_3b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -19327,50 +22225,50 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      101,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub0_zsub1 -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub1_zsub2 -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub2_zsub3 -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b
-      101,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub0_zsub1 -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub1_zsub2 -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub2_zsub3 -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b
+      121,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b
     },
     {	// ZPR4_with_zsub3_in_ZPR_3b
-      102,	// bsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// dsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// bsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// dsub -> ZPR4_with_zsub3_in_ZPR_3b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      102,	// hsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// hsub -> ZPR4_with_zsub3_in_ZPR_3b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      102,	// ssub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// ssub -> ZPR4_with_zsub3_in_ZPR_3b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      102,	// zsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub0 -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub1 -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub2 -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub3 -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub_hi -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub0 -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub1 -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub2 -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub3 -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub_hi -> ZPR4_with_zsub3_in_ZPR_3b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -19393,24 +22291,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      102,	// zsub1_then_bsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub1_then_dsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub1_then_hsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub1_then_ssub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub1_then_zsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub1_then_zsub_hi -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub3_then_bsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub3_then_dsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub3_then_hsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub3_then_ssub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub3_then_zsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub3_then_zsub_hi -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub2_then_bsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub2_then_dsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub2_then_hsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub2_then_ssub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub2_then_zsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub2_then_zsub_hi -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub1_then_bsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub1_then_dsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub1_then_hsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub1_then_ssub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub1_then_zsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub1_then_zsub_hi -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub3_then_bsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub3_then_dsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub3_then_hsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub3_then_ssub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub3_then_zsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub3_then_zsub_hi -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub2_then_bsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub2_then_dsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub2_then_hsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub2_then_ssub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub2_then_zsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub2_then_zsub_hi -> ZPR4_with_zsub3_in_ZPR_3b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -19428,50 +22326,151 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      102,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub0_zsub1 -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub1_zsub2 -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub2_zsub3 -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub3_in_ZPR_3b
-      102,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub0_zsub1 -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub1_zsub2 -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub2_zsub3 -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub3_in_ZPR_3b
+      122,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub3_in_ZPR_3b
+    },
+    {	// ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      0,	// dsub0
+      0,	// dsub1
+      0,	// dsub2
+      0,	// dsub3
+      123,	// hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      0,	// qhisub
+      0,	// qsub
+      0,	// qsub0
+      0,	// qsub1
+      0,	// qsub2
+      0,	// qsub3
+      123,	// ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      0,	// sub_32
+      0,	// sube32
+      0,	// sube64
+      0,	// subo32
+      0,	// subo64
+      123,	// zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub0 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub1 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub2 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub3 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      0,	// dsub1_then_bsub
+      0,	// dsub1_then_hsub
+      0,	// dsub1_then_ssub
+      0,	// dsub3_then_bsub
+      0,	// dsub3_then_hsub
+      0,	// dsub3_then_ssub
+      0,	// dsub2_then_bsub
+      0,	// dsub2_then_hsub
+      0,	// dsub2_then_ssub
+      0,	// qsub1_then_bsub
+      0,	// qsub1_then_dsub
+      0,	// qsub1_then_hsub
+      0,	// qsub1_then_ssub
+      0,	// qsub3_then_bsub
+      0,	// qsub3_then_dsub
+      0,	// qsub3_then_hsub
+      0,	// qsub3_then_ssub
+      0,	// qsub2_then_bsub
+      0,	// qsub2_then_dsub
+      0,	// qsub2_then_hsub
+      0,	// qsub2_then_ssub
+      0,	// subo64_then_sub_32
+      123,	// zsub1_then_bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub1_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub1_then_hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub1_then_ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub1_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub1_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub3_then_bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub3_then_hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub3_then_ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub3_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub2_then_bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub2_then_hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub2_then_ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub2_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      0,	// dsub0_dsub1
+      0,	// dsub0_dsub1_dsub2
+      0,	// dsub1_dsub2
+      0,	// dsub1_dsub2_dsub3
+      0,	// dsub2_dsub3
+      0,	// dsub_qsub1_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub0_qsub1
+      0,	// qsub0_qsub1_qsub2
+      0,	// qsub1_qsub2
+      0,	// qsub1_qsub2_qsub3
+      0,	// qsub2_qsub3
+      0,	// qsub1_then_dsub_qsub2_then_dsub
+      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
+      0,	// qsub2_then_dsub_qsub3_then_dsub
+      0,	// sub_32_subo64_then_sub_32
+      123,	// dsub_zsub1_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub_zsub1_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub0_zsub1 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub0_zsub1_zsub2 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub1_zsub2 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub1_zsub2_zsub3 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub2_zsub3 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      123,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
     },
     {	// ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// bsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// bsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      103,	// hsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// hsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      103,	// ssub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// ssub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      103,	// zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub0 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub1 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub2 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub3 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub0 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub1 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub2 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub3 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -19494,24 +22493,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      103,	// zsub1_then_bsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub1_then_hsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub1_then_ssub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub1_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub3_then_bsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub3_then_hsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub3_then_ssub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub3_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub2_then_bsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub2_then_hsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub2_then_ssub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub2_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub1_then_bsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub1_then_hsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub1_then_ssub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub1_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub3_then_bsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub3_then_hsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub3_then_ssub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub3_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub2_then_bsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub2_then_hsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub2_then_ssub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub2_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -19529,50 +22528,50 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      103,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub0_zsub1 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
-      103,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub0_zsub1 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
+      124,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
     },
     {	// ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// bsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// bsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      104,	// hsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// hsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      104,	// ssub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// ssub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      104,	// zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub0 -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub1 -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub2 -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub3 -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub_hi -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub0 -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub1 -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub2 -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub3 -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub_hi -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -19595,24 +22594,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      104,	// zsub1_then_bsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub1_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub1_then_hsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub1_then_ssub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub1_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub1_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub3_then_bsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub3_then_hsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub3_then_ssub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub3_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub2_then_bsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub2_then_hsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub2_then_ssub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub2_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub1_then_bsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub1_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub1_then_hsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub1_then_ssub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub1_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub1_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub3_then_bsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub3_then_hsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub3_then_ssub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub3_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub2_then_bsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub2_then_hsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub2_then_ssub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub2_then_zsub_hi -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -19630,50 +22629,50 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      104,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub0_zsub1 -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub1_zsub2 -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub2_zsub3 -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      104,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub0_zsub1 -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub1_zsub2 -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub2_zsub3 -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      125,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
     },
-    {	// ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+    {	// ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      105,	// hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      126,	// hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      105,	// ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      126,	// ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      105,	// zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub0 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub1 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub2 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub3 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      126,	// zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub0 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub1 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub2 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub3 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -19696,24 +22695,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      105,	// zsub1_then_bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub1_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub1_then_hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub1_then_ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub1_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub1_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub3_then_bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub3_then_hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub3_then_ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub3_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub2_then_bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub2_then_hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub2_then_ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub2_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      126,	// zsub1_then_bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub1_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub1_then_hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub1_then_ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub1_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub1_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub3_then_bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub3_then_hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub3_then_ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub3_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub2_then_bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub2_then_hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub2_then_ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub2_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -19731,50 +22730,50 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      105,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub0_zsub1 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub1_zsub2 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub2_zsub3 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
-      105,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+      126,	// dsub_zsub1_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub_zsub1_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub0_zsub1 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub0_zsub1_zsub2 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub1_zsub2 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub1_zsub2_zsub3 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub2_zsub3 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      126,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
     },
     {	// ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// bsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// bsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      106,	// hsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// hsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      106,	// ssub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// ssub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      106,	// zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub0 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub1 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub2 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub3 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub0 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub1 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub2 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub3 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -19797,24 +22796,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      106,	// zsub1_then_bsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub1_then_hsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub1_then_ssub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub1_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub3_then_bsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub3_then_hsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub3_then_ssub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub3_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub2_then_bsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub2_then_hsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub2_then_ssub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub2_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub1_then_bsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub1_then_hsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub1_then_ssub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub1_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub3_then_bsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub3_then_hsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub3_then_ssub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub3_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub2_then_bsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub2_then_hsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub2_then_ssub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub2_then_zsub_hi -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -19832,50 +22831,50 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      106,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub0_zsub1 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-      106,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub0_zsub1 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub1_zsub2 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub2_zsub3 -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
+      127,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
     },
-    {	// ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+    {	// ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
       0,	// dsub0
       0,	// dsub1
       0,	// dsub2
       0,	// dsub3
-      107,	// hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      128,	// hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
       0,	// qhisub
       0,	// qsub
       0,	// qsub0
       0,	// qsub1
       0,	// qsub2
       0,	// qsub3
-      107,	// ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      128,	// ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
       0,	// sub_32
       0,	// sube32
       0,	// sube64
       0,	// subo32
       0,	// subo64
-      107,	// zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub0 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub1 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub2 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub3 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      128,	// zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub0 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub1 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub2 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub3 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
       0,	// dsub1_then_bsub
       0,	// dsub1_then_hsub
       0,	// dsub1_then_ssub
@@ -19898,24 +22897,24 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub2_then_hsub
       0,	// qsub2_then_ssub
       0,	// subo64_then_sub_32
-      107,	// zsub1_then_bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub1_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub1_then_hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub1_then_ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub1_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub1_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub3_then_bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub3_then_hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub3_then_ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub3_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub2_then_bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub2_then_hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub2_then_ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub2_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
+      128,	// zsub1_then_bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub1_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub1_then_hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub1_then_ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub1_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub1_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub3_then_bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub3_then_hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub3_then_ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub3_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub2_then_bsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub2_then_hsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub2_then_ssub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub2_then_zsub_hi -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
       0,	// dsub0_dsub1
       0,	// dsub0_dsub1_dsub2
       0,	// dsub1_dsub2
@@ -19933,124 +22932,23 @@ const TargetRegisterClass *AArch64GenRegisterInfo::getSubClassWithSubReg(const T
       0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
       0,	// qsub2_then_dsub_qsub3_then_dsub
       0,	// sub_32_subo64_then_sub_32
-      107,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub0_zsub1 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub1_zsub2 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub2_zsub3 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-      107,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-    },
-    {	// ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      0,	// dsub0
-      0,	// dsub1
-      0,	// dsub2
-      0,	// dsub3
-      108,	// hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      0,	// qhisub
-      0,	// qsub
-      0,	// qsub0
-      0,	// qsub1
-      0,	// qsub2
-      0,	// qsub3
-      108,	// ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      0,	// sub_32
-      0,	// sube32
-      0,	// sube64
-      0,	// subo32
-      0,	// subo64
-      108,	// zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub0 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub1 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub2 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub3 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      0,	// dsub1_then_bsub
-      0,	// dsub1_then_hsub
-      0,	// dsub1_then_ssub
-      0,	// dsub3_then_bsub
-      0,	// dsub3_then_hsub
-      0,	// dsub3_then_ssub
-      0,	// dsub2_then_bsub
-      0,	// dsub2_then_hsub
-      0,	// dsub2_then_ssub
-      0,	// qsub1_then_bsub
-      0,	// qsub1_then_dsub
-      0,	// qsub1_then_hsub
-      0,	// qsub1_then_ssub
-      0,	// qsub3_then_bsub
-      0,	// qsub3_then_dsub
-      0,	// qsub3_then_hsub
-      0,	// qsub3_then_ssub
-      0,	// qsub2_then_bsub
-      0,	// qsub2_then_dsub
-      0,	// qsub2_then_hsub
-      0,	// qsub2_then_ssub
-      0,	// subo64_then_sub_32
-      108,	// zsub1_then_bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub1_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub1_then_hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub1_then_ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub1_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub1_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub3_then_bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub3_then_hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub3_then_ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub3_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub2_then_bsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub2_then_hsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub2_then_ssub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub2_then_zsub_hi -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      0,	// dsub0_dsub1
-      0,	// dsub0_dsub1_dsub2
-      0,	// dsub1_dsub2
-      0,	// dsub1_dsub2_dsub3
-      0,	// dsub2_dsub3
-      0,	// dsub_qsub1_then_dsub
-      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      0,	// dsub_qsub1_then_dsub_qsub2_then_dsub
-      0,	// qsub0_qsub1
-      0,	// qsub0_qsub1_qsub2
-      0,	// qsub1_qsub2
-      0,	// qsub1_qsub2_qsub3
-      0,	// qsub2_qsub3
-      0,	// qsub1_then_dsub_qsub2_then_dsub
-      0,	// qsub1_then_dsub_qsub2_then_dsub_qsub3_then_dsub
-      0,	// qsub2_then_dsub_qsub3_then_dsub
-      0,	// sub_32_subo64_then_sub_32
-      108,	// dsub_zsub1_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub_zsub1_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub0_zsub1 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub0_zsub1_zsub2 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub1_zsub2 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub1_zsub2_zsub3 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub2_zsub3 -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
-      108,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// dsub_zsub1_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub_zsub1_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// dsub_zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// dsub_zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub_zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub_zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub0_zsub1 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub0_zsub1_zsub2 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub1_zsub2 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub1_zsub2_zsub3 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub2_zsub3 -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub1_then_dsub_zsub2_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub1_then_dsub_zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub1_then_zsub_zsub2_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub1_then_zsub_zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub2_then_dsub_zsub3_then_dsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+      128,	// zsub2_then_zsub_zsub3_then_zsub -> ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
     },
   };
   assert(RC && "Missing regclass");
@@ -20089,11 +22987,15 @@ getRegClassWeight(const TargetRegisterClass *RC) const {
     {1, 28},  	// GPR64common_and_GPR64noip
     {1, 19},  	// tcGPR64
     {1, 17},  	// GPR64noip_and_tcGPR64
+    {1, 16},  	// FPR64_lo
     {1, 8},  	// GPR64arg
     {1, 2},  	// rtcGPR64
     {1, 1},  	// GPR64sponly
     {2, 32},  	// DD
+    {2, 17},  	// DD_with_dsub0_in_FPR64_lo
+    {2, 17},  	// DD_with_dsub1_in_FPR64_lo
     {2, 32},  	// XSeqPairsClass
+    {2, 16},  	// DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_lo
     {2, 30},  	// XSeqPairsClass_with_subo64_in_GPR64common
     {2, 30},  	// XSeqPairsClass_with_subo64_in_GPR64noip
     {2, 28},  	// XSeqPairsClass_with_sube64_in_GPR64noip
@@ -20109,70 +23011,86 @@ getRegClassWeight(const TargetRegisterClass *RC) const {
     {2, 32},  	// ZPR_4b
     {2, 16},  	// ZPR_3b
     {3, 32},  	// DDD
+    {3, 18},  	// DDD_with_dsub0_in_FPR64_lo
+    {3, 18},  	// DDD_with_dsub1_in_FPR64_lo
+    {3, 18},  	// DDD_with_dsub2_in_FPR64_lo
+    {3, 17},  	// DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_lo
+    {3, 17},  	// DDD_with_dsub1_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
+    {3, 16},  	// DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_lo
     {4, 32},  	// DDDD
+    {4, 19},  	// DDDD_with_dsub0_in_FPR64_lo
+    {4, 19},  	// DDDD_with_dsub1_in_FPR64_lo
+    {4, 19},  	// DDDD_with_dsub2_in_FPR64_lo
+    {4, 19},  	// DDDD_with_dsub3_in_FPR64_lo
+    {4, 18},  	// DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub1_in_FPR64_lo
+    {4, 18},  	// DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+    {4, 18},  	// DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+    {4, 17},  	// DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_lo
+    {4, 17},  	// DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
+    {4, 16},  	// DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_lo
     {2, 32},  	// QQ
     {4, 64},  	// ZPR2
-    {2, 17},  	// QQ_with_qsub0_in_FPR128_lo
+    {2, 17},  	// QQ_with_dsub_in_FPR64_lo
     {2, 17},  	// QQ_with_qsub1_in_FPR128_lo
+    {4, 34},  	// ZPR2_with_dsub_in_FPR64_lo
     {4, 34},  	// ZPR2_with_zsub1_in_ZPR_4b
-    {4, 34},  	// ZPR2_with_zsub_in_FPR128_lo
-    {2, 16},  	// QQ_with_qsub0_in_FPR128_lo_and_QQ_with_qsub1_in_FPR128_lo
-    {4, 32},  	// ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_4b
+    {2, 16},  	// QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_lo
+    {4, 32},  	// ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_4b
     {4, 18},  	// ZPR2_with_zsub0_in_ZPR_3b
     {4, 18},  	// ZPR2_with_zsub1_in_ZPR_3b
-    {4, 16},  	// ZPR2_with_zsub_in_FPR128_lo_and_ZPR2_with_zsub1_in_ZPR_3b
+    {4, 16},  	// ZPR2_with_dsub_in_FPR64_lo_and_ZPR2_with_zsub1_in_ZPR_3b
     {3, 32},  	// QQQ
     {6, 64},  	// ZPR3
-    {3, 18},  	// QQQ_with_qsub0_in_FPR128_lo
+    {3, 18},  	// QQQ_with_dsub_in_FPR64_lo
     {3, 18},  	// QQQ_with_qsub1_in_FPR128_lo
     {3, 18},  	// QQQ_with_qsub2_in_FPR128_lo
+    {6, 36},  	// ZPR3_with_dsub_in_FPR64_lo
     {6, 36},  	// ZPR3_with_zsub1_in_ZPR_4b
     {6, 36},  	// ZPR3_with_zsub2_in_ZPR_4b
-    {6, 36},  	// ZPR3_with_zsub_in_FPR128_lo
-    {3, 17},  	// QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub1_in_FPR128_lo
+    {3, 17},  	// QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_lo
     {3, 17},  	// QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
+    {6, 34},  	// ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_4b
     {6, 34},  	// ZPR3_with_zsub1_in_ZPR_4b_and_ZPR3_with_zsub2_in_ZPR_4b
-    {6, 34},  	// ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_4b
-    {3, 16},  	// QQQ_with_qsub0_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_lo
-    {6, 32},  	// ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_4b
+    {3, 16},  	// QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_lo
+    {6, 32},  	// ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_4b
     {6, 20},  	// ZPR3_with_zsub0_in_ZPR_3b
     {6, 20},  	// ZPR3_with_zsub1_in_ZPR_3b
     {6, 20},  	// ZPR3_with_zsub2_in_ZPR_3b
+    {6, 18},  	// ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub1_in_ZPR_3b
     {6, 18},  	// ZPR3_with_zsub1_in_ZPR_3b_and_ZPR3_with_zsub2_in_ZPR_3b
-    {6, 18},  	// ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub1_in_ZPR_3b
-    {6, 16},  	// ZPR3_with_zsub_in_FPR128_lo_and_ZPR3_with_zsub2_in_ZPR_3b
+    {6, 16},  	// ZPR3_with_dsub_in_FPR64_lo_and_ZPR3_with_zsub2_in_ZPR_3b
     {4, 32},  	// QQQQ
     {8, 64},  	// ZPR4
-    {4, 19},  	// QQQQ_with_qsub0_in_FPR128_lo
+    {4, 19},  	// QQQQ_with_dsub_in_FPR64_lo
     {4, 19},  	// QQQQ_with_qsub1_in_FPR128_lo
     {4, 19},  	// QQQQ_with_qsub2_in_FPR128_lo
     {4, 19},  	// QQQQ_with_qsub3_in_FPR128_lo
+    {8, 38},  	// ZPR4_with_dsub_in_FPR64_lo
     {8, 38},  	// ZPR4_with_zsub1_in_ZPR_4b
     {8, 38},  	// ZPR4_with_zsub2_in_ZPR_4b
     {8, 38},  	// ZPR4_with_zsub3_in_ZPR_4b
-    {8, 38},  	// ZPR4_with_zsub_in_FPR128_lo
-    {4, 18},  	// QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub1_in_FPR128_lo
+    {4, 18},  	// QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub1_in_FPR128_lo
     {4, 18},  	// QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
     {4, 18},  	// QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+    {8, 36},  	// ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_4b
     {8, 36},  	// ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub2_in_ZPR_4b
     {8, 36},  	// ZPR4_with_zsub2_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-    {8, 36},  	// ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_4b
-    {4, 17},  	// QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub2_in_FPR128_lo
+    {4, 17},  	// QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub2_in_FPR128_lo
     {4, 17},  	// QQQQ_with_qsub1_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+    {8, 34},  	// ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_4b
     {8, 34},  	// ZPR4_with_zsub1_in_ZPR_4b_and_ZPR4_with_zsub3_in_ZPR_4b
-    {8, 34},  	// ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_4b
-    {4, 16},  	// QQQQ_with_qsub0_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_lo
-    {8, 32},  	// ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_4b
+    {4, 16},  	// QQQQ_with_dsub_in_FPR64_lo_and_QQQQ_with_qsub3_in_FPR128_lo
+    {8, 32},  	// ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_4b
     {8, 22},  	// ZPR4_with_zsub0_in_ZPR_3b
     {8, 22},  	// ZPR4_with_zsub1_in_ZPR_3b
     {8, 22},  	// ZPR4_with_zsub2_in_ZPR_3b
     {8, 22},  	// ZPR4_with_zsub3_in_ZPR_3b
+    {8, 20},  	// ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub1_in_ZPR_3b
     {8, 20},  	// ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub2_in_ZPR_3b
     {8, 20},  	// ZPR4_with_zsub2_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-    {8, 20},  	// ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub1_in_ZPR_3b
+    {8, 18},  	// ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub2_in_ZPR_3b
     {8, 18},  	// ZPR4_with_zsub1_in_ZPR_3b_and_ZPR4_with_zsub3_in_ZPR_3b
-    {8, 18},  	// ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub2_in_ZPR_3b
-    {8, 16},  	// ZPR4_with_zsub_in_FPR128_lo_and_ZPR4_with_zsub3_in_ZPR_3b
+    {8, 16},  	// ZPR4_with_dsub_in_FPR64_lo_and_ZPR4_with_zsub3_in_ZPR_3b
   };
   return RCWeightTable[RC->getID()];
 }
@@ -20201,31 +23119,31 @@ getRegPressureSetName(unsigned Idx) const {
     "GPR32arg",
     "PPR",
     "tcGPR64",
-    "FPR128_lo",
+    "FPR64_lo",
     "ZPR_3b",
-    "FPR128_lo+ZPR_3b",
-    "QQ_with_qsub1_in_FPR128_lo+ZPR_3b",
-    "QQQ_with_qsub2_in_FPR128_lo+ZPR_3b",
-    "QQQ_with_qsub2_in_FPR128_lo+ZPR4_with_zsub1_in_ZPR_3b",
-    "QQQQ_with_qsub3_in_FPR128_lo+ZPR_3b",
-    "QQQQ_with_qsub3_in_FPR128_lo+ZPR4_with_zsub1_in_ZPR_3b",
-    "QQQQ_with_qsub3_in_FPR128_lo+ZPR4_with_zsub2_in_ZPR_3b",
-    "FPR128_lo+ZPR4_with_zsub1_in_ZPR_3b",
+    "FPR64_lo+ZPR_3b",
+    "DD_with_dsub1_in_FPR64_lo+ZPR_3b",
+    "DDD_with_dsub2_in_FPR64_lo+ZPR_3b",
+    "DDD_with_dsub2_in_FPR64_lo+ZPR4_with_zsub1_in_ZPR_3b",
+    "DDDD_with_dsub3_in_FPR64_lo+ZPR_3b",
+    "DDDD_with_dsub3_in_FPR64_lo+ZPR4_with_zsub1_in_ZPR_3b",
+    "DDDD_with_dsub3_in_FPR64_lo+ZPR4_with_zsub2_in_ZPR_3b",
+    "FPR64_lo+ZPR4_with_zsub1_in_ZPR_3b",
     "FPR8",
-    "FPR128_lo+ZPR4_with_zsub2_in_ZPR_3b",
+    "FPR64_lo+ZPR4_with_zsub2_in_ZPR_3b",
     "GPR32",
-    "FPR128_lo+ZPR4_with_zsub3_in_ZPR_3b",
+    "FPR64_lo+ZPR4_with_zsub3_in_ZPR_3b",
     "ZPR4_with_zsub3_in_ZPR_4b",
-    "ZPR4_with_zsub_in_FPR128_lo",
+    "ZPR_4b",
     "FPR8+ZPR_3b",
     "FPR8+ZPR4_with_zsub1_in_ZPR_3b",
     "FPR8+ZPR4_with_zsub2_in_ZPR_3b",
     "FPR8+ZPR4_with_zsub3_in_ZPR_3b",
-    "ZPR_4b",
+    "ZPR4_with_zsub2_in_ZPR_4b",
     "FPR8+ZPR_4b",
+    "FPR8+ZPR4_with_zsub1_in_ZPR_4b",
     "FPR8+ZPR4_with_zsub2_in_ZPR_4b",
     "FPR8+ZPR4_with_zsub3_in_ZPR_4b",
-    "FPR8+ZPR4_with_zsub_in_FPR128_lo",
     "ZPR",
   };
   return PressureNameTable[Idx];
@@ -20242,31 +23160,31 @@ getRegPressureSetLimit(const MachineFunction &MF, unsigned Idx) const {
     8,  	// 3: GPR32arg
     16,  	// 4: PPR
     20,  	// 5: tcGPR64
-    22,  	// 6: FPR128_lo
+    22,  	// 6: FPR64_lo
     28,  	// 7: ZPR_3b
-    30,  	// 8: FPR128_lo+ZPR_3b
-    30,  	// 9: QQ_with_qsub1_in_FPR128_lo+ZPR_3b
-    30,  	// 10: QQQ_with_qsub2_in_FPR128_lo+ZPR_3b
-    30,  	// 11: QQQ_with_qsub2_in_FPR128_lo+ZPR4_with_zsub1_in_ZPR_3b
-    30,  	// 12: QQQQ_with_qsub3_in_FPR128_lo+ZPR_3b
-    30,  	// 13: QQQQ_with_qsub3_in_FPR128_lo+ZPR4_with_zsub1_in_ZPR_3b
-    30,  	// 14: QQQQ_with_qsub3_in_FPR128_lo+ZPR4_with_zsub2_in_ZPR_3b
-    31,  	// 15: FPR128_lo+ZPR4_with_zsub1_in_ZPR_3b
+    30,  	// 8: FPR64_lo+ZPR_3b
+    30,  	// 9: DD_with_dsub1_in_FPR64_lo+ZPR_3b
+    30,  	// 10: DDD_with_dsub2_in_FPR64_lo+ZPR_3b
+    30,  	// 11: DDD_with_dsub2_in_FPR64_lo+ZPR4_with_zsub1_in_ZPR_3b
+    30,  	// 12: DDDD_with_dsub3_in_FPR64_lo+ZPR_3b
+    30,  	// 13: DDDD_with_dsub3_in_FPR64_lo+ZPR4_with_zsub1_in_ZPR_3b
+    30,  	// 14: DDDD_with_dsub3_in_FPR64_lo+ZPR4_with_zsub2_in_ZPR_3b
+    31,  	// 15: FPR64_lo+ZPR4_with_zsub1_in_ZPR_3b
     32,  	// 16: FPR8
-    32,  	// 17: FPR128_lo+ZPR4_with_zsub2_in_ZPR_3b
+    32,  	// 17: FPR64_lo+ZPR4_with_zsub2_in_ZPR_3b
     33,  	// 18: GPR32
-    33,  	// 19: FPR128_lo+ZPR4_with_zsub3_in_ZPR_3b
+    33,  	// 19: FPR64_lo+ZPR4_with_zsub3_in_ZPR_3b
     41,  	// 20: ZPR4_with_zsub3_in_ZPR_4b
-    41,  	// 21: ZPR4_with_zsub_in_FPR128_lo
+    41,  	// 21: ZPR_4b
     43,  	// 22: FPR8+ZPR_3b
     43,  	// 23: FPR8+ZPR4_with_zsub1_in_ZPR_3b
     43,  	// 24: FPR8+ZPR4_with_zsub2_in_ZPR_3b
     43,  	// 25: FPR8+ZPR4_with_zsub3_in_ZPR_3b
-    44,  	// 26: ZPR_4b
+    44,  	// 26: ZPR4_with_zsub2_in_ZPR_4b
     51,  	// 27: FPR8+ZPR_4b
-    51,  	// 28: FPR8+ZPR4_with_zsub2_in_ZPR_4b
-    51,  	// 29: FPR8+ZPR4_with_zsub3_in_ZPR_4b
-    51,  	// 30: FPR8+ZPR4_with_zsub_in_FPR128_lo
+    51,  	// 28: FPR8+ZPR4_with_zsub1_in_ZPR_4b
+    51,  	// 29: FPR8+ZPR4_with_zsub2_in_ZPR_4b
+    51,  	// 30: FPR8+ZPR4_with_zsub3_in_ZPR_4b
     64,  	// 31: ZPR
   };
   return PressureLimitTable[Idx];
@@ -20278,21 +23196,21 @@ static const int RCSetsTable[] = {
   /* 3 */ 0, 18, -1,
   /* 6 */ 1, 5, 18, -1,
   /* 10 */ 3, 5, 18, -1,
-  /* 14 */ 26, 27, 31, -1,
-  /* 18 */ 26, 28, 31, -1,
-  /* 22 */ 26, 27, 28, 31, -1,
-  /* 27 */ 20, 26, 29, 31, -1,
-  /* 32 */ 7, 19, 20, 25, 26, 29, 31, -1,
-  /* 40 */ 20, 26, 28, 29, 31, -1,
-  /* 46 */ 7, 14, 17, 20, 24, 26, 28, 29, 31, -1,
-  /* 56 */ 7, 14, 17, 19, 20, 24, 25, 26, 28, 29, 31, -1,
-  /* 68 */ 20, 26, 27, 28, 29, 31, -1,
-  /* 75 */ 7, 11, 13, 15, 20, 23, 26, 27, 28, 29, 31, -1,
-  /* 87 */ 7, 11, 13, 14, 15, 17, 20, 23, 24, 26, 27, 28, 29, 31, -1,
-  /* 102 */ 7, 11, 13, 14, 15, 17, 19, 20, 23, 24, 25, 26, 27, 28, 29, 31, -1,
-  /* 119 */ 21, 26, 30, 31, -1,
-  /* 124 */ 21, 26, 27, 30, 31, -1,
-  /* 130 */ 21, 26, 27, 28, 30, 31, -1,
+  /* 14 */ 21, 26, 27, 31, -1,
+  /* 19 */ 26, 28, 31, -1,
+  /* 23 */ 21, 26, 27, 28, 31, -1,
+  /* 29 */ 26, 29, 31, -1,
+  /* 33 */ 26, 28, 29, 31, -1,
+  /* 38 */ 21, 26, 27, 28, 29, 31, -1,
+  /* 45 */ 20, 26, 30, 31, -1,
+  /* 50 */ 7, 19, 20, 25, 26, 30, 31, -1,
+  /* 58 */ 20, 26, 29, 30, 31, -1,
+  /* 64 */ 7, 14, 17, 20, 24, 26, 29, 30, 31, -1,
+  /* 74 */ 7, 14, 17, 19, 20, 24, 25, 26, 29, 30, 31, -1,
+  /* 86 */ 20, 26, 28, 29, 30, 31, -1,
+  /* 93 */ 7, 11, 13, 15, 20, 23, 26, 28, 29, 30, 31, -1,
+  /* 105 */ 7, 11, 13, 14, 15, 17, 20, 23, 24, 26, 28, 29, 30, 31, -1,
+  /* 120 */ 7, 11, 13, 14, 15, 17, 19, 20, 23, 24, 25, 26, 28, 29, 30, 31, -1,
   /* 137 */ 16, 22, 23, 24, 25, 27, 28, 29, 30, 31, -1,
   /* 148 */ 20, 21, 26, 27, 28, 29, 30, 31, -1,
   /* 157 */ 7, 8, 9, 10, 12, 20, 21, 22, 26, 27, 28, 29, 30, 31, -1,
@@ -20320,7 +23238,7 @@ static const int RCSetsTable[] = {
 const int* AArch64GenRegisterInfo::
 getRegClassPressureSets(const TargetRegisterClass *RC) const {
   static const uint16_t RCSetStartTable[] = {
-    137,137,1,0,4,137,4,4,4,10,2,3,4,4,10,4,137,4,4,4,4,4,7,7,10,6,3,137,4,4,4,4,7,7,7,7,10,6,137,16,490,148,252,137,137,137,16,419,441,68,130,490,148,191,102,252,137,16,378,398,295,22,40,124,419,441,68,130,490,148,172,87,56,102,191,252,137,16,340,359,276,213,14,18,27,119,378,398,295,22,40,124,419,441,68,130,490,148,157,75,46,32,87,56,172,102,191,252,};
+    137,137,1,0,4,137,4,4,4,10,2,3,4,4,10,4,137,4,4,4,4,4,7,7,490,10,6,3,137,419,441,4,490,4,4,4,7,7,7,7,10,6,137,17,490,148,252,137,378,398,295,419,441,490,137,340,359,276,213,378,398,295,419,441,490,137,17,419,441,38,86,490,148,191,120,252,137,17,378,398,295,23,33,58,419,441,38,86,490,148,172,105,74,191,120,252,137,17,340,359,276,213,14,19,29,45,378,398,295,23,33,58,419,441,38,86,490,148,157,93,64,50,172,105,74,191,120,252,};
   return &RCSetsTable[RCSetStartTable[RC->getID()]];
 }
 
@@ -20330,7 +23248,7 @@ const int* AArch64GenRegisterInfo::
 getRegUnitPressureSets(unsigned RegUnit) const {
   assert(RegUnit < 115 && "invalid register unit");
   static const uint16_t RUSetStartTable[] = {
-    2,4,4,2,3,4,515,515,515,515,515,515,515,515,515,515,515,490,490,490,490,490,419,378,340,137,137,137,137,137,137,137,137,137,137,232,317,465,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,10,10,10,10,10,10,10,10,7,7,7,7,7,7,7,7,6,6,7,7,4,4,4,4,4,4,4,4,4,252,252,252,252,252,252,252,252,191,172,157,148,148,148,148,148,130,124,119,16,16,16,16,16,16,16,16,16,16,32,56,102,};
+    2,4,4,2,3,4,515,515,515,515,515,515,515,515,515,515,515,490,490,490,490,490,419,378,340,137,137,137,137,137,137,137,137,137,137,232,317,465,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,10,10,10,10,10,10,10,10,7,7,7,7,7,7,7,7,6,6,7,7,4,4,4,4,4,4,4,4,4,252,252,252,252,252,252,252,252,191,172,157,148,148,148,148,148,38,23,14,17,17,17,17,17,17,17,17,17,17,50,74,120,};
   return &RCSetsTable[RUSetStartTable[RegUnit]];
 }
 
@@ -20359,11 +23277,11 @@ extern const unsigned AArch64EHFlavour0L2DwarfSize;
 AArch64GenRegisterInfo::
 AArch64GenRegisterInfo(unsigned RA, unsigned DwarfFlavour, unsigned EHFlavour,
       unsigned PC, unsigned HwMode)
-  : TargetRegisterInfo(AArch64RegInfoDesc, RegisterClasses, RegisterClasses+108,
+  : TargetRegisterInfo(AArch64RegInfoDesc, RegisterClasses, RegisterClasses+128,
              SubRegIndexNameTable, SubRegIndexLaneMaskTable,
              LaneBitmask(0xFFFFFFB6), RegClassInfos, HwMode) {
   InitMCRegisterInfo(AArch64RegDesc, 629, RA, PC,
-                     AArch64MCRegisterClasses, 108,
+                     AArch64MCRegisterClasses, 128,
                      AArch64RegUnitRoots,
                      115,
                      AArch64RegDiffLists,

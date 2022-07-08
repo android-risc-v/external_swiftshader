@@ -2298,10 +2298,7 @@ bool MemorySSAWrapperPass::runOnFunction(Function &F) {
   return false;
 }
 
-void MemorySSAWrapperPass::verifyAnalysis() const {
-  if (VerifyMemorySSA)
-    MSSA->verifyMemorySSA();
-}
+void MemorySSAWrapperPass::verifyAnalysis() const { MSSA->verifyMemorySSA(); }
 
 void MemorySSAWrapperPass::print(raw_ostream &OS, const Module *M) const {
   MSSA->print(OS);

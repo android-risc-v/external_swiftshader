@@ -143,7 +143,7 @@ bool RISCVInstructionSelector::testImmPredicate_I64(unsigned PredicateID, int64_
     return false;
   }
   case GIPFP_I64_Predicate_immbottomxlenset: {
-
+    
   if (Subtarget->is64Bit())
     return countTrailingOnes<uint64_t>(Imm) >= 6;
   return countTrailingOnes<uint64_t>(Imm) >= 5;
@@ -227,7 +227,7 @@ bool RISCVInstructionSelector::testImmPredicate_I64(unsigned PredicateID, int64_
     return false;
   }
   case GIPFP_I64_Predicate_uimmlog2xlen: {
-
+    
   if (Subtarget->is64Bit())
     return isUInt<6>(Imm);
   return isUInt<5>(Imm);
@@ -236,7 +236,7 @@ bool RISCVInstructionSelector::testImmPredicate_I64(unsigned PredicateID, int64_
     return false;
   }
   case GIPFP_I64_Predicate_uimmlog2xlennonzero: {
-
+    
   if (Subtarget->is64Bit())
     return isUInt<6>(Imm) && (Imm != 0);
   return isUInt<5>(Imm) && (Imm != 0);
