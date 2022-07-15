@@ -14,46 +14,59 @@ namespace llvm {
 namespace RISCV {
 enum {
   Feature64Bit = 0,
-  FeatureRV32E = 1,
-  FeatureRVCHints = 2,
-  FeatureRelax = 3,
-  FeatureReserveX1 = 4,
-  FeatureReserveX2 = 5,
-  FeatureReserveX3 = 6,
-  FeatureReserveX4 = 7,
-  FeatureReserveX5 = 8,
-  FeatureReserveX6 = 9,
-  FeatureReserveX7 = 10,
-  FeatureReserveX8 = 11,
-  FeatureReserveX9 = 12,
-  FeatureReserveX10 = 13,
-  FeatureReserveX11 = 14,
-  FeatureReserveX12 = 15,
-  FeatureReserveX13 = 16,
-  FeatureReserveX14 = 17,
-  FeatureReserveX15 = 18,
-  FeatureReserveX16 = 19,
-  FeatureReserveX17 = 20,
-  FeatureReserveX18 = 21,
-  FeatureReserveX19 = 22,
-  FeatureReserveX20 = 23,
-  FeatureReserveX21 = 24,
-  FeatureReserveX22 = 25,
-  FeatureReserveX23 = 26,
-  FeatureReserveX24 = 27,
-  FeatureReserveX25 = 28,
-  FeatureReserveX26 = 29,
-  FeatureReserveX27 = 30,
-  FeatureReserveX28 = 31,
-  FeatureReserveX29 = 32,
-  FeatureReserveX30 = 33,
-  FeatureReserveX31 = 34,
-  FeatureStdExtA = 35,
-  FeatureStdExtC = 36,
-  FeatureStdExtD = 37,
-  FeatureStdExtF = 38,
-  FeatureStdExtM = 39,
-  NumSubtargetFeatures = 40
+  FeatureExtZbb = 1,
+  FeatureExtZbc = 2,
+  FeatureExtZbe = 3,
+  FeatureExtZbf = 4,
+  FeatureExtZbm = 5,
+  FeatureExtZbp = 6,
+  FeatureExtZbproposedc = 7,
+  FeatureExtZbr = 8,
+  FeatureExtZbs = 9,
+  FeatureExtZbt = 10,
+  FeatureNoRVCHints = 11,
+  FeatureRV32E = 12,
+  FeatureRelax = 13,
+  FeatureReserveX1 = 14,
+  FeatureReserveX2 = 15,
+  FeatureReserveX3 = 16,
+  FeatureReserveX4 = 17,
+  FeatureReserveX5 = 18,
+  FeatureReserveX6 = 19,
+  FeatureReserveX7 = 20,
+  FeatureReserveX8 = 21,
+  FeatureReserveX9 = 22,
+  FeatureReserveX10 = 23,
+  FeatureReserveX11 = 24,
+  FeatureReserveX12 = 25,
+  FeatureReserveX13 = 26,
+  FeatureReserveX14 = 27,
+  FeatureReserveX15 = 28,
+  FeatureReserveX16 = 29,
+  FeatureReserveX17 = 30,
+  FeatureReserveX18 = 31,
+  FeatureReserveX19 = 32,
+  FeatureReserveX20 = 33,
+  FeatureReserveX21 = 34,
+  FeatureReserveX22 = 35,
+  FeatureReserveX23 = 36,
+  FeatureReserveX24 = 37,
+  FeatureReserveX25 = 38,
+  FeatureReserveX26 = 39,
+  FeatureReserveX27 = 40,
+  FeatureReserveX28 = 41,
+  FeatureReserveX29 = 42,
+  FeatureReserveX30 = 43,
+  FeatureReserveX31 = 44,
+  FeatureSaveRestore = 45,
+  FeatureStdExtA = 46,
+  FeatureStdExtB = 47,
+  FeatureStdExtC = 48,
+  FeatureStdExtD = 49,
+  FeatureStdExtF = 50,
+  FeatureStdExtM = 51,
+  FeatureStdExtV = 52,
+  NumSubtargetFeatures = 53
 };
 } // end namespace RISCV
 } // end namespace llvm
@@ -70,10 +83,23 @@ extern const llvm::SubtargetFeatureKV RISCVFeatureKV[] = {
   { "64bit", "Implements RV64", RISCV::Feature64Bit, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
   { "a", "'A' (Atomic Instructions)", RISCV::FeatureStdExtA, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
   { "c", "'C' (Compressed Instructions)", RISCV::FeatureStdExtC, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
-  { "d", "'D' (Double-Precision Floating-Point)", RISCV::FeatureStdExtD, { { { 0x4000000000ULL, 0x0ULL, 0x0ULL, } } } },
+  { "d", "'D' (Double-Precision Floating-Point)", RISCV::FeatureStdExtD, { { { 0x4000000000000ULL, 0x0ULL, 0x0ULL, } } } },
   { "e", "Implements RV32E (provides 16 rather than 32 GPRs)", RISCV::FeatureRV32E, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
+  { "experimental-b", "'B' (Bit Manipulation Instructions)", RISCV::FeatureStdExtB, { { { 0x77eULL, 0x0ULL, 0x0ULL, } } } },
+  { "experimental-v", "'V' (Vector Instructions)", RISCV::FeatureStdExtV, { { { 0x4000000000000ULL, 0x0ULL, 0x0ULL, } } } },
+  { "experimental-zbb", "'Zbb' (Base 'B' Instructions)", RISCV::FeatureExtZbb, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
+  { "experimental-zbc", "'Zbc' (Carry-Less 'B' Instructions)", RISCV::FeatureExtZbc, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
+  { "experimental-zbe", "'Zbe' (Extract-Deposit 'B' Instructions)", RISCV::FeatureExtZbe, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
+  { "experimental-zbf", "'Zbf' (Bit-Field 'B' Instructions)", RISCV::FeatureExtZbf, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
+  { "experimental-zbm", "'Zbm' (Matrix 'B' Instructions)", RISCV::FeatureExtZbm, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
+  { "experimental-zbp", "'Zbp' (Permutation 'B' Instructions)", RISCV::FeatureExtZbp, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
+  { "experimental-zbproposedc", "'Zbproposedc' (Proposed Compressed 'B' Instructions)", RISCV::FeatureExtZbproposedc, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
+  { "experimental-zbr", "'Zbr' (Polynomial Reduction 'B' Instructions)", RISCV::FeatureExtZbr, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
+  { "experimental-zbs", "'Zbs' (Single-Bit 'B' Instructions)", RISCV::FeatureExtZbs, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
+  { "experimental-zbt", "'Zbt' (Ternary 'B' Instructions)", RISCV::FeatureExtZbt, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
   { "f", "'F' (Single-Precision Floating-Point)", RISCV::FeatureStdExtF, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
   { "m", "'M' (Integer Multiplication and Division)", RISCV::FeatureStdExtM, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
+  { "no-rvc-hints", "Disable RVC Hint Instructions.", RISCV::FeatureNoRVCHints, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
   { "relax", "Enable Linker relaxation.", RISCV::FeatureRelax, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
   { "reserve-x1", "Reserve X1", RISCV::FeatureReserveX1, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
   { "reserve-x10", "Reserve X10", RISCV::FeatureReserveX10, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
@@ -106,7 +132,7 @@ extern const llvm::SubtargetFeatureKV RISCVFeatureKV[] = {
   { "reserve-x7", "Reserve X7", RISCV::FeatureReserveX7, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
   { "reserve-x8", "Reserve X8", RISCV::FeatureReserveX8, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
   { "reserve-x9", "Reserve X9", RISCV::FeatureReserveX9, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
-  { "rvc-hints", "Enable RVC Hint Instructions.", RISCV::FeatureRVCHints, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
+  { "save-restore", "Enable save/restore.", RISCV::FeatureSaveRestore, { { { 0x0ULL, 0x0ULL, 0x0ULL, } } } },
 };
 
 #ifdef DBGFIELD
@@ -130,12 +156,14 @@ extern const llvm::MCWriteProcResEntry RISCVWriteProcResTable[] = {
   { 5, 34}, // #4
   { 3,  1}, // #5
   { 4, 20}, // #6
-  { 6,  1}, // #7
-  { 8,  1}, // #8
-  { 6, 33}, // #9
-  { 6, 34}, // #10
-  { 4,  1}, // #11
-  { 5, 20} // #12
+  { 4, 25}, // #7
+  { 6,  1}, // #8
+  { 8,  1}, // #9
+  { 6, 33}, // #10
+  { 6, 34}, // #11
+  { 4,  1}, // #12
+  { 5, 20}, // #13
+  { 5, 25} // #14
 }; // RISCVWriteProcResTable
 
 // {Cycles, WriteResourceID}
@@ -145,12 +173,13 @@ extern const llvm::MCWriteLatencyEntry RISCVWriteLatencyTable[] = {
   { 2,  0}, // #2 WriteAtomicW_WriteFLD64_WriteFLD32_WriteLDW_WriteFClass64_WriteFClass32_WriteFCvtF32ToF64_WriteFCvtI32ToF64_WriteFCvtF64ToF32_WriteFCvtI32ToF32_WriteFCvtF64ToI32_WriteFCvtF32ToI32_WriteFCmp64_WriteFCmp32_WriteFMovI32ToF32_WriteFMovF32ToI32_WriteAtomicLDW_WriteAtomicD_WriteLDD_WriteFCvtI64ToF64_WriteFCvtF64ToI64_WriteFCvtF32ToI64_WriteFCvtI64ToF32_WriteFMovI64ToF64_WriteFMovF64ToI64_WriteAtomicLDD_WriteLDWU
   { 3,  0}, // #3 WriteCSR_WriteLDB_WriteLDH
   {34,  0}, // #4 WriteIDiv_WriteIDiv32
-  { 6,  0}, // #5 WriteFALU64
-  { 4,  0}, // #6 WriteFALU32_WriteIMul_WriteIMul32
-  {20,  0}, // #7 WriteFDiv32_WriteFSqrt32
-  { 7,  0}, // #8 WriteFMulAdd64_WriteFMulSub64
+  { 6,  0}, // #5 WriteFALU64_WriteFMinMax64_WriteFSGNJ64
+  { 4,  0}, // #6 WriteFALU32_WriteFMinMax32_WriteFSGNJ32_WriteIMul_WriteIMul32
+  {20,  0}, // #7 WriteFDiv64_WriteFDiv32_WriteFSqrt32
+  { 7,  0}, // #8 WriteFMulAdd64_WriteFMulSub64_WriteFMul64
   { 5,  0}, // #9 WriteFMulAdd32_WriteFMulSub32_WriteFMul32
-  {33,  0} // #10 WriteIDiv
+  {25,  0}, // #10 WriteFSqrt64
+  {33,  0} // #11 WriteIDiv
 }; // RISCVWriteLatencyTable
 
 // {UseIdx, WriteResourceID, Cycles}
@@ -173,64 +202,76 @@ static const llvm::MCSchedClassDesc Rocket32ModelSchedClasses[] = {
   {DBGFIELD("WriteAtomicD_ReadAtomicDA_ReadAtomicDD") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #5
   {DBGFIELD("WriteAtomicW_ReadAtomicWA_ReadAtomicWD") 1, false, false,  2, 1,  2, 1,  1, 2}, // #6
   {DBGFIELD("WriteIALU")          1, false, false,  1, 1,  1, 1,  0, 0}, // #7
-  {DBGFIELD("WriteJmp")           1, false, false,  3, 1,  1, 1,  0, 0}, // #8
+  {DBGFIELD("WriteJmp_ReadJmp_ReadJmp") 1, false, false,  3, 1,  1, 1,  1, 2}, // #8
   {DBGFIELD("WriteCSR_ReadCSR")   1, false, false,  1, 1,  3, 1,  0, 1}, // #9
   {DBGFIELD("WriteCSR")           1, false, false,  1, 1,  3, 1,  0, 0}, // #10
-  {DBGFIELD("WriteFLD64_ReadMemBase") 1, false, false,  2, 1,  2, 1,  0, 1}, // #11
-  {DBGFIELD("WriteFLD32_ReadMemBase") 1, false, false,  2, 1,  2, 1,  0, 1}, // #12
-  {DBGFIELD("WriteFST64_ReadStoreData_ReadMemBase") 1, false, false,  2, 1,  1, 1,  1, 2}, // #13
-  {DBGFIELD("WriteFST32_ReadStoreData_ReadMemBase") 1, false, false,  2, 1,  1, 1,  1, 2}, // #14
-  {DBGFIELD("WriteJal")           1, false, false,  3, 1,  1, 1,  0, 0}, // #15
-  {DBGFIELD("WriteJalr_ReadJalr") 1, false, false,  3, 1,  1, 1,  0, 1}, // #16
-  {DBGFIELD("WriteJmpReg")        1, false, false,  3, 1,  1, 1,  0, 0}, // #17
-  {DBGFIELD("WriteLDD_ReadMemBase") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #18
-  {DBGFIELD("WriteLDW_ReadMemBase") 1, false, false,  2, 1,  2, 1,  0, 1}, // #19
-  {DBGFIELD("WriteNop")           1, false, false,  0, 0,  1, 1,  0, 0}, // #20
-  {DBGFIELD("WriteSTD_ReadStoreData_ReadMemBase") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #21
-  {DBGFIELD("WriteShift_ReadShift") 1, false, false,  1, 1,  1, 1,  0, 1}, // #22
-  {DBGFIELD("WriteSTW_ReadStoreData_ReadMemBase") 1, false, false,  2, 1,  1, 1,  1, 2}, // #23
-  {DBGFIELD("WriteIDiv_ReadIDiv_ReadIDiv") 1, false, false,  4, 1,  4, 1,  1, 2}, // #24
-  {DBGFIELD("WriteIDiv32_ReadIDiv32_ReadIDiv32") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #25
-  {DBGFIELD("WriteFALU64_ReadFALU64_ReadFALU64") 1, false, false,  5, 1,  5, 1,  1, 2}, // #26
-  {DBGFIELD("WriteFALU32_ReadFALU32_ReadFALU32") 1, false, false,  5, 1,  6, 1,  1, 2}, // #27
-  {DBGFIELD("WriteFClass64_ReadFClass64") 1, false, false,  5, 1,  2, 1,  0, 1}, // #28
-  {DBGFIELD("WriteFClass32_ReadFClass32") 1, false, false,  5, 1,  2, 1,  0, 1}, // #29
-  {DBGFIELD("WriteFCvtI64ToF64_ReadFCvtI64ToF64") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #30
-  {DBGFIELD("WriteFCvtF32ToF64_ReadFCvtF32ToF64") 1, false, false,  5, 1,  2, 1,  0, 1}, // #31
-  {DBGFIELD("WriteFCvtI32ToF64_ReadFCvtI32ToF64") 1, false, false,  5, 1,  2, 1,  0, 1}, // #32
-  {DBGFIELD("WriteFCvtF64ToI64_ReadFCvtF64ToI64") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #33
-  {DBGFIELD("WriteFCvtF32ToI64_ReadFCvtF32ToI64") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #34
-  {DBGFIELD("WriteFCvtF64ToF32_ReadFCvtF64ToF32") 1, false, false,  5, 1,  2, 1,  0, 1}, // #35
-  {DBGFIELD("WriteFCvtI64ToF32_ReadFCvtI64ToF32") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #36
-  {DBGFIELD("WriteFCvtI32ToF32_ReadFCvtI32ToF32") 1, false, false,  5, 1,  2, 1,  0, 1}, // #37
-  {DBGFIELD("WriteFCvtF64ToI32_ReadFCvtF64ToI32") 1, false, false,  5, 1,  2, 1,  0, 1}, // #38
-  {DBGFIELD("WriteFCvtF32ToI32_ReadFCvtF32ToI32") 1, false, false,  5, 1,  2, 1,  0, 1}, // #39
-  {DBGFIELD("WriteFDiv32_ReadFDiv32_ReadFDiv32") 1, false, false,  6, 1,  7, 1,  1, 2}, // #40
-  {DBGFIELD("WriteFCmp64_ReadFCmp64_ReadFCmp64") 1, false, false,  5, 1,  2, 1,  1, 2}, // #41
-  {DBGFIELD("WriteFCmp32_ReadFCmp32_ReadFCmp32") 1, false, false,  5, 1,  2, 1,  1, 2}, // #42
-  {DBGFIELD("WriteFMulAdd64_ReadFMulAdd64_ReadFMulAdd64_ReadFMulAdd64") 1, false, false,  5, 1,  8, 1,  3, 3}, // #43
-  {DBGFIELD("WriteFMulAdd32_ReadFMulAdd32_ReadFMulAdd32_ReadFMulAdd32") 1, false, false,  5, 1,  9, 1,  3, 3}, // #44
-  {DBGFIELD("WriteFMulSub64_ReadFMulSub64_ReadFMulSub64_ReadFMulSub64") 1, false, false,  5, 1,  8, 1,  3, 3}, // #45
-  {DBGFIELD("WriteFMulSub32_ReadFMulSub32_ReadFMulSub32_ReadFMulSub32") 1, false, false,  5, 1,  9, 1,  3, 3}, // #46
-  {DBGFIELD("WriteFMul32_ReadFMul32_ReadFMul32") 1, false, false,  5, 1,  9, 1,  1, 2}, // #47
-  {DBGFIELD("WriteFMovI64ToF64_ReadFMovI64ToF64") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #48
-  {DBGFIELD("WriteFMovI32ToF32_ReadFMovI32ToF32") 1, false, false,  5, 1,  2, 1,  0, 1}, // #49
-  {DBGFIELD("WriteFMovF64ToI64_ReadFMovF64ToI64") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #50
-  {DBGFIELD("WriteFMovF32ToI32_ReadFMovF32ToI32") 1, false, false,  5, 1,  2, 1,  0, 1}, // #51
-  {DBGFIELD("WriteFSqrt32_ReadFSqrt32") 1, false, false,  6, 1,  7, 1,  0, 1}, // #52
-  {DBGFIELD("WriteLDB_ReadMemBase") 1, false, false,  2, 1,  3, 1,  0, 1}, // #53
-  {DBGFIELD("WriteLDH_ReadMemBase") 1, false, false,  2, 1,  3, 1,  0, 1}, // #54
-  {DBGFIELD("WriteAtomicLDD_ReadAtomicLDD") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #55
-  {DBGFIELD("WriteAtomicLDW_ReadAtomicLDW") 1, false, false,  2, 1,  2, 1,  0, 1}, // #56
-  {DBGFIELD("WriteLDWU_ReadMemBase") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #57
-  {DBGFIELD("WriteIMul_ReadIMul_ReadIMul") 1, false, false,  7, 1,  6, 1,  1, 2}, // #58
-  {DBGFIELD("WriteIMul32_ReadIMul32_ReadIMul32") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #59
-  {DBGFIELD("WriteSTB_ReadStoreData_ReadMemBase") 1, false, false,  2, 1,  1, 1,  1, 2}, // #60
-  {DBGFIELD("WriteAtomicSTD_ReadAtomicSTD_ReadAtomicSTD") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #61
-  {DBGFIELD("WriteAtomicSTW_ReadAtomicSTW_ReadAtomicSTW") 1, false, false,  2, 1,  1, 1,  1, 2}, // #62
-  {DBGFIELD("WriteSTH_ReadStoreData_ReadMemBase") 1, false, false,  2, 1,  1, 1,  1, 2}, // #63
-  {DBGFIELD("WriteShift32_ReadShift32") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #64
-  {DBGFIELD("COPY")               1, false, false,  1, 1,  1, 1,  0, 0}, // #65
+  {DBGFIELD("WriteJmp")           1, false, false,  3, 1,  1, 1,  0, 0}, // #11
+  {DBGFIELD("WriteFLD64_ReadMemBase") 1, false, false,  2, 1,  2, 1,  0, 1}, // #12
+  {DBGFIELD("WriteFLD32_ReadMemBase") 1, false, false,  2, 1,  2, 1,  0, 1}, // #13
+  {DBGFIELD("WriteFST64_ReadStoreData_ReadMemBase") 1, false, false,  2, 1,  1, 1,  1, 2}, // #14
+  {DBGFIELD("WriteFST32_ReadStoreData_ReadMemBase") 1, false, false,  2, 1,  1, 1,  1, 2}, // #15
+  {DBGFIELD("WriteJal")           1, false, false,  3, 1,  1, 1,  0, 0}, // #16
+  {DBGFIELD("WriteJalr_ReadJalr") 1, false, false,  3, 1,  1, 1,  0, 1}, // #17
+  {DBGFIELD("WriteJmpReg")        1, false, false,  3, 1,  1, 1,  0, 0}, // #18
+  {DBGFIELD("WriteLDD_ReadMemBase") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #19
+  {DBGFIELD("WriteLDW_ReadMemBase") 1, false, false,  2, 1,  2, 1,  0, 1}, // #20
+  {DBGFIELD("WriteNop")           1, false, false,  0, 0,  1, 1,  0, 0}, // #21
+  {DBGFIELD("WriteSTD_ReadStoreData_ReadMemBase") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #22
+  {DBGFIELD("WriteShift_ReadShift") 1, false, false,  1, 1,  1, 1,  0, 1}, // #23
+  {DBGFIELD("WriteSTW_ReadStoreData_ReadMemBase") 1, false, false,  2, 1,  1, 1,  1, 2}, // #24
+  {DBGFIELD("WriteIDiv_ReadIDiv_ReadIDiv") 1, false, false,  4, 1,  4, 1,  1, 2}, // #25
+  {DBGFIELD("WriteIDiv32_ReadIDiv32_ReadIDiv32") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #26
+  {DBGFIELD("WriteFALU64_ReadFALU64_ReadFALU64") 1, false, false,  5, 1,  5, 1,  1, 2}, // #27
+  {DBGFIELD("WriteFALU32_ReadFALU32_ReadFALU32") 1, false, false,  5, 1,  6, 1,  1, 2}, // #28
+  {DBGFIELD("WriteFClass64_ReadFClass64") 1, false, false,  5, 1,  2, 1,  0, 1}, // #29
+  {DBGFIELD("WriteFClass32_ReadFClass32") 1, false, false,  5, 1,  2, 1,  0, 1}, // #30
+  {DBGFIELD("WriteFCvtI64ToF64_ReadFCvtI64ToF64") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #31
+  {DBGFIELD("WriteFCvtF32ToF64_ReadFCvtF32ToF64") 1, false, false,  5, 1,  2, 1,  0, 1}, // #32
+  {DBGFIELD("WriteFCvtI32ToF64_ReadFCvtI32ToF64") 1, false, false,  5, 1,  2, 1,  0, 1}, // #33
+  {DBGFIELD("WriteFCvtF64ToI64_ReadFCvtF64ToI64") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #34
+  {DBGFIELD("WriteFCvtF32ToI64_ReadFCvtF32ToI64") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #35
+  {DBGFIELD("WriteFCvtF64ToF32_ReadFCvtF64ToF32") 1, false, false,  5, 1,  2, 1,  0, 1}, // #36
+  {DBGFIELD("WriteFCvtI64ToF32_ReadFCvtI64ToF32") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #37
+  {DBGFIELD("WriteFCvtI32ToF32_ReadFCvtI32ToF32") 1, false, false,  5, 1,  2, 1,  0, 1}, // #38
+  {DBGFIELD("WriteFCvtF64ToI32_ReadFCvtF64ToI32") 1, false, false,  5, 1,  2, 1,  0, 1}, // #39
+  {DBGFIELD("WriteFCvtF32ToI32_ReadFCvtF32ToI32") 1, false, false,  5, 1,  2, 1,  0, 1}, // #40
+  {DBGFIELD("WriteFDiv64_ReadFDiv64_ReadFDiv64") 1, false, false,  6, 1,  7, 1,  1, 2}, // #41
+  {DBGFIELD("WriteFDiv32_ReadFDiv32_ReadFDiv32") 1, false, false,  6, 1,  7, 1,  1, 2}, // #42
+  {DBGFIELD("WriteFCmp64_ReadFCmp64_ReadFCmp64") 1, false, false,  5, 1,  2, 1,  1, 2}, // #43
+  {DBGFIELD("WriteFCmp32_ReadFCmp32_ReadFCmp32") 1, false, false,  5, 1,  2, 1,  1, 2}, // #44
+  {DBGFIELD("WriteFLD64_ReadFMemBase") 1, false, false,  2, 1,  2, 1,  0, 1}, // #45
+  {DBGFIELD("WriteFLD32_ReadFMemBase") 1, false, false,  2, 1,  2, 1,  0, 1}, // #46
+  {DBGFIELD("WriteFMulAdd64_ReadFMulAdd64_ReadFMulAdd64_ReadFMulAdd64") 1, false, false,  5, 1,  8, 1,  3, 3}, // #47
+  {DBGFIELD("WriteFMulAdd32_ReadFMulAdd32_ReadFMulAdd32_ReadFMulAdd32") 1, false, false,  5, 1,  9, 1,  3, 3}, // #48
+  {DBGFIELD("WriteFMinMax64_ReadFMinMax64_ReadFMinMax64") 1, false, false,  5, 1,  5, 1,  1, 2}, // #49
+  {DBGFIELD("WriteFMinMax32_ReadFMinMax32_ReadFMinMax32") 1, false, false,  5, 1,  6, 1,  1, 2}, // #50
+  {DBGFIELD("WriteFMulSub64_ReadFMulSub64_ReadFMulSub64_ReadFMulSub64") 1, false, false,  5, 1,  8, 1,  3, 3}, // #51
+  {DBGFIELD("WriteFMulSub32_ReadFMulSub32_ReadFMulSub32_ReadFMulSub32") 1, false, false,  5, 1,  9, 1,  3, 3}, // #52
+  {DBGFIELD("WriteFMul64_ReadFMul64_ReadFMul64") 1, false, false,  5, 1,  8, 1,  1, 2}, // #53
+  {DBGFIELD("WriteFMul32_ReadFMul32_ReadFMul32") 1, false, false,  5, 1,  9, 1,  1, 2}, // #54
+  {DBGFIELD("WriteFMovI64ToF64_ReadFMovI64ToF64") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #55
+  {DBGFIELD("WriteFMovI32ToF32_ReadFMovI32ToF32") 1, false, false,  5, 1,  2, 1,  0, 1}, // #56
+  {DBGFIELD("WriteFMovF64ToI64_ReadFMovF64ToI64") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #57
+  {DBGFIELD("WriteFMovF32ToI32_ReadFMovF32ToI32") 1, false, false,  5, 1,  2, 1,  0, 1}, // #58
+  {DBGFIELD("WriteFST64_ReadStoreData_ReadFMemBase") 1, false, false,  2, 1,  1, 1,  1, 2}, // #59
+  {DBGFIELD("WriteFSGNJ64_ReadFSGNJ64_ReadFSGNJ64") 1, false, false,  5, 1,  5, 1,  1, 2}, // #60
+  {DBGFIELD("WriteFSGNJ32_ReadFSGNJ32_ReadFSGNJ32") 1, false, false,  5, 1,  6, 1,  1, 2}, // #61
+  {DBGFIELD("WriteFSqrt64_ReadFSqrt64") 1, false, false,  7, 1, 10, 1,  0, 1}, // #62
+  {DBGFIELD("WriteFSqrt32_ReadFSqrt32") 1, false, false,  6, 1,  7, 1,  0, 1}, // #63
+  {DBGFIELD("WriteFST32_ReadStoreData_ReadFMemBase") 1, false, false,  2, 1,  1, 1,  1, 2}, // #64
+  {DBGFIELD("WriteLDB_ReadMemBase") 1, false, false,  2, 1,  3, 1,  0, 1}, // #65
+  {DBGFIELD("WriteLDH_ReadMemBase") 1, false, false,  2, 1,  3, 1,  0, 1}, // #66
+  {DBGFIELD("WriteAtomicLDD_ReadAtomicLDD") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #67
+  {DBGFIELD("WriteAtomicLDW_ReadAtomicLDW") 1, false, false,  2, 1,  2, 1,  0, 1}, // #68
+  {DBGFIELD("WriteLDWU_ReadMemBase") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #69
+  {DBGFIELD("WriteIMul_ReadIMul_ReadIMul") 1, false, false,  8, 1,  6, 1,  1, 2}, // #70
+  {DBGFIELD("WriteIMul32_ReadIMul32_ReadIMul32") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #71
+  {DBGFIELD("WriteSTB_ReadStoreData_ReadMemBase") 1, false, false,  2, 1,  1, 1,  1, 2}, // #72
+  {DBGFIELD("WriteAtomicSTD_ReadAtomicSTD_ReadAtomicSTD") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #73
+  {DBGFIELD("WriteAtomicSTW_ReadAtomicSTW_ReadAtomicSTW") 1, false, false,  2, 1,  1, 1,  1, 2}, // #74
+  {DBGFIELD("WriteSTH_ReadStoreData_ReadMemBase") 1, false, false,  2, 1,  1, 1,  1, 2}, // #75
+  {DBGFIELD("WriteShift32_ReadShift32") 16383, false, false,  0, 0,  0, 0,  0, 0}, // #76
+  {DBGFIELD("COPY")               1, false, false,  1, 1,  1, 1,  0, 0}, // #77
 }; // Rocket32ModelSchedClasses
 
 // {Name, NumMicroOps, BeginGroup, EndGroup, WriteProcResIdx,#, WriteLatencyIdx,#, ReadAdvanceIdx,#}
@@ -240,67 +281,79 @@ static const llvm::MCSchedClassDesc Rocket64ModelSchedClasses[] = {
   {DBGFIELD("WriteIALU_ReadIALU") 1, false, false,  3, 1,  1, 1,  0, 1}, // #2
   {DBGFIELD("WriteIALU32_ReadIALU32") 1, false, false,  3, 1,  1, 1,  0, 1}, // #3
   {DBGFIELD("WriteIALU32_ReadIALU32_ReadIALU32") 1, false, false,  3, 1,  1, 1,  1, 2}, // #4
-  {DBGFIELD("WriteAtomicD_ReadAtomicDA_ReadAtomicDD") 1, false, false,  8, 1,  2, 1,  1, 2}, // #5
-  {DBGFIELD("WriteAtomicW_ReadAtomicWA_ReadAtomicWD") 1, false, false,  8, 1,  2, 1,  1, 2}, // #6
+  {DBGFIELD("WriteAtomicD_ReadAtomicDA_ReadAtomicDD") 1, false, false,  9, 1,  2, 1,  1, 2}, // #5
+  {DBGFIELD("WriteAtomicW_ReadAtomicWA_ReadAtomicWD") 1, false, false,  9, 1,  2, 1,  1, 2}, // #6
   {DBGFIELD("WriteIALU")          1, false, false,  3, 1,  1, 1,  0, 0}, // #7
-  {DBGFIELD("WriteJmp")           1, false, false,  5, 1,  1, 1,  0, 0}, // #8
+  {DBGFIELD("WriteJmp_ReadJmp_ReadJmp") 1, false, false,  5, 1,  1, 1,  1, 2}, // #8
   {DBGFIELD("WriteCSR_ReadCSR")   1, false, false,  3, 1,  3, 1,  0, 1}, // #9
   {DBGFIELD("WriteCSR")           1, false, false,  3, 1,  3, 1,  0, 0}, // #10
-  {DBGFIELD("WriteFLD64_ReadMemBase") 1, false, false,  8, 1,  2, 1,  0, 1}, // #11
-  {DBGFIELD("WriteFLD32_ReadMemBase") 1, false, false,  8, 1,  2, 1,  0, 1}, // #12
-  {DBGFIELD("WriteFST64_ReadStoreData_ReadMemBase") 1, false, false,  8, 1,  1, 1,  1, 2}, // #13
-  {DBGFIELD("WriteFST32_ReadStoreData_ReadMemBase") 1, false, false,  8, 1,  1, 1,  1, 2}, // #14
-  {DBGFIELD("WriteJal")           1, false, false,  5, 1,  1, 1,  0, 0}, // #15
-  {DBGFIELD("WriteJalr_ReadJalr") 1, false, false,  5, 1,  1, 1,  0, 1}, // #16
-  {DBGFIELD("WriteJmpReg")        1, false, false,  5, 1,  1, 1,  0, 0}, // #17
-  {DBGFIELD("WriteLDD_ReadMemBase") 1, false, false,  8, 1,  2, 1,  0, 1}, // #18
-  {DBGFIELD("WriteLDW_ReadMemBase") 1, false, false,  8, 1,  2, 1,  0, 1}, // #19
-  {DBGFIELD("WriteNop")           1, false, false,  0, 0,  1, 1,  0, 0}, // #20
-  {DBGFIELD("WriteSTD_ReadStoreData_ReadMemBase") 1, false, false,  8, 1,  1, 1,  1, 2}, // #21
-  {DBGFIELD("WriteShift_ReadShift") 1, false, false,  3, 1,  1, 1,  0, 1}, // #22
-  {DBGFIELD("WriteSTW_ReadStoreData_ReadMemBase") 1, false, false,  8, 1,  1, 1,  1, 2}, // #23
-  {DBGFIELD("WriteIDiv_ReadIDiv_ReadIDiv") 1, false, false,  9, 1, 10, 1,  1, 2}, // #24
-  {DBGFIELD("WriteIDiv32_ReadIDiv32_ReadIDiv32") 1, false, false, 10, 1,  4, 1,  1, 2}, // #25
-  {DBGFIELD("WriteFALU64_ReadFALU64_ReadFALU64") 1, false, false, 11, 1,  5, 1,  1, 2}, // #26
-  {DBGFIELD("WriteFALU32_ReadFALU32_ReadFALU32") 1, false, false, 11, 1,  6, 1,  1, 2}, // #27
-  {DBGFIELD("WriteFClass64_ReadFClass64") 1, false, false, 11, 1,  2, 1,  0, 1}, // #28
-  {DBGFIELD("WriteFClass32_ReadFClass32") 1, false, false, 11, 1,  2, 1,  0, 1}, // #29
-  {DBGFIELD("WriteFCvtI64ToF64_ReadFCvtI64ToF64") 1, false, false,  1, 1,  2, 1,  0, 1}, // #30
-  {DBGFIELD("WriteFCvtF32ToF64_ReadFCvtF32ToF64") 1, false, false,  1, 1,  2, 1,  0, 1}, // #31
-  {DBGFIELD("WriteFCvtI32ToF64_ReadFCvtI32ToF64") 1, false, false,  1, 1,  2, 1,  0, 1}, // #32
-  {DBGFIELD("WriteFCvtF64ToI64_ReadFCvtF64ToI64") 1, false, false,  1, 1,  2, 1,  0, 1}, // #33
-  {DBGFIELD("WriteFCvtF32ToI64_ReadFCvtF32ToI64") 1, false, false,  1, 1,  2, 1,  0, 1}, // #34
-  {DBGFIELD("WriteFCvtF64ToF32_ReadFCvtF64ToF32") 1, false, false,  1, 1,  2, 1,  0, 1}, // #35
-  {DBGFIELD("WriteFCvtI64ToF32_ReadFCvtI64ToF32") 1, false, false,  1, 1,  2, 1,  0, 1}, // #36
-  {DBGFIELD("WriteFCvtI32ToF32_ReadFCvtI32ToF32") 1, false, false,  1, 1,  2, 1,  0, 1}, // #37
-  {DBGFIELD("WriteFCvtF64ToI32_ReadFCvtF64ToI32") 1, false, false,  1, 1,  2, 1,  0, 1}, // #38
-  {DBGFIELD("WriteFCvtF32ToI32_ReadFCvtF32ToI32") 1, false, false,  1, 1,  2, 1,  0, 1}, // #39
-  {DBGFIELD("WriteFDiv32_ReadFDiv32_ReadFDiv32") 1, false, false, 12, 1,  7, 1,  1, 2}, // #40
-  {DBGFIELD("WriteFCmp64_ReadFCmp64_ReadFCmp64") 1, false, false, 11, 1,  2, 1,  1, 2}, // #41
-  {DBGFIELD("WriteFCmp32_ReadFCmp32_ReadFCmp32") 1, false, false, 11, 1,  2, 1,  1, 2}, // #42
-  {DBGFIELD("WriteFMulAdd64_ReadFMulAdd64_ReadFMulAdd64_ReadFMulAdd64") 1, false, false, 11, 1,  8, 1,  3, 3}, // #43
-  {DBGFIELD("WriteFMulAdd32_ReadFMulAdd32_ReadFMulAdd32_ReadFMulAdd32") 1, false, false, 11, 1,  9, 1,  3, 3}, // #44
-  {DBGFIELD("WriteFMulSub64_ReadFMulSub64_ReadFMulSub64_ReadFMulSub64") 1, false, false, 11, 1,  8, 1,  3, 3}, // #45
-  {DBGFIELD("WriteFMulSub32_ReadFMulSub32_ReadFMulSub32_ReadFMulSub32") 1, false, false, 11, 1,  9, 1,  3, 3}, // #46
-  {DBGFIELD("WriteFMul32_ReadFMul32_ReadFMul32") 1, false, false, 11, 1,  9, 1,  1, 2}, // #47
-  {DBGFIELD("WriteFMovI64ToF64_ReadFMovI64ToF64") 1, false, false, 11, 1,  2, 1,  0, 1}, // #48
-  {DBGFIELD("WriteFMovI32ToF32_ReadFMovI32ToF32") 1, false, false, 11, 1,  2, 1,  0, 1}, // #49
-  {DBGFIELD("WriteFMovF64ToI64_ReadFMovF64ToI64") 1, false, false, 11, 1,  2, 1,  0, 1}, // #50
-  {DBGFIELD("WriteFMovF32ToI32_ReadFMovF32ToI32") 1, false, false, 11, 1,  2, 1,  0, 1}, // #51
-  {DBGFIELD("WriteFSqrt32_ReadFSqrt32") 1, false, false, 12, 1,  7, 1,  0, 1}, // #52
-  {DBGFIELD("WriteLDB_ReadMemBase") 1, false, false,  8, 1,  3, 1,  0, 1}, // #53
-  {DBGFIELD("WriteLDH_ReadMemBase") 1, false, false,  8, 1,  3, 1,  0, 1}, // #54
-  {DBGFIELD("WriteAtomicLDD_ReadAtomicLDD") 1, false, false,  8, 1,  2, 1,  0, 1}, // #55
-  {DBGFIELD("WriteAtomicLDW_ReadAtomicLDW") 1, false, false,  8, 1,  2, 1,  0, 1}, // #56
-  {DBGFIELD("WriteLDWU_ReadMemBase") 1, false, false,  8, 1,  2, 1,  0, 1}, // #57
-  {DBGFIELD("WriteIMul_ReadIMul_ReadIMul") 1, false, false,  2, 1,  6, 1,  1, 2}, // #58
-  {DBGFIELD("WriteIMul32_ReadIMul32_ReadIMul32") 1, false, false,  2, 1,  6, 1,  1, 2}, // #59
-  {DBGFIELD("WriteSTB_ReadStoreData_ReadMemBase") 1, false, false,  8, 1,  1, 1,  1, 2}, // #60
-  {DBGFIELD("WriteAtomicSTD_ReadAtomicSTD_ReadAtomicSTD") 1, false, false,  8, 1,  1, 1,  1, 2}, // #61
-  {DBGFIELD("WriteAtomicSTW_ReadAtomicSTW_ReadAtomicSTW") 1, false, false,  8, 1,  1, 1,  1, 2}, // #62
-  {DBGFIELD("WriteSTH_ReadStoreData_ReadMemBase") 1, false, false,  8, 1,  1, 1,  1, 2}, // #63
-  {DBGFIELD("WriteShift32_ReadShift32") 1, false, false,  3, 1,  1, 1,  0, 1}, // #64
-  {DBGFIELD("COPY")               1, false, false,  3, 1,  1, 1,  0, 0}, // #65
+  {DBGFIELD("WriteJmp")           1, false, false,  5, 1,  1, 1,  0, 0}, // #11
+  {DBGFIELD("WriteFLD64_ReadMemBase") 1, false, false,  9, 1,  2, 1,  0, 1}, // #12
+  {DBGFIELD("WriteFLD32_ReadMemBase") 1, false, false,  9, 1,  2, 1,  0, 1}, // #13
+  {DBGFIELD("WriteFST64_ReadStoreData_ReadMemBase") 1, false, false,  9, 1,  1, 1,  1, 2}, // #14
+  {DBGFIELD("WriteFST32_ReadStoreData_ReadMemBase") 1, false, false,  9, 1,  1, 1,  1, 2}, // #15
+  {DBGFIELD("WriteJal")           1, false, false,  5, 1,  1, 1,  0, 0}, // #16
+  {DBGFIELD("WriteJalr_ReadJalr") 1, false, false,  5, 1,  1, 1,  0, 1}, // #17
+  {DBGFIELD("WriteJmpReg")        1, false, false,  5, 1,  1, 1,  0, 0}, // #18
+  {DBGFIELD("WriteLDD_ReadMemBase") 1, false, false,  9, 1,  2, 1,  0, 1}, // #19
+  {DBGFIELD("WriteLDW_ReadMemBase") 1, false, false,  9, 1,  2, 1,  0, 1}, // #20
+  {DBGFIELD("WriteNop")           1, false, false,  0, 0,  1, 1,  0, 0}, // #21
+  {DBGFIELD("WriteSTD_ReadStoreData_ReadMemBase") 1, false, false,  9, 1,  1, 1,  1, 2}, // #22
+  {DBGFIELD("WriteShift_ReadShift") 1, false, false,  3, 1,  1, 1,  0, 1}, // #23
+  {DBGFIELD("WriteSTW_ReadStoreData_ReadMemBase") 1, false, false,  9, 1,  1, 1,  1, 2}, // #24
+  {DBGFIELD("WriteIDiv_ReadIDiv_ReadIDiv") 1, false, false, 10, 1, 11, 1,  1, 2}, // #25
+  {DBGFIELD("WriteIDiv32_ReadIDiv32_ReadIDiv32") 1, false, false, 11, 1,  4, 1,  1, 2}, // #26
+  {DBGFIELD("WriteFALU64_ReadFALU64_ReadFALU64") 1, false, false, 12, 1,  5, 1,  1, 2}, // #27
+  {DBGFIELD("WriteFALU32_ReadFALU32_ReadFALU32") 1, false, false, 12, 1,  6, 1,  1, 2}, // #28
+  {DBGFIELD("WriteFClass64_ReadFClass64") 1, false, false, 12, 1,  2, 1,  0, 1}, // #29
+  {DBGFIELD("WriteFClass32_ReadFClass32") 1, false, false, 12, 1,  2, 1,  0, 1}, // #30
+  {DBGFIELD("WriteFCvtI64ToF64_ReadFCvtI64ToF64") 1, false, false,  1, 1,  2, 1,  0, 1}, // #31
+  {DBGFIELD("WriteFCvtF32ToF64_ReadFCvtF32ToF64") 1, false, false,  1, 1,  2, 1,  0, 1}, // #32
+  {DBGFIELD("WriteFCvtI32ToF64_ReadFCvtI32ToF64") 1, false, false,  1, 1,  2, 1,  0, 1}, // #33
+  {DBGFIELD("WriteFCvtF64ToI64_ReadFCvtF64ToI64") 1, false, false,  1, 1,  2, 1,  0, 1}, // #34
+  {DBGFIELD("WriteFCvtF32ToI64_ReadFCvtF32ToI64") 1, false, false,  1, 1,  2, 1,  0, 1}, // #35
+  {DBGFIELD("WriteFCvtF64ToF32_ReadFCvtF64ToF32") 1, false, false,  1, 1,  2, 1,  0, 1}, // #36
+  {DBGFIELD("WriteFCvtI64ToF32_ReadFCvtI64ToF32") 1, false, false,  1, 1,  2, 1,  0, 1}, // #37
+  {DBGFIELD("WriteFCvtI32ToF32_ReadFCvtI32ToF32") 1, false, false,  1, 1,  2, 1,  0, 1}, // #38
+  {DBGFIELD("WriteFCvtF64ToI32_ReadFCvtF64ToI32") 1, false, false,  1, 1,  2, 1,  0, 1}, // #39
+  {DBGFIELD("WriteFCvtF32ToI32_ReadFCvtF32ToI32") 1, false, false,  1, 1,  2, 1,  0, 1}, // #40
+  {DBGFIELD("WriteFDiv64_ReadFDiv64_ReadFDiv64") 1, false, false, 13, 1,  7, 1,  1, 2}, // #41
+  {DBGFIELD("WriteFDiv32_ReadFDiv32_ReadFDiv32") 1, false, false, 13, 1,  7, 1,  1, 2}, // #42
+  {DBGFIELD("WriteFCmp64_ReadFCmp64_ReadFCmp64") 1, false, false, 12, 1,  2, 1,  1, 2}, // #43
+  {DBGFIELD("WriteFCmp32_ReadFCmp32_ReadFCmp32") 1, false, false, 12, 1,  2, 1,  1, 2}, // #44
+  {DBGFIELD("WriteFLD64_ReadFMemBase") 1, false, false,  9, 1,  2, 1,  0, 1}, // #45
+  {DBGFIELD("WriteFLD32_ReadFMemBase") 1, false, false,  9, 1,  2, 1,  0, 1}, // #46
+  {DBGFIELD("WriteFMulAdd64_ReadFMulAdd64_ReadFMulAdd64_ReadFMulAdd64") 1, false, false, 12, 1,  8, 1,  3, 3}, // #47
+  {DBGFIELD("WriteFMulAdd32_ReadFMulAdd32_ReadFMulAdd32_ReadFMulAdd32") 1, false, false, 12, 1,  9, 1,  3, 3}, // #48
+  {DBGFIELD("WriteFMinMax64_ReadFMinMax64_ReadFMinMax64") 1, false, false, 12, 1,  5, 1,  1, 2}, // #49
+  {DBGFIELD("WriteFMinMax32_ReadFMinMax32_ReadFMinMax32") 1, false, false, 12, 1,  6, 1,  1, 2}, // #50
+  {DBGFIELD("WriteFMulSub64_ReadFMulSub64_ReadFMulSub64_ReadFMulSub64") 1, false, false, 12, 1,  8, 1,  3, 3}, // #51
+  {DBGFIELD("WriteFMulSub32_ReadFMulSub32_ReadFMulSub32_ReadFMulSub32") 1, false, false, 12, 1,  9, 1,  3, 3}, // #52
+  {DBGFIELD("WriteFMul64_ReadFMul64_ReadFMul64") 1, false, false, 12, 1,  8, 1,  1, 2}, // #53
+  {DBGFIELD("WriteFMul32_ReadFMul32_ReadFMul32") 1, false, false, 12, 1,  9, 1,  1, 2}, // #54
+  {DBGFIELD("WriteFMovI64ToF64_ReadFMovI64ToF64") 1, false, false, 12, 1,  2, 1,  0, 1}, // #55
+  {DBGFIELD("WriteFMovI32ToF32_ReadFMovI32ToF32") 1, false, false, 12, 1,  2, 1,  0, 1}, // #56
+  {DBGFIELD("WriteFMovF64ToI64_ReadFMovF64ToI64") 1, false, false, 12, 1,  2, 1,  0, 1}, // #57
+  {DBGFIELD("WriteFMovF32ToI32_ReadFMovF32ToI32") 1, false, false, 12, 1,  2, 1,  0, 1}, // #58
+  {DBGFIELD("WriteFST64_ReadStoreData_ReadFMemBase") 1, false, false,  9, 1,  1, 1,  1, 2}, // #59
+  {DBGFIELD("WriteFSGNJ64_ReadFSGNJ64_ReadFSGNJ64") 1, false, false, 12, 1,  5, 1,  1, 2}, // #60
+  {DBGFIELD("WriteFSGNJ32_ReadFSGNJ32_ReadFSGNJ32") 1, false, false, 12, 1,  6, 1,  1, 2}, // #61
+  {DBGFIELD("WriteFSqrt64_ReadFSqrt64") 1, false, false, 14, 1, 10, 1,  0, 1}, // #62
+  {DBGFIELD("WriteFSqrt32_ReadFSqrt32") 1, false, false, 13, 1,  7, 1,  0, 1}, // #63
+  {DBGFIELD("WriteFST32_ReadStoreData_ReadFMemBase") 1, false, false,  9, 1,  1, 1,  1, 2}, // #64
+  {DBGFIELD("WriteLDB_ReadMemBase") 1, false, false,  9, 1,  3, 1,  0, 1}, // #65
+  {DBGFIELD("WriteLDH_ReadMemBase") 1, false, false,  9, 1,  3, 1,  0, 1}, // #66
+  {DBGFIELD("WriteAtomicLDD_ReadAtomicLDD") 1, false, false,  9, 1,  2, 1,  0, 1}, // #67
+  {DBGFIELD("WriteAtomicLDW_ReadAtomicLDW") 1, false, false,  9, 1,  2, 1,  0, 1}, // #68
+  {DBGFIELD("WriteLDWU_ReadMemBase") 1, false, false,  9, 1,  2, 1,  0, 1}, // #69
+  {DBGFIELD("WriteIMul_ReadIMul_ReadIMul") 1, false, false,  2, 1,  6, 1,  1, 2}, // #70
+  {DBGFIELD("WriteIMul32_ReadIMul32_ReadIMul32") 1, false, false,  2, 1,  6, 1,  1, 2}, // #71
+  {DBGFIELD("WriteSTB_ReadStoreData_ReadMemBase") 1, false, false,  9, 1,  1, 1,  1, 2}, // #72
+  {DBGFIELD("WriteAtomicSTD_ReadAtomicSTD_ReadAtomicSTD") 1, false, false,  9, 1,  1, 1,  1, 2}, // #73
+  {DBGFIELD("WriteAtomicSTW_ReadAtomicSTW_ReadAtomicSTW") 1, false, false,  9, 1,  1, 1,  1, 2}, // #74
+  {DBGFIELD("WriteSTH_ReadStoreData_ReadMemBase") 1, false, false,  9, 1,  1, 1,  1, 2}, // #75
+  {DBGFIELD("WriteShift32_ReadShift32") 1, false, false,  3, 1,  1, 1,  0, 1}, // #76
+  {DBGFIELD("COPY")               1, false, false,  3, 1,  1, 1,  0, 0}, // #77
 }; // Rocket64ModelSchedClasses
 
 #undef DBGFIELD
@@ -349,7 +402,7 @@ static const llvm::MCSchedModel Rocket32Model = {
   Rocket32ModelProcResources,
   Rocket32ModelSchedClasses,
   8,
-  66,
+  78,
   nullptr, // No Itinerary
   nullptr // No extra processor descriptor
 };
@@ -384,17 +437,19 @@ static const llvm::MCSchedModel Rocket64Model = {
   Rocket64ModelProcResources,
   Rocket64ModelSchedClasses,
   9,
-  66,
+  78,
   nullptr, // No Itinerary
   nullptr // No extra processor descriptor
 };
 
 // Sorted (by key) array of values for CPU subtype.
 extern const llvm::SubtargetSubTypeKV RISCVSubTypeKV[] = {
- { "generic-rv32", { { { 0x4ULL, 0x0ULL, 0x0ULL, } } }, &NoSchedModel },
- { "generic-rv64", { { { 0x5ULL, 0x0ULL, 0x0ULL, } } }, &NoSchedModel },
- { "rocket-rv32", { { { 0x4ULL, 0x0ULL, 0x0ULL, } } }, &Rocket32Model },
- { "rocket-rv64", { { { 0x5ULL, 0x0ULL, 0x0ULL, } } }, &Rocket64Model },
+ { "generic-rv32", { { { 0x0ULL, 0x0ULL, 0x0ULL, } } }, &NoSchedModel },
+ { "generic-rv64", { { { 0x1ULL, 0x0ULL, 0x0ULL, } } }, &NoSchedModel },
+ { "rocket-rv32", { { { 0x0ULL, 0x0ULL, 0x0ULL, } } }, &Rocket32Model },
+ { "rocket-rv64", { { { 0x1ULL, 0x0ULL, 0x0ULL, } } }, &Rocket64Model },
+ { "sifive-e31", { { { 0x9400000000000ULL, 0x0ULL, 0x0ULL, } } }, &Rocket32Model },
+ { "sifive-u54", { { { 0xf400000000001ULL, 0x0ULL, 0x0ULL, } } }, &Rocket64Model },
 };
 
 namespace RISCV_MC {
@@ -453,8 +508,18 @@ void llvm::RISCVSubtarget::ParseSubtargetFeatures(StringRef CPU, StringRef FS) {
   InitMCProcessorInfo(CPU, FS);
   const FeatureBitset& Bits = getFeatureBits();
   if (Bits[RISCV::Feature64Bit]) HasRV64 = true;
+  if (Bits[RISCV::FeatureExtZbb]) HasStdExtZbb = true;
+  if (Bits[RISCV::FeatureExtZbc]) HasStdExtZbc = true;
+  if (Bits[RISCV::FeatureExtZbe]) HasStdExtZbe = true;
+  if (Bits[RISCV::FeatureExtZbf]) HasStdExtZbf = true;
+  if (Bits[RISCV::FeatureExtZbm]) HasStdExtZbm = true;
+  if (Bits[RISCV::FeatureExtZbp]) HasStdExtZbp = true;
+  if (Bits[RISCV::FeatureExtZbproposedc]) HasStdExtZbproposedc = true;
+  if (Bits[RISCV::FeatureExtZbr]) HasStdExtZbr = true;
+  if (Bits[RISCV::FeatureExtZbs]) HasStdExtZbs = true;
+  if (Bits[RISCV::FeatureExtZbt]) HasStdExtZbt = true;
+  if (Bits[RISCV::FeatureNoRVCHints]) EnableRVCHintInstrs = false;
   if (Bits[RISCV::FeatureRV32E]) IsRV32E = true;
-  if (Bits[RISCV::FeatureRVCHints]) EnableRVCHintInstrs = true;
   if (Bits[RISCV::FeatureRelax]) EnableLinkerRelax = true;
   if (Bits[RISCV::FeatureReserveX1]) UserReservedRegister[RISCV::X1] = true;
   if (Bits[RISCV::FeatureReserveX2]) UserReservedRegister[RISCV::X2] = true;
@@ -487,11 +552,14 @@ void llvm::RISCVSubtarget::ParseSubtargetFeatures(StringRef CPU, StringRef FS) {
   if (Bits[RISCV::FeatureReserveX29]) UserReservedRegister[RISCV::X29] = true;
   if (Bits[RISCV::FeatureReserveX30]) UserReservedRegister[RISCV::X30] = true;
   if (Bits[RISCV::FeatureReserveX31]) UserReservedRegister[RISCV::X31] = true;
+  if (Bits[RISCV::FeatureSaveRestore]) EnableSaveRestore = true;
   if (Bits[RISCV::FeatureStdExtA]) HasStdExtA = true;
+  if (Bits[RISCV::FeatureStdExtB]) HasStdExtB = true;
   if (Bits[RISCV::FeatureStdExtC]) HasStdExtC = true;
   if (Bits[RISCV::FeatureStdExtD]) HasStdExtD = true;
   if (Bits[RISCV::FeatureStdExtF]) HasStdExtF = true;
   if (Bits[RISCV::FeatureStdExtM]) HasStdExtM = true;
+  if (Bits[RISCV::FeatureStdExtV]) HasStdExtV = true;
 }
 #endif // GET_SUBTARGETINFO_TARGET_DESC
 
@@ -530,7 +598,7 @@ extern const llvm::MCWriteProcResEntry RISCVWriteProcResTable[];
 extern const llvm::MCWriteLatencyEntry RISCVWriteLatencyTable[];
 extern const llvm::MCReadAdvanceEntry RISCVReadAdvanceTable[];
 RISCVGenSubtargetInfo::RISCVGenSubtargetInfo(const Triple &TT, StringRef CPU, StringRef FS)
-  : TargetSubtargetInfo(TT, CPU, FS, makeArrayRef(RISCVFeatureKV, 40), makeArrayRef(RISCVSubTypeKV, 4), 
+  : TargetSubtargetInfo(TT, CPU, FS, makeArrayRef(RISCVFeatureKV, 53), makeArrayRef(RISCVSubTypeKV, 6), 
                         RISCVWriteProcResTable, RISCVWriteLatencyTable, RISCVReadAdvanceTable, 
                         nullptr, nullptr, nullptr) {}
 

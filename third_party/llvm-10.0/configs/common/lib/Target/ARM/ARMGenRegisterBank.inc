@@ -69,20 +69,21 @@ const uint32_t GPRRegBankCoverageData[] = {
     (1u << (ARM::tGPR_and_tcGPRRegClassID - 0)) |
     (1u << (ARM::tGPREvenRegClassID - 0)) |
     (1u << (ARM::hGPR_and_tGPREvenRegClassID - 0)) |
-    (1u << (ARM::GPRlrRegClassID - 0)) |
     (1u << (ARM::tGPREven_and_tcGPRRegClassID - 0)) |
-    (1u << (ARM::GPRwithAPSRnosp_and_hGPRRegClassID - 0)) |
+    (1u << (ARM::GPRwithAPSR_NZCVnosp_and_hGPRRegClassID - 0)) |
     (1u << (ARM::hGPR_and_tGPROddRegClassID - 0)) |
     (1u << (ARM::tGPROddRegClassID - 0)) |
     (1u << (ARM::tcGPRRegClassID - 0)) |
     (1u << (ARM::GPRnopc_and_hGPRRegClassID - 0)) |
-    (1u << (ARM::GPRspRegClassID - 0)) |
     (1u << (ARM::tGPRwithpcRegClassID - 0)) |
     (1u << (ARM::hGPRRegClassID - 0)) |
     (1u << (ARM::GPRwithAPSRRegClassID - 0)) |
+    (1u << (ARM::GPRwithAPSR_NZCVnospRegClassID - 0)) |
     0,
     // 32-63
+    (1u << (ARM::GPRlrRegClassID - 32)) |
     (1u << (ARM::hGPR_and_tcGPRRegClassID - 32)) |
+    (1u << (ARM::GPRspRegClassID - 32)) |
     (1u << (ARM::hGPR_and_tGPRwithpcRegClassID - 32)) |
     0,
     // 64-95
@@ -91,8 +92,8 @@ const uint32_t GPRRegBankCoverageData[] = {
     0,
 };
 
-RegisterBank FPRRegBank(/* ID */ ARM::FPRRegBankID, /* Name */ "FPRB", /* Size */ 128, /* CoveredRegClasses */ FPRRegBankCoverageData, /* NumRegClasses */ 122);
-RegisterBank GPRRegBank(/* ID */ ARM::GPRRegBankID, /* Name */ "GPRB", /* Size */ 32, /* CoveredRegClasses */ GPRRegBankCoverageData, /* NumRegClasses */ 122);
+RegisterBank FPRRegBank(/* ID */ ARM::FPRRegBankID, /* Name */ "FPRB", /* Size */ 128, /* CoveredRegClasses */ FPRRegBankCoverageData, /* NumRegClasses */ 124);
+RegisterBank GPRRegBank(/* ID */ ARM::GPRRegBankID, /* Name */ "GPRB", /* Size */ 32, /* CoveredRegClasses */ GPRRegBankCoverageData, /* NumRegClasses */ 124);
 } // end namespace ARM
 
 RegisterBank *ARMGenRegisterBankInfo::RegBanks[] = {

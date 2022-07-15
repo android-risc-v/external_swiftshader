@@ -21,263 +21,704 @@ void RISCVInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, cons
   /* 30 */ "lla\t\0"
   /* 35 */ "sfence.vma\t\0"
   /* 47 */ "sra\t\0"
-  /* 52 */ "lb\t\0"
-  /* 56 */ "sb\t\0"
-  /* 60 */ "c.sub\t\0"
-  /* 67 */ "auipc\t\0"
-  /* 74 */ "csrrc\t\0"
-  /* 81 */ "fsub.d\t\0"
-  /* 89 */ "fmsub.d\t\0"
-  /* 98 */ "fnmsub.d\t\0"
-  /* 108 */ "sc.d\t\0"
-  /* 114 */ "fadd.d\t\0"
-  /* 122 */ "fmadd.d\t\0"
-  /* 131 */ "fnmadd.d\t\0"
-  /* 141 */ "amoadd.d\t\0"
-  /* 151 */ "amoand.d\t\0"
-  /* 161 */ "fle.d\t\0"
-  /* 168 */ "fsgnj.d\t\0"
-  /* 177 */ "fcvt.l.d\t\0"
-  /* 187 */ "fmul.d\t\0"
-  /* 195 */ "fmin.d\t\0"
-  /* 203 */ "amomin.d\t\0"
-  /* 213 */ "fsgnjn.d\t\0"
-  /* 223 */ "amoswap.d\t\0"
-  /* 234 */ "feq.d\t\0"
-  /* 241 */ "lr.d\t\0"
-  /* 247 */ "amoor.d\t\0"
-  /* 256 */ "amoxor.d\t\0"
-  /* 266 */ "fcvt.s.d\t\0"
-  /* 276 */ "fclass.d\t\0"
-  /* 286 */ "flt.d\t\0"
-  /* 293 */ "fsqrt.d\t\0"
-  /* 302 */ "fcvt.lu.d\t\0"
-  /* 313 */ "amominu.d\t\0"
-  /* 324 */ "fcvt.wu.d\t\0"
-  /* 335 */ "amomaxu.d\t\0"
-  /* 346 */ "fdiv.d\t\0"
-  /* 354 */ "fcvt.w.d\t\0"
-  /* 364 */ "fmv.x.d\t\0"
-  /* 373 */ "fmax.d\t\0"
-  /* 381 */ "amomax.d\t\0"
-  /* 391 */ "fsgnjx.d\t\0"
-  /* 401 */ "c.add\t\0"
-  /* 408 */ "la.tls.gd\t\0"
-  /* 419 */ "c.ld\t\0"
-  /* 425 */ "c.fld\t\0"
-  /* 432 */ "c.and\t\0"
-  /* 439 */ "c.sd\t\0"
-  /* 445 */ "c.fsd\t\0"
-  /* 452 */ "fence\t\0"
-  /* 459 */ "bge\t\0"
-  /* 464 */ "la.tls.ie\t\0"
-  /* 475 */ "bne\t\0"
-  /* 480 */ "mulh\t\0"
-  /* 486 */ "sh\t\0"
-  /* 490 */ "fence.i\t\0"
-  /* 499 */ "c.srai\t\0"
-  /* 507 */ "csrrci\t\0"
-  /* 515 */ "c.addi\t\0"
-  /* 523 */ "c.andi\t\0"
-  /* 531 */ "wfi\t\0"
-  /* 536 */ "c.li\t\0"
-  /* 542 */ "c.slli\t\0"
-  /* 550 */ "c.srli\t\0"
-  /* 558 */ "xori\t\0"
-  /* 564 */ "csrrsi\t\0"
-  /* 572 */ "slti\t\0"
-  /* 578 */ "c.lui\t\0"
-  /* 585 */ "csrrwi\t\0"
-  /* 593 */ "c.j\t\0"
-  /* 598 */ "c.ebreak\t\0"
-  /* 608 */ "fcvt.d.l\t\0"
-  /* 618 */ "fcvt.s.l\t\0"
-  /* 628 */ "c.jal\t\0"
-  /* 635 */ "tail\t\0"
-  /* 641 */ "ecall\t\0"
-  /* 648 */ "sll\t\0"
-  /* 653 */ "sc.d.rl\t\0"
-  /* 662 */ "amoadd.d.rl\t\0"
-  /* 675 */ "amoand.d.rl\t\0"
-  /* 688 */ "amomin.d.rl\t\0"
-  /* 701 */ "amoswap.d.rl\t\0"
-  /* 715 */ "lr.d.rl\t\0"
-  /* 724 */ "amoor.d.rl\t\0"
-  /* 736 */ "amoxor.d.rl\t\0"
-  /* 749 */ "amominu.d.rl\t\0"
-  /* 763 */ "amomaxu.d.rl\t\0"
-  /* 777 */ "amomax.d.rl\t\0"
-  /* 790 */ "sc.w.rl\t\0"
-  /* 799 */ "amoadd.w.rl\t\0"
-  /* 812 */ "amoand.w.rl\t\0"
-  /* 825 */ "amomin.w.rl\t\0"
-  /* 838 */ "amoswap.w.rl\t\0"
-  /* 852 */ "lr.w.rl\t\0"
-  /* 861 */ "amoor.w.rl\t\0"
-  /* 873 */ "amoxor.w.rl\t\0"
-  /* 886 */ "amominu.w.rl\t\0"
-  /* 900 */ "amomaxu.w.rl\t\0"
-  /* 914 */ "amomax.w.rl\t\0"
-  /* 927 */ "sc.d.aqrl\t\0"
-  /* 938 */ "amoadd.d.aqrl\t\0"
-  /* 953 */ "amoand.d.aqrl\t\0"
-  /* 968 */ "amomin.d.aqrl\t\0"
-  /* 983 */ "amoswap.d.aqrl\t\0"
-  /* 999 */ "lr.d.aqrl\t\0"
-  /* 1010 */ "amoor.d.aqrl\t\0"
-  /* 1024 */ "amoxor.d.aqrl\t\0"
-  /* 1039 */ "amominu.d.aqrl\t\0"
-  /* 1055 */ "amomaxu.d.aqrl\t\0"
-  /* 1071 */ "amomax.d.aqrl\t\0"
-  /* 1086 */ "sc.w.aqrl\t\0"
-  /* 1097 */ "amoadd.w.aqrl\t\0"
-  /* 1112 */ "amoand.w.aqrl\t\0"
-  /* 1127 */ "amomin.w.aqrl\t\0"
-  /* 1142 */ "amoswap.w.aqrl\t\0"
-  /* 1158 */ "lr.w.aqrl\t\0"
-  /* 1169 */ "amoor.w.aqrl\t\0"
-  /* 1183 */ "amoxor.w.aqrl\t\0"
-  /* 1198 */ "amominu.w.aqrl\t\0"
-  /* 1214 */ "amomaxu.w.aqrl\t\0"
-  /* 1230 */ "amomax.w.aqrl\t\0"
-  /* 1245 */ "srl\t\0"
-  /* 1250 */ "mul\t\0"
-  /* 1255 */ "rem\t\0"
-  /* 1260 */ "c.addi4spn\t\0"
-  /* 1272 */ "fence.tso\t\0"
-  /* 1283 */ "c.unimp\t\0"
-  /* 1292 */ "jump\t\0"
-  /* 1298 */ "c.nop\t\0"
-  /* 1305 */ "c.addi16sp\t\0"
-  /* 1317 */ "c.ldsp\t\0"
-  /* 1325 */ "c.fldsp\t\0"
-  /* 1334 */ "c.sdsp\t\0"
-  /* 1342 */ "c.fsdsp\t\0"
-  /* 1351 */ "c.lwsp\t\0"
-  /* 1359 */ "c.flwsp\t\0"
-  /* 1368 */ "c.swsp\t\0"
-  /* 1376 */ "c.fswsp\t\0"
-  /* 1385 */ "sc.d.aq\t\0"
-  /* 1394 */ "amoadd.d.aq\t\0"
-  /* 1407 */ "amoand.d.aq\t\0"
-  /* 1420 */ "amomin.d.aq\t\0"
-  /* 1433 */ "amoswap.d.aq\t\0"
-  /* 1447 */ "lr.d.aq\t\0"
-  /* 1456 */ "amoor.d.aq\t\0"
-  /* 1468 */ "amoxor.d.aq\t\0"
-  /* 1481 */ "amominu.d.aq\t\0"
-  /* 1495 */ "amomaxu.d.aq\t\0"
-  /* 1509 */ "amomax.d.aq\t\0"
-  /* 1522 */ "sc.w.aq\t\0"
-  /* 1531 */ "amoadd.w.aq\t\0"
-  /* 1544 */ "amoand.w.aq\t\0"
-  /* 1557 */ "amomin.w.aq\t\0"
-  /* 1570 */ "amoswap.w.aq\t\0"
-  /* 1584 */ "lr.w.aq\t\0"
-  /* 1593 */ "amoor.w.aq\t\0"
-  /* 1605 */ "amoxor.w.aq\t\0"
-  /* 1618 */ "amominu.w.aq\t\0"
-  /* 1632 */ "amomaxu.w.aq\t\0"
-  /* 1646 */ "amomax.w.aq\t\0"
-  /* 1659 */ "beq\t\0"
-  /* 1664 */ "c.jr\t\0"
-  /* 1670 */ "c.jalr\t\0"
-  /* 1678 */ "c.or\t\0"
-  /* 1684 */ "c.xor\t\0"
-  /* 1691 */ "fsub.s\t\0"
-  /* 1699 */ "fmsub.s\t\0"
-  /* 1708 */ "fnmsub.s\t\0"
-  /* 1718 */ "fcvt.d.s\t\0"
-  /* 1728 */ "fadd.s\t\0"
-  /* 1736 */ "fmadd.s\t\0"
-  /* 1745 */ "fnmadd.s\t\0"
-  /* 1755 */ "fle.s\t\0"
-  /* 1762 */ "fsgnj.s\t\0"
-  /* 1771 */ "fcvt.l.s\t\0"
-  /* 1781 */ "fmul.s\t\0"
-  /* 1789 */ "fmin.s\t\0"
-  /* 1797 */ "fsgnjn.s\t\0"
-  /* 1807 */ "feq.s\t\0"
-  /* 1814 */ "fclass.s\t\0"
-  /* 1824 */ "flt.s\t\0"
-  /* 1831 */ "fsqrt.s\t\0"
-  /* 1840 */ "fcvt.lu.s\t\0"
-  /* 1851 */ "fcvt.wu.s\t\0"
-  /* 1862 */ "fdiv.s\t\0"
-  /* 1870 */ "fcvt.w.s\t\0"
-  /* 1880 */ "fmax.s\t\0"
-  /* 1888 */ "fsgnjx.s\t\0"
-  /* 1898 */ "csrrs\t\0"
-  /* 1905 */ "mret\t\0"
-  /* 1911 */ "sret\t\0"
-  /* 1917 */ "uret\t\0"
-  /* 1923 */ "blt\t\0"
-  /* 1928 */ "slt\t\0"
-  /* 1933 */ "lbu\t\0"
-  /* 1938 */ "bgeu\t\0"
-  /* 1944 */ "mulhu\t\0"
-  /* 1951 */ "sltiu\t\0"
-  /* 1958 */ "fcvt.d.lu\t\0"
-  /* 1969 */ "fcvt.s.lu\t\0"
-  /* 1980 */ "remu\t\0"
-  /* 1986 */ "mulhsu\t\0"
-  /* 1994 */ "bltu\t\0"
-  /* 2000 */ "sltu\t\0"
-  /* 2006 */ "divu\t\0"
-  /* 2012 */ "fcvt.d.wu\t\0"
-  /* 2023 */ "fcvt.s.wu\t\0"
-  /* 2034 */ "lwu\t\0"
-  /* 2039 */ "div\t\0"
-  /* 2044 */ "c.mv\t\0"
-  /* 2050 */ "sc.w\t\0"
-  /* 2056 */ "fcvt.d.w\t\0"
-  /* 2066 */ "amoadd.w\t\0"
-  /* 2076 */ "amoand.w\t\0"
-  /* 2086 */ "amomin.w\t\0"
-  /* 2096 */ "amoswap.w\t\0"
-  /* 2107 */ "lr.w\t\0"
-  /* 2113 */ "amoor.w\t\0"
-  /* 2122 */ "amoxor.w\t\0"
-  /* 2132 */ "fcvt.s.w\t\0"
-  /* 2142 */ "amominu.w\t\0"
-  /* 2153 */ "amomaxu.w\t\0"
-  /* 2164 */ "fmv.x.w\t\0"
-  /* 2173 */ "amomax.w\t\0"
-  /* 2183 */ "sraw\t\0"
-  /* 2189 */ "c.subw\t\0"
-  /* 2197 */ "c.addw\t\0"
-  /* 2205 */ "sraiw\t\0"
-  /* 2212 */ "c.addiw\t\0"
-  /* 2221 */ "slliw\t\0"
-  /* 2228 */ "srliw\t\0"
-  /* 2235 */ "c.lw\t\0"
-  /* 2241 */ "c.flw\t\0"
-  /* 2248 */ "sllw\t\0"
-  /* 2254 */ "srlw\t\0"
-  /* 2260 */ "mulw\t\0"
-  /* 2266 */ "remw\t\0"
-  /* 2272 */ "csrrw\t\0"
-  /* 2279 */ "c.sw\t\0"
-  /* 2285 */ "c.fsw\t\0"
-  /* 2292 */ "remuw\t\0"
-  /* 2299 */ "divuw\t\0"
-  /* 2306 */ "divw\t\0"
-  /* 2312 */ "fmv.d.x\t\0"
-  /* 2321 */ "fmv.w.x\t\0"
-  /* 2330 */ "c.bnez\t\0"
-  /* 2338 */ "c.beqz\t\0"
-  /* 2346 */ "# XRay Function Patchable RET.\0"
-  /* 2377 */ "# XRay Typed Event Log.\0"
-  /* 2401 */ "# XRay Custom Event Log.\0"
-  /* 2426 */ "# XRay Function Enter.\0"
-  /* 2449 */ "# XRay Tail Call Exit.\0"
-  /* 2472 */ "# XRay Function Exit.\0"
-  /* 2494 */ "LIFETIME_END\0"
-  /* 2507 */ "BUNDLE\0"
-  /* 2514 */ "DBG_VALUE\0"
-  /* 2524 */ "DBG_LABEL\0"
-  /* 2534 */ "LIFETIME_START\0"
-  /* 2549 */ "# FEntry call\0"
+  /* 52 */ "crc32.b\t\0"
+  /* 61 */ "crc32c.b\t\0"
+  /* 71 */ "sext.b\t\0"
+  /* 79 */ "lb\t\0"
+  /* 83 */ "sb\t\0"
+  /* 87 */ "c.sub\t\0"
+  /* 94 */ "auipc\t\0"
+  /* 101 */ "gorc\t\0"
+  /* 107 */ "csrrc\t\0"
+  /* 114 */ "crc32.d\t\0"
+  /* 123 */ "fsub.d\t\0"
+  /* 131 */ "fmsub.d\t\0"
+  /* 140 */ "fnmsub.d\t\0"
+  /* 150 */ "crc32c.d\t\0"
+  /* 160 */ "sc.d\t\0"
+  /* 166 */ "fadd.d\t\0"
+  /* 174 */ "fmadd.d\t\0"
+  /* 183 */ "fnmadd.d\t\0"
+  /* 193 */ "amoadd.d\t\0"
+  /* 203 */ "amoand.d\t\0"
+  /* 213 */ "fle.d\t\0"
+  /* 220 */ "fsgnj.d\t\0"
+  /* 229 */ "fcvt.l.d\t\0"
+  /* 239 */ "fmul.d\t\0"
+  /* 247 */ "fmin.d\t\0"
+  /* 255 */ "amomin.d\t\0"
+  /* 265 */ "fsgnjn.d\t\0"
+  /* 275 */ "amoswap.d\t\0"
+  /* 286 */ "feq.d\t\0"
+  /* 293 */ "lr.d\t\0"
+  /* 299 */ "amoor.d\t\0"
+  /* 308 */ "amoxor.d\t\0"
+  /* 318 */ "fcvt.s.d\t\0"
+  /* 328 */ "fclass.d\t\0"
+  /* 338 */ "flt.d\t\0"
+  /* 345 */ "fsqrt.d\t\0"
+  /* 354 */ "fcvt.lu.d\t\0"
+  /* 365 */ "amominu.d\t\0"
+  /* 376 */ "fcvt.wu.d\t\0"
+  /* 387 */ "amomaxu.d\t\0"
+  /* 398 */ "fdiv.d\t\0"
+  /* 406 */ "fcvt.w.d\t\0"
+  /* 416 */ "fmv.x.d\t\0"
+  /* 425 */ "fmax.d\t\0"
+  /* 433 */ "amomax.d\t\0"
+  /* 443 */ "fsgnjx.d\t\0"
+  /* 453 */ "c.add\t\0"
+  /* 460 */ "la.tls.gd\t\0"
+  /* 471 */ "c.ld\t\0"
+  /* 477 */ "c.fld\t\0"
+  /* 484 */ "c.and\t\0"
+  /* 491 */ "c.sd\t\0"
+  /* 497 */ "c.fsd\t\0"
+  /* 504 */ "fence\t\0"
+  /* 511 */ "bge\t\0"
+  /* 516 */ "la.tls.ie\t\0"
+  /* 527 */ "bne\t\0"
+  /* 532 */ "vfmv.s.f\t\0"
+  /* 542 */ "vfmv.v.f\t\0"
+  /* 552 */ "vfsub.vf\t\0"
+  /* 562 */ "vfmsub.vf\t\0"
+  /* 573 */ "vfnmsub.vf\t\0"
+  /* 585 */ "vfrsub.vf\t\0"
+  /* 596 */ "vfwsub.vf\t\0"
+  /* 607 */ "vfmsac.vf\t\0"
+  /* 618 */ "vfnmsac.vf\t\0"
+  /* 630 */ "vfwnmsac.vf\t\0"
+  /* 643 */ "vfwmsac.vf\t\0"
+  /* 655 */ "vfmacc.vf\t\0"
+  /* 666 */ "vfnmacc.vf\t\0"
+  /* 678 */ "vfwnmacc.vf\t\0"
+  /* 691 */ "vfwmacc.vf\t\0"
+  /* 703 */ "vfadd.vf\t\0"
+  /* 713 */ "vfmadd.vf\t\0"
+  /* 724 */ "vfnmadd.vf\t\0"
+  /* 736 */ "vfwadd.vf\t\0"
+  /* 747 */ "vmfge.vf\t\0"
+  /* 757 */ "vmfle.vf\t\0"
+  /* 767 */ "vmfne.vf\t\0"
+  /* 777 */ "vfsgnj.vf\t\0"
+  /* 788 */ "vfmul.vf\t\0"
+  /* 798 */ "vfwmul.vf\t\0"
+  /* 809 */ "vfmin.vf\t\0"
+  /* 819 */ "vfsgnjn.vf\t\0"
+  /* 831 */ "vmfeq.vf\t\0"
+  /* 841 */ "vmfgt.vf\t\0"
+  /* 851 */ "vmflt.vf\t\0"
+  /* 861 */ "vfdiv.vf\t\0"
+  /* 871 */ "vfrdiv.vf\t\0"
+  /* 882 */ "vfmax.vf\t\0"
+  /* 892 */ "vfsgnjx.vf\t\0"
+  /* 904 */ "vfwsub.wf\t\0"
+  /* 915 */ "vfwadd.wf\t\0"
+  /* 926 */ "c.neg\t\0"
+  /* 933 */ "crc32.h\t\0"
+  /* 942 */ "crc32c.h\t\0"
+  /* 952 */ "sext.h\t\0"
+  /* 960 */ "packh\t\0"
+  /* 967 */ "clmulh\t\0"
+  /* 975 */ "sh\t\0"
+  /* 979 */ "fence.i\t\0"
+  /* 988 */ "vmv.v.i\t\0"
+  /* 997 */ "c.srai\t\0"
+  /* 1005 */ "gorci\t\0"
+  /* 1012 */ "csrrci\t\0"
+  /* 1020 */ "c.addi\t\0"
+  /* 1028 */ "c.andi\t\0"
+  /* 1036 */ "wfi\t\0"
+  /* 1041 */ "c.li\t\0"
+  /* 1047 */ "unshfli\t\0"
+  /* 1056 */ "c.slli\t\0"
+  /* 1064 */ "c.srli\t\0"
+  /* 1072 */ "vsetvli\t\0"
+  /* 1081 */ "sloi\t\0"
+  /* 1087 */ "sroi\t\0"
+  /* 1093 */ "sbclri\t\0"
+  /* 1101 */ "rori\t\0"
+  /* 1107 */ "xori\t\0"
+  /* 1113 */ "fsri\t\0"
+  /* 1119 */ "csrrsi\t\0"
+  /* 1127 */ "sbseti\t\0"
+  /* 1135 */ "slti\t\0"
+  /* 1141 */ "sbexti\t\0"
+  /* 1149 */ "c.lui\t\0"
+  /* 1156 */ "vssra.vi\t\0"
+  /* 1166 */ "vsra.vi\t\0"
+  /* 1175 */ "vrsub.vi\t\0"
+  /* 1185 */ "vmadc.vi\t\0"
+  /* 1195 */ "vsadd.vi\t\0"
+  /* 1205 */ "vadd.vi\t\0"
+  /* 1214 */ "vand.vi\t\0"
+  /* 1223 */ "vmsle.vi\t\0"
+  /* 1233 */ "vmsne.vi\t\0"
+  /* 1243 */ "vsll.vi\t\0"
+  /* 1252 */ "vssrl.vi\t\0"
+  /* 1262 */ "vsrl.vi\t\0"
+  /* 1271 */ "vslidedown.vi\t\0"
+  /* 1286 */ "vslideup.vi\t\0"
+  /* 1299 */ "vmseq.vi\t\0"
+  /* 1309 */ "vrgather.vi\t\0"
+  /* 1322 */ "vor.vi\t\0"
+  /* 1330 */ "vxor.vi\t\0"
+  /* 1339 */ "vmsgt.vi\t\0"
+  /* 1349 */ "vsaddu.vi\t\0"
+  /* 1360 */ "vmsleu.vi\t\0"
+  /* 1371 */ "vmsgtu.vi\t\0"
+  /* 1382 */ "grevi\t\0"
+  /* 1389 */ "sbinvi\t\0"
+  /* 1397 */ "vnsra.wi\t\0"
+  /* 1407 */ "vnsrl.wi\t\0"
+  /* 1417 */ "vnclip.wi\t\0"
+  /* 1428 */ "vnclipu.wi\t\0"
+  /* 1440 */ "csrrwi\t\0"
+  /* 1448 */ "c.j\t\0"
+  /* 1453 */ "c.ebreak\t\0"
+  /* 1463 */ "pack\t\0"
+  /* 1469 */ "fcvt.d.l\t\0"
+  /* 1479 */ "fcvt.s.l\t\0"
+  /* 1489 */ "c.jal\t\0"
+  /* 1496 */ "unshfl\t\0"
+  /* 1504 */ "tail\t\0"
+  /* 1510 */ "ecall\t\0"
+  /* 1517 */ "sll\t\0"
+  /* 1522 */ "rol\t\0"
+  /* 1527 */ "sc.d.rl\t\0"
+  /* 1536 */ "amoadd.d.rl\t\0"
+  /* 1549 */ "amoand.d.rl\t\0"
+  /* 1562 */ "amomin.d.rl\t\0"
+  /* 1575 */ "amoswap.d.rl\t\0"
+  /* 1589 */ "lr.d.rl\t\0"
+  /* 1598 */ "amoor.d.rl\t\0"
+  /* 1610 */ "amoxor.d.rl\t\0"
+  /* 1623 */ "amominu.d.rl\t\0"
+  /* 1637 */ "amomaxu.d.rl\t\0"
+  /* 1651 */ "amomax.d.rl\t\0"
+  /* 1664 */ "sc.w.rl\t\0"
+  /* 1673 */ "amoadd.w.rl\t\0"
+  /* 1686 */ "amoand.w.rl\t\0"
+  /* 1699 */ "amomin.w.rl\t\0"
+  /* 1712 */ "amoswap.w.rl\t\0"
+  /* 1726 */ "lr.w.rl\t\0"
+  /* 1735 */ "amoor.w.rl\t\0"
+  /* 1747 */ "amoxor.w.rl\t\0"
+  /* 1760 */ "amominu.w.rl\t\0"
+  /* 1774 */ "amomaxu.w.rl\t\0"
+  /* 1788 */ "amomax.w.rl\t\0"
+  /* 1801 */ "sc.d.aqrl\t\0"
+  /* 1812 */ "amoadd.d.aqrl\t\0"
+  /* 1827 */ "amoand.d.aqrl\t\0"
+  /* 1842 */ "amomin.d.aqrl\t\0"
+  /* 1857 */ "amoswap.d.aqrl\t\0"
+  /* 1873 */ "lr.d.aqrl\t\0"
+  /* 1884 */ "amoor.d.aqrl\t\0"
+  /* 1898 */ "amoxor.d.aqrl\t\0"
+  /* 1913 */ "amominu.d.aqrl\t\0"
+  /* 1929 */ "amomaxu.d.aqrl\t\0"
+  /* 1945 */ "amomax.d.aqrl\t\0"
+  /* 1960 */ "sc.w.aqrl\t\0"
+  /* 1971 */ "amoadd.w.aqrl\t\0"
+  /* 1986 */ "amoand.w.aqrl\t\0"
+  /* 2001 */ "amomin.w.aqrl\t\0"
+  /* 2016 */ "amoswap.w.aqrl\t\0"
+  /* 2032 */ "lr.w.aqrl\t\0"
+  /* 2043 */ "amoor.w.aqrl\t\0"
+  /* 2057 */ "amoxor.w.aqrl\t\0"
+  /* 2072 */ "amominu.w.aqrl\t\0"
+  /* 2088 */ "amomaxu.w.aqrl\t\0"
+  /* 2104 */ "amomax.w.aqrl\t\0"
+  /* 2119 */ "srl\t\0"
+  /* 2124 */ "fsl\t\0"
+  /* 2129 */ "clmul\t\0"
+  /* 2136 */ "vsetvl\t\0"
+  /* 2144 */ "viota.m\t\0"
+  /* 2153 */ "vpopc.m\t\0"
+  /* 2162 */ "vmsbf.m\t\0"
+  /* 2171 */ "vmsif.m\t\0"
+  /* 2180 */ "vmsof.m\t\0"
+  /* 2189 */ "vfirst.m\t\0"
+  /* 2199 */ "rem\t\0"
+  /* 2204 */ "vfmerge.vfm\t\0"
+  /* 2217 */ "vmadc.vim\t\0"
+  /* 2228 */ "vadc.vim\t\0"
+  /* 2238 */ "vmerge.vim\t\0"
+  /* 2250 */ "vmand.mm\t\0"
+  /* 2260 */ "vmnand.mm\t\0"
+  /* 2271 */ "vmor.mm\t\0"
+  /* 2280 */ "vmnor.mm\t\0"
+  /* 2290 */ "vmxnor.mm\t\0"
+  /* 2301 */ "vmxor.mm\t\0"
+  /* 2311 */ "vmandnot.mm\t\0"
+  /* 2324 */ "vmornot.mm\t\0"
+  /* 2336 */ "vcompress.vm\t\0"
+  /* 2350 */ "vmsbc.vvm\t\0"
+  /* 2361 */ "vsbc.vvm\t\0"
+  /* 2371 */ "vmadc.vvm\t\0"
+  /* 2382 */ "vadc.vvm\t\0"
+  /* 2392 */ "vmerge.vvm\t\0"
+  /* 2404 */ "vmsbc.vxm\t\0"
+  /* 2415 */ "vsbc.vxm\t\0"
+  /* 2425 */ "vmadc.vxm\t\0"
+  /* 2436 */ "vadc.vxm\t\0"
+  /* 2446 */ "vmerge.vxm\t\0"
+  /* 2458 */ "andn\t\0"
+  /* 2464 */ "min\t\0"
+  /* 2469 */ "c.addi4spn\t\0"
+  /* 2481 */ "orn\t\0"
+  /* 2486 */ "slo\t\0"
+  /* 2491 */ "sro\t\0"
+  /* 2496 */ "fence.tso\t\0"
+  /* 2507 */ "bdep\t\0"
+  /* 2513 */ "bfp\t\0"
+  /* 2518 */ "bmatflip\t\0"
+  /* 2528 */ "c.unimp\t\0"
+  /* 2537 */ "jump\t\0"
+  /* 2543 */ "c.nop\t\0"
+  /* 2550 */ "c.addi16sp\t\0"
+  /* 2562 */ "c.ldsp\t\0"
+  /* 2570 */ "c.fldsp\t\0"
+  /* 2579 */ "c.sdsp\t\0"
+  /* 2587 */ "c.fsdsp\t\0"
+  /* 2596 */ "c.lwsp\t\0"
+  /* 2604 */ "c.flwsp\t\0"
+  /* 2613 */ "c.swsp\t\0"
+  /* 2621 */ "c.fswsp\t\0"
+  /* 2630 */ "sc.d.aq\t\0"
+  /* 2639 */ "amoadd.d.aq\t\0"
+  /* 2652 */ "amoand.d.aq\t\0"
+  /* 2665 */ "amomin.d.aq\t\0"
+  /* 2678 */ "amoswap.d.aq\t\0"
+  /* 2692 */ "lr.d.aq\t\0"
+  /* 2701 */ "amoor.d.aq\t\0"
+  /* 2713 */ "amoxor.d.aq\t\0"
+  /* 2726 */ "amominu.d.aq\t\0"
+  /* 2740 */ "amomaxu.d.aq\t\0"
+  /* 2754 */ "amomax.d.aq\t\0"
+  /* 2767 */ "sc.w.aq\t\0"
+  /* 2776 */ "amoadd.w.aq\t\0"
+  /* 2789 */ "amoand.w.aq\t\0"
+  /* 2802 */ "amomin.w.aq\t\0"
+  /* 2815 */ "amoswap.w.aq\t\0"
+  /* 2829 */ "lr.w.aq\t\0"
+  /* 2838 */ "amoor.w.aq\t\0"
+  /* 2850 */ "amoxor.w.aq\t\0"
+  /* 2863 */ "amominu.w.aq\t\0"
+  /* 2877 */ "amomaxu.w.aq\t\0"
+  /* 2891 */ "amomax.w.aq\t\0"
+  /* 2904 */ "beq\t\0"
+  /* 2909 */ "c.jr\t\0"
+  /* 2915 */ "c.jalr\t\0"
+  /* 2923 */ "sbclr\t\0"
+  /* 2930 */ "clmulr\t\0"
+  /* 2938 */ "c.or\t\0"
+  /* 2944 */ "xnor\t\0"
+  /* 2950 */ "ror\t\0"
+  /* 2955 */ "bmator\t\0"
+  /* 2963 */ "c.xor\t\0"
+  /* 2970 */ "bmatxor\t\0"
+  /* 2979 */ "fsr\t\0"
+  /* 2984 */ "fsub.s\t\0"
+  /* 2992 */ "fmsub.s\t\0"
+  /* 3001 */ "fnmsub.s\t\0"
+  /* 3011 */ "fcvt.d.s\t\0"
+  /* 3021 */ "fadd.s\t\0"
+  /* 3029 */ "fmadd.s\t\0"
+  /* 3038 */ "fnmadd.s\t\0"
+  /* 3048 */ "fle.s\t\0"
+  /* 3055 */ "vfmv.f.s\t\0"
+  /* 3065 */ "fsgnj.s\t\0"
+  /* 3074 */ "fcvt.l.s\t\0"
+  /* 3084 */ "fmul.s\t\0"
+  /* 3092 */ "fmin.s\t\0"
+  /* 3100 */ "fsgnjn.s\t\0"
+  /* 3110 */ "feq.s\t\0"
+  /* 3117 */ "fclass.s\t\0"
+  /* 3127 */ "flt.s\t\0"
+  /* 3134 */ "fsqrt.s\t\0"
+  /* 3143 */ "fcvt.lu.s\t\0"
+  /* 3154 */ "fcvt.wu.s\t\0"
+  /* 3165 */ "fdiv.s\t\0"
+  /* 3173 */ "fcvt.w.s\t\0"
+  /* 3183 */ "vmv.x.s\t\0"
+  /* 3192 */ "fmax.s\t\0"
+  /* 3200 */ "fsgnjx.s\t\0"
+  /* 3210 */ "csrrs\t\0"
+  /* 3217 */ "vredand.vs\t\0"
+  /* 3229 */ "vfredsum.vs\t\0"
+  /* 3242 */ "vredsum.vs\t\0"
+  /* 3254 */ "vfwredsum.vs\t\0"
+  /* 3268 */ "vwredsum.vs\t\0"
+  /* 3281 */ "vfredosum.vs\t\0"
+  /* 3295 */ "vfwredosum.vs\t\0"
+  /* 3310 */ "vfredmin.vs\t\0"
+  /* 3323 */ "vredmin.vs\t\0"
+  /* 3335 */ "vredor.vs\t\0"
+  /* 3346 */ "vredxor.vs\t\0"
+  /* 3358 */ "vwredsumu.vs\t\0"
+  /* 3372 */ "vredminu.vs\t\0"
+  /* 3385 */ "vredmaxu.vs\t\0"
+  /* 3398 */ "vfredmax.vs\t\0"
+  /* 3411 */ "vredmax.vs\t\0"
+  /* 3423 */ "dret\t\0"
+  /* 3429 */ "mret\t\0"
+  /* 3435 */ "sret\t\0"
+  /* 3441 */ "uret\t\0"
+  /* 3447 */ "sbset\t\0"
+  /* 3454 */ "blt\t\0"
+  /* 3459 */ "slt\t\0"
+  /* 3464 */ "pcnt\t\0"
+  /* 3470 */ "c.not\t\0"
+  /* 3477 */ "sbext\t\0"
+  /* 3484 */ "lbu\t\0"
+  /* 3489 */ "bgeu\t\0"
+  /* 3495 */ "mulhu\t\0"
+  /* 3502 */ "sltiu\t\0"
+  /* 3509 */ "packu\t\0"
+  /* 3516 */ "fcvt.d.lu\t\0"
+  /* 3527 */ "fcvt.s.lu\t\0"
+  /* 3538 */ "remu\t\0"
+  /* 3544 */ "minu\t\0"
+  /* 3550 */ "mulhsu\t\0"
+  /* 3558 */ "bltu\t\0"
+  /* 3564 */ "sltu\t\0"
+  /* 3570 */ "divu\t\0"
+  /* 3576 */ "fcvt.d.wu\t\0"
+  /* 3587 */ "fcvt.s.wu\t\0"
+  /* 3598 */ "subwu\t\0"
+  /* 3605 */ "addwu\t\0"
+  /* 3612 */ "addiwu\t\0"
+  /* 3620 */ "lwu\t\0"
+  /* 3625 */ "maxu\t\0"
+  /* 3631 */ "vlb.v\t\0"
+  /* 3638 */ "vlsb.v\t\0"
+  /* 3646 */ "vssb.v\t\0"
+  /* 3654 */ "vsb.v\t\0"
+  /* 3661 */ "vlxb.v\t\0"
+  /* 3669 */ "vsxb.v\t\0"
+  /* 3677 */ "vsuxb.v\t\0"
+  /* 3686 */ "vid.v\t\0"
+  /* 3693 */ "vle.v\t\0"
+  /* 3700 */ "vlse.v\t\0"
+  /* 3708 */ "vsse.v\t\0"
+  /* 3716 */ "vse.v\t\0"
+  /* 3723 */ "vlxe.v\t\0"
+  /* 3731 */ "vsxe.v\t\0"
+  /* 3739 */ "vsuxe.v\t\0"
+  /* 3748 */ "vfwcvt.f.f.v\t\0"
+  /* 3762 */ "vfcvt.xu.f.v\t\0"
+  /* 3776 */ "vfwcvt.xu.f.v\t\0"
+  /* 3791 */ "vfcvt.x.f.v\t\0"
+  /* 3804 */ "vfwcvt.x.f.v\t\0"
+  /* 3818 */ "vlbff.v\t\0"
+  /* 3827 */ "vleff.v\t\0"
+  /* 3836 */ "vlhff.v\t\0"
+  /* 3845 */ "vlbuff.v\t\0"
+  /* 3855 */ "vlhuff.v\t\0"
+  /* 3865 */ "vlwuff.v\t\0"
+  /* 3875 */ "vlwff.v\t\0"
+  /* 3884 */ "vlh.v\t\0"
+  /* 3891 */ "vlsh.v\t\0"
+  /* 3899 */ "vssh.v\t\0"
+  /* 3907 */ "vsh.v\t\0"
+  /* 3914 */ "vlxh.v\t\0"
+  /* 3922 */ "vsxh.v\t\0"
+  /* 3930 */ "vsuxh.v\t\0"
+  /* 3939 */ "vl1r.v\t\0"
+  /* 3947 */ "vs1r.v\t\0"
+  /* 3955 */ "vmv1r.v\t\0"
+  /* 3964 */ "vmv2r.v\t\0"
+  /* 3973 */ "vmv4r.v\t\0"
+  /* 3982 */ "vmv8r.v\t\0"
+  /* 3991 */ "vfclass.v\t\0"
+  /* 4002 */ "vfsqrt.v\t\0"
+  /* 4012 */ "vlbu.v\t\0"
+  /* 4020 */ "vlsbu.v\t\0"
+  /* 4029 */ "vlxbu.v\t\0"
+  /* 4038 */ "vlhu.v\t\0"
+  /* 4046 */ "vlshu.v\t\0"
+  /* 4055 */ "vlxhu.v\t\0"
+  /* 4064 */ "vlwu.v\t\0"
+  /* 4072 */ "vlswu.v\t\0"
+  /* 4081 */ "vlxwu.v\t\0"
+  /* 4090 */ "vfcvt.f.xu.v\t\0"
+  /* 4104 */ "vfwcvt.f.xu.v\t\0"
+  /* 4119 */ "vmv.v.v\t\0"
+  /* 4128 */ "vlw.v\t\0"
+  /* 4135 */ "vlsw.v\t\0"
+  /* 4143 */ "vssw.v\t\0"
+  /* 4151 */ "vsw.v\t\0"
+  /* 4158 */ "vlxw.v\t\0"
+  /* 4166 */ "vsxw.v\t\0"
+  /* 4174 */ "vsuxw.v\t\0"
+  /* 4183 */ "vfcvt.f.x.v\t\0"
+  /* 4196 */ "vfwcvt.f.x.v\t\0"
+  /* 4210 */ "grev\t\0"
+  /* 4216 */ "div\t\0"
+  /* 4221 */ "c.mv\t\0"
+  /* 4227 */ "sbinv\t\0"
+  /* 4234 */ "cmov\t\0"
+  /* 4240 */ "vssra.vv\t\0"
+  /* 4250 */ "vsra.vv\t\0"
+  /* 4259 */ "vasub.vv\t\0"
+  /* 4269 */ "vfsub.vv\t\0"
+  /* 4279 */ "vfmsub.vv\t\0"
+  /* 4290 */ "vfnmsub.vv\t\0"
+  /* 4302 */ "vnmsub.vv\t\0"
+  /* 4313 */ "vssub.vv\t\0"
+  /* 4323 */ "vsub.vv\t\0"
+  /* 4332 */ "vfwsub.vv\t\0"
+  /* 4343 */ "vwsub.vv\t\0"
+  /* 4353 */ "vfmsac.vv\t\0"
+  /* 4364 */ "vfnmsac.vv\t\0"
+  /* 4376 */ "vnmsac.vv\t\0"
+  /* 4387 */ "vfwnmsac.vv\t\0"
+  /* 4400 */ "vfwmsac.vv\t\0"
+  /* 4412 */ "vmsbc.vv\t\0"
+  /* 4422 */ "vfmacc.vv\t\0"
+  /* 4433 */ "vfnmacc.vv\t\0"
+  /* 4445 */ "vfwnmacc.vv\t\0"
+  /* 4458 */ "vmacc.vv\t\0"
+  /* 4468 */ "vfwmacc.vv\t\0"
+  /* 4480 */ "vwmacc.vv\t\0"
+  /* 4491 */ "vmadc.vv\t\0"
+  /* 4501 */ "vaadd.vv\t\0"
+  /* 4511 */ "vfadd.vv\t\0"
+  /* 4521 */ "vfmadd.vv\t\0"
+  /* 4532 */ "vfnmadd.vv\t\0"
+  /* 4544 */ "vmadd.vv\t\0"
+  /* 4554 */ "vsadd.vv\t\0"
+  /* 4564 */ "vadd.vv\t\0"
+  /* 4573 */ "vfwadd.vv\t\0"
+  /* 4584 */ "vwadd.vv\t\0"
+  /* 4594 */ "vand.vv\t\0"
+  /* 4603 */ "vmfle.vv\t\0"
+  /* 4613 */ "vmsle.vv\t\0"
+  /* 4623 */ "vmfne.vv\t\0"
+  /* 4633 */ "vmsne.vv\t\0"
+  /* 4643 */ "vmulh.vv\t\0"
+  /* 4653 */ "vfsgnj.vv\t\0"
+  /* 4664 */ "vsll.vv\t\0"
+  /* 4673 */ "vssrl.vv\t\0"
+  /* 4683 */ "vsrl.vv\t\0"
+  /* 4692 */ "vfmul.vv\t\0"
+  /* 4702 */ "vsmul.vv\t\0"
+  /* 4712 */ "vmul.vv\t\0"
+  /* 4721 */ "vfwmul.vv\t\0"
+  /* 4732 */ "vwmul.vv\t\0"
+  /* 4742 */ "vrem.vv\t\0"
+  /* 4751 */ "vfmin.vv\t\0"
+  /* 4761 */ "vmin.vv\t\0"
+  /* 4770 */ "vfsgnjn.vv\t\0"
+  /* 4782 */ "vmfeq.vv\t\0"
+  /* 4792 */ "vmseq.vv\t\0"
+  /* 4802 */ "vrgather.vv\t\0"
+  /* 4815 */ "vor.vv\t\0"
+  /* 4823 */ "vxor.vv\t\0"
+  /* 4832 */ "vmflt.vv\t\0"
+  /* 4842 */ "vmslt.vv\t\0"
+  /* 4852 */ "vasubu.vv\t\0"
+  /* 4863 */ "vssubu.vv\t\0"
+  /* 4874 */ "vwsubu.vv\t\0"
+  /* 4885 */ "vwmaccu.vv\t\0"
+  /* 4897 */ "vaaddu.vv\t\0"
+  /* 4908 */ "vsaddu.vv\t\0"
+  /* 4919 */ "vwaddu.vv\t\0"
+  /* 4930 */ "vmsleu.vv\t\0"
+  /* 4941 */ "vmulhu.vv\t\0"
+  /* 4952 */ "vwmulu.vv\t\0"
+  /* 4963 */ "vremu.vv\t\0"
+  /* 4973 */ "vminu.vv\t\0"
+  /* 4983 */ "vwmaccsu.vv\t\0"
+  /* 4996 */ "vmulhsu.vv\t\0"
+  /* 5008 */ "vwmulsu.vv\t\0"
+  /* 5020 */ "vmsltu.vv\t\0"
+  /* 5031 */ "vdivu.vv\t\0"
+  /* 5041 */ "vmaxu.vv\t\0"
+  /* 5051 */ "vfdiv.vv\t\0"
+  /* 5061 */ "vdiv.vv\t\0"
+  /* 5070 */ "vfmax.vv\t\0"
+  /* 5080 */ "vmax.vv\t\0"
+  /* 5089 */ "vfsgnjx.vv\t\0"
+  /* 5101 */ "vnsra.wv\t\0"
+  /* 5111 */ "vfwsub.wv\t\0"
+  /* 5122 */ "vwsub.wv\t\0"
+  /* 5132 */ "vfwadd.wv\t\0"
+  /* 5143 */ "vwadd.wv\t\0"
+  /* 5153 */ "vnsrl.wv\t\0"
+  /* 5163 */ "vnclip.wv\t\0"
+  /* 5174 */ "vwsubu.wv\t\0"
+  /* 5185 */ "vwaddu.wv\t\0"
+  /* 5196 */ "vnclipu.wv\t\0"
+  /* 5208 */ "crc32.w\t\0"
+  /* 5217 */ "crc32c.w\t\0"
+  /* 5227 */ "sc.w\t\0"
+  /* 5233 */ "fcvt.d.w\t\0"
+  /* 5243 */ "amoadd.w\t\0"
+  /* 5253 */ "amoand.w\t\0"
+  /* 5263 */ "vfncvt.rod.f.f.w\t\0"
+  /* 5281 */ "vfncvt.f.f.w\t\0"
+  /* 5295 */ "vfncvt.xu.f.w\t\0"
+  /* 5310 */ "vfncvt.x.f.w\t\0"
+  /* 5324 */ "amomin.w\t\0"
+  /* 5334 */ "amoswap.w\t\0"
+  /* 5345 */ "lr.w\t\0"
+  /* 5351 */ "amoor.w\t\0"
+  /* 5360 */ "amoxor.w\t\0"
+  /* 5370 */ "fcvt.s.w\t\0"
+  /* 5380 */ "c.zext.w\t\0"
+  /* 5390 */ "subu.w\t\0"
+  /* 5398 */ "addu.w\t\0"
+  /* 5406 */ "slliu.w\t\0"
+  /* 5415 */ "amominu.w\t\0"
+  /* 5426 */ "vfncvt.f.xu.w\t\0"
+  /* 5441 */ "amomaxu.w\t\0"
+  /* 5452 */ "vfncvt.f.x.w\t\0"
+  /* 5466 */ "fmv.x.w\t\0"
+  /* 5475 */ "amomax.w\t\0"
+  /* 5485 */ "sraw\t\0"
+  /* 5491 */ "c.subw\t\0"
+  /* 5499 */ "gorcw\t\0"
+  /* 5506 */ "c.addw\t\0"
+  /* 5514 */ "clmulhw\t\0"
+  /* 5523 */ "sraiw\t\0"
+  /* 5530 */ "gorciw\t\0"
+  /* 5538 */ "c.addiw\t\0"
+  /* 5547 */ "slliw\t\0"
+  /* 5554 */ "srliw\t\0"
+  /* 5561 */ "sloiw\t\0"
+  /* 5568 */ "sroiw\t\0"
+  /* 5575 */ "sbclriw\t\0"
+  /* 5584 */ "roriw\t\0"
+  /* 5591 */ "fsriw\t\0"
+  /* 5598 */ "sbsetiw\t\0"
+  /* 5607 */ "greviw\t\0"
+  /* 5615 */ "sbinviw\t\0"
+  /* 5624 */ "packw\t\0"
+  /* 5631 */ "c.lw\t\0"
+  /* 5637 */ "c.flw\t\0"
+  /* 5644 */ "unshflw\t\0"
+  /* 5653 */ "sllw\t\0"
+  /* 5659 */ "rolw\t\0"
+  /* 5665 */ "srlw\t\0"
+  /* 5671 */ "fslw\t\0"
+  /* 5677 */ "clmulw\t\0"
+  /* 5685 */ "remw\t\0"
+  /* 5691 */ "slow\t\0"
+  /* 5697 */ "srow\t\0"
+  /* 5703 */ "bdepw\t\0"
+  /* 5710 */ "bfpw\t\0"
+  /* 5716 */ "sbclrw\t\0"
+  /* 5724 */ "clmulrw\t\0"
+  /* 5733 */ "rorw\t\0"
+  /* 5739 */ "csrrw\t\0"
+  /* 5746 */ "fsrw\t\0"
+  /* 5752 */ "c.sw\t\0"
+  /* 5758 */ "c.fsw\t\0"
+  /* 5765 */ "sbsetw\t\0"
+  /* 5773 */ "pcntw\t\0"
+  /* 5780 */ "sbextw\t\0"
+  /* 5788 */ "packuw\t\0"
+  /* 5796 */ "remuw\t\0"
+  /* 5803 */ "divuw\t\0"
+  /* 5810 */ "grevw\t\0"
+  /* 5817 */ "divw\t\0"
+  /* 5823 */ "sbinvw\t\0"
+  /* 5831 */ "clzw\t\0"
+  /* 5837 */ "ctzw\t\0"
+  /* 5843 */ "fmv.d.x\t\0"
+  /* 5852 */ "vmv.s.x\t\0"
+  /* 5861 */ "vmv.v.x\t\0"
+  /* 5870 */ "fmv.w.x\t\0"
+  /* 5879 */ "max\t\0"
+  /* 5884 */ "cmix\t\0"
+  /* 5890 */ "vssra.vx\t\0"
+  /* 5900 */ "vsra.vx\t\0"
+  /* 5909 */ "vasub.vx\t\0"
+  /* 5919 */ "vnmsub.vx\t\0"
+  /* 5930 */ "vrsub.vx\t\0"
+  /* 5940 */ "vssub.vx\t\0"
+  /* 5950 */ "vsub.vx\t\0"
+  /* 5959 */ "vwsub.vx\t\0"
+  /* 5969 */ "vnmsac.vx\t\0"
+  /* 5980 */ "vmsbc.vx\t\0"
+  /* 5990 */ "vmacc.vx\t\0"
+  /* 6000 */ "vwmacc.vx\t\0"
+  /* 6011 */ "vmadc.vx\t\0"
+  /* 6021 */ "vaadd.vx\t\0"
+  /* 6031 */ "vmadd.vx\t\0"
+  /* 6041 */ "vsadd.vx\t\0"
+  /* 6051 */ "vadd.vx\t\0"
+  /* 6060 */ "vwadd.vx\t\0"
+  /* 6070 */ "vand.vx\t\0"
+  /* 6079 */ "vmsle.vx\t\0"
+  /* 6089 */ "vmsne.vx\t\0"
+  /* 6099 */ "vmulh.vx\t\0"
+  /* 6109 */ "vsll.vx\t\0"
+  /* 6118 */ "vssrl.vx\t\0"
+  /* 6128 */ "vsrl.vx\t\0"
+  /* 6137 */ "vsmul.vx\t\0"
+  /* 6147 */ "vmul.vx\t\0"
+  /* 6156 */ "vwmul.vx\t\0"
+  /* 6166 */ "vrem.vx\t\0"
+  /* 6175 */ "vmin.vx\t\0"
+  /* 6184 */ "vslide1down.vx\t\0"
+  /* 6200 */ "vslidedown.vx\t\0"
+  /* 6215 */ "vslide1up.vx\t\0"
+  /* 6229 */ "vslideup.vx\t\0"
+  /* 6242 */ "vmseq.vx\t\0"
+  /* 6252 */ "vrgather.vx\t\0"
+  /* 6265 */ "vor.vx\t\0"
+  /* 6273 */ "vxor.vx\t\0"
+  /* 6282 */ "vwmaccus.vx\t\0"
+  /* 6295 */ "vmsgt.vx\t\0"
+  /* 6305 */ "vmslt.vx\t\0"
+  /* 6315 */ "vasubu.vx\t\0"
+  /* 6326 */ "vssubu.vx\t\0"
+  /* 6337 */ "vwsubu.vx\t\0"
+  /* 6348 */ "vwmaccu.vx\t\0"
+  /* 6360 */ "vaaddu.vx\t\0"
+  /* 6371 */ "vsaddu.vx\t\0"
+  /* 6382 */ "vwaddu.vx\t\0"
+  /* 6393 */ "vmsleu.vx\t\0"
+  /* 6404 */ "vmulhu.vx\t\0"
+  /* 6415 */ "vwmulu.vx\t\0"
+  /* 6426 */ "vremu.vx\t\0"
+  /* 6436 */ "vminu.vx\t\0"
+  /* 6446 */ "vwmaccsu.vx\t\0"
+  /* 6459 */ "vmulhsu.vx\t\0"
+  /* 6471 */ "vwmulsu.vx\t\0"
+  /* 6483 */ "vmsgtu.vx\t\0"
+  /* 6494 */ "vmsltu.vx\t\0"
+  /* 6505 */ "vdivu.vx\t\0"
+  /* 6515 */ "vmaxu.vx\t\0"
+  /* 6525 */ "vdiv.vx\t\0"
+  /* 6534 */ "vmax.vx\t\0"
+  /* 6543 */ "vnsra.wx\t\0"
+  /* 6553 */ "vwsub.wx\t\0"
+  /* 6563 */ "vwadd.wx\t\0"
+  /* 6573 */ "vnsrl.wx\t\0"
+  /* 6583 */ "vnclip.wx\t\0"
+  /* 6594 */ "vwsubu.wx\t\0"
+  /* 6605 */ "vwaddu.wx\t\0"
+  /* 6616 */ "vnclipu.wx\t\0"
+  /* 6628 */ "c.bnez\t\0"
+  /* 6636 */ "clz\t\0"
+  /* 6641 */ "c.beqz\t\0"
+  /* 6649 */ "ctz\t\0"
+  /* 6654 */ "# XRay Function Patchable RET.\0"
+  /* 6685 */ "# XRay Typed Event Log.\0"
+  /* 6709 */ "# XRay Custom Event Log.\0"
+  /* 6734 */ "# XRay Function Enter.\0"
+  /* 6757 */ "# XRay Tail Call Exit.\0"
+  /* 6780 */ "# XRay Function Exit.\0"
+  /* 6802 */ "LIFETIME_END\0"
+  /* 6815 */ "BUNDLE\0"
+  /* 6822 */ "DBG_VALUE\0"
+  /* 6832 */ "DBG_LABEL\0"
+  /* 6842 */ "LIFETIME_START\0"
+  /* 6857 */ "# FEntry call\0"
 };
 #ifdef __GNUC__
 #pragma GCC diagnostic pop
@@ -297,27 +738,29 @@ void RISCVInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, cons
     0U,	// IMPLICIT_DEF
     0U,	// SUBREG_TO_REG
     0U,	// COPY_TO_REGCLASS
-    2515U,	// DBG_VALUE
-    2525U,	// DBG_LABEL
+    6823U,	// DBG_VALUE
+    6833U,	// DBG_LABEL
     0U,	// REG_SEQUENCE
     0U,	// COPY
-    2508U,	// BUNDLE
-    2535U,	// LIFETIME_START
-    2495U,	// LIFETIME_END
+    6816U,	// BUNDLE
+    6843U,	// LIFETIME_START
+    6803U,	// LIFETIME_END
     0U,	// STACKMAP
-    2550U,	// FENTRY_CALL
+    6858U,	// FENTRY_CALL
     0U,	// PATCHPOINT
     0U,	// LOAD_STACK_GUARD
+    0U,	// PREALLOCATED_SETUP
+    0U,	// PREALLOCATED_ARG
     0U,	// STATEPOINT
     0U,	// LOCAL_ESCAPE
     0U,	// FAULTING_OP
     0U,	// PATCHABLE_OP
-    2427U,	// PATCHABLE_FUNCTION_ENTER
-    2347U,	// PATCHABLE_RET
-    2473U,	// PATCHABLE_FUNCTION_EXIT
-    2450U,	// PATCHABLE_TAIL_CALL
-    2402U,	// PATCHABLE_EVENT_CALL
-    2378U,	// PATCHABLE_TYPED_EVENT_CALL
+    6735U,	// PATCHABLE_FUNCTION_ENTER
+    6655U,	// PATCHABLE_RET
+    6781U,	// PATCHABLE_FUNCTION_EXIT
+    6758U,	// PATCHABLE_TAIL_CALL
+    6710U,	// PATCHABLE_EVENT_CALL
+    6686U,	// PATCHABLE_TYPED_EVENT_CALL
     0U,	// ICALL_BRANCH_FUNNEL
     0U,	// G_ADD
     0U,	// G_SUB
@@ -343,6 +786,7 @@ void RISCVInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, cons
     0U,	// G_PTRTOINT
     0U,	// G_INTTOPTR
     0U,	// G_BITCAST
+    0U,	// G_FREEZE
     0U,	// G_INTRINSIC_TRUNC
     0U,	// G_INTRINSIC_ROUND
     0U,	// G_READCYCLECOUNTER
@@ -386,6 +830,8 @@ void RISCVInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, cons
     0U,	// G_SHL
     0U,	// G_LSHR
     0U,	// G_ASHR
+    0U,	// G_FSHL
+    0U,	// G_FSHR
     0U,	// G_ICMP
     0U,	// G_FCMP
     0U,	// G_SELECT
@@ -401,6 +847,10 @@ void RISCVInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, cons
     0U,	// G_SMULO
     0U,	// G_UMULH
     0U,	// G_SMULH
+    0U,	// G_UADDSAT
+    0U,	// G_SADDSAT
+    0U,	// G_USUBSAT
+    0U,	// G_SSUBSAT
     0U,	// G_FADD
     0U,	// G_FSUB
     0U,	// G_FMUL
@@ -431,7 +881,7 @@ void RISCVInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, cons
     0U,	// G_FMINIMUM
     0U,	// G_FMAXIMUM
     0U,	// G_PTR_ADD
-    0U,	// G_PTR_MASK
+    0U,	// G_PTRMASK
     0U,	// G_SMIN
     0U,	// G_SMAX
     0U,	// G_UMIN
@@ -459,38 +909,45 @@ void RISCVInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, cons
     0U,	// G_BLOCK_ADDR
     0U,	// G_JUMP_TABLE
     0U,	// G_DYN_STACKALLOC
+    0U,	// G_STRICT_FADD
+    0U,	// G_STRICT_FSUB
+    0U,	// G_STRICT_FMUL
+    0U,	// G_STRICT_FDIV
+    0U,	// G_STRICT_FREM
+    0U,	// G_STRICT_FMA
+    0U,	// G_STRICT_FSQRT
     0U,	// G_READ_REGISTER
     0U,	// G_WRITE_REGISTER
     9U,	// ADJCALLSTACKDOWN
     9U,	// ADJCALLSTACKUP
     9U,	// BuildPairF64Pseudo
-    4500U,	// PseudoAddTPRel
+    8648U,	// PseudoAddTPRel
     9U,	// PseudoAtomicLoadNand32
     9U,	// PseudoAtomicLoadNand64
     9U,	// PseudoBR
     9U,	// PseudoBRIND
-    21123U,	// PseudoCALL
+    42472U,	// PseudoCALL
     9U,	// PseudoCALLIndirect
-    266883U,	// PseudoCALLReg
+    1058280U,	// PseudoCALLReg
     9U,	// PseudoCmpXchg32
     9U,	// PseudoCmpXchg64
-    1085868U,	// PseudoFLD
-    1087684U,	// PseudoFLW
-    1085888U,	// PseudoFSD
-    1087728U,	// PseudoFSW
-    75021U,	// PseudoJump
-    266272U,	// PseudoLA
-    266649U,	// PseudoLA_TLS_GD
-    266705U,	// PseudoLA_TLS_IE
-    266293U,	// PseudoLB
-    268174U,	// PseudoLBU
-    266662U,	// PseudoLD
-    266723U,	// PseudoLH
-    268187U,	// PseudoLHU
-    266779U,	// PseudoLI
-    266271U,	// PseudoLLA
-    268478U,	// PseudoLW
-    268275U,	// PseudoLWU
+    37888480U,	// PseudoFLD
+    37893640U,	// PseudoFLW
+    37888500U,	// PseudoFSD
+    37893761U,	// PseudoFSW
+    281066U,	// PseudoJump
+    1056800U,	// PseudoLA
+    1057229U,	// PseudoLA_TLS_GD
+    1057285U,	// PseudoLA_TLS_IE
+    1056848U,	// PseudoLB
+    1060253U,	// PseudoLBU
+    1057242U,	// PseudoLD
+    1057740U,	// PseudoLH
+    1060266U,	// PseudoLHU
+    1057812U,	// PseudoLI
+    1056799U,	// PseudoLLA
+    1062402U,	// PseudoLW
+    1060389U,	// PseudoLWU
     9U,	// PseudoMaskedAtomicLoadAdd32
     9U,	// PseudoMaskedAtomicLoadMax32
     9U,	// PseudoMaskedAtomicLoadMin32
@@ -501,301 +958,750 @@ void RISCVInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, cons
     9U,	// PseudoMaskedAtomicSwap32
     9U,	// PseudoMaskedCmpXchg32
     9U,	// PseudoRET
-    1085497U,	// PseudoSB
-    1085882U,	// PseudoSD
-    1085927U,	// PseudoSH
-    1087722U,	// PseudoSW
-    21116U,	// PseudoTAIL
+    37888084U,	// PseudoSB
+    37888494U,	// PseudoSD
+    37888976U,	// PseudoSH
+    37893755U,	// PseudoSW
+    42465U,	// PseudoTAIL
     9U,	// PseudoTAILIndirect
     9U,	// ReadCycleWide
     9U,	// Select_FPR32_Using_CC_GPR
     9U,	// Select_FPR64_Using_CC_GPR
     9U,	// Select_GPR_Using_CC_GPR
     9U,	// SplitF64Pseudo
-    4198804U,	// ADD
-    4198918U,	// ADDI
-    4200615U,	// ADDIW
-    4200600U,	// ADDW
-    2134158U,	// AMOADD_D
-    2135411U,	// AMOADD_D_AQ
-    2134955U,	// AMOADD_D_AQ_RL
-    2134679U,	// AMOADD_D_RL
-    2136083U,	// AMOADD_W
-    2135548U,	// AMOADD_W_AQ
-    2135114U,	// AMOADD_W_AQ_RL
-    2134816U,	// AMOADD_W_RL
-    2134168U,	// AMOAND_D
-    2135424U,	// AMOAND_D_AQ
-    2134970U,	// AMOAND_D_AQ_RL
-    2134692U,	// AMOAND_D_RL
-    2136093U,	// AMOAND_W
-    2135561U,	// AMOAND_W_AQ
-    2135129U,	// AMOAND_W_AQ_RL
-    2134829U,	// AMOAND_W_RL
-    2134352U,	// AMOMAXU_D
-    2135512U,	// AMOMAXU_D_AQ
-    2135072U,	// AMOMAXU_D_AQ_RL
-    2134780U,	// AMOMAXU_D_RL
-    2136170U,	// AMOMAXU_W
-    2135649U,	// AMOMAXU_W_AQ
-    2135231U,	// AMOMAXU_W_AQ_RL
-    2134917U,	// AMOMAXU_W_RL
-    2134398U,	// AMOMAX_D
-    2135526U,	// AMOMAX_D_AQ
-    2135088U,	// AMOMAX_D_AQ_RL
-    2134794U,	// AMOMAX_D_RL
-    2136190U,	// AMOMAX_W
-    2135663U,	// AMOMAX_W_AQ
-    2135247U,	// AMOMAX_W_AQ_RL
-    2134931U,	// AMOMAX_W_RL
-    2134330U,	// AMOMINU_D
-    2135498U,	// AMOMINU_D_AQ
-    2135056U,	// AMOMINU_D_AQ_RL
-    2134766U,	// AMOMINU_D_RL
-    2136159U,	// AMOMINU_W
-    2135635U,	// AMOMINU_W_AQ
-    2135215U,	// AMOMINU_W_AQ_RL
-    2134903U,	// AMOMINU_W_RL
-    2134220U,	// AMOMIN_D
-    2135437U,	// AMOMIN_D_AQ
-    2134985U,	// AMOMIN_D_AQ_RL
-    2134705U,	// AMOMIN_D_RL
-    2136103U,	// AMOMIN_W
-    2135574U,	// AMOMIN_W_AQ
-    2135144U,	// AMOMIN_W_AQ_RL
-    2134842U,	// AMOMIN_W_RL
-    2134264U,	// AMOOR_D
-    2135473U,	// AMOOR_D_AQ
-    2135027U,	// AMOOR_D_AQ_RL
-    2134741U,	// AMOOR_D_RL
-    2136130U,	// AMOOR_W
-    2135610U,	// AMOOR_W_AQ
-    2135186U,	// AMOOR_W_AQ_RL
-    2134878U,	// AMOOR_W_RL
-    2134240U,	// AMOSWAP_D
-    2135450U,	// AMOSWAP_D_AQ
-    2135000U,	// AMOSWAP_D_AQ_RL
-    2134718U,	// AMOSWAP_D_RL
-    2136113U,	// AMOSWAP_W
-    2135587U,	// AMOSWAP_W_AQ
-    2135159U,	// AMOSWAP_W_AQ_RL
-    2134855U,	// AMOSWAP_W_RL
-    2134273U,	// AMOXOR_D
-    2135485U,	// AMOXOR_D_AQ
-    2135041U,	// AMOXOR_D_AQ_RL
-    2134753U,	// AMOXOR_D_RL
-    2136139U,	// AMOXOR_W
-    2135622U,	// AMOXOR_W_AQ
-    2135200U,	// AMOXOR_W_AQ_RL
-    2134890U,	// AMOXOR_W_RL
-    4198835U,	// AND
-    4198926U,	// ANDI
-    266308U,	// AUIPC
-    4200060U,	// BEQ
-    4198860U,	// BGE
-    4200339U,	// BGEU
-    4200324U,	// BLT
-    4200395U,	// BLTU
-    4198876U,	// BNE
-    102475U,	// CSRRC
-    102908U,	// CSRRCI
-    104299U,	// CSRRS
-    102965U,	// CSRRSI
-    104673U,	// CSRRW
-    102986U,	// CSRRWI
-    303506U,	// C_ADD
-    303620U,	// C_ADDI
-    304410U,	// C_ADDI16SP
-    4199661U,	// C_ADDI4SPN
-    305317U,	// C_ADDIW
-    303620U,	// C_ADDI_HINT_IMM_ZERO
-    303620U,	// C_ADDI_HINT_X0
-    303620U,	// C_ADDI_NOP
-    305302U,	// C_ADDW
-    303506U,	// C_ADD_HINT
-    303537U,	// C_AND
-    303628U,	// C_ANDI
-    268579U,	// C_BEQZ
-    268571U,	// C_BNEZ
-    599U,	// C_EBREAK
-    561578U,	// C_FLD
-    562478U,	// C_FLDSP
-    563394U,	// C_FLW
-    562512U,	// C_FLWSP
-    561598U,	// C_FSD
-    562495U,	// C_FSDSP
-    563438U,	// C_FSW
-    562529U,	// C_FSWSP
-    21074U,	// C_J
-    21109U,	// C_JAL
-    22151U,	// C_JALR
-    22145U,	// C_JR
-    561572U,	// C_LD
-    562470U,	// C_LDSP
-    266777U,	// C_LI
-    266777U,	// C_LI_HINT
-    266819U,	// C_LUI
-    266819U,	// C_LUI_HINT
-    563388U,	// C_LW
-    562504U,	// C_LWSP
-    268285U,	// C_MV
-    268285U,	// C_MV_HINT
-    1299U,	// C_NOP
-    21779U,	// C_NOP_HINT
-    304783U,	// C_OR
-    561592U,	// C_SD
-    562487U,	// C_SDSP
-    303647U,	// C_SLLI
-    24587U,	// C_SLLI64_HINT
-    303647U,	// C_SLLI_HINT
-    303604U,	// C_SRAI
-    24577U,	// C_SRAI64_HINT
-    303655U,	// C_SRLI
-    24597U,	// C_SRLI64_HINT
-    303165U,	// C_SUB
-    305294U,	// C_SUBW
-    563432U,	// C_SW
-    562521U,	// C_SWSP
-    1284U,	// C_UNIMP
-    304789U,	// C_XOR
-    4200440U,	// DIV
-    4200407U,	// DIVU
-    4200700U,	// DIVUW
-    4200707U,	// DIVW
-    601U,	// EBREAK
-    642U,	// ECALL
-    8392819U,	// FADD_D
-    8394433U,	// FADD_S
-    266517U,	// FCLASS_D
-    268055U,	// FCLASS_S
-    3150433U,	// FCVT_D_L
-    3151783U,	// FCVT_D_LU
-    267959U,	// FCVT_D_S
-    268297U,	// FCVT_D_W
-    268253U,	// FCVT_D_WU
-    3150127U,	// FCVT_LU_D
-    3151665U,	// FCVT_LU_S
-    3150002U,	// FCVT_L_D
-    3151596U,	// FCVT_L_S
-    3150091U,	// FCVT_S_D
-    3150443U,	// FCVT_S_L
-    3151794U,	// FCVT_S_LU
-    3151957U,	// FCVT_S_W
-    3151848U,	// FCVT_S_WU
-    3150149U,	// FCVT_WU_D
-    3151676U,	// FCVT_WU_S
-    3150179U,	// FCVT_W_D
-    3151695U,	// FCVT_W_S
-    8393051U,	// FDIV_D
-    8394567U,	// FDIV_S
-    12741U,	// FENCE
-    491U,	// FENCE_I
-    1273U,	// FENCE_TSO
-    4198635U,	// FEQ_D
-    4200208U,	// FEQ_S
-    561580U,	// FLD
-    4198562U,	// FLE_D
-    4200156U,	// FLE_S
-    4198687U,	// FLT_D
-    4200225U,	// FLT_S
-    563396U,	// FLW
-    16781435U,	// FMADD_D
-    16783049U,	// FMADD_S
-    4198774U,	// FMAX_D
-    4200281U,	// FMAX_S
-    4198596U,	// FMIN_D
-    4200190U,	// FMIN_S
-    16781402U,	// FMSUB_D
-    16783012U,	// FMSUB_S
-    8392892U,	// FMUL_D
-    8394486U,	// FMUL_S
-    268553U,	// FMV_D_X
-    268562U,	// FMV_W_X
-    266605U,	// FMV_X_D
-    268405U,	// FMV_X_W
-    16781444U,	// FNMADD_D
-    16783058U,	// FNMADD_S
-    16781411U,	// FNMSUB_D
-    16783021U,	// FNMSUB_S
-    561600U,	// FSD
-    4198614U,	// FSGNJN_D
-    4200198U,	// FSGNJN_S
-    4198792U,	// FSGNJX_D
-    4200289U,	// FSGNJX_S
-    4198569U,	// FSGNJ_D
-    4200163U,	// FSGNJ_S
-    3150118U,	// FSQRT_D
-    3151656U,	// FSQRT_S
-    8392786U,	// FSUB_D
-    8394396U,	// FSUB_S
-    563440U,	// FSW
-    266871U,	// JAL
-    562825U,	// JALR
-    561205U,	// LB
-    563086U,	// LBU
-    561574U,	// LD
-    561635U,	// LH
-    563099U,	// LHU
-    135410U,	// LR_D
-    136616U,	// LR_D_AQ
-    136168U,	// LR_D_AQ_RL
-    135884U,	// LR_D_RL
-    137276U,	// LR_W
-    136753U,	// LR_W_AQ
-    136327U,	// LR_W_AQ_RL
-    136021U,	// LR_W_RL
-    266821U,	// LUI
-    563390U,	// LW
-    563187U,	// LWU
-    1906U,	// MRET
-    4199651U,	// MUL
-    4198881U,	// MULH
-    4200387U,	// MULHSU
-    4200345U,	// MULHU
-    4200661U,	// MULW
-    4200081U,	// OR
-    4198960U,	// ORI
-    4199656U,	// REM
-    4200381U,	// REMU
-    4200693U,	// REMUW
-    4200667U,	// REMW
-    561209U,	// SB
-    2134125U,	// SC_D
-    2135402U,	// SC_D_AQ
-    2134944U,	// SC_D_AQ_RL
-    2134670U,	// SC_D_RL
-    2136067U,	// SC_W
-    2135539U,	// SC_W_AQ
-    2135103U,	// SC_W_AQ_RL
-    2134807U,	// SC_W_RL
-    561594U,	// SD
-    266276U,	// SFENCE_VMA
-    561639U,	// SH
-    4199049U,	// SLL
-    4198945U,	// SLLI
-    4200622U,	// SLLIW
-    4200649U,	// SLLW
-    4200329U,	// SLT
-    4198973U,	// SLTI
-    4200352U,	// SLTIU
-    4200401U,	// SLTU
-    4198448U,	// SRA
-    4198902U,	// SRAI
-    4200606U,	// SRAIW
-    4200584U,	// SRAW
-    1912U,	// SRET
-    4199646U,	// SRL
-    4198953U,	// SRLI
-    4200629U,	// SRLIW
-    4200655U,	// SRLW
-    4198463U,	// SUB
-    4200592U,	// SUBW
-    563434U,	// SW
-    1286U,	// UNIMP
-    1918U,	// URET
-    532U,	// WFI
-    4200087U,	// XOR
-    4198959U,	// XORI
+    33563080U,	// ADD
+    33563647U,	// ADDI
+    33568165U,	// ADDIW
+    33566237U,	// ADDIWU
+    33568023U,	// ADDUW
+    33568133U,	// ADDW
+    33566230U,	// ADDWU
+    8528066U,	// AMOADD_D
+    8530512U,	// AMOADD_D_AQ
+    8529685U,	// AMOADD_D_AQ_RL
+    8529409U,	// AMOADD_D_RL
+    8533116U,	// AMOADD_W
+    8530649U,	// AMOADD_W_AQ
+    8529844U,	// AMOADD_W_AQ_RL
+    8529546U,	// AMOADD_W_RL
+    8528076U,	// AMOAND_D
+    8530525U,	// AMOAND_D_AQ
+    8529700U,	// AMOAND_D_AQ_RL
+    8529422U,	// AMOAND_D_RL
+    8533126U,	// AMOAND_W
+    8530662U,	// AMOAND_W_AQ
+    8529859U,	// AMOAND_W_AQ_RL
+    8529559U,	// AMOAND_W_RL
+    8528260U,	// AMOMAXU_D
+    8530613U,	// AMOMAXU_D_AQ
+    8529802U,	// AMOMAXU_D_AQ_RL
+    8529510U,	// AMOMAXU_D_RL
+    8533314U,	// AMOMAXU_W
+    8530750U,	// AMOMAXU_W_AQ
+    8529961U,	// AMOMAXU_W_AQ_RL
+    8529647U,	// AMOMAXU_W_RL
+    8528306U,	// AMOMAX_D
+    8530627U,	// AMOMAX_D_AQ
+    8529818U,	// AMOMAX_D_AQ_RL
+    8529524U,	// AMOMAX_D_RL
+    8533348U,	// AMOMAX_W
+    8530764U,	// AMOMAX_W_AQ
+    8529977U,	// AMOMAX_W_AQ_RL
+    8529661U,	// AMOMAX_W_RL
+    8528238U,	// AMOMINU_D
+    8530599U,	// AMOMINU_D_AQ
+    8529786U,	// AMOMINU_D_AQ_RL
+    8529496U,	// AMOMINU_D_RL
+    8533288U,	// AMOMINU_W
+    8530736U,	// AMOMINU_W_AQ
+    8529945U,	// AMOMINU_W_AQ_RL
+    8529633U,	// AMOMINU_W_RL
+    8528128U,	// AMOMIN_D
+    8530538U,	// AMOMIN_D_AQ
+    8529715U,	// AMOMIN_D_AQ_RL
+    8529435U,	// AMOMIN_D_RL
+    8533197U,	// AMOMIN_W
+    8530675U,	// AMOMIN_W_AQ
+    8529874U,	// AMOMIN_W_AQ_RL
+    8529572U,	// AMOMIN_W_RL
+    8528172U,	// AMOOR_D
+    8530574U,	// AMOOR_D_AQ
+    8529757U,	// AMOOR_D_AQ_RL
+    8529471U,	// AMOOR_D_RL
+    8533224U,	// AMOOR_W
+    8530711U,	// AMOOR_W_AQ
+    8529916U,	// AMOOR_W_AQ_RL
+    8529608U,	// AMOOR_W_RL
+    8528148U,	// AMOSWAP_D
+    8530551U,	// AMOSWAP_D_AQ
+    8529730U,	// AMOSWAP_D_AQ_RL
+    8529448U,	// AMOSWAP_D_RL
+    8533207U,	// AMOSWAP_W
+    8530688U,	// AMOSWAP_W_AQ
+    8529889U,	// AMOSWAP_W_AQ_RL
+    8529585U,	// AMOSWAP_W_RL
+    8528181U,	// AMOXOR_D
+    8530586U,	// AMOXOR_D_AQ
+    8529771U,	// AMOXOR_D_AQ_RL
+    8529483U,	// AMOXOR_D_RL
+    8533233U,	// AMOXOR_W
+    8530723U,	// AMOXOR_W_AQ
+    8529930U,	// AMOXOR_W_AQ_RL
+    8529620U,	// AMOXOR_W_RL
+    33563111U,	// AND
+    33563655U,	// ANDI
+    33565083U,	// ANDN
+    1056863U,	// AUIPC
+    33565132U,	// BDEP
+    33568328U,	// BDEPW
+    33565529U,	// BEQ
+    33566103U,	// BEXT
+    33568406U,	// BEXTW
+    33565138U,	// BFP
+    33568335U,	// BFPW
+    33563136U,	// BGE
+    33566114U,	// BGEU
+    33566079U,	// BLT
+    33566183U,	// BLTU
+    1059287U,	// BMATFLIP
+    33565580U,	// BMATOR
+    33565595U,	// BMATXOR
+    33563152U,	// BNE
+    33564754U,	// CLMUL
+    33563592U,	// CLMULH
+    33568139U,	// CLMULHW
+    33565555U,	// CLMULR
+    33568349U,	// CLMULRW
+    33568302U,	// CLMULW
+    1063405U,	// CLZ
+    1062600U,	// CLZW
+    4339453U,	// CMIX
+    4337803U,	// CMOV
+    1056821U,	// CRC32B
+    1056830U,	// CRC32CB
+    1056919U,	// CRC32CD
+    1057711U,	// CRC32CH
+    1061986U,	// CRC32CW
+    1056883U,	// CRC32D
+    1057702U,	// CRC32H
+    1061977U,	// CRC32W
+    401516U,	// CSRRC
+    402421U,	// CSRRCI
+    404619U,	// CSRRS
+    402528U,	// CSRRSI
+    407148U,	// CSRRW
+    402849U,	// CSRRWI
+    1063418U,	// CTZ
+    1062606U,	// CTZW
+    1196486U,	// C_ADD
+    1197053U,	// C_ADDI
+    1198583U,	// C_ADDI16SP
+    33565094U,	// C_ADDI4SPN
+    1201571U,	// C_ADDIW
+    1197053U,	// C_ADDI_HINT_IMM_ZERO
+    1197053U,	// C_ADDI_HINT_X0
+    1197053U,	// C_ADDI_NOP
+    1201539U,	// C_ADDW
+    1196486U,	// C_ADD_HINT
+    1196517U,	// C_AND
+    1197061U,	// C_ANDI
+    1063410U,	// C_BEQZ
+    1063397U,	// C_BNEZ
+    1454U,	// C_EBREAK
+    2236894U,	// C_FLD
+    2238987U,	// C_FLDSP
+    2242054U,	// C_FLW
+    2239021U,	// C_FLWSP
+    2236914U,	// C_FSD
+    2239004U,	// C_FSDSP
+    2242175U,	// C_FSW
+    2239038U,	// C_FSWSP
+    42409U,	// C_J
+    42450U,	// C_JAL
+    43876U,	// C_JALR
+    43870U,	// C_JR
+    2236888U,	// C_LD
+    2238979U,	// C_LDSP
+    1057810U,	// C_LI
+    1057810U,	// C_LI_HINT
+    1057918U,	// C_LUI
+    1057918U,	// C_LUI_HINT
+    2242048U,	// C_LW
+    2239013U,	// C_LWSP
+    1060990U,	// C_MV
+    1060990U,	// C_MV_HINT
+    50079U,	// C_NEG
+    2544U,	// C_NOP
+    43504U,	// C_NOP_HINT
+    52623U,	// C_NOT
+    1198971U,	// C_OR
+    2236908U,	// C_SD
+    2238996U,	// C_SDSP
+    1197089U,	// C_SLLI
+    49163U,	// C_SLLI64_HINT
+    1197089U,	// C_SLLI_HINT
+    1197030U,	// C_SRAI
+    49153U,	// C_SRAI64_HINT
+    1197097U,	// C_SRLI
+    49173U,	// C_SRLI64_HINT
+    1196120U,	// C_SUB
+    1201524U,	// C_SUBW
+    2242169U,	// C_SW
+    2239030U,	// C_SWSP
+    2529U,	// C_UNIMP
+    1198996U,	// C_XOR
+    54533U,	// C_ZEXTW
+    33566841U,	// DIV
+    33566195U,	// DIVU
+    33568428U,	// DIVUW
+    33568442U,	// DIVW
+    3424U,	// DRET
+    1456U,	// EBREAK
+    1511U,	// ECALL
+    134226087U,	// FADD_D
+    134228942U,	// FADD_S
+    1057097U,	// FCLASS_D
+    1059886U,	// FCLASS_S
+    12592574U,	// FCVT_D_L
+    12594621U,	// FCVT_D_LU
+    1059780U,	// FCVT_D_S
+    1062002U,	// FCVT_D_W
+    1060345U,	// FCVT_D_WU
+    12591459U,	// FCVT_LU_D
+    12594248U,	// FCVT_LU_S
+    12591334U,	// FCVT_L_D
+    12594179U,	// FCVT_L_S
+    12591423U,	// FCVT_S_D
+    12592584U,	// FCVT_S_L
+    12594632U,	// FCVT_S_LU
+    12596475U,	// FCVT_S_W
+    12594692U,	// FCVT_S_WU
+    12591481U,	// FCVT_WU_D
+    12594259U,	// FCVT_WU_S
+    12591511U,	// FCVT_W_D
+    12594278U,	// FCVT_W_S
+    134226319U,	// FDIV_D
+    134229086U,	// FDIV_S
+    25081U,	// FENCE
+    980U,	// FENCE_I
+    2497U,	// FENCE_TSO
+    33562911U,	// FEQ_D
+    33565735U,	// FEQ_S
+    2236896U,	// FLD
+    33562838U,	// FLE_D
+    33565673U,	// FLE_S
+    33562963U,	// FLT_D
+    33565752U,	// FLT_S
+    2242056U,	// FLW
+    268443823U,	// FMADD_D
+    268446678U,	// FMADD_S
+    33563050U,	// FMAX_D
+    33565817U,	// FMAX_S
+    33562872U,	// FMIN_D
+    33565717U,	// FMIN_S
+    268443780U,	// FMSUB_D
+    268446641U,	// FMSUB_S
+    134226160U,	// FMUL_D
+    134229005U,	// FMUL_S
+    1062612U,	// FMV_D_X
+    1062639U,	// FMV_W_X
+    1057185U,	// FMV_X_D
+    1062235U,	// FMV_X_W
+    268443832U,	// FNMADD_D
+    268446687U,	// FNMADD_S
+    268443789U,	// FNMSUB_D
+    268446650U,	// FNMSUB_S
+    2236916U,	// FSD
+    33562890U,	// FSGNJN_D
+    33565725U,	// FSGNJN_S
+    33563068U,	// FSGNJX_D
+    33565825U,	// FSGNJX_S
+    33562845U,	// FSGNJ_D
+    33565690U,	// FSGNJ_S
+    16787533U,	// FSL
+    16791080U,	// FSLW
+    12591450U,	// FSQRT_D
+    12594239U,	// FSQRT_S
+    16788388U,	// FSR
+    9306U,	// FSRI
+    13784U,	// FSRIW
+    16791155U,	// FSRW
+    134226044U,	// FSUB_D
+    134228905U,	// FSUB_S
+    2242177U,	// FSW
+    33562726U,	// GORC
+    33563630U,	// GORCI
+    33568155U,	// GORCIW
+    33568124U,	// GORCW
+    33566835U,	// GREV
+    33564007U,	// GREVI
+    33568232U,	// GREVIW
+    33568435U,	// GREVW
+    1058260U,	// JAL
+    2239334U,	// JALR
+    2236496U,	// LB
+    2239901U,	// LBU
+    2236890U,	// LD
+    2237388U,	// LH
+    2239914U,	// LHU
+    532774U,	// LR_D
+    535173U,	// LR_D_AQ
+    534354U,	// LR_D_AQ_RL
+    534070U,	// LR_D_RL
+    537826U,	// LR_W
+    535310U,	// LR_W_AQ
+    534513U,	// LR_W_AQ_RL
+    534207U,	// LR_W_RL
+    1057920U,	// LUI
+    2242050U,	// LW
+    2240037U,	// LWU
+    33568504U,	// MAX
+    33566250U,	// MAXU
+    33565089U,	// MIN
+    33566169U,	// MINU
+    3430U,	// MRET
+    33564756U,	// MUL
+    33563594U,	// MULH
+    33566175U,	// MULHSU
+    33566120U,	// MULHU
+    33568304U,	// MULW
+    33565565U,	// OR
+    33563727U,	// ORI
+    33565106U,	// ORN
+    33564088U,	// PACK
+    33563585U,	// PACKH
+    33566134U,	// PACKU
+    33568413U,	// PACKUW
+    33568249U,	// PACKW
+    1060233U,	// PCNT
+    1062542U,	// PCNTW
+    33564824U,	// REM
+    33566163U,	// REMU
+    33568421U,	// REMUW
+    33568310U,	// REMW
+    33564147U,	// ROL
+    33568284U,	// ROLW
+    33565575U,	// ROR
+    33563726U,	// RORI
+    33568209U,	// RORIW
+    33568358U,	// RORW
+    2236500U,	// SB
+    33565548U,	// SBCLR
+    33563718U,	// SBCLRI
+    33568200U,	// SBCLRIW
+    33568341U,	// SBCLRW
+    33566102U,	// SBEXT
+    33563766U,	// SBEXTI
+    33568405U,	// SBEXTW
+    33566852U,	// SBINV
+    33564014U,	// SBINVI
+    33568240U,	// SBINVIW
+    33568448U,	// SBINVW
+    33566072U,	// SBSET
+    33563752U,	// SBSETI
+    33568223U,	// SBSETIW
+    33568390U,	// SBSETW
+    8528033U,	// SC_D
+    8530503U,	// SC_D_AQ
+    8529674U,	// SC_D_AQ_RL
+    8529400U,	// SC_D_RL
+    8533100U,	// SC_W
+    8530640U,	// SC_W_AQ
+    8529833U,	// SC_W_AQ_RL
+    8529537U,	// SC_W_RL
+    2236910U,	// SD
+    1056840U,	// SEXTB
+    1057721U,	// SEXTH
+    1056804U,	// SFENCE_VMA
+    2237392U,	// SH
+    33564123U,	// SHFL
+    33563674U,	// SHFLI
+    33568271U,	// SHFLW
+    33564142U,	// SLL
+    33563683U,	// SLLI
+    33568031U,	// SLLIUW
+    33568172U,	// SLLIW
+    33568278U,	// SLLW
+    33565111U,	// SLO
+    33563706U,	// SLOI
+    33568186U,	// SLOIW
+    33568316U,	// SLOW
+    33566084U,	// SLT
+    33563760U,	// SLTI
+    33566127U,	// SLTIU
+    33566189U,	// SLTU
+    33562672U,	// SRA
+    33563624U,	// SRAI
+    33568148U,	// SRAIW
+    33568110U,	// SRAW
+    3436U,	// SRET
+    33564744U,	// SRL
+    33563691U,	// SRLI
+    33568179U,	// SRLIW
+    33568290U,	// SRLW
+    33565116U,	// SRO
+    33563712U,	// SROI
+    33568193U,	// SROIW
+    33568322U,	// SROW
+    33562714U,	// SUB
+    33568015U,	// SUBUW
+    33568118U,	// SUBW
+    33566223U,	// SUBWU
+    2242171U,	// SW
+    2531U,	// UNIMP
+    33564121U,	// UNSHFL
+    33563672U,	// UNSHFLI
+    33568269U,	// UNSHFLW
+    3442U,	// URET
+    67121954U,	// VAADDU_VV
+    67123417U,	// VAADDU_VX
+    67121558U,	// VAADD_VV
+    67123078U,	// VAADD_VX
+    100673717U,	// VADC_VIM
+    100673871U,	// VADC_VVM
+    100673925U,	// VADC_VXM
+    67118262U,	// VADD_VI
+    67121621U,	// VADD_VV
+    67123108U,	// VADD_VX
+    67118271U,	// VAND_VI
+    67121651U,	// VAND_VV
+    67123127U,	// VAND_VX
+    67121909U,	// VASUBU_VV
+    67123372U,	// VASUBU_VX
+    67121316U,	// VASUB_VV
+    67122966U,	// VASUB_VX
+    33564961U,	// VCOMPRESS_VM
+    67122088U,	// VDIVU_VV
+    67123562U,	// VDIVU_VX
+    67122118U,	// VDIV_VV
+    67123582U,	// VDIV_VX
+    67117760U,	// VFADD_VF
+    67121568U,	// VFADD_VV
+    3157912U,	// VFCLASS_V
+    3158011U,	// VFCVT_F_XU_V
+    3158104U,	// VFCVT_F_X_V
+    3157683U,	// VFCVT_XU_F_V
+    3157712U,	// VFCVT_X_F_V
+    67117918U,	// VFDIV_VF
+    67122108U,	// VFDIV_VV
+    3156110U,	// VFIRST_M
+    67117712U,	// VFMACC_VF
+    67121479U,	// VFMACC_VV
+    67117770U,	// VFMADD_VF
+    67121578U,	// VFMADD_VV
+    67117939U,	// VFMAX_VF
+    67122127U,	// VFMAX_VV
+    100673693U,	// VFMERGE_VFM
+    67117866U,	// VFMIN_VF
+    67121808U,	// VFMIN_VV
+    67117664U,	// VFMSAC_VF
+    67121410U,	// VFMSAC_VV
+    67117619U,	// VFMSUB_VF
+    67121336U,	// VFMSUB_VV
+    67117845U,	// VFMUL_VF
+    67121749U,	// VFMUL_VV
+    1059824U,	// VFMV_F_S
+    1057301U,	// VFMV_S_F
+    1057311U,	// VFMV_V_F
+    3159202U,	// VFNCVT_F_F_W
+    3159347U,	// VFNCVT_F_XU_W
+    3159373U,	// VFNCVT_F_X_W
+    3159184U,	// VFNCVT_ROD_F_F_W
+    3159216U,	// VFNCVT_XU_F_W
+    3159231U,	// VFNCVT_X_F_W
+    67117723U,	// VFNMACC_VF
+    67121490U,	// VFNMACC_VV
+    67117781U,	// VFNMADD_VF
+    67121589U,	// VFNMADD_VV
+    67117675U,	// VFNMSAC_VF
+    67121421U,	// VFNMSAC_VV
+    67117630U,	// VFNMSUB_VF
+    67121347U,	// VFNMSUB_VV
+    67117928U,	// VFRDIV_VF
+    67120455U,	// VFREDMAX_VS
+    67120367U,	// VFREDMIN_VS
+    67120338U,	// VFREDOSUM_VS
+    67120286U,	// VFREDSUM_VS
+    67117642U,	// VFRSUB_VF
+    67117876U,	// VFSGNJN_VF
+    67121827U,	// VFSGNJN_VV
+    67117949U,	// VFSGNJX_VF
+    67122146U,	// VFSGNJX_VV
+    67117834U,	// VFSGNJ_VF
+    67121710U,	// VFSGNJ_VV
+    3157923U,	// VFSQRT_V
+    67117609U,	// VFSUB_VF
+    67121326U,	// VFSUB_VV
+    67117793U,	// VFWADD_VF
+    67121630U,	// VFWADD_VV
+    67117972U,	// VFWADD_WF
+    67122189U,	// VFWADD_WV
+    3157669U,	// VFWCVT_F_F_V
+    3158025U,	// VFWCVT_F_XU_V
+    3158117U,	// VFWCVT_F_X_V
+    3157697U,	// VFWCVT_XU_F_V
+    3157725U,	// VFWCVT_X_F_V
+    67117748U,	// VFWMACC_VF
+    67121525U,	// VFWMACC_VV
+    67117700U,	// VFWMSAC_VF
+    67121457U,	// VFWMSAC_VV
+    67117855U,	// VFWMUL_VF
+    67121778U,	// VFWMUL_VV
+    67117735U,	// VFWNMACC_VF
+    67121502U,	// VFWNMACC_VV
+    67117687U,	// VFWNMSAC_VF
+    67121444U,	// VFWNMSAC_VV
+    67120352U,	// VFWREDOSUM_VS
+    67120311U,	// VFWREDSUM_VS
+    67117653U,	// VFWSUB_VF
+    67121389U,	// VFWSUB_VV
+    67117961U,	// VFWSUB_WF
+    67122168U,	// VFWSUB_WV
+    77415U,	// VID_V
+    3156065U,	// VIOTA_M
+    1814372U,	// VL1R_V
+    3911403U,	// VLBFF_V
+    3911430U,	// VLBUFF_V
+    3911597U,	// VLBU_V
+    3911216U,	// VLB_V
+    3911412U,	// VLEFF_V
+    3911278U,	// VLE_V
+    3911421U,	// VLHFF_V
+    3911440U,	// VLHUFF_V
+    3911623U,	// VLHU_V
+    3911469U,	// VLH_V
+    896949U,	// VLSBU_V
+    896567U,	// VLSB_V
+    896629U,	// VLSE_V
+    896975U,	// VLSHU_V
+    896820U,	// VLSH_V
+    897001U,	// VLSWU_V
+    897064U,	// VLSW_V
+    3911460U,	// VLWFF_V
+    3911450U,	// VLWUFF_V
+    3911649U,	// VLWU_V
+    3911713U,	// VLW_V
+    896958U,	// VLXBU_V
+    896590U,	// VLXB_V
+    896652U,	// VLXE_V
+    896984U,	// VLXHU_V
+    896843U,	// VLXH_V
+    897010U,	// VLXWU_V
+    897087U,	// VLXW_V
+    67121515U,	// VMACC_VV
+    67123047U,	// VMACC_VX
+    33563810U,	// VMADC_VI
+    100673706U,	// VMADC_VIM
+    33567116U,	// VMADC_VV
+    100673860U,	// VMADC_VVM
+    33568636U,	// VMADC_VX
+    100673914U,	// VMADC_VXM
+    67121601U,	// VMADD_VV
+    67123088U,	// VMADD_VX
+    33564936U,	// VMANDNOT_MM
+    33564875U,	// VMAND_MM
+    67122098U,	// VMAXU_VV
+    67123572U,	// VMAXU_VX
+    67122137U,	// VMAX_VV
+    67123591U,	// VMAX_VX
+    100673727U,	// VMERGE_VIM
+    100673881U,	// VMERGE_VVM
+    100673935U,	// VMERGE_VXM
+    67117888U,	// VMFEQ_VF
+    67121839U,	// VMFEQ_VV
+    67117804U,	// VMFGE_VF
+    67117898U,	// VMFGT_VF
+    67117814U,	// VMFLE_VF
+    67121660U,	// VMFLE_VV
+    67117908U,	// VMFLT_VF
+    67121889U,	// VMFLT_VV
+    67117824U,	// VMFNE_VF
+    67121680U,	// VMFNE_VV
+    67122030U,	// VMINU_VV
+    67123493U,	// VMINU_VX
+    67121818U,	// VMIN_VV
+    67123232U,	// VMIN_VX
+    33564885U,	// VMNAND_MM
+    33564905U,	// VMNOR_MM
+    33564949U,	// VMORNOT_MM
+    33564896U,	// VMOR_MM
+    33567037U,	// VMSBC_VV
+    100673839U,	// VMSBC_VVM
+    33568605U,	// VMSBC_VX
+    100673893U,	// VMSBC_VXM
+    3156083U,	// VMSBF_M
+    67118356U,	// VMSEQ_VI
+    67121849U,	// VMSEQ_VV
+    67123299U,	// VMSEQ_VX
+    67118428U,	// VMSGTU_VI
+    67123540U,	// VMSGTU_VX
+    67118396U,	// VMSGT_VI
+    67123352U,	// VMSGT_VX
+    3156092U,	// VMSIF_M
+    67118417U,	// VMSLEU_VI
+    67121987U,	// VMSLEU_VV
+    67123450U,	// VMSLEU_VX
+    67118280U,	// VMSLE_VI
+    67121670U,	// VMSLE_VV
+    67123136U,	// VMSLE_VX
+    67122077U,	// VMSLTU_VV
+    67123551U,	// VMSLTU_VX
+    67121899U,	// VMSLT_VV
+    67123362U,	// VMSLT_VX
+    67118290U,	// VMSNE_VI
+    67121690U,	// VMSNE_VV
+    67123146U,	// VMSNE_VX
+    3156101U,	// VMSOF_M
+    67122053U,	// VMULHSU_VV
+    67123516U,	// VMULHSU_VX
+    67121998U,	// VMULHU_VV
+    67123461U,	// VMULHU_VX
+    67121700U,	// VMULH_VV
+    67123156U,	// VMULH_VX
+    67121769U,	// VMUL_VV
+    67123204U,	// VMUL_VX
+    1060724U,	// VMV1R_V
+    1060733U,	// VMV2R_V
+    1060742U,	// VMV4R_V
+    1060751U,	// VMV8R_V
+    1062621U,	// VMV_S_X
+    1057757U,	// VMV_V_I
+    1060888U,	// VMV_V_V
+    1062630U,	// VMV_V_X
+    1059952U,	// VMV_X_S
+    33564915U,	// VMXNOR_MM
+    33564926U,	// VMXOR_MM
+    67118485U,	// VNCLIPU_WI
+    67122253U,	// VNCLIPU_WV
+    67123673U,	// VNCLIPU_WX
+    67118474U,	// VNCLIP_WI
+    67122220U,	// VNCLIP_WV
+    67123640U,	// VNCLIP_WX
+    67121433U,	// VNMSAC_VV
+    67123026U,	// VNMSAC_VX
+    67121359U,	// VNMSUB_VV
+    67122976U,	// VNMSUB_VX
+    67118454U,	// VNSRA_WI
+    67122158U,	// VNSRA_WV
+    67123600U,	// VNSRA_WX
+    67118464U,	// VNSRL_WI
+    67122210U,	// VNSRL_WV
+    67123630U,	// VNSRL_WX
+    67118379U,	// VOR_VI
+    67121872U,	// VOR_VV
+    67123322U,	// VOR_VX
+    3156074U,	// VPOPC_M
+    67120274U,	// VREDAND_VS
+    67120442U,	// VREDMAXU_VS
+    67120468U,	// VREDMAX_VS
+    67120429U,	// VREDMINU_VS
+    67120380U,	// VREDMIN_VS
+    67120392U,	// VREDOR_VS
+    67120299U,	// VREDSUM_VS
+    67120403U,	// VREDXOR_VS
+    67122020U,	// VREMU_VV
+    67123483U,	// VREMU_VX
+    67121799U,	// VREM_VV
+    67123223U,	// VREM_VX
+    67118366U,	// VRGATHER_VI
+    67121859U,	// VRGATHER_VV
+    67123309U,	// VRGATHER_VX
+    67118232U,	// VRSUB_VI
+    67122987U,	// VRSUB_VX
+    1814380U,	// VS1R_V
+    67118406U,	// VSADDU_VI
+    67121965U,	// VSADDU_VV
+    67123428U,	// VSADDU_VX
+    67118252U,	// VSADD_VI
+    67121611U,	// VSADD_VV
+    67123098U,	// VSADD_VX
+    100673850U,	// VSBC_VVM
+    100673904U,	// VSBC_VXM
+    3911239U,	// VSB_V
+    33564761U,	// VSETVL
+    20980785U,	// VSETVLI
+    3911301U,	// VSE_V
+    3911492U,	// VSH_V
+    67123241U,	// VSLIDE1DOWN_VX
+    67123272U,	// VSLIDE1UP_VX
+    67118328U,	// VSLIDEDOWN_VI
+    67123257U,	// VSLIDEDOWN_VX
+    67118343U,	// VSLIDEUP_VI
+    67123286U,	// VSLIDEUP_VX
+    67118300U,	// VSLL_VI
+    67121721U,	// VSLL_VV
+    67123166U,	// VSLL_VX
+    67121759U,	// VSMUL_VV
+    67123194U,	// VSMUL_VX
+    67118223U,	// VSRA_VI
+    67121307U,	// VSRA_VV
+    67122957U,	// VSRA_VX
+    67118319U,	// VSRL_VI
+    67121740U,	// VSRL_VV
+    67123185U,	// VSRL_VX
+    896575U,	// VSSB_V
+    896637U,	// VSSE_V
+    896828U,	// VSSH_V
+    67118213U,	// VSSRA_VI
+    67121297U,	// VSSRA_VV
+    67122947U,	// VSSRA_VX
+    67118309U,	// VSSRL_VI
+    67121730U,	// VSSRL_VV
+    67123175U,	// VSSRL_VX
+    67121920U,	// VSSUBU_VV
+    67123383U,	// VSSUBU_VX
+    67121370U,	// VSSUB_VV
+    67122997U,	// VSSUB_VX
+    897072U,	// VSSW_V
+    67121380U,	// VSUB_VV
+    67123007U,	// VSUB_VX
+    896606U,	// VSUXB_V
+    896668U,	// VSUXE_V
+    896859U,	// VSUXH_V
+    897103U,	// VSUXW_V
+    3911736U,	// VSW_V
+    896598U,	// VSXB_V
+    896660U,	// VSXE_V
+    896851U,	// VSXH_V
+    897095U,	// VSXW_V
+    67121976U,	// VWADDU_VV
+    67123439U,	// VWADDU_VX
+    67122242U,	// VWADDU_WV
+    67123662U,	// VWADDU_WX
+    67121641U,	// VWADD_VV
+    67123117U,	// VWADD_VX
+    67122200U,	// VWADD_WV
+    67123620U,	// VWADD_WX
+    67122040U,	// VWMACCSU_VV
+    67123503U,	// VWMACCSU_VX
+    67123339U,	// VWMACCUS_VX
+    67121942U,	// VWMACCU_VV
+    67123405U,	// VWMACCU_VX
+    67121537U,	// VWMACC_VV
+    67123057U,	// VWMACC_VX
+    67122065U,	// VWMULSU_VV
+    67123528U,	// VWMULSU_VX
+    67122009U,	// VWMULU_VV
+    67123472U,	// VWMULU_VX
+    67121789U,	// VWMUL_VV
+    67123213U,	// VWMUL_VX
+    67120415U,	// VWREDSUMU_VS
+    67120325U,	// VWREDSUM_VS
+    67121931U,	// VWSUBU_VV
+    67123394U,	// VWSUBU_VX
+    67122231U,	// VWSUBU_WV
+    67123651U,	// VWSUBU_WX
+    67121400U,	// VWSUB_VV
+    67123016U,	// VWSUB_VX
+    67122179U,	// VWSUB_WV
+    67123610U,	// VWSUB_WX
+    67118387U,	// VXOR_VI
+    67121880U,	// VXOR_VV
+    67123330U,	// VXOR_VX
+    1037U,	// WFI
+    33565569U,	// XNOR
+    33565590U,	// XOR
+    33563732U,	// XORI
   };
 
   O << "\t";
@@ -804,11 +1710,11 @@ void RISCVInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, cons
   uint32_t Bits = 0;
   Bits |= OpInfo0[MI->getOpcode()] << 0;
   assert(Bits != 0 && "Cannot print this instruction.");
-  O << AsmStrs+(Bits & 4095)-1;
+  O << AsmStrs+(Bits & 8191)-1;
 
 
   // Fragment 0 encoded into 2 bits for 4 unique commands.
-  switch ((Bits >> 12) & 3) {
+  switch ((Bits >> 13) & 3) {
   default: llvm_unreachable("Invalid command number.");
   case 0:
     // DBG_VALUE, DBG_LABEL, BUNDLE, LIFETIME_START, LIFETIME_END, FENTRY_CAL...
@@ -832,18 +1738,32 @@ void RISCVInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, cons
   }
 
 
-  // Fragment 1 encoded into 1 bits for 2 unique commands.
-  if ((Bits >> 14) & 1) {
-    // PseudoCALL, PseudoTAIL, C_J, C_JAL, C_JALR, C_JR, C_NOP_HINT, C_SLLI64...
-    return;
-  } else {
+  // Fragment 1 encoded into 2 bits for 4 unique commands.
+  switch ((Bits >> 15) & 3) {
+  default: llvm_unreachable("Invalid command number.");
+  case 0:
     // PseudoAddTPRel, PseudoCALLReg, PseudoFLD, PseudoFLW, PseudoFSD, Pseudo...
     O << ", ";
+    break;
+  case 1:
+    // PseudoCALL, PseudoTAIL, C_J, C_JAL, C_JALR, C_JR, C_NEG, C_NOP_HINT, C...
+    return;
+    break;
+  case 2:
+    // VID_V
+    printVMaskReg(MI, 1, STI, O);
+    return;
+    break;
+  case 3:
+    // VL1R_V, VLBFF_V, VLBUFF_V, VLBU_V, VLB_V, VLEFF_V, VLE_V, VLHFF_V, VLH...
+    O << ", (";
+    printOperand(MI, 1, STI, O);
+    break;
   }
 
 
-  // Fragment 2 encoded into 3 bits for 5 unique commands.
-  switch ((Bits >> 15) & 7) {
+  // Fragment 2 encoded into 3 bits for 7 unique commands.
+  switch ((Bits >> 17) & 7) {
   default: llvm_unreachable("Invalid command number.");
   case 0:
     // PseudoAddTPRel, PseudoCALLReg, PseudoLA, PseudoLA_TLS_GD, PseudoLA_TLS...
@@ -870,11 +1790,22 @@ void RISCVInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, cons
     printAtomicMemOp(MI, 1, STI, O);
     return;
     break;
+  case 5:
+    // VL1R_V, VLBFF_V, VLBUFF_V, VLBU_V, VLB_V, VLEFF_V, VLE_V, VLHFF_V, VLH...
+    O << ')';
+    break;
+  case 6:
+    // VLSBU_V, VLSB_V, VLSE_V, VLSHU_V, VLSH_V, VLSWU_V, VLSW_V, VLXBU_V, VL...
+    O << "), ";
+    printOperand(MI, 2, STI, O);
+    printVMaskReg(MI, 3, STI, O);
+    return;
+    break;
   }
 
 
-  // Fragment 3 encoded into 2 bits for 3 unique commands.
-  switch ((Bits >> 18) & 3) {
+  // Fragment 3 encoded into 2 bits for 4 unique commands.
+  switch ((Bits >> 20) & 3) {
   default: llvm_unreachable("Invalid command number.");
   case 0:
     // PseudoAddTPRel, PseudoFLD, PseudoFLW, PseudoFSD, PseudoFSW, PseudoSB, ...
@@ -891,20 +1822,24 @@ void RISCVInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, cons
     O << ')';
     return;
     break;
+  case 3:
+    // VFCLASS_V, VFCVT_F_XU_V, VFCVT_F_X_V, VFCVT_XU_F_V, VFCVT_X_F_V, VFIRS...
+    printVMaskReg(MI, 2, STI, O);
+    return;
+    break;
   }
 
 
-  // Fragment 4 encoded into 2 bits for 4 unique commands.
-  switch ((Bits >> 20) & 3) {
+  // Fragment 4 encoded into 3 bits for 6 unique commands.
+  switch ((Bits >> 22) & 7) {
   default: llvm_unreachable("Invalid command number.");
   case 0:
-    // PseudoAddTPRel, ADD, ADDI, ADDIW, ADDW, AND, ANDI, BEQ, BGE, BGEU, BLT...
+    // PseudoAddTPRel, ADD, ADDI, ADDIW, ADDIWU, ADDUW, ADDW, ADDWU, AND, AND...
     printOperand(MI, 2, STI, O);
     break;
   case 1:
     // PseudoFLD, PseudoFLW, PseudoFSD, PseudoFSW, PseudoSB, PseudoSD, Pseudo...
     printOperand(MI, 1, STI, O);
-    return;
     break;
   case 2:
     // AMOADD_D, AMOADD_D_AQ, AMOADD_D_AQ_RL, AMOADD_D_RL, AMOADD_W, AMOADD_W...
@@ -916,38 +1851,64 @@ void RISCVInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, cons
     printFRMArg(MI, 2, STI, O);
     return;
     break;
+  case 4:
+    // FSL, FSLW, FSR, FSRW
+    printOperand(MI, 3, STI, O);
+    O << ", ";
+    printOperand(MI, 2, STI, O);
+    return;
+    break;
+  case 5:
+    // VSETVLI
+    printVTypeI(MI, 2, STI, O);
+    return;
+    break;
   }
 
 
-  // Fragment 5 encoded into 1 bits for 2 unique commands.
-  if ((Bits >> 22) & 1) {
-    // ADD, ADDI, ADDIW, ADDW, AND, ANDI, BEQ, BGE, BGEU, BLT, BLTU, BNE, C_A...
-    return;
-  } else {
-    // PseudoAddTPRel, FADD_D, FADD_S, FDIV_D, FDIV_S, FMADD_D, FMADD_S, FMSU...
+  // Fragment 5 encoded into 2 bits for 4 unique commands.
+  switch ((Bits >> 25) & 3) {
+  default: llvm_unreachable("Invalid command number.");
+  case 0:
+    // PseudoAddTPRel, CMIX, CMOV, FADD_D, FADD_S, FDIV_D, FDIV_S, FMADD_D, F...
     O << ", ";
+    break;
+  case 1:
+    // PseudoFLD, PseudoFLW, PseudoFSD, PseudoFSW, PseudoSB, PseudoSD, Pseudo...
+    return;
+    break;
+  case 2:
+    // VAADDU_VV, VAADDU_VX, VAADD_VV, VAADD_VX, VADD_VI, VADD_VV, VADD_VX, V...
+    printVMaskReg(MI, 3, STI, O);
+    return;
+    break;
+  case 3:
+    // VADC_VIM, VADC_VVM, VADC_VXM, VFMERGE_VFM, VMADC_VIM, VMADC_VVM, VMADC...
+    O << ", v0";
+    return;
+    break;
   }
 
 
   // Fragment 6 encoded into 1 bits for 2 unique commands.
-  if ((Bits >> 23) & 1) {
+  if ((Bits >> 27) & 1) {
     // FADD_D, FADD_S, FDIV_D, FDIV_S, FMUL_D, FMUL_S, FSUB_D, FSUB_S
     printFRMArg(MI, 3, STI, O);
     return;
   } else {
-    // PseudoAddTPRel, FMADD_D, FMADD_S, FMSUB_D, FMSUB_S, FNMADD_D, FNMADD_S...
+    // PseudoAddTPRel, CMIX, CMOV, FMADD_D, FMADD_S, FMSUB_D, FMSUB_S, FNMADD...
     printOperand(MI, 3, STI, O);
   }
 
 
   // Fragment 7 encoded into 1 bits for 2 unique commands.
-  if ((Bits >> 24) & 1) {
+  if ((Bits >> 28) & 1) {
     // FMADD_D, FMADD_S, FMSUB_D, FMSUB_S, FNMADD_D, FNMADD_S, FNMSUB_D, FNMS...
     O << ", ";
     printFRMArg(MI, 4, STI, O);
     return;
   } else {
-    // PseudoAddTPRel
+    // PseudoAddTPRel, CMIX, CMOV, FSRI, FSRIW
     return;
   }
 
@@ -959,7 +1920,7 @@ void RISCVInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, cons
 /// for the specified register.
 const char *RISCVInstPrinter::
 getRegisterName(unsigned RegNo, unsigned AltIdx) {
-  assert(RegNo && RegNo < 97 && "Invalid register number!");
+  assert(RegNo && RegNo < 159 && "Invalid register number!");
 
 
 #ifdef __GNUC__
@@ -969,54 +1930,93 @@ getRegisterName(unsigned RegNo, unsigned AltIdx) {
   static const char AsmStrsABIRegAltName[] = {
   /* 0 */ "fs10\0"
   /* 5 */ "ft10\0"
-  /* 10 */ "fa0\0"
-  /* 14 */ "fs0\0"
-  /* 18 */ "ft0\0"
-  /* 22 */ "fs11\0"
-  /* 27 */ "ft11\0"
-  /* 32 */ "fa1\0"
-  /* 36 */ "fs1\0"
-  /* 40 */ "ft1\0"
-  /* 44 */ "fa2\0"
-  /* 48 */ "fs2\0"
-  /* 52 */ "ft2\0"
-  /* 56 */ "fa3\0"
-  /* 60 */ "fs3\0"
-  /* 64 */ "ft3\0"
-  /* 68 */ "fa4\0"
-  /* 72 */ "fs4\0"
-  /* 76 */ "ft4\0"
-  /* 80 */ "fa5\0"
-  /* 84 */ "fs5\0"
-  /* 88 */ "ft5\0"
-  /* 92 */ "fa6\0"
-  /* 96 */ "fs6\0"
-  /* 100 */ "ft6\0"
-  /* 104 */ "fa7\0"
-  /* 108 */ "fs7\0"
-  /* 112 */ "ft7\0"
-  /* 116 */ "fs8\0"
-  /* 120 */ "ft8\0"
-  /* 124 */ "fs9\0"
-  /* 128 */ "ft9\0"
-  /* 132 */ "ra\0"
-  /* 135 */ "zero\0"
-  /* 140 */ "gp\0"
-  /* 143 */ "sp\0"
-  /* 146 */ "tp\0"
+  /* 10 */ "v10\0"
+  /* 14 */ "v20\0"
+  /* 18 */ "v30\0"
+  /* 22 */ "fa0\0"
+  /* 26 */ "fs0\0"
+  /* 30 */ "ft0\0"
+  /* 34 */ "v0\0"
+  /* 37 */ "fs11\0"
+  /* 42 */ "ft11\0"
+  /* 47 */ "v11\0"
+  /* 51 */ "v21\0"
+  /* 55 */ "v31\0"
+  /* 59 */ "fa1\0"
+  /* 63 */ "fs1\0"
+  /* 67 */ "ft1\0"
+  /* 71 */ "v1\0"
+  /* 74 */ "v12\0"
+  /* 78 */ "v22\0"
+  /* 82 */ "fa2\0"
+  /* 86 */ "fs2\0"
+  /* 90 */ "ft2\0"
+  /* 94 */ "v2\0"
+  /* 97 */ "v13\0"
+  /* 101 */ "v23\0"
+  /* 105 */ "fa3\0"
+  /* 109 */ "fs3\0"
+  /* 113 */ "ft3\0"
+  /* 117 */ "v3\0"
+  /* 120 */ "v14\0"
+  /* 124 */ "v24\0"
+  /* 128 */ "fa4\0"
+  /* 132 */ "fs4\0"
+  /* 136 */ "ft4\0"
+  /* 140 */ "v4\0"
+  /* 143 */ "v15\0"
+  /* 147 */ "v25\0"
+  /* 151 */ "fa5\0"
+  /* 155 */ "fs5\0"
+  /* 159 */ "ft5\0"
+  /* 163 */ "v5\0"
+  /* 166 */ "v16\0"
+  /* 170 */ "v26\0"
+  /* 174 */ "fa6\0"
+  /* 178 */ "fs6\0"
+  /* 182 */ "ft6\0"
+  /* 186 */ "v6\0"
+  /* 189 */ "v17\0"
+  /* 193 */ "v27\0"
+  /* 197 */ "fa7\0"
+  /* 201 */ "fs7\0"
+  /* 205 */ "ft7\0"
+  /* 209 */ "v7\0"
+  /* 212 */ "v18\0"
+  /* 216 */ "v28\0"
+  /* 220 */ "fs8\0"
+  /* 224 */ "ft8\0"
+  /* 228 */ "v8\0"
+  /* 231 */ "v19\0"
+  /* 235 */ "v29\0"
+  /* 239 */ "fs9\0"
+  /* 243 */ "ft9\0"
+  /* 247 */ "v9\0"
+  /* 250 */ "ra\0"
+  /* 253 */ "vtype\0"
+  /* 259 */ "vl\0"
+  /* 262 */ "zero\0"
+  /* 267 */ "gp\0"
+  /* 270 */ "sp\0"
+  /* 273 */ "tp\0"
 };
 #ifdef __GNUC__
 #pragma GCC diagnostic pop
 #endif
 
-  static const uint8_t RegAsmOffsetABIRegAltName[] = {
-    135, 132, 143, 140, 146, 19, 41, 53, 15, 37, 11, 33, 45, 57, 
-    69, 81, 93, 105, 49, 61, 73, 85, 97, 109, 117, 125, 1, 23, 
-    65, 77, 89, 101, 18, 40, 52, 64, 76, 88, 100, 112, 14, 36, 
-    10, 32, 44, 56, 68, 80, 92, 104, 48, 60, 72, 84, 96, 108, 
-    116, 124, 0, 22, 120, 128, 5, 27, 18, 40, 52, 64, 76, 88, 
-    100, 112, 14, 36, 10, 32, 44, 56, 68, 80, 92, 104, 48, 60, 
-    72, 84, 96, 108, 116, 124, 0, 22, 120, 128, 5, 27, 
+  static const uint16_t RegAsmOffsetABIRegAltName[] = {
+    259, 253, 34, 71, 94, 117, 140, 163, 186, 209, 228, 247, 10, 47, 
+    74, 97, 120, 143, 166, 189, 212, 231, 14, 51, 78, 101, 124, 147, 
+    170, 193, 216, 235, 18, 55, 262, 250, 270, 267, 273, 31, 68, 91, 
+    27, 64, 23, 60, 83, 106, 129, 152, 175, 198, 87, 110, 133, 156, 
+    179, 202, 221, 240, 1, 38, 114, 137, 160, 183, 30, 67, 90, 113, 
+    136, 159, 182, 205, 26, 63, 22, 59, 82, 105, 128, 151, 174, 197, 
+    86, 109, 132, 155, 178, 201, 220, 239, 0, 37, 224, 243, 5, 42, 
+    30, 67, 90, 113, 136, 159, 182, 205, 26, 63, 22, 59, 82, 105, 
+    128, 151, 174, 197, 86, 109, 132, 155, 178, 201, 220, 239, 0, 37, 
+    224, 243, 5, 42, 34, 34, 34, 94, 140, 140, 186, 228, 228, 228, 
+    10, 74, 74, 120, 166, 166, 166, 212, 14, 14, 78, 124, 124, 124, 
+    170, 216, 216, 18, 
   };
 
 
@@ -1026,82 +2026,121 @@ getRegisterName(unsigned RegNo, unsigned AltIdx) {
 #endif
   static const char AsmStrsNoRegAltName[] = {
   /* 0 */ "f10\0"
-  /* 4 */ "x10\0"
-  /* 8 */ "f20\0"
-  /* 12 */ "x20\0"
-  /* 16 */ "f30\0"
-  /* 20 */ "x30\0"
-  /* 24 */ "f0\0"
-  /* 27 */ "x0\0"
-  /* 30 */ "f11\0"
-  /* 34 */ "x11\0"
-  /* 38 */ "f21\0"
-  /* 42 */ "x21\0"
-  /* 46 */ "f31\0"
-  /* 50 */ "x31\0"
-  /* 54 */ "f1\0"
-  /* 57 */ "x1\0"
-  /* 60 */ "f12\0"
-  /* 64 */ "x12\0"
-  /* 68 */ "f22\0"
-  /* 72 */ "x22\0"
-  /* 76 */ "f2\0"
-  /* 79 */ "x2\0"
-  /* 82 */ "f13\0"
-  /* 86 */ "x13\0"
-  /* 90 */ "f23\0"
-  /* 94 */ "x23\0"
-  /* 98 */ "f3\0"
-  /* 101 */ "x3\0"
-  /* 104 */ "f14\0"
-  /* 108 */ "x14\0"
-  /* 112 */ "f24\0"
-  /* 116 */ "x24\0"
-  /* 120 */ "f4\0"
-  /* 123 */ "x4\0"
-  /* 126 */ "f15\0"
-  /* 130 */ "x15\0"
-  /* 134 */ "f25\0"
-  /* 138 */ "x25\0"
-  /* 142 */ "f5\0"
-  /* 145 */ "x5\0"
-  /* 148 */ "f16\0"
-  /* 152 */ "x16\0"
-  /* 156 */ "f26\0"
-  /* 160 */ "x26\0"
-  /* 164 */ "f6\0"
-  /* 167 */ "x6\0"
-  /* 170 */ "f17\0"
-  /* 174 */ "x17\0"
-  /* 178 */ "f27\0"
-  /* 182 */ "x27\0"
-  /* 186 */ "f7\0"
-  /* 189 */ "x7\0"
-  /* 192 */ "f18\0"
-  /* 196 */ "x18\0"
-  /* 200 */ "f28\0"
-  /* 204 */ "x28\0"
-  /* 208 */ "f8\0"
-  /* 211 */ "x8\0"
-  /* 214 */ "f19\0"
-  /* 218 */ "x19\0"
-  /* 222 */ "f29\0"
-  /* 226 */ "x29\0"
-  /* 230 */ "f9\0"
-  /* 233 */ "x9\0"
+  /* 4 */ "v10\0"
+  /* 8 */ "x10\0"
+  /* 12 */ "f20\0"
+  /* 16 */ "v20\0"
+  /* 20 */ "x20\0"
+  /* 24 */ "f30\0"
+  /* 28 */ "v30\0"
+  /* 32 */ "x30\0"
+  /* 36 */ "f0\0"
+  /* 39 */ "v0\0"
+  /* 42 */ "x0\0"
+  /* 45 */ "f11\0"
+  /* 49 */ "v11\0"
+  /* 53 */ "x11\0"
+  /* 57 */ "f21\0"
+  /* 61 */ "v21\0"
+  /* 65 */ "x21\0"
+  /* 69 */ "f31\0"
+  /* 73 */ "v31\0"
+  /* 77 */ "x31\0"
+  /* 81 */ "f1\0"
+  /* 84 */ "v1\0"
+  /* 87 */ "x1\0"
+  /* 90 */ "f12\0"
+  /* 94 */ "v12\0"
+  /* 98 */ "x12\0"
+  /* 102 */ "f22\0"
+  /* 106 */ "v22\0"
+  /* 110 */ "x22\0"
+  /* 114 */ "f2\0"
+  /* 117 */ "v2\0"
+  /* 120 */ "x2\0"
+  /* 123 */ "f13\0"
+  /* 127 */ "v13\0"
+  /* 131 */ "x13\0"
+  /* 135 */ "f23\0"
+  /* 139 */ "v23\0"
+  /* 143 */ "x23\0"
+  /* 147 */ "f3\0"
+  /* 150 */ "v3\0"
+  /* 153 */ "x3\0"
+  /* 156 */ "f14\0"
+  /* 160 */ "v14\0"
+  /* 164 */ "x14\0"
+  /* 168 */ "f24\0"
+  /* 172 */ "v24\0"
+  /* 176 */ "x24\0"
+  /* 180 */ "f4\0"
+  /* 183 */ "v4\0"
+  /* 186 */ "x4\0"
+  /* 189 */ "f15\0"
+  /* 193 */ "v15\0"
+  /* 197 */ "x15\0"
+  /* 201 */ "f25\0"
+  /* 205 */ "v25\0"
+  /* 209 */ "x25\0"
+  /* 213 */ "f5\0"
+  /* 216 */ "v5\0"
+  /* 219 */ "x5\0"
+  /* 222 */ "f16\0"
+  /* 226 */ "v16\0"
+  /* 230 */ "x16\0"
+  /* 234 */ "f26\0"
+  /* 238 */ "v26\0"
+  /* 242 */ "x26\0"
+  /* 246 */ "f6\0"
+  /* 249 */ "v6\0"
+  /* 252 */ "x6\0"
+  /* 255 */ "f17\0"
+  /* 259 */ "v17\0"
+  /* 263 */ "x17\0"
+  /* 267 */ "f27\0"
+  /* 271 */ "v27\0"
+  /* 275 */ "x27\0"
+  /* 279 */ "f7\0"
+  /* 282 */ "v7\0"
+  /* 285 */ "x7\0"
+  /* 288 */ "f18\0"
+  /* 292 */ "v18\0"
+  /* 296 */ "x18\0"
+  /* 300 */ "f28\0"
+  /* 304 */ "v28\0"
+  /* 308 */ "x28\0"
+  /* 312 */ "f8\0"
+  /* 315 */ "v8\0"
+  /* 318 */ "x8\0"
+  /* 321 */ "f19\0"
+  /* 325 */ "v19\0"
+  /* 329 */ "x19\0"
+  /* 333 */ "f29\0"
+  /* 337 */ "v29\0"
+  /* 341 */ "x29\0"
+  /* 345 */ "f9\0"
+  /* 348 */ "v9\0"
+  /* 351 */ "x9\0"
+  /* 354 */ "vtype\0"
+  /* 360 */ "vl\0"
 };
 #ifdef __GNUC__
 #pragma GCC diagnostic pop
 #endif
 
-  static const uint8_t RegAsmOffsetNoRegAltName[] = {
-    27, 57, 79, 101, 123, 145, 167, 189, 211, 233, 4, 34, 64, 86, 
-    108, 130, 152, 174, 196, 218, 12, 42, 72, 94, 116, 138, 160, 182, 
-    204, 226, 20, 50, 24, 54, 76, 98, 120, 142, 164, 186, 208, 230, 
-    0, 30, 60, 82, 104, 126, 148, 170, 192, 214, 8, 38, 68, 90, 
-    112, 134, 156, 178, 200, 222, 16, 46, 24, 54, 76, 98, 120, 142, 
-    164, 186, 208, 230, 0, 30, 60, 82, 104, 126, 148, 170, 192, 214, 
-    8, 38, 68, 90, 112, 134, 156, 178, 200, 222, 16, 46, 
+  static const uint16_t RegAsmOffsetNoRegAltName[] = {
+    360, 354, 39, 84, 117, 150, 183, 216, 249, 282, 315, 348, 4, 49, 
+    94, 127, 160, 193, 226, 259, 292, 325, 16, 61, 106, 139, 172, 205, 
+    238, 271, 304, 337, 28, 73, 42, 87, 120, 153, 186, 219, 252, 285, 
+    318, 351, 8, 53, 98, 131, 164, 197, 230, 263, 296, 329, 20, 65, 
+    110, 143, 176, 209, 242, 275, 308, 341, 32, 77, 36, 81, 114, 147, 
+    180, 213, 246, 279, 312, 345, 0, 45, 90, 123, 156, 189, 222, 255, 
+    288, 321, 12, 57, 102, 135, 168, 201, 234, 267, 300, 333, 24, 69, 
+    36, 81, 114, 147, 180, 213, 246, 279, 312, 345, 0, 45, 90, 123, 
+    156, 189, 222, 255, 288, 321, 12, 57, 102, 135, 168, 201, 234, 267, 
+    300, 333, 24, 69, 39, 39, 39, 117, 183, 183, 249, 315, 315, 315, 
+    4, 94, 94, 160, 226, 226, 226, 292, 16, 16, 106, 172, 172, 172, 
+    238, 304, 304, 28, 
   };
 
   switch(AltIdx) {
@@ -1123,69 +2162,83 @@ getRegisterName(unsigned RegNo, unsigned AltIdx) {
 static bool RISCVInstPrinterValidateMCOperand(const MCOperand &MCOp,
                   const MCSubtargetInfo &STI,
                   unsigned PredicateIndex);
-bool RISCVInstPrinter::printAliasInstr(const MCInst *MI, const MCSubtargetInfo &STI, raw_ostream &OS) {
+bool RISCVInstPrinter::printAliasInstr(const MCInst *MI, uint64_t Address, const MCSubtargetInfo &STI, raw_ostream &OS) {
   static const PatternsForOpcode OpToPatterns[] = {
     {RISCV::ADDI, 0, 2 },
     {RISCV::ADDIW, 2, 1 },
-    {RISCV::BEQ, 3, 1 },
-    {RISCV::BGE, 4, 2 },
-    {RISCV::BLT, 6, 2 },
-    {RISCV::BNE, 8, 1 },
-    {RISCV::CSRRC, 9, 1 },
-    {RISCV::CSRRCI, 10, 1 },
-    {RISCV::CSRRS, 11, 11 },
-    {RISCV::CSRRSI, 22, 1 },
-    {RISCV::CSRRW, 23, 7 },
-    {RISCV::CSRRWI, 30, 5 },
-    {RISCV::FADD_D, 35, 1 },
-    {RISCV::FADD_S, 36, 1 },
-    {RISCV::FCVT_D_L, 37, 1 },
-    {RISCV::FCVT_D_LU, 38, 1 },
-    {RISCV::FCVT_LU_D, 39, 1 },
-    {RISCV::FCVT_LU_S, 40, 1 },
-    {RISCV::FCVT_L_D, 41, 1 },
-    {RISCV::FCVT_L_S, 42, 1 },
-    {RISCV::FCVT_S_D, 43, 1 },
-    {RISCV::FCVT_S_L, 44, 1 },
-    {RISCV::FCVT_S_LU, 45, 1 },
-    {RISCV::FCVT_S_W, 46, 1 },
-    {RISCV::FCVT_S_WU, 47, 1 },
-    {RISCV::FCVT_WU_D, 48, 1 },
-    {RISCV::FCVT_WU_S, 49, 1 },
-    {RISCV::FCVT_W_D, 50, 1 },
-    {RISCV::FCVT_W_S, 51, 1 },
-    {RISCV::FDIV_D, 52, 1 },
-    {RISCV::FDIV_S, 53, 1 },
-    {RISCV::FENCE, 54, 1 },
-    {RISCV::FMADD_D, 55, 1 },
-    {RISCV::FMADD_S, 56, 1 },
-    {RISCV::FMSUB_D, 57, 1 },
-    {RISCV::FMSUB_S, 58, 1 },
-    {RISCV::FMUL_D, 59, 1 },
-    {RISCV::FMUL_S, 60, 1 },
-    {RISCV::FNMADD_D, 61, 1 },
-    {RISCV::FNMADD_S, 62, 1 },
-    {RISCV::FNMSUB_D, 63, 1 },
-    {RISCV::FNMSUB_S, 64, 1 },
-    {RISCV::FSGNJN_D, 65, 1 },
-    {RISCV::FSGNJN_S, 66, 1 },
-    {RISCV::FSGNJX_D, 67, 1 },
-    {RISCV::FSGNJX_S, 68, 1 },
-    {RISCV::FSGNJ_D, 69, 1 },
-    {RISCV::FSGNJ_S, 70, 1 },
-    {RISCV::FSQRT_D, 71, 1 },
-    {RISCV::FSQRT_S, 72, 1 },
-    {RISCV::FSUB_D, 73, 1 },
-    {RISCV::FSUB_S, 74, 1 },
-    {RISCV::JAL, 75, 2 },
-    {RISCV::JALR, 77, 6 },
-    {RISCV::SFENCE_VMA, 83, 2 },
-    {RISCV::SLT, 85, 2 },
-    {RISCV::SLTIU, 87, 1 },
-    {RISCV::SLTU, 88, 1 },
-    {RISCV::SUB, 89, 1 },
-    {RISCV::SUBW, 90, 1 },
-    {RISCV::XORI, 91, 1 },
+    {RISCV::ANDI, 3, 2 },
+    {RISCV::BEQ, 5, 1 },
+    {RISCV::BGE, 6, 2 },
+    {RISCV::BLT, 8, 2 },
+    {RISCV::BNE, 10, 1 },
+    {RISCV::CSRRC, 11, 1 },
+    {RISCV::CSRRCI, 12, 1 },
+    {RISCV::CSRRS, 13, 11 },
+    {RISCV::CSRRSI, 24, 1 },
+    {RISCV::CSRRW, 25, 7 },
+    {RISCV::CSRRWI, 32, 5 },
+    {RISCV::FADD_D, 37, 1 },
+    {RISCV::FADD_S, 38, 1 },
+    {RISCV::FCVT_D_L, 39, 1 },
+    {RISCV::FCVT_D_LU, 40, 1 },
+    {RISCV::FCVT_LU_D, 41, 1 },
+    {RISCV::FCVT_LU_S, 42, 1 },
+    {RISCV::FCVT_L_D, 43, 1 },
+    {RISCV::FCVT_L_S, 44, 1 },
+    {RISCV::FCVT_S_D, 45, 1 },
+    {RISCV::FCVT_S_L, 46, 1 },
+    {RISCV::FCVT_S_LU, 47, 1 },
+    {RISCV::FCVT_S_W, 48, 1 },
+    {RISCV::FCVT_S_WU, 49, 1 },
+    {RISCV::FCVT_WU_D, 50, 1 },
+    {RISCV::FCVT_WU_S, 51, 1 },
+    {RISCV::FCVT_W_D, 52, 1 },
+    {RISCV::FCVT_W_S, 53, 1 },
+    {RISCV::FDIV_D, 54, 1 },
+    {RISCV::FDIV_S, 55, 1 },
+    {RISCV::FENCE, 56, 1 },
+    {RISCV::FMADD_D, 57, 1 },
+    {RISCV::FMADD_S, 58, 1 },
+    {RISCV::FMSUB_D, 59, 1 },
+    {RISCV::FMSUB_S, 60, 1 },
+    {RISCV::FMUL_D, 61, 1 },
+    {RISCV::FMUL_S, 62, 1 },
+    {RISCV::FNMADD_D, 63, 1 },
+    {RISCV::FNMADD_S, 64, 1 },
+    {RISCV::FNMSUB_D, 65, 1 },
+    {RISCV::FNMSUB_S, 66, 1 },
+    {RISCV::FSGNJN_D, 67, 1 },
+    {RISCV::FSGNJN_S, 68, 1 },
+    {RISCV::FSGNJX_D, 69, 1 },
+    {RISCV::FSGNJX_S, 70, 1 },
+    {RISCV::FSGNJ_D, 71, 1 },
+    {RISCV::FSGNJ_S, 72, 1 },
+    {RISCV::FSQRT_D, 73, 1 },
+    {RISCV::FSQRT_S, 74, 1 },
+    {RISCV::FSUB_D, 75, 1 },
+    {RISCV::FSUB_S, 76, 1 },
+    {RISCV::GORCI, 77, 26 },
+    {RISCV::GREVI, 103, 26 },
+    {RISCV::JAL, 129, 2 },
+    {RISCV::JALR, 131, 6 },
+    {RISCV::PACK, 137, 2 },
+    {RISCV::PACKW, 139, 1 },
+    {RISCV::SFENCE_VMA, 140, 2 },
+    {RISCV::SHFLI, 142, 19 },
+    {RISCV::SLT, 161, 2 },
+    {RISCV::SLTIU, 163, 1 },
+    {RISCV::SLTU, 164, 1 },
+    {RISCV::SUB, 165, 1 },
+    {RISCV::SUBW, 166, 1 },
+    {RISCV::UNSHFLI, 167, 19 },
+    {RISCV::VMAND_MM, 186, 1 },
+    {RISCV::VMNAND_MM, 187, 1 },
+    {RISCV::VMXNOR_MM, 188, 1 },
+    {RISCV::VMXOR_MM, 189, 1 },
+    {RISCV::VWADDU_VX, 190, 1 },
+    {RISCV::VWADD_VX, 191, 1 },
+    {RISCV::VXOR_VI, 192, 1 },
+    {RISCV::XORI, 193, 1 },
   };
 
   static const AliasPattern Patterns[] = {
@@ -1194,154 +2247,270 @@ bool RISCVInstPrinter::printAliasInstr(const MCInst *MI, const MCSubtargetInfo &
     {4, 3, 3, 3 },
     // RISCV::ADDIW - 2
     {14, 6, 3, 4 },
-    // RISCV::BEQ - 3
-    {28, 10, 3, 3 },
-    // RISCV::BGE - 4
-    {40, 13, 3, 3 },
-    {52, 16, 3, 3 },
-    // RISCV::BLT - 6
-    {64, 19, 3, 3 },
-    {76, 22, 3, 3 },
-    // RISCV::BNE - 8
-    {88, 25, 3, 3 },
-    // RISCV::CSRRC - 9
-    {100, 28, 3, 3 },
-    // RISCV::CSRRCI - 10
-    {114, 31, 3, 2 },
-    // RISCV::CSRRS - 11
-    {129, 33, 3, 4 },
-    {138, 37, 3, 4 },
-    {146, 41, 3, 4 },
-    {157, 45, 3, 3 },
-    {170, 48, 3, 3 },
-    {181, 51, 3, 3 },
-    {191, 54, 3, 4 },
-    {205, 58, 3, 4 },
-    {217, 62, 3, 4 },
-    {228, 66, 3, 3 },
-    {242, 69, 3, 3 },
-    // RISCV::CSRRSI - 22
-    {256, 72, 3, 2 },
-    // RISCV::CSRRW - 23
-    {271, 74, 3, 4 },
-    {280, 78, 3, 4 },
-    {288, 82, 3, 4 },
-    {299, 86, 3, 3 },
-    {313, 89, 3, 4 },
-    {326, 93, 3, 4 },
-    {338, 97, 3, 4 },
-    // RISCV::CSRRWI - 30
-    {353, 101, 3, 3 },
-    {362, 104, 3, 3 },
-    {374, 107, 3, 2 },
-    {389, 109, 3, 3 },
-    {402, 112, 3, 3 },
-    // RISCV::FADD_D - 35
-    {418, 115, 4, 5 },
-    // RISCV::FADD_S - 36
-    {436, 120, 4, 5 },
-    // RISCV::FCVT_D_L - 37
-    {454, 125, 3, 5 },
-    // RISCV::FCVT_D_LU - 38
-    {470, 130, 3, 5 },
-    // RISCV::FCVT_LU_D - 39
-    {487, 135, 3, 5 },
-    // RISCV::FCVT_LU_S - 40
-    {504, 140, 3, 5 },
-    // RISCV::FCVT_L_D - 41
-    {521, 145, 3, 5 },
-    // RISCV::FCVT_L_S - 42
-    {537, 150, 3, 5 },
-    // RISCV::FCVT_S_D - 43
-    {553, 155, 3, 4 },
-    // RISCV::FCVT_S_L - 44
-    {569, 159, 3, 5 },
-    // RISCV::FCVT_S_LU - 45
-    {585, 164, 3, 5 },
-    // RISCV::FCVT_S_W - 46
-    {602, 169, 3, 4 },
-    // RISCV::FCVT_S_WU - 47
-    {618, 173, 3, 4 },
-    // RISCV::FCVT_WU_D - 48
-    {635, 177, 3, 4 },
-    // RISCV::FCVT_WU_S - 49
-    {652, 181, 3, 4 },
-    // RISCV::FCVT_W_D - 50
-    {669, 185, 3, 4 },
-    // RISCV::FCVT_W_S - 51
-    {685, 189, 3, 4 },
-    // RISCV::FDIV_D - 52
-    {701, 193, 4, 5 },
-    // RISCV::FDIV_S - 53
-    {719, 198, 4, 5 },
-    // RISCV::FENCE - 54
-    {737, 203, 2, 2 },
-    // RISCV::FMADD_D - 55
-    {743, 205, 5, 6 },
-    // RISCV::FMADD_S - 56
-    {766, 211, 5, 6 },
-    // RISCV::FMSUB_D - 57
-    {789, 217, 5, 6 },
-    // RISCV::FMSUB_S - 58
-    {812, 223, 5, 6 },
-    // RISCV::FMUL_D - 59
-    {835, 229, 4, 5 },
-    // RISCV::FMUL_S - 60
-    {853, 234, 4, 5 },
-    // RISCV::FNMADD_D - 61
-    {871, 239, 5, 6 },
-    // RISCV::FNMADD_S - 62
-    {895, 245, 5, 6 },
-    // RISCV::FNMSUB_D - 63
-    {919, 251, 5, 6 },
-    // RISCV::FNMSUB_S - 64
-    {943, 257, 5, 6 },
-    // RISCV::FSGNJN_D - 65
-    {967, 263, 3, 4 },
-    // RISCV::FSGNJN_S - 66
-    {981, 267, 3, 4 },
-    // RISCV::FSGNJX_D - 67
-    {995, 271, 3, 4 },
-    // RISCV::FSGNJX_S - 68
-    {1009, 275, 3, 4 },
-    // RISCV::FSGNJ_D - 69
-    {1023, 279, 3, 4 },
-    // RISCV::FSGNJ_S - 70
-    {1036, 283, 3, 4 },
-    // RISCV::FSQRT_D - 71
-    {1049, 287, 3, 4 },
-    // RISCV::FSQRT_S - 72
-    {1064, 291, 3, 4 },
-    // RISCV::FSUB_D - 73
-    {1079, 295, 4, 5 },
-    // RISCV::FSUB_S - 74
-    {1097, 300, 4, 5 },
-    // RISCV::JAL - 75
-    {1115, 305, 2, 2 },
-    {1120, 307, 2, 2 },
-    // RISCV::JALR - 77
-    {1127, 309, 3, 3 },
-    {1131, 312, 3, 3 },
-    {1137, 315, 3, 3 },
-    {1145, 318, 3, 3 },
-    {1157, 321, 3, 3 },
-    {1167, 324, 3, 3 },
-    // RISCV::SFENCE_VMA - 83
-    {1179, 327, 2, 2 },
-    {1190, 329, 2, 2 },
-    // RISCV::SLT - 85
-    {1204, 331, 3, 3 },
-    {1216, 334, 3, 3 },
-    // RISCV::SLTIU - 87
-    {1228, 337, 3, 3 },
-    // RISCV::SLTU - 88
-    {1240, 340, 3, 3 },
-    // RISCV::SUB - 89
-    {1252, 343, 3, 3 },
-    // RISCV::SUBW - 90
-    {1263, 346, 3, 4 },
-    // RISCV::XORI - 91
-    {1275, 350, 3, 3 },
+    // RISCV::ANDI - 3
+    {28, 10, 3, 5 },
+    {28, 15, 3, 5 },
+    // RISCV::BEQ - 5
+    {42, 20, 3, 3 },
+    // RISCV::BGE - 6
+    {54, 23, 3, 3 },
+    {66, 26, 3, 3 },
+    // RISCV::BLT - 8
+    {78, 29, 3, 3 },
+    {90, 32, 3, 3 },
+    // RISCV::BNE - 10
+    {102, 35, 3, 3 },
+    // RISCV::CSRRC - 11
+    {114, 38, 3, 3 },
+    // RISCV::CSRRCI - 12
+    {128, 41, 3, 2 },
+    // RISCV::CSRRS - 13
+    {143, 43, 3, 4 },
+    {152, 47, 3, 4 },
+    {160, 51, 3, 4 },
+    {171, 55, 3, 3 },
+    {184, 58, 3, 3 },
+    {195, 61, 3, 3 },
+    {205, 64, 3, 4 },
+    {219, 68, 3, 4 },
+    {231, 72, 3, 4 },
+    {242, 76, 3, 3 },
+    {256, 79, 3, 3 },
+    // RISCV::CSRRSI - 24
+    {270, 82, 3, 2 },
+    // RISCV::CSRRW - 25
+    {285, 84, 3, 4 },
+    {294, 88, 3, 4 },
+    {302, 92, 3, 4 },
+    {313, 96, 3, 3 },
+    {327, 99, 3, 4 },
+    {340, 103, 3, 4 },
+    {352, 107, 3, 4 },
+    // RISCV::CSRRWI - 32
+    {367, 111, 3, 3 },
+    {376, 114, 3, 3 },
+    {388, 117, 3, 2 },
+    {403, 119, 3, 3 },
+    {416, 122, 3, 3 },
+    // RISCV::FADD_D - 37
+    {432, 125, 4, 5 },
+    // RISCV::FADD_S - 38
+    {450, 130, 4, 5 },
+    // RISCV::FCVT_D_L - 39
+    {468, 135, 3, 5 },
+    // RISCV::FCVT_D_LU - 40
+    {484, 140, 3, 5 },
+    // RISCV::FCVT_LU_D - 41
+    {501, 145, 3, 5 },
+    // RISCV::FCVT_LU_S - 42
+    {518, 150, 3, 5 },
+    // RISCV::FCVT_L_D - 43
+    {535, 155, 3, 5 },
+    // RISCV::FCVT_L_S - 44
+    {551, 160, 3, 5 },
+    // RISCV::FCVT_S_D - 45
+    {567, 165, 3, 4 },
+    // RISCV::FCVT_S_L - 46
+    {583, 169, 3, 5 },
+    // RISCV::FCVT_S_LU - 47
+    {599, 174, 3, 5 },
+    // RISCV::FCVT_S_W - 48
+    {616, 179, 3, 4 },
+    // RISCV::FCVT_S_WU - 49
+    {632, 183, 3, 4 },
+    // RISCV::FCVT_WU_D - 50
+    {649, 187, 3, 4 },
+    // RISCV::FCVT_WU_S - 51
+    {666, 191, 3, 4 },
+    // RISCV::FCVT_W_D - 52
+    {683, 195, 3, 4 },
+    // RISCV::FCVT_W_S - 53
+    {699, 199, 3, 4 },
+    // RISCV::FDIV_D - 54
+    {715, 203, 4, 5 },
+    // RISCV::FDIV_S - 55
+    {733, 208, 4, 5 },
+    // RISCV::FENCE - 56
+    {751, 213, 2, 2 },
+    // RISCV::FMADD_D - 57
+    {757, 215, 5, 6 },
+    // RISCV::FMADD_S - 58
+    {780, 221, 5, 6 },
+    // RISCV::FMSUB_D - 59
+    {803, 227, 5, 6 },
+    // RISCV::FMSUB_S - 60
+    {826, 233, 5, 6 },
+    // RISCV::FMUL_D - 61
+    {849, 239, 4, 5 },
+    // RISCV::FMUL_S - 62
+    {867, 244, 4, 5 },
+    // RISCV::FNMADD_D - 63
+    {885, 249, 5, 6 },
+    // RISCV::FNMADD_S - 64
+    {909, 255, 5, 6 },
+    // RISCV::FNMSUB_D - 65
+    {933, 261, 5, 6 },
+    // RISCV::FNMSUB_S - 66
+    {957, 267, 5, 6 },
+    // RISCV::FSGNJN_D - 67
+    {981, 273, 3, 4 },
+    // RISCV::FSGNJN_S - 68
+    {995, 277, 3, 4 },
+    // RISCV::FSGNJX_D - 69
+    {1009, 281, 3, 4 },
+    // RISCV::FSGNJX_S - 70
+    {1023, 285, 3, 4 },
+    // RISCV::FSGNJ_D - 71
+    {1037, 289, 3, 4 },
+    // RISCV::FSGNJ_S - 72
+    {1050, 293, 3, 4 },
+    // RISCV::FSQRT_D - 73
+    {1063, 297, 3, 4 },
+    // RISCV::FSQRT_S - 74
+    {1078, 301, 3, 4 },
+    // RISCV::FSUB_D - 75
+    {1093, 305, 4, 5 },
+    // RISCV::FSUB_S - 76
+    {1111, 310, 4, 5 },
+    // RISCV::GORCI - 77
+    {1129, 315, 3, 6 },
+    {1142, 321, 3, 6 },
+    {1156, 327, 3, 6 },
+    {1169, 333, 3, 6 },
+    {1183, 339, 3, 6 },
+    {1197, 345, 3, 6 },
+    {1210, 351, 3, 6 },
+    {1224, 357, 3, 6 },
+    {1238, 363, 3, 6 },
+    {1252, 369, 3, 6 },
+    {1265, 375, 3, 7 },
+    {1278, 382, 3, 7 },
+    {1290, 389, 3, 7 },
+    {1302, 396, 3, 7 },
+    {1314, 403, 3, 7 },
+    {1325, 410, 3, 7 },
+    {1340, 417, 3, 7 },
+    {1354, 424, 3, 7 },
+    {1368, 431, 3, 7 },
+    {1382, 438, 3, 7 },
+    {1395, 445, 3, 7 },
+    {1265, 452, 3, 7 },
+    {1278, 459, 3, 7 },
+    {1290, 466, 3, 7 },
+    {1302, 473, 3, 7 },
+    {1314, 480, 3, 7 },
+    // RISCV::GREVI - 103
+    {1408, 487, 3, 6 },
+    {1421, 493, 3, 6 },
+    {1435, 499, 3, 6 },
+    {1448, 505, 3, 6 },
+    {1462, 511, 3, 6 },
+    {1476, 517, 3, 6 },
+    {1489, 523, 3, 6 },
+    {1503, 529, 3, 6 },
+    {1517, 535, 3, 6 },
+    {1531, 541, 3, 6 },
+    {1544, 547, 3, 7 },
+    {1557, 554, 3, 7 },
+    {1569, 561, 3, 7 },
+    {1581, 568, 3, 7 },
+    {1593, 575, 3, 7 },
+    {1604, 582, 3, 7 },
+    {1619, 589, 3, 7 },
+    {1633, 596, 3, 7 },
+    {1647, 603, 3, 7 },
+    {1661, 610, 3, 7 },
+    {1674, 617, 3, 7 },
+    {1544, 624, 3, 7 },
+    {1557, 631, 3, 7 },
+    {1569, 638, 3, 7 },
+    {1581, 645, 3, 7 },
+    {1593, 652, 3, 7 },
+    // RISCV::JAL - 129
+    {1687, 659, 2, 2 },
+    {1692, 661, 2, 2 },
+    // RISCV::JALR - 131
+    {1699, 663, 3, 3 },
+    {1703, 666, 3, 3 },
+    {1709, 669, 3, 3 },
+    {1717, 672, 3, 3 },
+    {1729, 675, 3, 3 },
+    {1739, 678, 3, 3 },
+    // RISCV::PACK - 137
+    {1751, 681, 3, 5 },
+    {1765, 686, 3, 5 },
+    // RISCV::PACKW - 139
+    {1751, 691, 3, 5 },
+    // RISCV::SFENCE_VMA - 140
+    {1779, 696, 2, 2 },
+    {1790, 698, 2, 2 },
+    // RISCV::SHFLI - 142
+    {1804, 700, 3, 6 },
+    {1817, 706, 3, 6 },
+    {1831, 712, 3, 6 },
+    {1844, 718, 3, 6 },
+    {1858, 724, 3, 6 },
+    {1872, 730, 3, 6 },
+    {1885, 736, 3, 7 },
+    {1897, 743, 3, 7 },
+    {1909, 750, 3, 7 },
+    {1921, 757, 3, 7 },
+    {1932, 764, 3, 7 },
+    {1946, 771, 3, 7 },
+    {1960, 778, 3, 7 },
+    {1974, 785, 3, 7 },
+    {1987, 792, 3, 7 },
+    {1885, 799, 3, 7 },
+    {1897, 806, 3, 7 },
+    {1909, 813, 3, 7 },
+    {1921, 820, 3, 7 },
+    // RISCV::SLT - 161
+    {2000, 827, 3, 3 },
+    {2012, 830, 3, 3 },
+    // RISCV::SLTIU - 163
+    {2024, 833, 3, 3 },
+    // RISCV::SLTU - 164
+    {2036, 836, 3, 3 },
+    // RISCV::SUB - 165
+    {2048, 839, 3, 3 },
+    // RISCV::SUBW - 166
+    {2059, 842, 3, 4 },
+    // RISCV::UNSHFLI - 167
+    {2071, 846, 3, 6 },
+    {2086, 852, 3, 6 },
+    {2102, 858, 3, 6 },
+    {2117, 864, 3, 6 },
+    {2133, 870, 3, 6 },
+    {2149, 876, 3, 6 },
+    {2164, 882, 3, 7 },
+    {2178, 889, 3, 7 },
+    {2192, 896, 3, 7 },
+    {2206, 903, 3, 7 },
+    {2219, 910, 3, 7 },
+    {2235, 917, 3, 7 },
+    {2251, 924, 3, 7 },
+    {2267, 931, 3, 7 },
+    {2282, 938, 3, 7 },
+    {2164, 945, 3, 7 },
+    {2178, 952, 3, 7 },
+    {2192, 959, 3, 7 },
+    {2206, 966, 3, 7 },
+    // RISCV::VMAND_MM - 186
+    {2297, 973, 3, 4 },
+    // RISCV::VMNAND_MM - 187
+    {2312, 977, 3, 4 },
+    // RISCV::VMXNOR_MM - 188
+    {2327, 981, 3, 4 },
+    // RISCV::VMXOR_MM - 189
+    {2338, 985, 3, 4 },
+    // RISCV::VWADDU_VX - 190
+    {2349, 989, 4, 5 },
+    // RISCV::VWADD_VX - 191
+    {2373, 994, 4, 5 },
+    // RISCV::VXOR_VI - 192
+    {2396, 999, 4, 5 },
+    // RISCV::XORI - 193
+    {2414, 1004, 3, 3 },
   };
 
   static const AliasPatternCond Conds[] = {
@@ -1358,435 +2527,1191 @@ bool RISCVInstPrinter::printAliasInstr(const MCInst *MI, const MCSubtargetInfo &
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(0)},
     {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
-    // (BEQ GPR:$rs, X0, simm13_lsb0:$offset) - 10
+    // (ANDI GPR:$rd, GPR:$rs, 255) - 10
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(255)},
+    {AliasPatternCond::K_Feature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (ANDI GPR:$rd, GPR:$rs, 255) - 15
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(255)},
+    {AliasPatternCond::K_Feature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (BEQ GPR:$rs, X0, simm13_lsb0:$offset) - 20
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_Custom, 1},
-    // (BGE X0, GPR:$rs, simm13_lsb0:$offset) - 13
+    // (BGE X0, GPR:$rs, simm13_lsb0:$offset) - 23
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Custom, 1},
-    // (BGE GPR:$rs, X0, simm13_lsb0:$offset) - 16
+    // (BGE GPR:$rs, X0, simm13_lsb0:$offset) - 26
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_Custom, 1},
-    // (BLT GPR:$rs, X0, simm13_lsb0:$offset) - 19
+    // (BLT GPR:$rs, X0, simm13_lsb0:$offset) - 29
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_Custom, 1},
-    // (BLT X0, GPR:$rs, simm13_lsb0:$offset) - 22
+    // (BLT X0, GPR:$rs, simm13_lsb0:$offset) - 32
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Custom, 1},
-    // (BNE GPR:$rs, X0, simm13_lsb0:$offset) - 25
+    // (BNE GPR:$rs, X0, simm13_lsb0:$offset) - 35
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_Custom, 1},
-    // (CSRRC X0, csr_sysreg:$csr, GPR:$rs) - 28
+    // (CSRRC X0, csr_sysreg:$csr, GPR:$rs) - 38
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_Ignore, 0},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
-    // (CSRRCI X0, csr_sysreg:$csr, uimm5:$imm) - 31
+    // (CSRRCI X0, csr_sysreg:$csr, uimm5:$imm) - 41
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_Ignore, 0},
-    // (CSRRS GPR:$rd, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1 }, X0) - 33
+    // (CSRRS GPR:$rd, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1 }, X0) - 43
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(3)},
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (CSRRS GPR:$rd, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 }, X0) - 37
+    // (CSRRS GPR:$rd, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 }, X0) - 47
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(2)},
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (CSRRS GPR:$rd, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 }, X0) - 41
+    // (CSRRS GPR:$rd, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 }, X0) - 51
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(1)},
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (CSRRS GPR:$rd, { 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 }, X0) - 45
+    // (CSRRS GPR:$rd, { 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 }, X0) - 55
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(3074)},
     {AliasPatternCond::K_Reg, RISCV::X0},
-    // (CSRRS GPR:$rd, { 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, X0) - 48
+    // (CSRRS GPR:$rd, { 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, X0) - 58
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(3072)},
     {AliasPatternCond::K_Reg, RISCV::X0},
-    // (CSRRS GPR:$rd, { 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 }, X0) - 51
+    // (CSRRS GPR:$rd, { 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 }, X0) - 61
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(3073)},
     {AliasPatternCond::K_Reg, RISCV::X0},
-    // (CSRRS GPR:$rd, { 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0 }, X0) - 54
+    // (CSRRS GPR:$rd, { 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0 }, X0) - 64
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(3202)},
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
-    // (CSRRS GPR:$rd, { 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 }, X0) - 58
+    // (CSRRS GPR:$rd, { 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0 }, X0) - 68
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(3200)},
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
-    // (CSRRS GPR:$rd, { 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1 }, X0) - 62
+    // (CSRRS GPR:$rd, { 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1 }, X0) - 72
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(3201)},
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
-    // (CSRRS GPR:$rd, csr_sysreg:$csr, X0) - 66
+    // (CSRRS GPR:$rd, csr_sysreg:$csr, X0) - 76
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Ignore, 0},
     {AliasPatternCond::K_Reg, RISCV::X0},
-    // (CSRRS X0, csr_sysreg:$csr, GPR:$rs) - 69
+    // (CSRRS X0, csr_sysreg:$csr, GPR:$rs) - 79
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_Ignore, 0},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
-    // (CSRRSI X0, csr_sysreg:$csr, uimm5:$imm) - 72
+    // (CSRRSI X0, csr_sysreg:$csr, uimm5:$imm) - 82
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_Ignore, 0},
-    // (CSRRW X0, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1 }, GPR:$rs) - 74
+    // (CSRRW X0, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1 }, GPR:$rs) - 84
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_Imm, uint32_t(3)},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (CSRRW X0, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 }, GPR:$rs) - 78
+    // (CSRRW X0, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 }, GPR:$rs) - 88
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_Imm, uint32_t(2)},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (CSRRW X0, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 }, GPR:$rs) - 82
+    // (CSRRW X0, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 }, GPR:$rs) - 92
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_Imm, uint32_t(1)},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (CSRRW X0, csr_sysreg:$csr, GPR:$rs) - 86
+    // (CSRRW X0, csr_sysreg:$csr, GPR:$rs) - 96
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_Ignore, 0},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
-    // (CSRRW GPR:$rd, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1 }, GPR:$rs) - 89
+    // (CSRRW GPR:$rd, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1 }, GPR:$rs) - 99
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(3)},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (CSRRW GPR:$rd, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 }, GPR:$rs) - 93
+    // (CSRRW GPR:$rd, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 }, GPR:$rs) - 103
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(2)},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (CSRRW GPR:$rd, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 }, GPR:$rs) - 97
+    // (CSRRW GPR:$rd, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 }, GPR:$rs) - 107
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(1)},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (CSRRWI X0, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 }, uimm5:$imm) - 101
+    // (CSRRWI X0, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 }, uimm5:$imm) - 111
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_Imm, uint32_t(2)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (CSRRWI X0, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 }, uimm5:$imm) - 104
+    // (CSRRWI X0, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 }, uimm5:$imm) - 114
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_Imm, uint32_t(1)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (CSRRWI X0, csr_sysreg:$csr, uimm5:$imm) - 107
+    // (CSRRWI X0, csr_sysreg:$csr, uimm5:$imm) - 117
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_Ignore, 0},
-    // (CSRRWI GPR:$rd, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 }, uimm5:$imm) - 109
+    // (CSRRWI GPR:$rd, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0 }, uimm5:$imm) - 119
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(2)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (CSRRWI GPR:$rd, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 }, uimm5:$imm) - 112
+    // (CSRRWI GPR:$rd, { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1 }, uimm5:$imm) - 122
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(1)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (FADD_D FPR64:$rd, FPR64:$rs1, FPR64:$rs2, { 1, 1, 1 }) - 115
+    // (FADD_D FPR64:$rd, FPR64:$rs1, FPR64:$rs2, { 1, 1, 1 }) - 125
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
-    // (FADD_S FPR32:$rd, FPR32:$rs1, FPR32:$rs2, { 1, 1, 1 }) - 120
+    // (FADD_S FPR32:$rd, FPR32:$rs1, FPR32:$rs2, { 1, 1, 1 }) - 130
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (FCVT_D_L FPR64:$rd, GPR:$rs1, { 1, 1, 1 }) - 125
-    {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
-    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
-    {AliasPatternCond::K_Imm, uint32_t(7)},
-    {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
-    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
-    // (FCVT_D_LU FPR64:$rd, GPR:$rs1, { 1, 1, 1 }) - 130
+    // (FCVT_D_L FPR64:$rd, GPR:$rs1, { 1, 1, 1 }) - 135
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
     {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
-    // (FCVT_LU_D GPR:$rd, FPR64:$rs1, { 1, 1, 1 }) - 135
+    // (FCVT_D_LU FPR64:$rd, GPR:$rs1, { 1, 1, 1 }) - 140
+    {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(7)},
+    {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (FCVT_LU_D GPR:$rd, FPR64:$rs1, { 1, 1, 1 }) - 145
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
     {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
-    // (FCVT_LU_S GPR:$rd, FPR32:$rs1, { 1, 1, 1 }) - 140
+    // (FCVT_LU_S GPR:$rd, FPR32:$rs1, { 1, 1, 1 }) - 150
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
     {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
-    // (FCVT_L_D GPR:$rd, FPR64:$rs1, { 1, 1, 1 }) - 145
+    // (FCVT_L_D GPR:$rd, FPR64:$rs1, { 1, 1, 1 }) - 155
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
     {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
-    // (FCVT_L_S GPR:$rd, FPR32:$rs1, { 1, 1, 1 }) - 150
+    // (FCVT_L_S GPR:$rd, FPR32:$rs1, { 1, 1, 1 }) - 160
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
     {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
-    // (FCVT_S_D FPR32:$rd, FPR64:$rs1, { 1, 1, 1 }) - 155
+    // (FCVT_S_D FPR32:$rd, FPR64:$rs1, { 1, 1, 1 }) - 165
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
-    // (FCVT_S_L FPR32:$rd, GPR:$rs1, { 1, 1, 1 }) - 159
+    // (FCVT_S_L FPR32:$rd, GPR:$rs1, { 1, 1, 1 }) - 169
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
     {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
-    // (FCVT_S_LU FPR32:$rd, GPR:$rs1, { 1, 1, 1 }) - 164
+    // (FCVT_S_LU FPR32:$rd, GPR:$rs1, { 1, 1, 1 }) - 174
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
     {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
-    // (FCVT_S_W FPR32:$rd, GPR:$rs1, { 1, 1, 1 }) - 169
+    // (FCVT_S_W FPR32:$rd, GPR:$rs1, { 1, 1, 1 }) - 179
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (FCVT_S_WU FPR32:$rd, GPR:$rs1, { 1, 1, 1 }) - 173
+    // (FCVT_S_WU FPR32:$rd, GPR:$rs1, { 1, 1, 1 }) - 183
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (FCVT_WU_D GPR:$rd, FPR64:$rs1, { 1, 1, 1 }) - 177
+    // (FCVT_WU_D GPR:$rd, FPR64:$rs1, { 1, 1, 1 }) - 187
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
-    // (FCVT_WU_S GPR:$rd, FPR32:$rs1, { 1, 1, 1 }) - 181
+    // (FCVT_WU_S GPR:$rd, FPR32:$rs1, { 1, 1, 1 }) - 191
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (FCVT_W_D GPR:$rd, FPR64:$rs1, { 1, 1, 1 }) - 185
+    // (FCVT_W_D GPR:$rd, FPR64:$rs1, { 1, 1, 1 }) - 195
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
-    // (FCVT_W_S GPR:$rd, FPR32:$rs1, { 1, 1, 1 }) - 189
+    // (FCVT_W_S GPR:$rd, FPR32:$rs1, { 1, 1, 1 }) - 199
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (FDIV_D FPR64:$rd, FPR64:$rs1, FPR64:$rs2, { 1, 1, 1 }) - 193
+    // (FDIV_D FPR64:$rd, FPR64:$rs1, FPR64:$rs2, { 1, 1, 1 }) - 203
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
-    // (FDIV_S FPR32:$rd, FPR32:$rs1, FPR32:$rs2, { 1, 1, 1 }) - 198
+    // (FDIV_S FPR32:$rd, FPR32:$rs1, FPR32:$rs2, { 1, 1, 1 }) - 208
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (FENCE 15, 15) - 203
+    // (FENCE 15, 15) - 213
     {AliasPatternCond::K_Imm, uint32_t(15)},
     {AliasPatternCond::K_Imm, uint32_t(15)},
-    // (FMADD_D FPR64:$rd, FPR64:$rs1, FPR64:$rs2, FPR64:$rs3, { 1, 1, 1 }) - 205
+    // (FMADD_D FPR64:$rd, FPR64:$rs1, FPR64:$rs2, FPR64:$rs3, { 1, 1, 1 }) - 215
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
-    // (FMADD_S FPR32:$rd, FPR32:$rs1, FPR32:$rs2, FPR32:$rs3, { 1, 1, 1 }) - 211
+    // (FMADD_S FPR32:$rd, FPR32:$rs1, FPR32:$rs2, FPR32:$rs3, { 1, 1, 1 }) - 221
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (FMSUB_D FPR64:$rd, FPR64:$rs1, FPR64:$rs2, FPR64:$rs3, { 1, 1, 1 }) - 217
+    // (FMSUB_D FPR64:$rd, FPR64:$rs1, FPR64:$rs2, FPR64:$rs3, { 1, 1, 1 }) - 227
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
-    // (FMSUB_S FPR32:$rd, FPR32:$rs1, FPR32:$rs2, FPR32:$rs3, { 1, 1, 1 }) - 223
+    // (FMSUB_S FPR32:$rd, FPR32:$rs1, FPR32:$rs2, FPR32:$rs3, { 1, 1, 1 }) - 233
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (FMUL_D FPR64:$rd, FPR64:$rs1, FPR64:$rs2, { 1, 1, 1 }) - 229
+    // (FMUL_D FPR64:$rd, FPR64:$rs1, FPR64:$rs2, { 1, 1, 1 }) - 239
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
-    // (FMUL_S FPR32:$rd, FPR32:$rs1, FPR32:$rs2, { 1, 1, 1 }) - 234
+    // (FMUL_S FPR32:$rd, FPR32:$rs1, FPR32:$rs2, { 1, 1, 1 }) - 244
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (FNMADD_D FPR64:$rd, FPR64:$rs1, FPR64:$rs2, FPR64:$rs3, { 1, 1, 1 }) - 239
-    {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
-    {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
-    {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
-    {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
-    {AliasPatternCond::K_Imm, uint32_t(7)},
-    {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
-    // (FNMADD_S FPR32:$rd, FPR32:$rs1, FPR32:$rs2, FPR32:$rs3, { 1, 1, 1 }) - 245
-    {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
-    {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
-    {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
-    {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
-    {AliasPatternCond::K_Imm, uint32_t(7)},
-    {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (FNMSUB_D FPR64:$rd, FPR64:$rs1, FPR64:$rs2, FPR64:$rs3, { 1, 1, 1 }) - 251
+    // (FNMADD_D FPR64:$rd, FPR64:$rs1, FPR64:$rs2, FPR64:$rs3, { 1, 1, 1 }) - 249
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
-    // (FNMSUB_S FPR32:$rd, FPR32:$rs1, FPR32:$rs2, FPR32:$rs3, { 1, 1, 1 }) - 257
+    // (FNMADD_S FPR32:$rd, FPR32:$rs1, FPR32:$rs2, FPR32:$rs3, { 1, 1, 1 }) - 255
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (FSGNJN_D FPR64:$rd, FPR64:$rs, FPR64:$rs) - 263
+    // (FNMSUB_D FPR64:$rd, FPR64:$rs1, FPR64:$rs2, FPR64:$rs3, { 1, 1, 1 }) - 261
+    {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(7)},
+    {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
+    // (FNMSUB_S FPR32:$rd, FPR32:$rs1, FPR32:$rs2, FPR32:$rs3, { 1, 1, 1 }) - 267
+    {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(7)},
+    {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
+    // (FSGNJN_D FPR64:$rd, FPR64:$rs, FPR64:$rs) - 273
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_TiedReg, 1},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
-    // (FSGNJN_S FPR32:$rd, FPR32:$rs, FPR32:$rs) - 267
+    // (FSGNJN_S FPR32:$rd, FPR32:$rs, FPR32:$rs) - 277
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_TiedReg, 1},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (FSGNJX_D FPR64:$rd, FPR64:$rs, FPR64:$rs) - 271
-    {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
-    {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
-    {AliasPatternCond::K_TiedReg, 1},
-    {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
-    // (FSGNJX_S FPR32:$rd, FPR32:$rs, FPR32:$rs) - 275
-    {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
-    {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
-    {AliasPatternCond::K_TiedReg, 1},
-    {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (FSGNJ_D FPR64:$rd, FPR64:$rs, FPR64:$rs) - 279
+    // (FSGNJX_D FPR64:$rd, FPR64:$rs, FPR64:$rs) - 281
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_TiedReg, 1},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
-    // (FSGNJ_S FPR32:$rd, FPR32:$rs, FPR32:$rs) - 283
+    // (FSGNJX_S FPR32:$rd, FPR32:$rs, FPR32:$rs) - 285
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_TiedReg, 1},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (FSQRT_D FPR64:$rd, FPR64:$rs1, { 1, 1, 1 }) - 287
+    // (FSGNJ_D FPR64:$rd, FPR64:$rs, FPR64:$rs) - 289
+    {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
+    {AliasPatternCond::K_TiedReg, 1},
+    {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
+    // (FSGNJ_S FPR32:$rd, FPR32:$rs, FPR32:$rs) - 293
+    {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
+    {AliasPatternCond::K_TiedReg, 1},
+    {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
+    // (FSQRT_D FPR64:$rd, FPR64:$rs1, { 1, 1, 1 }) - 297
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
-    // (FSQRT_S FPR32:$rd, FPR32:$rs1, { 1, 1, 1 }) - 291
+    // (FSQRT_S FPR32:$rd, FPR32:$rs1, { 1, 1, 1 }) - 301
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (FSUB_D FPR64:$rd, FPR64:$rs1, FPR64:$rs2, { 1, 1, 1 }) - 295
+    // (FSUB_D FPR64:$rd, FPR64:$rs1, FPR64:$rs2, { 1, 1, 1 }) - 305
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR64RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtD},
-    // (FSUB_S FPR32:$rd, FPR32:$rs1, FPR32:$rs2, { 1, 1, 1 }) - 300
+    // (FSUB_S FPR32:$rd, FPR32:$rs1, FPR32:$rs2, { 1, 1, 1 }) - 310
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_RegClass, RISCV::FPR32RegClassID},
     {AliasPatternCond::K_Imm, uint32_t(7)},
     {AliasPatternCond::K_Feature, RISCV::FeatureStdExtF},
-    // (JAL X0, simm21_lsb0_jal:$offset) - 305
-    {AliasPatternCond::K_Reg, RISCV::X0},
-    {AliasPatternCond::K_Custom, 2},
-    // (JAL X1, simm21_lsb0_jal:$offset) - 307
-    {AliasPatternCond::K_Reg, RISCV::X1},
-    {AliasPatternCond::K_Custom, 2},
-    // (JALR X0, X1, 0) - 309
-    {AliasPatternCond::K_Reg, RISCV::X0},
-    {AliasPatternCond::K_Reg, RISCV::X1},
-    {AliasPatternCond::K_Imm, uint32_t(0)},
-    // (JALR X0, GPR:$rs, 0) - 312
-    {AliasPatternCond::K_Reg, RISCV::X0},
-    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
-    {AliasPatternCond::K_Imm, uint32_t(0)},
-    // (JALR X1, GPR:$rs, 0) - 315
-    {AliasPatternCond::K_Reg, RISCV::X1},
-    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
-    {AliasPatternCond::K_Imm, uint32_t(0)},
-    // (JALR GPR:$rd, GPR:$rs, 0) - 318
-    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
-    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
-    {AliasPatternCond::K_Imm, uint32_t(0)},
-    // (JALR X0, GPR:$rs, simm12:$offset) - 321
-    {AliasPatternCond::K_Reg, RISCV::X0},
-    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
-    {AliasPatternCond::K_Custom, 3},
-    // (JALR X1, GPR:$rs, simm12:$offset) - 324
-    {AliasPatternCond::K_Reg, RISCV::X1},
-    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
-    {AliasPatternCond::K_Custom, 3},
-    // (SFENCE_VMA X0, X0) - 327
-    {AliasPatternCond::K_Reg, RISCV::X0},
-    {AliasPatternCond::K_Reg, RISCV::X0},
-    // (SFENCE_VMA GPR:$rs, X0) - 329
-    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
-    {AliasPatternCond::K_Reg, RISCV::X0},
-    // (SLT GPR:$rd, GPR:$rs, X0) - 331
-    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
-    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
-    {AliasPatternCond::K_Reg, RISCV::X0},
-    // (SLT GPR:$rd, X0, GPR:$rs) - 334
-    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
-    {AliasPatternCond::K_Reg, RISCV::X0},
-    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
-    // (SLTIU GPR:$rd, GPR:$rs, 1) - 337
+    // (GORCI GPR:$rd, GPR:$rs, { 0, 0, 0, 0, 1 }) - 315
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(1)},
-    // (SLTU GPR:$rd, X0, GPR:$rs) - 340
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GORCI GPR:$rd, GPR:$rs, { 0, 0, 0, 1, 0 }) - 321
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(2)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GORCI GPR:$rd, GPR:$rs, { 0, 0, 0, 1, 1 }) - 327
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(3)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GORCI GPR:$rd, GPR:$rs, { 0, 0, 1, 0, 0 }) - 333
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(4)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GORCI GPR:$rd, GPR:$rs, { 0, 0, 1, 1, 0 }) - 339
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(6)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GORCI GPR:$rd, GPR:$rs, { 0, 0, 1, 1, 1 }) - 345
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(7)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GORCI GPR:$rd, GPR:$rs, { 0, 1, 0, 0, 0 }) - 351
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(8)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GORCI GPR:$rd, GPR:$rs, { 0, 1, 1, 0, 0 }) - 357
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(12)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GORCI GPR:$rd, GPR:$rs, { 0, 1, 1, 1, 0 }) - 363
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(14)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GORCI GPR:$rd, GPR:$rs, { 0, 1, 1, 1, 1 }) - 369
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(15)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GORCI GPR:$rd, GPR:$rs, { 1, 0, 0, 0, 0 }) - 375
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(16)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (GORCI GPR:$rd, GPR:$rs, { 1, 1, 0, 0, 0 }) - 382
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(24)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (GORCI GPR:$rd, GPR:$rs, { 1, 1, 1, 0, 0 }) - 389
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(28)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (GORCI GPR:$rd, GPR:$rs, { 1, 1, 1, 1, 0 }) - 396
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(30)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (GORCI GPR:$rd, GPR:$rs, { 1, 1, 1, 1, 1 }) - 403
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(31)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (GORCI GPR:$rd, GPR:$rs, { 0, 1, 0, 0, 0, 0 }) - 410
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(16)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GORCI GPR:$rd, GPR:$rs, { 0, 1, 1, 0, 0, 0 }) - 417
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(24)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GORCI GPR:$rd, GPR:$rs, { 0, 1, 1, 1, 0, 0 }) - 424
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(28)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GORCI GPR:$rd, GPR:$rs, { 0, 1, 1, 1, 1, 0 }) - 431
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(30)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GORCI GPR:$rd, GPR:$rs, { 0, 1, 1, 1, 1, 1 }) - 438
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(31)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GORCI GPR:$rd, GPR:$rs, { 1, 0, 0, 0, 0, 0 }) - 445
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(32)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GORCI GPR:$rd, GPR:$rs, { 1, 1, 0, 0, 0, 0 }) - 452
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(48)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GORCI GPR:$rd, GPR:$rs, { 1, 1, 1, 0, 0, 0 }) - 459
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(56)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GORCI GPR:$rd, GPR:$rs, { 1, 1, 1, 1, 0, 0 }) - 466
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(60)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GORCI GPR:$rd, GPR:$rs, { 1, 1, 1, 1, 1, 0 }) - 473
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(62)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GORCI GPR:$rd, GPR:$rs, { 1, 1, 1, 1, 1, 1 }) - 480
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(63)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GREVI GPR:$rd, GPR:$rs, { 0, 0, 0, 0, 1 }) - 487
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(1)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GREVI GPR:$rd, GPR:$rs, { 0, 0, 0, 1, 0 }) - 493
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(2)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GREVI GPR:$rd, GPR:$rs, { 0, 0, 0, 1, 1 }) - 499
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(3)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GREVI GPR:$rd, GPR:$rs, { 0, 0, 1, 0, 0 }) - 505
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(4)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GREVI GPR:$rd, GPR:$rs, { 0, 0, 1, 1, 0 }) - 511
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(6)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GREVI GPR:$rd, GPR:$rs, { 0, 0, 1, 1, 1 }) - 517
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(7)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GREVI GPR:$rd, GPR:$rs, { 0, 1, 0, 0, 0 }) - 523
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(8)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GREVI GPR:$rd, GPR:$rs, { 0, 1, 1, 0, 0 }) - 529
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(12)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GREVI GPR:$rd, GPR:$rs, { 0, 1, 1, 1, 0 }) - 535
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(14)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GREVI GPR:$rd, GPR:$rs, { 0, 1, 1, 1, 1 }) - 541
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(15)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (GREVI GPR:$rd, GPR:$rs, { 1, 0, 0, 0, 0 }) - 547
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(16)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (GREVI GPR:$rd, GPR:$rs, { 1, 1, 0, 0, 0 }) - 554
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(24)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (GREVI GPR:$rd, GPR:$rs, { 1, 1, 1, 0, 0 }) - 561
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(28)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (GREVI GPR:$rd, GPR:$rs, { 1, 1, 1, 1, 0 }) - 568
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(30)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (GREVI GPR:$rd, GPR:$rs, { 1, 1, 1, 1, 1 }) - 575
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(31)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (GREVI GPR:$rd, GPR:$rs, { 0, 1, 0, 0, 0, 0 }) - 582
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(16)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GREVI GPR:$rd, GPR:$rs, { 0, 1, 1, 0, 0, 0 }) - 589
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(24)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GREVI GPR:$rd, GPR:$rs, { 0, 1, 1, 1, 0, 0 }) - 596
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(28)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GREVI GPR:$rd, GPR:$rs, { 0, 1, 1, 1, 1, 0 }) - 603
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(30)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GREVI GPR:$rd, GPR:$rs, { 0, 1, 1, 1, 1, 1 }) - 610
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(31)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GREVI GPR:$rd, GPR:$rs, { 1, 0, 0, 0, 0, 0 }) - 617
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(32)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GREVI GPR:$rd, GPR:$rs, { 1, 1, 0, 0, 0, 0 }) - 624
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(48)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GREVI GPR:$rd, GPR:$rs, { 1, 1, 1, 0, 0, 0 }) - 631
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(56)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GREVI GPR:$rd, GPR:$rs, { 1, 1, 1, 1, 0, 0 }) - 638
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(60)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GREVI GPR:$rd, GPR:$rs, { 1, 1, 1, 1, 1, 0 }) - 645
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(62)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (GREVI GPR:$rd, GPR:$rs, { 1, 1, 1, 1, 1, 1 }) - 652
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(63)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (JAL X0, simm21_lsb0_jal:$offset) - 659
+    {AliasPatternCond::K_Reg, RISCV::X0},
+    {AliasPatternCond::K_Custom, 2},
+    // (JAL X1, simm21_lsb0_jal:$offset) - 661
+    {AliasPatternCond::K_Reg, RISCV::X1},
+    {AliasPatternCond::K_Custom, 2},
+    // (JALR X0, X1, 0) - 663
+    {AliasPatternCond::K_Reg, RISCV::X0},
+    {AliasPatternCond::K_Reg, RISCV::X1},
+    {AliasPatternCond::K_Imm, uint32_t(0)},
+    // (JALR X0, GPR:$rs, 0) - 666
+    {AliasPatternCond::K_Reg, RISCV::X0},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(0)},
+    // (JALR X1, GPR:$rs, 0) - 669
+    {AliasPatternCond::K_Reg, RISCV::X1},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(0)},
+    // (JALR GPR:$rd, GPR:$rs, 0) - 672
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(0)},
+    // (JALR X0, GPR:$rs, simm12:$offset) - 675
+    {AliasPatternCond::K_Reg, RISCV::X0},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Custom, 3},
+    // (JALR X1, GPR:$rs, simm12:$offset) - 678
+    {AliasPatternCond::K_Reg, RISCV::X1},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Custom, 3},
+    // (PACK GPR:$rd, GPR:$rs, X0) - 681
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Reg, RISCV::X0},
+    {AliasPatternCond::K_Feature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (PACK GPR:$rd, GPR:$rs, X0) - 686
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Reg, RISCV::X0},
+    {AliasPatternCond::K_Feature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (PACKW GPR:$rd, GPR:$rs, X0) - 691
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Reg, RISCV::X0},
+    {AliasPatternCond::K_Feature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (SFENCE_VMA X0, X0) - 696
+    {AliasPatternCond::K_Reg, RISCV::X0},
+    {AliasPatternCond::K_Reg, RISCV::X0},
+    // (SFENCE_VMA GPR:$rs, X0) - 698
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Reg, RISCV::X0},
+    // (SHFLI GPR:$rd, GPR:$rs, { 0, 0, 0, 1 }) - 700
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(1)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (SHFLI GPR:$rd, GPR:$rs, { 0, 0, 1, 0 }) - 706
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(2)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (SHFLI GPR:$rd, GPR:$rs, { 0, 0, 1, 1 }) - 712
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(3)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (SHFLI GPR:$rd, GPR:$rs, { 0, 1, 0, 0 }) - 718
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(4)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (SHFLI GPR:$rd, GPR:$rs, { 0, 1, 1, 0 }) - 724
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(6)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (SHFLI GPR:$rd, GPR:$rs, { 0, 1, 1, 1 }) - 730
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(7)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (SHFLI GPR:$rd, GPR:$rs, { 1, 0, 0, 0 }) - 736
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(8)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (SHFLI GPR:$rd, GPR:$rs, { 1, 1, 0, 0 }) - 743
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(12)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (SHFLI GPR:$rd, GPR:$rs, { 1, 1, 1, 0 }) - 750
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(14)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (SHFLI GPR:$rd, GPR:$rs, { 1, 1, 1, 1 }) - 757
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(15)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (SHFLI GPR:$rd, GPR:$rs, { 0, 1, 0, 0, 0 }) - 764
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(8)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (SHFLI GPR:$rd, GPR:$rs, { 0, 1, 1, 0, 0 }) - 771
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(12)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (SHFLI GPR:$rd, GPR:$rs, { 0, 1, 1, 1, 0 }) - 778
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(14)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (SHFLI GPR:$rd, GPR:$rs, { 0, 1, 1, 1, 1 }) - 785
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(15)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (SHFLI GPR:$rd, GPR:$rs, { 1, 0, 0, 0, 0 }) - 792
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(16)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (SHFLI GPR:$rd, GPR:$rs, { 1, 1, 0, 0, 0 }) - 799
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(24)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (SHFLI GPR:$rd, GPR:$rs, { 1, 1, 1, 0, 0 }) - 806
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(28)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (SHFLI GPR:$rd, GPR:$rs, { 1, 1, 1, 1, 0 }) - 813
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(30)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (SHFLI GPR:$rd, GPR:$rs, { 1, 1, 1, 1, 1 }) - 820
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(31)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (SLT GPR:$rd, GPR:$rs, X0) - 827
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Reg, RISCV::X0},
+    // (SLT GPR:$rd, X0, GPR:$rs) - 830
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
-    // (SUB GPR:$rd, X0, GPR:$rs) - 343
+    // (SLTIU GPR:$rd, GPR:$rs, 1) - 833
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(1)},
+    // (SLTU GPR:$rd, X0, GPR:$rs) - 836
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
-    // (SUBW GPR:$rd, X0, GPR:$rs) - 346
+    // (SUB GPR:$rd, X0, GPR:$rs) - 839
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Reg, RISCV::X0},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    // (SUBW GPR:$rd, X0, GPR:$rs) - 842
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Reg, RISCV::X0},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
-    // (XORI GPR:$rd, GPR:$rs, -1) - 350
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 0, 0, 0, 1 }) - 846
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(1)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 0, 0, 1, 0 }) - 852
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(2)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 0, 0, 1, 1 }) - 858
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(3)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 0, 1, 0, 0 }) - 864
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(4)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 0, 1, 1, 0 }) - 870
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(6)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 0, 1, 1, 1 }) - 876
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(7)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 1, 0, 0, 0 }) - 882
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(8)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 1, 1, 0, 0 }) - 889
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(12)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 1, 1, 1, 0 }) - 896
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(14)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 1, 1, 1, 1 }) - 903
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(15)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_NegFeature, RISCV::Feature64Bit},
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 0, 1, 0, 0, 0 }) - 910
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(8)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 0, 1, 1, 0, 0 }) - 917
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(12)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 0, 1, 1, 1, 0 }) - 924
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(14)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 0, 1, 1, 1, 1 }) - 931
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(15)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 1, 0, 0, 0, 0 }) - 938
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(16)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 1, 1, 0, 0, 0 }) - 945
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(24)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 1, 1, 1, 0, 0 }) - 952
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(28)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 1, 1, 1, 1, 0 }) - 959
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(30)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (UNSHFLI GPR:$rd, GPR:$rs, { 1, 1, 1, 1, 1 }) - 966
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(31)},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbb},
+    {AliasPatternCond::K_OrFeature, RISCV::FeatureExtZbp},
+    {AliasPatternCond::K_EndOrFeatures, 0},
+    {AliasPatternCond::K_Feature, RISCV::Feature64Bit},
+    // (VMAND_MM VRegOp:$vd, VRegOp:$vs, VRegOp:$vs) - 973
+    {AliasPatternCond::K_RegClass, RISCV::VRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::VRRegClassID},
+    {AliasPatternCond::K_TiedReg, 1},
+    {AliasPatternCond::K_Feature, RISCV::FeatureStdExtV},
+    // (VMNAND_MM VRegOp:$vd, VRegOp:$vs, VRegOp:$vs) - 977
+    {AliasPatternCond::K_RegClass, RISCV::VRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::VRRegClassID},
+    {AliasPatternCond::K_TiedReg, 1},
+    {AliasPatternCond::K_Feature, RISCV::FeatureStdExtV},
+    // (VMXNOR_MM VRegOp:$vd, VRegOp:$vd, VRegOp:$vd) - 981
+    {AliasPatternCond::K_RegClass, RISCV::VRRegClassID},
+    {AliasPatternCond::K_TiedReg, 0},
+    {AliasPatternCond::K_TiedReg, 0},
+    {AliasPatternCond::K_Feature, RISCV::FeatureStdExtV},
+    // (VMXOR_MM VRegOp:$vd, VRegOp:$vd, VRegOp:$vd) - 985
+    {AliasPatternCond::K_RegClass, RISCV::VRRegClassID},
+    {AliasPatternCond::K_TiedReg, 0},
+    {AliasPatternCond::K_TiedReg, 0},
+    {AliasPatternCond::K_Feature, RISCV::FeatureStdExtV},
+    // (VWADDU_VX VRegOp:$vd, VRegOp:$vs, X0, VMaskOp:$vm) - 989
+    {AliasPatternCond::K_RegClass, RISCV::VRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::VRRegClassID},
+    {AliasPatternCond::K_Reg, RISCV::X0},
+    {AliasPatternCond::K_RegClass, RISCV::VMV0RegClassID},
+    {AliasPatternCond::K_Feature, RISCV::FeatureStdExtV},
+    // (VWADD_VX VRegOp:$vd, VRegOp:$vs, X0, VMaskOp:$vm) - 994
+    {AliasPatternCond::K_RegClass, RISCV::VRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::VRRegClassID},
+    {AliasPatternCond::K_Reg, RISCV::X0},
+    {AliasPatternCond::K_RegClass, RISCV::VMV0RegClassID},
+    {AliasPatternCond::K_Feature, RISCV::FeatureStdExtV},
+    // (VXOR_VI VRegOp:$vd, VRegOp:$vs, -1, VMaskOp:$vm) - 999
+    {AliasPatternCond::K_RegClass, RISCV::VRRegClassID},
+    {AliasPatternCond::K_RegClass, RISCV::VRRegClassID},
+    {AliasPatternCond::K_Imm, uint32_t(-1)},
+    {AliasPatternCond::K_RegClass, RISCV::VMV0RegClassID},
+    {AliasPatternCond::K_Feature, RISCV::FeatureStdExtV},
+    // (XORI GPR:$rd, GPR:$rs, -1) - 1004
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_RegClass, RISCV::GPRRegClassID},
     {AliasPatternCond::K_Imm, uint32_t(-1)},
@@ -1796,95 +3721,177 @@ bool RISCVInstPrinter::printAliasInstr(const MCInst *MI, const MCSubtargetInfo &
     /* 0 */ "nop\0"
     /* 4 */ "mv $\x01, $\x02\0"
     /* 14 */ "sext.w $\x01, $\x02\0"
-    /* 28 */ "beqz $\x01, $\x03\0"
-    /* 40 */ "blez $\x02, $\x03\0"
-    /* 52 */ "bgez $\x01, $\x03\0"
-    /* 64 */ "bltz $\x01, $\x03\0"
-    /* 76 */ "bgtz $\x02, $\x03\0"
-    /* 88 */ "bnez $\x01, $\x03\0"
-    /* 100 */ "csrc $\xFF\x02\x01, $\x03\0"
-    /* 114 */ "csrci $\xFF\x02\x01, $\x03\0"
-    /* 129 */ "frcsr $\x01\0"
-    /* 138 */ "frrm $\x01\0"
-    /* 146 */ "frflags $\x01\0"
-    /* 157 */ "rdinstret $\x01\0"
-    /* 170 */ "rdcycle $\x01\0"
-    /* 181 */ "rdtime $\x01\0"
-    /* 191 */ "rdinstreth $\x01\0"
-    /* 205 */ "rdcycleh $\x01\0"
-    /* 217 */ "rdtimeh $\x01\0"
-    /* 228 */ "csrr $\x01, $\xFF\x02\x01\0"
-    /* 242 */ "csrs $\xFF\x02\x01, $\x03\0"
-    /* 256 */ "csrsi $\xFF\x02\x01, $\x03\0"
-    /* 271 */ "fscsr $\x03\0"
-    /* 280 */ "fsrm $\x03\0"
-    /* 288 */ "fsflags $\x03\0"
-    /* 299 */ "csrw $\xFF\x02\x01, $\x03\0"
-    /* 313 */ "fscsr $\x01, $\x03\0"
-    /* 326 */ "fsrm $\x01, $\x03\0"
-    /* 338 */ "fsflags $\x01, $\x03\0"
-    /* 353 */ "fsrmi $\x03\0"
-    /* 362 */ "fsflagsi $\x03\0"
-    /* 374 */ "csrwi $\xFF\x02\x01, $\x03\0"
-    /* 389 */ "fsrmi $\x01, $\x03\0"
-    /* 402 */ "fsflagsi $\x01, $\x03\0"
-    /* 418 */ "fadd.d $\x01, $\x02, $\x03\0"
-    /* 436 */ "fadd.s $\x01, $\x02, $\x03\0"
-    /* 454 */ "fcvt.d.l $\x01, $\x02\0"
-    /* 470 */ "fcvt.d.lu $\x01, $\x02\0"
-    /* 487 */ "fcvt.lu.d $\x01, $\x02\0"
-    /* 504 */ "fcvt.lu.s $\x01, $\x02\0"
-    /* 521 */ "fcvt.l.d $\x01, $\x02\0"
-    /* 537 */ "fcvt.l.s $\x01, $\x02\0"
-    /* 553 */ "fcvt.s.d $\x01, $\x02\0"
-    /* 569 */ "fcvt.s.l $\x01, $\x02\0"
-    /* 585 */ "fcvt.s.lu $\x01, $\x02\0"
-    /* 602 */ "fcvt.s.w $\x01, $\x02\0"
-    /* 618 */ "fcvt.s.wu $\x01, $\x02\0"
-    /* 635 */ "fcvt.wu.d $\x01, $\x02\0"
-    /* 652 */ "fcvt.wu.s $\x01, $\x02\0"
-    /* 669 */ "fcvt.w.d $\x01, $\x02\0"
-    /* 685 */ "fcvt.w.s $\x01, $\x02\0"
-    /* 701 */ "fdiv.d $\x01, $\x02, $\x03\0"
-    /* 719 */ "fdiv.s $\x01, $\x02, $\x03\0"
-    /* 737 */ "fence\0"
-    /* 743 */ "fmadd.d $\x01, $\x02, $\x03, $\x04\0"
-    /* 766 */ "fmadd.s $\x01, $\x02, $\x03, $\x04\0"
-    /* 789 */ "fmsub.d $\x01, $\x02, $\x03, $\x04\0"
-    /* 812 */ "fmsub.s $\x01, $\x02, $\x03, $\x04\0"
-    /* 835 */ "fmul.d $\x01, $\x02, $\x03\0"
-    /* 853 */ "fmul.s $\x01, $\x02, $\x03\0"
-    /* 871 */ "fnmadd.d $\x01, $\x02, $\x03, $\x04\0"
-    /* 895 */ "fnmadd.s $\x01, $\x02, $\x03, $\x04\0"
-    /* 919 */ "fnmsub.d $\x01, $\x02, $\x03, $\x04\0"
-    /* 943 */ "fnmsub.s $\x01, $\x02, $\x03, $\x04\0"
-    /* 967 */ "fneg.d $\x01, $\x02\0"
-    /* 981 */ "fneg.s $\x01, $\x02\0"
-    /* 995 */ "fabs.d $\x01, $\x02\0"
-    /* 1009 */ "fabs.s $\x01, $\x02\0"
-    /* 1023 */ "fmv.d $\x01, $\x02\0"
-    /* 1036 */ "fmv.s $\x01, $\x02\0"
-    /* 1049 */ "fsqrt.d $\x01, $\x02\0"
-    /* 1064 */ "fsqrt.s $\x01, $\x02\0"
-    /* 1079 */ "fsub.d $\x01, $\x02, $\x03\0"
-    /* 1097 */ "fsub.s $\x01, $\x02, $\x03\0"
-    /* 1115 */ "j $\x02\0"
-    /* 1120 */ "jal $\x02\0"
-    /* 1127 */ "ret\0"
-    /* 1131 */ "jr $\x02\0"
-    /* 1137 */ "jalr $\x02\0"
-    /* 1145 */ "jalr $\x01, $\x02\0"
-    /* 1157 */ "jr $\x03($\x02)\0"
-    /* 1167 */ "jalr $\x03($\x02)\0"
-    /* 1179 */ "sfence.vma\0"
-    /* 1190 */ "sfence.vma $\x01\0"
-    /* 1204 */ "sltz $\x01, $\x02\0"
-    /* 1216 */ "sgtz $\x01, $\x03\0"
-    /* 1228 */ "seqz $\x01, $\x02\0"
-    /* 1240 */ "snez $\x01, $\x03\0"
-    /* 1252 */ "neg $\x01, $\x03\0"
-    /* 1263 */ "negw $\x01, $\x03\0"
-    /* 1275 */ "not $\x01, $\x02\0"
+    /* 28 */ "zext.b $\x01, $\x02\0"
+    /* 42 */ "beqz $\x01, $\x03\0"
+    /* 54 */ "blez $\x02, $\x03\0"
+    /* 66 */ "bgez $\x01, $\x03\0"
+    /* 78 */ "bltz $\x01, $\x03\0"
+    /* 90 */ "bgtz $\x02, $\x03\0"
+    /* 102 */ "bnez $\x01, $\x03\0"
+    /* 114 */ "csrc $\xFF\x02\x01, $\x03\0"
+    /* 128 */ "csrci $\xFF\x02\x01, $\x03\0"
+    /* 143 */ "frcsr $\x01\0"
+    /* 152 */ "frrm $\x01\0"
+    /* 160 */ "frflags $\x01\0"
+    /* 171 */ "rdinstret $\x01\0"
+    /* 184 */ "rdcycle $\x01\0"
+    /* 195 */ "rdtime $\x01\0"
+    /* 205 */ "rdinstreth $\x01\0"
+    /* 219 */ "rdcycleh $\x01\0"
+    /* 231 */ "rdtimeh $\x01\0"
+    /* 242 */ "csrr $\x01, $\xFF\x02\x01\0"
+    /* 256 */ "csrs $\xFF\x02\x01, $\x03\0"
+    /* 270 */ "csrsi $\xFF\x02\x01, $\x03\0"
+    /* 285 */ "fscsr $\x03\0"
+    /* 294 */ "fsrm $\x03\0"
+    /* 302 */ "fsflags $\x03\0"
+    /* 313 */ "csrw $\xFF\x02\x01, $\x03\0"
+    /* 327 */ "fscsr $\x01, $\x03\0"
+    /* 340 */ "fsrm $\x01, $\x03\0"
+    /* 352 */ "fsflags $\x01, $\x03\0"
+    /* 367 */ "fsrmi $\x03\0"
+    /* 376 */ "fsflagsi $\x03\0"
+    /* 388 */ "csrwi $\xFF\x02\x01, $\x03\0"
+    /* 403 */ "fsrmi $\x01, $\x03\0"
+    /* 416 */ "fsflagsi $\x01, $\x03\0"
+    /* 432 */ "fadd.d $\x01, $\x02, $\x03\0"
+    /* 450 */ "fadd.s $\x01, $\x02, $\x03\0"
+    /* 468 */ "fcvt.d.l $\x01, $\x02\0"
+    /* 484 */ "fcvt.d.lu $\x01, $\x02\0"
+    /* 501 */ "fcvt.lu.d $\x01, $\x02\0"
+    /* 518 */ "fcvt.lu.s $\x01, $\x02\0"
+    /* 535 */ "fcvt.l.d $\x01, $\x02\0"
+    /* 551 */ "fcvt.l.s $\x01, $\x02\0"
+    /* 567 */ "fcvt.s.d $\x01, $\x02\0"
+    /* 583 */ "fcvt.s.l $\x01, $\x02\0"
+    /* 599 */ "fcvt.s.lu $\x01, $\x02\0"
+    /* 616 */ "fcvt.s.w $\x01, $\x02\0"
+    /* 632 */ "fcvt.s.wu $\x01, $\x02\0"
+    /* 649 */ "fcvt.wu.d $\x01, $\x02\0"
+    /* 666 */ "fcvt.wu.s $\x01, $\x02\0"
+    /* 683 */ "fcvt.w.d $\x01, $\x02\0"
+    /* 699 */ "fcvt.w.s $\x01, $\x02\0"
+    /* 715 */ "fdiv.d $\x01, $\x02, $\x03\0"
+    /* 733 */ "fdiv.s $\x01, $\x02, $\x03\0"
+    /* 751 */ "fence\0"
+    /* 757 */ "fmadd.d $\x01, $\x02, $\x03, $\x04\0"
+    /* 780 */ "fmadd.s $\x01, $\x02, $\x03, $\x04\0"
+    /* 803 */ "fmsub.d $\x01, $\x02, $\x03, $\x04\0"
+    /* 826 */ "fmsub.s $\x01, $\x02, $\x03, $\x04\0"
+    /* 849 */ "fmul.d $\x01, $\x02, $\x03\0"
+    /* 867 */ "fmul.s $\x01, $\x02, $\x03\0"
+    /* 885 */ "fnmadd.d $\x01, $\x02, $\x03, $\x04\0"
+    /* 909 */ "fnmadd.s $\x01, $\x02, $\x03, $\x04\0"
+    /* 933 */ "fnmsub.d $\x01, $\x02, $\x03, $\x04\0"
+    /* 957 */ "fnmsub.s $\x01, $\x02, $\x03, $\x04\0"
+    /* 981 */ "fneg.d $\x01, $\x02\0"
+    /* 995 */ "fneg.s $\x01, $\x02\0"
+    /* 1009 */ "fabs.d $\x01, $\x02\0"
+    /* 1023 */ "fabs.s $\x01, $\x02\0"
+    /* 1037 */ "fmv.d $\x01, $\x02\0"
+    /* 1050 */ "fmv.s $\x01, $\x02\0"
+    /* 1063 */ "fsqrt.d $\x01, $\x02\0"
+    /* 1078 */ "fsqrt.s $\x01, $\x02\0"
+    /* 1093 */ "fsub.d $\x01, $\x02, $\x03\0"
+    /* 1111 */ "fsub.s $\x01, $\x02, $\x03\0"
+    /* 1129 */ "orc.p $\x01, $\x02\0"
+    /* 1142 */ "orc2.n $\x01, $\x02\0"
+    /* 1156 */ "orc.n $\x01, $\x02\0"
+    /* 1169 */ "orc4.b $\x01, $\x02\0"
+    /* 1183 */ "orc2.b $\x01, $\x02\0"
+    /* 1197 */ "orc.b $\x01, $\x02\0"
+    /* 1210 */ "orc8.h $\x01, $\x02\0"
+    /* 1224 */ "orc4.h $\x01, $\x02\0"
+    /* 1238 */ "orc2.h $\x01, $\x02\0"
+    /* 1252 */ "orc.h $\x01, $\x02\0"
+    /* 1265 */ "orc16 $\x01, $\x02\0"
+    /* 1278 */ "orc8 $\x01, $\x02\0"
+    /* 1290 */ "orc4 $\x01, $\x02\0"
+    /* 1302 */ "orc2 $\x01, $\x02\0"
+    /* 1314 */ "orc $\x01, $\x02\0"
+    /* 1325 */ "orc16.w $\x01, $\x02\0"
+    /* 1340 */ "orc8.w $\x01, $\x02\0"
+    /* 1354 */ "orc4.w $\x01, $\x02\0"
+    /* 1368 */ "orc2.w $\x01, $\x02\0"
+    /* 1382 */ "orc.w $\x01, $\x02\0"
+    /* 1395 */ "orc32 $\x01, $\x02\0"
+    /* 1408 */ "rev.p $\x01, $\x02\0"
+    /* 1421 */ "rev2.n $\x01, $\x02\0"
+    /* 1435 */ "rev.n $\x01, $\x02\0"
+    /* 1448 */ "rev4.b $\x01, $\x02\0"
+    /* 1462 */ "rev2.b $\x01, $\x02\0"
+    /* 1476 */ "rev.b $\x01, $\x02\0"
+    /* 1489 */ "rev8.h $\x01, $\x02\0"
+    /* 1503 */ "rev4.h $\x01, $\x02\0"
+    /* 1517 */ "rev2.h $\x01, $\x02\0"
+    /* 1531 */ "rev.h $\x01, $\x02\0"
+    /* 1544 */ "rev16 $\x01, $\x02\0"
+    /* 1557 */ "rev8 $\x01, $\x02\0"
+    /* 1569 */ "rev4 $\x01, $\x02\0"
+    /* 1581 */ "rev2 $\x01, $\x02\0"
+    /* 1593 */ "rev $\x01, $\x02\0"
+    /* 1604 */ "rev16.w $\x01, $\x02\0"
+    /* 1619 */ "rev8.w $\x01, $\x02\0"
+    /* 1633 */ "rev4.w $\x01, $\x02\0"
+    /* 1647 */ "rev2.w $\x01, $\x02\0"
+    /* 1661 */ "rev.w $\x01, $\x02\0"
+    /* 1674 */ "rev32 $\x01, $\x02\0"
+    /* 1687 */ "j $\x02\0"
+    /* 1692 */ "jal $\x02\0"
+    /* 1699 */ "ret\0"
+    /* 1703 */ "jr $\x02\0"
+    /* 1709 */ "jalr $\x02\0"
+    /* 1717 */ "jalr $\x01, $\x02\0"
+    /* 1729 */ "jr $\x03($\x02)\0"
+    /* 1739 */ "jalr $\x03($\x02)\0"
+    /* 1751 */ "zext.h $\x01, $\x02\0"
+    /* 1765 */ "zext.w $\x01, $\x02\0"
+    /* 1779 */ "sfence.vma\0"
+    /* 1790 */ "sfence.vma $\x01\0"
+    /* 1804 */ "zip.n $\x01, $\x02\0"
+    /* 1817 */ "zip2.b $\x01, $\x02\0"
+    /* 1831 */ "zip.b $\x01, $\x02\0"
+    /* 1844 */ "zip4.h $\x01, $\x02\0"
+    /* 1858 */ "zip2.h $\x01, $\x02\0"
+    /* 1872 */ "zip.h $\x01, $\x02\0"
+    /* 1885 */ "zip8 $\x01, $\x02\0"
+    /* 1897 */ "zip4 $\x01, $\x02\0"
+    /* 1909 */ "zip2 $\x01, $\x02\0"
+    /* 1921 */ "zip $\x01, $\x02\0"
+    /* 1932 */ "zip8.w $\x01, $\x02\0"
+    /* 1946 */ "zip4.w $\x01, $\x02\0"
+    /* 1960 */ "zip2.w $\x01, $\x02\0"
+    /* 1974 */ "zip.w $\x01, $\x02\0"
+    /* 1987 */ "zip16 $\x01, $\x02\0"
+    /* 2000 */ "sltz $\x01, $\x02\0"
+    /* 2012 */ "sgtz $\x01, $\x03\0"
+    /* 2024 */ "seqz $\x01, $\x02\0"
+    /* 2036 */ "snez $\x01, $\x03\0"
+    /* 2048 */ "neg $\x01, $\x03\0"
+    /* 2059 */ "negw $\x01, $\x03\0"
+    /* 2071 */ "unzip.n $\x01, $\x02\0"
+    /* 2086 */ "unzip2.b $\x01, $\x02\0"
+    /* 2102 */ "unzip.b $\x01, $\x02\0"
+    /* 2117 */ "unzip4.h $\x01, $\x02\0"
+    /* 2133 */ "unzip2.h $\x01, $\x02\0"
+    /* 2149 */ "unzip.h $\x01, $\x02\0"
+    /* 2164 */ "unzip8 $\x01, $\x02\0"
+    /* 2178 */ "unzip4 $\x01, $\x02\0"
+    /* 2192 */ "unzip2 $\x01, $\x02\0"
+    /* 2206 */ "unzip $\x01, $\x02\0"
+    /* 2219 */ "unzip8.w $\x01, $\x02\0"
+    /* 2235 */ "unzip4.w $\x01, $\x02\0"
+    /* 2251 */ "unzip2.w $\x01, $\x02\0"
+    /* 2267 */ "unzip.w $\x01, $\x02\0"
+    /* 2282 */ "unzip16 $\x01, $\x02\0"
+    /* 2297 */ "vmcpy.m $\x01, $\x02\0"
+    /* 2312 */ "vmnot.m $\x01, $\x02\0"
+    /* 2327 */ "vmset.m $\x01\0"
+    /* 2338 */ "vmclr.m $\x01\0"
+    /* 2349 */ "vwcvtu.x.x.v $\x01, $\x02$\xFF\x04\x02\0"
+    /* 2373 */ "vwcvt.x.x.v $\x01, $\x02$\xFF\x04\x02\0"
+    /* 2396 */ "vnot.v $\x01, $\x02$\xFF\x04\x02\0"
+    /* 2414 */ "not $\x01, $\x02\0"
   ;
 
 #ifndef NDEBUG
@@ -1927,7 +3934,7 @@ bool RISCVInstPrinter::printAliasInstr(const MCInst *MI, const MCSubtargetInfo &
           ++I;
           int OpIdx = AsmString[I++] - 1;
           int PrintMethodIdx = AsmString[I++] - 1;
-          printCustomAliasOperand(MI, OpIdx, PrintMethodIdx, STI, OS);
+          printCustomAliasOperand(MI, Address, OpIdx, PrintMethodIdx, STI, OS);
         } else
           printOperand(MI, unsigned(AsmString[I++]) - 1, STI, OS);
       } else {
@@ -1940,7 +3947,7 @@ bool RISCVInstPrinter::printAliasInstr(const MCInst *MI, const MCSubtargetInfo &
 }
 
 void RISCVInstPrinter::printCustomAliasOperand(
-         const MCInst *MI, unsigned OpIdx,
+         const MCInst *MI, uint64_t Address, unsigned OpIdx,
          unsigned PrintMethodIdx,
          const MCSubtargetInfo &STI,
          raw_ostream &OS) {
@@ -1950,6 +3957,9 @@ void RISCVInstPrinter::printCustomAliasOperand(
     break;
   case 0:
     printCSRSystemRegister(MI, OpIdx, STI, OS);
+    break;
+  case 1:
+    printVMaskReg(MI, OpIdx, STI, OS);
     break;
   }
 }

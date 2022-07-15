@@ -479,9 +479,9 @@ static bool compressInst(MCInst& OutInst,
       break;
     } // case FLD
     case RISCV::FLW: {
-    if (!STI.getFeatureBits()[RISCV::Feature64Bit] &&
-      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+    if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       STI.getFeatureBits()[RISCV::FeatureStdExtF] &&
+      !STI.getFeatureBits()[RISCV::Feature64Bit] &&
       (MRI.getRegClass(RISCV::FPR32CRegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg())) &&
       RISCVValidateMCOperand(MI.getOperand(2), STI, 8)) {
@@ -496,9 +496,9 @@ static bool compressInst(MCInst& OutInst,
       OutInst.setLoc(MI.getLoc());
       return true;
     } // if
-    if (!STI.getFeatureBits()[RISCV::Feature64Bit] &&
-      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+    if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       STI.getFeatureBits()[RISCV::FeatureStdExtF] &&
+      !STI.getFeatureBits()[RISCV::Feature64Bit] &&
       (MRI.getRegClass(RISCV::FPR32RegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::SPRegClassID).contains(MI.getOperand(1).getReg())) &&
       RISCVValidateMCOperand(MI.getOperand(2), STI, 9)) {
@@ -551,9 +551,9 @@ static bool compressInst(MCInst& OutInst,
       break;
     } // case FSD
     case RISCV::FSW: {
-    if (!STI.getFeatureBits()[RISCV::Feature64Bit] &&
-      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+    if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       STI.getFeatureBits()[RISCV::FeatureStdExtF] &&
+      !STI.getFeatureBits()[RISCV::Feature64Bit] &&
       (MRI.getRegClass(RISCV::FPR32CRegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg())) &&
       RISCVValidateMCOperand(MI.getOperand(2), STI, 8)) {
@@ -568,9 +568,9 @@ static bool compressInst(MCInst& OutInst,
       OutInst.setLoc(MI.getLoc());
       return true;
     } // if
-    if (!STI.getFeatureBits()[RISCV::Feature64Bit] &&
-      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+    if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       STI.getFeatureBits()[RISCV::FeatureStdExtF] &&
+      !STI.getFeatureBits()[RISCV::Feature64Bit] &&
       (MRI.getRegClass(RISCV::FPR32RegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::SPRegClassID).contains(MI.getOperand(1).getReg())) &&
       RISCVValidateMCOperand(MI.getOperand(2), STI, 9)) {
@@ -588,8 +588,8 @@ static bool compressInst(MCInst& OutInst,
       break;
     } // case FSW
     case RISCV::JAL: {
-    if (!STI.getFeatureBits()[RISCV::Feature64Bit] &&
-      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+    if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+      !STI.getFeatureBits()[RISCV::Feature64Bit] &&
       (MI.getOperand(0).getReg() == RISCV::X1) &&
       RISCVValidateMCOperand(MI.getOperand(1), STI, 10)) {
       // c.jal	$offset
@@ -754,6 +754,25 @@ static bool compressInst(MCInst& OutInst,
     } // if
       break;
     } // case OR
+    case RISCV::PACK: {
+    if (STI.getFeatureBits()[RISCV::Feature64Bit] &&
+      STI.getFeatureBits()[RISCV::FeatureExtZbproposedc] &&
+      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+      (STI.getFeatureBits()[RISCV::FeatureExtZbb] || STI.getFeatureBits()[RISCV::FeatureExtZbp]) &&
+      (MI.getOperand(1).getReg() ==  MI.getOperand(0).getReg()) &&
+      (MI.getOperand(2).getReg() == RISCV::X0) &&
+      (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg()))) {
+      // c.zext.w	$rs
+      OutInst.setOpcode(RISCV::C_ZEXTW);
+      // Operand: rs_wb
+      OutInst.addOperand(MI.getOperand(1));
+      // Operand: rs
+      OutInst.addOperand(MI.getOperand(1));
+      OutInst.setLoc(MI.getLoc());
+      return true;
+    } // if
+      break;
+    } // case PACK
     case RISCV::SD: {
     if (STI.getFeatureBits()[RISCV::Feature64Bit] &&
       STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
@@ -859,6 +878,20 @@ static bool compressInst(MCInst& OutInst,
       OutInst.setLoc(MI.getLoc());
       return true;
     } // if
+    if (STI.getFeatureBits()[RISCV::FeatureExtZbproposedc] &&
+      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+      (MI.getOperand(1).getReg() == RISCV::X0) &&
+      (MI.getOperand(2).getReg() ==  MI.getOperand(0).getReg()) &&
+      (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(2).getReg()))) {
+      // c.neg	$rs
+      OutInst.setOpcode(RISCV::C_NEG);
+      // Operand: rs_wb
+      OutInst.addOperand(MI.getOperand(2));
+      // Operand: rs
+      OutInst.addOperand(MI.getOperand(2));
+      OutInst.setLoc(MI.getLoc());
+      return true;
+    } // if
       break;
     } // case SUB
     case RISCV::SUBW: {
@@ -953,8 +986,26 @@ static bool compressInst(MCInst& OutInst,
       OutInst.setLoc(MI.getLoc());
       return true;
     } // if
-
+      break;
     } // case XOR
+    case RISCV::XORI: {
+    if (STI.getFeatureBits()[RISCV::FeatureExtZbproposedc] &&
+      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+      (MI.getOperand(1).getReg() ==  MI.getOperand(0).getReg()) &&
+      (MI.getOperand(2).isImm()) &&
+      (MI.getOperand(2).getImm() == -1) &&
+      (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg()))) {
+      // c.not	$rs
+      OutInst.setOpcode(RISCV::C_NOT);
+      // Operand: rs_wb
+      OutInst.addOperand(MI.getOperand(1));
+      // Operand: rs
+      OutInst.addOperand(MI.getOperand(1));
+      OutInst.setLoc(MI.getLoc());
+      return true;
+    } // if
+
+    } // case XORI
   } // switch
   return false;
 }
@@ -1301,9 +1352,9 @@ static bool uncompressInst(MCInst& OutInst,
       break;
     } // case C_FLDSP
     case RISCV::C_FLW: {
-    if (!STI.getFeatureBits()[RISCV::Feature64Bit] &&
-      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+    if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       STI.getFeatureBits()[RISCV::FeatureStdExtF] &&
+      !STI.getFeatureBits()[RISCV::Feature64Bit] &&
       (MRI.getRegClass(RISCV::FPR32RegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::GPRRegClassID).contains(MI.getOperand(1).getReg())) &&
       RISCVValidateMCOperand(MI.getOperand(2), STI, 1)) {
@@ -1321,9 +1372,9 @@ static bool uncompressInst(MCInst& OutInst,
       break;
     } // case C_FLW
     case RISCV::C_FLWSP: {
-    if (!STI.getFeatureBits()[RISCV::Feature64Bit] &&
-      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+    if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       STI.getFeatureBits()[RISCV::FeatureStdExtF] &&
+      !STI.getFeatureBits()[RISCV::Feature64Bit] &&
       (MRI.getRegClass(RISCV::FPR32RegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::GPRRegClassID).contains(MI.getOperand(1).getReg())) &&
       RISCVValidateMCOperand(MI.getOperand(2), STI, 1)) {
@@ -1379,9 +1430,9 @@ static bool uncompressInst(MCInst& OutInst,
       break;
     } // case C_FSDSP
     case RISCV::C_FSW: {
-    if (!STI.getFeatureBits()[RISCV::Feature64Bit] &&
-      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+    if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       STI.getFeatureBits()[RISCV::FeatureStdExtF] &&
+      !STI.getFeatureBits()[RISCV::Feature64Bit] &&
       (MRI.getRegClass(RISCV::FPR32RegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::GPRRegClassID).contains(MI.getOperand(1).getReg())) &&
       RISCVValidateMCOperand(MI.getOperand(2), STI, 1)) {
@@ -1399,9 +1450,9 @@ static bool uncompressInst(MCInst& OutInst,
       break;
     } // case C_FSW
     case RISCV::C_FSWSP: {
-    if (!STI.getFeatureBits()[RISCV::Feature64Bit] &&
-      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+    if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       STI.getFeatureBits()[RISCV::FeatureStdExtF] &&
+      !STI.getFeatureBits()[RISCV::Feature64Bit] &&
       (MRI.getRegClass(RISCV::FPR32RegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::GPRRegClassID).contains(MI.getOperand(1).getReg())) &&
       RISCVValidateMCOperand(MI.getOperand(2), STI, 1)) {
@@ -1433,8 +1484,8 @@ static bool uncompressInst(MCInst& OutInst,
       break;
     } // case C_J
     case RISCV::C_JAL: {
-    if (!STI.getFeatureBits()[RISCV::Feature64Bit] &&
-      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+    if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+      !STI.getFeatureBits()[RISCV::Feature64Bit] &&
       RISCVValidateMCOperand(MI.getOperand(0), STI, 3)) {
       // jal	$rd, $imm20
       OutInst.setOpcode(RISCV::JAL);
@@ -1648,6 +1699,24 @@ static bool uncompressInst(MCInst& OutInst,
     } // if
       break;
     } // case C_MV
+    case RISCV::C_NEG: {
+    if (STI.getFeatureBits()[RISCV::FeatureExtZbproposedc] &&
+      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+      (MRI.getRegClass(RISCV::GPRRegClassID).contains(MI.getOperand(0).getReg())) &&
+      (MRI.getRegClass(RISCV::GPRRegClassID).contains(MI.getOperand(0).getReg()))) {
+      // sub	$rd, $rs1, $rs2
+      OutInst.setOpcode(RISCV::SUB);
+      // Operand: rd
+      OutInst.addOperand(MI.getOperand(0));
+      // Operand: rs1
+      OutInst.addOperand(MCOperand::createReg(RISCV::X0));
+      // Operand: rs2
+      OutInst.addOperand(MI.getOperand(0));
+      OutInst.setLoc(MI.getLoc());
+      return true;
+    } // if
+      break;
+    } // case C_NEG
     case RISCV::C_NOP: {
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       RISCVValidateMCOperand(MCOperand::createImm(0), STI, 1)) {
@@ -1664,6 +1733,25 @@ static bool uncompressInst(MCInst& OutInst,
     } // if
       break;
     } // case C_NOP
+    case RISCV::C_NOT: {
+    if (STI.getFeatureBits()[RISCV::FeatureExtZbproposedc] &&
+      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+      (MRI.getRegClass(RISCV::GPRRegClassID).contains(MI.getOperand(0).getReg())) &&
+      (MRI.getRegClass(RISCV::GPRRegClassID).contains(MI.getOperand(0).getReg())) &&
+      RISCVValidateMCOperand(MCOperand::createImm(-1), STI, 1)) {
+      // xori	$rd, $rs1, $imm12
+      OutInst.setOpcode(RISCV::XORI);
+      // Operand: rd
+      OutInst.addOperand(MI.getOperand(0));
+      // Operand: rs1
+      OutInst.addOperand(MI.getOperand(0));
+      // Operand: imm12
+      OutInst.addOperand(MCOperand::createImm(-1));
+      OutInst.setLoc(MI.getLoc());
+      return true;
+    } // if
+      break;
+    } // case C_NOT
     case RISCV::C_OR: {
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MRI.getRegClass(RISCV::GPRRegClassID).contains(MI.getOperand(0).getReg())) &&
@@ -1902,8 +1990,28 @@ static bool uncompressInst(MCInst& OutInst,
       OutInst.setLoc(MI.getLoc());
       return true;
     } // if
-
+      break;
     } // case C_XOR
+    case RISCV::C_ZEXTW: {
+    if (STI.getFeatureBits()[RISCV::Feature64Bit] &&
+      STI.getFeatureBits()[RISCV::FeatureExtZbproposedc] &&
+      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+      (STI.getFeatureBits()[RISCV::FeatureExtZbb] || STI.getFeatureBits()[RISCV::FeatureExtZbp]) &&
+      (MRI.getRegClass(RISCV::GPRRegClassID).contains(MI.getOperand(0).getReg())) &&
+      (MRI.getRegClass(RISCV::GPRRegClassID).contains(MI.getOperand(0).getReg()))) {
+      // pack	$rd, $rs1, $rs2
+      OutInst.setOpcode(RISCV::PACK);
+      // Operand: rd
+      OutInst.addOperand(MI.getOperand(0));
+      // Operand: rs1
+      OutInst.addOperand(MI.getOperand(0));
+      // Operand: rs2
+      OutInst.addOperand(MCOperand::createReg(RISCV::X0));
+      OutInst.setLoc(MI.getLoc());
+      return true;
+    } // if
+
+    } // case C_ZEXTW
   } // switch
   return false;
 }
@@ -2239,9 +2347,9 @@ static bool isCompressibleInst(const MachineInstr& MI,
       break;
     } // case FLD
     case RISCV::FLW: {
-    if (!STI.getFeatureBits()[RISCV::Feature64Bit] &&
-      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+    if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       STI.getFeatureBits()[RISCV::FeatureStdExtF] &&
+      !STI.getFeatureBits()[RISCV::Feature64Bit] &&
       (MRI.getRegClass(RISCV::FPR32CRegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg())) &&
       MI.getOperand(2).isImm() && 
@@ -2252,9 +2360,9 @@ static bool isCompressibleInst(const MachineInstr& MI,
       // Operand: imm
       return true;
     } // if
-    if (!STI.getFeatureBits()[RISCV::Feature64Bit] &&
-      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+    if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       STI.getFeatureBits()[RISCV::FeatureStdExtF] &&
+      !STI.getFeatureBits()[RISCV::Feature64Bit] &&
       (MRI.getRegClass(RISCV::FPR32RegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::SPRegClassID).contains(MI.getOperand(1).getReg())) &&
       MI.getOperand(2).isImm() && 
@@ -2295,9 +2403,9 @@ static bool isCompressibleInst(const MachineInstr& MI,
       break;
     } // case FSD
     case RISCV::FSW: {
-    if (!STI.getFeatureBits()[RISCV::Feature64Bit] &&
-      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+    if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       STI.getFeatureBits()[RISCV::FeatureStdExtF] &&
+      !STI.getFeatureBits()[RISCV::Feature64Bit] &&
       (MRI.getRegClass(RISCV::FPR32CRegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg())) &&
       MI.getOperand(2).isImm() && 
@@ -2308,9 +2416,9 @@ static bool isCompressibleInst(const MachineInstr& MI,
       // Operand: imm
       return true;
     } // if
-    if (!STI.getFeatureBits()[RISCV::Feature64Bit] &&
-      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+    if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       STI.getFeatureBits()[RISCV::FeatureStdExtF] &&
+      !STI.getFeatureBits()[RISCV::Feature64Bit] &&
       (MRI.getRegClass(RISCV::FPR32RegClassID).contains(MI.getOperand(0).getReg())) &&
       (MRI.getRegClass(RISCV::SPRegClassID).contains(MI.getOperand(1).getReg())) &&
       MI.getOperand(2).isImm() && 
@@ -2332,8 +2440,8 @@ static bool isCompressibleInst(const MachineInstr& MI,
       // Operand: offset
       return true;
     } // if
-    if (!STI.getFeatureBits()[RISCV::Feature64Bit] &&
-      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+    if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+      !STI.getFeatureBits()[RISCV::Feature64Bit] &&
       (MI.getOperand(0).getReg() == RISCV::X1) &&
       MI.getOperand(1).isImm() && 
       RISCVValidateMachineOperand(MI.getOperand(1), Subtarget, 10)) {
@@ -2451,6 +2559,21 @@ static bool isCompressibleInst(const MachineInstr& MI,
     } // if
       break;
     } // case OR
+    case RISCV::PACK: {
+    if (STI.getFeatureBits()[RISCV::Feature64Bit] &&
+      STI.getFeatureBits()[RISCV::FeatureExtZbproposedc] &&
+      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+      (STI.getFeatureBits()[RISCV::FeatureExtZbb] || STI.getFeatureBits()[RISCV::FeatureExtZbp]) &&
+      (MI.getOperand(1).getReg() ==  MI.getOperand(0).getReg()) &&
+      (MI.getOperand(2).getReg() == RISCV::X0) &&
+      (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg()))) {
+      // c.zext.w	$rs
+      // Operand: rs_wb
+      // Operand: rs
+      return true;
+    } // if
+      break;
+    } // case PACK
     case RISCV::SD: {
     if (STI.getFeatureBits()[RISCV::Feature64Bit] &&
       STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
@@ -2521,6 +2644,16 @@ static bool isCompressibleInst(const MachineInstr& MI,
       break;
     } // case SRLI
     case RISCV::SUB: {
+    if (STI.getFeatureBits()[RISCV::FeatureExtZbproposedc] &&
+      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+      (MI.getOperand(1).getReg() == RISCV::X0) &&
+      (MI.getOperand(2).getReg() ==  MI.getOperand(0).getReg()) &&
+      (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(2).getReg()))) {
+      // c.neg	$rs
+      // Operand: rs_wb
+      // Operand: rs
+      return true;
+    } // if
     if (STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
       (MI.getOperand(1).getReg() ==  MI.getOperand(0).getReg()) &&
       (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg())) &&
@@ -2600,8 +2733,22 @@ static bool isCompressibleInst(const MachineInstr& MI,
       // Operand: rs2
       return true;
     } // if
-
+      break;
     } // case XOR
+    case RISCV::XORI: {
+    if (STI.getFeatureBits()[RISCV::FeatureExtZbproposedc] &&
+      STI.getFeatureBits()[RISCV::FeatureStdExtC] &&
+      (MI.getOperand(1).getReg() ==  MI.getOperand(0).getReg()) &&
+      (MI.getOperand(2).isImm()) &&
+      (MI.getOperand(2).getImm() == -1) &&
+      (MRI.getRegClass(RISCV::GPRCRegClassID).contains(MI.getOperand(1).getReg()))) {
+      // c.not	$rs
+      // Operand: rs_wb
+      // Operand: rs
+      return true;
+    } // if
+
+    } // case XORI
   } // switch
   return false;
 }

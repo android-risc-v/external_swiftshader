@@ -329,119 +329,121 @@ enum {
   GPRwithZRRegClassID = 6,
   SPR_8RegClassID = 7,
   GPRnopcRegClassID = 8,
-  GPRwithAPSRnospRegClassID = 9,
-  GPRwithZRnospRegClassID = 10,
-  rGPRRegClassID = 11,
-  tGPRwithpcRegClassID = 12,
-  FPWithVPR_with_ssub_0_with_ssub_0_in_SPR_8RegClassID = 13,
-  hGPRRegClassID = 14,
-  tGPRRegClassID = 15,
-  tGPREvenRegClassID = 16,
-  GPRnopc_and_hGPRRegClassID = 17,
-  GPRwithAPSRnosp_and_hGPRRegClassID = 18,
-  tGPROddRegClassID = 19,
-  tcGPRRegClassID = 20,
-  hGPR_and_tGPREvenRegClassID = 21,
-  tGPR_and_tGPREvenRegClassID = 22,
-  tGPR_and_tGPROddRegClassID = 23,
-  tGPR_and_tcGPRRegClassID = 24,
-  tGPREven_and_tcGPRRegClassID = 25,
-  hGPR_and_tGPROddRegClassID = 26,
-  tGPREven_and_tGPR_and_tcGPRRegClassID = 27,
-  tGPROdd_and_tcGPRRegClassID = 28,
-  CCRRegClassID = 29,
-  GPRlrRegClassID = 30,
-  GPRspRegClassID = 31,
-  VCCRRegClassID = 32,
-  cl_FPSCR_NZCVRegClassID = 33,
-  hGPR_and_tGPRwithpcRegClassID = 34,
-  hGPR_and_tcGPRRegClassID = 35,
-  DPRRegClassID = 36,
-  DPR_VFP2RegClassID = 37,
-  DPR_8RegClassID = 38,
-  GPRPairRegClassID = 39,
-  GPRPairnospRegClassID = 40,
-  GPRPair_with_gsub_0_in_tGPRRegClassID = 41,
-  GPRPair_with_gsub_0_in_hGPRRegClassID = 42,
-  GPRPair_with_gsub_0_in_tcGPRRegClassID = 43,
-  GPRPair_with_gsub_1_in_tcGPRRegClassID = 44,
-  GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPRRegClassID = 45,
-  GPRPair_with_gsub_1_in_GPRspRegClassID = 46,
-  DPairSpcRegClassID = 47,
-  DPairSpc_with_ssub_0RegClassID = 48,
-  DPairSpc_with_ssub_4RegClassID = 49,
-  DPairSpc_with_dsub_0_in_DPR_8RegClassID = 50,
-  DPairSpc_with_dsub_2_in_DPR_8RegClassID = 51,
-  DPairRegClassID = 52,
-  DPair_with_ssub_0RegClassID = 53,
-  QPRRegClassID = 54,
-  DPair_with_ssub_2RegClassID = 55,
-  DPair_with_dsub_0_in_DPR_8RegClassID = 56,
-  MQPRRegClassID = 57,
-  QPR_VFP2RegClassID = 58,
-  DPair_with_dsub_1_in_DPR_8RegClassID = 59,
-  QPR_8RegClassID = 60,
-  DTripleRegClassID = 61,
-  DTripleSpcRegClassID = 62,
-  DTripleSpc_with_ssub_0RegClassID = 63,
-  DTriple_with_ssub_0RegClassID = 64,
-  DTriple_with_qsub_0_in_QPRRegClassID = 65,
-  DTriple_with_ssub_2RegClassID = 66,
-  DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID = 67,
-  DTripleSpc_with_ssub_4RegClassID = 68,
-  DTriple_with_ssub_4RegClassID = 69,
-  DTripleSpc_with_ssub_8RegClassID = 70,
-  DTripleSpc_with_dsub_0_in_DPR_8RegClassID = 71,
-  DTriple_with_dsub_0_in_DPR_8RegClassID = 72,
-  DTriple_with_qsub_0_in_MQPRRegClassID = 73,
-  DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID = 74,
-  DTriple_with_dsub_1_in_DPR_8RegClassID = 75,
-  DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID = 76,
-  DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPRRegClassID = 77,
-  DTripleSpc_with_dsub_2_in_DPR_8RegClassID = 78,
-  DTriple_with_dsub_2_in_DPR_8RegClassID = 79,
-  DTripleSpc_with_dsub_4_in_DPR_8RegClassID = 80,
-  DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID = 81,
-  DTriple_with_qsub_0_in_QPR_8RegClassID = 82,
-  DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPRRegClassID = 83,
-  DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8RegClassID = 84,
-  DQuadSpcRegClassID = 85,
-  DQuadSpc_with_ssub_0RegClassID = 86,
-  DQuadSpc_with_ssub_4RegClassID = 87,
-  DQuadSpc_with_ssub_8RegClassID = 88,
-  DQuadSpc_with_dsub_0_in_DPR_8RegClassID = 89,
-  DQuadSpc_with_dsub_2_in_DPR_8RegClassID = 90,
-  DQuadSpc_with_dsub_4_in_DPR_8RegClassID = 91,
-  DQuadRegClassID = 92,
-  DQuad_with_ssub_0RegClassID = 93,
-  DQuad_with_ssub_2RegClassID = 94,
-  QQPRRegClassID = 95,
-  DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID = 96,
-  DQuad_with_ssub_4RegClassID = 97,
-  DQuad_with_ssub_6RegClassID = 98,
-  DQuad_with_dsub_0_in_DPR_8RegClassID = 99,
-  DQuad_with_qsub_0_in_MQPRRegClassID = 100,
-  DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID = 101,
-  DQuad_with_dsub_1_in_DPR_8RegClassID = 102,
-  DQuad_with_qsub_1_in_MQPRRegClassID = 103,
-  DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID = 104,
-  DQuad_with_dsub_2_in_DPR_8RegClassID = 105,
-  DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID = 106,
-  DQuad_with_dsub_3_in_DPR_8RegClassID = 107,
-  DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID = 108,
-  DQuad_with_qsub_0_in_QPR_8RegClassID = 109,
-  DQuad_with_qsub_1_in_QPR_8RegClassID = 110,
-  DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8RegClassID = 111,
-  DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID = 112,
-  QQQQPRRegClassID = 113,
-  QQQQPR_with_ssub_0RegClassID = 114,
-  QQQQPR_with_ssub_4RegClassID = 115,
-  QQQQPR_with_ssub_8RegClassID = 116,
-  QQQQPR_with_ssub_12RegClassID = 117,
-  QQQQPR_with_dsub_0_in_DPR_8RegClassID = 118,
-  QQQQPR_with_dsub_2_in_DPR_8RegClassID = 119,
-  QQQQPR_with_dsub_4_in_DPR_8RegClassID = 120,
-  QQQQPR_with_dsub_6_in_DPR_8RegClassID = 121,
+  GPRwithAPSR_NZCVnospRegClassID = 9,
+  GPRwithAPSRnospRegClassID = 10,
+  GPRwithZRnospRegClassID = 11,
+  rGPRRegClassID = 12,
+  tGPRwithpcRegClassID = 13,
+  FPWithVPR_with_ssub_0_with_ssub_0_in_SPR_8RegClassID = 14,
+  hGPRRegClassID = 15,
+  tGPRRegClassID = 16,
+  tGPREvenRegClassID = 17,
+  GPRnopc_and_hGPRRegClassID = 18,
+  GPRwithAPSR_NZCVnosp_and_hGPRRegClassID = 19,
+  tGPROddRegClassID = 20,
+  tcGPRRegClassID = 21,
+  hGPR_and_tGPREvenRegClassID = 22,
+  tGPR_and_tGPREvenRegClassID = 23,
+  tGPR_and_tGPROddRegClassID = 24,
+  tGPR_and_tcGPRRegClassID = 25,
+  tGPREven_and_tcGPRRegClassID = 26,
+  hGPR_and_tGPROddRegClassID = 27,
+  tGPREven_and_tGPR_and_tcGPRRegClassID = 28,
+  tGPROdd_and_tcGPRRegClassID = 29,
+  CCRRegClassID = 30,
+  FPCXTRegsRegClassID = 31,
+  GPRlrRegClassID = 32,
+  GPRspRegClassID = 33,
+  VCCRRegClassID = 34,
+  cl_FPSCR_NZCVRegClassID = 35,
+  hGPR_and_tGPRwithpcRegClassID = 36,
+  hGPR_and_tcGPRRegClassID = 37,
+  DPRRegClassID = 38,
+  DPR_VFP2RegClassID = 39,
+  DPR_8RegClassID = 40,
+  GPRPairRegClassID = 41,
+  GPRPairnospRegClassID = 42,
+  GPRPair_with_gsub_0_in_tGPRRegClassID = 43,
+  GPRPair_with_gsub_0_in_hGPRRegClassID = 44,
+  GPRPair_with_gsub_0_in_tcGPRRegClassID = 45,
+  GPRPair_with_gsub_1_in_tcGPRRegClassID = 46,
+  GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPRRegClassID = 47,
+  GPRPair_with_gsub_1_in_GPRspRegClassID = 48,
+  DPairSpcRegClassID = 49,
+  DPairSpc_with_ssub_0RegClassID = 50,
+  DPairSpc_with_ssub_4RegClassID = 51,
+  DPairSpc_with_dsub_0_in_DPR_8RegClassID = 52,
+  DPairSpc_with_dsub_2_in_DPR_8RegClassID = 53,
+  DPairRegClassID = 54,
+  DPair_with_ssub_0RegClassID = 55,
+  QPRRegClassID = 56,
+  DPair_with_ssub_2RegClassID = 57,
+  DPair_with_dsub_0_in_DPR_8RegClassID = 58,
+  MQPRRegClassID = 59,
+  QPR_VFP2RegClassID = 60,
+  DPair_with_dsub_1_in_DPR_8RegClassID = 61,
+  QPR_8RegClassID = 62,
+  DTripleRegClassID = 63,
+  DTripleSpcRegClassID = 64,
+  DTripleSpc_with_ssub_0RegClassID = 65,
+  DTriple_with_ssub_0RegClassID = 66,
+  DTriple_with_qsub_0_in_QPRRegClassID = 67,
+  DTriple_with_ssub_2RegClassID = 68,
+  DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID = 69,
+  DTripleSpc_with_ssub_4RegClassID = 70,
+  DTriple_with_ssub_4RegClassID = 71,
+  DTripleSpc_with_ssub_8RegClassID = 72,
+  DTripleSpc_with_dsub_0_in_DPR_8RegClassID = 73,
+  DTriple_with_dsub_0_in_DPR_8RegClassID = 74,
+  DTriple_with_qsub_0_in_MQPRRegClassID = 75,
+  DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID = 76,
+  DTriple_with_dsub_1_in_DPR_8RegClassID = 77,
+  DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID = 78,
+  DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPRRegClassID = 79,
+  DTripleSpc_with_dsub_2_in_DPR_8RegClassID = 80,
+  DTriple_with_dsub_2_in_DPR_8RegClassID = 81,
+  DTripleSpc_with_dsub_4_in_DPR_8RegClassID = 82,
+  DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID = 83,
+  DTriple_with_qsub_0_in_QPR_8RegClassID = 84,
+  DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPRRegClassID = 85,
+  DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8RegClassID = 86,
+  DQuadSpcRegClassID = 87,
+  DQuadSpc_with_ssub_0RegClassID = 88,
+  DQuadSpc_with_ssub_4RegClassID = 89,
+  DQuadSpc_with_ssub_8RegClassID = 90,
+  DQuadSpc_with_dsub_0_in_DPR_8RegClassID = 91,
+  DQuadSpc_with_dsub_2_in_DPR_8RegClassID = 92,
+  DQuadSpc_with_dsub_4_in_DPR_8RegClassID = 93,
+  DQuadRegClassID = 94,
+  DQuad_with_ssub_0RegClassID = 95,
+  DQuad_with_ssub_2RegClassID = 96,
+  QQPRRegClassID = 97,
+  DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID = 98,
+  DQuad_with_ssub_4RegClassID = 99,
+  DQuad_with_ssub_6RegClassID = 100,
+  DQuad_with_dsub_0_in_DPR_8RegClassID = 101,
+  DQuad_with_qsub_0_in_MQPRRegClassID = 102,
+  DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID = 103,
+  DQuad_with_dsub_1_in_DPR_8RegClassID = 104,
+  DQuad_with_qsub_1_in_MQPRRegClassID = 105,
+  DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID = 106,
+  DQuad_with_dsub_2_in_DPR_8RegClassID = 107,
+  DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID = 108,
+  DQuad_with_dsub_3_in_DPR_8RegClassID = 109,
+  DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID = 110,
+  DQuad_with_qsub_0_in_QPR_8RegClassID = 111,
+  DQuad_with_qsub_1_in_QPR_8RegClassID = 112,
+  DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8RegClassID = 113,
+  DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID = 114,
+  QQQQPRRegClassID = 115,
+  QQQQPR_with_ssub_0RegClassID = 116,
+  QQQQPR_with_ssub_4RegClassID = 117,
+  QQQQPR_with_ssub_8RegClassID = 118,
+  QQQQPR_with_ssub_12RegClassID = 119,
+  QQQQPR_with_dsub_0_in_DPR_8RegClassID = 120,
+  QQQQPR_with_dsub_2_in_DPR_8RegClassID = 121,
+  QQQQPR_with_dsub_4_in_DPR_8RegClassID = 122,
+  QQQQPR_with_dsub_6_in_DPR_8RegClassID = 123,
 
   };
 } // end namespace ARM
@@ -461,7 +463,7 @@ enum {
 // Subregister indices
 
 namespace ARM {
-enum {
+enum : uint16_t {
   NoSubRegister,
   dsub_0,	// 1
   dsub_1,	// 2
@@ -520,6 +522,47 @@ enum {
   dsub_5_ssub_12_ssub_13,	// 55
   ssub_4_ssub_5_ssub_6_ssub_7_qsub_2,	// 56
   NUM_TARGET_SUBREGS
+};
+} // end namespace ARM
+
+// Register pressure sets enum.
+namespace ARM {
+enum RegisterPressureSets {
+  FPCXTRegs = 0,
+  GPRlr = 1,
+  VCCR = 2,
+  cl_FPSCR_NZCV = 3,
+  hGPR_and_tGPRwithpc = 4,
+  GPRsp = 5,
+  tGPR_and_tGPREven = 6,
+  tGPROdd = 7,
+  hGPR = 8,
+  tcGPR = 9,
+  tGPROdd_with_tcGPR = 10,
+  tGPR = 11,
+  tGPR_with_tcGPR = 12,
+  tGPREven = 13,
+  hGPR_with_tGPREven = 14,
+  hGPR_with_tGPROdd = 15,
+  hGPR_with_tcGPR = 16,
+  tGPR_with_tGPREven = 17,
+  GPR = 18,
+  GPRwithZR = 19,
+  GPRwithAPSR_with_GPRwithZR = 20,
+  DQuad_with_dsub_0_in_DPR_8 = 21,
+  DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR = 22,
+  HPR = 23,
+  DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR = 24,
+  DPair_with_ssub_0 = 25,
+  DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR = 26,
+  DPairSpc_with_ssub_0 = 27,
+  DQuad_with_ssub_0 = 28,
+  DTripleSpc_with_ssub_0 = 29,
+  QQQQPR_with_ssub_0 = 30,
+  DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR = 31,
+  DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR = 32,
+  DTriple_with_qsub_0_in_QPR = 33,
+  DPR = 34,
 };
 } // end namespace ARM
 
@@ -899,39 +942,39 @@ extern const MCPhysReg ARMRegDiffLists[] = {
 };
 
 extern const LaneBitmask ARMLaneMaskLists[] = {
-  /* 0 */ LaneBitmask(0x00000000), LaneBitmask::getAll(),
-  /* 2 */ LaneBitmask(0x00000002), LaneBitmask(0x00000001), LaneBitmask::getAll(),
-  /* 5 */ LaneBitmask(0x00000001), LaneBitmask(0x00000002), LaneBitmask::getAll(),
-  /* 8 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask::getAll(),
-  /* 11 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000010), LaneBitmask(0x00000020), LaneBitmask::getAll(),
-  /* 16 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000030), LaneBitmask::getAll(),
-  /* 20 */ LaneBitmask(0x0000000C), LaneBitmask(0x00000030), LaneBitmask::getAll(),
-  /* 23 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000040), LaneBitmask(0x00000080), LaneBitmask::getAll(),
-  /* 28 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000010), LaneBitmask(0x00000020), LaneBitmask(0x00000040), LaneBitmask(0x00000080), LaneBitmask::getAll(),
-  /* 35 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x000000C0), LaneBitmask::getAll(),
-  /* 39 */ LaneBitmask(0x0000000C), LaneBitmask(0x000000C0), LaneBitmask::getAll(),
-  /* 42 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000010), LaneBitmask(0x00000020), LaneBitmask(0x000000C0), LaneBitmask::getAll(),
-  /* 48 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000030), LaneBitmask(0x000000C0), LaneBitmask::getAll(),
-  /* 53 */ LaneBitmask(0x0000000C), LaneBitmask(0x00000030), LaneBitmask(0x000000C0), LaneBitmask::getAll(),
-  /* 57 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000010), LaneBitmask(0x00000020), LaneBitmask(0x00000040), LaneBitmask(0x00000080), LaneBitmask(0x00000100), LaneBitmask(0x00000200), LaneBitmask::getAll(),
-  /* 66 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000010), LaneBitmask(0x00000020), LaneBitmask(0x00000040), LaneBitmask(0x00000080), LaneBitmask(0x00000300), LaneBitmask::getAll(),
-  /* 74 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000010), LaneBitmask(0x00000020), LaneBitmask(0x000000C0), LaneBitmask(0x00000300), LaneBitmask::getAll(),
-  /* 81 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000030), LaneBitmask(0x000000C0), LaneBitmask(0x00000300), LaneBitmask::getAll(),
-  /* 87 */ LaneBitmask(0x0000000C), LaneBitmask(0x00000030), LaneBitmask(0x000000C0), LaneBitmask(0x00000300), LaneBitmask::getAll(),
-  /* 92 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000040), LaneBitmask(0x00000080), LaneBitmask(0x00000400), LaneBitmask(0x00000800), LaneBitmask::getAll(),
-  /* 99 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000040), LaneBitmask(0x00000080), LaneBitmask(0x00000C00), LaneBitmask::getAll(),
-  /* 105 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x000000C0), LaneBitmask(0x00000C00), LaneBitmask::getAll(),
-  /* 110 */ LaneBitmask(0x0000000C), LaneBitmask(0x000000C0), LaneBitmask(0x00000C00), LaneBitmask::getAll(),
-  /* 114 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000040), LaneBitmask(0x00000080), LaneBitmask(0x00000400), LaneBitmask(0x00000800), LaneBitmask(0x00004000), LaneBitmask(0x00008000), LaneBitmask::getAll(),
-  /* 123 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000040), LaneBitmask(0x00000080), LaneBitmask(0x00000400), LaneBitmask(0x00000800), LaneBitmask(0x0000C000), LaneBitmask::getAll(),
-  /* 131 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000040), LaneBitmask(0x00000080), LaneBitmask(0x00000C00), LaneBitmask(0x0000C000), LaneBitmask::getAll(),
-  /* 138 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x000000C0), LaneBitmask(0x00000C00), LaneBitmask(0x0000C000), LaneBitmask::getAll(),
-  /* 144 */ LaneBitmask(0x0000000C), LaneBitmask(0x000000C0), LaneBitmask(0x00000C00), LaneBitmask(0x0000C000), LaneBitmask::getAll(),
-  /* 149 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000010), LaneBitmask(0x00000020), LaneBitmask(0x00000040), LaneBitmask(0x00000080), LaneBitmask(0x00000100), LaneBitmask(0x00000200), LaneBitmask(0x00000400), LaneBitmask(0x00000800), LaneBitmask(0x00001000), LaneBitmask(0x00002000), LaneBitmask(0x00004000), LaneBitmask(0x00008000), LaneBitmask(0x00010000), LaneBitmask(0x00020000), LaneBitmask::getAll(),
-  /* 166 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000010), LaneBitmask(0x00000020), LaneBitmask(0x00000040), LaneBitmask(0x00000080), LaneBitmask(0x00000100), LaneBitmask(0x00000200), LaneBitmask(0x00000400), LaneBitmask(0x00000800), LaneBitmask(0x00001000), LaneBitmask(0x00002000), LaneBitmask(0x0000C000), LaneBitmask(0x00030000), LaneBitmask::getAll(),
-  /* 181 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000010), LaneBitmask(0x00000020), LaneBitmask(0x00000040), LaneBitmask(0x00000080), LaneBitmask(0x00000100), LaneBitmask(0x00000200), LaneBitmask(0x00000C00), LaneBitmask(0x00003000), LaneBitmask(0x0000C000), LaneBitmask(0x00030000), LaneBitmask::getAll(),
-  /* 194 */ LaneBitmask(0x00000004), LaneBitmask(0x00000008), LaneBitmask(0x00000010), LaneBitmask(0x00000020), LaneBitmask(0x000000C0), LaneBitmask(0x00000300), LaneBitmask(0x00000C00), LaneBitmask(0x00003000), LaneBitmask(0x0000C000), LaneBitmask(0x00030000), LaneBitmask::getAll(),
-  /* 205 */ LaneBitmask(0x0000000C), LaneBitmask(0x00000030), LaneBitmask(0x000000C0), LaneBitmask(0x00000300), LaneBitmask(0x00000C00), LaneBitmask(0x00003000), LaneBitmask(0x0000C000), LaneBitmask(0x00030000), LaneBitmask::getAll(),
+  /* 0 */ LaneBitmask(0x0000000000000000), LaneBitmask::getAll(),
+  /* 2 */ LaneBitmask(0x0000000000000002), LaneBitmask(0x0000000000000001), LaneBitmask::getAll(),
+  /* 5 */ LaneBitmask(0x0000000000000001), LaneBitmask(0x0000000000000002), LaneBitmask::getAll(),
+  /* 8 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask::getAll(),
+  /* 11 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000010), LaneBitmask(0x0000000000000020), LaneBitmask::getAll(),
+  /* 16 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000030), LaneBitmask::getAll(),
+  /* 20 */ LaneBitmask(0x000000000000000C), LaneBitmask(0x0000000000000030), LaneBitmask::getAll(),
+  /* 23 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000040), LaneBitmask(0x0000000000000080), LaneBitmask::getAll(),
+  /* 28 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000010), LaneBitmask(0x0000000000000020), LaneBitmask(0x0000000000000040), LaneBitmask(0x0000000000000080), LaneBitmask::getAll(),
+  /* 35 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x00000000000000C0), LaneBitmask::getAll(),
+  /* 39 */ LaneBitmask(0x000000000000000C), LaneBitmask(0x00000000000000C0), LaneBitmask::getAll(),
+  /* 42 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000010), LaneBitmask(0x0000000000000020), LaneBitmask(0x00000000000000C0), LaneBitmask::getAll(),
+  /* 48 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000030), LaneBitmask(0x00000000000000C0), LaneBitmask::getAll(),
+  /* 53 */ LaneBitmask(0x000000000000000C), LaneBitmask(0x0000000000000030), LaneBitmask(0x00000000000000C0), LaneBitmask::getAll(),
+  /* 57 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000010), LaneBitmask(0x0000000000000020), LaneBitmask(0x0000000000000040), LaneBitmask(0x0000000000000080), LaneBitmask(0x0000000000000100), LaneBitmask(0x0000000000000200), LaneBitmask::getAll(),
+  /* 66 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000010), LaneBitmask(0x0000000000000020), LaneBitmask(0x0000000000000040), LaneBitmask(0x0000000000000080), LaneBitmask(0x0000000000000300), LaneBitmask::getAll(),
+  /* 74 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000010), LaneBitmask(0x0000000000000020), LaneBitmask(0x00000000000000C0), LaneBitmask(0x0000000000000300), LaneBitmask::getAll(),
+  /* 81 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000030), LaneBitmask(0x00000000000000C0), LaneBitmask(0x0000000000000300), LaneBitmask::getAll(),
+  /* 87 */ LaneBitmask(0x000000000000000C), LaneBitmask(0x0000000000000030), LaneBitmask(0x00000000000000C0), LaneBitmask(0x0000000000000300), LaneBitmask::getAll(),
+  /* 92 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000040), LaneBitmask(0x0000000000000080), LaneBitmask(0x0000000000000400), LaneBitmask(0x0000000000000800), LaneBitmask::getAll(),
+  /* 99 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000040), LaneBitmask(0x0000000000000080), LaneBitmask(0x0000000000000C00), LaneBitmask::getAll(),
+  /* 105 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x00000000000000C0), LaneBitmask(0x0000000000000C00), LaneBitmask::getAll(),
+  /* 110 */ LaneBitmask(0x000000000000000C), LaneBitmask(0x00000000000000C0), LaneBitmask(0x0000000000000C00), LaneBitmask::getAll(),
+  /* 114 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000040), LaneBitmask(0x0000000000000080), LaneBitmask(0x0000000000000400), LaneBitmask(0x0000000000000800), LaneBitmask(0x0000000000004000), LaneBitmask(0x0000000000008000), LaneBitmask::getAll(),
+  /* 123 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000040), LaneBitmask(0x0000000000000080), LaneBitmask(0x0000000000000400), LaneBitmask(0x0000000000000800), LaneBitmask(0x000000000000C000), LaneBitmask::getAll(),
+  /* 131 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000040), LaneBitmask(0x0000000000000080), LaneBitmask(0x0000000000000C00), LaneBitmask(0x000000000000C000), LaneBitmask::getAll(),
+  /* 138 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x00000000000000C0), LaneBitmask(0x0000000000000C00), LaneBitmask(0x000000000000C000), LaneBitmask::getAll(),
+  /* 144 */ LaneBitmask(0x000000000000000C), LaneBitmask(0x00000000000000C0), LaneBitmask(0x0000000000000C00), LaneBitmask(0x000000000000C000), LaneBitmask::getAll(),
+  /* 149 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000010), LaneBitmask(0x0000000000000020), LaneBitmask(0x0000000000000040), LaneBitmask(0x0000000000000080), LaneBitmask(0x0000000000000100), LaneBitmask(0x0000000000000200), LaneBitmask(0x0000000000000400), LaneBitmask(0x0000000000000800), LaneBitmask(0x0000000000001000), LaneBitmask(0x0000000000002000), LaneBitmask(0x0000000000004000), LaneBitmask(0x0000000000008000), LaneBitmask(0x0000000000010000), LaneBitmask(0x0000000000020000), LaneBitmask::getAll(),
+  /* 166 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000010), LaneBitmask(0x0000000000000020), LaneBitmask(0x0000000000000040), LaneBitmask(0x0000000000000080), LaneBitmask(0x0000000000000100), LaneBitmask(0x0000000000000200), LaneBitmask(0x0000000000000400), LaneBitmask(0x0000000000000800), LaneBitmask(0x0000000000001000), LaneBitmask(0x0000000000002000), LaneBitmask(0x000000000000C000), LaneBitmask(0x0000000000030000), LaneBitmask::getAll(),
+  /* 181 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000010), LaneBitmask(0x0000000000000020), LaneBitmask(0x0000000000000040), LaneBitmask(0x0000000000000080), LaneBitmask(0x0000000000000100), LaneBitmask(0x0000000000000200), LaneBitmask(0x0000000000000C00), LaneBitmask(0x0000000000003000), LaneBitmask(0x000000000000C000), LaneBitmask(0x0000000000030000), LaneBitmask::getAll(),
+  /* 194 */ LaneBitmask(0x0000000000000004), LaneBitmask(0x0000000000000008), LaneBitmask(0x0000000000000010), LaneBitmask(0x0000000000000020), LaneBitmask(0x00000000000000C0), LaneBitmask(0x0000000000000300), LaneBitmask(0x0000000000000C00), LaneBitmask(0x0000000000003000), LaneBitmask(0x000000000000C000), LaneBitmask(0x0000000000030000), LaneBitmask::getAll(),
+  /* 205 */ LaneBitmask(0x000000000000000C), LaneBitmask(0x0000000000000030), LaneBitmask(0x00000000000000C0), LaneBitmask(0x0000000000000300), LaneBitmask(0x0000000000000C00), LaneBitmask(0x0000000000003000), LaneBitmask(0x000000000000C000), LaneBitmask(0x0000000000030000), LaneBitmask::getAll(),
 };
 
 extern const uint16_t ARMSubRegIdxLists[] = {
@@ -1660,6 +1703,16 @@ namespace {     // Register classes...
     0x00, 0xa0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xff, 0x1f, 
   };
 
+  // GPRwithAPSR_NZCVnosp Register Class...
+  const MCPhysReg GPRwithAPSR_NZCVnosp[] = {
+    ARM::R0, ARM::R1, ARM::R2, ARM::R3, ARM::R4, ARM::R5, ARM::R6, ARM::R7, ARM::R8, ARM::R9, ARM::R10, ARM::R11, ARM::R12, ARM::LR, ARM::APSR_NZCV, 
+  };
+
+  // GPRwithAPSR_NZCVnosp Bit set.
+  const uint8_t GPRwithAPSR_NZCVnospBits[] = {
+    0x04, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xff, 0x1f, 
+  };
+
   // GPRwithAPSRnosp Register Class...
   const MCPhysReg GPRwithAPSRnosp[] = {
     ARM::R0, ARM::R1, ARM::R2, ARM::R3, ARM::R4, ARM::R5, ARM::R6, ARM::R7, ARM::R8, ARM::R9, ARM::R10, ARM::R11, ARM::R12, ARM::LR, ARM::APSR, 
@@ -1750,13 +1803,13 @@ namespace {     // Register classes...
     0x00, 0xa0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1f, 
   };
 
-  // GPRwithAPSRnosp_and_hGPR Register Class...
-  const MCPhysReg GPRwithAPSRnosp_and_hGPR[] = {
+  // GPRwithAPSR_NZCVnosp_and_hGPR Register Class...
+  const MCPhysReg GPRwithAPSR_NZCVnosp_and_hGPR[] = {
     ARM::R8, ARM::R9, ARM::R10, ARM::R11, ARM::R12, ARM::LR, 
   };
 
-  // GPRwithAPSRnosp_and_hGPR Bit set.
-  const uint8_t GPRwithAPSRnosp_and_hGPRBits[] = {
+  // GPRwithAPSR_NZCVnosp_and_hGPR Bit set.
+  const uint8_t GPRwithAPSR_NZCVnosp_and_hGPRBits[] = {
     0x00, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1f, 
   };
 
@@ -1868,6 +1921,16 @@ namespace {     // Register classes...
   // CCR Bit set.
   const uint8_t CCRBits[] = {
     0x08, 
+  };
+
+  // FPCXTRegs Register Class...
+  const MCPhysReg FPCXTRegs[] = {
+    ARM::FPCXTNS, 
+  };
+
+  // FPCXTRegs Bit set.
+  const uint8_t FPCXTRegsBits[] = {
+    0x10, 
   };
 
   // GPRlr Register Class...
@@ -2858,166 +2921,170 @@ extern const char ARMRegClassStrings[] = {
   /* 1379 */ "GPRPair_with_gsub_0_in_tcGPR\0"
   /* 1408 */ "GPRPair_with_gsub_1_in_tcGPR\0"
   /* 1437 */ "GPRnopc_and_hGPR\0"
-  /* 1454 */ "GPRwithAPSRnosp_and_hGPR\0"
-  /* 1479 */ "GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPR\0"
-  /* 1523 */ "rGPR\0"
-  /* 1528 */ "GPRPair_with_gsub_0_in_tGPR\0"
-  /* 1556 */ "HPR\0"
-  /* 1560 */ "DQuad_with_qsub_0_in_MQPR\0"
-  /* 1586 */ "DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR\0"
-  /* 1638 */ "DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR\0"
-  /* 1699 */ "DQuad_with_qsub_1_in_MQPR\0"
-  /* 1725 */ "DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR\0"
-  /* 1794 */ "DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR\0"
-  /* 1872 */ "DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR\0"
-  /* 1950 */ "DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR\0"
-  /* 2032 */ "QQQQPR\0"
-  /* 2039 */ "DTriple_with_qsub_0_in_QPR\0"
-  /* 2066 */ "DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR\0"
-  /* 2134 */ "DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR\0"
-  /* 2206 */ "SPR\0"
-  /* 2210 */ "FPWithVPR\0"
-  /* 2220 */ "GPRwithAPSR\0"
-  /* 2232 */ "GPRwithZR\0"
-  /* 2242 */ "cl_FPSCR_NZCV\0"
-  /* 2256 */ "DQuadSpc\0"
-  /* 2265 */ "DTripleSpc\0"
-  /* 2276 */ "DPairSpc\0"
-  /* 2285 */ "hGPR_and_tGPRwithpc\0"
-  /* 2305 */ "GPRnopc\0"
-  /* 2313 */ "DQuad\0"
-  /* 2319 */ "hGPR_and_tGPROdd\0"
-  /* 2336 */ "tGPR_and_tGPROdd\0"
-  /* 2353 */ "DTriple\0"
-  /* 2361 */ "hGPR_and_tGPREven\0"
-  /* 2379 */ "tGPR_and_tGPREven\0"
-  /* 2397 */ "GPRPair_with_gsub_1_in_GPRsp\0"
-  /* 2426 */ "GPRwithAPSRnosp\0"
-  /* 2442 */ "GPRwithZRnosp\0"
-  /* 2456 */ "GPRPairnosp\0"
-  /* 2468 */ "DPair\0"
-  /* 2474 */ "GPRPair\0"
-  /* 2482 */ "GPRlr\0"
+  /* 1454 */ "GPRwithAPSR_NZCVnosp_and_hGPR\0"
+  /* 1484 */ "GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPR\0"
+  /* 1528 */ "rGPR\0"
+  /* 1533 */ "GPRPair_with_gsub_0_in_tGPR\0"
+  /* 1561 */ "HPR\0"
+  /* 1565 */ "DQuad_with_qsub_0_in_MQPR\0"
+  /* 1591 */ "DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR\0"
+  /* 1643 */ "DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR\0"
+  /* 1704 */ "DQuad_with_qsub_1_in_MQPR\0"
+  /* 1730 */ "DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR\0"
+  /* 1799 */ "DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR\0"
+  /* 1877 */ "DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR\0"
+  /* 1955 */ "DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR\0"
+  /* 2037 */ "QQQQPR\0"
+  /* 2044 */ "DTriple_with_qsub_0_in_QPR\0"
+  /* 2071 */ "DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR\0"
+  /* 2139 */ "DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR\0"
+  /* 2211 */ "SPR\0"
+  /* 2215 */ "FPWithVPR\0"
+  /* 2225 */ "GPRwithAPSR\0"
+  /* 2237 */ "GPRwithZR\0"
+  /* 2247 */ "cl_FPSCR_NZCV\0"
+  /* 2261 */ "DQuadSpc\0"
+  /* 2270 */ "DTripleSpc\0"
+  /* 2281 */ "DPairSpc\0"
+  /* 2290 */ "hGPR_and_tGPRwithpc\0"
+  /* 2310 */ "GPRnopc\0"
+  /* 2318 */ "DQuad\0"
+  /* 2324 */ "hGPR_and_tGPROdd\0"
+  /* 2341 */ "tGPR_and_tGPROdd\0"
+  /* 2358 */ "DTriple\0"
+  /* 2366 */ "hGPR_and_tGPREven\0"
+  /* 2384 */ "tGPR_and_tGPREven\0"
+  /* 2402 */ "GPRPair_with_gsub_1_in_GPRsp\0"
+  /* 2431 */ "GPRwithAPSRnosp\0"
+  /* 2447 */ "GPRwithZRnosp\0"
+  /* 2461 */ "GPRwithAPSR_NZCVnosp\0"
+  /* 2482 */ "GPRPairnosp\0"
+  /* 2494 */ "DPair\0"
+  /* 2500 */ "GPRPair\0"
+  /* 2508 */ "GPRlr\0"
+  /* 2514 */ "FPCXTRegs\0"
 };
 #ifdef __GNUC__
 #pragma GCC diagnostic pop
 #endif
 
 extern const MCRegisterClass ARMMCRegisterClasses[] = {
-  { HPR, HPRBits, 1556, 32, sizeof(HPRBits), ARM::HPRRegClassID, 1, true },
-  { FPWithVPR, FPWithVPRBits, 2210, 65, sizeof(FPWithVPRBits), ARM::FPWithVPRRegClassID, 1, false },
-  { SPR, SPRBits, 2206, 32, sizeof(SPRBits), ARM::SPRRegClassID, 1, true },
+  { HPR, HPRBits, 1561, 32, sizeof(HPRBits), ARM::HPRRegClassID, 1, true },
+  { FPWithVPR, FPWithVPRBits, 2215, 65, sizeof(FPWithVPRBits), ARM::FPWithVPRRegClassID, 1, false },
+  { SPR, SPRBits, 2211, 32, sizeof(SPRBits), ARM::SPRRegClassID, 1, true },
   { FPWithVPR_with_ssub_0, FPWithVPR_with_ssub_0Bits, 19, 16, sizeof(FPWithVPR_with_ssub_0Bits), ARM::FPWithVPR_with_ssub_0RegClassID, 1, false },
   { GPR, GPRBits, 1310, 16, sizeof(GPRBits), ARM::GPRRegClassID, 1, true },
-  { GPRwithAPSR, GPRwithAPSRBits, 2220, 16, sizeof(GPRwithAPSRBits), ARM::GPRwithAPSRRegClassID, 1, true },
-  { GPRwithZR, GPRwithZRBits, 2232, 16, sizeof(GPRwithZRBits), ARM::GPRwithZRRegClassID, 1, true },
+  { GPRwithAPSR, GPRwithAPSRBits, 2225, 16, sizeof(GPRwithAPSRBits), ARM::GPRwithAPSRRegClassID, 1, true },
+  { GPRwithZR, GPRwithZRBits, 2237, 16, sizeof(GPRwithZRBits), ARM::GPRwithZRRegClassID, 1, true },
   { SPR_8, SPR_8Bits, 1221, 16, sizeof(SPR_8Bits), ARM::SPR_8RegClassID, 1, true },
-  { GPRnopc, GPRnopcBits, 2305, 15, sizeof(GPRnopcBits), ARM::GPRnopcRegClassID, 1, true },
-  { GPRwithAPSRnosp, GPRwithAPSRnospBits, 2426, 15, sizeof(GPRwithAPSRnospBits), ARM::GPRwithAPSRnospRegClassID, 1, false },
-  { GPRwithZRnosp, GPRwithZRnospBits, 2442, 15, sizeof(GPRwithZRnospBits), ARM::GPRwithZRnospRegClassID, 1, true },
-  { rGPR, rGPRBits, 1523, 14, sizeof(rGPRBits), ARM::rGPRRegClassID, 1, true },
-  { tGPRwithpc, tGPRwithpcBits, 2294, 9, sizeof(tGPRwithpcBits), ARM::tGPRwithpcRegClassID, 1, true },
+  { GPRnopc, GPRnopcBits, 2310, 15, sizeof(GPRnopcBits), ARM::GPRnopcRegClassID, 1, true },
+  { GPRwithAPSR_NZCVnosp, GPRwithAPSR_NZCVnospBits, 2461, 15, sizeof(GPRwithAPSR_NZCVnospBits), ARM::GPRwithAPSR_NZCVnospRegClassID, 1, false },
+  { GPRwithAPSRnosp, GPRwithAPSRnospBits, 2431, 15, sizeof(GPRwithAPSRnospBits), ARM::GPRwithAPSRnospRegClassID, 1, false },
+  { GPRwithZRnosp, GPRwithZRnospBits, 2447, 15, sizeof(GPRwithZRnospBits), ARM::GPRwithZRnospRegClassID, 1, true },
+  { rGPR, rGPRBits, 1528, 14, sizeof(rGPRBits), ARM::rGPRRegClassID, 1, true },
+  { tGPRwithpc, tGPRwithpcBits, 2299, 9, sizeof(tGPRwithpcBits), ARM::tGPRwithpcRegClassID, 1, true },
   { FPWithVPR_with_ssub_0_with_ssub_0_in_SPR_8, FPWithVPR_with_ssub_0_with_ssub_0_in_SPR_8Bits, 1184, 8, sizeof(FPWithVPR_with_ssub_0_with_ssub_0_in_SPR_8Bits), ARM::FPWithVPR_with_ssub_0_with_ssub_0_in_SPR_8RegClassID, 1, false },
   { hGPR, hGPRBits, 1449, 8, sizeof(hGPRBits), ARM::hGPRRegClassID, 1, true },
-  { tGPR, tGPRBits, 1551, 8, sizeof(tGPRBits), ARM::tGPRRegClassID, 1, true },
-  { tGPREven, tGPREvenBits, 2370, 8, sizeof(tGPREvenBits), ARM::tGPREvenRegClassID, 1, true },
+  { tGPR, tGPRBits, 1556, 8, sizeof(tGPRBits), ARM::tGPRRegClassID, 1, true },
+  { tGPREven, tGPREvenBits, 2375, 8, sizeof(tGPREvenBits), ARM::tGPREvenRegClassID, 1, true },
   { GPRnopc_and_hGPR, GPRnopc_and_hGPRBits, 1437, 7, sizeof(GPRnopc_and_hGPRBits), ARM::GPRnopc_and_hGPRRegClassID, 1, true },
-  { GPRwithAPSRnosp_and_hGPR, GPRwithAPSRnosp_and_hGPRBits, 1454, 6, sizeof(GPRwithAPSRnosp_and_hGPRBits), ARM::GPRwithAPSRnosp_and_hGPRRegClassID, 1, true },
-  { tGPROdd, tGPROddBits, 2328, 6, sizeof(tGPROddBits), ARM::tGPROddRegClassID, 1, true },
+  { GPRwithAPSR_NZCVnosp_and_hGPR, GPRwithAPSR_NZCVnosp_and_hGPRBits, 1454, 6, sizeof(GPRwithAPSR_NZCVnosp_and_hGPRBits), ARM::GPRwithAPSR_NZCVnosp_and_hGPRRegClassID, 1, true },
+  { tGPROdd, tGPROddBits, 2333, 6, sizeof(tGPROddBits), ARM::tGPROddRegClassID, 1, true },
   { tcGPR, tcGPRBits, 1308, 5, sizeof(tcGPRBits), ARM::tcGPRRegClassID, 1, true },
-  { hGPR_and_tGPREven, hGPR_and_tGPREvenBits, 2361, 4, sizeof(hGPR_and_tGPREvenBits), ARM::hGPR_and_tGPREvenRegClassID, 1, true },
-  { tGPR_and_tGPREven, tGPR_and_tGPREvenBits, 2379, 4, sizeof(tGPR_and_tGPREvenBits), ARM::tGPR_and_tGPREvenRegClassID, 1, true },
-  { tGPR_and_tGPROdd, tGPR_and_tGPROddBits, 2336, 4, sizeof(tGPR_and_tGPROddBits), ARM::tGPR_and_tGPROddRegClassID, 1, true },
+  { hGPR_and_tGPREven, hGPR_and_tGPREvenBits, 2366, 4, sizeof(hGPR_and_tGPREvenBits), ARM::hGPR_and_tGPREvenRegClassID, 1, true },
+  { tGPR_and_tGPREven, tGPR_and_tGPREvenBits, 2384, 4, sizeof(tGPR_and_tGPREvenBits), ARM::tGPR_and_tGPREvenRegClassID, 1, true },
+  { tGPR_and_tGPROdd, tGPR_and_tGPROddBits, 2341, 4, sizeof(tGPR_and_tGPROddBits), ARM::tGPR_and_tGPROddRegClassID, 1, true },
   { tGPR_and_tcGPR, tGPR_and_tcGPRBits, 1327, 4, sizeof(tGPR_and_tcGPRBits), ARM::tGPR_and_tcGPRRegClassID, 1, true },
   { tGPREven_and_tcGPR, tGPREven_and_tcGPRBits, 1360, 3, sizeof(tGPREven_and_tcGPRBits), ARM::tGPREven_and_tcGPRRegClassID, 1, true },
-  { hGPR_and_tGPROdd, hGPR_and_tGPROddBits, 2319, 2, sizeof(hGPR_and_tGPROddBits), ARM::hGPR_and_tGPROddRegClassID, 1, true },
+  { hGPR_and_tGPROdd, hGPR_and_tGPROddBits, 2324, 2, sizeof(hGPR_and_tGPROddBits), ARM::hGPR_and_tGPROddRegClassID, 1, true },
   { tGPREven_and_tGPR_and_tcGPR, tGPREven_and_tGPR_and_tcGPRBits, 1314, 2, sizeof(tGPREven_and_tGPR_and_tcGPRBits), ARM::tGPREven_and_tGPR_and_tcGPRRegClassID, 1, true },
   { tGPROdd_and_tcGPR, tGPROdd_and_tcGPRBits, 1342, 2, sizeof(tGPROdd_and_tcGPRBits), ARM::tGPROdd_and_tcGPRRegClassID, 1, true },
   { CCR, CCRBits, 1291, 1, sizeof(CCRBits), ARM::CCRRegClassID, -1, false },
-  { GPRlr, GPRlrBits, 2482, 1, sizeof(GPRlrBits), ARM::GPRlrRegClassID, 1, true },
-  { GPRsp, GPRspBits, 2420, 1, sizeof(GPRspBits), ARM::GPRspRegClassID, 1, true },
+  { FPCXTRegs, FPCXTRegsBits, 2514, 1, sizeof(FPCXTRegsBits), ARM::FPCXTRegsRegClassID, 1, true },
+  { GPRlr, GPRlrBits, 2508, 1, sizeof(GPRlrBits), ARM::GPRlrRegClassID, 1, true },
+  { GPRsp, GPRspBits, 2425, 1, sizeof(GPRspBits), ARM::GPRspRegClassID, 1, true },
   { VCCR, VCCRBits, 1290, 1, sizeof(VCCRBits), ARM::VCCRRegClassID, 1, true },
-  { cl_FPSCR_NZCV, cl_FPSCR_NZCVBits, 2242, 1, sizeof(cl_FPSCR_NZCVBits), ARM::cl_FPSCR_NZCVRegClassID, 1, true },
-  { hGPR_and_tGPRwithpc, hGPR_and_tGPRwithpcBits, 2285, 1, sizeof(hGPR_and_tGPRwithpcBits), ARM::hGPR_and_tGPRwithpcRegClassID, 1, true },
+  { cl_FPSCR_NZCV, cl_FPSCR_NZCVBits, 2247, 1, sizeof(cl_FPSCR_NZCVBits), ARM::cl_FPSCR_NZCVRegClassID, 1, true },
+  { hGPR_and_tGPRwithpc, hGPR_and_tGPRwithpcBits, 2290, 1, sizeof(hGPR_and_tGPRwithpcBits), ARM::hGPR_and_tGPRwithpcRegClassID, 1, true },
   { hGPR_and_tcGPR, hGPR_and_tcGPRBits, 1299, 1, sizeof(hGPR_and_tcGPRBits), ARM::hGPR_and_tcGPRRegClassID, 1, true },
   { DPR, DPRBits, 1295, 32, sizeof(DPRBits), ARM::DPRRegClassID, 1, true },
   { DPR_VFP2, DPR_VFP2Bits, 182, 16, sizeof(DPR_VFP2Bits), ARM::DPR_VFP2RegClassID, 1, true },
   { DPR_8, DPR_8Bits, 418, 8, sizeof(DPR_8Bits), ARM::DPR_8RegClassID, 1, true },
-  { GPRPair, GPRPairBits, 2474, 7, sizeof(GPRPairBits), ARM::GPRPairRegClassID, 1, true },
-  { GPRPairnosp, GPRPairnospBits, 2456, 6, sizeof(GPRPairnospBits), ARM::GPRPairnospRegClassID, 1, true },
-  { GPRPair_with_gsub_0_in_tGPR, GPRPair_with_gsub_0_in_tGPRBits, 1528, 4, sizeof(GPRPair_with_gsub_0_in_tGPRBits), ARM::GPRPair_with_gsub_0_in_tGPRRegClassID, 1, true },
-  { GPRPair_with_gsub_0_in_hGPR, GPRPair_with_gsub_0_in_hGPRBits, 1495, 3, sizeof(GPRPair_with_gsub_0_in_hGPRBits), ARM::GPRPair_with_gsub_0_in_hGPRRegClassID, 1, true },
+  { GPRPair, GPRPairBits, 2500, 7, sizeof(GPRPairBits), ARM::GPRPairRegClassID, 1, true },
+  { GPRPairnosp, GPRPairnospBits, 2482, 6, sizeof(GPRPairnospBits), ARM::GPRPairnospRegClassID, 1, true },
+  { GPRPair_with_gsub_0_in_tGPR, GPRPair_with_gsub_0_in_tGPRBits, 1533, 4, sizeof(GPRPair_with_gsub_0_in_tGPRBits), ARM::GPRPair_with_gsub_0_in_tGPRRegClassID, 1, true },
+  { GPRPair_with_gsub_0_in_hGPR, GPRPair_with_gsub_0_in_hGPRBits, 1500, 3, sizeof(GPRPair_with_gsub_0_in_hGPRBits), ARM::GPRPair_with_gsub_0_in_hGPRRegClassID, 1, true },
   { GPRPair_with_gsub_0_in_tcGPR, GPRPair_with_gsub_0_in_tcGPRBits, 1379, 3, sizeof(GPRPair_with_gsub_0_in_tcGPRBits), ARM::GPRPair_with_gsub_0_in_tcGPRRegClassID, 1, true },
   { GPRPair_with_gsub_1_in_tcGPR, GPRPair_with_gsub_1_in_tcGPRBits, 1408, 2, sizeof(GPRPair_with_gsub_1_in_tcGPRBits), ARM::GPRPair_with_gsub_1_in_tcGPRRegClassID, 1, true },
-  { GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPR, GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPRBits, 1479, 2, sizeof(GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPRBits), ARM::GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPRRegClassID, 1, true },
-  { GPRPair_with_gsub_1_in_GPRsp, GPRPair_with_gsub_1_in_GPRspBits, 2397, 1, sizeof(GPRPair_with_gsub_1_in_GPRspBits), ARM::GPRPair_with_gsub_1_in_GPRspRegClassID, 1, true },
-  { DPairSpc, DPairSpcBits, 2276, 30, sizeof(DPairSpcBits), ARM::DPairSpcRegClassID, 1, true },
+  { GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPR, GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPRBits, 1484, 2, sizeof(GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPRBits), ARM::GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPRRegClassID, 1, true },
+  { GPRPair_with_gsub_1_in_GPRsp, GPRPair_with_gsub_1_in_GPRspBits, 2402, 1, sizeof(GPRPair_with_gsub_1_in_GPRspBits), ARM::GPRPair_with_gsub_1_in_GPRspRegClassID, 1, true },
+  { DPairSpc, DPairSpcBits, 2281, 30, sizeof(DPairSpcBits), ARM::DPairSpcRegClassID, 1, true },
   { DPairSpc_with_ssub_0, DPairSpc_with_ssub_0Bits, 85, 16, sizeof(DPairSpc_with_ssub_0Bits), ARM::DPairSpc_with_ssub_0RegClassID, 1, true },
   { DPairSpc_with_ssub_4, DPairSpc_with_ssub_4Bits, 319, 14, sizeof(DPairSpc_with_ssub_4Bits), ARM::DPairSpc_with_ssub_4RegClassID, 1, true },
   { DPairSpc_with_dsub_0_in_DPR_8, DPairSpc_with_dsub_0_in_DPR_8Bits, 486, 8, sizeof(DPairSpc_with_dsub_0_in_DPR_8Bits), ARM::DPairSpc_with_dsub_0_in_DPR_8RegClassID, 1, true },
   { DPairSpc_with_dsub_2_in_DPR_8, DPairSpc_with_dsub_2_in_DPR_8Bits, 772, 6, sizeof(DPairSpc_with_dsub_2_in_DPR_8Bits), ARM::DPairSpc_with_dsub_2_in_DPR_8RegClassID, 1, true },
-  { DPair, DPairBits, 2468, 31, sizeof(DPairBits), ARM::DPairRegClassID, 1, true },
+  { DPair, DPairBits, 2494, 31, sizeof(DPairBits), ARM::DPairRegClassID, 1, true },
   { DPair_with_ssub_0, DPair_with_ssub_0Bits, 144, 16, sizeof(DPair_with_ssub_0Bits), ARM::DPair_with_ssub_0RegClassID, 1, true },
-  { QPR, QPRBits, 1582, 16, sizeof(QPRBits), ARM::QPRRegClassID, 1, true },
+  { QPR, QPRBits, 1587, 16, sizeof(QPRBits), ARM::QPRRegClassID, 1, true },
   { DPair_with_ssub_2, DPair_with_ssub_2Bits, 238, 15, sizeof(DPair_with_ssub_2Bits), ARM::DPair_with_ssub_2RegClassID, 1, true },
   { DPair_with_dsub_0_in_DPR_8, DPair_with_dsub_0_in_DPR_8Bits, 572, 8, sizeof(DPair_with_dsub_0_in_DPR_8Bits), ARM::DPair_with_dsub_0_in_DPR_8RegClassID, 1, true },
-  { MQPR, MQPRBits, 1581, 8, sizeof(MQPRBits), ARM::MQPRRegClassID, 1, true },
+  { MQPR, MQPRBits, 1586, 8, sizeof(MQPRBits), ARM::MQPRRegClassID, 1, true },
   { QPR_VFP2, QPR_VFP2Bits, 191, 8, sizeof(QPR_VFP2Bits), ARM::QPR_VFP2RegClassID, 1, true },
   { DPair_with_dsub_1_in_DPR_8, DPair_with_dsub_1_in_DPR_8Bits, 655, 7, sizeof(DPair_with_dsub_1_in_DPR_8Bits), ARM::DPair_with_dsub_1_in_DPR_8RegClassID, 1, true },
   { QPR_8, QPR_8Bits, 1024, 4, sizeof(QPR_8Bits), ARM::QPR_8RegClassID, 1, true },
-  { DTriple, DTripleBits, 2353, 30, sizeof(DTripleBits), ARM::DTripleRegClassID, 1, true },
-  { DTripleSpc, DTripleSpcBits, 2265, 28, sizeof(DTripleSpcBits), ARM::DTripleSpcRegClassID, 1, true },
+  { DTriple, DTripleBits, 2358, 30, sizeof(DTripleBits), ARM::DTripleRegClassID, 1, true },
+  { DTripleSpc, DTripleSpcBits, 2270, 28, sizeof(DTripleSpcBits), ARM::DTripleSpcRegClassID, 1, true },
   { DTripleSpc_with_ssub_0, DTripleSpc_with_ssub_0Bits, 62, 16, sizeof(DTripleSpc_with_ssub_0Bits), ARM::DTripleSpc_with_ssub_0RegClassID, 1, true },
   { DTriple_with_ssub_0, DTriple_with_ssub_0Bits, 124, 16, sizeof(DTriple_with_ssub_0Bits), ARM::DTriple_with_ssub_0RegClassID, 1, true },
-  { DTriple_with_qsub_0_in_QPR, DTriple_with_qsub_0_in_QPRBits, 2039, 15, sizeof(DTriple_with_qsub_0_in_QPRBits), ARM::DTriple_with_qsub_0_in_QPRRegClassID, 1, true },
+  { DTriple_with_qsub_0_in_QPR, DTriple_with_qsub_0_in_QPRBits, 2044, 15, sizeof(DTriple_with_qsub_0_in_QPRBits), ARM::DTriple_with_qsub_0_in_QPRRegClassID, 1, true },
   { DTriple_with_ssub_2, DTriple_with_ssub_2Bits, 218, 15, sizeof(DTriple_with_ssub_2Bits), ARM::DTriple_with_ssub_2RegClassID, 1, true },
-  { DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR, DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRBits, 2158, 15, sizeof(DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRBits), ARM::DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID, 1, true },
+  { DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR, DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRBits, 2163, 15, sizeof(DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRBits), ARM::DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID, 1, true },
   { DTripleSpc_with_ssub_4, DTripleSpc_with_ssub_4Bits, 296, 14, sizeof(DTripleSpc_with_ssub_4Bits), ARM::DTripleSpc_with_ssub_4RegClassID, 1, true },
   { DTriple_with_ssub_4, DTriple_with_ssub_4Bits, 358, 14, sizeof(DTriple_with_ssub_4Bits), ARM::DTriple_with_ssub_4RegClassID, 1, true },
   { DTripleSpc_with_ssub_8, DTripleSpc_with_ssub_8Bits, 1267, 12, sizeof(DTripleSpc_with_ssub_8Bits), ARM::DTripleSpc_with_ssub_8RegClassID, 1, true },
   { DTripleSpc_with_dsub_0_in_DPR_8, DTripleSpc_with_dsub_0_in_DPR_8Bits, 454, 8, sizeof(DTripleSpc_with_dsub_0_in_DPR_8Bits), ARM::DTripleSpc_with_dsub_0_in_DPR_8RegClassID, 1, true },
   { DTriple_with_dsub_0_in_DPR_8, DTriple_with_dsub_0_in_DPR_8Bits, 543, 8, sizeof(DTriple_with_dsub_0_in_DPR_8Bits), ARM::DTriple_with_dsub_0_in_DPR_8RegClassID, 1, true },
-  { DTriple_with_qsub_0_in_MQPR, DTriple_with_qsub_0_in_MQPRBits, 1610, 8, sizeof(DTriple_with_qsub_0_in_MQPRBits), ARM::DTriple_with_qsub_0_in_MQPRRegClassID, 1, true },
-  { DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR, DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRBits, 2134, 8, sizeof(DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRBits), ARM::DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID, 1, true },
+  { DTriple_with_qsub_0_in_MQPR, DTriple_with_qsub_0_in_MQPRBits, 1615, 8, sizeof(DTriple_with_qsub_0_in_MQPRBits), ARM::DTriple_with_qsub_0_in_MQPRRegClassID, 1, true },
+  { DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR, DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRBits, 2139, 8, sizeof(DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRBits), ARM::DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID, 1, true },
   { DTriple_with_dsub_1_in_DPR_8, DTriple_with_dsub_1_in_DPR_8Bits, 626, 7, sizeof(DTriple_with_dsub_1_in_DPR_8Bits), ARM::DTriple_with_dsub_1_in_DPR_8RegClassID, 1, true },
-  { DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR, DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits, 1983, 7, sizeof(DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits), ARM::DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID, 1, true },
-  { DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR, DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPRBits, 1586, 7, sizeof(DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPRBits), ARM::DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPRRegClassID, 1, true },
+  { DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR, DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits, 1988, 7, sizeof(DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits), ARM::DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID, 1, true },
+  { DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR, DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPRBits, 1591, 7, sizeof(DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPRBits), ARM::DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPRRegClassID, 1, true },
   { DTripleSpc_with_dsub_2_in_DPR_8, DTripleSpc_with_dsub_2_in_DPR_8Bits, 740, 6, sizeof(DTripleSpc_with_dsub_2_in_DPR_8Bits), ARM::DTripleSpc_with_dsub_2_in_DPR_8RegClassID, 1, true },
   { DTriple_with_dsub_2_in_DPR_8, DTriple_with_dsub_2_in_DPR_8Bits, 829, 6, sizeof(DTriple_with_dsub_2_in_DPR_8Bits), ARM::DTriple_with_dsub_2_in_DPR_8RegClassID, 1, true },
   { DTripleSpc_with_dsub_4_in_DPR_8, DTripleSpc_with_dsub_4_in_DPR_8Bits, 943, 4, sizeof(DTripleSpc_with_dsub_4_in_DPR_8Bits), ARM::DTripleSpc_with_dsub_4_in_DPR_8RegClassID, 1, true },
-  { DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR, DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits, 1950, 4, sizeof(DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits), ARM::DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID, 1, true },
+  { DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR, DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits, 1955, 4, sizeof(DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits), ARM::DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID, 1, true },
   { DTriple_with_qsub_0_in_QPR_8, DTriple_with_qsub_0_in_QPR_8Bits, 1030, 4, sizeof(DTriple_with_qsub_0_in_QPR_8Bits), ARM::DTriple_with_qsub_0_in_QPR_8RegClassID, 1, true },
-  { DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR, DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPRBits, 1638, 3, sizeof(DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPRBits), ARM::DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPRRegClassID, 1, true },
+  { DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR, DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPRBits, 1643, 3, sizeof(DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPRBits), ARM::DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPRRegClassID, 1, true },
   { DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8, DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8Bits, 1134, 3, sizeof(DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8Bits), ARM::DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8RegClassID, 1, true },
-  { DQuadSpc, DQuadSpcBits, 2256, 28, sizeof(DQuadSpcBits), ARM::DQuadSpcRegClassID, 1, true },
+  { DQuadSpc, DQuadSpcBits, 2261, 28, sizeof(DQuadSpcBits), ARM::DQuadSpcRegClassID, 1, true },
   { DQuadSpc_with_ssub_0, DQuadSpc_with_ssub_0Bits, 41, 16, sizeof(DQuadSpc_with_ssub_0Bits), ARM::DQuadSpc_with_ssub_0RegClassID, 1, true },
   { DQuadSpc_with_ssub_4, DQuadSpc_with_ssub_4Bits, 275, 14, sizeof(DQuadSpc_with_ssub_4Bits), ARM::DQuadSpc_with_ssub_4RegClassID, 1, true },
   { DQuadSpc_with_ssub_8, DQuadSpc_with_ssub_8Bits, 1246, 12, sizeof(DQuadSpc_with_ssub_8Bits), ARM::DQuadSpc_with_ssub_8RegClassID, 1, true },
   { DQuadSpc_with_dsub_0_in_DPR_8, DQuadSpc_with_dsub_0_in_DPR_8Bits, 424, 8, sizeof(DQuadSpc_with_dsub_0_in_DPR_8Bits), ARM::DQuadSpc_with_dsub_0_in_DPR_8RegClassID, 1, true },
   { DQuadSpc_with_dsub_2_in_DPR_8, DQuadSpc_with_dsub_2_in_DPR_8Bits, 710, 6, sizeof(DQuadSpc_with_dsub_2_in_DPR_8Bits), ARM::DQuadSpc_with_dsub_2_in_DPR_8RegClassID, 1, true },
   { DQuadSpc_with_dsub_4_in_DPR_8, DQuadSpc_with_dsub_4_in_DPR_8Bits, 913, 4, sizeof(DQuadSpc_with_dsub_4_in_DPR_8Bits), ARM::DQuadSpc_with_dsub_4_in_DPR_8RegClassID, 1, true },
-  { DQuad, DQuadBits, 2313, 29, sizeof(DQuadBits), ARM::DQuadRegClassID, 1, true },
+  { DQuad, DQuadBits, 2318, 29, sizeof(DQuadBits), ARM::DQuadRegClassID, 1, true },
   { DQuad_with_ssub_0, DQuad_with_ssub_0Bits, 106, 16, sizeof(DQuad_with_ssub_0Bits), ARM::DQuad_with_ssub_0RegClassID, 1, true },
   { DQuad_with_ssub_2, DQuad_with_ssub_2Bits, 200, 15, sizeof(DQuad_with_ssub_2Bits), ARM::DQuad_with_ssub_2RegClassID, 1, true },
-  { QQPR, QQPRBits, 2034, 15, sizeof(QQPRBits), ARM::QQPRRegClassID, 1, true },
-  { DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR, DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRBits, 2088, 14, sizeof(DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRBits), ARM::DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID, 1, true },
+  { QQPR, QQPRBits, 2039, 15, sizeof(QQPRBits), ARM::QQPRRegClassID, 1, true },
+  { DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR, DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRBits, 2093, 14, sizeof(DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRBits), ARM::DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID, 1, true },
   { DQuad_with_ssub_4, DQuad_with_ssub_4Bits, 340, 14, sizeof(DQuad_with_ssub_4Bits), ARM::DQuad_with_ssub_4RegClassID, 1, true },
   { DQuad_with_ssub_6, DQuad_with_ssub_6Bits, 378, 13, sizeof(DQuad_with_ssub_6Bits), ARM::DQuad_with_ssub_6RegClassID, 1, true },
   { DQuad_with_dsub_0_in_DPR_8, DQuad_with_dsub_0_in_DPR_8Bits, 516, 8, sizeof(DQuad_with_dsub_0_in_DPR_8Bits), ARM::DQuad_with_dsub_0_in_DPR_8RegClassID, 1, true },
-  { DQuad_with_qsub_0_in_MQPR, DQuad_with_qsub_0_in_MQPRBits, 1560, 8, sizeof(DQuad_with_qsub_0_in_MQPRBits), ARM::DQuad_with_qsub_0_in_MQPRRegClassID, 1, true },
-  { DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR, DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRBits, 2066, 8, sizeof(DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRBits), ARM::DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID, 1, true },
+  { DQuad_with_qsub_0_in_MQPR, DQuad_with_qsub_0_in_MQPRBits, 1565, 8, sizeof(DQuad_with_qsub_0_in_MQPRBits), ARM::DQuad_with_qsub_0_in_MQPRRegClassID, 1, true },
+  { DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR, DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRBits, 2071, 8, sizeof(DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRBits), ARM::DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID, 1, true },
   { DQuad_with_dsub_1_in_DPR_8, DQuad_with_dsub_1_in_DPR_8Bits, 599, 7, sizeof(DQuad_with_dsub_1_in_DPR_8Bits), ARM::DQuad_with_dsub_1_in_DPR_8RegClassID, 1, true },
-  { DQuad_with_qsub_1_in_MQPR, DQuad_with_qsub_1_in_MQPRBits, 1699, 7, sizeof(DQuad_with_qsub_1_in_MQPRBits), ARM::DQuad_with_qsub_1_in_MQPRRegClassID, 1, true },
-  { DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR, DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits, 1747, 7, sizeof(DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits), ARM::DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID, 1, true },
+  { DQuad_with_qsub_1_in_MQPR, DQuad_with_qsub_1_in_MQPRBits, 1704, 7, sizeof(DQuad_with_qsub_1_in_MQPRBits), ARM::DQuad_with_qsub_1_in_MQPRRegClassID, 1, true },
+  { DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR, DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits, 1752, 7, sizeof(DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits), ARM::DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID, 1, true },
   { DQuad_with_dsub_2_in_DPR_8, DQuad_with_dsub_2_in_DPR_8Bits, 802, 6, sizeof(DQuad_with_dsub_2_in_DPR_8Bits), ARM::DQuad_with_dsub_2_in_DPR_8RegClassID, 1, true },
-  { DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR, DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits, 1725, 6, sizeof(DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits), ARM::DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID, 1, true },
+  { DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR, DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits, 1730, 6, sizeof(DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits), ARM::DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID, 1, true },
   { DQuad_with_dsub_3_in_DPR_8, DQuad_with_dsub_3_in_DPR_8Bits, 858, 5, sizeof(DQuad_with_dsub_3_in_DPR_8Bits), ARM::DQuad_with_dsub_3_in_DPR_8RegClassID, 1, true },
-  { DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR, DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits, 1794, 4, sizeof(DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits), ARM::DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID, 1, true },
+  { DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR, DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits, 1799, 4, sizeof(DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits), ARM::DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID, 1, true },
   { DQuad_with_qsub_0_in_QPR_8, DQuad_with_qsub_0_in_QPR_8Bits, 1003, 4, sizeof(DQuad_with_qsub_0_in_QPR_8Bits), ARM::DQuad_with_qsub_0_in_QPR_8RegClassID, 1, true },
   { DQuad_with_qsub_1_in_QPR_8, DQuad_with_qsub_1_in_QPR_8Bits, 1059, 3, sizeof(DQuad_with_qsub_1_in_QPR_8Bits), ARM::DQuad_with_qsub_1_in_QPR_8RegClassID, 1, true },
   { DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8, DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8Bits, 1086, 3, sizeof(DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8Bits), ARM::DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8RegClassID, 1, true },
-  { DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR, DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits, 1872, 2, sizeof(DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits), ARM::DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID, 1, true },
-  { QQQQPR, QQQQPRBits, 2032, 13, sizeof(QQQQPRBits), ARM::QQQQPRRegClassID, 1, true },
+  { DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR, DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits, 1877, 2, sizeof(DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRBits), ARM::DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID, 1, true },
+  { QQQQPR, QQQQPRBits, 2037, 13, sizeof(QQQQPRBits), ARM::QQQQPRRegClassID, 1, true },
   { QQQQPR_with_ssub_0, QQQQPR_with_ssub_0Bits, 0, 8, sizeof(QQQQPR_with_ssub_0Bits), ARM::QQQQPR_with_ssub_0RegClassID, 1, true },
   { QQQQPR_with_ssub_4, QQQQPR_with_ssub_4Bits, 256, 7, sizeof(QQQQPR_with_ssub_4Bits), ARM::QQQQPR_with_ssub_4RegClassID, 1, true },
   { QQQQPR_with_ssub_8, QQQQPR_with_ssub_8Bits, 1227, 6, sizeof(QQQQPR_with_ssub_8Bits), ARM::QQQQPR_with_ssub_8RegClassID, 1, true },
@@ -3537,7 +3604,7 @@ extern const uint16_t ARMRegEncodingTable[] = {
   27,
 };
 static inline void InitARMMCRegisterInfo(MCRegisterInfo *RI, unsigned RA, unsigned DwarfFlavour = 0, unsigned EHFlavour = 0, unsigned PC = 0) {
-  RI->InitMCRegisterInfo(ARMRegDesc, 295, RA, PC, ARMMCRegisterClasses, 122, ARMRegUnitRoots, 83, ARMRegDiffLists, ARMLaneMaskLists, ARMRegStrings, ARMRegClassStrings, ARMSubRegIdxLists, 57,
+  RI->InitMCRegisterInfo(ARMRegDesc, 295, RA, PC, ARMMCRegisterClasses, 124, ARMRegUnitRoots, 83, ARMRegDiffLists, ARMLaneMaskLists, ARMRegStrings, ARMRegClassStrings, ARMSubRegIdxLists, 57,
 ARMSubRegIdxRanges, ARMRegEncodingTable);
 
   switch (DwarfFlavour) {
@@ -3623,6 +3690,7 @@ namespace ARM { // Register classes
   extern const TargetRegisterClass GPRwithZRRegClass;
   extern const TargetRegisterClass SPR_8RegClass;
   extern const TargetRegisterClass GPRnopcRegClass;
+  extern const TargetRegisterClass GPRwithAPSR_NZCVnospRegClass;
   extern const TargetRegisterClass GPRwithAPSRnospRegClass;
   extern const TargetRegisterClass GPRwithZRnospRegClass;
   extern const TargetRegisterClass rGPRRegClass;
@@ -3632,7 +3700,7 @@ namespace ARM { // Register classes
   extern const TargetRegisterClass tGPRRegClass;
   extern const TargetRegisterClass tGPREvenRegClass;
   extern const TargetRegisterClass GPRnopc_and_hGPRRegClass;
-  extern const TargetRegisterClass GPRwithAPSRnosp_and_hGPRRegClass;
+  extern const TargetRegisterClass GPRwithAPSR_NZCVnosp_and_hGPRRegClass;
   extern const TargetRegisterClass tGPROddRegClass;
   extern const TargetRegisterClass tcGPRRegClass;
   extern const TargetRegisterClass hGPR_and_tGPREvenRegClass;
@@ -3644,6 +3712,7 @@ namespace ARM { // Register classes
   extern const TargetRegisterClass tGPREven_and_tGPR_and_tcGPRRegClass;
   extern const TargetRegisterClass tGPROdd_and_tcGPRRegClass;
   extern const TargetRegisterClass CCRRegClass;
+  extern const TargetRegisterClass FPCXTRegsRegClass;
   extern const TargetRegisterClass GPRlrRegClass;
   extern const TargetRegisterClass GPRspRegClass;
   extern const TargetRegisterClass VCCRRegClass;
@@ -3760,16 +3829,17 @@ extern const MCRegisterClass ARMMCRegisterClasses[];
 
 static const MVT::SimpleValueType VTLists[] = {
   /* 0 */ MVT::i32, MVT::Other,
-  /* 2 */ MVT::f16, MVT::Other,
-  /* 4 */ MVT::f32, MVT::Other,
-  /* 6 */ MVT::i32, MVT::v16i1, MVT::v8i1, MVT::v4i1, MVT::Other,
-  /* 11 */ MVT::v2i64, MVT::Other,
-  /* 13 */ MVT::v4i64, MVT::Other,
-  /* 15 */ MVT::v8i64, MVT::Other,
-  /* 17 */ MVT::f64, MVT::v8i8, MVT::v4i16, MVT::v2i32, MVT::v1i64, MVT::v2f32, MVT::v4f16, MVT::Other,
-  /* 25 */ MVT::v16i8, MVT::v8i16, MVT::v4i32, MVT::v2i64, MVT::v4f32, MVT::v2f64, MVT::v8f16, MVT::Other,
-  /* 33 */ MVT::v16i8, MVT::v8i16, MVT::v4i32, MVT::v2i64, MVT::v4f32, MVT::v2f64, MVT::Other,
-  /* 40 */ MVT::Untyped, MVT::Other,
+  /* 2 */ MVT::f16, MVT::bf16, MVT::Other,
+  /* 5 */ MVT::f32, MVT::Other,
+  /* 7 */ MVT::i32, MVT::v16i1, MVT::v8i1, MVT::v4i1, MVT::Other,
+  /* 12 */ MVT::v2i64, MVT::Other,
+  /* 14 */ MVT::v4i64, MVT::Other,
+  /* 16 */ MVT::v8i64, MVT::Other,
+  /* 18 */ MVT::v16i8, MVT::v8i16, MVT::v4i32, MVT::v2i64, MVT::v4f32, MVT::v2f64, MVT::v8f16, MVT::Other,
+  /* 26 */ MVT::f64, MVT::v8i8, MVT::v4i16, MVT::v2i32, MVT::v1i64, MVT::v2f32, MVT::v4f16, MVT::v4bf16, MVT::Other,
+  /* 35 */ MVT::v16i8, MVT::v8i16, MVT::v4i32, MVT::v2i64, MVT::v4f32, MVT::v2f64, MVT::v8f16, MVT::v8bf16, MVT::Other,
+  /* 44 */ MVT::v16i8, MVT::v8i16, MVT::v4i32, MVT::v2i64, MVT::v4f32, MVT::v2f64, MVT::Other,
+  /* 51 */ MVT::Untyped, MVT::Other,
 };
 
 static const char *const SubRegIndexNameTable[] = { "dsub_0", "dsub_1", "dsub_2", "dsub_3", "dsub_4", "dsub_5", "dsub_6", "dsub_7", "gsub_0", "gsub_1", "qqsub_0", "qqsub_1", "qsub_0", "qsub_1", "qsub_2", "qsub_3", "ssub_0", "ssub_1", "ssub_2", "ssub_3", "ssub_4", "ssub_5", "ssub_6", "ssub_7", "ssub_8", "ssub_9", "ssub_10", "ssub_11", "ssub_12", "ssub_13", "dsub_7_then_ssub_0", "dsub_7_then_ssub_1", "ssub_0_ssub_1_ssub_4_ssub_5", "ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5", "ssub_2_ssub_3_ssub_6_ssub_7", "ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7", "ssub_2_ssub_3_ssub_4_ssub_5", "ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9", "ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13", "ssub_2_ssub_3_ssub_6_ssub_7_dsub_5", "ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7", "ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9", "ssub_4_ssub_5_ssub_8_ssub_9", "ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9", "ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13", "ssub_6_ssub_7_dsub_5", "ssub_6_ssub_7_ssub_8_ssub_9_dsub_5", "ssub_6_ssub_7_dsub_5_dsub_7", "ssub_6_ssub_7_ssub_8_ssub_9", "ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13", "ssub_8_ssub_9_ssub_12_ssub_13", "ssub_8_ssub_9_dsub_5_ssub_12_ssub_13", "dsub_5_dsub_7", "dsub_5_ssub_12_ssub_13_dsub_7", "dsub_5_ssub_12_ssub_13", "ssub_4_ssub_5_ssub_6_ssub_7_qsub_2", "" };
@@ -3777,62 +3847,62 @@ static const char *const SubRegIndexNameTable[] = { "dsub_0", "dsub_1", "dsub_2"
 
 static const LaneBitmask SubRegIndexLaneMaskTable[] = {
   LaneBitmask::getAll(),
-  LaneBitmask(0x0000000C), // dsub_0
-  LaneBitmask(0x00000030), // dsub_1
-  LaneBitmask(0x000000C0), // dsub_2
-  LaneBitmask(0x00000300), // dsub_3
-  LaneBitmask(0x00000C00), // dsub_4
-  LaneBitmask(0x00003000), // dsub_5
-  LaneBitmask(0x0000C000), // dsub_6
-  LaneBitmask(0x00030000), // dsub_7
-  LaneBitmask(0x00000001), // gsub_0
-  LaneBitmask(0x00000002), // gsub_1
-  LaneBitmask(0x000003FC), // qqsub_0
-  LaneBitmask(0x0003FC00), // qqsub_1
-  LaneBitmask(0x0000003C), // qsub_0
-  LaneBitmask(0x000003C0), // qsub_1
-  LaneBitmask(0x00003C00), // qsub_2
-  LaneBitmask(0x0003C000), // qsub_3
-  LaneBitmask(0x00000004), // ssub_0
-  LaneBitmask(0x00000008), // ssub_1
-  LaneBitmask(0x00000010), // ssub_2
-  LaneBitmask(0x00000020), // ssub_3
-  LaneBitmask(0x00000040), // ssub_4
-  LaneBitmask(0x00000080), // ssub_5
-  LaneBitmask(0x00000100), // ssub_6
-  LaneBitmask(0x00000200), // ssub_7
-  LaneBitmask(0x00000400), // ssub_8
-  LaneBitmask(0x00000800), // ssub_9
-  LaneBitmask(0x00001000), // ssub_10
-  LaneBitmask(0x00002000), // ssub_11
-  LaneBitmask(0x00004000), // ssub_12
-  LaneBitmask(0x00008000), // ssub_13
-  LaneBitmask(0x00010000), // dsub_7_then_ssub_0
-  LaneBitmask(0x00020000), // dsub_7_then_ssub_1
-  LaneBitmask(0x000000CC), // ssub_0_ssub_1_ssub_4_ssub_5
-  LaneBitmask(0x000000FC), // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
-  LaneBitmask(0x00000330), // ssub_2_ssub_3_ssub_6_ssub_7
-  LaneBitmask(0x000003F0), // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-  LaneBitmask(0x000000F0), // ssub_2_ssub_3_ssub_4_ssub_5
-  LaneBitmask(0x00000CCC), // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
-  LaneBitmask(0x0000CCCC), // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
-  LaneBitmask(0x00003330), // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
-  LaneBitmask(0x00033330), // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7
-  LaneBitmask(0x00000FF0), // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  LaneBitmask(0x00000CC0), // ssub_4_ssub_5_ssub_8_ssub_9
-  LaneBitmask(0x00000FC0), // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  LaneBitmask(0x0000CCC0), // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
-  LaneBitmask(0x00003300), // ssub_6_ssub_7_dsub_5
-  LaneBitmask(0x00003F00), // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
-  LaneBitmask(0x00033300), // ssub_6_ssub_7_dsub_5_dsub_7
-  LaneBitmask(0x00000F00), // ssub_6_ssub_7_ssub_8_ssub_9
-  LaneBitmask(0x0000FF00), // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
-  LaneBitmask(0x0000CC00), // ssub_8_ssub_9_ssub_12_ssub_13
-  LaneBitmask(0x0000FC00), // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
-  LaneBitmask(0x00033000), // dsub_5_dsub_7
-  LaneBitmask(0x0003F000), // dsub_5_ssub_12_ssub_13_dsub_7
-  LaneBitmask(0x0000F000), // dsub_5_ssub_12_ssub_13
-  LaneBitmask(0x00003FC0), // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
+  LaneBitmask(0x000000000000000C), // dsub_0
+  LaneBitmask(0x0000000000000030), // dsub_1
+  LaneBitmask(0x00000000000000C0), // dsub_2
+  LaneBitmask(0x0000000000000300), // dsub_3
+  LaneBitmask(0x0000000000000C00), // dsub_4
+  LaneBitmask(0x0000000000003000), // dsub_5
+  LaneBitmask(0x000000000000C000), // dsub_6
+  LaneBitmask(0x0000000000030000), // dsub_7
+  LaneBitmask(0x0000000000000001), // gsub_0
+  LaneBitmask(0x0000000000000002), // gsub_1
+  LaneBitmask(0x00000000000003FC), // qqsub_0
+  LaneBitmask(0x000000000003FC00), // qqsub_1
+  LaneBitmask(0x000000000000003C), // qsub_0
+  LaneBitmask(0x00000000000003C0), // qsub_1
+  LaneBitmask(0x0000000000003C00), // qsub_2
+  LaneBitmask(0x000000000003C000), // qsub_3
+  LaneBitmask(0x0000000000000004), // ssub_0
+  LaneBitmask(0x0000000000000008), // ssub_1
+  LaneBitmask(0x0000000000000010), // ssub_2
+  LaneBitmask(0x0000000000000020), // ssub_3
+  LaneBitmask(0x0000000000000040), // ssub_4
+  LaneBitmask(0x0000000000000080), // ssub_5
+  LaneBitmask(0x0000000000000100), // ssub_6
+  LaneBitmask(0x0000000000000200), // ssub_7
+  LaneBitmask(0x0000000000000400), // ssub_8
+  LaneBitmask(0x0000000000000800), // ssub_9
+  LaneBitmask(0x0000000000001000), // ssub_10
+  LaneBitmask(0x0000000000002000), // ssub_11
+  LaneBitmask(0x0000000000004000), // ssub_12
+  LaneBitmask(0x0000000000008000), // ssub_13
+  LaneBitmask(0x0000000000010000), // dsub_7_then_ssub_0
+  LaneBitmask(0x0000000000020000), // dsub_7_then_ssub_1
+  LaneBitmask(0x00000000000000CC), // ssub_0_ssub_1_ssub_4_ssub_5
+  LaneBitmask(0x00000000000000FC), // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+  LaneBitmask(0x0000000000000330), // ssub_2_ssub_3_ssub_6_ssub_7
+  LaneBitmask(0x00000000000003F0), // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+  LaneBitmask(0x00000000000000F0), // ssub_2_ssub_3_ssub_4_ssub_5
+  LaneBitmask(0x0000000000000CCC), // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
+  LaneBitmask(0x000000000000CCCC), // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+  LaneBitmask(0x0000000000003330), // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
+  LaneBitmask(0x0000000000033330), // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7
+  LaneBitmask(0x0000000000000FF0), // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  LaneBitmask(0x0000000000000CC0), // ssub_4_ssub_5_ssub_8_ssub_9
+  LaneBitmask(0x0000000000000FC0), // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  LaneBitmask(0x000000000000CCC0), // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+  LaneBitmask(0x0000000000003300), // ssub_6_ssub_7_dsub_5
+  LaneBitmask(0x0000000000003F00), // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
+  LaneBitmask(0x0000000000033300), // ssub_6_ssub_7_dsub_5_dsub_7
+  LaneBitmask(0x0000000000000F00), // ssub_6_ssub_7_ssub_8_ssub_9
+  LaneBitmask(0x000000000000FF00), // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  LaneBitmask(0x000000000000CC00), // ssub_8_ssub_9_ssub_12_ssub_13
+  LaneBitmask(0x000000000000FC00), // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  LaneBitmask(0x0000000000033000), // dsub_5_dsub_7
+  LaneBitmask(0x000000000003F000), // dsub_5_ssub_12_ssub_13_dsub_7
+  LaneBitmask(0x000000000000F000), // dsub_5_ssub_12_ssub_13
+  LaneBitmask(0x0000000000003FC0), // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
  };
 
 
@@ -3840,24 +3910,25 @@ static const LaneBitmask SubRegIndexLaneMaskTable[] = {
 static const TargetRegisterInfo::RegClassInfo RegClassInfos[] = {
   // Mode = 0 (Default)
   { 16, 16, 32, VTLists+2 },    // HPR
-  { 32, 32, 32, VTLists+4 },    // FPWithVPR
-  { 32, 32, 32, VTLists+4 },    // SPR
-  { 32, 32, 32, VTLists+4 },    // FPWithVPR_with_ssub_0
+  { 32, 32, 32, VTLists+5 },    // FPWithVPR
+  { 32, 32, 32, VTLists+5 },    // SPR
+  { 32, 32, 32, VTLists+5 },    // FPWithVPR_with_ssub_0
   { 32, 32, 32, VTLists+0 },    // GPR
   { 32, 32, 32, VTLists+0 },    // GPRwithAPSR
   { 32, 32, 32, VTLists+0 },    // GPRwithZR
-  { 32, 32, 32, VTLists+4 },    // SPR_8
+  { 32, 32, 32, VTLists+5 },    // SPR_8
   { 32, 32, 32, VTLists+0 },    // GPRnopc
+  { 32, 32, 32, VTLists+0 },    // GPRwithAPSR_NZCVnosp
   { 32, 32, 32, VTLists+0 },    // GPRwithAPSRnosp
   { 32, 32, 32, VTLists+0 },    // GPRwithZRnosp
   { 32, 32, 32, VTLists+0 },    // rGPR
   { 32, 32, 32, VTLists+0 },    // tGPRwithpc
-  { 32, 32, 32, VTLists+4 },    // FPWithVPR_with_ssub_0_with_ssub_0_in_SPR_8
+  { 32, 32, 32, VTLists+5 },    // FPWithVPR_with_ssub_0_with_ssub_0_in_SPR_8
   { 32, 32, 32, VTLists+0 },    // hGPR
   { 32, 32, 32, VTLists+0 },    // tGPR
   { 32, 32, 32, VTLists+0 },    // tGPREven
   { 32, 32, 32, VTLists+0 },    // GPRnopc_and_hGPR
-  { 32, 32, 32, VTLists+0 },    // GPRwithAPSRnosp_and_hGPR
+  { 32, 32, 32, VTLists+0 },    // GPRwithAPSR_NZCVnosp_and_hGPR
   { 32, 32, 32, VTLists+0 },    // tGPROdd
   { 32, 32, 32, VTLists+0 },    // tcGPR
   { 32, 32, 32, VTLists+0 },    // hGPR_and_tGPREven
@@ -3869,1036 +3940,1047 @@ static const TargetRegisterInfo::RegClassInfo RegClassInfos[] = {
   { 32, 32, 32, VTLists+0 },    // tGPREven_and_tGPR_and_tcGPR
   { 32, 32, 32, VTLists+0 },    // tGPROdd_and_tcGPR
   { 32, 32, 32, VTLists+0 },    // CCR
+  { 32, 32, 32, VTLists+0 },    // FPCXTRegs
   { 32, 32, 32, VTLists+0 },    // GPRlr
   { 32, 32, 32, VTLists+0 },    // GPRsp
-  { 32, 32, 32, VTLists+6 },    // VCCR
+  { 32, 32, 32, VTLists+7 },    // VCCR
   { 32, 32, 32, VTLists+0 },    // cl_FPSCR_NZCV
   { 32, 32, 32, VTLists+0 },    // hGPR_and_tGPRwithpc
   { 32, 32, 32, VTLists+0 },    // hGPR_and_tcGPR
-  { 64, 64, 64, VTLists+17 },    // DPR
-  { 64, 64, 64, VTLists+17 },    // DPR_VFP2
-  { 64, 64, 64, VTLists+17 },    // DPR_8
-  { 64, 64, 64, VTLists+40 },    // GPRPair
-  { 64, 64, 64, VTLists+40 },    // GPRPairnosp
-  { 64, 64, 64, VTLists+40 },    // GPRPair_with_gsub_0_in_tGPR
-  { 64, 64, 64, VTLists+40 },    // GPRPair_with_gsub_0_in_hGPR
-  { 64, 64, 64, VTLists+40 },    // GPRPair_with_gsub_0_in_tcGPR
-  { 64, 64, 64, VTLists+40 },    // GPRPair_with_gsub_1_in_tcGPR
-  { 64, 64, 64, VTLists+40 },    // GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPR
-  { 64, 64, 64, VTLists+40 },    // GPRPair_with_gsub_1_in_GPRsp
-  { 128, 128, 64, VTLists+11 },    // DPairSpc
-  { 128, 128, 64, VTLists+11 },    // DPairSpc_with_ssub_0
-  { 128, 128, 64, VTLists+11 },    // DPairSpc_with_ssub_4
-  { 128, 128, 64, VTLists+11 },    // DPairSpc_with_dsub_0_in_DPR_8
-  { 128, 128, 64, VTLists+11 },    // DPairSpc_with_dsub_2_in_DPR_8
-  { 128, 128, 128, VTLists+33 },    // DPair
-  { 128, 128, 128, VTLists+33 },    // DPair_with_ssub_0
-  { 128, 128, 128, VTLists+25 },    // QPR
-  { 128, 128, 128, VTLists+33 },    // DPair_with_ssub_2
-  { 128, 128, 128, VTLists+33 },    // DPair_with_dsub_0_in_DPR_8
-  { 128, 128, 128, VTLists+25 },    // MQPR
-  { 128, 128, 128, VTLists+33 },    // QPR_VFP2
-  { 128, 128, 128, VTLists+33 },    // DPair_with_dsub_1_in_DPR_8
-  { 128, 128, 128, VTLists+33 },    // QPR_8
-  { 192, 192, 64, VTLists+40 },    // DTriple
-  { 192, 192, 64, VTLists+40 },    // DTripleSpc
-  { 192, 192, 64, VTLists+40 },    // DTripleSpc_with_ssub_0
-  { 192, 192, 64, VTLists+40 },    // DTriple_with_ssub_0
-  { 192, 192, 64, VTLists+40 },    // DTriple_with_qsub_0_in_QPR
-  { 192, 192, 64, VTLists+40 },    // DTriple_with_ssub_2
-  { 192, 192, 64, VTLists+40 },    // DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-  { 192, 192, 64, VTLists+40 },    // DTripleSpc_with_ssub_4
-  { 192, 192, 64, VTLists+40 },    // DTriple_with_ssub_4
-  { 192, 192, 64, VTLists+40 },    // DTripleSpc_with_ssub_8
-  { 192, 192, 64, VTLists+40 },    // DTripleSpc_with_dsub_0_in_DPR_8
-  { 192, 192, 64, VTLists+40 },    // DTriple_with_dsub_0_in_DPR_8
-  { 192, 192, 64, VTLists+40 },    // DTriple_with_qsub_0_in_MQPR
-  { 192, 192, 64, VTLists+40 },    // DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-  { 192, 192, 64, VTLists+40 },    // DTriple_with_dsub_1_in_DPR_8
-  { 192, 192, 64, VTLists+40 },    // DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-  { 192, 192, 64, VTLists+40 },    // DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
-  { 192, 192, 64, VTLists+40 },    // DTripleSpc_with_dsub_2_in_DPR_8
-  { 192, 192, 64, VTLists+40 },    // DTriple_with_dsub_2_in_DPR_8
-  { 192, 192, 64, VTLists+40 },    // DTripleSpc_with_dsub_4_in_DPR_8
-  { 192, 192, 64, VTLists+40 },    // DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-  { 192, 192, 64, VTLists+40 },    // DTriple_with_qsub_0_in_QPR_8
-  { 192, 192, 64, VTLists+40 },    // DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
-  { 192, 192, 64, VTLists+40 },    // DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-  { 256, 256, 64, VTLists+13 },    // DQuadSpc
-  { 256, 256, 64, VTLists+13 },    // DQuadSpc_with_ssub_0
-  { 256, 256, 64, VTLists+13 },    // DQuadSpc_with_ssub_4
-  { 256, 256, 64, VTLists+13 },    // DQuadSpc_with_ssub_8
-  { 256, 256, 64, VTLists+13 },    // DQuadSpc_with_dsub_0_in_DPR_8
-  { 256, 256, 64, VTLists+13 },    // DQuadSpc_with_dsub_2_in_DPR_8
-  { 256, 256, 64, VTLists+13 },    // DQuadSpc_with_dsub_4_in_DPR_8
-  { 256, 256, 256, VTLists+13 },    // DQuad
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_ssub_0
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_ssub_2
-  { 256, 256, 256, VTLists+13 },    // QQPR
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_ssub_4
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_ssub_6
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_dsub_0_in_DPR_8
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_qsub_0_in_MQPR
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_dsub_1_in_DPR_8
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_qsub_1_in_MQPR
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_dsub_2_in_DPR_8
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_dsub_3_in_DPR_8
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_qsub_0_in_QPR_8
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_qsub_1_in_QPR_8
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-  { 256, 256, 256, VTLists+13 },    // DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-  { 512, 512, 256, VTLists+15 },    // QQQQPR
-  { 512, 512, 256, VTLists+15 },    // QQQQPR_with_ssub_0
-  { 512, 512, 256, VTLists+15 },    // QQQQPR_with_ssub_4
-  { 512, 512, 256, VTLists+15 },    // QQQQPR_with_ssub_8
-  { 512, 512, 256, VTLists+15 },    // QQQQPR_with_ssub_12
-  { 512, 512, 256, VTLists+15 },    // QQQQPR_with_dsub_0_in_DPR_8
-  { 512, 512, 256, VTLists+15 },    // QQQQPR_with_dsub_2_in_DPR_8
-  { 512, 512, 256, VTLists+15 },    // QQQQPR_with_dsub_4_in_DPR_8
-  { 512, 512, 256, VTLists+15 },    // QQQQPR_with_dsub_6_in_DPR_8
+  { 64, 64, 64, VTLists+26 },    // DPR
+  { 64, 64, 64, VTLists+26 },    // DPR_VFP2
+  { 64, 64, 64, VTLists+26 },    // DPR_8
+  { 64, 64, 64, VTLists+51 },    // GPRPair
+  { 64, 64, 64, VTLists+51 },    // GPRPairnosp
+  { 64, 64, 64, VTLists+51 },    // GPRPair_with_gsub_0_in_tGPR
+  { 64, 64, 64, VTLists+51 },    // GPRPair_with_gsub_0_in_hGPR
+  { 64, 64, 64, VTLists+51 },    // GPRPair_with_gsub_0_in_tcGPR
+  { 64, 64, 64, VTLists+51 },    // GPRPair_with_gsub_1_in_tcGPR
+  { 64, 64, 64, VTLists+51 },    // GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPR
+  { 64, 64, 64, VTLists+51 },    // GPRPair_with_gsub_1_in_GPRsp
+  { 128, 128, 64, VTLists+12 },    // DPairSpc
+  { 128, 128, 64, VTLists+12 },    // DPairSpc_with_ssub_0
+  { 128, 128, 64, VTLists+12 },    // DPairSpc_with_ssub_4
+  { 128, 128, 64, VTLists+12 },    // DPairSpc_with_dsub_0_in_DPR_8
+  { 128, 128, 64, VTLists+12 },    // DPairSpc_with_dsub_2_in_DPR_8
+  { 128, 128, 128, VTLists+44 },    // DPair
+  { 128, 128, 128, VTLists+44 },    // DPair_with_ssub_0
+  { 128, 128, 128, VTLists+35 },    // QPR
+  { 128, 128, 128, VTLists+44 },    // DPair_with_ssub_2
+  { 128, 128, 128, VTLists+44 },    // DPair_with_dsub_0_in_DPR_8
+  { 128, 128, 128, VTLists+18 },    // MQPR
+  { 128, 128, 128, VTLists+44 },    // QPR_VFP2
+  { 128, 128, 128, VTLists+44 },    // DPair_with_dsub_1_in_DPR_8
+  { 128, 128, 128, VTLists+44 },    // QPR_8
+  { 192, 192, 64, VTLists+51 },    // DTriple
+  { 192, 192, 64, VTLists+51 },    // DTripleSpc
+  { 192, 192, 64, VTLists+51 },    // DTripleSpc_with_ssub_0
+  { 192, 192, 64, VTLists+51 },    // DTriple_with_ssub_0
+  { 192, 192, 64, VTLists+51 },    // DTriple_with_qsub_0_in_QPR
+  { 192, 192, 64, VTLists+51 },    // DTriple_with_ssub_2
+  { 192, 192, 64, VTLists+51 },    // DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+  { 192, 192, 64, VTLists+51 },    // DTripleSpc_with_ssub_4
+  { 192, 192, 64, VTLists+51 },    // DTriple_with_ssub_4
+  { 192, 192, 64, VTLists+51 },    // DTripleSpc_with_ssub_8
+  { 192, 192, 64, VTLists+51 },    // DTripleSpc_with_dsub_0_in_DPR_8
+  { 192, 192, 64, VTLists+51 },    // DTriple_with_dsub_0_in_DPR_8
+  { 192, 192, 64, VTLists+51 },    // DTriple_with_qsub_0_in_MQPR
+  { 192, 192, 64, VTLists+51 },    // DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+  { 192, 192, 64, VTLists+51 },    // DTriple_with_dsub_1_in_DPR_8
+  { 192, 192, 64, VTLists+51 },    // DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+  { 192, 192, 64, VTLists+51 },    // DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
+  { 192, 192, 64, VTLists+51 },    // DTripleSpc_with_dsub_2_in_DPR_8
+  { 192, 192, 64, VTLists+51 },    // DTriple_with_dsub_2_in_DPR_8
+  { 192, 192, 64, VTLists+51 },    // DTripleSpc_with_dsub_4_in_DPR_8
+  { 192, 192, 64, VTLists+51 },    // DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+  { 192, 192, 64, VTLists+51 },    // DTriple_with_qsub_0_in_QPR_8
+  { 192, 192, 64, VTLists+51 },    // DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
+  { 192, 192, 64, VTLists+51 },    // DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+  { 256, 256, 64, VTLists+14 },    // DQuadSpc
+  { 256, 256, 64, VTLists+14 },    // DQuadSpc_with_ssub_0
+  { 256, 256, 64, VTLists+14 },    // DQuadSpc_with_ssub_4
+  { 256, 256, 64, VTLists+14 },    // DQuadSpc_with_ssub_8
+  { 256, 256, 64, VTLists+14 },    // DQuadSpc_with_dsub_0_in_DPR_8
+  { 256, 256, 64, VTLists+14 },    // DQuadSpc_with_dsub_2_in_DPR_8
+  { 256, 256, 64, VTLists+14 },    // DQuadSpc_with_dsub_4_in_DPR_8
+  { 256, 256, 256, VTLists+14 },    // DQuad
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_ssub_0
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_ssub_2
+  { 256, 256, 256, VTLists+14 },    // QQPR
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_ssub_4
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_ssub_6
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_dsub_0_in_DPR_8
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_qsub_0_in_MQPR
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_dsub_1_in_DPR_8
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_qsub_1_in_MQPR
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_dsub_2_in_DPR_8
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_dsub_3_in_DPR_8
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_qsub_0_in_QPR_8
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_qsub_1_in_QPR_8
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+  { 256, 256, 256, VTLists+14 },    // DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+  { 512, 512, 256, VTLists+16 },    // QQQQPR
+  { 512, 512, 256, VTLists+16 },    // QQQQPR_with_ssub_0
+  { 512, 512, 256, VTLists+16 },    // QQQQPR_with_ssub_4
+  { 512, 512, 256, VTLists+16 },    // QQQQPR_with_ssub_8
+  { 512, 512, 256, VTLists+16 },    // QQQQPR_with_ssub_12
+  { 512, 512, 256, VTLists+16 },    // QQQQPR_with_dsub_0_in_DPR_8
+  { 512, 512, 256, VTLists+16 },    // QQQQPR_with_dsub_2_in_DPR_8
+  { 512, 512, 256, VTLists+16 },    // QQQQPR_with_dsub_4_in_DPR_8
+  { 512, 512, 256, VTLists+16 },    // QQQQPR_with_dsub_6_in_DPR_8
 };
 
 static const TargetRegisterClass *const NullRegClasses[] = { nullptr };
 
 static const uint32_t HPRSubClassMask[] = {
   0x00000085, 0x00000000, 0x00000000, 0x00000000, 
-  0x00002008, 0x9faf0060, 0x6fdffff5, 0x03fdfffe, // ssub_0
-  0x00002008, 0x9faf0060, 0x6fdffff5, 0x03fdfffe, // ssub_1
-  0x00000000, 0x1f800000, 0x401ebb24, 0x03fdffde, // ssub_2
-  0x00000000, 0x1f800000, 0x401ebb24, 0x03fdffde, // ssub_3
-  0x00000000, 0x000e0000, 0x0f9ff9f0, 0x03f9ffce, // ssub_4
-  0x00000000, 0x000e0000, 0x0f9ff9f0, 0x03f9ffce, // ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03f9fecc, // ssub_6
-  0x00000000, 0x00000000, 0x00000000, 0x03f9fecc, // ssub_7
-  0x00000000, 0x00000000, 0x0f0140c0, 0x03f00000, // ssub_8
-  0x00000000, 0x00000000, 0x0f0140c0, 0x03f00000, // ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_10
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_11
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // ssub_12
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // dsub_7_then_ssub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // dsub_7_then_ssub_1
+  0x00004008, 0x7ebc0180, 0xbf7fffd6, 0x0ff7fff9, // ssub_0
+  0x00004008, 0x7ebc0180, 0xbf7fffd6, 0x0ff7fff9, // ssub_1
+  0x00000000, 0x7e000000, 0x007aec90, 0x0ff7ff79, // ssub_2
+  0x00000000, 0x7e000000, 0x007aec90, 0x0ff7ff79, // ssub_3
+  0x00000000, 0x00380000, 0x3e7fe7c0, 0x0fe7ff38, // ssub_4
+  0x00000000, 0x00380000, 0x3e7fe7c0, 0x0fe7ff38, // ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0fe7fb30, // ssub_6
+  0x00000000, 0x00000000, 0x00000000, 0x0fe7fb30, // ssub_7
+  0x00000000, 0x00000000, 0x3c050300, 0x0fc00000, // ssub_8
+  0x00000000, 0x00000000, 0x3c050300, 0x0fc00000, // ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_10
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_11
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // ssub_12
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // dsub_7_then_ssub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // dsub_7_then_ssub_1
 };
 
 static const uint32_t FPWithVPRSubClassMask[] = {
-  0x0000208e, 0x00000071, 0x00000000, 0x00000000, 
-  0x00000000, 0xffff8000, 0xffffffff, 0x03ffffff, // dsub_0
-  0x00000000, 0x3ff00000, 0xf01ebf2f, 0x03ffffff, // dsub_1
-  0x00000000, 0xe00f8000, 0xffffffff, 0x03ffffff, // dsub_2
-  0x00000000, 0x00000000, 0xf0000000, 0x03ffffff, // dsub_3
-  0x00000000, 0xc0000000, 0x0fe140d0, 0x03fe0000, // dsub_4
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // dsub_6
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // dsub_7
-  0x00002008, 0x9faf0060, 0x6fdffff5, 0x03fdfffe, // ssub_0
-  0x00002008, 0x9faf0060, 0x6fdffff5, 0x03fdfffe, // ssub_1
-  0x00000000, 0x1f800000, 0x401ebb24, 0x03fdffde, // ssub_2
-  0x00000000, 0x1f800000, 0x401ebb24, 0x03fdffde, // ssub_3
-  0x00000000, 0x000e0000, 0x0f9ff9f0, 0x03f9ffce, // ssub_4
-  0x00000000, 0x000e0000, 0x0f9ff9f0, 0x03f9ffce, // ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03f9fecc, // ssub_6
-  0x00000000, 0x00000000, 0x00000000, 0x03f9fecc, // ssub_7
-  0x00000000, 0x00000000, 0x0f0140c0, 0x03f00000, // ssub_8
-  0x00000000, 0x00000000, 0x0f0140c0, 0x03f00000, // ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_10
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_11
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // ssub_12
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // dsub_7_then_ssub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // dsub_7_then_ssub_1
+  0x0000408e, 0x000001c4, 0x00000000, 0x00000000, 
+  0x00000000, 0xfffe0000, 0xffffffff, 0x0fffffff, // dsub_0
+  0x00000000, 0xffc00000, 0xc07afcbc, 0x0fffffff, // dsub_1
+  0x00000000, 0x803e0000, 0xffffffff, 0x0fffffff, // dsub_2
+  0x00000000, 0x00000000, 0xc0000000, 0x0fffffff, // dsub_3
+  0x00000000, 0x00000000, 0x3f850343, 0x0ff80000, // dsub_4
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // dsub_6
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // dsub_7
+  0x00004008, 0x7ebc0180, 0xbf7fffd6, 0x0ff7fff9, // ssub_0
+  0x00004008, 0x7ebc0180, 0xbf7fffd6, 0x0ff7fff9, // ssub_1
+  0x00000000, 0x7e000000, 0x007aec90, 0x0ff7ff79, // ssub_2
+  0x00000000, 0x7e000000, 0x007aec90, 0x0ff7ff79, // ssub_3
+  0x00000000, 0x00380000, 0x3e7fe7c0, 0x0fe7ff38, // ssub_4
+  0x00000000, 0x00380000, 0x3e7fe7c0, 0x0fe7ff38, // ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0fe7fb30, // ssub_6
+  0x00000000, 0x00000000, 0x00000000, 0x0fe7fb30, // ssub_7
+  0x00000000, 0x00000000, 0x3c050300, 0x0fc00000, // ssub_8
+  0x00000000, 0x00000000, 0x3c050300, 0x0fc00000, // ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_10
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_11
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // ssub_12
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // dsub_7_then_ssub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // dsub_7_then_ssub_1
 };
 
 static const uint32_t SPRSubClassMask[] = {
   0x00000084, 0x00000000, 0x00000000, 0x00000000, 
-  0x00002008, 0x9faf0060, 0x6fdffff5, 0x03fdfffe, // ssub_0
-  0x00002008, 0x9faf0060, 0x6fdffff5, 0x03fdfffe, // ssub_1
-  0x00000000, 0x1f800000, 0x401ebb24, 0x03fdffde, // ssub_2
-  0x00000000, 0x1f800000, 0x401ebb24, 0x03fdffde, // ssub_3
-  0x00000000, 0x000e0000, 0x0f9ff9f0, 0x03f9ffce, // ssub_4
-  0x00000000, 0x000e0000, 0x0f9ff9f0, 0x03f9ffce, // ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03f9fecc, // ssub_6
-  0x00000000, 0x00000000, 0x00000000, 0x03f9fecc, // ssub_7
-  0x00000000, 0x00000000, 0x0f0140c0, 0x03f00000, // ssub_8
-  0x00000000, 0x00000000, 0x0f0140c0, 0x03f00000, // ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_10
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_11
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // ssub_12
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // dsub_7_then_ssub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // dsub_7_then_ssub_1
+  0x00004008, 0x7ebc0180, 0xbf7fffd6, 0x0ff7fff9, // ssub_0
+  0x00004008, 0x7ebc0180, 0xbf7fffd6, 0x0ff7fff9, // ssub_1
+  0x00000000, 0x7e000000, 0x007aec90, 0x0ff7ff79, // ssub_2
+  0x00000000, 0x7e000000, 0x007aec90, 0x0ff7ff79, // ssub_3
+  0x00000000, 0x00380000, 0x3e7fe7c0, 0x0fe7ff38, // ssub_4
+  0x00000000, 0x00380000, 0x3e7fe7c0, 0x0fe7ff38, // ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0fe7fb30, // ssub_6
+  0x00000000, 0x00000000, 0x00000000, 0x0fe7fb30, // ssub_7
+  0x00000000, 0x00000000, 0x3c050300, 0x0fc00000, // ssub_8
+  0x00000000, 0x00000000, 0x3c050300, 0x0fc00000, // ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_10
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_11
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // ssub_12
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // dsub_7_then_ssub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // dsub_7_then_ssub_1
 };
 
 static const uint32_t FPWithVPR_with_ssub_0SubClassMask[] = {
-  0x00002008, 0x00000060, 0x00000000, 0x00000000, 
-  0x00000000, 0x9faf0000, 0x6fdffff5, 0x03fdfffe, // dsub_0
-  0x00000000, 0x1f800000, 0x401ebb24, 0x03fdffde, // dsub_1
-  0x00000000, 0x000e0000, 0x0f9ff9f0, 0x03f9ffce, // dsub_2
-  0x00000000, 0x00000000, 0x00000000, 0x03f9fecc, // dsub_3
-  0x00000000, 0x00000000, 0x0f0140c0, 0x03f00000, // dsub_4
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // dsub_6
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // dsub_7
+  0x00004008, 0x00000180, 0x00000000, 0x00000000, 
+  0x00000000, 0x7ebc0000, 0xbf7fffd6, 0x0ff7fff9, // dsub_0
+  0x00000000, 0x7e000000, 0x007aec90, 0x0ff7ff79, // dsub_1
+  0x00000000, 0x00380000, 0x3e7fe7c0, 0x0fe7ff38, // dsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x0fe7fb30, // dsub_3
+  0x00000000, 0x00000000, 0x3c050300, 0x0fc00000, // dsub_4
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // dsub_6
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // dsub_7
 };
 
 static const uint32_t GPRSubClassMask[] = {
-  0xdfffd910, 0x0000000c, 0x00000000, 0x00000000, 
-  0x00000000, 0x00007f80, 0x00000000, 0x00000000, // gsub_0
-  0x00000000, 0x00007f80, 0x00000000, 0x00000000, // gsub_1
+  0x3fffb110, 0x00000033, 0x00000000, 0x00000000, 
+  0x00000000, 0x0001fe00, 0x00000000, 0x00000000, // gsub_0
+  0x00000000, 0x0001fe00, 0x00000000, 0x00000000, // gsub_1
 };
 
 static const uint32_t GPRwithAPSRSubClassMask[] = {
-  0xdfff8920, 0x00000008, 0x00000000, 0x00000000, 
-  0x00000000, 0x00007f80, 0x00000000, 0x00000000, // gsub_0
-  0x00000000, 0x00007f80, 0x00000000, 0x00000000, // gsub_1
+  0x3fff1320, 0x00000023, 0x00000000, 0x00000000, 
+  0x00000000, 0x0001fe00, 0x00000000, 0x00000000, // gsub_0
+  0x00000000, 0x0001fe00, 0x00000000, 0x00000000, // gsub_1
 };
 
 static const uint32_t GPRwithZRSubClassMask[] = {
-  0xdfff8d40, 0x00000008, 0x00000000, 0x00000000, 
-  0x00000000, 0x00007f80, 0x00000000, 0x00000000, // gsub_0
-  0x00000000, 0x00007f80, 0x00000000, 0x00000000, // gsub_1
+  0x3fff1940, 0x00000023, 0x00000000, 0x00000000, 
+  0x00000000, 0x0001fe00, 0x00000000, 0x00000000, // gsub_0
+  0x00000000, 0x0001fe00, 0x00000000, 0x00000000, // gsub_1
 };
 
 static const uint32_t SPR_8SubClassMask[] = {
   0x00000080, 0x00000000, 0x00000000, 0x00000000, 
-  0x00002000, 0x190c0040, 0x0e1fc980, 0x03c1fa48, // ssub_0
-  0x00002000, 0x190c0040, 0x0e1fc980, 0x03c1fa48, // ssub_1
-  0x00000000, 0x18000000, 0x001c8800, 0x03c1ea40, // ssub_2
-  0x00000000, 0x18000000, 0x001c8800, 0x03c1ea40, // ssub_3
-  0x00000000, 0x00080000, 0x0c19c000, 0x0381ca00, // ssub_4
-  0x00000000, 0x00080000, 0x0c19c000, 0x0381ca00, // ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03814800, // ssub_6
-  0x00000000, 0x00000000, 0x00000000, 0x03814800, // ssub_7
-  0x00000000, 0x00000000, 0x08010000, 0x03000000, // ssub_8
-  0x00000000, 0x00000000, 0x08010000, 0x03000000, // ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_10
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_11
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // ssub_12
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // dsub_7_then_ssub_0
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // dsub_7_then_ssub_1
+  0x00004000, 0x64300100, 0x387f2600, 0x0f07e920, // ssub_0
+  0x00004000, 0x64300100, 0x387f2600, 0x0f07e920, // ssub_1
+  0x00000000, 0x60000000, 0x00722000, 0x0f07a900, // ssub_2
+  0x00000000, 0x60000000, 0x00722000, 0x0f07a900, // ssub_3
+  0x00000000, 0x00200000, 0x30670000, 0x0e072800, // ssub_4
+  0x00000000, 0x00200000, 0x30670000, 0x0e072800, // ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0e052000, // ssub_6
+  0x00000000, 0x00000000, 0x00000000, 0x0e052000, // ssub_7
+  0x00000000, 0x00000000, 0x20040000, 0x0c000000, // ssub_8
+  0x00000000, 0x00000000, 0x20040000, 0x0c000000, // ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_10
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_11
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // ssub_12
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // dsub_7_then_ssub_0
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // dsub_7_then_ssub_1
 };
 
 static const uint32_t GPRnopcSubClassMask[] = {
-  0xdfff8900, 0x00000008, 0x00000000, 0x00000000, 
-  0x00000000, 0x00007f80, 0x00000000, 0x00000000, // gsub_0
-  0x00000000, 0x00007f80, 0x00000000, 0x00000000, // gsub_1
+  0x3fff1100, 0x00000023, 0x00000000, 0x00000000, 
+  0x00000000, 0x0001fe00, 0x00000000, 0x00000000, // gsub_0
+  0x00000000, 0x0001fe00, 0x00000000, 0x00000000, // gsub_1
+};
+
+static const uint32_t GPRwithAPSR_NZCVnospSubClassMask[] = {
+  0x3ffb1200, 0x00000021, 0x00000000, 0x00000000, 
+  0x00000000, 0x0001fe00, 0x00000000, 0x00000000, // gsub_0
+  0x00000000, 0x0000cc00, 0x00000000, 0x00000000, // gsub_1
 };
 
 static const uint32_t GPRwithAPSRnospSubClassMask[] = {
-  0x5ffd8a00, 0x00000008, 0x00000000, 0x00000000, 
-  0x00000000, 0x00007f80, 0x00000000, 0x00000000, // gsub_0
-  0x00000000, 0x00003300, 0x00000000, 0x00000000, // gsub_1
+  0x3ffb1400, 0x00000021, 0x00000000, 0x00000000, 
+  0x00000000, 0x0001fe00, 0x00000000, 0x00000000, // gsub_0
+  0x00000000, 0x0000cc00, 0x00000000, 0x00000000, // gsub_1
 };
 
 static const uint32_t GPRwithZRnospSubClassMask[] = {
-  0x5ffd8c00, 0x00000008, 0x00000000, 0x00000000, 
-  0x00000000, 0x00007f80, 0x00000000, 0x00000000, // gsub_0
-  0x00000000, 0x00003300, 0x00000000, 0x00000000, // gsub_1
+  0x3ffb1800, 0x00000021, 0x00000000, 0x00000000, 
+  0x00000000, 0x0001fe00, 0x00000000, 0x00000000, // gsub_0
+  0x00000000, 0x0000cc00, 0x00000000, 0x00000000, // gsub_1
 };
 
 static const uint32_t rGPRSubClassMask[] = {
-  0x5ffd8800, 0x00000008, 0x00000000, 0x00000000, 
-  0x00000000, 0x00007f80, 0x00000000, 0x00000000, // gsub_0
-  0x00000000, 0x00003300, 0x00000000, 0x00000000, // gsub_1
+  0x3ffb1000, 0x00000021, 0x00000000, 0x00000000, 
+  0x00000000, 0x0001fe00, 0x00000000, 0x00000000, // gsub_0
+  0x00000000, 0x0000cc00, 0x00000000, 0x00000000, // gsub_1
 };
 
 static const uint32_t tGPRwithpcSubClassMask[] = {
-  0x19c09000, 0x00000004, 0x00000000, 0x00000000, 
-  0x00000000, 0x00001200, 0x00000000, 0x00000000, // gsub_0
-  0x00000000, 0x00001200, 0x00000000, 0x00000000, // gsub_1
+  0x33812000, 0x00000010, 0x00000000, 0x00000000, 
+  0x00000000, 0x00004800, 0x00000000, 0x00000000, // gsub_0
+  0x00000000, 0x00004800, 0x00000000, 0x00000000, // gsub_1
 };
 
 static const uint32_t FPWithVPR_with_ssub_0_with_ssub_0_in_SPR_8SubClassMask[] = {
-  0x00002000, 0x00000040, 0x00000000, 0x00000000, 
-  0x00000000, 0x190c0000, 0x0e1fc980, 0x03c1fa48, // dsub_0
-  0x00000000, 0x18000000, 0x001c8800, 0x03c1ea40, // dsub_1
-  0x00000000, 0x00080000, 0x0c19c000, 0x0381ca00, // dsub_2
-  0x00000000, 0x00000000, 0x00000000, 0x03814800, // dsub_3
-  0x00000000, 0x00000000, 0x08010000, 0x03000000, // dsub_4
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // dsub_6
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // dsub_7
+  0x00004000, 0x00000100, 0x00000000, 0x00000000, 
+  0x00000000, 0x64300000, 0x387f2600, 0x0f07e920, // dsub_0
+  0x00000000, 0x60000000, 0x00722000, 0x0f07a900, // dsub_1
+  0x00000000, 0x00200000, 0x30670000, 0x0e072800, // dsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x0e052000, // dsub_3
+  0x00000000, 0x00000000, 0x20040000, 0x0c000000, // dsub_4
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // dsub_6
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // dsub_7
 };
 
 static const uint32_t hGPRSubClassMask[] = {
-  0xc4264000, 0x0000000c, 0x00000000, 0x00000000, 
-  0x00000000, 0x00006400, 0x00000000, 0x00000000, // gsub_0
-  0x00000000, 0x00006400, 0x00000000, 0x00000000, // gsub_1
+  0x084c8000, 0x00000033, 0x00000000, 0x00000000, 
+  0x00000000, 0x00019000, 0x00000000, 0x00000000, // gsub_0
+  0x00000000, 0x00019000, 0x00000000, 0x00000000, // gsub_1
 };
 
 static const uint32_t tGPRSubClassMask[] = {
-  0x19c08000, 0x00000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00001200, 0x00000000, 0x00000000, // gsub_0
-  0x00000000, 0x00001200, 0x00000000, 0x00000000, // gsub_1
+  0x33810000, 0x00000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00004800, 0x00000000, 0x00000000, // gsub_0
+  0x00000000, 0x00004800, 0x00000000, 0x00000000, // gsub_1
 };
 
 static const uint32_t tGPREvenSubClassMask[] = {
-  0x4a610000, 0x00000008, 0x00000000, 0x00000000, 
-  0x00000000, 0x00007f80, 0x00000000, 0x00000000, // gsub_0
+  0x14c20000, 0x00000021, 0x00000000, 0x00000000, 
+  0x00000000, 0x0001fe00, 0x00000000, 0x00000000, // gsub_0
 };
 
 static const uint32_t GPRnopc_and_hGPRSubClassMask[] = {
-  0xc4260000, 0x00000008, 0x00000000, 0x00000000, 
-  0x00000000, 0x00006400, 0x00000000, 0x00000000, // gsub_0
-  0x00000000, 0x00006400, 0x00000000, 0x00000000, // gsub_1
+  0x084c0000, 0x00000023, 0x00000000, 0x00000000, 
+  0x00000000, 0x00019000, 0x00000000, 0x00000000, // gsub_0
+  0x00000000, 0x00019000, 0x00000000, 0x00000000, // gsub_1
 };
 
-static const uint32_t GPRwithAPSRnosp_and_hGPRSubClassMask[] = {
-  0x44240000, 0x00000008, 0x00000000, 0x00000000, 
-  0x00000000, 0x00006400, 0x00000000, 0x00000000, // gsub_0
-  0x00000000, 0x00002000, 0x00000000, 0x00000000, // gsub_1
+static const uint32_t GPRwithAPSR_NZCVnosp_and_hGPRSubClassMask[] = {
+  0x08480000, 0x00000021, 0x00000000, 0x00000000, 
+  0x00000000, 0x00019000, 0x00000000, 0x00000000, // gsub_0
+  0x00000000, 0x00008000, 0x00000000, 0x00000000, // gsub_1
 };
 
 static const uint32_t tGPROddSubClassMask[] = {
-  0x14880000, 0x00000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00003300, 0x00000000, 0x00000000, // gsub_1
+  0x29100000, 0x00000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x0000cc00, 0x00000000, 0x00000000, // gsub_1
 };
 
 static const uint32_t tcGPRSubClassMask[] = {
-  0x1b100000, 0x00000008, 0x00000000, 0x00000000, 
-  0x00000000, 0x00005800, 0x00000000, 0x00000000, // gsub_0
-  0x00000000, 0x00001000, 0x00000000, 0x00000000, // gsub_1
-};
-
-static const uint32_t hGPR_and_tGPREvenSubClassMask[] = {
-  0x40200000, 0x00000008, 0x00000000, 0x00000000, 
-  0x00000000, 0x00006400, 0x00000000, 0x00000000, // gsub_0
-};
-
-static const uint32_t tGPR_and_tGPREvenSubClassMask[] = {
-  0x08400000, 0x00000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00001200, 0x00000000, 0x00000000, // gsub_0
-};
-
-static const uint32_t tGPR_and_tGPROddSubClassMask[] = {
-  0x10800000, 0x00000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00001200, 0x00000000, 0x00000000, // gsub_1
-};
-
-static const uint32_t tGPR_and_tcGPRSubClassMask[] = {
-  0x19000000, 0x00000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00001000, 0x00000000, 0x00000000, // gsub_0
-  0x00000000, 0x00001000, 0x00000000, 0x00000000, // gsub_1
-};
-
-static const uint32_t tGPREven_and_tcGPRSubClassMask[] = {
-  0x0a000000, 0x00000008, 0x00000000, 0x00000000, 
-  0x00000000, 0x00005800, 0x00000000, 0x00000000, // gsub_0
-};
-
-static const uint32_t hGPR_and_tGPROddSubClassMask[] = {
-  0x04000000, 0x00000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00002000, 0x00000000, 0x00000000, // gsub_1
-};
-
-static const uint32_t tGPREven_and_tGPR_and_tcGPRSubClassMask[] = {
-  0x08000000, 0x00000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00001000, 0x00000000, 0x00000000, // gsub_0
-};
-
-static const uint32_t tGPROdd_and_tcGPRSubClassMask[] = {
-  0x10000000, 0x00000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00001000, 0x00000000, 0x00000000, // gsub_1
-};
-
-static const uint32_t CCRSubClassMask[] = {
-  0x20000000, 0x00000000, 0x00000000, 0x00000000, 
-};
-
-static const uint32_t GPRlrSubClassMask[] = {
-  0x40000000, 0x00000000, 0x00000000, 0x00000000, 
-};
-
-static const uint32_t GPRspSubClassMask[] = {
-  0x80000000, 0x00000000, 0x00000000, 0x00000000, 
+  0x36200000, 0x00000020, 0x00000000, 0x00000000, 
+  0x00000000, 0x00016000, 0x00000000, 0x00000000, // gsub_0
   0x00000000, 0x00004000, 0x00000000, 0x00000000, // gsub_1
 };
 
-static const uint32_t VCCRSubClassMask[] = {
-  0x00000000, 0x00000001, 0x00000000, 0x00000000, 
+static const uint32_t hGPR_and_tGPREvenSubClassMask[] = {
+  0x00400000, 0x00000021, 0x00000000, 0x00000000, 
+  0x00000000, 0x00019000, 0x00000000, 0x00000000, // gsub_0
 };
 
-static const uint32_t cl_FPSCR_NZCVSubClassMask[] = {
-  0x00000000, 0x00000002, 0x00000000, 0x00000000, 
+static const uint32_t tGPR_and_tGPREvenSubClassMask[] = {
+  0x10800000, 0x00000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00004800, 0x00000000, 0x00000000, // gsub_0
 };
 
-static const uint32_t hGPR_and_tGPRwithpcSubClassMask[] = {
-  0x00000000, 0x00000004, 0x00000000, 0x00000000, 
+static const uint32_t tGPR_and_tGPROddSubClassMask[] = {
+  0x21000000, 0x00000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00004800, 0x00000000, 0x00000000, // gsub_1
 };
 
-static const uint32_t hGPR_and_tcGPRSubClassMask[] = {
-  0x00000000, 0x00000008, 0x00000000, 0x00000000, 
+static const uint32_t tGPR_and_tcGPRSubClassMask[] = {
+  0x32000000, 0x00000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00004000, 0x00000000, 0x00000000, // gsub_0
+  0x00000000, 0x00004000, 0x00000000, 0x00000000, // gsub_1
+};
+
+static const uint32_t tGPREven_and_tcGPRSubClassMask[] = {
+  0x14000000, 0x00000020, 0x00000000, 0x00000000, 
+  0x00000000, 0x00016000, 0x00000000, 0x00000000, // gsub_0
+};
+
+static const uint32_t hGPR_and_tGPROddSubClassMask[] = {
+  0x08000000, 0x00000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00008000, 0x00000000, 0x00000000, // gsub_1
+};
+
+static const uint32_t tGPREven_and_tGPR_and_tcGPRSubClassMask[] = {
+  0x10000000, 0x00000000, 0x00000000, 0x00000000, 
   0x00000000, 0x00004000, 0x00000000, 0x00000000, // gsub_0
 };
 
+static const uint32_t tGPROdd_and_tcGPRSubClassMask[] = {
+  0x20000000, 0x00000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00004000, 0x00000000, 0x00000000, // gsub_1
+};
+
+static const uint32_t CCRSubClassMask[] = {
+  0x40000000, 0x00000000, 0x00000000, 0x00000000, 
+};
+
+static const uint32_t FPCXTRegsSubClassMask[] = {
+  0x80000000, 0x00000000, 0x00000000, 0x00000000, 
+};
+
+static const uint32_t GPRlrSubClassMask[] = {
+  0x00000000, 0x00000001, 0x00000000, 0x00000000, 
+};
+
+static const uint32_t GPRspSubClassMask[] = {
+  0x00000000, 0x00000002, 0x00000000, 0x00000000, 
+  0x00000000, 0x00010000, 0x00000000, 0x00000000, // gsub_1
+};
+
+static const uint32_t VCCRSubClassMask[] = {
+  0x00000000, 0x00000004, 0x00000000, 0x00000000, 
+};
+
+static const uint32_t cl_FPSCR_NZCVSubClassMask[] = {
+  0x00000000, 0x00000008, 0x00000000, 0x00000000, 
+};
+
+static const uint32_t hGPR_and_tGPRwithpcSubClassMask[] = {
+  0x00000000, 0x00000010, 0x00000000, 0x00000000, 
+};
+
+static const uint32_t hGPR_and_tcGPRSubClassMask[] = {
+  0x00000000, 0x00000020, 0x00000000, 0x00000000, 
+  0x00000000, 0x00010000, 0x00000000, 0x00000000, // gsub_0
+};
+
 static const uint32_t DPRSubClassMask[] = {
-  0x00000000, 0x00000070, 0x00000000, 0x00000000, 
-  0x00000000, 0xffff8000, 0xffffffff, 0x03ffffff, // dsub_0
-  0x00000000, 0x3ff00000, 0xf01ebf2f, 0x03ffffff, // dsub_1
-  0x00000000, 0xe00f8000, 0xffffffff, 0x03ffffff, // dsub_2
-  0x00000000, 0x00000000, 0xf0000000, 0x03ffffff, // dsub_3
-  0x00000000, 0xc0000000, 0x0fe140d0, 0x03fe0000, // dsub_4
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // dsub_6
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // dsub_7
+  0x00000000, 0x000001c0, 0x00000000, 0x00000000, 
+  0x00000000, 0xfffe0000, 0xffffffff, 0x0fffffff, // dsub_0
+  0x00000000, 0xffc00000, 0xc07afcbc, 0x0fffffff, // dsub_1
+  0x00000000, 0x803e0000, 0xffffffff, 0x0fffffff, // dsub_2
+  0x00000000, 0x00000000, 0xc0000000, 0x0fffffff, // dsub_3
+  0x00000000, 0x00000000, 0x3f850343, 0x0ff80000, // dsub_4
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // dsub_6
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // dsub_7
 };
 
 static const uint32_t DPR_VFP2SubClassMask[] = {
-  0x00000000, 0x00000060, 0x00000000, 0x00000000, 
-  0x00000000, 0x9faf0000, 0x6fdffff5, 0x03fdfffe, // dsub_0
-  0x00000000, 0x1f800000, 0x401ebb24, 0x03fdffde, // dsub_1
-  0x00000000, 0x000e0000, 0x0f9ff9f0, 0x03f9ffce, // dsub_2
-  0x00000000, 0x00000000, 0x00000000, 0x03f9fecc, // dsub_3
-  0x00000000, 0x00000000, 0x0f0140c0, 0x03f00000, // dsub_4
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // dsub_6
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // dsub_7
+  0x00000000, 0x00000180, 0x00000000, 0x00000000, 
+  0x00000000, 0x7ebc0000, 0xbf7fffd6, 0x0ff7fff9, // dsub_0
+  0x00000000, 0x7e000000, 0x007aec90, 0x0ff7ff79, // dsub_1
+  0x00000000, 0x00380000, 0x3e7fe7c0, 0x0fe7ff38, // dsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x0fe7fb30, // dsub_3
+  0x00000000, 0x00000000, 0x3c050300, 0x0fc00000, // dsub_4
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // dsub_6
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // dsub_7
 };
 
 static const uint32_t DPR_8SubClassMask[] = {
-  0x00000000, 0x00000040, 0x00000000, 0x00000000, 
-  0x00000000, 0x190c0000, 0x0e1fc980, 0x03c1fa48, // dsub_0
-  0x00000000, 0x18000000, 0x001c8800, 0x03c1ea40, // dsub_1
-  0x00000000, 0x00080000, 0x0c19c000, 0x0381ca00, // dsub_2
-  0x00000000, 0x00000000, 0x00000000, 0x03814800, // dsub_3
-  0x00000000, 0x00000000, 0x08010000, 0x03000000, // dsub_4
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // dsub_6
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // dsub_7
+  0x00000000, 0x00000100, 0x00000000, 0x00000000, 
+  0x00000000, 0x64300000, 0x387f2600, 0x0f07e920, // dsub_0
+  0x00000000, 0x60000000, 0x00722000, 0x0f07a900, // dsub_1
+  0x00000000, 0x00200000, 0x30670000, 0x0e072800, // dsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x0e052000, // dsub_3
+  0x00000000, 0x00000000, 0x20040000, 0x0c000000, // dsub_4
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // dsub_6
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // dsub_7
 };
 
 static const uint32_t GPRPairSubClassMask[] = {
-  0x00000000, 0x00007f80, 0x00000000, 0x00000000, 
+  0x00000000, 0x0001fe00, 0x00000000, 0x00000000, 
 };
 
 static const uint32_t GPRPairnospSubClassMask[] = {
-  0x00000000, 0x00003300, 0x00000000, 0x00000000, 
+  0x00000000, 0x0000cc00, 0x00000000, 0x00000000, 
 };
 
 static const uint32_t GPRPair_with_gsub_0_in_tGPRSubClassMask[] = {
-  0x00000000, 0x00001200, 0x00000000, 0x00000000, 
+  0x00000000, 0x00004800, 0x00000000, 0x00000000, 
 };
 
 static const uint32_t GPRPair_with_gsub_0_in_hGPRSubClassMask[] = {
-  0x00000000, 0x00006400, 0x00000000, 0x00000000, 
+  0x00000000, 0x00019000, 0x00000000, 0x00000000, 
 };
 
 static const uint32_t GPRPair_with_gsub_0_in_tcGPRSubClassMask[] = {
-  0x00000000, 0x00005800, 0x00000000, 0x00000000, 
+  0x00000000, 0x00016000, 0x00000000, 0x00000000, 
 };
 
 static const uint32_t GPRPair_with_gsub_1_in_tcGPRSubClassMask[] = {
-  0x00000000, 0x00001000, 0x00000000, 0x00000000, 
-};
-
-static const uint32_t GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPRSubClassMask[] = {
-  0x00000000, 0x00002000, 0x00000000, 0x00000000, 
-};
-
-static const uint32_t GPRPair_with_gsub_1_in_GPRspSubClassMask[] = {
   0x00000000, 0x00004000, 0x00000000, 0x00000000, 
 };
 
+static const uint32_t GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPRSubClassMask[] = {
+  0x00000000, 0x00008000, 0x00000000, 0x00000000, 
+};
+
+static const uint32_t GPRPair_with_gsub_1_in_GPRspSubClassMask[] = {
+  0x00000000, 0x00010000, 0x00000000, 0x00000000, 
+};
+
 static const uint32_t DPairSpcSubClassMask[] = {
-  0x00000000, 0x000f8000, 0x00000000, 0x00000000, 
-  0x00000000, 0xe0000000, 0xffffffff, 0x03ffffff, // ssub_0_ssub_1_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0xf0000000, 0x03ffffff, // ssub_2_ssub_3_ssub_6_ssub_7
-  0x00000000, 0xc0000000, 0x0fe140d0, 0x03fe0000, // ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // dsub_5_dsub_7
+  0x00000000, 0x003e0000, 0x00000000, 0x00000000, 
+  0x00000000, 0x80000000, 0xffffffff, 0x0fffffff, // ssub_0_ssub_1_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0xc0000000, 0x0fffffff, // ssub_2_ssub_3_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x3f850343, 0x0ff80000, // ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // dsub_5_dsub_7
 };
 
 static const uint32_t DPairSpc_with_ssub_0SubClassMask[] = {
-  0x00000000, 0x000f0000, 0x00000000, 0x00000000, 
-  0x00000000, 0x80000000, 0x6fdffff5, 0x03fdfffe, // ssub_0_ssub_1_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x40000000, 0x03fdffde, // ssub_2_ssub_3_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x0f8140d0, 0x03f80000, // ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // dsub_5_dsub_7
+  0x00000000, 0x003c0000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000000, 0xbf7fffd6, 0x0ff7fff9, // ssub_0_ssub_1_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0ff7ff79, // ssub_2_ssub_3_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x3e050340, 0x0fe00000, // ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // dsub_5_dsub_7
 };
 
 static const uint32_t DPairSpc_with_ssub_4SubClassMask[] = {
-  0x00000000, 0x000e0000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x0f9ff9f0, 0x03f9ffce, // ssub_0_ssub_1_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03f9fecc, // ssub_2_ssub_3_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x0f0140c0, 0x03f00000, // ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // dsub_5_dsub_7
+  0x00000000, 0x00380000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x3e7fe7c0, 0x0fe7ff38, // ssub_0_ssub_1_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0fe7fb30, // ssub_2_ssub_3_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x3c050300, 0x0fc00000, // ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // dsub_5_dsub_7
 };
 
 static const uint32_t DPairSpc_with_dsub_0_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x000c0000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x0e1fc980, 0x03c1fa48, // ssub_0_ssub_1_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03c1ea40, // ssub_2_ssub_3_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x0c014000, 0x03800000, // ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // dsub_5_dsub_7
+  0x00000000, 0x00300000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x387f2600, 0x0f07e920, // ssub_0_ssub_1_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0f07a900, // ssub_2_ssub_3_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x30050000, 0x0e000000, // ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // dsub_5_dsub_7
 };
 
 static const uint32_t DPairSpc_with_dsub_2_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x00080000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x0c19c000, 0x0381ca00, // ssub_0_ssub_1_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03814800, // ssub_2_ssub_3_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x08010000, 0x03000000, // ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // dsub_5_dsub_7
+  0x00000000, 0x00200000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x30670000, 0x0e072800, // ssub_0_ssub_1_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0e052000, // ssub_2_ssub_3_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x20040000, 0x0c000000, // ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // dsub_5_dsub_7
 };
 
 static const uint32_t DPairSubClassMask[] = {
-  0x00000000, 0x1ff00000, 0x00000000, 0x00000000, 
-  0x00000000, 0x20000000, 0xf01ebf2f, 0x03ffffff, // qsub_0
-  0x00000000, 0x00000000, 0xf0000000, 0x03ffffff, // qsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // qsub_2
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // qsub_3
-  0x00000000, 0x20000000, 0xf01ebf2f, 0x03ffffff, // ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // dsub_5_ssub_12_ssub_13
+  0x00000000, 0x7fc00000, 0x00000000, 0x00000000, 
+  0x00000000, 0x80000000, 0xc07afcbc, 0x0fffffff, // qsub_0
+  0x00000000, 0x00000000, 0xc0000000, 0x0fffffff, // qsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // qsub_3
+  0x00000000, 0x80000000, 0xc07afcbc, 0x0fffffff, // ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // dsub_5_ssub_12_ssub_13
 };
 
 static const uint32_t DPair_with_ssub_0SubClassMask[] = {
-  0x00000000, 0x1fa00000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x601ebf25, 0x03fdfffe, // qsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03f9ffce, // qsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // qsub_2
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // qsub_3
-  0x00000000, 0x00000000, 0x401ebb24, 0x03fdffde, // ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // dsub_5_ssub_12_ssub_13
+  0x00000000, 0x7e800000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x807afc94, 0x0ff7fff9, // qsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0fe7ff38, // qsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // qsub_3
+  0x00000000, 0x00000000, 0x007aec90, 0x0ff7ff79, // ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // dsub_5_ssub_12_ssub_13
 };
 
 static const uint32_t QPRSubClassMask[] = {
-  0x00000000, 0x16400000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x800c2202, 0x03fe6090, // qsub_0
-  0x00000000, 0x00000000, 0x80000000, 0x03fe6090, // qsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // qsub_2
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // qsub_3
-  0x00000000, 0x00000000, 0x00121408, 0x00019521, // ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x59000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00308808, 0x0ff98242, // qsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0ff98242, // qsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // qsub_3
+  0x00000000, 0x00000000, 0x00485020, 0x00065484, // ssub_2_ssub_3_ssub_4_ssub_5
 };
 
 static const uint32_t DPair_with_ssub_2SubClassMask[] = {
-  0x00000000, 0x1f800000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x401ebb24, 0x03fdffde, // qsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03f9fecc, // qsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // qsub_2
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // qsub_3
-  0x00000000, 0x00000000, 0x001eb920, 0x03f9ffce, // ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // dsub_5_ssub_12_ssub_13
+  0x00000000, 0x7e000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x007aec90, 0x0ff7ff79, // qsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0fe7fb30, // qsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // qsub_3
+  0x00000000, 0x00000000, 0x007ae480, 0x0fe7ff38, // ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // dsub_5_ssub_12_ssub_13
 };
 
 static const uint32_t DPair_with_dsub_0_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x19000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x001e8900, 0x03c1fa48, // qsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x0381ca00, // qsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // qsub_2
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // qsub_3
-  0x00000000, 0x00000000, 0x001c8800, 0x03c1ea40, // ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // dsub_5_ssub_12_ssub_13
+  0x00000000, 0x64000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x007a2400, 0x0f07e920, // qsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0e072800, // qsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // qsub_3
+  0x00000000, 0x00000000, 0x00722000, 0x0f07a900, // ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // dsub_5_ssub_12_ssub_13
 };
 
 static const uint32_t MQPRSubClassMask[] = {
-  0x00000000, 0x16000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x000c2200, 0x03fc6090, // qsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03f86080, // qsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // qsub_2
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // qsub_3
-  0x00000000, 0x00000000, 0x00121000, 0x00019500, // ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x58000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00308800, 0x0ff18240, // qsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0fe18200, // qsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // qsub_3
+  0x00000000, 0x00000000, 0x00484000, 0x00065400, // ssub_2_ssub_3_ssub_4_ssub_5
 };
 
 static const uint32_t QPR_VFP2SubClassMask[] = {
-  0x00000000, 0x16000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x000c2200, 0x03fc6090, // qsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03f86080, // qsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // qsub_2
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // qsub_3
-  0x00000000, 0x00000000, 0x00121000, 0x00019500, // ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x58000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00308800, 0x0ff18240, // qsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0fe18200, // qsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // qsub_3
+  0x00000000, 0x00000000, 0x00484000, 0x00065400, // ssub_2_ssub_3_ssub_4_ssub_5
 };
 
 static const uint32_t DPair_with_dsub_1_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x18000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x001c8800, 0x03c1ea40, // qsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03814800, // qsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // qsub_2
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // qsub_3
-  0x00000000, 0x00000000, 0x00188000, 0x0381ca00, // ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // dsub_5_ssub_12_ssub_13
+  0x00000000, 0x60000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00722000, 0x0f07a900, // qsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0e052000, // qsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // qsub_3
+  0x00000000, 0x00000000, 0x00620000, 0x0e072800, // ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // dsub_5_ssub_12_ssub_13
 };
 
 static const uint32_t QPR_8SubClassMask[] = {
-  0x00000000, 0x10000000, 0x00000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x000c0000, 0x03c06000, // qsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03804000, // qsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // qsub_2
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // qsub_3
-  0x00000000, 0x00000000, 0x00100000, 0x00018000, // ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x40000000, 0x00000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00300000, 0x0f018000, // qsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0e010000, // qsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // qsub_3
+  0x00000000, 0x00000000, 0x00400000, 0x00060000, // ssub_2_ssub_3_ssub_4_ssub_5
 };
 
 static const uint32_t DTripleSubClassMask[] = {
-  0x00000000, 0x20000000, 0x001ebf2f, 0x00000000, 
-  0x00000000, 0x00000000, 0xf0000000, 0x03ffffff, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0xf0000000, 0x03ffffff, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // dsub_5_ssub_12_ssub_13_dsub_7
+  0x00000000, 0x80000000, 0x007afcbc, 0x00000000, 
+  0x00000000, 0x00000000, 0xc0000000, 0x0fffffff, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0xc0000000, 0x0fffffff, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // dsub_5_ssub_12_ssub_13_dsub_7
 };
 
 static const uint32_t DTripleSpcSubClassMask[] = {
-  0x00000000, 0xc0000000, 0x0fe140d0, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_6_ssub_7_dsub_5_dsub_7
+  0x00000000, 0x00000000, 0x3f850343, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_6_ssub_7_dsub_5_dsub_7
 };
 
 static const uint32_t DTripleSpc_with_ssub_0SubClassMask[] = {
-  0x00000000, 0x80000000, 0x0fc140d0, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03fc0000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03fc0000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_6_ssub_7_dsub_5_dsub_7
+  0x00000000, 0x00000000, 0x3f050342, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0ff00000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0ff00000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_6_ssub_7_dsub_5_dsub_7
 };
 
 static const uint32_t DTriple_with_ssub_0SubClassMask[] = {
-  0x00000000, 0x00000000, 0x001ebf25, 0x00000000, 
-  0x00000000, 0x00000000, 0x60000000, 0x03fdfffe, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x40000000, 0x03fdffde, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // dsub_5_ssub_12_ssub_13_dsub_7
+  0x00000000, 0x00000000, 0x007afc94, 0x00000000, 
+  0x00000000, 0x00000000, 0x80000000, 0x0ff7fff9, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0ff7ff79, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // dsub_5_ssub_12_ssub_13_dsub_7
 };
 
 static const uint32_t DTriple_with_qsub_0_in_QPRSubClassMask[] = {
-  0x00000000, 0x00000000, 0x000c2202, 0x00000000, 
-  0x00000000, 0x00000000, 0x80000000, 0x03fe6090, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x00019521, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00308808, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0ff98242, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x00065484, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
 };
 
 static const uint32_t DTriple_with_ssub_2SubClassMask[] = {
-  0x00000000, 0x00000000, 0x001ebb24, 0x00000000, 
-  0x00000000, 0x00000000, 0x40000000, 0x03fdffde, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03f9ffce, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // dsub_5_ssub_12_ssub_13_dsub_7
+  0x00000000, 0x00000000, 0x007aec90, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0ff7ff79, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0fe7ff38, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // dsub_5_ssub_12_ssub_13_dsub_7
 };
 
 static const uint32_t DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00121408, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x00019521, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x80000000, 0x03fe6090, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // dsub_5_ssub_12_ssub_13_dsub_7
+  0x00000000, 0x00000000, 0x00485020, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00065484, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0ff98242, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // dsub_5_ssub_12_ssub_13_dsub_7
 };
 
 static const uint32_t DTripleSpc_with_ssub_4SubClassMask[] = {
-  0x00000000, 0x00000000, 0x0f8140d0, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_6_ssub_7_dsub_5_dsub_7
+  0x00000000, 0x00000000, 0x3e050340, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_6_ssub_7_dsub_5_dsub_7
 };
 
 static const uint32_t DTriple_with_ssub_4SubClassMask[] = {
-  0x00000000, 0x00000000, 0x001eb920, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03f9ffce, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03f9fecc, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // dsub_5_ssub_12_ssub_13_dsub_7
+  0x00000000, 0x00000000, 0x007ae480, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0fe7ff38, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0fe7fb30, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // dsub_5_ssub_12_ssub_13_dsub_7
 };
 
 static const uint32_t DTripleSpc_with_ssub_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x0f0140c0, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // ssub_6_ssub_7_dsub_5_dsub_7
+  0x00000000, 0x00000000, 0x3c050300, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // ssub_6_ssub_7_dsub_5_dsub_7
 };
 
 static const uint32_t DTripleSpc_with_dsub_0_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x0e014080, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03c00000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03c00000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_6_ssub_7_dsub_5_dsub_7
+  0x00000000, 0x00000000, 0x38050200, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0f000000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0f000000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_6_ssub_7_dsub_5_dsub_7
 };
 
 static const uint32_t DTriple_with_dsub_0_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x001e8900, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03c1fa48, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03c1ea40, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // dsub_5_ssub_12_ssub_13_dsub_7
+  0x00000000, 0x00000000, 0x007a2400, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0f07e920, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0f07a900, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // dsub_5_ssub_12_ssub_13_dsub_7
 };
 
 static const uint32_t DTriple_with_qsub_0_in_MQPRSubClassMask[] = {
-  0x00000000, 0x00000000, 0x000c2200, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03fc6090, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x00019500, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00308800, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0ff18240, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x00065400, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
 };
 
 static const uint32_t DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00121400, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x00019520, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03fc6090, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // dsub_5_ssub_12_ssub_13_dsub_7
+  0x00000000, 0x00000000, 0x00485000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00065480, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0ff18240, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // dsub_5_ssub_12_ssub_13_dsub_7
 };
 
 static const uint32_t DTriple_with_dsub_1_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x001c8800, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03c1ea40, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x0381ca00, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // dsub_5_ssub_12_ssub_13_dsub_7
+  0x00000000, 0x00000000, 0x00722000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0f07a900, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0e072800, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // dsub_5_ssub_12_ssub_13_dsub_7
 };
 
 static const uint32_t DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00121000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x00019500, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03f86080, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // dsub_5_ssub_12_ssub_13_dsub_7
+  0x00000000, 0x00000000, 0x00484000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00065400, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0fe18200, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // dsub_5_ssub_12_ssub_13_dsub_7
 };
 
 static const uint32_t DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPRSubClassMask[] = {
-  0x00000000, 0x00000000, 0x000c2000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03f86080, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x00019400, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00308000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0fe18200, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x00065000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
 };
 
 static const uint32_t DTripleSpc_with_dsub_2_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x0c014000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_6_ssub_7_dsub_5_dsub_7
+  0x00000000, 0x00000000, 0x30050000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_6_ssub_7_dsub_5_dsub_7
 };
 
 static const uint32_t DTriple_with_dsub_2_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00188000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x0381ca00, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03814800, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // dsub_5_ssub_12_ssub_13_dsub_7
+  0x00000000, 0x00000000, 0x00620000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0e072800, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0e052000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // dsub_5_ssub_12_ssub_13_dsub_7
 };
 
 static const uint32_t DTripleSpc_with_dsub_4_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x08010000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // ssub_6_ssub_7_dsub_5_dsub_7
+  0x00000000, 0x00000000, 0x20040000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // ssub_6_ssub_7_dsub_5_dsub_7
 };
 
 static const uint32_t DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00120000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x00019000, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03c06000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // dsub_5_ssub_12_ssub_13_dsub_7
+  0x00000000, 0x00000000, 0x00480000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00064000, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0f018000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // dsub_5_ssub_12_ssub_13_dsub_7
 };
 
 static const uint32_t DTriple_with_qsub_0_in_QPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x000c0000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03c06000, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x00018000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00300000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0f018000, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x00060000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
 };
 
 static const uint32_t DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPRSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00080000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03804000, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x00010000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00200000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0e010000, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x00040000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
 };
 
 static const uint32_t DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00100000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x00018000, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03804000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // dsub_5_ssub_12_ssub_13_dsub_7
+  0x00000000, 0x00000000, 0x00400000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x00060000, // ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0e010000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // dsub_5_ssub_12_ssub_13_dsub_7
 };
 
 static const uint32_t DQuadSpcSubClassMask[] = {
-  0x00000000, 0x00000000, 0x0fe00000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_6_ssub_7_dsub_5_dsub_7
+  0x00000000, 0x00000000, 0x3f800000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_6_ssub_7_dsub_5_dsub_7
 };
 
 static const uint32_t DQuadSpc_with_ssub_0SubClassMask[] = {
-  0x00000000, 0x00000000, 0x0fc00000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03fc0000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03fc0000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_6_ssub_7_dsub_5_dsub_7
+  0x00000000, 0x00000000, 0x3f000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0ff00000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0ff00000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_6_ssub_7_dsub_5_dsub_7
 };
 
 static const uint32_t DQuadSpc_with_ssub_4SubClassMask[] = {
-  0x00000000, 0x00000000, 0x0f800000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_6_ssub_7_dsub_5_dsub_7
+  0x00000000, 0x00000000, 0x3e000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_6_ssub_7_dsub_5_dsub_7
 };
 
 static const uint32_t DQuadSpc_with_ssub_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x0f000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // ssub_6_ssub_7_dsub_5_dsub_7
+  0x00000000, 0x00000000, 0x3c000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // ssub_6_ssub_7_dsub_5_dsub_7
 };
 
 static const uint32_t DQuadSpc_with_dsub_0_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x0e000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03c00000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03c00000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_6_ssub_7_dsub_5_dsub_7
+  0x00000000, 0x00000000, 0x38000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0f000000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0f000000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_6_ssub_7_dsub_5_dsub_7
 };
 
 static const uint32_t DQuadSpc_with_dsub_2_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x0c000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_6_ssub_7_dsub_5_dsub_7
+  0x00000000, 0x00000000, 0x30000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_6_ssub_7_dsub_5_dsub_7
 };
 
 static const uint32_t DQuadSpc_with_dsub_4_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x08000000, 0x00000000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // ssub_6_ssub_7_dsub_5_dsub_7
+  0x00000000, 0x00000000, 0x20000000, 0x00000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // ssub_6_ssub_7_dsub_5_dsub_7
 };
 
 static const uint32_t DQuadSubClassMask[] = {
-  0x00000000, 0x00000000, 0xf0000000, 0x0001ffff, 
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // qqsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // qqsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
+  0x00000000, 0x00000000, 0xc0000000, 0x0007ffff, 
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // qqsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // qqsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
 };
 
 static const uint32_t DQuad_with_ssub_0SubClassMask[] = {
-  0x00000000, 0x00000000, 0x60000000, 0x0001fffe, 
-  0x00000000, 0x00000000, 0x00000000, 0x03fc0000, // qqsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // qqsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03fc0000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
+  0x00000000, 0x00000000, 0x80000000, 0x0007fff9, 
+  0x00000000, 0x00000000, 0x00000000, 0x0ff00000, // qqsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // qqsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0ff00000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
 };
 
 static const uint32_t DQuad_with_ssub_2SubClassMask[] = {
-  0x00000000, 0x00000000, 0x40000000, 0x0001ffde, 
-  0x00000000, 0x00000000, 0x00000000, 0x03fc0000, // qqsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // qqsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x0007ff79, 
+  0x00000000, 0x00000000, 0x00000000, 0x0ff00000, // qqsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // qqsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
 };
 
 static const uint32_t QQPRSubClassMask[] = {
-  0x00000000, 0x00000000, 0x80000000, 0x00006090, 
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // qqsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // qqsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x00018242, 
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // qqsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // qqsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
 };
 
 static const uint32_t DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00019521, 
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x00065484, 
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
 };
 
 static const uint32_t DQuad_with_ssub_4SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x0001ffce, 
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // qqsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // qqsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x0007ff38, 
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // qqsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // qqsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
 };
 
 static const uint32_t DQuad_with_ssub_6SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x0001fecc, 
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // qqsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // qqsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x0007fb30, 
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // qqsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // qqsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
 };
 
 static const uint32_t DQuad_with_dsub_0_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x0001fa48, 
-  0x00000000, 0x00000000, 0x00000000, 0x03c00000, // qqsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // qqsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03c00000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x0007e920, 
+  0x00000000, 0x00000000, 0x00000000, 0x0f000000, // qqsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // qqsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0f000000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
 };
 
 static const uint32_t DQuad_with_qsub_0_in_MQPRSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00006090, 
-  0x00000000, 0x00000000, 0x00000000, 0x03fc0000, // qqsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // qqsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x00018240, 
+  0x00000000, 0x00000000, 0x00000000, 0x0ff00000, // qqsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // qqsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
 };
 
 static const uint32_t DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00019520, 
-  0x00000000, 0x00000000, 0x00000000, 0x03fc0000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x00065480, 
+  0x00000000, 0x00000000, 0x00000000, 0x0ff00000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
 };
 
 static const uint32_t DQuad_with_dsub_1_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x0001ea40, 
-  0x00000000, 0x00000000, 0x00000000, 0x03c00000, // qqsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // qqsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x0007a900, 
+  0x00000000, 0x00000000, 0x00000000, 0x0f000000, // qqsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // qqsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
 };
 
 static const uint32_t DQuad_with_qsub_1_in_MQPRSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00006080, 
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // qqsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // qqsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x00018200, 
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // qqsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // qqsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
 };
 
 static const uint32_t DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00019500, 
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x00065400, 
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
 };
 
 static const uint32_t DQuad_with_dsub_2_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x0001ca00, 
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // qqsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // qqsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x00072800, 
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // qqsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // qqsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
 };
 
 static const uint32_t DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00019400, 
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x00065000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
 };
 
 static const uint32_t DQuad_with_dsub_3_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00014800, 
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // qqsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // qqsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x00052000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // qqsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // qqsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
 };
 
 static const uint32_t DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00019000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03c00000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x00064000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0f000000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
 };
 
 static const uint32_t DQuad_with_qsub_0_in_QPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00006000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03c00000, // qqsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // qqsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x00018000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0f000000, // qqsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // qqsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
 };
 
 static const uint32_t DQuad_with_qsub_1_in_QPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00004000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // qqsub_0
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // qqsub_1
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
+  0x00000000, 0x00000000, 0x00000000, 0x00010000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // qqsub_0
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // qqsub_1
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
 };
 
 static const uint32_t DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00018000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x00060000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
 };
 
 static const uint32_t DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x00010000, 
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+  0x00000000, 0x00000000, 0x00000000, 0x00040000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, // ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, // ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
 };
 
 static const uint32_t QQQQPRSubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x03fe0000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0ff80000, 
 };
 
 static const uint32_t QQQQPR_with_ssub_0SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x03fc0000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0ff00000, 
 };
 
 static const uint32_t QQQQPR_with_ssub_4SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x03f80000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0fe00000, 
 };
 
 static const uint32_t QQQQPR_with_ssub_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x03f00000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0fc00000, 
 };
 
 static const uint32_t QQQQPR_with_ssub_12SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x03e00000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0f800000, 
 };
 
 static const uint32_t QQQQPR_with_dsub_0_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x03c00000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0f000000, 
 };
 
 static const uint32_t QQQQPR_with_dsub_2_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x03800000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0e000000, 
 };
 
 static const uint32_t QQQQPR_with_dsub_4_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x03000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x0c000000, 
 };
 
 static const uint32_t QQQQPR_with_dsub_6_in_DPR_8SubClassMask[] = {
-  0x00000000, 0x00000000, 0x00000000, 0x02000000, 
+  0x00000000, 0x00000000, 0x00000000, 0x08000000, 
 };
 
 static const uint16_t SuperRegIdxSeqs[] = {
@@ -4943,6 +5025,11 @@ static const TargetRegisterClass *const GPRnopcSuperclasses[] = {
   nullptr
 };
 
+static const TargetRegisterClass *const GPRwithAPSR_NZCVnospSuperclasses[] = {
+  &ARM::GPRwithAPSRRegClass,
+  nullptr
+};
+
 static const TargetRegisterClass *const GPRwithZRnospSuperclasses[] = {
   &ARM::GPRwithZRRegClass,
   nullptr
@@ -4953,6 +5040,7 @@ static const TargetRegisterClass *const rGPRSuperclasses[] = {
   &ARM::GPRwithAPSRRegClass,
   &ARM::GPRwithZRRegClass,
   &ARM::GPRnopcRegClass,
+  &ARM::GPRwithAPSR_NZCVnospRegClass,
   &ARM::GPRwithAPSRnospRegClass,
   &ARM::GPRwithZRnospRegClass,
   nullptr
@@ -4979,6 +5067,7 @@ static const TargetRegisterClass *const tGPRSuperclasses[] = {
   &ARM::GPRwithAPSRRegClass,
   &ARM::GPRwithZRRegClass,
   &ARM::GPRnopcRegClass,
+  &ARM::GPRwithAPSR_NZCVnospRegClass,
   &ARM::GPRwithAPSRnospRegClass,
   &ARM::GPRwithZRnospRegClass,
   &ARM::rGPRRegClass,
@@ -4991,6 +5080,7 @@ static const TargetRegisterClass *const tGPREvenSuperclasses[] = {
   &ARM::GPRwithAPSRRegClass,
   &ARM::GPRwithZRRegClass,
   &ARM::GPRnopcRegClass,
+  &ARM::GPRwithAPSR_NZCVnospRegClass,
   &ARM::GPRwithAPSRnospRegClass,
   &ARM::GPRwithZRnospRegClass,
   &ARM::rGPRRegClass,
@@ -5006,11 +5096,12 @@ static const TargetRegisterClass *const GPRnopc_and_hGPRSuperclasses[] = {
   nullptr
 };
 
-static const TargetRegisterClass *const GPRwithAPSRnosp_and_hGPRSuperclasses[] = {
+static const TargetRegisterClass *const GPRwithAPSR_NZCVnosp_and_hGPRSuperclasses[] = {
   &ARM::GPRRegClass,
   &ARM::GPRwithAPSRRegClass,
   &ARM::GPRwithZRRegClass,
   &ARM::GPRnopcRegClass,
+  &ARM::GPRwithAPSR_NZCVnospRegClass,
   &ARM::GPRwithAPSRnospRegClass,
   &ARM::GPRwithZRnospRegClass,
   &ARM::rGPRRegClass,
@@ -5024,6 +5115,7 @@ static const TargetRegisterClass *const tGPROddSuperclasses[] = {
   &ARM::GPRwithAPSRRegClass,
   &ARM::GPRwithZRRegClass,
   &ARM::GPRnopcRegClass,
+  &ARM::GPRwithAPSR_NZCVnospRegClass,
   &ARM::GPRwithAPSRnospRegClass,
   &ARM::GPRwithZRnospRegClass,
   &ARM::rGPRRegClass,
@@ -5035,6 +5127,7 @@ static const TargetRegisterClass *const tcGPRSuperclasses[] = {
   &ARM::GPRwithAPSRRegClass,
   &ARM::GPRwithZRRegClass,
   &ARM::GPRnopcRegClass,
+  &ARM::GPRwithAPSR_NZCVnospRegClass,
   &ARM::GPRwithAPSRnospRegClass,
   &ARM::GPRwithZRnospRegClass,
   &ARM::rGPRRegClass,
@@ -5046,13 +5139,14 @@ static const TargetRegisterClass *const hGPR_and_tGPREvenSuperclasses[] = {
   &ARM::GPRwithAPSRRegClass,
   &ARM::GPRwithZRRegClass,
   &ARM::GPRnopcRegClass,
+  &ARM::GPRwithAPSR_NZCVnospRegClass,
   &ARM::GPRwithAPSRnospRegClass,
   &ARM::GPRwithZRnospRegClass,
   &ARM::rGPRRegClass,
   &ARM::hGPRRegClass,
   &ARM::tGPREvenRegClass,
   &ARM::GPRnopc_and_hGPRRegClass,
-  &ARM::GPRwithAPSRnosp_and_hGPRRegClass,
+  &ARM::GPRwithAPSR_NZCVnosp_and_hGPRRegClass,
   nullptr
 };
 
@@ -5061,6 +5155,7 @@ static const TargetRegisterClass *const tGPR_and_tGPREvenSuperclasses[] = {
   &ARM::GPRwithAPSRRegClass,
   &ARM::GPRwithZRRegClass,
   &ARM::GPRnopcRegClass,
+  &ARM::GPRwithAPSR_NZCVnospRegClass,
   &ARM::GPRwithAPSRnospRegClass,
   &ARM::GPRwithZRnospRegClass,
   &ARM::rGPRRegClass,
@@ -5075,6 +5170,7 @@ static const TargetRegisterClass *const tGPR_and_tGPROddSuperclasses[] = {
   &ARM::GPRwithAPSRRegClass,
   &ARM::GPRwithZRRegClass,
   &ARM::GPRnopcRegClass,
+  &ARM::GPRwithAPSR_NZCVnospRegClass,
   &ARM::GPRwithAPSRnospRegClass,
   &ARM::GPRwithZRnospRegClass,
   &ARM::rGPRRegClass,
@@ -5089,6 +5185,7 @@ static const TargetRegisterClass *const tGPR_and_tcGPRSuperclasses[] = {
   &ARM::GPRwithAPSRRegClass,
   &ARM::GPRwithZRRegClass,
   &ARM::GPRnopcRegClass,
+  &ARM::GPRwithAPSR_NZCVnospRegClass,
   &ARM::GPRwithAPSRnospRegClass,
   &ARM::GPRwithZRnospRegClass,
   &ARM::rGPRRegClass,
@@ -5103,6 +5200,7 @@ static const TargetRegisterClass *const tGPREven_and_tcGPRSuperclasses[] = {
   &ARM::GPRwithAPSRRegClass,
   &ARM::GPRwithZRRegClass,
   &ARM::GPRnopcRegClass,
+  &ARM::GPRwithAPSR_NZCVnospRegClass,
   &ARM::GPRwithAPSRnospRegClass,
   &ARM::GPRwithZRnospRegClass,
   &ARM::rGPRRegClass,
@@ -5116,12 +5214,13 @@ static const TargetRegisterClass *const hGPR_and_tGPROddSuperclasses[] = {
   &ARM::GPRwithAPSRRegClass,
   &ARM::GPRwithZRRegClass,
   &ARM::GPRnopcRegClass,
+  &ARM::GPRwithAPSR_NZCVnospRegClass,
   &ARM::GPRwithAPSRnospRegClass,
   &ARM::GPRwithZRnospRegClass,
   &ARM::rGPRRegClass,
   &ARM::hGPRRegClass,
   &ARM::GPRnopc_and_hGPRRegClass,
-  &ARM::GPRwithAPSRnosp_and_hGPRRegClass,
+  &ARM::GPRwithAPSR_NZCVnosp_and_hGPRRegClass,
   &ARM::tGPROddRegClass,
   nullptr
 };
@@ -5131,6 +5230,7 @@ static const TargetRegisterClass *const tGPREven_and_tGPR_and_tcGPRSuperclasses[
   &ARM::GPRwithAPSRRegClass,
   &ARM::GPRwithZRRegClass,
   &ARM::GPRnopcRegClass,
+  &ARM::GPRwithAPSR_NZCVnospRegClass,
   &ARM::GPRwithAPSRnospRegClass,
   &ARM::GPRwithZRnospRegClass,
   &ARM::rGPRRegClass,
@@ -5149,6 +5249,7 @@ static const TargetRegisterClass *const tGPROdd_and_tcGPRSuperclasses[] = {
   &ARM::GPRwithAPSRRegClass,
   &ARM::GPRwithZRRegClass,
   &ARM::GPRnopcRegClass,
+  &ARM::GPRwithAPSR_NZCVnospRegClass,
   &ARM::GPRwithAPSRnospRegClass,
   &ARM::GPRwithZRnospRegClass,
   &ARM::rGPRRegClass,
@@ -5166,13 +5267,14 @@ static const TargetRegisterClass *const GPRlrSuperclasses[] = {
   &ARM::GPRwithAPSRRegClass,
   &ARM::GPRwithZRRegClass,
   &ARM::GPRnopcRegClass,
+  &ARM::GPRwithAPSR_NZCVnospRegClass,
   &ARM::GPRwithAPSRnospRegClass,
   &ARM::GPRwithZRnospRegClass,
   &ARM::rGPRRegClass,
   &ARM::hGPRRegClass,
   &ARM::tGPREvenRegClass,
   &ARM::GPRnopc_and_hGPRRegClass,
-  &ARM::GPRwithAPSRnosp_and_hGPRRegClass,
+  &ARM::GPRwithAPSR_NZCVnosp_and_hGPRRegClass,
   &ARM::hGPR_and_tGPREvenRegClass,
   nullptr
 };
@@ -5204,13 +5306,14 @@ static const TargetRegisterClass *const hGPR_and_tcGPRSuperclasses[] = {
   &ARM::GPRwithAPSRRegClass,
   &ARM::GPRwithZRRegClass,
   &ARM::GPRnopcRegClass,
+  &ARM::GPRwithAPSR_NZCVnospRegClass,
   &ARM::GPRwithAPSRnospRegClass,
   &ARM::GPRwithZRnospRegClass,
   &ARM::rGPRRegClass,
   &ARM::hGPRRegClass,
   &ARM::tGPREvenRegClass,
   &ARM::GPRnopc_and_hGPRRegClass,
-  &ARM::GPRwithAPSRnosp_and_hGPRRegClass,
+  &ARM::GPRwithAPSR_NZCVnosp_and_hGPRRegClass,
   &ARM::tcGPRRegClass,
   &ARM::hGPR_and_tGPREvenRegClass,
   &ARM::tGPREven_and_tcGPRRegClass,
@@ -6562,7 +6665,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[HPRRegClassID],
     HPRSubClassMask,
     SuperRegIdxSeqs + 22,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     false, /* CoveredBySubRegs */
@@ -6574,7 +6677,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[FPWithVPRRegClassID],
     FPWithVPRSubClassMask,
     SuperRegIdxSeqs + 14,
-    LaneBitmask(0x0000000C),
+    LaneBitmask(0x000000000000000C),
     0,
     true, /* HasDisjunctSubRegs */
     false, /* CoveredBySubRegs */
@@ -6586,7 +6689,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[SPRRegClassID],
     SPRSubClassMask,
     SuperRegIdxSeqs + 22,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     false, /* CoveredBySubRegs */
@@ -6598,7 +6701,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[FPWithVPR_with_ssub_0RegClassID],
     FPWithVPR_with_ssub_0SubClassMask,
     SuperRegIdxSeqs + 0,
-    LaneBitmask(0x0000000C),
+    LaneBitmask(0x000000000000000C),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6610,7 +6713,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[GPRRegClassID],
     GPRSubClassMask,
     SuperRegIdxSeqs + 11,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6622,7 +6725,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[GPRwithAPSRRegClassID],
     GPRwithAPSRSubClassMask,
     SuperRegIdxSeqs + 11,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6634,7 +6737,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[GPRwithZRRegClassID],
     GPRwithZRSubClassMask,
     SuperRegIdxSeqs + 11,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6646,7 +6749,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[SPR_8RegClassID],
     SPR_8SubClassMask,
     SuperRegIdxSeqs + 22,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     false, /* CoveredBySubRegs */
@@ -6658,7 +6761,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[GPRnopcRegClassID],
     GPRnopcSubClassMask,
     SuperRegIdxSeqs + 11,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6666,11 +6769,23 @@ namespace ARM {   // Register class instances
     GPRnopcGetRawAllocationOrder
   };
 
+  extern const TargetRegisterClass GPRwithAPSR_NZCVnospRegClass = {
+    &ARMMCRegisterClasses[GPRwithAPSR_NZCVnospRegClassID],
+    GPRwithAPSR_NZCVnospSubClassMask,
+    SuperRegIdxSeqs + 11,
+    LaneBitmask(0x0000000000000001),
+    0,
+    false, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    GPRwithAPSR_NZCVnospSuperclasses,
+    nullptr
+  };
+
   extern const TargetRegisterClass GPRwithAPSRnospRegClass = {
     &ARMMCRegisterClasses[GPRwithAPSRnospRegClassID],
     GPRwithAPSRnospSubClassMask,
     SuperRegIdxSeqs + 11,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6682,7 +6797,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[GPRwithZRnospRegClassID],
     GPRwithZRnospSubClassMask,
     SuperRegIdxSeqs + 11,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6694,7 +6809,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[rGPRRegClassID],
     rGPRSubClassMask,
     SuperRegIdxSeqs + 11,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6706,7 +6821,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[tGPRwithpcRegClassID],
     tGPRwithpcSubClassMask,
     SuperRegIdxSeqs + 11,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6718,7 +6833,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[FPWithVPR_with_ssub_0_with_ssub_0_in_SPR_8RegClassID],
     FPWithVPR_with_ssub_0_with_ssub_0_in_SPR_8SubClassMask,
     SuperRegIdxSeqs + 0,
-    LaneBitmask(0x0000000C),
+    LaneBitmask(0x000000000000000C),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6730,7 +6845,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[hGPRRegClassID],
     hGPRSubClassMask,
     SuperRegIdxSeqs + 11,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6742,7 +6857,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[tGPRRegClassID],
     tGPRSubClassMask,
     SuperRegIdxSeqs + 11,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6754,7 +6869,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[tGPREvenRegClassID],
     tGPREvenSubClassMask,
     SuperRegIdxSeqs + 9,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6766,7 +6881,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[GPRnopc_and_hGPRRegClassID],
     GPRnopc_and_hGPRSubClassMask,
     SuperRegIdxSeqs + 11,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6774,15 +6889,15 @@ namespace ARM {   // Register class instances
     nullptr
   };
 
-  extern const TargetRegisterClass GPRwithAPSRnosp_and_hGPRRegClass = {
-    &ARMMCRegisterClasses[GPRwithAPSRnosp_and_hGPRRegClassID],
-    GPRwithAPSRnosp_and_hGPRSubClassMask,
+  extern const TargetRegisterClass GPRwithAPSR_NZCVnosp_and_hGPRRegClass = {
+    &ARMMCRegisterClasses[GPRwithAPSR_NZCVnosp_and_hGPRRegClassID],
+    GPRwithAPSR_NZCVnosp_and_hGPRSubClassMask,
     SuperRegIdxSeqs + 11,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
-    GPRwithAPSRnosp_and_hGPRSuperclasses,
+    GPRwithAPSR_NZCVnosp_and_hGPRSuperclasses,
     nullptr
   };
 
@@ -6790,7 +6905,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[tGPROddRegClassID],
     tGPROddSubClassMask,
     SuperRegIdxSeqs + 12,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6802,7 +6917,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[tcGPRRegClassID],
     tcGPRSubClassMask,
     SuperRegIdxSeqs + 11,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6814,7 +6929,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[hGPR_and_tGPREvenRegClassID],
     hGPR_and_tGPREvenSubClassMask,
     SuperRegIdxSeqs + 9,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6826,7 +6941,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[tGPR_and_tGPREvenRegClassID],
     tGPR_and_tGPREvenSubClassMask,
     SuperRegIdxSeqs + 9,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6838,7 +6953,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[tGPR_and_tGPROddRegClassID],
     tGPR_and_tGPROddSubClassMask,
     SuperRegIdxSeqs + 12,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6850,7 +6965,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[tGPR_and_tcGPRRegClassID],
     tGPR_and_tcGPRSubClassMask,
     SuperRegIdxSeqs + 11,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6862,7 +6977,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[tGPREven_and_tcGPRRegClassID],
     tGPREven_and_tcGPRSubClassMask,
     SuperRegIdxSeqs + 9,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6874,7 +6989,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[hGPR_and_tGPROddRegClassID],
     hGPR_and_tGPROddSubClassMask,
     SuperRegIdxSeqs + 12,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6886,7 +7001,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[tGPREven_and_tGPR_and_tcGPRRegClassID],
     tGPREven_and_tGPR_and_tcGPRSubClassMask,
     SuperRegIdxSeqs + 9,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6898,7 +7013,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[tGPROdd_and_tcGPRRegClassID],
     tGPROdd_and_tcGPRSubClassMask,
     SuperRegIdxSeqs + 12,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6910,7 +7025,19 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[CCRRegClassID],
     CCRSubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
+    0,
+    false, /* HasDisjunctSubRegs */
+    true, /* CoveredBySubRegs */
+    NullRegClasses,
+    nullptr
+  };
+
+  extern const TargetRegisterClass FPCXTRegsRegClass = {
+    &ARMMCRegisterClasses[FPCXTRegsRegClassID],
+    FPCXTRegsSubClassMask,
+    SuperRegIdxSeqs + 8,
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6922,7 +7049,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[GPRlrRegClassID],
     GPRlrSubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6934,7 +7061,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[GPRspRegClassID],
     GPRspSubClassMask,
     SuperRegIdxSeqs + 12,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6946,7 +7073,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[VCCRRegClassID],
     VCCRSubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6958,7 +7085,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[cl_FPSCR_NZCVRegClassID],
     cl_FPSCR_NZCVSubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6970,7 +7097,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[hGPR_and_tGPRwithpcRegClassID],
     hGPR_and_tGPRwithpcSubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6982,7 +7109,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[hGPR_and_tcGPRRegClassID],
     hGPR_and_tcGPRSubClassMask,
     SuperRegIdxSeqs + 9,
-    LaneBitmask(0x00000001),
+    LaneBitmask(0x0000000000000001),
     0,
     false, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -6994,7 +7121,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DPRRegClassID],
     DPRSubClassMask,
     SuperRegIdxSeqs + 0,
-    LaneBitmask(0x0000000C),
+    LaneBitmask(0x000000000000000C),
     0,
     true, /* HasDisjunctSubRegs */
     false, /* CoveredBySubRegs */
@@ -7006,7 +7133,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DPR_VFP2RegClassID],
     DPR_VFP2SubClassMask,
     SuperRegIdxSeqs + 0,
-    LaneBitmask(0x0000000C),
+    LaneBitmask(0x000000000000000C),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7018,7 +7145,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DPR_8RegClassID],
     DPR_8SubClassMask,
     SuperRegIdxSeqs + 0,
-    LaneBitmask(0x0000000C),
+    LaneBitmask(0x000000000000000C),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7030,7 +7157,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[GPRPairRegClassID],
     GPRPairSubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x00000003),
+    LaneBitmask(0x0000000000000003),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7042,7 +7169,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[GPRPairnospRegClassID],
     GPRPairnospSubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x00000003),
+    LaneBitmask(0x0000000000000003),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7054,7 +7181,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[GPRPair_with_gsub_0_in_tGPRRegClassID],
     GPRPair_with_gsub_0_in_tGPRSubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x00000003),
+    LaneBitmask(0x0000000000000003),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7066,7 +7193,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[GPRPair_with_gsub_0_in_hGPRRegClassID],
     GPRPair_with_gsub_0_in_hGPRSubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x00000003),
+    LaneBitmask(0x0000000000000003),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7078,7 +7205,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[GPRPair_with_gsub_0_in_tcGPRRegClassID],
     GPRPair_with_gsub_0_in_tcGPRSubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x00000003),
+    LaneBitmask(0x0000000000000003),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7090,7 +7217,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[GPRPair_with_gsub_1_in_tcGPRRegClassID],
     GPRPair_with_gsub_1_in_tcGPRSubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x00000003),
+    LaneBitmask(0x0000000000000003),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7102,7 +7229,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPRRegClassID],
     GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPRSubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x00000003),
+    LaneBitmask(0x0000000000000003),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7114,7 +7241,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[GPRPair_with_gsub_1_in_GPRspRegClassID],
     GPRPair_with_gsub_1_in_GPRspSubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x00000003),
+    LaneBitmask(0x0000000000000003),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7126,7 +7253,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DPairSpcRegClassID],
     DPairSpcSubClassMask,
     SuperRegIdxSeqs + 58,
-    LaneBitmask(0x000000CC),
+    LaneBitmask(0x00000000000000CC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7138,7 +7265,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DPairSpc_with_ssub_0RegClassID],
     DPairSpc_with_ssub_0SubClassMask,
     SuperRegIdxSeqs + 58,
-    LaneBitmask(0x000000CC),
+    LaneBitmask(0x00000000000000CC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7150,7 +7277,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DPairSpc_with_ssub_4RegClassID],
     DPairSpc_with_ssub_4SubClassMask,
     SuperRegIdxSeqs + 58,
-    LaneBitmask(0x000000CC),
+    LaneBitmask(0x00000000000000CC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7162,7 +7289,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DPairSpc_with_dsub_0_in_DPR_8RegClassID],
     DPairSpc_with_dsub_0_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 58,
-    LaneBitmask(0x000000CC),
+    LaneBitmask(0x00000000000000CC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7174,7 +7301,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DPairSpc_with_dsub_2_in_DPR_8RegClassID],
     DPairSpc_with_dsub_2_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 58,
-    LaneBitmask(0x000000CC),
+    LaneBitmask(0x00000000000000CC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7186,7 +7313,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DPairRegClassID],
     DPairSubClassMask,
     SuperRegIdxSeqs + 77,
-    LaneBitmask(0x0000003C),
+    LaneBitmask(0x000000000000003C),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7198,7 +7325,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DPair_with_ssub_0RegClassID],
     DPair_with_ssub_0SubClassMask,
     SuperRegIdxSeqs + 77,
-    LaneBitmask(0x0000003C),
+    LaneBitmask(0x000000000000003C),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7210,7 +7337,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[QPRRegClassID],
     QPRSubClassMask,
     SuperRegIdxSeqs + 39,
-    LaneBitmask(0x0000003C),
+    LaneBitmask(0x000000000000003C),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7222,7 +7349,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DPair_with_ssub_2RegClassID],
     DPair_with_ssub_2SubClassMask,
     SuperRegIdxSeqs + 77,
-    LaneBitmask(0x0000003C),
+    LaneBitmask(0x000000000000003C),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7234,7 +7361,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DPair_with_dsub_0_in_DPR_8RegClassID],
     DPair_with_dsub_0_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 77,
-    LaneBitmask(0x0000003C),
+    LaneBitmask(0x000000000000003C),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7246,7 +7373,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[MQPRRegClassID],
     MQPRSubClassMask,
     SuperRegIdxSeqs + 39,
-    LaneBitmask(0x0000003C),
+    LaneBitmask(0x000000000000003C),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7258,7 +7385,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[QPR_VFP2RegClassID],
     QPR_VFP2SubClassMask,
     SuperRegIdxSeqs + 39,
-    LaneBitmask(0x0000003C),
+    LaneBitmask(0x000000000000003C),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7270,7 +7397,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DPair_with_dsub_1_in_DPR_8RegClassID],
     DPair_with_dsub_1_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 77,
-    LaneBitmask(0x0000003C),
+    LaneBitmask(0x000000000000003C),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7282,7 +7409,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[QPR_8RegClassID],
     QPR_8SubClassMask,
     SuperRegIdxSeqs + 39,
-    LaneBitmask(0x0000003C),
+    LaneBitmask(0x000000000000003C),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7294,7 +7421,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTripleRegClassID],
     DTripleSubClassMask,
     SuperRegIdxSeqs + 70,
-    LaneBitmask(0x000000FC),
+    LaneBitmask(0x00000000000000FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7306,7 +7433,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTripleSpcRegClassID],
     DTripleSpcSubClassMask,
     SuperRegIdxSeqs + 45,
-    LaneBitmask(0x00000CCC),
+    LaneBitmask(0x0000000000000CCC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7318,7 +7445,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTripleSpc_with_ssub_0RegClassID],
     DTripleSpc_with_ssub_0SubClassMask,
     SuperRegIdxSeqs + 45,
-    LaneBitmask(0x00000CCC),
+    LaneBitmask(0x0000000000000CCC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7330,7 +7457,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTriple_with_ssub_0RegClassID],
     DTriple_with_ssub_0SubClassMask,
     SuperRegIdxSeqs + 70,
-    LaneBitmask(0x000000FC),
+    LaneBitmask(0x00000000000000FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7342,7 +7469,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTriple_with_qsub_0_in_QPRRegClassID],
     DTriple_with_qsub_0_in_QPRSubClassMask,
     SuperRegIdxSeqs + 53,
-    LaneBitmask(0x000000FC),
+    LaneBitmask(0x00000000000000FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7354,7 +7481,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTriple_with_ssub_2RegClassID],
     DTriple_with_ssub_2SubClassMask,
     SuperRegIdxSeqs + 70,
-    LaneBitmask(0x000000FC),
+    LaneBitmask(0x00000000000000FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7366,7 +7493,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID],
     DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRSubClassMask,
     SuperRegIdxSeqs + 65,
-    LaneBitmask(0x000000FC),
+    LaneBitmask(0x00000000000000FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7378,7 +7505,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTripleSpc_with_ssub_4RegClassID],
     DTripleSpc_with_ssub_4SubClassMask,
     SuperRegIdxSeqs + 45,
-    LaneBitmask(0x00000CCC),
+    LaneBitmask(0x0000000000000CCC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7390,7 +7517,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTriple_with_ssub_4RegClassID],
     DTriple_with_ssub_4SubClassMask,
     SuperRegIdxSeqs + 70,
-    LaneBitmask(0x000000FC),
+    LaneBitmask(0x00000000000000FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7402,7 +7529,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTripleSpc_with_ssub_8RegClassID],
     DTripleSpc_with_ssub_8SubClassMask,
     SuperRegIdxSeqs + 45,
-    LaneBitmask(0x00000CCC),
+    LaneBitmask(0x0000000000000CCC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7414,7 +7541,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTripleSpc_with_dsub_0_in_DPR_8RegClassID],
     DTripleSpc_with_dsub_0_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 45,
-    LaneBitmask(0x00000CCC),
+    LaneBitmask(0x0000000000000CCC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7426,7 +7553,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTriple_with_dsub_0_in_DPR_8RegClassID],
     DTriple_with_dsub_0_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 70,
-    LaneBitmask(0x000000FC),
+    LaneBitmask(0x00000000000000FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7438,7 +7565,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTriple_with_qsub_0_in_MQPRRegClassID],
     DTriple_with_qsub_0_in_MQPRSubClassMask,
     SuperRegIdxSeqs + 53,
-    LaneBitmask(0x000000FC),
+    LaneBitmask(0x00000000000000FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7450,7 +7577,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID],
     DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRSubClassMask,
     SuperRegIdxSeqs + 65,
-    LaneBitmask(0x000000FC),
+    LaneBitmask(0x00000000000000FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7462,7 +7589,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTriple_with_dsub_1_in_DPR_8RegClassID],
     DTriple_with_dsub_1_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 70,
-    LaneBitmask(0x000000FC),
+    LaneBitmask(0x00000000000000FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7474,7 +7601,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID],
     DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRSubClassMask,
     SuperRegIdxSeqs + 65,
-    LaneBitmask(0x000000FC),
+    LaneBitmask(0x00000000000000FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7486,7 +7613,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPRRegClassID],
     DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPRSubClassMask,
     SuperRegIdxSeqs + 53,
-    LaneBitmask(0x000000FC),
+    LaneBitmask(0x00000000000000FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7498,7 +7625,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTripleSpc_with_dsub_2_in_DPR_8RegClassID],
     DTripleSpc_with_dsub_2_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 45,
-    LaneBitmask(0x00000CCC),
+    LaneBitmask(0x0000000000000CCC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7510,7 +7637,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTriple_with_dsub_2_in_DPR_8RegClassID],
     DTriple_with_dsub_2_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 70,
-    LaneBitmask(0x000000FC),
+    LaneBitmask(0x00000000000000FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7522,7 +7649,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTripleSpc_with_dsub_4_in_DPR_8RegClassID],
     DTripleSpc_with_dsub_4_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 45,
-    LaneBitmask(0x00000CCC),
+    LaneBitmask(0x0000000000000CCC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7534,7 +7661,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID],
     DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRSubClassMask,
     SuperRegIdxSeqs + 65,
-    LaneBitmask(0x000000FC),
+    LaneBitmask(0x00000000000000FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7546,7 +7673,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTriple_with_qsub_0_in_QPR_8RegClassID],
     DTriple_with_qsub_0_in_QPR_8SubClassMask,
     SuperRegIdxSeqs + 53,
-    LaneBitmask(0x000000FC),
+    LaneBitmask(0x00000000000000FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7558,7 +7685,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPRRegClassID],
     DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPRSubClassMask,
     SuperRegIdxSeqs + 53,
-    LaneBitmask(0x000000FC),
+    LaneBitmask(0x00000000000000FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7570,7 +7697,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8RegClassID],
     DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8SubClassMask,
     SuperRegIdxSeqs + 65,
-    LaneBitmask(0x000000FC),
+    LaneBitmask(0x00000000000000FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7582,7 +7709,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuadSpcRegClassID],
     DQuadSpcSubClassMask,
     SuperRegIdxSeqs + 45,
-    LaneBitmask(0x00000CCC),
+    LaneBitmask(0x0000000000000CCC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7594,7 +7721,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuadSpc_with_ssub_0RegClassID],
     DQuadSpc_with_ssub_0SubClassMask,
     SuperRegIdxSeqs + 45,
-    LaneBitmask(0x00000CCC),
+    LaneBitmask(0x0000000000000CCC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7606,7 +7733,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuadSpc_with_ssub_4RegClassID],
     DQuadSpc_with_ssub_4SubClassMask,
     SuperRegIdxSeqs + 45,
-    LaneBitmask(0x00000CCC),
+    LaneBitmask(0x0000000000000CCC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7618,7 +7745,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuadSpc_with_ssub_8RegClassID],
     DQuadSpc_with_ssub_8SubClassMask,
     SuperRegIdxSeqs + 45,
-    LaneBitmask(0x00000CCC),
+    LaneBitmask(0x0000000000000CCC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7630,7 +7757,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuadSpc_with_dsub_0_in_DPR_8RegClassID],
     DQuadSpc_with_dsub_0_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 45,
-    LaneBitmask(0x00000CCC),
+    LaneBitmask(0x0000000000000CCC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7642,7 +7769,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuadSpc_with_dsub_2_in_DPR_8RegClassID],
     DQuadSpc_with_dsub_2_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 45,
-    LaneBitmask(0x00000CCC),
+    LaneBitmask(0x0000000000000CCC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7654,7 +7781,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuadSpc_with_dsub_4_in_DPR_8RegClassID],
     DQuadSpc_with_dsub_4_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 45,
-    LaneBitmask(0x00000CCC),
+    LaneBitmask(0x0000000000000CCC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7666,7 +7793,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuadRegClassID],
     DQuadSubClassMask,
     SuperRegIdxSeqs + 89,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7678,7 +7805,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_ssub_0RegClassID],
     DQuad_with_ssub_0SubClassMask,
     SuperRegIdxSeqs + 89,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7690,7 +7817,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_ssub_2RegClassID],
     DQuad_with_ssub_2SubClassMask,
     SuperRegIdxSeqs + 89,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7702,7 +7829,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[QQPRRegClassID],
     QQPRSubClassMask,
     SuperRegIdxSeqs + 85,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7714,7 +7841,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID],
     DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRSubClassMask,
     SuperRegIdxSeqs + 50,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7726,7 +7853,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_ssub_4RegClassID],
     DQuad_with_ssub_4SubClassMask,
     SuperRegIdxSeqs + 89,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7738,7 +7865,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_ssub_6RegClassID],
     DQuad_with_ssub_6SubClassMask,
     SuperRegIdxSeqs + 89,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7750,7 +7877,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_dsub_0_in_DPR_8RegClassID],
     DQuad_with_dsub_0_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 89,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7762,7 +7889,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_qsub_0_in_MQPRRegClassID],
     DQuad_with_qsub_0_in_MQPRSubClassMask,
     SuperRegIdxSeqs + 85,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7774,7 +7901,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRRegClassID],
     DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPRSubClassMask,
     SuperRegIdxSeqs + 50,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7786,7 +7913,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_dsub_1_in_DPR_8RegClassID],
     DQuad_with_dsub_1_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 89,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7798,7 +7925,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_qsub_1_in_MQPRRegClassID],
     DQuad_with_qsub_1_in_MQPRSubClassMask,
     SuperRegIdxSeqs + 85,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7810,7 +7937,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID],
     DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRSubClassMask,
     SuperRegIdxSeqs + 50,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7822,7 +7949,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_dsub_2_in_DPR_8RegClassID],
     DQuad_with_dsub_2_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 89,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7834,7 +7961,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID],
     DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRSubClassMask,
     SuperRegIdxSeqs + 50,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7846,7 +7973,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_dsub_3_in_DPR_8RegClassID],
     DQuad_with_dsub_3_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 89,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7858,7 +7985,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID],
     DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRSubClassMask,
     SuperRegIdxSeqs + 50,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7870,7 +7997,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_qsub_0_in_QPR_8RegClassID],
     DQuad_with_qsub_0_in_QPR_8SubClassMask,
     SuperRegIdxSeqs + 85,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7882,7 +8009,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_qsub_1_in_QPR_8RegClassID],
     DQuad_with_qsub_1_in_QPR_8SubClassMask,
     SuperRegIdxSeqs + 85,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7894,7 +8021,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8RegClassID],
     DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8SubClassMask,
     SuperRegIdxSeqs + 50,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7906,7 +8033,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRRegClassID],
     DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPRSubClassMask,
     SuperRegIdxSeqs + 50,
-    LaneBitmask(0x000003FC),
+    LaneBitmask(0x00000000000003FC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7918,7 +8045,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[QQQQPRRegClassID],
     QQQQPRSubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x0003FFFC),
+    LaneBitmask(0x000000000003FFFC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7930,7 +8057,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[QQQQPR_with_ssub_0RegClassID],
     QQQQPR_with_ssub_0SubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x0003FFFC),
+    LaneBitmask(0x000000000003FFFC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7942,7 +8069,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[QQQQPR_with_ssub_4RegClassID],
     QQQQPR_with_ssub_4SubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x0003FFFC),
+    LaneBitmask(0x000000000003FFFC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7954,7 +8081,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[QQQQPR_with_ssub_8RegClassID],
     QQQQPR_with_ssub_8SubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x0003FFFC),
+    LaneBitmask(0x000000000003FFFC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7966,7 +8093,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[QQQQPR_with_ssub_12RegClassID],
     QQQQPR_with_ssub_12SubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x0003FFFC),
+    LaneBitmask(0x000000000003FFFC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7978,7 +8105,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[QQQQPR_with_dsub_0_in_DPR_8RegClassID],
     QQQQPR_with_dsub_0_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x0003FFFC),
+    LaneBitmask(0x000000000003FFFC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -7990,7 +8117,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[QQQQPR_with_dsub_2_in_DPR_8RegClassID],
     QQQQPR_with_dsub_2_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x0003FFFC),
+    LaneBitmask(0x000000000003FFFC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -8002,7 +8129,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[QQQQPR_with_dsub_4_in_DPR_8RegClassID],
     QQQQPR_with_dsub_4_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x0003FFFC),
+    LaneBitmask(0x000000000003FFFC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -8014,7 +8141,7 @@ namespace ARM {   // Register class instances
     &ARMMCRegisterClasses[QQQQPR_with_dsub_6_in_DPR_8RegClassID],
     QQQQPR_with_dsub_6_in_DPR_8SubClassMask,
     SuperRegIdxSeqs + 8,
-    LaneBitmask(0x0003FFFC),
+    LaneBitmask(0x000000000003FFFC),
     0,
     true, /* HasDisjunctSubRegs */
     true, /* CoveredBySubRegs */
@@ -8035,6 +8162,7 @@ namespace {
     &ARM::GPRwithZRRegClass,
     &ARM::SPR_8RegClass,
     &ARM::GPRnopcRegClass,
+    &ARM::GPRwithAPSR_NZCVnospRegClass,
     &ARM::GPRwithAPSRnospRegClass,
     &ARM::GPRwithZRnospRegClass,
     &ARM::rGPRRegClass,
@@ -8044,7 +8172,7 @@ namespace {
     &ARM::tGPRRegClass,
     &ARM::tGPREvenRegClass,
     &ARM::GPRnopc_and_hGPRRegClass,
-    &ARM::GPRwithAPSRnosp_and_hGPRRegClass,
+    &ARM::GPRwithAPSR_NZCVnosp_and_hGPRRegClass,
     &ARM::tGPROddRegClass,
     &ARM::tcGPRRegClass,
     &ARM::hGPR_and_tGPREvenRegClass,
@@ -8056,6 +8184,7 @@ namespace {
     &ARM::tGPREven_and_tGPR_and_tcGPRRegClass,
     &ARM::tGPROdd_and_tcGPRRegClass,
     &ARM::CCRRegClass,
+    &ARM::FPCXTRegsRegClass,
     &ARM::GPRlrRegClass,
     &ARM::GPRspRegClass,
     &ARM::VCCRRegClass,
@@ -8156,7 +8285,7 @@ static const TargetRegisterInfoDesc ARMRegInfoDesc[] = { // Extra Descriptors
   { 0, false },
   { 0, true },
   { 0, false },
-  { 0, false },
+  { 0, true },
   { 0, false },
   { 0, false },
   { 0, false },
@@ -8473,24 +8602,24 @@ unsigned ARMGenRegisterInfo::composeSubRegIndicesImpl(unsigned IdxA, unsigned Id
     uint8_t  RotateLeft;
   };
   static const MaskRolOp LaneMaskComposeSequences[] = {
-    { LaneBitmask(0xFFFFFFFF),  0 }, { LaneBitmask::getNone(), 0 },   // Sequence 0
-    { LaneBitmask(0xFFFFFFFF),  2 }, { LaneBitmask::getNone(), 0 },   // Sequence 2
-    { LaneBitmask(0xFFFFFFFF),  4 }, { LaneBitmask::getNone(), 0 },   // Sequence 4
-    { LaneBitmask(0xFFFFFFFF),  6 }, { LaneBitmask::getNone(), 0 },   // Sequence 6
-    { LaneBitmask(0xFFFFFFFF),  8 }, { LaneBitmask::getNone(), 0 },   // Sequence 8
-    { LaneBitmask(0xFFFFFFFF), 10 }, { LaneBitmask::getNone(), 0 },   // Sequence 10
-    { LaneBitmask(0xFFFFFFFF), 12 }, { LaneBitmask::getNone(), 0 },   // Sequence 12
-    { LaneBitmask(0xFFFFFFFF), 14 }, { LaneBitmask::getNone(), 0 },   // Sequence 14
-    { LaneBitmask(0xFFFFFFFF),  1 }, { LaneBitmask::getNone(), 0 },   // Sequence 16
-    { LaneBitmask(0xFFFFFFFF),  3 }, { LaneBitmask::getNone(), 0 },   // Sequence 18
-    { LaneBitmask(0xFFFFFFFF),  5 }, { LaneBitmask::getNone(), 0 },   // Sequence 20
-    { LaneBitmask(0xFFFFFFFF),  7 }, { LaneBitmask::getNone(), 0 },   // Sequence 22
-    { LaneBitmask(0xFFFFFFFF),  9 }, { LaneBitmask::getNone(), 0 },   // Sequence 24
-    { LaneBitmask(0xFFFFFFFF), 11 }, { LaneBitmask::getNone(), 0 },   // Sequence 26
-    { LaneBitmask(0xFFFFFFFF), 13 }, { LaneBitmask::getNone(), 0 },   // Sequence 28
-    { LaneBitmask(0xFFFFFFFF), 15 }, { LaneBitmask::getNone(), 0 },   // Sequence 30
-    { LaneBitmask(0xFFFFFFFF), 16 }, { LaneBitmask::getNone(), 0 },   // Sequence 32
-    { LaneBitmask(0xFFFFFFFF), 17 }, { LaneBitmask::getNone(), 0 }  // Sequence 34
+    { LaneBitmask(0xFFFFFFFFFFFFFFFF),  0 }, { LaneBitmask::getNone(), 0 },   // Sequence 0
+    { LaneBitmask(0xFFFFFFFFFFFFFFFF),  2 }, { LaneBitmask::getNone(), 0 },   // Sequence 2
+    { LaneBitmask(0xFFFFFFFFFFFFFFFF),  4 }, { LaneBitmask::getNone(), 0 },   // Sequence 4
+    { LaneBitmask(0xFFFFFFFFFFFFFFFF),  6 }, { LaneBitmask::getNone(), 0 },   // Sequence 6
+    { LaneBitmask(0xFFFFFFFFFFFFFFFF),  8 }, { LaneBitmask::getNone(), 0 },   // Sequence 8
+    { LaneBitmask(0xFFFFFFFFFFFFFFFF), 10 }, { LaneBitmask::getNone(), 0 },   // Sequence 10
+    { LaneBitmask(0xFFFFFFFFFFFFFFFF), 12 }, { LaneBitmask::getNone(), 0 },   // Sequence 12
+    { LaneBitmask(0xFFFFFFFFFFFFFFFF), 14 }, { LaneBitmask::getNone(), 0 },   // Sequence 14
+    { LaneBitmask(0xFFFFFFFFFFFFFFFF),  1 }, { LaneBitmask::getNone(), 0 },   // Sequence 16
+    { LaneBitmask(0xFFFFFFFFFFFFFFFF),  3 }, { LaneBitmask::getNone(), 0 },   // Sequence 18
+    { LaneBitmask(0xFFFFFFFFFFFFFFFF),  5 }, { LaneBitmask::getNone(), 0 },   // Sequence 20
+    { LaneBitmask(0xFFFFFFFFFFFFFFFF),  7 }, { LaneBitmask::getNone(), 0 },   // Sequence 22
+    { LaneBitmask(0xFFFFFFFFFFFFFFFF),  9 }, { LaneBitmask::getNone(), 0 },   // Sequence 24
+    { LaneBitmask(0xFFFFFFFFFFFFFFFF), 11 }, { LaneBitmask::getNone(), 0 },   // Sequence 26
+    { LaneBitmask(0xFFFFFFFFFFFFFFFF), 13 }, { LaneBitmask::getNone(), 0 },   // Sequence 28
+    { LaneBitmask(0xFFFFFFFFFFFFFFFF), 15 }, { LaneBitmask::getNone(), 0 },   // Sequence 30
+    { LaneBitmask(0xFFFFFFFFFFFFFFFF), 16 }, { LaneBitmask::getNone(), 0 },   // Sequence 32
+    { LaneBitmask(0xFFFFFFFFFFFFFFFF), 17 }, { LaneBitmask::getNone(), 0 }  // Sequence 34
   };
   static const MaskRolOp *const CompositeSequences[] = {
     &LaneMaskComposeSequences[0], // to dsub_0
@@ -8579,7 +8708,7 @@ LaneBitmask ARMGenRegisterInfo::reverseComposeSubRegIndexLaneMaskImpl(unsigned I
 }
 
 const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const TargetRegisterClass *RC, unsigned Idx) const {
-  static const uint8_t Table[122][56] = {
+  static const uint8_t Table[124][56] = {
     {	// HPR
       0,	// dsub_0
       0,	// dsub_1
@@ -9102,6 +9231,64 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// dsub_5_ssub_12_ssub_13
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
+    {	// GPRwithAPSR_NZCVnosp
+      0,	// dsub_0
+      0,	// dsub_1
+      0,	// dsub_2
+      0,	// dsub_3
+      0,	// dsub_4
+      0,	// dsub_5
+      0,	// dsub_6
+      0,	// dsub_7
+      0,	// gsub_0
+      0,	// gsub_1
+      0,	// qqsub_0
+      0,	// qqsub_1
+      0,	// qsub_0
+      0,	// qsub_1
+      0,	// qsub_2
+      0,	// qsub_3
+      0,	// ssub_0
+      0,	// ssub_1
+      0,	// ssub_2
+      0,	// ssub_3
+      0,	// ssub_4
+      0,	// ssub_5
+      0,	// ssub_6
+      0,	// ssub_7
+      0,	// ssub_8
+      0,	// ssub_9
+      0,	// ssub_10
+      0,	// ssub_11
+      0,	// ssub_12
+      0,	// ssub_13
+      0,	// dsub_7_then_ssub_0
+      0,	// dsub_7_then_ssub_1
+      0,	// ssub_0_ssub_1_ssub_4_ssub_5
+      0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+      0,	// ssub_2_ssub_3_ssub_6_ssub_7
+      0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+      0,	// ssub_2_ssub_3_ssub_4_ssub_5
+      0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
+      0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+      0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
+      0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7
+      0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+      0,	// ssub_4_ssub_5_ssub_8_ssub_9
+      0,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+      0,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+      0,	// ssub_6_ssub_7_dsub_5
+      0,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
+      0,	// ssub_6_ssub_7_dsub_5_dsub_7
+      0,	// ssub_6_ssub_7_ssub_8_ssub_9
+      0,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+      0,	// ssub_8_ssub_9_ssub_12_ssub_13
+      0,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+      0,	// dsub_5_dsub_7
+      0,	// dsub_5_ssub_12_ssub_13_dsub_7
+      0,	// dsub_5_ssub_12_ssub_13
+      0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
+    },
     {	// GPRwithAPSRnosp
       0,	// dsub_0
       0,	// dsub_1
@@ -9351,8 +9538,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      14,	// ssub_0 -> FPWithVPR_with_ssub_0_with_ssub_0_in_SPR_8
-      14,	// ssub_1 -> FPWithVPR_with_ssub_0_with_ssub_0_in_SPR_8
+      15,	// ssub_0 -> FPWithVPR_with_ssub_0_with_ssub_0_in_SPR_8
+      15,	// ssub_1 -> FPWithVPR_with_ssub_0_with_ssub_0_in_SPR_8
       0,	// ssub_2
       0,	// ssub_3
       0,	// ssub_4
@@ -9624,7 +9811,7 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// dsub_5_ssub_12_ssub_13
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
-    {	// GPRwithAPSRnosp_and_hGPR
+    {	// GPRwithAPSR_NZCVnosp_and_hGPR
       0,	// dsub_0
       0,	// dsub_1
       0,	// dsub_2
@@ -10320,6 +10507,64 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// dsub_5_ssub_12_ssub_13
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
+    {	// FPCXTRegs
+      0,	// dsub_0
+      0,	// dsub_1
+      0,	// dsub_2
+      0,	// dsub_3
+      0,	// dsub_4
+      0,	// dsub_5
+      0,	// dsub_6
+      0,	// dsub_7
+      0,	// gsub_0
+      0,	// gsub_1
+      0,	// qqsub_0
+      0,	// qqsub_1
+      0,	// qsub_0
+      0,	// qsub_1
+      0,	// qsub_2
+      0,	// qsub_3
+      0,	// ssub_0
+      0,	// ssub_1
+      0,	// ssub_2
+      0,	// ssub_3
+      0,	// ssub_4
+      0,	// ssub_5
+      0,	// ssub_6
+      0,	// ssub_7
+      0,	// ssub_8
+      0,	// ssub_9
+      0,	// ssub_10
+      0,	// ssub_11
+      0,	// ssub_12
+      0,	// ssub_13
+      0,	// dsub_7_then_ssub_0
+      0,	// dsub_7_then_ssub_1
+      0,	// ssub_0_ssub_1_ssub_4_ssub_5
+      0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
+      0,	// ssub_2_ssub_3_ssub_6_ssub_7
+      0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
+      0,	// ssub_2_ssub_3_ssub_4_ssub_5
+      0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
+      0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+      0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
+      0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7
+      0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+      0,	// ssub_4_ssub_5_ssub_8_ssub_9
+      0,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
+      0,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
+      0,	// ssub_6_ssub_7_dsub_5
+      0,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5
+      0,	// ssub_6_ssub_7_dsub_5_dsub_7
+      0,	// ssub_6_ssub_7_ssub_8_ssub_9
+      0,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+      0,	// ssub_8_ssub_9_ssub_12_ssub_13
+      0,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13
+      0,	// dsub_5_dsub_7
+      0,	// dsub_5_ssub_12_ssub_13_dsub_7
+      0,	// dsub_5_ssub_12_ssub_13
+      0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
+    },
     {	// GPRlr
       0,	// dsub_0
       0,	// dsub_1
@@ -10685,8 +10930,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      38,	// ssub_0 -> DPR_VFP2
-      38,	// ssub_1 -> DPR_VFP2
+      40,	// ssub_0 -> DPR_VFP2
+      40,	// ssub_1 -> DPR_VFP2
       0,	// ssub_2
       0,	// ssub_3
       0,	// ssub_4
@@ -10743,8 +10988,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      38,	// ssub_0 -> DPR_VFP2
-      38,	// ssub_1 -> DPR_VFP2
+      40,	// ssub_0 -> DPR_VFP2
+      40,	// ssub_1 -> DPR_VFP2
       0,	// ssub_2
       0,	// ssub_3
       0,	// ssub_4
@@ -10801,8 +11046,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      39,	// ssub_0 -> DPR_8
-      39,	// ssub_1 -> DPR_8
+      41,	// ssub_0 -> DPR_8
+      41,	// ssub_1 -> DPR_8
       0,	// ssub_2
       0,	// ssub_3
       0,	// ssub_4
@@ -10851,8 +11096,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
-      40,	// gsub_0 -> GPRPair
-      40,	// gsub_1 -> GPRPair
+      42,	// gsub_0 -> GPRPair
+      42,	// gsub_1 -> GPRPair
       0,	// qqsub_0
       0,	// qqsub_1
       0,	// qsub_0
@@ -10909,8 +11154,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
-      41,	// gsub_0 -> GPRPairnosp
-      41,	// gsub_1 -> GPRPairnosp
+      43,	// gsub_0 -> GPRPairnosp
+      43,	// gsub_1 -> GPRPairnosp
       0,	// qqsub_0
       0,	// qqsub_1
       0,	// qsub_0
@@ -10967,8 +11212,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
-      42,	// gsub_0 -> GPRPair_with_gsub_0_in_tGPR
-      42,	// gsub_1 -> GPRPair_with_gsub_0_in_tGPR
+      44,	// gsub_0 -> GPRPair_with_gsub_0_in_tGPR
+      44,	// gsub_1 -> GPRPair_with_gsub_0_in_tGPR
       0,	// qqsub_0
       0,	// qqsub_1
       0,	// qsub_0
@@ -11025,8 +11270,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
-      43,	// gsub_0 -> GPRPair_with_gsub_0_in_hGPR
-      43,	// gsub_1 -> GPRPair_with_gsub_0_in_hGPR
+      45,	// gsub_0 -> GPRPair_with_gsub_0_in_hGPR
+      45,	// gsub_1 -> GPRPair_with_gsub_0_in_hGPR
       0,	// qqsub_0
       0,	// qqsub_1
       0,	// qsub_0
@@ -11083,8 +11328,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
-      44,	// gsub_0 -> GPRPair_with_gsub_0_in_tcGPR
-      44,	// gsub_1 -> GPRPair_with_gsub_0_in_tcGPR
+      46,	// gsub_0 -> GPRPair_with_gsub_0_in_tcGPR
+      46,	// gsub_1 -> GPRPair_with_gsub_0_in_tcGPR
       0,	// qqsub_0
       0,	// qqsub_1
       0,	// qsub_0
@@ -11141,8 +11386,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
-      45,	// gsub_0 -> GPRPair_with_gsub_1_in_tcGPR
-      45,	// gsub_1 -> GPRPair_with_gsub_1_in_tcGPR
+      47,	// gsub_0 -> GPRPair_with_gsub_1_in_tcGPR
+      47,	// gsub_1 -> GPRPair_with_gsub_1_in_tcGPR
       0,	// qqsub_0
       0,	// qqsub_1
       0,	// qsub_0
@@ -11199,8 +11444,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
-      46,	// gsub_0 -> GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPR
-      46,	// gsub_1 -> GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPR
+      48,	// gsub_0 -> GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPR
+      48,	// gsub_1 -> GPRPairnosp_and_GPRPair_with_gsub_0_in_hGPR
       0,	// qqsub_0
       0,	// qqsub_1
       0,	// qsub_0
@@ -11257,8 +11502,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
-      47,	// gsub_0 -> GPRPair_with_gsub_1_in_GPRsp
-      47,	// gsub_1 -> GPRPair_with_gsub_1_in_GPRsp
+      49,	// gsub_0 -> GPRPair_with_gsub_1_in_GPRsp
+      49,	// gsub_1 -> GPRPair_with_gsub_1_in_GPRsp
       0,	// qqsub_0
       0,	// qqsub_1
       0,	// qsub_0
@@ -11307,9 +11552,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DPairSpc
-      48,	// dsub_0 -> DPairSpc
+      50,	// dsub_0 -> DPairSpc
       0,	// dsub_1
-      48,	// dsub_2 -> DPairSpc
+      50,	// dsub_2 -> DPairSpc
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -11323,12 +11568,12 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      49,	// ssub_0 -> DPairSpc_with_ssub_0
-      49,	// ssub_1 -> DPairSpc_with_ssub_0
+      51,	// ssub_0 -> DPairSpc_with_ssub_0
+      51,	// ssub_1 -> DPairSpc_with_ssub_0
       0,	// ssub_2
       0,	// ssub_3
-      50,	// ssub_4 -> DPairSpc_with_ssub_4
-      50,	// ssub_5 -> DPairSpc_with_ssub_4
+      52,	// ssub_4 -> DPairSpc_with_ssub_4
+      52,	// ssub_5 -> DPairSpc_with_ssub_4
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -11365,9 +11610,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DPairSpc_with_ssub_0
-      49,	// dsub_0 -> DPairSpc_with_ssub_0
+      51,	// dsub_0 -> DPairSpc_with_ssub_0
       0,	// dsub_1
-      49,	// dsub_2 -> DPairSpc_with_ssub_0
+      51,	// dsub_2 -> DPairSpc_with_ssub_0
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -11381,12 +11626,12 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      49,	// ssub_0 -> DPairSpc_with_ssub_0
-      49,	// ssub_1 -> DPairSpc_with_ssub_0
+      51,	// ssub_0 -> DPairSpc_with_ssub_0
+      51,	// ssub_1 -> DPairSpc_with_ssub_0
       0,	// ssub_2
       0,	// ssub_3
-      50,	// ssub_4 -> DPairSpc_with_ssub_4
-      50,	// ssub_5 -> DPairSpc_with_ssub_4
+      52,	// ssub_4 -> DPairSpc_with_ssub_4
+      52,	// ssub_5 -> DPairSpc_with_ssub_4
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -11423,9 +11668,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DPairSpc_with_ssub_4
-      50,	// dsub_0 -> DPairSpc_with_ssub_4
+      52,	// dsub_0 -> DPairSpc_with_ssub_4
       0,	// dsub_1
-      50,	// dsub_2 -> DPairSpc_with_ssub_4
+      52,	// dsub_2 -> DPairSpc_with_ssub_4
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -11439,12 +11684,12 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      50,	// ssub_0 -> DPairSpc_with_ssub_4
-      50,	// ssub_1 -> DPairSpc_with_ssub_4
+      52,	// ssub_0 -> DPairSpc_with_ssub_4
+      52,	// ssub_1 -> DPairSpc_with_ssub_4
       0,	// ssub_2
       0,	// ssub_3
-      50,	// ssub_4 -> DPairSpc_with_ssub_4
-      50,	// ssub_5 -> DPairSpc_with_ssub_4
+      52,	// ssub_4 -> DPairSpc_with_ssub_4
+      52,	// ssub_5 -> DPairSpc_with_ssub_4
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -11481,9 +11726,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DPairSpc_with_dsub_0_in_DPR_8
-      51,	// dsub_0 -> DPairSpc_with_dsub_0_in_DPR_8
+      53,	// dsub_0 -> DPairSpc_with_dsub_0_in_DPR_8
       0,	// dsub_1
-      51,	// dsub_2 -> DPairSpc_with_dsub_0_in_DPR_8
+      53,	// dsub_2 -> DPairSpc_with_dsub_0_in_DPR_8
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -11497,12 +11742,12 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      51,	// ssub_0 -> DPairSpc_with_dsub_0_in_DPR_8
-      51,	// ssub_1 -> DPairSpc_with_dsub_0_in_DPR_8
+      53,	// ssub_0 -> DPairSpc_with_dsub_0_in_DPR_8
+      53,	// ssub_1 -> DPairSpc_with_dsub_0_in_DPR_8
       0,	// ssub_2
       0,	// ssub_3
-      51,	// ssub_4 -> DPairSpc_with_dsub_0_in_DPR_8
-      51,	// ssub_5 -> DPairSpc_with_dsub_0_in_DPR_8
+      53,	// ssub_4 -> DPairSpc_with_dsub_0_in_DPR_8
+      53,	// ssub_5 -> DPairSpc_with_dsub_0_in_DPR_8
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -11539,9 +11784,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DPairSpc_with_dsub_2_in_DPR_8
-      52,	// dsub_0 -> DPairSpc_with_dsub_2_in_DPR_8
+      54,	// dsub_0 -> DPairSpc_with_dsub_2_in_DPR_8
       0,	// dsub_1
-      52,	// dsub_2 -> DPairSpc_with_dsub_2_in_DPR_8
+      54,	// dsub_2 -> DPairSpc_with_dsub_2_in_DPR_8
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -11555,12 +11800,12 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      52,	// ssub_0 -> DPairSpc_with_dsub_2_in_DPR_8
-      52,	// ssub_1 -> DPairSpc_with_dsub_2_in_DPR_8
+      54,	// ssub_0 -> DPairSpc_with_dsub_2_in_DPR_8
+      54,	// ssub_1 -> DPairSpc_with_dsub_2_in_DPR_8
       0,	// ssub_2
       0,	// ssub_3
-      52,	// ssub_4 -> DPairSpc_with_dsub_2_in_DPR_8
-      52,	// ssub_5 -> DPairSpc_with_dsub_2_in_DPR_8
+      54,	// ssub_4 -> DPairSpc_with_dsub_2_in_DPR_8
+      54,	// ssub_5 -> DPairSpc_with_dsub_2_in_DPR_8
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -11597,8 +11842,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DPair
-      53,	// dsub_0 -> DPair
-      53,	// dsub_1 -> DPair
+      55,	// dsub_0 -> DPair
+      55,	// dsub_1 -> DPair
       0,	// dsub_2
       0,	// dsub_3
       0,	// dsub_4
@@ -11613,10 +11858,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      54,	// ssub_0 -> DPair_with_ssub_0
-      54,	// ssub_1 -> DPair_with_ssub_0
-      56,	// ssub_2 -> DPair_with_ssub_2
-      56,	// ssub_3 -> DPair_with_ssub_2
+      56,	// ssub_0 -> DPair_with_ssub_0
+      56,	// ssub_1 -> DPair_with_ssub_0
+      58,	// ssub_2 -> DPair_with_ssub_2
+      58,	// ssub_3 -> DPair_with_ssub_2
       0,	// ssub_4
       0,	// ssub_5
       0,	// ssub_6
@@ -11655,8 +11900,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DPair_with_ssub_0
-      54,	// dsub_0 -> DPair_with_ssub_0
-      54,	// dsub_1 -> DPair_with_ssub_0
+      56,	// dsub_0 -> DPair_with_ssub_0
+      56,	// dsub_1 -> DPair_with_ssub_0
       0,	// dsub_2
       0,	// dsub_3
       0,	// dsub_4
@@ -11671,10 +11916,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      54,	// ssub_0 -> DPair_with_ssub_0
-      54,	// ssub_1 -> DPair_with_ssub_0
-      56,	// ssub_2 -> DPair_with_ssub_2
-      56,	// ssub_3 -> DPair_with_ssub_2
+      56,	// ssub_0 -> DPair_with_ssub_0
+      56,	// ssub_1 -> DPair_with_ssub_0
+      58,	// ssub_2 -> DPair_with_ssub_2
+      58,	// ssub_3 -> DPair_with_ssub_2
       0,	// ssub_4
       0,	// ssub_5
       0,	// ssub_6
@@ -11713,8 +11958,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// QPR
-      55,	// dsub_0 -> QPR
-      55,	// dsub_1 -> QPR
+      57,	// dsub_0 -> QPR
+      57,	// dsub_1 -> QPR
       0,	// dsub_2
       0,	// dsub_3
       0,	// dsub_4
@@ -11729,10 +11974,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      58,	// ssub_0 -> MQPR
-      58,	// ssub_1 -> MQPR
-      58,	// ssub_2 -> MQPR
-      58,	// ssub_3 -> MQPR
+      60,	// ssub_0 -> MQPR
+      60,	// ssub_1 -> MQPR
+      60,	// ssub_2 -> MQPR
+      60,	// ssub_3 -> MQPR
       0,	// ssub_4
       0,	// ssub_5
       0,	// ssub_6
@@ -11771,8 +12016,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DPair_with_ssub_2
-      56,	// dsub_0 -> DPair_with_ssub_2
-      56,	// dsub_1 -> DPair_with_ssub_2
+      58,	// dsub_0 -> DPair_with_ssub_2
+      58,	// dsub_1 -> DPair_with_ssub_2
       0,	// dsub_2
       0,	// dsub_3
       0,	// dsub_4
@@ -11787,10 +12032,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      56,	// ssub_0 -> DPair_with_ssub_2
-      56,	// ssub_1 -> DPair_with_ssub_2
-      56,	// ssub_2 -> DPair_with_ssub_2
-      56,	// ssub_3 -> DPair_with_ssub_2
+      58,	// ssub_0 -> DPair_with_ssub_2
+      58,	// ssub_1 -> DPair_with_ssub_2
+      58,	// ssub_2 -> DPair_with_ssub_2
+      58,	// ssub_3 -> DPair_with_ssub_2
       0,	// ssub_4
       0,	// ssub_5
       0,	// ssub_6
@@ -11829,8 +12074,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DPair_with_dsub_0_in_DPR_8
-      57,	// dsub_0 -> DPair_with_dsub_0_in_DPR_8
-      57,	// dsub_1 -> DPair_with_dsub_0_in_DPR_8
+      59,	// dsub_0 -> DPair_with_dsub_0_in_DPR_8
+      59,	// dsub_1 -> DPair_with_dsub_0_in_DPR_8
       0,	// dsub_2
       0,	// dsub_3
       0,	// dsub_4
@@ -11845,10 +12090,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      57,	// ssub_0 -> DPair_with_dsub_0_in_DPR_8
-      57,	// ssub_1 -> DPair_with_dsub_0_in_DPR_8
-      57,	// ssub_2 -> DPair_with_dsub_0_in_DPR_8
-      57,	// ssub_3 -> DPair_with_dsub_0_in_DPR_8
+      59,	// ssub_0 -> DPair_with_dsub_0_in_DPR_8
+      59,	// ssub_1 -> DPair_with_dsub_0_in_DPR_8
+      59,	// ssub_2 -> DPair_with_dsub_0_in_DPR_8
+      59,	// ssub_3 -> DPair_with_dsub_0_in_DPR_8
       0,	// ssub_4
       0,	// ssub_5
       0,	// ssub_6
@@ -11887,8 +12132,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// MQPR
-      58,	// dsub_0 -> MQPR
-      58,	// dsub_1 -> MQPR
+      60,	// dsub_0 -> MQPR
+      60,	// dsub_1 -> MQPR
       0,	// dsub_2
       0,	// dsub_3
       0,	// dsub_4
@@ -11903,10 +12148,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      58,	// ssub_0 -> MQPR
-      58,	// ssub_1 -> MQPR
-      58,	// ssub_2 -> MQPR
-      58,	// ssub_3 -> MQPR
+      60,	// ssub_0 -> MQPR
+      60,	// ssub_1 -> MQPR
+      60,	// ssub_2 -> MQPR
+      60,	// ssub_3 -> MQPR
       0,	// ssub_4
       0,	// ssub_5
       0,	// ssub_6
@@ -11945,8 +12190,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// QPR_VFP2
-      59,	// dsub_0 -> QPR_VFP2
-      59,	// dsub_1 -> QPR_VFP2
+      61,	// dsub_0 -> QPR_VFP2
+      61,	// dsub_1 -> QPR_VFP2
       0,	// dsub_2
       0,	// dsub_3
       0,	// dsub_4
@@ -11961,10 +12206,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      59,	// ssub_0 -> QPR_VFP2
-      59,	// ssub_1 -> QPR_VFP2
-      59,	// ssub_2 -> QPR_VFP2
-      59,	// ssub_3 -> QPR_VFP2
+      61,	// ssub_0 -> QPR_VFP2
+      61,	// ssub_1 -> QPR_VFP2
+      61,	// ssub_2 -> QPR_VFP2
+      61,	// ssub_3 -> QPR_VFP2
       0,	// ssub_4
       0,	// ssub_5
       0,	// ssub_6
@@ -12003,8 +12248,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DPair_with_dsub_1_in_DPR_8
-      60,	// dsub_0 -> DPair_with_dsub_1_in_DPR_8
-      60,	// dsub_1 -> DPair_with_dsub_1_in_DPR_8
+      62,	// dsub_0 -> DPair_with_dsub_1_in_DPR_8
+      62,	// dsub_1 -> DPair_with_dsub_1_in_DPR_8
       0,	// dsub_2
       0,	// dsub_3
       0,	// dsub_4
@@ -12019,10 +12264,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      60,	// ssub_0 -> DPair_with_dsub_1_in_DPR_8
-      60,	// ssub_1 -> DPair_with_dsub_1_in_DPR_8
-      60,	// ssub_2 -> DPair_with_dsub_1_in_DPR_8
-      60,	// ssub_3 -> DPair_with_dsub_1_in_DPR_8
+      62,	// ssub_0 -> DPair_with_dsub_1_in_DPR_8
+      62,	// ssub_1 -> DPair_with_dsub_1_in_DPR_8
+      62,	// ssub_2 -> DPair_with_dsub_1_in_DPR_8
+      62,	// ssub_3 -> DPair_with_dsub_1_in_DPR_8
       0,	// ssub_4
       0,	// ssub_5
       0,	// ssub_6
@@ -12061,8 +12306,8 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// QPR_8
-      61,	// dsub_0 -> QPR_8
-      61,	// dsub_1 -> QPR_8
+      63,	// dsub_0 -> QPR_8
+      63,	// dsub_1 -> QPR_8
       0,	// dsub_2
       0,	// dsub_3
       0,	// dsub_4
@@ -12077,10 +12322,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      61,	// ssub_0 -> QPR_8
-      61,	// ssub_1 -> QPR_8
-      61,	// ssub_2 -> QPR_8
-      61,	// ssub_3 -> QPR_8
+      63,	// ssub_0 -> QPR_8
+      63,	// ssub_1 -> QPR_8
+      63,	// ssub_2 -> QPR_8
+      63,	// ssub_3 -> QPR_8
       0,	// ssub_4
       0,	// ssub_5
       0,	// ssub_6
@@ -12119,9 +12364,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTriple
-      62,	// dsub_0 -> DTriple
-      62,	// dsub_1 -> DTriple
-      62,	// dsub_2 -> DTriple
+      64,	// dsub_0 -> DTriple
+      64,	// dsub_1 -> DTriple
+      64,	// dsub_2 -> DTriple
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -12131,16 +12376,16 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      62,	// qsub_0 -> DTriple
+      64,	// qsub_0 -> DTriple
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      65,	// ssub_0 -> DTriple_with_ssub_0
-      65,	// ssub_1 -> DTriple_with_ssub_0
-      67,	// ssub_2 -> DTriple_with_ssub_2
-      67,	// ssub_3 -> DTriple_with_ssub_2
-      70,	// ssub_4 -> DTriple_with_ssub_4
-      70,	// ssub_5 -> DTriple_with_ssub_4
+      67,	// ssub_0 -> DTriple_with_ssub_0
+      67,	// ssub_1 -> DTriple_with_ssub_0
+      69,	// ssub_2 -> DTriple_with_ssub_2
+      69,	// ssub_3 -> DTriple_with_ssub_2
+      72,	// ssub_4 -> DTriple_with_ssub_4
+      72,	// ssub_5 -> DTriple_with_ssub_4
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -12151,11 +12396,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      62,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple
+      64,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-      62,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple
+      64,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -12177,11 +12422,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTripleSpc
-      63,	// dsub_0 -> DTripleSpc
+      65,	// dsub_0 -> DTripleSpc
       0,	// dsub_1
-      63,	// dsub_2 -> DTripleSpc
+      65,	// dsub_2 -> DTripleSpc
       0,	// dsub_3
-      63,	// dsub_4 -> DTripleSpc
+      65,	// dsub_4 -> DTripleSpc
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
@@ -12193,23 +12438,23 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      64,	// ssub_0 -> DTripleSpc_with_ssub_0
-      64,	// ssub_1 -> DTripleSpc_with_ssub_0
+      66,	// ssub_0 -> DTripleSpc_with_ssub_0
+      66,	// ssub_1 -> DTripleSpc_with_ssub_0
       0,	// ssub_2
       0,	// ssub_3
-      69,	// ssub_4 -> DTripleSpc_with_ssub_4
-      69,	// ssub_5 -> DTripleSpc_with_ssub_4
+      71,	// ssub_4 -> DTripleSpc_with_ssub_4
+      71,	// ssub_5 -> DTripleSpc_with_ssub_4
       0,	// ssub_6
       0,	// ssub_7
-      71,	// ssub_8 -> DTripleSpc_with_ssub_8
-      71,	// ssub_9 -> DTripleSpc_with_ssub_8
+      73,	// ssub_8 -> DTripleSpc_with_ssub_8
+      73,	// ssub_9 -> DTripleSpc_with_ssub_8
       0,	// ssub_10
       0,	// ssub_11
       0,	// ssub_12
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      63,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTripleSpc
+      65,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTripleSpc
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
@@ -12219,7 +12464,7 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-      63,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DTripleSpc
+      65,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DTripleSpc
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
       0,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_6_ssub_7_dsub_5
@@ -12235,11 +12480,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTripleSpc_with_ssub_0
-      64,	// dsub_0 -> DTripleSpc_with_ssub_0
+      66,	// dsub_0 -> DTripleSpc_with_ssub_0
       0,	// dsub_1
-      64,	// dsub_2 -> DTripleSpc_with_ssub_0
+      66,	// dsub_2 -> DTripleSpc_with_ssub_0
       0,	// dsub_3
-      64,	// dsub_4 -> DTripleSpc_with_ssub_0
+      66,	// dsub_4 -> DTripleSpc_with_ssub_0
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
@@ -12251,23 +12496,23 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      64,	// ssub_0 -> DTripleSpc_with_ssub_0
-      64,	// ssub_1 -> DTripleSpc_with_ssub_0
+      66,	// ssub_0 -> DTripleSpc_with_ssub_0
+      66,	// ssub_1 -> DTripleSpc_with_ssub_0
       0,	// ssub_2
       0,	// ssub_3
-      69,	// ssub_4 -> DTripleSpc_with_ssub_4
-      69,	// ssub_5 -> DTripleSpc_with_ssub_4
+      71,	// ssub_4 -> DTripleSpc_with_ssub_4
+      71,	// ssub_5 -> DTripleSpc_with_ssub_4
       0,	// ssub_6
       0,	// ssub_7
-      71,	// ssub_8 -> DTripleSpc_with_ssub_8
-      71,	// ssub_9 -> DTripleSpc_with_ssub_8
+      73,	// ssub_8 -> DTripleSpc_with_ssub_8
+      73,	// ssub_9 -> DTripleSpc_with_ssub_8
       0,	// ssub_10
       0,	// ssub_11
       0,	// ssub_12
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      64,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTripleSpc_with_ssub_0
+      66,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTripleSpc_with_ssub_0
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
@@ -12277,7 +12522,7 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-      64,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DTripleSpc_with_ssub_0
+      66,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DTripleSpc_with_ssub_0
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
       0,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_6_ssub_7_dsub_5
@@ -12293,9 +12538,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTriple_with_ssub_0
-      65,	// dsub_0 -> DTriple_with_ssub_0
-      65,	// dsub_1 -> DTriple_with_ssub_0
-      65,	// dsub_2 -> DTriple_with_ssub_0
+      67,	// dsub_0 -> DTriple_with_ssub_0
+      67,	// dsub_1 -> DTriple_with_ssub_0
+      67,	// dsub_2 -> DTriple_with_ssub_0
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -12305,16 +12550,16 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      65,	// qsub_0 -> DTriple_with_ssub_0
+      67,	// qsub_0 -> DTriple_with_ssub_0
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      65,	// ssub_0 -> DTriple_with_ssub_0
-      65,	// ssub_1 -> DTriple_with_ssub_0
-      67,	// ssub_2 -> DTriple_with_ssub_2
-      67,	// ssub_3 -> DTriple_with_ssub_2
-      70,	// ssub_4 -> DTriple_with_ssub_4
-      70,	// ssub_5 -> DTriple_with_ssub_4
+      67,	// ssub_0 -> DTriple_with_ssub_0
+      67,	// ssub_1 -> DTriple_with_ssub_0
+      69,	// ssub_2 -> DTriple_with_ssub_2
+      69,	// ssub_3 -> DTriple_with_ssub_2
+      72,	// ssub_4 -> DTriple_with_ssub_4
+      72,	// ssub_5 -> DTriple_with_ssub_4
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -12325,11 +12570,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      65,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_ssub_0
+      67,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_ssub_0
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-      65,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_ssub_0
+      67,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_ssub_0
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -12351,9 +12596,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTriple_with_qsub_0_in_QPR
-      66,	// dsub_0 -> DTriple_with_qsub_0_in_QPR
-      66,	// dsub_1 -> DTriple_with_qsub_0_in_QPR
-      66,	// dsub_2 -> DTriple_with_qsub_0_in_QPR
+      68,	// dsub_0 -> DTriple_with_qsub_0_in_QPR
+      68,	// dsub_1 -> DTriple_with_qsub_0_in_QPR
+      68,	// dsub_2 -> DTriple_with_qsub_0_in_QPR
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -12363,16 +12608,16 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      66,	// qsub_0 -> DTriple_with_qsub_0_in_QPR
+      68,	// qsub_0 -> DTriple_with_qsub_0_in_QPR
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      74,	// ssub_0 -> DTriple_with_qsub_0_in_MQPR
-      74,	// ssub_1 -> DTriple_with_qsub_0_in_MQPR
-      74,	// ssub_2 -> DTriple_with_qsub_0_in_MQPR
-      74,	// ssub_3 -> DTriple_with_qsub_0_in_MQPR
-      78,	// ssub_4 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
-      78,	// ssub_5 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
+      76,	// ssub_0 -> DTriple_with_qsub_0_in_MQPR
+      76,	// ssub_1 -> DTriple_with_qsub_0_in_MQPR
+      76,	// ssub_2 -> DTriple_with_qsub_0_in_MQPR
+      76,	// ssub_3 -> DTriple_with_qsub_0_in_MQPR
+      80,	// ssub_4 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
+      80,	// ssub_5 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -12383,11 +12628,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      66,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_qsub_0_in_QPR
+      68,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_qsub_0_in_QPR
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-      66,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_qsub_0_in_QPR
+      68,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_qsub_0_in_QPR
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -12409,9 +12654,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTriple_with_ssub_2
-      67,	// dsub_0 -> DTriple_with_ssub_2
-      67,	// dsub_1 -> DTriple_with_ssub_2
-      67,	// dsub_2 -> DTriple_with_ssub_2
+      69,	// dsub_0 -> DTriple_with_ssub_2
+      69,	// dsub_1 -> DTriple_with_ssub_2
+      69,	// dsub_2 -> DTriple_with_ssub_2
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -12421,16 +12666,16 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      67,	// qsub_0 -> DTriple_with_ssub_2
+      69,	// qsub_0 -> DTriple_with_ssub_2
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      67,	// ssub_0 -> DTriple_with_ssub_2
-      67,	// ssub_1 -> DTriple_with_ssub_2
-      67,	// ssub_2 -> DTriple_with_ssub_2
-      67,	// ssub_3 -> DTriple_with_ssub_2
-      70,	// ssub_4 -> DTriple_with_ssub_4
-      70,	// ssub_5 -> DTriple_with_ssub_4
+      69,	// ssub_0 -> DTriple_with_ssub_2
+      69,	// ssub_1 -> DTriple_with_ssub_2
+      69,	// ssub_2 -> DTriple_with_ssub_2
+      69,	// ssub_3 -> DTriple_with_ssub_2
+      72,	// ssub_4 -> DTriple_with_ssub_4
+      72,	// ssub_5 -> DTriple_with_ssub_4
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -12441,11 +12686,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      67,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_ssub_2
+      69,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_ssub_2
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-      67,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_ssub_2
+      69,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_ssub_2
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -12467,9 +12712,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      68,	// dsub_0 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      68,	// dsub_1 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      68,	// dsub_2 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      70,	// dsub_0 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      70,	// dsub_1 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      70,	// dsub_2 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -12479,16 +12724,16 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      68,	// qsub_0 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      70,	// qsub_0 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      75,	// ssub_0 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      75,	// ssub_1 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      77,	// ssub_2 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      77,	// ssub_3 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      77,	// ssub_4 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      77,	// ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      77,	// ssub_0 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      77,	// ssub_1 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      79,	// ssub_2 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      79,	// ssub_3 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      79,	// ssub_4 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      79,	// ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -12499,11 +12744,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      68,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      70,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-      68,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      70,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -12525,11 +12770,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTripleSpc_with_ssub_4
-      69,	// dsub_0 -> DTripleSpc_with_ssub_4
+      71,	// dsub_0 -> DTripleSpc_with_ssub_4
       0,	// dsub_1
-      69,	// dsub_2 -> DTripleSpc_with_ssub_4
+      71,	// dsub_2 -> DTripleSpc_with_ssub_4
       0,	// dsub_3
-      69,	// dsub_4 -> DTripleSpc_with_ssub_4
+      71,	// dsub_4 -> DTripleSpc_with_ssub_4
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
@@ -12541,23 +12786,23 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      69,	// ssub_0 -> DTripleSpc_with_ssub_4
-      69,	// ssub_1 -> DTripleSpc_with_ssub_4
+      71,	// ssub_0 -> DTripleSpc_with_ssub_4
+      71,	// ssub_1 -> DTripleSpc_with_ssub_4
       0,	// ssub_2
       0,	// ssub_3
-      69,	// ssub_4 -> DTripleSpc_with_ssub_4
-      69,	// ssub_5 -> DTripleSpc_with_ssub_4
+      71,	// ssub_4 -> DTripleSpc_with_ssub_4
+      71,	// ssub_5 -> DTripleSpc_with_ssub_4
       0,	// ssub_6
       0,	// ssub_7
-      71,	// ssub_8 -> DTripleSpc_with_ssub_8
-      71,	// ssub_9 -> DTripleSpc_with_ssub_8
+      73,	// ssub_8 -> DTripleSpc_with_ssub_8
+      73,	// ssub_9 -> DTripleSpc_with_ssub_8
       0,	// ssub_10
       0,	// ssub_11
       0,	// ssub_12
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      69,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTripleSpc_with_ssub_4
+      71,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTripleSpc_with_ssub_4
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
@@ -12567,7 +12812,7 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-      69,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DTripleSpc_with_ssub_4
+      71,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DTripleSpc_with_ssub_4
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
       0,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_6_ssub_7_dsub_5
@@ -12583,9 +12828,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTriple_with_ssub_4
-      70,	// dsub_0 -> DTriple_with_ssub_4
-      70,	// dsub_1 -> DTriple_with_ssub_4
-      70,	// dsub_2 -> DTriple_with_ssub_4
+      72,	// dsub_0 -> DTriple_with_ssub_4
+      72,	// dsub_1 -> DTriple_with_ssub_4
+      72,	// dsub_2 -> DTriple_with_ssub_4
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -12595,16 +12840,16 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      70,	// qsub_0 -> DTriple_with_ssub_4
+      72,	// qsub_0 -> DTriple_with_ssub_4
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      70,	// ssub_0 -> DTriple_with_ssub_4
-      70,	// ssub_1 -> DTriple_with_ssub_4
-      70,	// ssub_2 -> DTriple_with_ssub_4
-      70,	// ssub_3 -> DTriple_with_ssub_4
-      70,	// ssub_4 -> DTriple_with_ssub_4
-      70,	// ssub_5 -> DTriple_with_ssub_4
+      72,	// ssub_0 -> DTriple_with_ssub_4
+      72,	// ssub_1 -> DTriple_with_ssub_4
+      72,	// ssub_2 -> DTriple_with_ssub_4
+      72,	// ssub_3 -> DTriple_with_ssub_4
+      72,	// ssub_4 -> DTriple_with_ssub_4
+      72,	// ssub_5 -> DTriple_with_ssub_4
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -12615,11 +12860,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      70,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_ssub_4
+      72,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_ssub_4
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-      70,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_ssub_4
+      72,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_ssub_4
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -12641,11 +12886,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTripleSpc_with_ssub_8
-      71,	// dsub_0 -> DTripleSpc_with_ssub_8
+      73,	// dsub_0 -> DTripleSpc_with_ssub_8
       0,	// dsub_1
-      71,	// dsub_2 -> DTripleSpc_with_ssub_8
+      73,	// dsub_2 -> DTripleSpc_with_ssub_8
       0,	// dsub_3
-      71,	// dsub_4 -> DTripleSpc_with_ssub_8
+      73,	// dsub_4 -> DTripleSpc_with_ssub_8
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
@@ -12657,23 +12902,23 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      71,	// ssub_0 -> DTripleSpc_with_ssub_8
-      71,	// ssub_1 -> DTripleSpc_with_ssub_8
+      73,	// ssub_0 -> DTripleSpc_with_ssub_8
+      73,	// ssub_1 -> DTripleSpc_with_ssub_8
       0,	// ssub_2
       0,	// ssub_3
-      71,	// ssub_4 -> DTripleSpc_with_ssub_8
-      71,	// ssub_5 -> DTripleSpc_with_ssub_8
+      73,	// ssub_4 -> DTripleSpc_with_ssub_8
+      73,	// ssub_5 -> DTripleSpc_with_ssub_8
       0,	// ssub_6
       0,	// ssub_7
-      71,	// ssub_8 -> DTripleSpc_with_ssub_8
-      71,	// ssub_9 -> DTripleSpc_with_ssub_8
+      73,	// ssub_8 -> DTripleSpc_with_ssub_8
+      73,	// ssub_9 -> DTripleSpc_with_ssub_8
       0,	// ssub_10
       0,	// ssub_11
       0,	// ssub_12
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      71,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTripleSpc_with_ssub_8
+      73,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTripleSpc_with_ssub_8
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
@@ -12683,7 +12928,7 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-      71,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DTripleSpc_with_ssub_8
+      73,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DTripleSpc_with_ssub_8
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
       0,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_6_ssub_7_dsub_5
@@ -12699,11 +12944,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTripleSpc_with_dsub_0_in_DPR_8
-      72,	// dsub_0 -> DTripleSpc_with_dsub_0_in_DPR_8
+      74,	// dsub_0 -> DTripleSpc_with_dsub_0_in_DPR_8
       0,	// dsub_1
-      72,	// dsub_2 -> DTripleSpc_with_dsub_0_in_DPR_8
+      74,	// dsub_2 -> DTripleSpc_with_dsub_0_in_DPR_8
       0,	// dsub_3
-      72,	// dsub_4 -> DTripleSpc_with_dsub_0_in_DPR_8
+      74,	// dsub_4 -> DTripleSpc_with_dsub_0_in_DPR_8
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
@@ -12715,23 +12960,23 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      72,	// ssub_0 -> DTripleSpc_with_dsub_0_in_DPR_8
-      72,	// ssub_1 -> DTripleSpc_with_dsub_0_in_DPR_8
+      74,	// ssub_0 -> DTripleSpc_with_dsub_0_in_DPR_8
+      74,	// ssub_1 -> DTripleSpc_with_dsub_0_in_DPR_8
       0,	// ssub_2
       0,	// ssub_3
-      72,	// ssub_4 -> DTripleSpc_with_dsub_0_in_DPR_8
-      72,	// ssub_5 -> DTripleSpc_with_dsub_0_in_DPR_8
+      74,	// ssub_4 -> DTripleSpc_with_dsub_0_in_DPR_8
+      74,	// ssub_5 -> DTripleSpc_with_dsub_0_in_DPR_8
       0,	// ssub_6
       0,	// ssub_7
-      72,	// ssub_8 -> DTripleSpc_with_dsub_0_in_DPR_8
-      72,	// ssub_9 -> DTripleSpc_with_dsub_0_in_DPR_8
+      74,	// ssub_8 -> DTripleSpc_with_dsub_0_in_DPR_8
+      74,	// ssub_9 -> DTripleSpc_with_dsub_0_in_DPR_8
       0,	// ssub_10
       0,	// ssub_11
       0,	// ssub_12
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      72,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTripleSpc_with_dsub_0_in_DPR_8
+      74,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTripleSpc_with_dsub_0_in_DPR_8
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
@@ -12741,7 +12986,7 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-      72,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DTripleSpc_with_dsub_0_in_DPR_8
+      74,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DTripleSpc_with_dsub_0_in_DPR_8
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
       0,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_6_ssub_7_dsub_5
@@ -12757,9 +13002,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTriple_with_dsub_0_in_DPR_8
-      73,	// dsub_0 -> DTriple_with_dsub_0_in_DPR_8
-      73,	// dsub_1 -> DTriple_with_dsub_0_in_DPR_8
-      73,	// dsub_2 -> DTriple_with_dsub_0_in_DPR_8
+      75,	// dsub_0 -> DTriple_with_dsub_0_in_DPR_8
+      75,	// dsub_1 -> DTriple_with_dsub_0_in_DPR_8
+      75,	// dsub_2 -> DTriple_with_dsub_0_in_DPR_8
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -12769,16 +13014,16 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      73,	// qsub_0 -> DTriple_with_dsub_0_in_DPR_8
+      75,	// qsub_0 -> DTriple_with_dsub_0_in_DPR_8
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      73,	// ssub_0 -> DTriple_with_dsub_0_in_DPR_8
-      73,	// ssub_1 -> DTriple_with_dsub_0_in_DPR_8
-      73,	// ssub_2 -> DTriple_with_dsub_0_in_DPR_8
-      73,	// ssub_3 -> DTriple_with_dsub_0_in_DPR_8
-      73,	// ssub_4 -> DTriple_with_dsub_0_in_DPR_8
-      73,	// ssub_5 -> DTriple_with_dsub_0_in_DPR_8
+      75,	// ssub_0 -> DTriple_with_dsub_0_in_DPR_8
+      75,	// ssub_1 -> DTriple_with_dsub_0_in_DPR_8
+      75,	// ssub_2 -> DTriple_with_dsub_0_in_DPR_8
+      75,	// ssub_3 -> DTriple_with_dsub_0_in_DPR_8
+      75,	// ssub_4 -> DTriple_with_dsub_0_in_DPR_8
+      75,	// ssub_5 -> DTriple_with_dsub_0_in_DPR_8
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -12789,11 +13034,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      73,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_dsub_0_in_DPR_8
+      75,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_dsub_0_in_DPR_8
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-      73,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_dsub_0_in_DPR_8
+      75,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_dsub_0_in_DPR_8
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -12815,9 +13060,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTriple_with_qsub_0_in_MQPR
-      74,	// dsub_0 -> DTriple_with_qsub_0_in_MQPR
-      74,	// dsub_1 -> DTriple_with_qsub_0_in_MQPR
-      74,	// dsub_2 -> DTriple_with_qsub_0_in_MQPR
+      76,	// dsub_0 -> DTriple_with_qsub_0_in_MQPR
+      76,	// dsub_1 -> DTriple_with_qsub_0_in_MQPR
+      76,	// dsub_2 -> DTriple_with_qsub_0_in_MQPR
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -12827,16 +13072,16 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      74,	// qsub_0 -> DTriple_with_qsub_0_in_MQPR
+      76,	// qsub_0 -> DTriple_with_qsub_0_in_MQPR
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      74,	// ssub_0 -> DTriple_with_qsub_0_in_MQPR
-      74,	// ssub_1 -> DTriple_with_qsub_0_in_MQPR
-      74,	// ssub_2 -> DTriple_with_qsub_0_in_MQPR
-      74,	// ssub_3 -> DTriple_with_qsub_0_in_MQPR
-      78,	// ssub_4 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
-      78,	// ssub_5 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
+      76,	// ssub_0 -> DTriple_with_qsub_0_in_MQPR
+      76,	// ssub_1 -> DTriple_with_qsub_0_in_MQPR
+      76,	// ssub_2 -> DTriple_with_qsub_0_in_MQPR
+      76,	// ssub_3 -> DTriple_with_qsub_0_in_MQPR
+      80,	// ssub_4 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
+      80,	// ssub_5 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -12847,11 +13092,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      74,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_qsub_0_in_MQPR
+      76,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_qsub_0_in_MQPR
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-      74,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_qsub_0_in_MQPR
+      76,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_qsub_0_in_MQPR
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -12873,9 +13118,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      75,	// dsub_0 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      75,	// dsub_1 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      75,	// dsub_2 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      77,	// dsub_0 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      77,	// dsub_1 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      77,	// dsub_2 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -12885,16 +13130,16 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      75,	// qsub_0 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      77,	// qsub_0 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      75,	// ssub_0 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      75,	// ssub_1 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      77,	// ssub_2 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      77,	// ssub_3 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      77,	// ssub_4 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      77,	// ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      77,	// ssub_0 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      77,	// ssub_1 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      79,	// ssub_2 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      79,	// ssub_3 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      79,	// ssub_4 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      79,	// ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -12905,11 +13150,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      75,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      77,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-      75,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      77,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -12931,9 +13176,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTriple_with_dsub_1_in_DPR_8
-      76,	// dsub_0 -> DTriple_with_dsub_1_in_DPR_8
-      76,	// dsub_1 -> DTriple_with_dsub_1_in_DPR_8
-      76,	// dsub_2 -> DTriple_with_dsub_1_in_DPR_8
+      78,	// dsub_0 -> DTriple_with_dsub_1_in_DPR_8
+      78,	// dsub_1 -> DTriple_with_dsub_1_in_DPR_8
+      78,	// dsub_2 -> DTriple_with_dsub_1_in_DPR_8
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -12943,16 +13188,16 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      76,	// qsub_0 -> DTriple_with_dsub_1_in_DPR_8
+      78,	// qsub_0 -> DTriple_with_dsub_1_in_DPR_8
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      76,	// ssub_0 -> DTriple_with_dsub_1_in_DPR_8
-      76,	// ssub_1 -> DTriple_with_dsub_1_in_DPR_8
-      76,	// ssub_2 -> DTriple_with_dsub_1_in_DPR_8
-      76,	// ssub_3 -> DTriple_with_dsub_1_in_DPR_8
-      76,	// ssub_4 -> DTriple_with_dsub_1_in_DPR_8
-      76,	// ssub_5 -> DTriple_with_dsub_1_in_DPR_8
+      78,	// ssub_0 -> DTriple_with_dsub_1_in_DPR_8
+      78,	// ssub_1 -> DTriple_with_dsub_1_in_DPR_8
+      78,	// ssub_2 -> DTriple_with_dsub_1_in_DPR_8
+      78,	// ssub_3 -> DTriple_with_dsub_1_in_DPR_8
+      78,	// ssub_4 -> DTriple_with_dsub_1_in_DPR_8
+      78,	// ssub_5 -> DTriple_with_dsub_1_in_DPR_8
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -12963,11 +13208,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      76,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_dsub_1_in_DPR_8
+      78,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_dsub_1_in_DPR_8
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-      76,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_dsub_1_in_DPR_8
+      78,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_dsub_1_in_DPR_8
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -12989,9 +13234,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      77,	// dsub_0 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      77,	// dsub_1 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      77,	// dsub_2 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      79,	// dsub_0 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      79,	// dsub_1 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      79,	// dsub_2 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -13001,16 +13246,16 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      77,	// qsub_0 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      79,	// qsub_0 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      77,	// ssub_0 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      77,	// ssub_1 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      77,	// ssub_2 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      77,	// ssub_3 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      77,	// ssub_4 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      77,	// ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      79,	// ssub_0 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      79,	// ssub_1 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      79,	// ssub_2 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      79,	// ssub_3 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      79,	// ssub_4 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      79,	// ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -13021,11 +13266,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      77,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      79,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-      77,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      79,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -13047,9 +13292,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
-      78,	// dsub_0 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
-      78,	// dsub_1 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
-      78,	// dsub_2 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
+      80,	// dsub_0 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
+      80,	// dsub_1 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
+      80,	// dsub_2 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -13059,16 +13304,16 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      78,	// qsub_0 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
+      80,	// qsub_0 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      78,	// ssub_0 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
-      78,	// ssub_1 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
-      78,	// ssub_2 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
-      78,	// ssub_3 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
-      78,	// ssub_4 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
-      78,	// ssub_5 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
+      80,	// ssub_0 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
+      80,	// ssub_1 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
+      80,	// ssub_2 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
+      80,	// ssub_3 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
+      80,	// ssub_4 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
+      80,	// ssub_5 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -13079,11 +13324,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      78,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
+      80,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-      78,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
+      80,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_ssub_4_and_DTriple_with_qsub_0_in_MQPR
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -13105,11 +13350,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTripleSpc_with_dsub_2_in_DPR_8
-      79,	// dsub_0 -> DTripleSpc_with_dsub_2_in_DPR_8
+      81,	// dsub_0 -> DTripleSpc_with_dsub_2_in_DPR_8
       0,	// dsub_1
-      79,	// dsub_2 -> DTripleSpc_with_dsub_2_in_DPR_8
+      81,	// dsub_2 -> DTripleSpc_with_dsub_2_in_DPR_8
       0,	// dsub_3
-      79,	// dsub_4 -> DTripleSpc_with_dsub_2_in_DPR_8
+      81,	// dsub_4 -> DTripleSpc_with_dsub_2_in_DPR_8
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
@@ -13121,23 +13366,23 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      79,	// ssub_0 -> DTripleSpc_with_dsub_2_in_DPR_8
-      79,	// ssub_1 -> DTripleSpc_with_dsub_2_in_DPR_8
+      81,	// ssub_0 -> DTripleSpc_with_dsub_2_in_DPR_8
+      81,	// ssub_1 -> DTripleSpc_with_dsub_2_in_DPR_8
       0,	// ssub_2
       0,	// ssub_3
-      79,	// ssub_4 -> DTripleSpc_with_dsub_2_in_DPR_8
-      79,	// ssub_5 -> DTripleSpc_with_dsub_2_in_DPR_8
+      81,	// ssub_4 -> DTripleSpc_with_dsub_2_in_DPR_8
+      81,	// ssub_5 -> DTripleSpc_with_dsub_2_in_DPR_8
       0,	// ssub_6
       0,	// ssub_7
-      79,	// ssub_8 -> DTripleSpc_with_dsub_2_in_DPR_8
-      79,	// ssub_9 -> DTripleSpc_with_dsub_2_in_DPR_8
+      81,	// ssub_8 -> DTripleSpc_with_dsub_2_in_DPR_8
+      81,	// ssub_9 -> DTripleSpc_with_dsub_2_in_DPR_8
       0,	// ssub_10
       0,	// ssub_11
       0,	// ssub_12
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      79,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTripleSpc_with_dsub_2_in_DPR_8
+      81,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTripleSpc_with_dsub_2_in_DPR_8
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
@@ -13147,7 +13392,7 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-      79,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DTripleSpc_with_dsub_2_in_DPR_8
+      81,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DTripleSpc_with_dsub_2_in_DPR_8
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
       0,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_6_ssub_7_dsub_5
@@ -13163,9 +13408,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTriple_with_dsub_2_in_DPR_8
-      80,	// dsub_0 -> DTriple_with_dsub_2_in_DPR_8
-      80,	// dsub_1 -> DTriple_with_dsub_2_in_DPR_8
-      80,	// dsub_2 -> DTriple_with_dsub_2_in_DPR_8
+      82,	// dsub_0 -> DTriple_with_dsub_2_in_DPR_8
+      82,	// dsub_1 -> DTriple_with_dsub_2_in_DPR_8
+      82,	// dsub_2 -> DTriple_with_dsub_2_in_DPR_8
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -13175,16 +13420,16 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      80,	// qsub_0 -> DTriple_with_dsub_2_in_DPR_8
+      82,	// qsub_0 -> DTriple_with_dsub_2_in_DPR_8
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      80,	// ssub_0 -> DTriple_with_dsub_2_in_DPR_8
-      80,	// ssub_1 -> DTriple_with_dsub_2_in_DPR_8
-      80,	// ssub_2 -> DTriple_with_dsub_2_in_DPR_8
-      80,	// ssub_3 -> DTriple_with_dsub_2_in_DPR_8
-      80,	// ssub_4 -> DTriple_with_dsub_2_in_DPR_8
-      80,	// ssub_5 -> DTriple_with_dsub_2_in_DPR_8
+      82,	// ssub_0 -> DTriple_with_dsub_2_in_DPR_8
+      82,	// ssub_1 -> DTriple_with_dsub_2_in_DPR_8
+      82,	// ssub_2 -> DTriple_with_dsub_2_in_DPR_8
+      82,	// ssub_3 -> DTriple_with_dsub_2_in_DPR_8
+      82,	// ssub_4 -> DTriple_with_dsub_2_in_DPR_8
+      82,	// ssub_5 -> DTriple_with_dsub_2_in_DPR_8
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -13195,11 +13440,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      80,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_dsub_2_in_DPR_8
+      82,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_dsub_2_in_DPR_8
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-      80,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_dsub_2_in_DPR_8
+      82,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_dsub_2_in_DPR_8
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -13221,11 +13466,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTripleSpc_with_dsub_4_in_DPR_8
-      81,	// dsub_0 -> DTripleSpc_with_dsub_4_in_DPR_8
+      83,	// dsub_0 -> DTripleSpc_with_dsub_4_in_DPR_8
       0,	// dsub_1
-      81,	// dsub_2 -> DTripleSpc_with_dsub_4_in_DPR_8
+      83,	// dsub_2 -> DTripleSpc_with_dsub_4_in_DPR_8
       0,	// dsub_3
-      81,	// dsub_4 -> DTripleSpc_with_dsub_4_in_DPR_8
+      83,	// dsub_4 -> DTripleSpc_with_dsub_4_in_DPR_8
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
@@ -13237,23 +13482,23 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      81,	// ssub_0 -> DTripleSpc_with_dsub_4_in_DPR_8
-      81,	// ssub_1 -> DTripleSpc_with_dsub_4_in_DPR_8
+      83,	// ssub_0 -> DTripleSpc_with_dsub_4_in_DPR_8
+      83,	// ssub_1 -> DTripleSpc_with_dsub_4_in_DPR_8
       0,	// ssub_2
       0,	// ssub_3
-      81,	// ssub_4 -> DTripleSpc_with_dsub_4_in_DPR_8
-      81,	// ssub_5 -> DTripleSpc_with_dsub_4_in_DPR_8
+      83,	// ssub_4 -> DTripleSpc_with_dsub_4_in_DPR_8
+      83,	// ssub_5 -> DTripleSpc_with_dsub_4_in_DPR_8
       0,	// ssub_6
       0,	// ssub_7
-      81,	// ssub_8 -> DTripleSpc_with_dsub_4_in_DPR_8
-      81,	// ssub_9 -> DTripleSpc_with_dsub_4_in_DPR_8
+      83,	// ssub_8 -> DTripleSpc_with_dsub_4_in_DPR_8
+      83,	// ssub_9 -> DTripleSpc_with_dsub_4_in_DPR_8
       0,	// ssub_10
       0,	// ssub_11
       0,	// ssub_12
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      81,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTripleSpc_with_dsub_4_in_DPR_8
+      83,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTripleSpc_with_dsub_4_in_DPR_8
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
@@ -13263,7 +13508,7 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-      81,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DTripleSpc_with_dsub_4_in_DPR_8
+      83,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DTripleSpc_with_dsub_4_in_DPR_8
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
       0,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_6_ssub_7_dsub_5
@@ -13279,9 +13524,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      82,	// dsub_0 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      82,	// dsub_1 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      82,	// dsub_2 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      84,	// dsub_0 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      84,	// dsub_1 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      84,	// dsub_2 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -13291,16 +13536,16 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      82,	// qsub_0 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      84,	// qsub_0 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      82,	// ssub_0 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      82,	// ssub_1 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      82,	// ssub_2 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      82,	// ssub_3 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      82,	// ssub_4 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      82,	// ssub_5 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      84,	// ssub_0 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      84,	// ssub_1 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      84,	// ssub_2 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      84,	// ssub_3 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      84,	// ssub_4 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      84,	// ssub_5 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -13311,11 +13556,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      82,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      84,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-      82,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      84,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_dsub_0_in_DPR_8_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -13337,9 +13582,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTriple_with_qsub_0_in_QPR_8
-      83,	// dsub_0 -> DTriple_with_qsub_0_in_QPR_8
-      83,	// dsub_1 -> DTriple_with_qsub_0_in_QPR_8
-      83,	// dsub_2 -> DTriple_with_qsub_0_in_QPR_8
+      85,	// dsub_0 -> DTriple_with_qsub_0_in_QPR_8
+      85,	// dsub_1 -> DTriple_with_qsub_0_in_QPR_8
+      85,	// dsub_2 -> DTriple_with_qsub_0_in_QPR_8
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -13349,16 +13594,16 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      83,	// qsub_0 -> DTriple_with_qsub_0_in_QPR_8
+      85,	// qsub_0 -> DTriple_with_qsub_0_in_QPR_8
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      83,	// ssub_0 -> DTriple_with_qsub_0_in_QPR_8
-      83,	// ssub_1 -> DTriple_with_qsub_0_in_QPR_8
-      83,	// ssub_2 -> DTriple_with_qsub_0_in_QPR_8
-      83,	// ssub_3 -> DTriple_with_qsub_0_in_QPR_8
-      83,	// ssub_4 -> DTriple_with_qsub_0_in_QPR_8
-      83,	// ssub_5 -> DTriple_with_qsub_0_in_QPR_8
+      85,	// ssub_0 -> DTriple_with_qsub_0_in_QPR_8
+      85,	// ssub_1 -> DTriple_with_qsub_0_in_QPR_8
+      85,	// ssub_2 -> DTriple_with_qsub_0_in_QPR_8
+      85,	// ssub_3 -> DTriple_with_qsub_0_in_QPR_8
+      85,	// ssub_4 -> DTriple_with_qsub_0_in_QPR_8
+      85,	// ssub_5 -> DTriple_with_qsub_0_in_QPR_8
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -13369,11 +13614,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      83,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_qsub_0_in_QPR_8
+      85,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_qsub_0_in_QPR_8
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-      83,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_qsub_0_in_QPR_8
+      85,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_qsub_0_in_QPR_8
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -13395,9 +13640,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
-      84,	// dsub_0 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
-      84,	// dsub_1 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
-      84,	// dsub_2 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
+      86,	// dsub_0 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
+      86,	// dsub_1 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
+      86,	// dsub_2 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -13407,16 +13652,16 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      84,	// qsub_0 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
+      86,	// qsub_0 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      84,	// ssub_0 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
-      84,	// ssub_1 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
-      84,	// ssub_2 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
-      84,	// ssub_3 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
-      84,	// ssub_4 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
-      84,	// ssub_5 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
+      86,	// ssub_0 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
+      86,	// ssub_1 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
+      86,	// ssub_2 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
+      86,	// ssub_3 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
+      86,	// ssub_4 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
+      86,	// ssub_5 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -13427,11 +13672,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      84,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
+      86,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-      84,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
+      86,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_dsub_2_in_DPR_8_and_DTriple_with_qsub_0_in_MQPR
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -13453,9 +13698,9 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      85,	// dsub_0 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      85,	// dsub_1 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      85,	// dsub_2 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      87,	// dsub_0 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      87,	// dsub_1 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      87,	// dsub_2 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
       0,	// dsub_3
       0,	// dsub_4
       0,	// dsub_5
@@ -13465,16 +13710,16 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      85,	// qsub_0 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      87,	// qsub_0 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      85,	// ssub_0 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      85,	// ssub_1 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      85,	// ssub_2 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      85,	// ssub_3 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      85,	// ssub_4 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      85,	// ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      87,	// ssub_0 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      87,	// ssub_1 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      87,	// ssub_2 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      87,	// ssub_3 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      87,	// ssub_4 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      87,	// ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
       0,	// ssub_6
       0,	// ssub_7
       0,	// ssub_8
@@ -13485,11 +13730,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      85,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      87,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
-      85,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      87,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -13511,11 +13756,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuadSpc
-      86,	// dsub_0 -> DQuadSpc
+      88,	// dsub_0 -> DQuadSpc
       0,	// dsub_1
-      86,	// dsub_2 -> DQuadSpc
+      88,	// dsub_2 -> DQuadSpc
       0,	// dsub_3
-      86,	// dsub_4 -> DQuadSpc
+      88,	// dsub_4 -> DQuadSpc
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
@@ -13527,23 +13772,23 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      87,	// ssub_0 -> DQuadSpc_with_ssub_0
-      87,	// ssub_1 -> DQuadSpc_with_ssub_0
+      89,	// ssub_0 -> DQuadSpc_with_ssub_0
+      89,	// ssub_1 -> DQuadSpc_with_ssub_0
       0,	// ssub_2
       0,	// ssub_3
-      88,	// ssub_4 -> DQuadSpc_with_ssub_4
-      88,	// ssub_5 -> DQuadSpc_with_ssub_4
+      90,	// ssub_4 -> DQuadSpc_with_ssub_4
+      90,	// ssub_5 -> DQuadSpc_with_ssub_4
       0,	// ssub_6
       0,	// ssub_7
-      89,	// ssub_8 -> DQuadSpc_with_ssub_8
-      89,	// ssub_9 -> DQuadSpc_with_ssub_8
+      91,	// ssub_8 -> DQuadSpc_with_ssub_8
+      91,	// ssub_9 -> DQuadSpc_with_ssub_8
       0,	// ssub_10
       0,	// ssub_11
       0,	// ssub_12
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      86,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuadSpc
+      88,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuadSpc
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
@@ -13553,7 +13798,7 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-      86,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DQuadSpc
+      88,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DQuadSpc
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
       0,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_6_ssub_7_dsub_5
@@ -13569,11 +13814,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuadSpc_with_ssub_0
-      87,	// dsub_0 -> DQuadSpc_with_ssub_0
+      89,	// dsub_0 -> DQuadSpc_with_ssub_0
       0,	// dsub_1
-      87,	// dsub_2 -> DQuadSpc_with_ssub_0
+      89,	// dsub_2 -> DQuadSpc_with_ssub_0
       0,	// dsub_3
-      87,	// dsub_4 -> DQuadSpc_with_ssub_0
+      89,	// dsub_4 -> DQuadSpc_with_ssub_0
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
@@ -13585,23 +13830,23 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      87,	// ssub_0 -> DQuadSpc_with_ssub_0
-      87,	// ssub_1 -> DQuadSpc_with_ssub_0
+      89,	// ssub_0 -> DQuadSpc_with_ssub_0
+      89,	// ssub_1 -> DQuadSpc_with_ssub_0
       0,	// ssub_2
       0,	// ssub_3
-      88,	// ssub_4 -> DQuadSpc_with_ssub_4
-      88,	// ssub_5 -> DQuadSpc_with_ssub_4
+      90,	// ssub_4 -> DQuadSpc_with_ssub_4
+      90,	// ssub_5 -> DQuadSpc_with_ssub_4
       0,	// ssub_6
       0,	// ssub_7
-      89,	// ssub_8 -> DQuadSpc_with_ssub_8
-      89,	// ssub_9 -> DQuadSpc_with_ssub_8
+      91,	// ssub_8 -> DQuadSpc_with_ssub_8
+      91,	// ssub_9 -> DQuadSpc_with_ssub_8
       0,	// ssub_10
       0,	// ssub_11
       0,	// ssub_12
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      87,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuadSpc_with_ssub_0
+      89,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuadSpc_with_ssub_0
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
@@ -13611,7 +13856,7 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-      87,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DQuadSpc_with_ssub_0
+      89,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DQuadSpc_with_ssub_0
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
       0,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_6_ssub_7_dsub_5
@@ -13627,11 +13872,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuadSpc_with_ssub_4
-      88,	// dsub_0 -> DQuadSpc_with_ssub_4
+      90,	// dsub_0 -> DQuadSpc_with_ssub_4
       0,	// dsub_1
-      88,	// dsub_2 -> DQuadSpc_with_ssub_4
+      90,	// dsub_2 -> DQuadSpc_with_ssub_4
       0,	// dsub_3
-      88,	// dsub_4 -> DQuadSpc_with_ssub_4
+      90,	// dsub_4 -> DQuadSpc_with_ssub_4
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
@@ -13643,23 +13888,23 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      88,	// ssub_0 -> DQuadSpc_with_ssub_4
-      88,	// ssub_1 -> DQuadSpc_with_ssub_4
+      90,	// ssub_0 -> DQuadSpc_with_ssub_4
+      90,	// ssub_1 -> DQuadSpc_with_ssub_4
       0,	// ssub_2
       0,	// ssub_3
-      88,	// ssub_4 -> DQuadSpc_with_ssub_4
-      88,	// ssub_5 -> DQuadSpc_with_ssub_4
+      90,	// ssub_4 -> DQuadSpc_with_ssub_4
+      90,	// ssub_5 -> DQuadSpc_with_ssub_4
       0,	// ssub_6
       0,	// ssub_7
-      89,	// ssub_8 -> DQuadSpc_with_ssub_8
-      89,	// ssub_9 -> DQuadSpc_with_ssub_8
+      91,	// ssub_8 -> DQuadSpc_with_ssub_8
+      91,	// ssub_9 -> DQuadSpc_with_ssub_8
       0,	// ssub_10
       0,	// ssub_11
       0,	// ssub_12
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      88,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuadSpc_with_ssub_4
+      90,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuadSpc_with_ssub_4
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
@@ -13669,7 +13914,7 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-      88,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DQuadSpc_with_ssub_4
+      90,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DQuadSpc_with_ssub_4
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
       0,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_6_ssub_7_dsub_5
@@ -13685,11 +13930,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuadSpc_with_ssub_8
-      89,	// dsub_0 -> DQuadSpc_with_ssub_8
+      91,	// dsub_0 -> DQuadSpc_with_ssub_8
       0,	// dsub_1
-      89,	// dsub_2 -> DQuadSpc_with_ssub_8
+      91,	// dsub_2 -> DQuadSpc_with_ssub_8
       0,	// dsub_3
-      89,	// dsub_4 -> DQuadSpc_with_ssub_8
+      91,	// dsub_4 -> DQuadSpc_with_ssub_8
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
@@ -13701,23 +13946,23 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      89,	// ssub_0 -> DQuadSpc_with_ssub_8
-      89,	// ssub_1 -> DQuadSpc_with_ssub_8
+      91,	// ssub_0 -> DQuadSpc_with_ssub_8
+      91,	// ssub_1 -> DQuadSpc_with_ssub_8
       0,	// ssub_2
       0,	// ssub_3
-      89,	// ssub_4 -> DQuadSpc_with_ssub_8
-      89,	// ssub_5 -> DQuadSpc_with_ssub_8
+      91,	// ssub_4 -> DQuadSpc_with_ssub_8
+      91,	// ssub_5 -> DQuadSpc_with_ssub_8
       0,	// ssub_6
       0,	// ssub_7
-      89,	// ssub_8 -> DQuadSpc_with_ssub_8
-      89,	// ssub_9 -> DQuadSpc_with_ssub_8
+      91,	// ssub_8 -> DQuadSpc_with_ssub_8
+      91,	// ssub_9 -> DQuadSpc_with_ssub_8
       0,	// ssub_10
       0,	// ssub_11
       0,	// ssub_12
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      89,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuadSpc_with_ssub_8
+      91,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuadSpc_with_ssub_8
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
@@ -13727,7 +13972,7 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-      89,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DQuadSpc_with_ssub_8
+      91,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DQuadSpc_with_ssub_8
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
       0,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_6_ssub_7_dsub_5
@@ -13743,11 +13988,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuadSpc_with_dsub_0_in_DPR_8
-      90,	// dsub_0 -> DQuadSpc_with_dsub_0_in_DPR_8
+      92,	// dsub_0 -> DQuadSpc_with_dsub_0_in_DPR_8
       0,	// dsub_1
-      90,	// dsub_2 -> DQuadSpc_with_dsub_0_in_DPR_8
+      92,	// dsub_2 -> DQuadSpc_with_dsub_0_in_DPR_8
       0,	// dsub_3
-      90,	// dsub_4 -> DQuadSpc_with_dsub_0_in_DPR_8
+      92,	// dsub_4 -> DQuadSpc_with_dsub_0_in_DPR_8
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
@@ -13759,23 +14004,23 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      90,	// ssub_0 -> DQuadSpc_with_dsub_0_in_DPR_8
-      90,	// ssub_1 -> DQuadSpc_with_dsub_0_in_DPR_8
+      92,	// ssub_0 -> DQuadSpc_with_dsub_0_in_DPR_8
+      92,	// ssub_1 -> DQuadSpc_with_dsub_0_in_DPR_8
       0,	// ssub_2
       0,	// ssub_3
-      90,	// ssub_4 -> DQuadSpc_with_dsub_0_in_DPR_8
-      90,	// ssub_5 -> DQuadSpc_with_dsub_0_in_DPR_8
+      92,	// ssub_4 -> DQuadSpc_with_dsub_0_in_DPR_8
+      92,	// ssub_5 -> DQuadSpc_with_dsub_0_in_DPR_8
       0,	// ssub_6
       0,	// ssub_7
-      90,	// ssub_8 -> DQuadSpc_with_dsub_0_in_DPR_8
-      90,	// ssub_9 -> DQuadSpc_with_dsub_0_in_DPR_8
+      92,	// ssub_8 -> DQuadSpc_with_dsub_0_in_DPR_8
+      92,	// ssub_9 -> DQuadSpc_with_dsub_0_in_DPR_8
       0,	// ssub_10
       0,	// ssub_11
       0,	// ssub_12
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      90,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuadSpc_with_dsub_0_in_DPR_8
+      92,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuadSpc_with_dsub_0_in_DPR_8
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
@@ -13785,7 +14030,7 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-      90,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DQuadSpc_with_dsub_0_in_DPR_8
+      92,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DQuadSpc_with_dsub_0_in_DPR_8
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
       0,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_6_ssub_7_dsub_5
@@ -13801,11 +14046,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuadSpc_with_dsub_2_in_DPR_8
-      91,	// dsub_0 -> DQuadSpc_with_dsub_2_in_DPR_8
+      93,	// dsub_0 -> DQuadSpc_with_dsub_2_in_DPR_8
       0,	// dsub_1
-      91,	// dsub_2 -> DQuadSpc_with_dsub_2_in_DPR_8
+      93,	// dsub_2 -> DQuadSpc_with_dsub_2_in_DPR_8
       0,	// dsub_3
-      91,	// dsub_4 -> DQuadSpc_with_dsub_2_in_DPR_8
+      93,	// dsub_4 -> DQuadSpc_with_dsub_2_in_DPR_8
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
@@ -13817,23 +14062,23 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      91,	// ssub_0 -> DQuadSpc_with_dsub_2_in_DPR_8
-      91,	// ssub_1 -> DQuadSpc_with_dsub_2_in_DPR_8
+      93,	// ssub_0 -> DQuadSpc_with_dsub_2_in_DPR_8
+      93,	// ssub_1 -> DQuadSpc_with_dsub_2_in_DPR_8
       0,	// ssub_2
       0,	// ssub_3
-      91,	// ssub_4 -> DQuadSpc_with_dsub_2_in_DPR_8
-      91,	// ssub_5 -> DQuadSpc_with_dsub_2_in_DPR_8
+      93,	// ssub_4 -> DQuadSpc_with_dsub_2_in_DPR_8
+      93,	// ssub_5 -> DQuadSpc_with_dsub_2_in_DPR_8
       0,	// ssub_6
       0,	// ssub_7
-      91,	// ssub_8 -> DQuadSpc_with_dsub_2_in_DPR_8
-      91,	// ssub_9 -> DQuadSpc_with_dsub_2_in_DPR_8
+      93,	// ssub_8 -> DQuadSpc_with_dsub_2_in_DPR_8
+      93,	// ssub_9 -> DQuadSpc_with_dsub_2_in_DPR_8
       0,	// ssub_10
       0,	// ssub_11
       0,	// ssub_12
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      91,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuadSpc_with_dsub_2_in_DPR_8
+      93,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuadSpc_with_dsub_2_in_DPR_8
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
@@ -13843,7 +14088,7 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-      91,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DQuadSpc_with_dsub_2_in_DPR_8
+      93,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DQuadSpc_with_dsub_2_in_DPR_8
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
       0,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_6_ssub_7_dsub_5
@@ -13859,11 +14104,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuadSpc_with_dsub_4_in_DPR_8
-      92,	// dsub_0 -> DQuadSpc_with_dsub_4_in_DPR_8
+      94,	// dsub_0 -> DQuadSpc_with_dsub_4_in_DPR_8
       0,	// dsub_1
-      92,	// dsub_2 -> DQuadSpc_with_dsub_4_in_DPR_8
+      94,	// dsub_2 -> DQuadSpc_with_dsub_4_in_DPR_8
       0,	// dsub_3
-      92,	// dsub_4 -> DQuadSpc_with_dsub_4_in_DPR_8
+      94,	// dsub_4 -> DQuadSpc_with_dsub_4_in_DPR_8
       0,	// dsub_5
       0,	// dsub_6
       0,	// dsub_7
@@ -13875,23 +14120,23 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// qsub_1
       0,	// qsub_2
       0,	// qsub_3
-      92,	// ssub_0 -> DQuadSpc_with_dsub_4_in_DPR_8
-      92,	// ssub_1 -> DQuadSpc_with_dsub_4_in_DPR_8
+      94,	// ssub_0 -> DQuadSpc_with_dsub_4_in_DPR_8
+      94,	// ssub_1 -> DQuadSpc_with_dsub_4_in_DPR_8
       0,	// ssub_2
       0,	// ssub_3
-      92,	// ssub_4 -> DQuadSpc_with_dsub_4_in_DPR_8
-      92,	// ssub_5 -> DQuadSpc_with_dsub_4_in_DPR_8
+      94,	// ssub_4 -> DQuadSpc_with_dsub_4_in_DPR_8
+      94,	// ssub_5 -> DQuadSpc_with_dsub_4_in_DPR_8
       0,	// ssub_6
       0,	// ssub_7
-      92,	// ssub_8 -> DQuadSpc_with_dsub_4_in_DPR_8
-      92,	// ssub_9 -> DQuadSpc_with_dsub_4_in_DPR_8
+      94,	// ssub_8 -> DQuadSpc_with_dsub_4_in_DPR_8
+      94,	// ssub_9 -> DQuadSpc_with_dsub_4_in_DPR_8
       0,	// ssub_10
       0,	// ssub_11
       0,	// ssub_12
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      92,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuadSpc_with_dsub_4_in_DPR_8
+      94,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuadSpc_with_dsub_4_in_DPR_8
       0,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7
@@ -13901,7 +14146,7 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7
       0,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
-      92,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DQuadSpc_with_dsub_4_in_DPR_8
+      94,	// ssub_4_ssub_5_ssub_8_ssub_9 -> DQuadSpc_with_dsub_4_in_DPR_8
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9
       0,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_6_ssub_7_dsub_5
@@ -13917,10 +14162,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad
-      93,	// dsub_0 -> DQuad
-      93,	// dsub_1 -> DQuad
-      93,	// dsub_2 -> DQuad
-      93,	// dsub_3 -> DQuad
+      95,	// dsub_0 -> DQuad
+      95,	// dsub_1 -> DQuad
+      95,	// dsub_2 -> DQuad
+      95,	// dsub_3 -> DQuad
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -13929,18 +14174,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      93,	// qsub_0 -> DQuad
-      93,	// qsub_1 -> DQuad
+      95,	// qsub_0 -> DQuad
+      95,	// qsub_1 -> DQuad
       0,	// qsub_2
       0,	// qsub_3
-      94,	// ssub_0 -> DQuad_with_ssub_0
-      94,	// ssub_1 -> DQuad_with_ssub_0
-      95,	// ssub_2 -> DQuad_with_ssub_2
-      95,	// ssub_3 -> DQuad_with_ssub_2
-      98,	// ssub_4 -> DQuad_with_ssub_4
-      98,	// ssub_5 -> DQuad_with_ssub_4
-      99,	// ssub_6 -> DQuad_with_ssub_6
-      99,	// ssub_7 -> DQuad_with_ssub_6
+      96,	// ssub_0 -> DQuad_with_ssub_0
+      96,	// ssub_1 -> DQuad_with_ssub_0
+      97,	// ssub_2 -> DQuad_with_ssub_2
+      97,	// ssub_3 -> DQuad_with_ssub_2
+      100,	// ssub_4 -> DQuad_with_ssub_4
+      100,	// ssub_5 -> DQuad_with_ssub_4
+      101,	// ssub_6 -> DQuad_with_ssub_6
+      101,	// ssub_7 -> DQuad_with_ssub_6
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -13949,11 +14194,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      93,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad
-      93,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad
-      93,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad
-      93,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad
-      93,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad
+      95,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad
+      95,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad
+      95,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad
+      95,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad
+      95,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -13975,10 +14220,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_ssub_0
-      94,	// dsub_0 -> DQuad_with_ssub_0
-      94,	// dsub_1 -> DQuad_with_ssub_0
-      94,	// dsub_2 -> DQuad_with_ssub_0
-      94,	// dsub_3 -> DQuad_with_ssub_0
+      96,	// dsub_0 -> DQuad_with_ssub_0
+      96,	// dsub_1 -> DQuad_with_ssub_0
+      96,	// dsub_2 -> DQuad_with_ssub_0
+      96,	// dsub_3 -> DQuad_with_ssub_0
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -13987,18 +14232,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      94,	// qsub_0 -> DQuad_with_ssub_0
-      94,	// qsub_1 -> DQuad_with_ssub_0
+      96,	// qsub_0 -> DQuad_with_ssub_0
+      96,	// qsub_1 -> DQuad_with_ssub_0
       0,	// qsub_2
       0,	// qsub_3
-      94,	// ssub_0 -> DQuad_with_ssub_0
-      94,	// ssub_1 -> DQuad_with_ssub_0
-      95,	// ssub_2 -> DQuad_with_ssub_2
-      95,	// ssub_3 -> DQuad_with_ssub_2
-      98,	// ssub_4 -> DQuad_with_ssub_4
-      98,	// ssub_5 -> DQuad_with_ssub_4
-      99,	// ssub_6 -> DQuad_with_ssub_6
-      99,	// ssub_7 -> DQuad_with_ssub_6
+      96,	// ssub_0 -> DQuad_with_ssub_0
+      96,	// ssub_1 -> DQuad_with_ssub_0
+      97,	// ssub_2 -> DQuad_with_ssub_2
+      97,	// ssub_3 -> DQuad_with_ssub_2
+      100,	// ssub_4 -> DQuad_with_ssub_4
+      100,	// ssub_5 -> DQuad_with_ssub_4
+      101,	// ssub_6 -> DQuad_with_ssub_6
+      101,	// ssub_7 -> DQuad_with_ssub_6
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -14007,11 +14252,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      94,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_ssub_0
-      94,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_0
-      94,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_ssub_0
-      94,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_ssub_0
-      94,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_0
+      96,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_ssub_0
+      96,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_0
+      96,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_ssub_0
+      96,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_ssub_0
+      96,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_0
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -14033,10 +14278,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_ssub_2
-      95,	// dsub_0 -> DQuad_with_ssub_2
-      95,	// dsub_1 -> DQuad_with_ssub_2
-      95,	// dsub_2 -> DQuad_with_ssub_2
-      95,	// dsub_3 -> DQuad_with_ssub_2
+      97,	// dsub_0 -> DQuad_with_ssub_2
+      97,	// dsub_1 -> DQuad_with_ssub_2
+      97,	// dsub_2 -> DQuad_with_ssub_2
+      97,	// dsub_3 -> DQuad_with_ssub_2
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -14045,18 +14290,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      95,	// qsub_0 -> DQuad_with_ssub_2
-      95,	// qsub_1 -> DQuad_with_ssub_2
+      97,	// qsub_0 -> DQuad_with_ssub_2
+      97,	// qsub_1 -> DQuad_with_ssub_2
       0,	// qsub_2
       0,	// qsub_3
-      95,	// ssub_0 -> DQuad_with_ssub_2
-      95,	// ssub_1 -> DQuad_with_ssub_2
-      95,	// ssub_2 -> DQuad_with_ssub_2
-      95,	// ssub_3 -> DQuad_with_ssub_2
-      98,	// ssub_4 -> DQuad_with_ssub_4
-      98,	// ssub_5 -> DQuad_with_ssub_4
-      99,	// ssub_6 -> DQuad_with_ssub_6
-      99,	// ssub_7 -> DQuad_with_ssub_6
+      97,	// ssub_0 -> DQuad_with_ssub_2
+      97,	// ssub_1 -> DQuad_with_ssub_2
+      97,	// ssub_2 -> DQuad_with_ssub_2
+      97,	// ssub_3 -> DQuad_with_ssub_2
+      100,	// ssub_4 -> DQuad_with_ssub_4
+      100,	// ssub_5 -> DQuad_with_ssub_4
+      101,	// ssub_6 -> DQuad_with_ssub_6
+      101,	// ssub_7 -> DQuad_with_ssub_6
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -14065,11 +14310,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      95,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_ssub_2
-      95,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_2
-      95,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_ssub_2
-      95,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_ssub_2
-      95,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_2
+      97,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_ssub_2
+      97,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_2
+      97,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_ssub_2
+      97,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_ssub_2
+      97,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_2
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -14091,10 +14336,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// QQPR
-      96,	// dsub_0 -> QQPR
-      96,	// dsub_1 -> QQPR
-      96,	// dsub_2 -> QQPR
-      96,	// dsub_3 -> QQPR
+      98,	// dsub_0 -> QQPR
+      98,	// dsub_1 -> QQPR
+      98,	// dsub_2 -> QQPR
+      98,	// dsub_3 -> QQPR
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -14103,18 +14348,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      96,	// qsub_0 -> QQPR
-      96,	// qsub_1 -> QQPR
+      98,	// qsub_0 -> QQPR
+      98,	// qsub_1 -> QQPR
       0,	// qsub_2
       0,	// qsub_3
-      101,	// ssub_0 -> DQuad_with_qsub_0_in_MQPR
-      101,	// ssub_1 -> DQuad_with_qsub_0_in_MQPR
-      101,	// ssub_2 -> DQuad_with_qsub_0_in_MQPR
-      101,	// ssub_3 -> DQuad_with_qsub_0_in_MQPR
-      104,	// ssub_4 -> DQuad_with_qsub_1_in_MQPR
-      104,	// ssub_5 -> DQuad_with_qsub_1_in_MQPR
-      104,	// ssub_6 -> DQuad_with_qsub_1_in_MQPR
-      104,	// ssub_7 -> DQuad_with_qsub_1_in_MQPR
+      103,	// ssub_0 -> DQuad_with_qsub_0_in_MQPR
+      103,	// ssub_1 -> DQuad_with_qsub_0_in_MQPR
+      103,	// ssub_2 -> DQuad_with_qsub_0_in_MQPR
+      103,	// ssub_3 -> DQuad_with_qsub_0_in_MQPR
+      106,	// ssub_4 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_5 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_6 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_7 -> DQuad_with_qsub_1_in_MQPR
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -14123,11 +14368,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      96,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQPR
-      96,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQPR
-      96,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQPR
-      96,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQPR
-      96,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQPR
+      98,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQPR
+      98,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQPR
+      98,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQPR
+      98,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQPR
+      98,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQPR
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -14149,10 +14394,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      97,	// dsub_0 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      97,	// dsub_1 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      97,	// dsub_2 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      97,	// dsub_3 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      99,	// dsub_0 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      99,	// dsub_1 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      99,	// dsub_2 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      99,	// dsub_3 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -14161,18 +14406,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      97,	// qsub_0 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      97,	// qsub_1 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      99,	// qsub_0 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      99,	// qsub_1 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
       0,	// qsub_2
       0,	// qsub_3
-      102,	// ssub_0 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      102,	// ssub_1 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      105,	// ssub_2 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// ssub_3 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// ssub_4 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// ssub_6 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// ssub_7 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      104,	// ssub_0 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      104,	// ssub_1 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      107,	// ssub_2 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// ssub_3 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// ssub_4 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_6 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_7 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -14181,11 +14426,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      97,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      97,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      97,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      97,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      97,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      99,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      99,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      99,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      99,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      99,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -14207,10 +14452,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_ssub_4
-      98,	// dsub_0 -> DQuad_with_ssub_4
-      98,	// dsub_1 -> DQuad_with_ssub_4
-      98,	// dsub_2 -> DQuad_with_ssub_4
-      98,	// dsub_3 -> DQuad_with_ssub_4
+      100,	// dsub_0 -> DQuad_with_ssub_4
+      100,	// dsub_1 -> DQuad_with_ssub_4
+      100,	// dsub_2 -> DQuad_with_ssub_4
+      100,	// dsub_3 -> DQuad_with_ssub_4
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -14219,18 +14464,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      98,	// qsub_0 -> DQuad_with_ssub_4
-      98,	// qsub_1 -> DQuad_with_ssub_4
+      100,	// qsub_0 -> DQuad_with_ssub_4
+      100,	// qsub_1 -> DQuad_with_ssub_4
       0,	// qsub_2
       0,	// qsub_3
-      98,	// ssub_0 -> DQuad_with_ssub_4
-      98,	// ssub_1 -> DQuad_with_ssub_4
-      98,	// ssub_2 -> DQuad_with_ssub_4
-      98,	// ssub_3 -> DQuad_with_ssub_4
-      98,	// ssub_4 -> DQuad_with_ssub_4
-      98,	// ssub_5 -> DQuad_with_ssub_4
-      99,	// ssub_6 -> DQuad_with_ssub_6
-      99,	// ssub_7 -> DQuad_with_ssub_6
+      100,	// ssub_0 -> DQuad_with_ssub_4
+      100,	// ssub_1 -> DQuad_with_ssub_4
+      100,	// ssub_2 -> DQuad_with_ssub_4
+      100,	// ssub_3 -> DQuad_with_ssub_4
+      100,	// ssub_4 -> DQuad_with_ssub_4
+      100,	// ssub_5 -> DQuad_with_ssub_4
+      101,	// ssub_6 -> DQuad_with_ssub_6
+      101,	// ssub_7 -> DQuad_with_ssub_6
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -14239,11 +14484,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      98,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_ssub_4
-      98,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_4
-      98,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_ssub_4
-      98,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_ssub_4
-      98,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_4
+      100,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_ssub_4
+      100,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_4
+      100,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_ssub_4
+      100,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_ssub_4
+      100,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_4
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -14265,10 +14510,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_ssub_6
-      99,	// dsub_0 -> DQuad_with_ssub_6
-      99,	// dsub_1 -> DQuad_with_ssub_6
-      99,	// dsub_2 -> DQuad_with_ssub_6
-      99,	// dsub_3 -> DQuad_with_ssub_6
+      101,	// dsub_0 -> DQuad_with_ssub_6
+      101,	// dsub_1 -> DQuad_with_ssub_6
+      101,	// dsub_2 -> DQuad_with_ssub_6
+      101,	// dsub_3 -> DQuad_with_ssub_6
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -14277,18 +14522,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      99,	// qsub_0 -> DQuad_with_ssub_6
-      99,	// qsub_1 -> DQuad_with_ssub_6
+      101,	// qsub_0 -> DQuad_with_ssub_6
+      101,	// qsub_1 -> DQuad_with_ssub_6
       0,	// qsub_2
       0,	// qsub_3
-      99,	// ssub_0 -> DQuad_with_ssub_6
-      99,	// ssub_1 -> DQuad_with_ssub_6
-      99,	// ssub_2 -> DQuad_with_ssub_6
-      99,	// ssub_3 -> DQuad_with_ssub_6
-      99,	// ssub_4 -> DQuad_with_ssub_6
-      99,	// ssub_5 -> DQuad_with_ssub_6
-      99,	// ssub_6 -> DQuad_with_ssub_6
-      99,	// ssub_7 -> DQuad_with_ssub_6
+      101,	// ssub_0 -> DQuad_with_ssub_6
+      101,	// ssub_1 -> DQuad_with_ssub_6
+      101,	// ssub_2 -> DQuad_with_ssub_6
+      101,	// ssub_3 -> DQuad_with_ssub_6
+      101,	// ssub_4 -> DQuad_with_ssub_6
+      101,	// ssub_5 -> DQuad_with_ssub_6
+      101,	// ssub_6 -> DQuad_with_ssub_6
+      101,	// ssub_7 -> DQuad_with_ssub_6
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -14297,11 +14542,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      99,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_ssub_6
-      99,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_6
-      99,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_ssub_6
-      99,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_ssub_6
-      99,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_6
+      101,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_ssub_6
+      101,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_6
+      101,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_ssub_6
+      101,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_ssub_6
+      101,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_6
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -14323,10 +14568,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_dsub_0_in_DPR_8
-      100,	// dsub_0 -> DQuad_with_dsub_0_in_DPR_8
-      100,	// dsub_1 -> DQuad_with_dsub_0_in_DPR_8
-      100,	// dsub_2 -> DQuad_with_dsub_0_in_DPR_8
-      100,	// dsub_3 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// dsub_0 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// dsub_1 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// dsub_2 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// dsub_3 -> DQuad_with_dsub_0_in_DPR_8
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -14335,18 +14580,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      100,	// qsub_0 -> DQuad_with_dsub_0_in_DPR_8
-      100,	// qsub_1 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// qsub_0 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// qsub_1 -> DQuad_with_dsub_0_in_DPR_8
       0,	// qsub_2
       0,	// qsub_3
-      100,	// ssub_0 -> DQuad_with_dsub_0_in_DPR_8
-      100,	// ssub_1 -> DQuad_with_dsub_0_in_DPR_8
-      100,	// ssub_2 -> DQuad_with_dsub_0_in_DPR_8
-      100,	// ssub_3 -> DQuad_with_dsub_0_in_DPR_8
-      100,	// ssub_4 -> DQuad_with_dsub_0_in_DPR_8
-      100,	// ssub_5 -> DQuad_with_dsub_0_in_DPR_8
-      100,	// ssub_6 -> DQuad_with_dsub_0_in_DPR_8
-      100,	// ssub_7 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// ssub_0 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// ssub_1 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// ssub_2 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// ssub_3 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// ssub_4 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// ssub_5 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// ssub_6 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// ssub_7 -> DQuad_with_dsub_0_in_DPR_8
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -14355,11 +14600,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      100,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_dsub_0_in_DPR_8
-      100,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_0_in_DPR_8
-      100,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_dsub_0_in_DPR_8
-      100,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_dsub_0_in_DPR_8
-      100,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_dsub_0_in_DPR_8
+      102,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_0_in_DPR_8
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -14381,10 +14626,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_qsub_0_in_MQPR
-      101,	// dsub_0 -> DQuad_with_qsub_0_in_MQPR
-      101,	// dsub_1 -> DQuad_with_qsub_0_in_MQPR
-      101,	// dsub_2 -> DQuad_with_qsub_0_in_MQPR
-      101,	// dsub_3 -> DQuad_with_qsub_0_in_MQPR
+      103,	// dsub_0 -> DQuad_with_qsub_0_in_MQPR
+      103,	// dsub_1 -> DQuad_with_qsub_0_in_MQPR
+      103,	// dsub_2 -> DQuad_with_qsub_0_in_MQPR
+      103,	// dsub_3 -> DQuad_with_qsub_0_in_MQPR
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -14393,18 +14638,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      101,	// qsub_0 -> DQuad_with_qsub_0_in_MQPR
-      101,	// qsub_1 -> DQuad_with_qsub_0_in_MQPR
+      103,	// qsub_0 -> DQuad_with_qsub_0_in_MQPR
+      103,	// qsub_1 -> DQuad_with_qsub_0_in_MQPR
       0,	// qsub_2
       0,	// qsub_3
-      101,	// ssub_0 -> DQuad_with_qsub_0_in_MQPR
-      101,	// ssub_1 -> DQuad_with_qsub_0_in_MQPR
-      101,	// ssub_2 -> DQuad_with_qsub_0_in_MQPR
-      101,	// ssub_3 -> DQuad_with_qsub_0_in_MQPR
-      104,	// ssub_4 -> DQuad_with_qsub_1_in_MQPR
-      104,	// ssub_5 -> DQuad_with_qsub_1_in_MQPR
-      104,	// ssub_6 -> DQuad_with_qsub_1_in_MQPR
-      104,	// ssub_7 -> DQuad_with_qsub_1_in_MQPR
+      103,	// ssub_0 -> DQuad_with_qsub_0_in_MQPR
+      103,	// ssub_1 -> DQuad_with_qsub_0_in_MQPR
+      103,	// ssub_2 -> DQuad_with_qsub_0_in_MQPR
+      103,	// ssub_3 -> DQuad_with_qsub_0_in_MQPR
+      106,	// ssub_4 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_5 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_6 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_7 -> DQuad_with_qsub_1_in_MQPR
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -14413,11 +14658,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      101,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_qsub_0_in_MQPR
-      101,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_qsub_0_in_MQPR
-      101,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_qsub_0_in_MQPR
-      101,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_qsub_0_in_MQPR
-      101,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_qsub_0_in_MQPR
+      103,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_qsub_0_in_MQPR
+      103,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_qsub_0_in_MQPR
+      103,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_qsub_0_in_MQPR
+      103,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_qsub_0_in_MQPR
+      103,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_qsub_0_in_MQPR
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -14439,10 +14684,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      102,	// dsub_0 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      102,	// dsub_1 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      102,	// dsub_2 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      102,	// dsub_3 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      104,	// dsub_0 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      104,	// dsub_1 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      104,	// dsub_2 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      104,	// dsub_3 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -14451,18 +14696,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      102,	// qsub_0 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      102,	// qsub_1 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      104,	// qsub_0 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      104,	// qsub_1 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
       0,	// qsub_2
       0,	// qsub_3
-      102,	// ssub_0 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      102,	// ssub_1 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      105,	// ssub_2 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// ssub_3 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// ssub_4 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// ssub_6 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// ssub_7 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      104,	// ssub_0 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      104,	// ssub_1 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      107,	// ssub_2 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// ssub_3 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// ssub_4 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_6 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_7 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -14471,11 +14716,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      102,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      102,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      102,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      102,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-      102,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      104,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      104,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      104,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      104,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+      104,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -14497,10 +14742,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_dsub_1_in_DPR_8
-      103,	// dsub_0 -> DQuad_with_dsub_1_in_DPR_8
-      103,	// dsub_1 -> DQuad_with_dsub_1_in_DPR_8
-      103,	// dsub_2 -> DQuad_with_dsub_1_in_DPR_8
-      103,	// dsub_3 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// dsub_0 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// dsub_1 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// dsub_2 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// dsub_3 -> DQuad_with_dsub_1_in_DPR_8
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -14509,18 +14754,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      103,	// qsub_0 -> DQuad_with_dsub_1_in_DPR_8
-      103,	// qsub_1 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// qsub_0 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// qsub_1 -> DQuad_with_dsub_1_in_DPR_8
       0,	// qsub_2
       0,	// qsub_3
-      103,	// ssub_0 -> DQuad_with_dsub_1_in_DPR_8
-      103,	// ssub_1 -> DQuad_with_dsub_1_in_DPR_8
-      103,	// ssub_2 -> DQuad_with_dsub_1_in_DPR_8
-      103,	// ssub_3 -> DQuad_with_dsub_1_in_DPR_8
-      103,	// ssub_4 -> DQuad_with_dsub_1_in_DPR_8
-      103,	// ssub_5 -> DQuad_with_dsub_1_in_DPR_8
-      103,	// ssub_6 -> DQuad_with_dsub_1_in_DPR_8
-      103,	// ssub_7 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// ssub_0 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// ssub_1 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// ssub_2 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// ssub_3 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// ssub_4 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// ssub_5 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// ssub_6 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// ssub_7 -> DQuad_with_dsub_1_in_DPR_8
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -14529,11 +14774,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      103,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_dsub_1_in_DPR_8
-      103,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_1_in_DPR_8
-      103,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_dsub_1_in_DPR_8
-      103,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_dsub_1_in_DPR_8
-      103,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_dsub_1_in_DPR_8
+      105,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_1_in_DPR_8
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -14555,10 +14800,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_qsub_1_in_MQPR
-      104,	// dsub_0 -> DQuad_with_qsub_1_in_MQPR
-      104,	// dsub_1 -> DQuad_with_qsub_1_in_MQPR
-      104,	// dsub_2 -> DQuad_with_qsub_1_in_MQPR
-      104,	// dsub_3 -> DQuad_with_qsub_1_in_MQPR
+      106,	// dsub_0 -> DQuad_with_qsub_1_in_MQPR
+      106,	// dsub_1 -> DQuad_with_qsub_1_in_MQPR
+      106,	// dsub_2 -> DQuad_with_qsub_1_in_MQPR
+      106,	// dsub_3 -> DQuad_with_qsub_1_in_MQPR
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -14567,18 +14812,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      104,	// qsub_0 -> DQuad_with_qsub_1_in_MQPR
-      104,	// qsub_1 -> DQuad_with_qsub_1_in_MQPR
+      106,	// qsub_0 -> DQuad_with_qsub_1_in_MQPR
+      106,	// qsub_1 -> DQuad_with_qsub_1_in_MQPR
       0,	// qsub_2
       0,	// qsub_3
-      104,	// ssub_0 -> DQuad_with_qsub_1_in_MQPR
-      104,	// ssub_1 -> DQuad_with_qsub_1_in_MQPR
-      104,	// ssub_2 -> DQuad_with_qsub_1_in_MQPR
-      104,	// ssub_3 -> DQuad_with_qsub_1_in_MQPR
-      104,	// ssub_4 -> DQuad_with_qsub_1_in_MQPR
-      104,	// ssub_5 -> DQuad_with_qsub_1_in_MQPR
-      104,	// ssub_6 -> DQuad_with_qsub_1_in_MQPR
-      104,	// ssub_7 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_0 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_1 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_2 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_3 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_4 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_5 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_6 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_7 -> DQuad_with_qsub_1_in_MQPR
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -14587,11 +14832,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      104,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_qsub_1_in_MQPR
-      104,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_qsub_1_in_MQPR
-      104,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_qsub_1_in_MQPR
-      104,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_qsub_1_in_MQPR
-      104,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_qsub_1_in_MQPR
+      106,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_qsub_1_in_MQPR
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -14613,10 +14858,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// dsub_0 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// dsub_1 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// dsub_2 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// dsub_3 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// dsub_0 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// dsub_1 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// dsub_2 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// dsub_3 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -14625,18 +14870,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      105,	// qsub_0 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// qsub_1 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// qsub_0 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// qsub_1 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// qsub_2
       0,	// qsub_3
-      105,	// ssub_0 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// ssub_1 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// ssub_2 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// ssub_3 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// ssub_4 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// ssub_6 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// ssub_7 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// ssub_0 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// ssub_1 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// ssub_2 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// ssub_3 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// ssub_4 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_6 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_7 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -14645,11 +14890,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      105,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      105,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      107,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -14671,10 +14916,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_dsub_2_in_DPR_8
-      106,	// dsub_0 -> DQuad_with_dsub_2_in_DPR_8
-      106,	// dsub_1 -> DQuad_with_dsub_2_in_DPR_8
-      106,	// dsub_2 -> DQuad_with_dsub_2_in_DPR_8
-      106,	// dsub_3 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// dsub_0 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// dsub_1 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// dsub_2 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// dsub_3 -> DQuad_with_dsub_2_in_DPR_8
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -14683,18 +14928,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      106,	// qsub_0 -> DQuad_with_dsub_2_in_DPR_8
-      106,	// qsub_1 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// qsub_0 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// qsub_1 -> DQuad_with_dsub_2_in_DPR_8
       0,	// qsub_2
       0,	// qsub_3
-      106,	// ssub_0 -> DQuad_with_dsub_2_in_DPR_8
-      106,	// ssub_1 -> DQuad_with_dsub_2_in_DPR_8
-      106,	// ssub_2 -> DQuad_with_dsub_2_in_DPR_8
-      106,	// ssub_3 -> DQuad_with_dsub_2_in_DPR_8
-      106,	// ssub_4 -> DQuad_with_dsub_2_in_DPR_8
-      106,	// ssub_5 -> DQuad_with_dsub_2_in_DPR_8
-      106,	// ssub_6 -> DQuad_with_dsub_2_in_DPR_8
-      106,	// ssub_7 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// ssub_0 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// ssub_1 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// ssub_2 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// ssub_3 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// ssub_4 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// ssub_5 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// ssub_6 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// ssub_7 -> DQuad_with_dsub_2_in_DPR_8
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -14703,11 +14948,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      106,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_dsub_2_in_DPR_8
-      106,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_2_in_DPR_8
-      106,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_dsub_2_in_DPR_8
-      106,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_dsub_2_in_DPR_8
-      106,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_dsub_2_in_DPR_8
+      108,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_2_in_DPR_8
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -14729,10 +14974,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// dsub_0 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// dsub_1 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// dsub_2 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// dsub_3 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// dsub_0 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// dsub_1 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// dsub_2 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// dsub_3 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -14741,18 +14986,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      107,	// qsub_0 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// qsub_1 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// qsub_0 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// qsub_1 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// qsub_2
       0,	// qsub_3
-      107,	// ssub_0 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// ssub_1 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// ssub_2 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// ssub_3 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// ssub_4 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// ssub_5 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// ssub_6 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// ssub_7 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_0 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_1 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_2 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_3 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_4 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_5 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_6 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_7 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -14761,11 +15006,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      107,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      107,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      109,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_6_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -14787,10 +15032,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_dsub_3_in_DPR_8
-      108,	// dsub_0 -> DQuad_with_dsub_3_in_DPR_8
-      108,	// dsub_1 -> DQuad_with_dsub_3_in_DPR_8
-      108,	// dsub_2 -> DQuad_with_dsub_3_in_DPR_8
-      108,	// dsub_3 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// dsub_0 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// dsub_1 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// dsub_2 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// dsub_3 -> DQuad_with_dsub_3_in_DPR_8
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -14799,18 +15044,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      108,	// qsub_0 -> DQuad_with_dsub_3_in_DPR_8
-      108,	// qsub_1 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// qsub_0 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// qsub_1 -> DQuad_with_dsub_3_in_DPR_8
       0,	// qsub_2
       0,	// qsub_3
-      108,	// ssub_0 -> DQuad_with_dsub_3_in_DPR_8
-      108,	// ssub_1 -> DQuad_with_dsub_3_in_DPR_8
-      108,	// ssub_2 -> DQuad_with_dsub_3_in_DPR_8
-      108,	// ssub_3 -> DQuad_with_dsub_3_in_DPR_8
-      108,	// ssub_4 -> DQuad_with_dsub_3_in_DPR_8
-      108,	// ssub_5 -> DQuad_with_dsub_3_in_DPR_8
-      108,	// ssub_6 -> DQuad_with_dsub_3_in_DPR_8
-      108,	// ssub_7 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// ssub_0 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// ssub_1 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// ssub_2 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// ssub_3 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// ssub_4 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// ssub_5 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// ssub_6 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// ssub_7 -> DQuad_with_dsub_3_in_DPR_8
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -14819,11 +15064,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      108,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_dsub_3_in_DPR_8
-      108,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_3_in_DPR_8
-      108,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_dsub_3_in_DPR_8
-      108,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_dsub_3_in_DPR_8
-      108,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_dsub_3_in_DPR_8
+      110,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_3_in_DPR_8
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -14845,10 +15090,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      109,	// dsub_0 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      109,	// dsub_1 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      109,	// dsub_2 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      109,	// dsub_3 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// dsub_0 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// dsub_1 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// dsub_2 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// dsub_3 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -14857,18 +15102,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      109,	// qsub_0 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      109,	// qsub_1 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// qsub_0 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// qsub_1 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// qsub_2
       0,	// qsub_3
-      109,	// ssub_0 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      109,	// ssub_1 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      109,	// ssub_2 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      109,	// ssub_3 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      109,	// ssub_4 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      109,	// ssub_5 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      109,	// ssub_6 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      109,	// ssub_7 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// ssub_0 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// ssub_1 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// ssub_2 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// ssub_3 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// ssub_4 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// ssub_5 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// ssub_6 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// ssub_7 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -14877,11 +15122,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      109,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      109,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      109,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      109,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      109,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      111,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_0_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -14903,10 +15148,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_qsub_0_in_QPR_8
-      110,	// dsub_0 -> DQuad_with_qsub_0_in_QPR_8
-      110,	// dsub_1 -> DQuad_with_qsub_0_in_QPR_8
-      110,	// dsub_2 -> DQuad_with_qsub_0_in_QPR_8
-      110,	// dsub_3 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// dsub_0 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// dsub_1 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// dsub_2 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// dsub_3 -> DQuad_with_qsub_0_in_QPR_8
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -14915,18 +15160,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      110,	// qsub_0 -> DQuad_with_qsub_0_in_QPR_8
-      110,	// qsub_1 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// qsub_0 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// qsub_1 -> DQuad_with_qsub_0_in_QPR_8
       0,	// qsub_2
       0,	// qsub_3
-      110,	// ssub_0 -> DQuad_with_qsub_0_in_QPR_8
-      110,	// ssub_1 -> DQuad_with_qsub_0_in_QPR_8
-      110,	// ssub_2 -> DQuad_with_qsub_0_in_QPR_8
-      110,	// ssub_3 -> DQuad_with_qsub_0_in_QPR_8
-      110,	// ssub_4 -> DQuad_with_qsub_0_in_QPR_8
-      110,	// ssub_5 -> DQuad_with_qsub_0_in_QPR_8
-      110,	// ssub_6 -> DQuad_with_qsub_0_in_QPR_8
-      110,	// ssub_7 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// ssub_0 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// ssub_1 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// ssub_2 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// ssub_3 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// ssub_4 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// ssub_5 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// ssub_6 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// ssub_7 -> DQuad_with_qsub_0_in_QPR_8
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -14935,11 +15180,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      110,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_qsub_0_in_QPR_8
-      110,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_qsub_0_in_QPR_8
-      110,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_qsub_0_in_QPR_8
-      110,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_qsub_0_in_QPR_8
-      110,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_qsub_0_in_QPR_8
+      112,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_qsub_0_in_QPR_8
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -14961,10 +15206,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_qsub_1_in_QPR_8
-      111,	// dsub_0 -> DQuad_with_qsub_1_in_QPR_8
-      111,	// dsub_1 -> DQuad_with_qsub_1_in_QPR_8
-      111,	// dsub_2 -> DQuad_with_qsub_1_in_QPR_8
-      111,	// dsub_3 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// dsub_0 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// dsub_1 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// dsub_2 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// dsub_3 -> DQuad_with_qsub_1_in_QPR_8
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -14973,18 +15218,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      111,	// qsub_0 -> DQuad_with_qsub_1_in_QPR_8
-      111,	// qsub_1 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// qsub_0 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// qsub_1 -> DQuad_with_qsub_1_in_QPR_8
       0,	// qsub_2
       0,	// qsub_3
-      111,	// ssub_0 -> DQuad_with_qsub_1_in_QPR_8
-      111,	// ssub_1 -> DQuad_with_qsub_1_in_QPR_8
-      111,	// ssub_2 -> DQuad_with_qsub_1_in_QPR_8
-      111,	// ssub_3 -> DQuad_with_qsub_1_in_QPR_8
-      111,	// ssub_4 -> DQuad_with_qsub_1_in_QPR_8
-      111,	// ssub_5 -> DQuad_with_qsub_1_in_QPR_8
-      111,	// ssub_6 -> DQuad_with_qsub_1_in_QPR_8
-      111,	// ssub_7 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// ssub_0 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// ssub_1 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// ssub_2 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// ssub_3 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// ssub_4 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// ssub_5 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// ssub_6 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// ssub_7 -> DQuad_with_qsub_1_in_QPR_8
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -14993,11 +15238,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      111,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_qsub_1_in_QPR_8
-      111,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_qsub_1_in_QPR_8
-      111,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_qsub_1_in_QPR_8
-      111,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_qsub_1_in_QPR_8
-      111,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_qsub_1_in_QPR_8
+      113,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_qsub_1_in_QPR_8
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -15019,10 +15264,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      112,	// dsub_0 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      112,	// dsub_1 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      112,	// dsub_2 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      112,	// dsub_3 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// dsub_0 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// dsub_1 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// dsub_2 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// dsub_3 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -15031,18 +15276,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      112,	// qsub_0 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      112,	// qsub_1 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// qsub_0 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// qsub_1 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
       0,	// qsub_2
       0,	// qsub_3
-      112,	// ssub_0 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      112,	// ssub_1 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      112,	// ssub_2 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      112,	// ssub_3 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      112,	// ssub_4 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      112,	// ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      112,	// ssub_6 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      112,	// ssub_7 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// ssub_0 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// ssub_1 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// ssub_2 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// ssub_3 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// ssub_4 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// ssub_6 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// ssub_7 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -15051,11 +15296,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      112,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      112,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      112,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      112,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
-      112,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
+      114,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR_8
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -15077,10 +15322,10 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      113,	// dsub_0 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      113,	// dsub_1 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      113,	// dsub_2 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      113,	// dsub_3 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// dsub_0 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// dsub_1 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// dsub_2 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// dsub_3 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// dsub_4
       0,	// dsub_5
       0,	// dsub_6
@@ -15089,18 +15334,18 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// gsub_1
       0,	// qqsub_0
       0,	// qqsub_1
-      113,	// qsub_0 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      113,	// qsub_1 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// qsub_0 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// qsub_1 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// qsub_2
       0,	// qsub_3
-      113,	// ssub_0 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      113,	// ssub_1 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      113,	// ssub_2 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      113,	// ssub_3 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      113,	// ssub_4 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      113,	// ssub_5 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      113,	// ssub_6 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      113,	// ssub_7 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// ssub_0 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// ssub_1 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// ssub_2 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// ssub_3 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// ssub_4 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// ssub_5 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// ssub_6 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// ssub_7 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// ssub_8
       0,	// ssub_9
       0,	// ssub_10
@@ -15109,11 +15354,11 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_13
       0,	// dsub_7_then_ssub_0
       0,	// dsub_7_then_ssub_1
-      113,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      113,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      113,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      113,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-      113,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// ssub_0_ssub_1_ssub_4_ssub_5 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// ssub_2_ssub_3_ssub_6_ssub_7 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+      115,	// ssub_2_ssub_3_ssub_4_ssub_5 -> DQuad_with_dsub_3_in_DPR_8_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9
       0,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13
       0,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5
@@ -15135,526 +15380,526 @@ const TargetRegisterClass *ARMGenRegisterInfo::getSubClassWithSubReg(const Targe
       0,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2
     },
     {	// QQQQPR
-      114,	// dsub_0 -> QQQQPR
-      114,	// dsub_1 -> QQQQPR
-      114,	// dsub_2 -> QQQQPR
-      114,	// dsub_3 -> QQQQPR
-      114,	// dsub_4 -> QQQQPR
-      114,	// dsub_5 -> QQQQPR
-      114,	// dsub_6 -> QQQQPR
-      114,	// dsub_7 -> QQQQPR
+      116,	// dsub_0 -> QQQQPR
+      116,	// dsub_1 -> QQQQPR
+      116,	// dsub_2 -> QQQQPR
+      116,	// dsub_3 -> QQQQPR
+      116,	// dsub_4 -> QQQQPR
+      116,	// dsub_5 -> QQQQPR
+      116,	// dsub_6 -> QQQQPR
+      116,	// dsub_7 -> QQQQPR
       0,	// gsub_0
       0,	// gsub_1
-      114,	// qqsub_0 -> QQQQPR
-      114,	// qqsub_1 -> QQQQPR
-      114,	// qsub_0 -> QQQQPR
-      114,	// qsub_1 -> QQQQPR
-      114,	// qsub_2 -> QQQQPR
-      114,	// qsub_3 -> QQQQPR
-      115,	// ssub_0 -> QQQQPR_with_ssub_0
-      115,	// ssub_1 -> QQQQPR_with_ssub_0
-      115,	// ssub_2 -> QQQQPR_with_ssub_0
-      115,	// ssub_3 -> QQQQPR_with_ssub_0
-      116,	// ssub_4 -> QQQQPR_with_ssub_4
-      116,	// ssub_5 -> QQQQPR_with_ssub_4
-      116,	// ssub_6 -> QQQQPR_with_ssub_4
-      116,	// ssub_7 -> QQQQPR_with_ssub_4
-      117,	// ssub_8 -> QQQQPR_with_ssub_8
-      117,	// ssub_9 -> QQQQPR_with_ssub_8
-      117,	// ssub_10 -> QQQQPR_with_ssub_8
-      117,	// ssub_11 -> QQQQPR_with_ssub_8
-      118,	// ssub_12 -> QQQQPR_with_ssub_12
-      118,	// ssub_13 -> QQQQPR_with_ssub_12
-      118,	// dsub_7_then_ssub_0 -> QQQQPR_with_ssub_12
-      118,	// dsub_7_then_ssub_1 -> QQQQPR_with_ssub_12
-      114,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQQQPR
-      114,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR
-      114,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQQQPR
-      114,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQQQPR
-      114,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR
-      114,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR
-      114,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR
-      114,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5 -> QQQQPR
-      114,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR
-      114,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR
-      114,	// ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR
-      114,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR
-      114,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR
-      114,	// ssub_6_ssub_7_dsub_5 -> QQQQPR
-      114,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5 -> QQQQPR
-      114,	// ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR
-      114,	// ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR
-      114,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR
-      114,	// ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR
-      114,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR
-      114,	// dsub_5_dsub_7 -> QQQQPR
-      114,	// dsub_5_ssub_12_ssub_13_dsub_7 -> QQQQPR
-      114,	// dsub_5_ssub_12_ssub_13 -> QQQQPR
-      114,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2 -> QQQQPR
+      116,	// qqsub_0 -> QQQQPR
+      116,	// qqsub_1 -> QQQQPR
+      116,	// qsub_0 -> QQQQPR
+      116,	// qsub_1 -> QQQQPR
+      116,	// qsub_2 -> QQQQPR
+      116,	// qsub_3 -> QQQQPR
+      117,	// ssub_0 -> QQQQPR_with_ssub_0
+      117,	// ssub_1 -> QQQQPR_with_ssub_0
+      117,	// ssub_2 -> QQQQPR_with_ssub_0
+      117,	// ssub_3 -> QQQQPR_with_ssub_0
+      118,	// ssub_4 -> QQQQPR_with_ssub_4
+      118,	// ssub_5 -> QQQQPR_with_ssub_4
+      118,	// ssub_6 -> QQQQPR_with_ssub_4
+      118,	// ssub_7 -> QQQQPR_with_ssub_4
+      119,	// ssub_8 -> QQQQPR_with_ssub_8
+      119,	// ssub_9 -> QQQQPR_with_ssub_8
+      119,	// ssub_10 -> QQQQPR_with_ssub_8
+      119,	// ssub_11 -> QQQQPR_with_ssub_8
+      120,	// ssub_12 -> QQQQPR_with_ssub_12
+      120,	// ssub_13 -> QQQQPR_with_ssub_12
+      120,	// dsub_7_then_ssub_0 -> QQQQPR_with_ssub_12
+      120,	// dsub_7_then_ssub_1 -> QQQQPR_with_ssub_12
+      116,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQQQPR
+      116,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR
+      116,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQQQPR
+      116,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQQQPR
+      116,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR
+      116,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR
+      116,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR
+      116,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5 -> QQQQPR
+      116,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR
+      116,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR
+      116,	// ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR
+      116,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR
+      116,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR
+      116,	// ssub_6_ssub_7_dsub_5 -> QQQQPR
+      116,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5 -> QQQQPR
+      116,	// ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR
+      116,	// ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR
+      116,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR
+      116,	// ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR
+      116,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR
+      116,	// dsub_5_dsub_7 -> QQQQPR
+      116,	// dsub_5_ssub_12_ssub_13_dsub_7 -> QQQQPR
+      116,	// dsub_5_ssub_12_ssub_13 -> QQQQPR
+      116,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2 -> QQQQPR
     },
     {	// QQQQPR_with_ssub_0
-      115,	// dsub_0 -> QQQQPR_with_ssub_0
-      115,	// dsub_1 -> QQQQPR_with_ssub_0
-      115,	// dsub_2 -> QQQQPR_with_ssub_0
-      115,	// dsub_3 -> QQQQPR_with_ssub_0
-      115,	// dsub_4 -> QQQQPR_with_ssub_0
-      115,	// dsub_5 -> QQQQPR_with_ssub_0
-      115,	// dsub_6 -> QQQQPR_with_ssub_0
-      115,	// dsub_7 -> QQQQPR_with_ssub_0
+      117,	// dsub_0 -> QQQQPR_with_ssub_0
+      117,	// dsub_1 -> QQQQPR_with_ssub_0
+      117,	// dsub_2 -> QQQQPR_with_ssub_0
+      117,	// dsub_3 -> QQQQPR_with_ssub_0
+      117,	// dsub_4 -> QQQQPR_with_ssub_0
+      117,	// dsub_5 -> QQQQPR_with_ssub_0
+      117,	// dsub_6 -> QQQQPR_with_ssub_0
+      117,	// dsub_7 -> QQQQPR_with_ssub_0
       0,	// gsub_0
       0,	// gsub_1
-      115,	// qqsub_0 -> QQQQPR_with_ssub_0
-      115,	// qqsub_1 -> QQQQPR_with_ssub_0
-      115,	// qsub_0 -> QQQQPR_with_ssub_0
-      115,	// qsub_1 -> QQQQPR_with_ssub_0
-      115,	// qsub_2 -> QQQQPR_with_ssub_0
-      115,	// qsub_3 -> QQQQPR_with_ssub_0
-      115,	// ssub_0 -> QQQQPR_with_ssub_0
-      115,	// ssub_1 -> QQQQPR_with_ssub_0
-      115,	// ssub_2 -> QQQQPR_with_ssub_0
-      115,	// ssub_3 -> QQQQPR_with_ssub_0
-      116,	// ssub_4 -> QQQQPR_with_ssub_4
-      116,	// ssub_5 -> QQQQPR_with_ssub_4
-      116,	// ssub_6 -> QQQQPR_with_ssub_4
-      116,	// ssub_7 -> QQQQPR_with_ssub_4
-      117,	// ssub_8 -> QQQQPR_with_ssub_8
-      117,	// ssub_9 -> QQQQPR_with_ssub_8
-      117,	// ssub_10 -> QQQQPR_with_ssub_8
-      117,	// ssub_11 -> QQQQPR_with_ssub_8
-      118,	// ssub_12 -> QQQQPR_with_ssub_12
-      118,	// ssub_13 -> QQQQPR_with_ssub_12
-      118,	// dsub_7_then_ssub_0 -> QQQQPR_with_ssub_12
-      118,	// dsub_7_then_ssub_1 -> QQQQPR_with_ssub_12
-      115,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQQQPR_with_ssub_0
-      115,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_ssub_0
-      115,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQQQPR_with_ssub_0
-      115,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQQQPR_with_ssub_0
-      115,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_ssub_0
-      115,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_ssub_0
-      115,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_0
-      115,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5 -> QQQQPR_with_ssub_0
-      115,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_ssub_0
-      115,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_0
-      115,	// ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_ssub_0
-      115,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_0
-      115,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_0
-      115,	// ssub_6_ssub_7_dsub_5 -> QQQQPR_with_ssub_0
-      115,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5 -> QQQQPR_with_ssub_0
-      115,	// ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_ssub_0
-      115,	// ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_0
-      115,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_0
-      115,	// ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_0
-      115,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_0
-      115,	// dsub_5_dsub_7 -> QQQQPR_with_ssub_0
-      115,	// dsub_5_ssub_12_ssub_13_dsub_7 -> QQQQPR_with_ssub_0
-      115,	// dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_0
-      115,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2 -> QQQQPR_with_ssub_0
+      117,	// qqsub_0 -> QQQQPR_with_ssub_0
+      117,	// qqsub_1 -> QQQQPR_with_ssub_0
+      117,	// qsub_0 -> QQQQPR_with_ssub_0
+      117,	// qsub_1 -> QQQQPR_with_ssub_0
+      117,	// qsub_2 -> QQQQPR_with_ssub_0
+      117,	// qsub_3 -> QQQQPR_with_ssub_0
+      117,	// ssub_0 -> QQQQPR_with_ssub_0
+      117,	// ssub_1 -> QQQQPR_with_ssub_0
+      117,	// ssub_2 -> QQQQPR_with_ssub_0
+      117,	// ssub_3 -> QQQQPR_with_ssub_0
+      118,	// ssub_4 -> QQQQPR_with_ssub_4
+      118,	// ssub_5 -> QQQQPR_with_ssub_4
+      118,	// ssub_6 -> QQQQPR_with_ssub_4
+      118,	// ssub_7 -> QQQQPR_with_ssub_4
+      119,	// ssub_8 -> QQQQPR_with_ssub_8
+      119,	// ssub_9 -> QQQQPR_with_ssub_8
+      119,	// ssub_10 -> QQQQPR_with_ssub_8
+      119,	// ssub_11 -> QQQQPR_with_ssub_8
+      120,	// ssub_12 -> QQQQPR_with_ssub_12
+      120,	// ssub_13 -> QQQQPR_with_ssub_12
+      120,	// dsub_7_then_ssub_0 -> QQQQPR_with_ssub_12
+      120,	// dsub_7_then_ssub_1 -> QQQQPR_with_ssub_12
+      117,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQQQPR_with_ssub_0
+      117,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_ssub_0
+      117,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQQQPR_with_ssub_0
+      117,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQQQPR_with_ssub_0
+      117,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_ssub_0
+      117,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_ssub_0
+      117,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_0
+      117,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5 -> QQQQPR_with_ssub_0
+      117,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_ssub_0
+      117,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_0
+      117,	// ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_ssub_0
+      117,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_0
+      117,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_0
+      117,	// ssub_6_ssub_7_dsub_5 -> QQQQPR_with_ssub_0
+      117,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5 -> QQQQPR_with_ssub_0
+      117,	// ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_ssub_0
+      117,	// ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_0
+      117,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_0
+      117,	// ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_0
+      117,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_0
+      117,	// dsub_5_dsub_7 -> QQQQPR_with_ssub_0
+      117,	// dsub_5_ssub_12_ssub_13_dsub_7 -> QQQQPR_with_ssub_0
+      117,	// dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_0
+      117,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2 -> QQQQPR_with_ssub_0
     },
     {	// QQQQPR_with_ssub_4
-      116,	// dsub_0 -> QQQQPR_with_ssub_4
-      116,	// dsub_1 -> QQQQPR_with_ssub_4
-      116,	// dsub_2 -> QQQQPR_with_ssub_4
-      116,	// dsub_3 -> QQQQPR_with_ssub_4
-      116,	// dsub_4 -> QQQQPR_with_ssub_4
-      116,	// dsub_5 -> QQQQPR_with_ssub_4
-      116,	// dsub_6 -> QQQQPR_with_ssub_4
-      116,	// dsub_7 -> QQQQPR_with_ssub_4
+      118,	// dsub_0 -> QQQQPR_with_ssub_4
+      118,	// dsub_1 -> QQQQPR_with_ssub_4
+      118,	// dsub_2 -> QQQQPR_with_ssub_4
+      118,	// dsub_3 -> QQQQPR_with_ssub_4
+      118,	// dsub_4 -> QQQQPR_with_ssub_4
+      118,	// dsub_5 -> QQQQPR_with_ssub_4
+      118,	// dsub_6 -> QQQQPR_with_ssub_4
+      118,	// dsub_7 -> QQQQPR_with_ssub_4
       0,	// gsub_0
       0,	// gsub_1
-      116,	// qqsub_0 -> QQQQPR_with_ssub_4
-      116,	// qqsub_1 -> QQQQPR_with_ssub_4
-      116,	// qsub_0 -> QQQQPR_with_ssub_4
-      116,	// qsub_1 -> QQQQPR_with_ssub_4
-      116,	// qsub_2 -> QQQQPR_with_ssub_4
-      116,	// qsub_3 -> QQQQPR_with_ssub_4
-      116,	// ssub_0 -> QQQQPR_with_ssub_4
-      116,	// ssub_1 -> QQQQPR_with_ssub_4
-      116,	// ssub_2 -> QQQQPR_with_ssub_4
-      116,	// ssub_3 -> QQQQPR_with_ssub_4
-      116,	// ssub_4 -> QQQQPR_with_ssub_4
-      116,	// ssub_5 -> QQQQPR_with_ssub_4
-      116,	// ssub_6 -> QQQQPR_with_ssub_4
-      116,	// ssub_7 -> QQQQPR_with_ssub_4
-      117,	// ssub_8 -> QQQQPR_with_ssub_8
-      117,	// ssub_9 -> QQQQPR_with_ssub_8
-      117,	// ssub_10 -> QQQQPR_with_ssub_8
-      117,	// ssub_11 -> QQQQPR_with_ssub_8
-      118,	// ssub_12 -> QQQQPR_with_ssub_12
-      118,	// ssub_13 -> QQQQPR_with_ssub_12
-      118,	// dsub_7_then_ssub_0 -> QQQQPR_with_ssub_12
-      118,	// dsub_7_then_ssub_1 -> QQQQPR_with_ssub_12
-      116,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQQQPR_with_ssub_4
-      116,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_ssub_4
-      116,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQQQPR_with_ssub_4
-      116,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQQQPR_with_ssub_4
-      116,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_ssub_4
-      116,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_ssub_4
-      116,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_4
-      116,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5 -> QQQQPR_with_ssub_4
-      116,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_ssub_4
-      116,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_4
-      116,	// ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_ssub_4
-      116,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_4
-      116,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_4
-      116,	// ssub_6_ssub_7_dsub_5 -> QQQQPR_with_ssub_4
-      116,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5 -> QQQQPR_with_ssub_4
-      116,	// ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_ssub_4
-      116,	// ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_4
-      116,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_4
-      116,	// ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_4
-      116,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_4
-      116,	// dsub_5_dsub_7 -> QQQQPR_with_ssub_4
-      116,	// dsub_5_ssub_12_ssub_13_dsub_7 -> QQQQPR_with_ssub_4
-      116,	// dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_4
-      116,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2 -> QQQQPR_with_ssub_4
+      118,	// qqsub_0 -> QQQQPR_with_ssub_4
+      118,	// qqsub_1 -> QQQQPR_with_ssub_4
+      118,	// qsub_0 -> QQQQPR_with_ssub_4
+      118,	// qsub_1 -> QQQQPR_with_ssub_4
+      118,	// qsub_2 -> QQQQPR_with_ssub_4
+      118,	// qsub_3 -> QQQQPR_with_ssub_4
+      118,	// ssub_0 -> QQQQPR_with_ssub_4
+      118,	// ssub_1 -> QQQQPR_with_ssub_4
+      118,	// ssub_2 -> QQQQPR_with_ssub_4
+      118,	// ssub_3 -> QQQQPR_with_ssub_4
+      118,	// ssub_4 -> QQQQPR_with_ssub_4
+      118,	// ssub_5 -> QQQQPR_with_ssub_4
+      118,	// ssub_6 -> QQQQPR_with_ssub_4
+      118,	// ssub_7 -> QQQQPR_with_ssub_4
+      119,	// ssub_8 -> QQQQPR_with_ssub_8
+      119,	// ssub_9 -> QQQQPR_with_ssub_8
+      119,	// ssub_10 -> QQQQPR_with_ssub_8
+      119,	// ssub_11 -> QQQQPR_with_ssub_8
+      120,	// ssub_12 -> QQQQPR_with_ssub_12
+      120,	// ssub_13 -> QQQQPR_with_ssub_12
+      120,	// dsub_7_then_ssub_0 -> QQQQPR_with_ssub_12
+      120,	// dsub_7_then_ssub_1 -> QQQQPR_with_ssub_12
+      118,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQQQPR_with_ssub_4
+      118,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_ssub_4
+      118,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQQQPR_with_ssub_4
+      118,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQQQPR_with_ssub_4
+      118,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_ssub_4
+      118,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_ssub_4
+      118,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_4
+      118,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5 -> QQQQPR_with_ssub_4
+      118,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_ssub_4
+      118,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_4
+      118,	// ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_ssub_4
+      118,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_4
+      118,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_4
+      118,	// ssub_6_ssub_7_dsub_5 -> QQQQPR_with_ssub_4
+      118,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5 -> QQQQPR_with_ssub_4
+      118,	// ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_ssub_4
+      118,	// ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_4
+      118,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_4
+      118,	// ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_4
+      118,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_4
+      118,	// dsub_5_dsub_7 -> QQQQPR_with_ssub_4
+      118,	// dsub_5_ssub_12_ssub_13_dsub_7 -> QQQQPR_with_ssub_4
+      118,	// dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_4
+      118,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2 -> QQQQPR_with_ssub_4
     },
     {	// QQQQPR_with_ssub_8
-      117,	// dsub_0 -> QQQQPR_with_ssub_8
-      117,	// dsub_1 -> QQQQPR_with_ssub_8
-      117,	// dsub_2 -> QQQQPR_with_ssub_8
-      117,	// dsub_3 -> QQQQPR_with_ssub_8
-      117,	// dsub_4 -> QQQQPR_with_ssub_8
-      117,	// dsub_5 -> QQQQPR_with_ssub_8
-      117,	// dsub_6 -> QQQQPR_with_ssub_8
-      117,	// dsub_7 -> QQQQPR_with_ssub_8
+      119,	// dsub_0 -> QQQQPR_with_ssub_8
+      119,	// dsub_1 -> QQQQPR_with_ssub_8
+      119,	// dsub_2 -> QQQQPR_with_ssub_8
+      119,	// dsub_3 -> QQQQPR_with_ssub_8
+      119,	// dsub_4 -> QQQQPR_with_ssub_8
+      119,	// dsub_5 -> QQQQPR_with_ssub_8
+      119,	// dsub_6 -> QQQQPR_with_ssub_8
+      119,	// dsub_7 -> QQQQPR_with_ssub_8
       0,	// gsub_0
       0,	// gsub_1
-      117,	// qqsub_0 -> QQQQPR_with_ssub_8
-      117,	// qqsub_1 -> QQQQPR_with_ssub_8
-      117,	// qsub_0 -> QQQQPR_with_ssub_8
-      117,	// qsub_1 -> QQQQPR_with_ssub_8
-      117,	// qsub_2 -> QQQQPR_with_ssub_8
-      117,	// qsub_3 -> QQQQPR_with_ssub_8
-      117,	// ssub_0 -> QQQQPR_with_ssub_8
-      117,	// ssub_1 -> QQQQPR_with_ssub_8
-      117,	// ssub_2 -> QQQQPR_with_ssub_8
-      117,	// ssub_3 -> QQQQPR_with_ssub_8
-      117,	// ssub_4 -> QQQQPR_with_ssub_8
-      117,	// ssub_5 -> QQQQPR_with_ssub_8
-      117,	// ssub_6 -> QQQQPR_with_ssub_8
-      117,	// ssub_7 -> QQQQPR_with_ssub_8
-      117,	// ssub_8 -> QQQQPR_with_ssub_8
-      117,	// ssub_9 -> QQQQPR_with_ssub_8
-      117,	// ssub_10 -> QQQQPR_with_ssub_8
-      117,	// ssub_11 -> QQQQPR_with_ssub_8
-      118,	// ssub_12 -> QQQQPR_with_ssub_12
-      118,	// ssub_13 -> QQQQPR_with_ssub_12
-      118,	// dsub_7_then_ssub_0 -> QQQQPR_with_ssub_12
-      118,	// dsub_7_then_ssub_1 -> QQQQPR_with_ssub_12
-      117,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQQQPR_with_ssub_8
-      117,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_ssub_8
-      117,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQQQPR_with_ssub_8
-      117,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQQQPR_with_ssub_8
-      117,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_ssub_8
-      117,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_ssub_8
-      117,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_8
-      117,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5 -> QQQQPR_with_ssub_8
-      117,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_ssub_8
-      117,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_8
-      117,	// ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_ssub_8
-      117,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_8
-      117,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_8
-      117,	// ssub_6_ssub_7_dsub_5 -> QQQQPR_with_ssub_8
-      117,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5 -> QQQQPR_with_ssub_8
-      117,	// ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_ssub_8
-      117,	// ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_8
-      117,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_8
-      117,	// ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_8
-      117,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_8
-      117,	// dsub_5_dsub_7 -> QQQQPR_with_ssub_8
-      117,	// dsub_5_ssub_12_ssub_13_dsub_7 -> QQQQPR_with_ssub_8
-      117,	// dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_8
-      117,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2 -> QQQQPR_with_ssub_8
+      119,	// qqsub_0 -> QQQQPR_with_ssub_8
+      119,	// qqsub_1 -> QQQQPR_with_ssub_8
+      119,	// qsub_0 -> QQQQPR_with_ssub_8
+      119,	// qsub_1 -> QQQQPR_with_ssub_8
+      119,	// qsub_2 -> QQQQPR_with_ssub_8
+      119,	// qsub_3 -> QQQQPR_with_ssub_8
+      119,	// ssub_0 -> QQQQPR_with_ssub_8
+      119,	// ssub_1 -> QQQQPR_with_ssub_8
+      119,	// ssub_2 -> QQQQPR_with_ssub_8
+      119,	// ssub_3 -> QQQQPR_with_ssub_8
+      119,	// ssub_4 -> QQQQPR_with_ssub_8
+      119,	// ssub_5 -> QQQQPR_with_ssub_8
+      119,	// ssub_6 -> QQQQPR_with_ssub_8
+      119,	// ssub_7 -> QQQQPR_with_ssub_8
+      119,	// ssub_8 -> QQQQPR_with_ssub_8
+      119,	// ssub_9 -> QQQQPR_with_ssub_8
+      119,	// ssub_10 -> QQQQPR_with_ssub_8
+      119,	// ssub_11 -> QQQQPR_with_ssub_8
+      120,	// ssub_12 -> QQQQPR_with_ssub_12
+      120,	// ssub_13 -> QQQQPR_with_ssub_12
+      120,	// dsub_7_then_ssub_0 -> QQQQPR_with_ssub_12
+      120,	// dsub_7_then_ssub_1 -> QQQQPR_with_ssub_12
+      119,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQQQPR_with_ssub_8
+      119,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_ssub_8
+      119,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQQQPR_with_ssub_8
+      119,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQQQPR_with_ssub_8
+      119,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_ssub_8
+      119,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_ssub_8
+      119,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_8
+      119,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5 -> QQQQPR_with_ssub_8
+      119,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_ssub_8
+      119,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_8
+      119,	// ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_ssub_8
+      119,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_8
+      119,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_8
+      119,	// ssub_6_ssub_7_dsub_5 -> QQQQPR_with_ssub_8
+      119,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5 -> QQQQPR_with_ssub_8
+      119,	// ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_ssub_8
+      119,	// ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_8
+      119,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_8
+      119,	// ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_8
+      119,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_8
+      119,	// dsub_5_dsub_7 -> QQQQPR_with_ssub_8
+      119,	// dsub_5_ssub_12_ssub_13_dsub_7 -> QQQQPR_with_ssub_8
+      119,	// dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_8
+      119,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2 -> QQQQPR_with_ssub_8
     },
     {	// QQQQPR_with_ssub_12
-      118,	// dsub_0 -> QQQQPR_with_ssub_12
-      118,	// dsub_1 -> QQQQPR_with_ssub_12
-      118,	// dsub_2 -> QQQQPR_with_ssub_12
-      118,	// dsub_3 -> QQQQPR_with_ssub_12
-      118,	// dsub_4 -> QQQQPR_with_ssub_12
-      118,	// dsub_5 -> QQQQPR_with_ssub_12
-      118,	// dsub_6 -> QQQQPR_with_ssub_12
-      118,	// dsub_7 -> QQQQPR_with_ssub_12
+      120,	// dsub_0 -> QQQQPR_with_ssub_12
+      120,	// dsub_1 -> QQQQPR_with_ssub_12
+      120,	// dsub_2 -> QQQQPR_with_ssub_12
+      120,	// dsub_3 -> QQQQPR_with_ssub_12
+      120,	// dsub_4 -> QQQQPR_with_ssub_12
+      120,	// dsub_5 -> QQQQPR_with_ssub_12
+      120,	// dsub_6 -> QQQQPR_with_ssub_12
+      120,	// dsub_7 -> QQQQPR_with_ssub_12
       0,	// gsub_0
       0,	// gsub_1
-      118,	// qqsub_0 -> QQQQPR_with_ssub_12
-      118,	// qqsub_1 -> QQQQPR_with_ssub_12
-      118,	// qsub_0 -> QQQQPR_with_ssub_12
-      118,	// qsub_1 -> QQQQPR_with_ssub_12
-      118,	// qsub_2 -> QQQQPR_with_ssub_12
-      118,	// qsub_3 -> QQQQPR_with_ssub_12
-      118,	// ssub_0 -> QQQQPR_with_ssub_12
-      118,	// ssub_1 -> QQQQPR_with_ssub_12
-      118,	// ssub_2 -> QQQQPR_with_ssub_12
-      118,	// ssub_3 -> QQQQPR_with_ssub_12
-      118,	// ssub_4 -> QQQQPR_with_ssub_12
-      118,	// ssub_5 -> QQQQPR_with_ssub_12
-      118,	// ssub_6 -> QQQQPR_with_ssub_12
-      118,	// ssub_7 -> QQQQPR_with_ssub_12
-      118,	// ssub_8 -> QQQQPR_with_ssub_12
-      118,	// ssub_9 -> QQQQPR_with_ssub_12
-      118,	// ssub_10 -> QQQQPR_with_ssub_12
-      118,	// ssub_11 -> QQQQPR_with_ssub_12
-      118,	// ssub_12 -> QQQQPR_with_ssub_12
-      118,	// ssub_13 -> QQQQPR_with_ssub_12
-      118,	// dsub_7_then_ssub_0 -> QQQQPR_with_ssub_12
-      118,	// dsub_7_then_ssub_1 -> QQQQPR_with_ssub_12
-      118,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQQQPR_with_ssub_12
-      118,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_ssub_12
-      118,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQQQPR_with_ssub_12
-      118,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQQQPR_with_ssub_12
-      118,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_ssub_12
-      118,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_ssub_12
-      118,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_12
-      118,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5 -> QQQQPR_with_ssub_12
-      118,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_ssub_12
-      118,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_12
-      118,	// ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_ssub_12
-      118,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_12
-      118,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_12
-      118,	// ssub_6_ssub_7_dsub_5 -> QQQQPR_with_ssub_12
-      118,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5 -> QQQQPR_with_ssub_12
-      118,	// ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_ssub_12
-      118,	// ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_12
-      118,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_12
-      118,	// ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_12
-      118,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_12
-      118,	// dsub_5_dsub_7 -> QQQQPR_with_ssub_12
-      118,	// dsub_5_ssub_12_ssub_13_dsub_7 -> QQQQPR_with_ssub_12
-      118,	// dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_12
-      118,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2 -> QQQQPR_with_ssub_12
+      120,	// qqsub_0 -> QQQQPR_with_ssub_12
+      120,	// qqsub_1 -> QQQQPR_with_ssub_12
+      120,	// qsub_0 -> QQQQPR_with_ssub_12
+      120,	// qsub_1 -> QQQQPR_with_ssub_12
+      120,	// qsub_2 -> QQQQPR_with_ssub_12
+      120,	// qsub_3 -> QQQQPR_with_ssub_12
+      120,	// ssub_0 -> QQQQPR_with_ssub_12
+      120,	// ssub_1 -> QQQQPR_with_ssub_12
+      120,	// ssub_2 -> QQQQPR_with_ssub_12
+      120,	// ssub_3 -> QQQQPR_with_ssub_12
+      120,	// ssub_4 -> QQQQPR_with_ssub_12
+      120,	// ssub_5 -> QQQQPR_with_ssub_12
+      120,	// ssub_6 -> QQQQPR_with_ssub_12
+      120,	// ssub_7 -> QQQQPR_with_ssub_12
+      120,	// ssub_8 -> QQQQPR_with_ssub_12
+      120,	// ssub_9 -> QQQQPR_with_ssub_12
+      120,	// ssub_10 -> QQQQPR_with_ssub_12
+      120,	// ssub_11 -> QQQQPR_with_ssub_12
+      120,	// ssub_12 -> QQQQPR_with_ssub_12
+      120,	// ssub_13 -> QQQQPR_with_ssub_12
+      120,	// dsub_7_then_ssub_0 -> QQQQPR_with_ssub_12
+      120,	// dsub_7_then_ssub_1 -> QQQQPR_with_ssub_12
+      120,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQQQPR_with_ssub_12
+      120,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_ssub_12
+      120,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQQQPR_with_ssub_12
+      120,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQQQPR_with_ssub_12
+      120,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_ssub_12
+      120,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_ssub_12
+      120,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_12
+      120,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5 -> QQQQPR_with_ssub_12
+      120,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_ssub_12
+      120,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_12
+      120,	// ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_ssub_12
+      120,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_12
+      120,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_12
+      120,	// ssub_6_ssub_7_dsub_5 -> QQQQPR_with_ssub_12
+      120,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5 -> QQQQPR_with_ssub_12
+      120,	// ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_ssub_12
+      120,	// ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_ssub_12
+      120,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_12
+      120,	// ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_ssub_12
+      120,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_12
+      120,	// dsub_5_dsub_7 -> QQQQPR_with_ssub_12
+      120,	// dsub_5_ssub_12_ssub_13_dsub_7 -> QQQQPR_with_ssub_12
+      120,	// dsub_5_ssub_12_ssub_13 -> QQQQPR_with_ssub_12
+      120,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2 -> QQQQPR_with_ssub_12
     },
     {	// QQQQPR_with_dsub_0_in_DPR_8
-      119,	// dsub_0 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// dsub_1 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// dsub_2 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// dsub_3 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// dsub_4 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// dsub_5 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// dsub_6 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// dsub_7 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// dsub_0 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// dsub_1 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// dsub_2 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// dsub_3 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// dsub_4 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// dsub_5 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// dsub_6 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// dsub_7 -> QQQQPR_with_dsub_0_in_DPR_8
       0,	// gsub_0
       0,	// gsub_1
-      119,	// qqsub_0 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// qqsub_1 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// qsub_0 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// qsub_1 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// qsub_2 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// qsub_3 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_0 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_1 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_2 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_3 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_4 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_5 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_6 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_7 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_8 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_9 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_10 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_11 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_12 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_13 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// dsub_7_then_ssub_0 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// dsub_7_then_ssub_1 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_6_ssub_7_dsub_5 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// dsub_5_dsub_7 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// dsub_5_ssub_12_ssub_13_dsub_7 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_0_in_DPR_8
-      119,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// qqsub_0 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// qqsub_1 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// qsub_0 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// qsub_1 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// qsub_2 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// qsub_3 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_0 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_1 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_2 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_3 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_4 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_5 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_6 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_7 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_8 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_9 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_10 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_11 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_12 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_13 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// dsub_7_then_ssub_0 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// dsub_7_then_ssub_1 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_6_ssub_7_dsub_5 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// dsub_5_dsub_7 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// dsub_5_ssub_12_ssub_13_dsub_7 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_0_in_DPR_8
+      121,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2 -> QQQQPR_with_dsub_0_in_DPR_8
     },
     {	// QQQQPR_with_dsub_2_in_DPR_8
-      120,	// dsub_0 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// dsub_1 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// dsub_2 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// dsub_3 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// dsub_4 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// dsub_5 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// dsub_6 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// dsub_7 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// dsub_0 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// dsub_1 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// dsub_2 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// dsub_3 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// dsub_4 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// dsub_5 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// dsub_6 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// dsub_7 -> QQQQPR_with_dsub_2_in_DPR_8
       0,	// gsub_0
       0,	// gsub_1
-      120,	// qqsub_0 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// qqsub_1 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// qsub_0 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// qsub_1 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// qsub_2 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// qsub_3 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_0 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_1 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_2 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_3 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_4 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_5 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_6 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_7 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_8 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_9 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_10 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_11 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_12 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_13 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// dsub_7_then_ssub_0 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// dsub_7_then_ssub_1 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_6_ssub_7_dsub_5 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// dsub_5_dsub_7 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// dsub_5_ssub_12_ssub_13_dsub_7 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_2_in_DPR_8
-      120,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// qqsub_0 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// qqsub_1 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// qsub_0 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// qsub_1 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// qsub_2 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// qsub_3 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_0 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_1 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_2 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_3 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_4 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_5 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_6 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_7 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_8 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_9 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_10 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_11 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_12 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_13 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// dsub_7_then_ssub_0 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// dsub_7_then_ssub_1 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_6_ssub_7_dsub_5 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// dsub_5_dsub_7 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// dsub_5_ssub_12_ssub_13_dsub_7 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_2_in_DPR_8
+      122,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2 -> QQQQPR_with_dsub_2_in_DPR_8
     },
     {	// QQQQPR_with_dsub_4_in_DPR_8
-      121,	// dsub_0 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// dsub_1 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// dsub_2 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// dsub_3 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// dsub_4 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// dsub_5 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// dsub_6 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// dsub_7 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// dsub_0 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// dsub_1 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// dsub_2 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// dsub_3 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// dsub_4 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// dsub_5 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// dsub_6 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// dsub_7 -> QQQQPR_with_dsub_4_in_DPR_8
       0,	// gsub_0
       0,	// gsub_1
-      121,	// qqsub_0 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// qqsub_1 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// qsub_0 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// qsub_1 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// qsub_2 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// qsub_3 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_0 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_1 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_2 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_3 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_4 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_5 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_6 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_7 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_8 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_9 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_10 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_11 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_12 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_13 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// dsub_7_then_ssub_0 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// dsub_7_then_ssub_1 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_6_ssub_7_dsub_5 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// dsub_5_dsub_7 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// dsub_5_ssub_12_ssub_13_dsub_7 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_4_in_DPR_8
-      121,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// qqsub_0 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// qqsub_1 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// qsub_0 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// qsub_1 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// qsub_2 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// qsub_3 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_0 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_1 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_2 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_3 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_4 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_5 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_6 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_7 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_8 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_9 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_10 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_11 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_12 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_13 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// dsub_7_then_ssub_0 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// dsub_7_then_ssub_1 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_6_ssub_7_dsub_5 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// dsub_5_dsub_7 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// dsub_5_ssub_12_ssub_13_dsub_7 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_4_in_DPR_8
+      123,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2 -> QQQQPR_with_dsub_4_in_DPR_8
     },
     {	// QQQQPR_with_dsub_6_in_DPR_8
-      122,	// dsub_0 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// dsub_1 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// dsub_2 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// dsub_3 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// dsub_4 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// dsub_5 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// dsub_6 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// dsub_7 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// dsub_0 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// dsub_1 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// dsub_2 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// dsub_3 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// dsub_4 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// dsub_5 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// dsub_6 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// dsub_7 -> QQQQPR_with_dsub_6_in_DPR_8
       0,	// gsub_0
       0,	// gsub_1
-      122,	// qqsub_0 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// qqsub_1 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// qsub_0 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// qsub_1 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// qsub_2 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// qsub_3 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_0 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_1 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_2 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_3 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_4 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_5 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_6 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_7 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_8 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_9 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_10 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_11 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_12 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_13 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// dsub_7_then_ssub_0 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// dsub_7_then_ssub_1 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_6_ssub_7_dsub_5 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// dsub_5_dsub_7 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// dsub_5_ssub_12_ssub_13_dsub_7 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_6_in_DPR_8
-      122,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// qqsub_0 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// qqsub_1 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// qsub_0 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// qsub_1 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// qsub_2 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// qsub_3 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_0 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_1 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_2 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_3 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_4 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_5 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_6 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_7 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_8 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_9 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_10 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_11 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_12 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_13 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// dsub_7_then_ssub_0 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// dsub_7_then_ssub_1 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_0_ssub_1_ssub_4_ssub_5 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_0_ssub_1_ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_2_ssub_3_ssub_6_ssub_7 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_2_ssub_3_ssub_4_ssub_5 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_0_ssub_1_ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_2_ssub_3_ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_2_ssub_3_ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_4_ssub_5_ssub_8_ssub_9 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_4_ssub_5_ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_4_ssub_5_ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_6_ssub_7_dsub_5 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_6_ssub_7_dsub_5_dsub_7 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_6_ssub_7_ssub_8_ssub_9 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_6_ssub_7_ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_8_ssub_9_ssub_12_ssub_13 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_8_ssub_9_dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// dsub_5_dsub_7 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// dsub_5_ssub_12_ssub_13_dsub_7 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// dsub_5_ssub_12_ssub_13 -> QQQQPR_with_dsub_6_in_DPR_8
+      124,	// ssub_4_ssub_5_ssub_6_ssub_7_qsub_2 -> QQQQPR_with_dsub_6_in_DPR_8
     },
   };
   assert(RC && "Missing regclass");
@@ -15678,6 +15923,7 @@ getRegClassWeight(const TargetRegisterClass *RC) const {
     {1, 16},  	// GPRwithZR
     {1, 16},  	// SPR_8
     {1, 15},  	// GPRnopc
+    {1, 15},  	// GPRwithAPSR_NZCVnosp
     {0, 14},  	// GPRwithAPSRnosp
     {1, 15},  	// GPRwithZRnosp
     {1, 14},  	// rGPR
@@ -15687,7 +15933,7 @@ getRegClassWeight(const TargetRegisterClass *RC) const {
     {1, 8},  	// tGPR
     {1, 8},  	// tGPREven
     {1, 7},  	// GPRnopc_and_hGPR
-    {1, 6},  	// GPRwithAPSRnosp_and_hGPR
+    {1, 6},  	// GPRwithAPSR_NZCVnosp_and_hGPR
     {1, 6},  	// tGPROdd
     {1, 5},  	// tcGPR
     {1, 4},  	// hGPR_and_tGPREven
@@ -15699,6 +15945,7 @@ getRegClassWeight(const TargetRegisterClass *RC) const {
     {1, 2},  	// tGPREven_and_tGPR_and_tcGPR
     {1, 2},  	// tGPROdd_and_tcGPR
     {0, 0},  	// CCR
+    {1, 1},  	// FPCXTRegs
     {1, 1},  	// GPRlr
     {1, 1},  	// GPRsp
     {1, 1},  	// VCCR
@@ -15800,20 +16047,21 @@ unsigned ARMGenRegisterInfo::
 getRegUnitWeight(unsigned RegUnit) const {
   assert(RegUnit < 83 && "invalid register unit");
   static const uint8_t RUWeightTable[] = {
-    0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
+    0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, };
   return RUWeightTable[RegUnit];
 }
 
 
 // Get the number of dimensions of register pressure.
 unsigned ARMGenRegisterInfo::getNumRegPressureSets() const {
-  return 34;
+  return 35;
 }
 
 // Get the name of this register unit pressure set.
 const char *ARMGenRegisterInfo::
 getRegPressureSetName(unsigned Idx) const {
   static const char *const PressureNameTable[] = {
+    "FPCXTRegs",
     "GPRlr",
     "VCCR",
     "cl_FPSCR_NZCV",
@@ -15823,17 +16071,17 @@ getRegPressureSetName(unsigned Idx) const {
     "tGPROdd",
     "hGPR",
     "tcGPR",
-    "tGPROdd+tcGPR",
+    "tGPROdd_with_tcGPR",
     "tGPR",
-    "tGPR+tcGPR",
+    "tGPR_with_tcGPR",
     "tGPREven",
-    "hGPR+tGPREven",
-    "hGPR+tGPROdd",
-    "hGPR+tcGPR",
-    "tGPR+tGPREven",
+    "hGPR_with_tGPREven",
+    "hGPR_with_tGPROdd",
+    "hGPR_with_tcGPR",
+    "tGPR_with_tGPREven",
     "GPR",
     "GPRwithZR",
-    "GPRwithAPSR+GPRwithZR",
+    "GPRwithAPSR_with_GPRwithZR",
     "DQuad_with_dsub_0_in_DPR_8",
     "DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR",
     "HPR",
@@ -15857,73 +16105,75 @@ getRegPressureSetName(unsigned Idx) const {
 unsigned ARMGenRegisterInfo::
 getRegPressureSetLimit(const MachineFunction &MF, unsigned Idx) const {
   static const uint8_t PressureLimitTable[] = {
-    1,  	// 0: GPRlr
-    1,  	// 1: VCCR
-    1,  	// 2: cl_FPSCR_NZCV
-    1,  	// 3: hGPR_and_tGPRwithpc
-    2,  	// 4: GPRsp
-    4,  	// 5: tGPR_and_tGPREven
-    6,  	// 6: tGPROdd
-    8,  	// 7: hGPR
-    8,  	// 8: tcGPR
-    10,  	// 9: tGPROdd+tcGPR
-    11,  	// 10: tGPR
-    11,  	// 11: tGPR+tcGPR
-    11,  	// 12: tGPREven
-    12,  	// 13: hGPR+tGPREven
-    12,  	// 14: hGPR+tGPROdd
-    12,  	// 15: hGPR+tcGPR
-    13,  	// 16: tGPR+tGPREven
-    17,  	// 17: GPR
-    17,  	// 18: GPRwithZR
-    17,  	// 19: GPRwithAPSR+GPRwithZR
-    24,  	// 20: DQuad_with_dsub_0_in_DPR_8
-    32,  	// 21: DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
-    32,  	// 22: HPR
-    34,  	// 23: DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-    34,  	// 24: DPair_with_ssub_0
-    36,  	// 25: DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-    36,  	// 26: DPairSpc_with_ssub_0
-    38,  	// 27: DQuad_with_ssub_0
-    40,  	// 28: DTripleSpc_with_ssub_0
-    44,  	// 29: QQQQPR_with_ssub_0
-    60,  	// 30: DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-    62,  	// 31: DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
-    62,  	// 32: DTriple_with_qsub_0_in_QPR
-    64,  	// 33: DPR
+    1,  	// 0: FPCXTRegs
+    1,  	// 1: GPRlr
+    1,  	// 2: VCCR
+    1,  	// 3: cl_FPSCR_NZCV
+    1,  	// 4: hGPR_and_tGPRwithpc
+    2,  	// 5: GPRsp
+    4,  	// 6: tGPR_and_tGPREven
+    6,  	// 7: tGPROdd
+    8,  	// 8: hGPR
+    8,  	// 9: tcGPR
+    10,  	// 10: tGPROdd_with_tcGPR
+    11,  	// 11: tGPR
+    11,  	// 12: tGPR_with_tcGPR
+    11,  	// 13: tGPREven
+    12,  	// 14: hGPR_with_tGPREven
+    12,  	// 15: hGPR_with_tGPROdd
+    12,  	// 16: hGPR_with_tcGPR
+    13,  	// 17: tGPR_with_tGPREven
+    17,  	// 18: GPR
+    17,  	// 19: GPRwithZR
+    17,  	// 20: GPRwithAPSR_with_GPRwithZR
+    24,  	// 21: DQuad_with_dsub_0_in_DPR_8
+    32,  	// 22: DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_MQPR
+    32,  	// 23: HPR
+    34,  	// 24: DTriple_with_ssub_0_and_DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+    34,  	// 25: DPair_with_ssub_0
+    36,  	// 26: DQuad_with_ssub_0_and_DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+    36,  	// 27: DPairSpc_with_ssub_0
+    38,  	// 28: DQuad_with_ssub_0
+    40,  	// 29: DTripleSpc_with_ssub_0
+    44,  	// 30: QQQQPR_with_ssub_0
+    60,  	// 31: DQuad_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+    62,  	// 32: DTriple_with_ssub_2_ssub_3_ssub_4_ssub_5_in_QPR
+    62,  	// 33: DTriple_with_qsub_0_in_QPR
+    64,  	// 34: DPR
   };
   return PressureLimitTable[Idx];
 }
 
 /// Table of pressure sets per register class or unit.
 static const int RCSetsTable[] = {
-  /* 0 */ 1, -1,
+  /* 0 */ 0, -1,
   /* 2 */ 2, -1,
-  /* 4 */ 7, 13, 14, 15, 17, 18, -1,
-  /* 11 */ 10, 11, 16, 17, 18, -1,
-  /* 17 */ 3, 7, 10, 11, 13, 14, 15, 16, 17, 18, -1,
-  /* 28 */ 17, 19, -1,
-  /* 31 */ 6, 9, 10, 14, 17, 18, 19, -1,
-  /* 39 */ 8, 9, 11, 12, 15, 17, 18, 19, -1,
-  /* 48 */ 7, 13, 14, 15, 17, 18, 19, -1,
-  /* 56 */ 6, 7, 9, 10, 13, 14, 15, 17, 18, 19, -1,
-  /* 67 */ 4, 7, 8, 9, 11, 12, 13, 14, 15, 17, 18, 19, -1,
-  /* 80 */ 10, 11, 16, 17, 18, 19, -1,
-  /* 87 */ 5, 8, 10, 11, 12, 13, 16, 17, 18, 19, -1,
-  /* 98 */ 6, 9, 10, 11, 14, 16, 17, 18, 19, -1,
-  /* 108 */ 8, 9, 11, 12, 15, 16, 17, 18, 19, -1,
-  /* 118 */ 8, 9, 10, 11, 12, 15, 16, 17, 18, 19, -1,
-  /* 129 */ 8, 9, 11, 12, 13, 15, 16, 17, 18, 19, -1,
-  /* 140 */ 5, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, -1,
-  /* 153 */ 6, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, -1,
-  /* 166 */ 0, 7, 12, 13, 14, 15, 16, 17, 18, 19, -1,
-  /* 177 */ 4, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, -1,
-  /* 191 */ 31, 33, -1,
-  /* 194 */ 20, 22, 24, 26, 27, 28, 29, 32, 33, -1,
-  /* 204 */ 25, 27, 28, 29, 30, 31, 32, 33, -1,
-  /* 213 */ 23, 25, 26, 27, 28, 29, 30, 31, 32, 33, -1,
-  /* 224 */ 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, -1,
-  /* 237 */ 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, -1,
+  /* 4 */ 3, -1,
+  /* 6 */ 8, 14, 15, 16, 18, 19, -1,
+  /* 13 */ 11, 12, 17, 18, 19, -1,
+  /* 19 */ 4, 8, 11, 12, 14, 15, 16, 17, 18, 19, -1,
+  /* 30 */ 18, 20, -1,
+  /* 33 */ 7, 10, 11, 15, 18, 19, 20, -1,
+  /* 41 */ 9, 10, 12, 13, 16, 18, 19, 20, -1,
+  /* 50 */ 8, 14, 15, 16, 18, 19, 20, -1,
+  /* 58 */ 7, 8, 10, 11, 14, 15, 16, 18, 19, 20, -1,
+  /* 69 */ 5, 8, 9, 10, 12, 13, 14, 15, 16, 18, 19, 20, -1,
+  /* 82 */ 11, 12, 17, 18, 19, 20, -1,
+  /* 89 */ 6, 9, 11, 12, 13, 14, 17, 18, 19, 20, -1,
+  /* 100 */ 7, 10, 11, 12, 15, 17, 18, 19, 20, -1,
+  /* 110 */ 9, 10, 12, 13, 16, 17, 18, 19, 20, -1,
+  /* 120 */ 9, 10, 11, 12, 13, 16, 17, 18, 19, 20, -1,
+  /* 131 */ 9, 10, 12, 13, 14, 16, 17, 18, 19, 20, -1,
+  /* 142 */ 6, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, -1,
+  /* 155 */ 7, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, -1,
+  /* 168 */ 1, 8, 13, 14, 15, 16, 17, 18, 19, 20, -1,
+  /* 179 */ 5, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, -1,
+  /* 193 */ 32, 34, -1,
+  /* 196 */ 21, 23, 25, 27, 28, 29, 30, 33, 34, -1,
+  /* 206 */ 26, 28, 29, 30, 31, 32, 33, 34, -1,
+  /* 215 */ 24, 26, 27, 28, 29, 30, 31, 32, 33, 34, -1,
+  /* 226 */ 22, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, -1,
+  /* 239 */ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, -1,
 };
 
 /// Get the dimensions of register pressure impacted by this register class.
@@ -15931,7 +16181,7 @@ static const int RCSetsTable[] = {
 const int* ARMGenRegisterInfo::
 getRegClassPressureSets(const TargetRegisterClass *RC) const {
   static const uint8_t RCSetStartTable[] = {
-    195,1,195,1,8,28,36,194,35,1,36,35,11,1,4,80,91,48,48,31,108,167,87,98,118,129,56,140,153,1,166,67,0,2,17,177,192,195,194,35,35,80,48,39,118,48,67,192,197,195,194,194,192,196,192,195,194,195,195,194,194,192,192,199,197,201,196,191,197,195,195,194,194,196,213,194,238,195,194,194,194,237,194,194,237,192,199,197,195,194,194,194,192,198,197,192,208,196,195,194,197,204,194,195,224,194,238,194,237,194,194,237,237,192,200,199,197,195,195,194,194,194,};
+    197,1,197,1,10,30,38,196,37,1,1,38,37,13,1,6,82,93,50,50,33,110,169,89,100,120,131,58,142,155,1,0,168,69,2,4,19,179,194,197,196,37,37,82,50,41,120,50,69,194,199,197,196,196,194,198,194,197,196,197,197,196,196,194,194,201,199,203,198,193,199,197,197,196,196,198,215,196,240,197,196,196,196,239,196,196,239,194,201,199,197,196,196,196,194,200,199,194,210,198,197,196,199,206,196,197,226,196,240,196,239,196,196,239,239,194,202,201,199,197,197,196,196,196,};
   return &RCSetsTable[RCSetStartTable[RC->getID()]];
 }
 
@@ -15941,7 +16191,7 @@ const int* ARMGenRegisterInfo::
 getRegUnitPressureSets(unsigned RegUnit) const {
   assert(RegUnit < 83 && "invalid register unit");
   static const uint8_t RUSetStartTable[] = {
-    1,28,1,1,1,1,1,2,1,1,1,166,17,67,1,0,36,194,194,237,237,237,237,237,237,237,237,237,237,237,237,237,237,237,237,237,237,237,237,237,237,238,238,238,238,238,238,238,238,224,213,204,206,207,207,208,208,208,208,208,208,208,208,208,191,1,1,1,1,1,140,153,140,153,87,98,87,98,167,56,167,56,177,};
+    1,30,1,0,1,1,1,4,1,1,1,168,19,69,1,2,38,196,196,239,239,239,239,239,239,239,239,239,239,239,239,239,239,239,239,239,239,239,239,239,239,240,240,240,240,240,240,240,240,226,215,206,208,209,209,210,210,210,210,210,210,210,210,210,193,1,1,1,1,1,142,155,142,155,89,100,89,100,169,58,169,58,179,};
   return &RCSetsTable[RUSetStartTable[RegUnit]];
 }
 
@@ -15970,11 +16220,11 @@ extern const unsigned ARMEHFlavour0L2DwarfSize;
 ARMGenRegisterInfo::
 ARMGenRegisterInfo(unsigned RA, unsigned DwarfFlavour, unsigned EHFlavour,
       unsigned PC, unsigned HwMode)
-  : TargetRegisterInfo(ARMRegInfoDesc, RegisterClasses, RegisterClasses+122,
+  : TargetRegisterInfo(ARMRegInfoDesc, RegisterClasses, RegisterClasses+124,
              SubRegIndexNameTable, SubRegIndexLaneMaskTable,
-             LaneBitmask(0xFFFFFFFF), RegClassInfos, HwMode) {
+             LaneBitmask(0xFFFFFFFFFFFFFFFF), RegClassInfos, HwMode) {
   InitMCRegisterInfo(ARMRegDesc, 295, RA, PC,
-                     ARMMCRegisterClasses, 122,
+                     ARMMCRegisterClasses, 124,
                      ARMRegUnitRoots,
                      83,
                      ARMRegDiffLists,

@@ -256,6 +256,340 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(0),
     UINT64_C(0),
     UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
     UINT64_C(68591616),	// ABS_ZPmZ_B
     UINT64_C(81174528),	// ABS_ZPmZ_D
     UINT64_C(72785920),	// ABS_ZPmZ_H
@@ -303,11 +637,9 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1314962432),	// ADDPv8i16
     UINT64_C(237026304),	// ADDPv8i8
     UINT64_C(822083584),	// ADDSWri
-    UINT64_C(0),	// ADDSWrr
     UINT64_C(721420288),	// ADDSWrs
     UINT64_C(723517440),	// ADDSWrx
     UINT64_C(2969567232),	// ADDSXri
-    UINT64_C(0),	// ADDSXrr
     UINT64_C(2868903936),	// ADDSXrs
     UINT64_C(2871001088),	// ADDSXrx
     UINT64_C(2871025664),	// ADDSXrx64
@@ -318,11 +650,9 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1316075520),	// ADDVv8i16v
     UINT64_C(238139392),	// ADDVv8i8v
     UINT64_C(285212672),	// ADDWri
-    UINT64_C(0),	// ADDWrr
     UINT64_C(184549376),	// ADDWrs
     UINT64_C(186646528),	// ADDWrx
     UINT64_C(2432696320),	// ADDXri
-    UINT64_C(0),	// ADDXrr
     UINT64_C(2332033024),	// ADDXrs
     UINT64_C(2334130176),	// ADDXrx
     UINT64_C(2334154752),	// ADDXrx64
@@ -338,7 +668,6 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(81788928),	// ADD_ZZZ_D
     UINT64_C(73400320),	// ADD_ZZZ_H
     UINT64_C(77594624),	// ADD_ZZZ_S
-    UINT64_C(0),	// ADDlowTLS
     UINT64_C(1310753792),	// ADDv16i8
     UINT64_C(1591772160),	// ADDv1i64
     UINT64_C(245400576),	// ADDv2i32
@@ -347,8 +676,6 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1319142400),	// ADDv4i32
     UINT64_C(1314948096),	// ADDv8i16
     UINT64_C(237011968),	// ADDv8i8
-    UINT64_C(0),	// ADJCALLSTACKDOWN
-    UINT64_C(0),	// ADJCALLSTACKUP
     UINT64_C(268435456),	// ADR
     UINT64_C(2415919104),	// ADRP
     UINT64_C(81829888),	// ADR_LSL_ZZZ_D_0
@@ -373,15 +700,11 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1311262720),	// AESErr
     UINT64_C(1159783424),	// AESIMC_ZZ_B
     UINT64_C(1311275008),	// AESIMCrr
-    UINT64_C(0),	// AESIMCrrTied
     UINT64_C(1159782400),	// AESMC_ZZ_B
     UINT64_C(1311270912),	// AESMCrr
-    UINT64_C(0),	// AESMCrrTied
     UINT64_C(1912602624),	// ANDSWri
-    UINT64_C(0),	// ANDSWrr
     UINT64_C(1778384896),	// ANDSWrs
     UINT64_C(4060086272),	// ANDSXri
-    UINT64_C(0),	// ANDSXrr
     UINT64_C(3925868544),	// ANDSXrs
     UINT64_C(624967680),	// ANDS_PPzPP
     UINT64_C(68820992),	// ANDV_VPZ_B
@@ -389,10 +712,8 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(73015296),	// ANDV_VPZ_H
     UINT64_C(77209600),	// ANDV_VPZ_S
     UINT64_C(301989888),	// ANDWri
-    UINT64_C(0),	// ANDWrr
     UINT64_C(167772160),	// ANDWrs
     UINT64_C(2449473536),	// ANDXri
-    UINT64_C(0),	// ANDXrr
     UINT64_C(2315255808),	// ANDXrs
     UINT64_C(620773376),	// AND_PPzPP
     UINT64_C(92274688),	// AND_ZI
@@ -448,7 +769,7 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(3573563487),	// AXFLAG
     UINT64_C(335544320),	// B
     UINT64_C(3458203648),	// BCAX
-    UINT64_C(73414656),	// BCAX_ZZZZ_D
+    UINT64_C(73414656),	// BCAX_ZZZZ
     UINT64_C(1157673984),	// BDEP_ZZZ_B
     UINT64_C(1170256896),	// BDEP_ZZZ_D
     UINT64_C(1161868288),	// BDEP_ZZZ_H
@@ -457,20 +778,37 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1170255872),	// BEXT_ZZZ_D
     UINT64_C(1161867264),	// BEXT_ZZZ_H
     UINT64_C(1166061568),	// BEXT_ZZZ_S
+    UINT64_C(255913984),	// BF16DOTlanev4bf16
+    UINT64_C(1329655808),	// BF16DOTlanev8bf16
+    UINT64_C(509820928),	// BFCVT
+    UINT64_C(245458944),	// BFCVTN
+    UINT64_C(1319200768),	// BFCVTN2
+    UINT64_C(1686806528),	// BFCVTNT_ZPmZ
+    UINT64_C(1703583744),	// BFCVT_ZPmZ
+    UINT64_C(1684029440),	// BFDOT_ZZI
+    UINT64_C(1684045824),	// BFDOT_ZZZ
+    UINT64_C(776010752),	// BFDOTv4bf16
+    UINT64_C(1849752576),	// BFDOTv8bf16
+    UINT64_C(784399360),	// BFMLALB
+    UINT64_C(264302592),	// BFMLALBIdx
+    UINT64_C(1858141184),	// BFMLALT
+    UINT64_C(1338044416),	// BFMLALTIdx
+    UINT64_C(1849748480),	// BFMMLA
+    UINT64_C(1692418048),	// BFMMLA_B_ZZI
+    UINT64_C(1692434432),	// BFMMLA_B_ZZZ
+    UINT64_C(1692419072),	// BFMMLA_T_ZZI
+    UINT64_C(1692435456),	// BFMMLA_T_ZZZ
+    UINT64_C(1684071424),	// BFMMLA_ZZZ
     UINT64_C(855638016),	// BFMWri
     UINT64_C(3007315968),	// BFMXri
     UINT64_C(1157675008),	// BGRP_ZZZ_B
     UINT64_C(1170257920),	// BGRP_ZZZ_D
     UINT64_C(1161869312),	// BGRP_ZZZ_H
     UINT64_C(1166063616),	// BGRP_ZZZ_S
-    UINT64_C(0),	// BICSWrr
     UINT64_C(1780482048),	// BICSWrs
-    UINT64_C(0),	// BICSXrr
     UINT64_C(3927965696),	// BICSXrs
     UINT64_C(624967696),	// BICS_PPzPP
-    UINT64_C(0),	// BICWrr
     UINT64_C(169869312),	// BICWrs
-    UINT64_C(0),	// BICXrr
     UINT64_C(2317352960),	// BICXrs
     UINT64_C(620773392),	// BIC_PPzPP
     UINT64_C(68878336),	// BIC_ZPmZ_B
@@ -512,9 +850,9 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(620806144),	// BRKPA_PPzPP
     UINT64_C(625000464),	// BRKPBS_PPzPP
     UINT64_C(620806160),	// BRKPB_PPzPP
-    UINT64_C(73415680),	// BSL1N_ZZZZ_D
-    UINT64_C(77609984),	// BSL2N_ZZZZ_D
-    UINT64_C(69221376),	// BSL_ZZZZ_D
+    UINT64_C(73415680),	// BSL1N_ZZZZ
+    UINT64_C(77609984),	// BSL2N_ZZZZ
+    UINT64_C(69221376),	// BSL_ZZZZ
     UINT64_C(1851792384),	// BSLv16i8
     UINT64_C(778050560),	// BSLv8i8
     UINT64_C(1409286144),	// Bcc
@@ -792,11 +1130,6 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(603987984),	// CMPNE_WIDE_PPzZZ_B
     UINT64_C(608182288),	// CMPNE_WIDE_PPzZZ_H
     UINT64_C(612376592),	// CMPNE_WIDE_PPzZZ_S
-    UINT64_C(0),	// CMP_SWAP_128
-    UINT64_C(0),	// CMP_SWAP_16
-    UINT64_C(0),	// CMP_SWAP_32
-    UINT64_C(0),	// CMP_SWAP_64
-    UINT64_C(0),	// CMP_SWAP_8
     UINT64_C(1310755840),	// CMTSTv16i8
     UINT64_C(1591774208),	// CMTSTv1i64
     UINT64_C(245402624),	// CMTSTv2i32
@@ -865,7 +1198,6 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(635445248),	// CTERMEQ_XX
     UINT64_C(631250960),	// CTERMNE_WW
     UINT64_C(635445264),	// CTERMNE_XX
-    UINT64_C(0),	// CompilerBarrier
     UINT64_C(3567255553),	// DCPS1
     UINT64_C(3567255554),	// DCPS2
     UINT64_C(3567255555),	// DCPS3
@@ -914,13 +1246,10 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1308754944),	// DUPv8i16lane
     UINT64_C(234949632),	// DUPv8i8gpr
     UINT64_C(234947584),	// DUPv8i8lane
-    UINT64_C(0),	// EMITBKEY
-    UINT64_C(0),	// EONWrr
     UINT64_C(1243611136),	// EONWrs
-    UINT64_C(0),	// EONXrr
     UINT64_C(3391094784),	// EONXrs
     UINT64_C(3456106496),	// EOR3
-    UINT64_C(69220352),	// EOR3_ZZZZ_D
+    UINT64_C(69220352),	// EOR3_ZZZZ
     UINT64_C(1157664768),	// EORBT_ZZZ_B
     UINT64_C(1170247680),	// EORBT_ZZZ_D
     UINT64_C(1161859072),	// EORBT_ZZZ_H
@@ -935,10 +1264,8 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(72949760),	// EORV_VPZ_H
     UINT64_C(77144064),	// EORV_VPZ_S
     UINT64_C(1375731712),	// EORWri
-    UINT64_C(0),	// EORWrr
     UINT64_C(1241513984),	// EORWrs
     UINT64_C(3523215360),	// EORXri
-    UINT64_C(0),	// EORXrr
     UINT64_C(3388997632),	// EORXrs
     UINT64_C(620773888),	// EOR_PPzPP
     UINT64_C(88080384),	// EOR_ZI
@@ -958,7 +1285,6 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(90177536),	// EXT_ZZI_B
     UINT64_C(1845493760),	// EXTv16i8
     UINT64_C(771751936),	// EXTv8i8
-    UINT64_C(0),	// F128CSEL
     UINT64_C(2126517248),	// FABD16
     UINT64_C(2124469248),	// FABD32
     UINT64_C(2128663552),	// FABD64
@@ -1606,17 +1932,16 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1333809152),	// FMLSv4i32_indexed
     UINT64_C(1321208832),	// FMLSv8f16
     UINT64_C(1325420544),	// FMLSv8i16_indexed
-    UINT64_C(0),	// FMOVD0
+    UINT64_C(1692460032),	// FMMLA_ZZZ_D
+    UINT64_C(1688265728),	// FMMLA_ZZZ_S
     UINT64_C(2662203392),	// FMOVDXHighr
     UINT64_C(2657484800),	// FMOVDXr
     UINT64_C(509612032),	// FMOVDi
     UINT64_C(509624320),	// FMOVDr
-    UINT64_C(0),	// FMOVH0
     UINT64_C(518389760),	// FMOVHWr
     UINT64_C(2665873408),	// FMOVHXr
     UINT64_C(518000640),	// FMOVHi
     UINT64_C(518012928),	// FMOVHr
-    UINT64_C(0),	// FMOVS0
     UINT64_C(505806848),	// FMOVSWr
     UINT64_C(505417728),	// FMOVSi
     UINT64_C(505430016),	// FMOVSr
@@ -2043,8 +2368,6 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1159766016),	// HISTSEG_ZZZ
     UINT64_C(3560964096),	// HLT
     UINT64_C(3556769794),	// HVC
-    UINT64_C(0),	// HWASAN_CHECK_MEMACCESS
-    UINT64_C(0),	// HWASAN_CHECK_MEMACCESS_SHORTGRANULES
     UINT64_C(70311936),	// INCB_XPiI
     UINT64_C(82894848),	// INCD_XPiI
     UINT64_C(82886656),	// INCD_ZPiI
@@ -2092,11 +2415,7 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1308695552),	// INSvi8gpr
     UINT64_C(1845560320),	// INSvi8lane
     UINT64_C(2596278272),	// IRG
-    UINT64_C(0),	// IRGstack
     UINT64_C(3573756127),	// ISB
-    UINT64_C(0),	// JumpTableDest16
-    UINT64_C(0),	// JumpTableDest32
-    UINT64_C(0),	// JumpTableDest8
     UINT64_C(86024192),	// LASTA_RPZ_B
     UINT64_C(98607104),	// LASTA_RPZ_D
     UINT64_C(90218496),	// LASTA_RPZ_H
@@ -2169,6 +2488,14 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(2227232768),	// LD1RH_D_IMM
     UINT64_C(2227216384),	// LD1RH_IMM
     UINT64_C(2227224576),	// LD1RH_S_IMM
+    UINT64_C(2753560576),	// LD1RO_B
+    UINT64_C(2753568768),	// LD1RO_B_IMM
+    UINT64_C(2778726400),	// LD1RO_D
+    UINT64_C(2778734592),	// LD1RO_D_IMM
+    UINT64_C(2761949184),	// LD1RO_H
+    UINT64_C(2761957376),	// LD1RO_H_IMM
+    UINT64_C(2770337792),	// LD1RO_W
+    UINT64_C(2770345984),	// LD1RO_W_IMM
     UINT64_C(2751463424),	// LD1RQ_B
     UINT64_C(2751471616),	// LD1RQ_B_IMM
     UINT64_C(2776629248),	// LD1RQ_D
@@ -2738,7 +3065,6 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1214217216),	// LDXRH
     UINT64_C(2287959040),	// LDXRW
     UINT64_C(3361700864),	// LDXRX
-    UINT64_C(0),	// LOADgot
     UINT64_C(68648960),	// LSLR_ZPmZ_B
     UINT64_C(81231872),	// LSLR_ZPmZ_D
     UINT64_C(72843264),	// LSLR_ZPmZ_H
@@ -2841,7 +3167,6 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1325433856),	// MOVIv8i16
     UINT64_C(1920991232),	// MOVKWi
     UINT64_C(4068474880),	// MOVKXi
-    UINT64_C(0),	// MOVMCSym
     UINT64_C(310378496),	// MOVNWi
     UINT64_C(2457862144),	// MOVNXi
     UINT64_C(68231168),	// MOVPRFX_ZPmZ_B
@@ -2855,15 +3180,6 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(69254144),	// MOVPRFX_ZZ
     UINT64_C(1384120320),	// MOVZWi
     UINT64_C(3531603968),	// MOVZXi
-    UINT64_C(0),	// MOVaddr
-    UINT64_C(0),	// MOVaddrBA
-    UINT64_C(0),	// MOVaddrCP
-    UINT64_C(0),	// MOVaddrEXT
-    UINT64_C(0),	// MOVaddrJT
-    UINT64_C(0),	// MOVaddrTLS
-    UINT64_C(0),	// MOVbaseTLS
-    UINT64_C(0),	// MOVi32imm
-    UINT64_C(0),	// MOVi64imm
     UINT64_C(3575644160),	// MRS
     UINT64_C(67166208),	// MSB_ZPmZZ_B
     UINT64_C(79749120),	// MSB_ZPmZZ_D
@@ -2907,7 +3223,7 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1862304768),	// MVNIv8i16
     UINT64_C(633356816),	// NANDS_PPzPP
     UINT64_C(629162512),	// NAND_PPzPP
-    UINT64_C(81804288),	// NBSL_ZZZZ_D
+    UINT64_C(81804288),	// NBSL_ZZZZ
     UINT64_C(68657152),	// NEG_ZPmZ_B
     UINT64_C(81240064),	// NEG_ZPmZ_D
     UINT64_C(72851456),	// NEG_ZPmZ_H
@@ -2931,19 +3247,15 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1847613440),	// NOTv16i8
     UINT64_C(773871616),	// NOTv8i8
     UINT64_C(633356304),	// ORNS_PPzPP
-    UINT64_C(0),	// ORNWrr
     UINT64_C(706740224),	// ORNWrs
-    UINT64_C(0),	// ORNXrr
     UINT64_C(2854223872),	// ORNXrs
     UINT64_C(629162000),	// ORN_PPzPP
     UINT64_C(1323310080),	// ORNv16i8
     UINT64_C(249568256),	// ORNv8i8
     UINT64_C(633356288),	// ORRS_PPzPP
     UINT64_C(838860800),	// ORRWri
-    UINT64_C(0),	// ORRWrr
     UINT64_C(704643072),	// ORRWrs
     UINT64_C(2986344448),	// ORRXri
-    UINT64_C(0),	// ORRXrr
     UINT64_C(2852126720),	// ORRXrs
     UINT64_C(629161984),	// ORR_PPzPP
     UINT64_C(83886080),	// ORR_ZI
@@ -3077,7 +3389,6 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(3596550144),	// RET
     UINT64_C(3596553215),	// RETAA
     UINT64_C(3596554239),	// RETAB
-    UINT64_C(0),	// RET_ReallyLR
     UINT64_C(1522533376),	// REV16Wr
     UINT64_C(3670017024),	// REV16Xr
     UINT64_C(1310726144),	// REV16v16i8
@@ -3493,6 +3804,8 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1329618944),	// SMLSLv8i16_indexed
     UINT64_C(1314955264),	// SMLSLv8i16_v4i32
     UINT64_C(237019136),	// SMLSLv8i8_v8i16
+    UINT64_C(1317053440),	// SMMLA
+    UINT64_C(1157666816),	// SMMLA_ZZZ
     UINT64_C(235023360),	// SMOVvi16to32
     UINT64_C(1308765184),	// SMOVvi16to64
     UINT64_C(1308896256),	// SMOVvi32to64
@@ -3528,7 +3841,6 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1329635328),	// SMULLv8i16_indexed
     UINT64_C(1314963456),	// SMULLv8i16_v4i32
     UINT64_C(237027328),	// SMULLv8i8_v8i16
-    UINT64_C(0),	// SPACE
     UINT64_C(86867968),	// SPLICE_ZPZZ_B
     UINT64_C(99450880),	// SPLICE_ZPZZ_D
     UINT64_C(91062272),	// SPLICE_ZPZZ_H
@@ -4339,8 +4651,6 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1753219072),	// STGPpost
     UINT64_C(1769996288),	// STGPpre
     UINT64_C(3642756096),	// STGPreIndex
-    UINT64_C(0),	// STGloop
-    UINT64_C(0),	// STGloop_wback
     UINT64_C(144669696),	// STLLRB
     UINT64_C(1218411520),	// STLLRH
     UINT64_C(2292153344),	// STLLRW
@@ -4467,8 +4777,6 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(3646949376),	// STZGOffset
     UINT64_C(3646948352),	// STZGPostIndex
     UINT64_C(3646950400),	// STZGPreIndex
-    UINT64_C(0),	// STZGloop
-    UINT64_C(0),	// STZGloop_wback
     UINT64_C(3514826752),	// SUBG
     UINT64_C(1163948032),	// SUBHNB_ZZZ_B
     UINT64_C(1168142336),	// SUBHNB_ZZZ_H
@@ -4493,20 +4801,16 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(71499776),	// SUBR_ZPmZ_H
     UINT64_C(75694080),	// SUBR_ZPmZ_S
     UINT64_C(1895825408),	// SUBSWri
-    UINT64_C(0),	// SUBSWrr
     UINT64_C(1795162112),	// SUBSWrs
     UINT64_C(1797259264),	// SUBSWrx
     UINT64_C(4043309056),	// SUBSXri
-    UINT64_C(0),	// SUBSXrr
     UINT64_C(3942645760),	// SUBSXrs
     UINT64_C(3944742912),	// SUBSXrx
     UINT64_C(3944767488),	// SUBSXrx64
     UINT64_C(1358954496),	// SUBWri
-    UINT64_C(0),	// SUBWrr
     UINT64_C(1258291200),	// SUBWrs
     UINT64_C(1260388352),	// SUBWrx
     UINT64_C(3506438144),	// SUBXri
-    UINT64_C(0),	// SUBXrr
     UINT64_C(3405774848),	// SUBXrs
     UINT64_C(3407872000),	// SUBXrx
     UINT64_C(3407896576),	// SUBXrx64
@@ -4530,6 +4834,9 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1856013312),	// SUBv4i32
     UINT64_C(1851819008),	// SUBv8i16
     UINT64_C(773882880),	// SUBv8i8
+    UINT64_C(1151343616),	// SUDOT_ZZZI
+    UINT64_C(1325461504),	// SUDOTlanev16i8
+    UINT64_C(251719680),	// SUDOTlanev8i8
     UINT64_C(99694592),	// SUNPKHI_ZZ_D
     UINT64_C(91305984),	// SUNPKHI_ZZ_H
     UINT64_C(95500288),	// SUNPKHI_ZZ_S
@@ -4576,9 +4883,6 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(81043456),	// SXTW_ZPmZ_D
     UINT64_C(3576168448),	// SYSLxt
     UINT64_C(3574071296),	// SYSxt
-    UINT64_C(0),	// SpeculationSafeValueW
-    UINT64_C(0),	// SpeculationSafeValueX
-    UINT64_C(0),	// TAGPstack
     UINT64_C(85993472),	// TBL_ZZZZ_B
     UINT64_C(98576384),	// TBL_ZZZZ_D
     UINT64_C(90187776),	// TBL_ZZZZ_H
@@ -4613,12 +4917,6 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(3053453312),	// TBZX
     UINT64_C(3563061248),	// TCANCEL
     UINT64_C(3573756031),	// TCOMMIT
-    UINT64_C(0),	// TCRETURNdi
-    UINT64_C(0),	// TCRETURNri
-    UINT64_C(0),	// TCRETURNriALL
-    UINT64_C(0),	// TCRETURNriBTI
-    UINT64_C(0),	// TLSDESCCALL
-    UINT64_C(0),	// TLSDESC_CALLSEQ
     UINT64_C(86003712),	// TRN1_PPP_B
     UINT64_C(98586624),	// TRN1_PPP_D
     UINT64_C(90198016),	// TRN1_PPP_H
@@ -4626,6 +4924,7 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(86011904),	// TRN1_ZZZ_B
     UINT64_C(98594816),	// TRN1_ZZZ_D
     UINT64_C(90206208),	// TRN1_ZZZ_H
+    UINT64_C(94377984),	// TRN1_ZZZ_Q
     UINT64_C(94400512),	// TRN1_ZZZ_S
     UINT64_C(1308633088),	// TRN1v16i8
     UINT64_C(243279872),	// TRN1v2i32
@@ -4641,6 +4940,7 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(86012928),	// TRN2_ZZZ_B
     UINT64_C(98595840),	// TRN2_ZZZ_D
     UINT64_C(90207232),	// TRN2_ZZZ_H
+    UINT64_C(94379008),	// TRN2_ZZZ_Q
     UINT64_C(94401536),	// TRN2_ZZZ_S
     UINT64_C(1308649472),	// TRN2v16i8
     UINT64_C(243296256),	// TRN2v2i32
@@ -4927,6 +5227,8 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1866489856),	// UMLSLv8i16_indexed
     UINT64_C(1851826176),	// UMLSLv8i16_v4i32
     UINT64_C(773890048),	// UMLSLv8i8_v8i16
+    UINT64_C(1853924352),	// UMMLA
+    UINT64_C(1170249728),	// UMMLA_ZZZ
     UINT64_C(235027456),	// UMOVvi16
     UINT64_C(235158528),	// UMOVvi32
     UINT64_C(1309162496),	// UMOVvi64
@@ -5209,6 +5511,12 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1864381440),	// URSRAv4i32_shift
     UINT64_C(1863332864),	// URSRAv8i16_shift
     UINT64_C(789066752),	// URSRAv8i8_shift
+    UINT64_C(1149270016),	// USDOT_ZZZ
+    UINT64_C(1151342592),	// USDOT_ZZZI
+    UINT64_C(1333850112),	// USDOTlanev16i8
+    UINT64_C(260108288),	// USDOTlanev8i8
+    UINT64_C(1317051392),	// USDOTv16i8
+    UINT64_C(243309568),	// USDOTv8i8
     UINT64_C(1161865216),	// USHLLB_ZZI_D
     UINT64_C(1158195200),	// USHLLB_ZZI_H
     UINT64_C(1158719488),	// USHLLB_ZZI_S
@@ -5237,6 +5545,8 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(1864369152),	// USHRv4i32_shift
     UINT64_C(1863320576),	// USHRv8i16_shift
     UINT64_C(789054464),	// USHRv8i8_shift
+    UINT64_C(1317055488),	// USMMLA
+    UINT64_C(1166055424),	// USMMLA_ZZZ
     UINT64_C(1142784000),	// USQADD_ZPmZ_B
     UINT64_C(1155366912),	// USQADD_ZPmZ_D
     UINT64_C(1146978304),	// USQADD_ZPmZ_H
@@ -5307,6 +5617,7 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(86009856),	// UZP1_ZZZ_B
     UINT64_C(98592768),	// UZP1_ZZZ_D
     UINT64_C(90204160),	// UZP1_ZZZ_H
+    UINT64_C(94373888),	// UZP1_ZZZ_Q
     UINT64_C(94398464),	// UZP1_ZZZ_S
     UINT64_C(1308628992),	// UZP1v16i8
     UINT64_C(243275776),	// UZP1v2i32
@@ -5322,6 +5633,7 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(86010880),	// UZP2_ZZZ_B
     UINT64_C(98593792),	// UZP2_ZZZ_D
     UINT64_C(90205184),	// UZP2_ZZZ_H
+    UINT64_C(94374912),	// UZP2_ZZZ_Q
     UINT64_C(94399488),	// UZP2_ZZZ_S
     UINT64_C(1308645376),	// UZP2v16i8
     UINT64_C(243292160),	// UZP2v2i32
@@ -5425,6 +5737,7 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(86007808),	// ZIP1_ZZZ_B
     UINT64_C(98590720),	// ZIP1_ZZZ_D
     UINT64_C(90202112),	// ZIP1_ZZZ_H
+    UINT64_C(94371840),	// ZIP1_ZZZ_Q
     UINT64_C(94396416),	// ZIP1_ZZZ_S
     UINT64_C(1308637184),	// ZIP1v16i8
     UINT64_C(243283968),	// ZIP1v2i32
@@ -5440,6 +5753,7 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(86008832),	// ZIP2_ZZZ_B
     UINT64_C(98591744),	// ZIP2_ZZZ_D
     UINT64_C(90203136),	// ZIP2_ZZZ_H
+    UINT64_C(94372864),	// ZIP2_ZZZ_Q
     UINT64_C(94397440),	// ZIP2_ZZZ_S
     UINT64_C(1308653568),	// ZIP2v16i8
     UINT64_C(243300352),	// ZIP2v2i32
@@ -5455,19 +5769,6 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
   uint64_t op = 0;
   (void)op;  // suppress warning
   switch (opcode) {
-    case AArch64::ADDSWrr:
-    case AArch64::ADDSXrr:
-    case AArch64::ADDWrr:
-    case AArch64::ADDXrr:
-    case AArch64::ADDlowTLS:
-    case AArch64::ADJCALLSTACKDOWN:
-    case AArch64::ADJCALLSTACKUP:
-    case AArch64::AESIMCrrTied:
-    case AArch64::AESMCrrTied:
-    case AArch64::ANDSWrr:
-    case AArch64::ANDSXrr:
-    case AArch64::ANDWrr:
-    case AArch64::ANDXrr:
     case AArch64::AUTIA1716:
     case AArch64::AUTIASP:
     case AArch64::AUTIAZ:
@@ -5475,51 +5776,11 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     case AArch64::AUTIBSP:
     case AArch64::AUTIBZ:
     case AArch64::AXFLAG:
-    case AArch64::BICSWrr:
-    case AArch64::BICSXrr:
-    case AArch64::BICWrr:
-    case AArch64::BICXrr:
     case AArch64::CFINV:
-    case AArch64::CMP_SWAP_128:
-    case AArch64::CMP_SWAP_16:
-    case AArch64::CMP_SWAP_32:
-    case AArch64::CMP_SWAP_64:
-    case AArch64::CMP_SWAP_8:
-    case AArch64::CompilerBarrier:
     case AArch64::DRPS:
-    case AArch64::EMITBKEY:
-    case AArch64::EONWrr:
-    case AArch64::EONXrr:
-    case AArch64::EORWrr:
-    case AArch64::EORXrr:
     case AArch64::ERET:
     case AArch64::ERETAA:
     case AArch64::ERETAB:
-    case AArch64::F128CSEL:
-    case AArch64::FMOVD0:
-    case AArch64::FMOVH0:
-    case AArch64::FMOVS0:
-    case AArch64::HWASAN_CHECK_MEMACCESS:
-    case AArch64::HWASAN_CHECK_MEMACCESS_SHORTGRANULES:
-    case AArch64::IRGstack:
-    case AArch64::JumpTableDest16:
-    case AArch64::JumpTableDest32:
-    case AArch64::JumpTableDest8:
-    case AArch64::LOADgot:
-    case AArch64::MOVMCSym:
-    case AArch64::MOVaddr:
-    case AArch64::MOVaddrBA:
-    case AArch64::MOVaddrCP:
-    case AArch64::MOVaddrEXT:
-    case AArch64::MOVaddrJT:
-    case AArch64::MOVaddrTLS:
-    case AArch64::MOVbaseTLS:
-    case AArch64::MOVi32imm:
-    case AArch64::MOVi64imm:
-    case AArch64::ORNWrr:
-    case AArch64::ORNXrr:
-    case AArch64::ORRWrr:
-    case AArch64::ORRXrr:
     case AArch64::PACIA1716:
     case AArch64::PACIASP:
     case AArch64::PACIAZ:
@@ -5528,28 +5789,9 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     case AArch64::PACIBZ:
     case AArch64::RETAA:
     case AArch64::RETAB:
-    case AArch64::RET_ReallyLR:
     case AArch64::SB:
     case AArch64::SETFFR:
-    case AArch64::SPACE:
-    case AArch64::STGloop:
-    case AArch64::STGloop_wback:
-    case AArch64::STZGloop:
-    case AArch64::STZGloop_wback:
-    case AArch64::SUBSWrr:
-    case AArch64::SUBSXrr:
-    case AArch64::SUBWrr:
-    case AArch64::SUBXrr:
-    case AArch64::SpeculationSafeValueW:
-    case AArch64::SpeculationSafeValueX:
-    case AArch64::TAGPstack:
     case AArch64::TCOMMIT:
-    case AArch64::TCRETURNdi:
-    case AArch64::TCRETURNri:
-    case AArch64::TCRETURNriALL:
-    case AArch64::TCRETURNriBTI:
-    case AArch64::TLSDESCCALL:
-    case AArch64::TLSDESC_CALLSEQ:
     case AArch64::TSB:
     case AArch64::XAFLAG:
     case AArch64::XPACLRI: {
@@ -7801,6 +8043,8 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     case AArch64::AUTDB:
     case AArch64::AUTIA:
     case AArch64::AUTIB:
+    case AArch64::BFCVT:
+    case AArch64::BFCVTN:
     case AArch64::CLSWr:
     case AArch64::CLSXr:
     case AArch64::CLSv16i8:
@@ -8459,8 +8703,6 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     case AArch64::ASRVXr:
     case AArch64::BICv16i8:
     case AArch64::BICv8i8:
-    case AArch64::BIFv16i8:
-    case AArch64::BIFv8i8:
     case AArch64::CMEQv16i8:
     case AArch64::CMEQv1i64:
     case AArch64::CMEQv2i32:
@@ -10251,6 +10493,7 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     }
     case AArch64::AESDrr:
     case AArch64::AESErr:
+    case AArch64::BFCVTN2:
     case AArch64::FCVTNv4i32:
     case AArch64::FCVTNv8i16:
     case AArch64::FCVTXNv4f32:
@@ -10313,6 +10556,8 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       Value |= op;
       break;
     }
+    case AArch64::BFMLALBIdx:
+    case AArch64::BFMLALTIdx:
     case AArch64::FMLAL2lanev4f16:
     case AArch64::FMLAL2lanev8f16:
     case AArch64::FMLALlanev4f16:
@@ -10374,6 +10619,13 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     case AArch64::ADDHNv2i64_v4i32:
     case AArch64::ADDHNv4i32_v8i16:
     case AArch64::ADDHNv8i16_v16i8:
+    case AArch64::BFDOTv4bf16:
+    case AArch64::BFDOTv8bf16:
+    case AArch64::BFMLALB:
+    case AArch64::BFMLALT:
+    case AArch64::BFMMLA:
+    case AArch64::BIFv16i8:
+    case AArch64::BIFv8i8:
     case AArch64::BITv16i8:
     case AArch64::BITv8i8:
     case AArch64::BSLv16i8:
@@ -10447,6 +10699,7 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     case AArch64::SMLSLv4i32_v2i64:
     case AArch64::SMLSLv8i16_v4i32:
     case AArch64::SMLSLv8i8_v8i16:
+    case AArch64::SMMLA:
     case AArch64::SQDMLALi16:
     case AArch64::SQDMLALi32:
     case AArch64::SQDMLALv2i32_v2i64:
@@ -10499,7 +10752,11 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     case AArch64::UMLSLv4i16_v4i32:
     case AArch64::UMLSLv4i32_v2i64:
     case AArch64::UMLSLv8i16_v4i32:
-    case AArch64::UMLSLv8i8_v8i16: {
+    case AArch64::UMLSLv8i8_v8i16:
+    case AArch64::UMMLA:
+    case AArch64::USDOTv16i8:
+    case AArch64::USDOTv8i8:
+    case AArch64::USMMLA: {
       // op: Rd
       op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
       op &= UINT64_C(31);
@@ -10516,6 +10773,8 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       Value |= op;
       break;
     }
+    case AArch64::BF16DOTlanev4bf16:
+    case AArch64::BF16DOTlanev8bf16:
     case AArch64::FMLAv1i32_indexed:
     case AArch64::FMLAv2i32_indexed:
     case AArch64::FMLAv4i32_indexed:
@@ -10544,12 +10803,16 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     case AArch64::SQRDMLSHi32_indexed:
     case AArch64::SQRDMLSHv2i32_indexed:
     case AArch64::SQRDMLSHv4i32_indexed:
+    case AArch64::SUDOTlanev16i8:
+    case AArch64::SUDOTlanev8i8:
     case AArch64::UDOTlanev16i8:
     case AArch64::UDOTlanev8i8:
     case AArch64::UMLALv2i32_indexed:
     case AArch64::UMLALv4i32_indexed:
     case AArch64::UMLSLv2i32_indexed:
-    case AArch64::UMLSLv4i32_indexed: {
+    case AArch64::UMLSLv4i32_indexed:
+    case AArch64::USDOTlanev16i8:
+    case AArch64::USDOTlanev8i8: {
       // op: Rd
       op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
       op &= UINT64_C(31);
@@ -13281,6 +13544,8 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       Value |= op;
       break;
     }
+    case AArch64::BFCVTNT_ZPmZ:
+    case AArch64::BFCVT_ZPmZ:
     case AArch64::RBIT_ZPmZ_B:
     case AArch64::RBIT_ZPmZ_D:
     case AArch64::RBIT_ZPmZ_H:
@@ -13405,10 +13670,12 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     case AArch64::TRN1_ZZZ_B:
     case AArch64::TRN1_ZZZ_D:
     case AArch64::TRN1_ZZZ_H:
+    case AArch64::TRN1_ZZZ_Q:
     case AArch64::TRN1_ZZZ_S:
     case AArch64::TRN2_ZZZ_B:
     case AArch64::TRN2_ZZZ_D:
     case AArch64::TRN2_ZZZ_H:
+    case AArch64::TRN2_ZZZ_Q:
     case AArch64::TRN2_ZZZ_S:
     case AArch64::UMULH_ZZZ_B:
     case AArch64::UMULH_ZZZ_D:
@@ -13425,18 +13692,22 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     case AArch64::UZP1_ZZZ_B:
     case AArch64::UZP1_ZZZ_D:
     case AArch64::UZP1_ZZZ_H:
+    case AArch64::UZP1_ZZZ_Q:
     case AArch64::UZP1_ZZZ_S:
     case AArch64::UZP2_ZZZ_B:
     case AArch64::UZP2_ZZZ_D:
     case AArch64::UZP2_ZZZ_H:
+    case AArch64::UZP2_ZZZ_Q:
     case AArch64::UZP2_ZZZ_S:
     case AArch64::ZIP1_ZZZ_B:
     case AArch64::ZIP1_ZZZ_D:
     case AArch64::ZIP1_ZZZ_H:
+    case AArch64::ZIP1_ZZZ_Q:
     case AArch64::ZIP1_ZZZ_S:
     case AArch64::ZIP2_ZZZ_B:
     case AArch64::ZIP2_ZZZ_D:
     case AArch64::ZIP2_ZZZ_H:
+    case AArch64::ZIP2_ZZZ_Q:
     case AArch64::ZIP2_ZZZ_S: {
       // op: Zd
       op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
@@ -14480,10 +14751,13 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     case AArch64::ADCLB_ZZZ_S:
     case AArch64::ADCLT_ZZZ_D:
     case AArch64::ADCLT_ZZZ_S:
+    case AArch64::BFDOT_ZZZ:
     case AArch64::FMLALB_ZZZ_SHH:
     case AArch64::FMLALT_ZZZ_SHH:
     case AArch64::FMLSLB_ZZZ_SHH:
     case AArch64::FMLSLT_ZZZ_SHH:
+    case AArch64::FMMLA_ZZZ_D:
+    case AArch64::FMMLA_ZZZ_S:
     case AArch64::SABALB_ZZZ_D:
     case AArch64::SABALB_ZZZ_H:
     case AArch64::SABALB_ZZZ_S:
@@ -14512,6 +14786,7 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     case AArch64::SMLSLT_ZZZ_D:
     case AArch64::SMLSLT_ZZZ_H:
     case AArch64::SMLSLT_ZZZ_S:
+    case AArch64::SMMLA_ZZZ:
     case AArch64::SQDMLALBT_ZZZ_D:
     case AArch64::SQDMLALBT_ZZZ_H:
     case AArch64::SQDMLALBT_ZZZ_S:
@@ -14561,7 +14836,10 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     case AArch64::UMLSLB_ZZZ_S:
     case AArch64::UMLSLT_ZZZ_D:
     case AArch64::UMLSLT_ZZZ_H:
-    case AArch64::UMLSLT_ZZZ_S: {
+    case AArch64::UMLSLT_ZZZ_S:
+    case AArch64::UMMLA_ZZZ:
+    case AArch64::USDOT_ZZZ:
+    case AArch64::USMMLA_ZZZ: {
       // op: Zda
       op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
       op &= UINT64_C(31);
@@ -14606,6 +14884,29 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       op = getMachineOpValue(MI, MI.getOperand(4), Fixups, STI);
       op &= UINT64_C(3);
       op <<= 10;
+      Value |= op;
+      break;
+    }
+    case AArch64::SUDOT_ZZZI:
+    case AArch64::USDOT_ZZZI: {
+      // op: Zda
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      Value |= op;
+      // op: Zn
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 5;
+      Value |= op;
+      // op: Zm
+      op = getMachineOpValue(MI, MI.getOperand(3), Fixups, STI);
+      op &= UINT64_C(7);
+      op <<= 16;
+      Value |= op;
+      // op: idx
+      op = getMachineOpValue(MI, MI.getOperand(4), Fixups, STI);
+      op &= UINT64_C(3);
+      op <<= 19;
       Value |= op;
       break;
     }
@@ -14831,6 +15132,28 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       Value |= op;
       break;
     }
+    case AArch64::BFMMLA_B_ZZI:
+    case AArch64::BFMMLA_T_ZZI: {
+      // op: Zda
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      Value |= op;
+      // op: Zn
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 5;
+      Value |= op;
+      // op: iop
+      op = getMachineOpValue(MI, MI.getOperand(4), Fixups, STI);
+      Value |= (op & UINT64_C(6)) << 18;
+      Value |= (op & UINT64_C(1)) << 11;
+      // op: Zm
+      op = getMachineOpValue(MI, MI.getOperand(3), Fixups, STI);
+      op &= UINT64_C(7);
+      op <<= 16;
+      Value |= op;
+      break;
+    }
     case AArch64::SDOT_ZZZI_D:
     case AArch64::UDOT_ZZZI_D: {
       // op: Zda
@@ -14854,6 +15177,7 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       Value |= op;
       break;
     }
+    case AArch64::BFDOT_ZZI:
     case AArch64::SDOT_ZZZI_S:
     case AArch64::UDOT_ZZZI_S: {
       // op: Zda
@@ -14943,12 +15267,12 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       Value |= op;
       break;
     }
-    case AArch64::BCAX_ZZZZ_D:
-    case AArch64::BSL1N_ZZZZ_D:
-    case AArch64::BSL2N_ZZZZ_D:
-    case AArch64::BSL_ZZZZ_D:
-    case AArch64::EOR3_ZZZZ_D:
-    case AArch64::NBSL_ZZZZ_D: {
+    case AArch64::BCAX_ZZZZ:
+    case AArch64::BSL1N_ZZZZ:
+    case AArch64::BSL2N_ZZZZ:
+    case AArch64::BSL_ZZZZ:
+    case AArch64::EOR3_ZZZZ:
+    case AArch64::NBSL_ZZZZ: {
       // op: Zdn
       op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
       op &= UINT64_C(31);
@@ -15247,6 +15571,25 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       Value |= op;
       break;
     }
+    case AArch64::BFMMLA_B_ZZZ:
+    case AArch64::BFMMLA_T_ZZZ:
+    case AArch64::BFMMLA_ZZZ: {
+      // op: Zm
+      op = getMachineOpValue(MI, MI.getOperand(3), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 16;
+      Value |= op;
+      // op: Zda
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      Value |= op;
+      // op: Zn
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 5;
+      Value |= op;
+      break;
+    }
     case AArch64::FADDV_VPZ_D:
     case AArch64::FADDV_VPZ_H:
     case AArch64::FADDV_VPZ_S:
@@ -15331,6 +15674,10 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       Value |= op;
       break;
     }
+    case AArch64::LD1RO_B:
+    case AArch64::LD1RO_D:
+    case AArch64::LD1RO_H:
+    case AArch64::LD1RO_W:
     case AArch64::LD1RQ_B:
     case AArch64::LD1RQ_D:
     case AArch64::LD1RQ_H:
@@ -15393,6 +15740,10 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       Value |= op;
       break;
     }
+    case AArch64::LD1RO_B_IMM:
+    case AArch64::LD1RO_D_IMM:
+    case AArch64::LD1RO_H_IMM:
+    case AArch64::LD1RO_W_IMM:
     case AArch64::LD1RQ_B_IMM:
     case AArch64::LD1RQ_D_IMM:
     case AArch64::LD1RQ_H_IMM:
@@ -15654,66 +16005,71 @@ uint64_t AArch64MCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
 
 // Bits for subtarget features that participate in instruction matching.
 enum SubtargetFeatureBits : uint8_t {
-  Feature_HasV8_1aBit = 53,
-  Feature_HasV8_2aBit = 54,
-  Feature_HasV8_3aBit = 55,
-  Feature_HasV8_4aBit = 56,
-  Feature_HasV8_5aBit = 57,
-  Feature_HasVHBit = 58,
-  Feature_HasLORBit = 20,
-  Feature_HasPABit = 26,
-  Feature_HasJSBit = 19,
-  Feature_HasCCIDXBit = 5,
-  Feature_HasComplxNumBit = 8,
-  Feature_HasNVBit = 25,
-  Feature_HasRASv8_4Bit = 33,
-  Feature_HasMPAMBit = 22,
-  Feature_HasDITBit = 10,
-  Feature_HasTRACEV8_4Bit = 51,
+  Feature_HasV8_1aBit = 57,
+  Feature_HasV8_2aBit = 58,
+  Feature_HasV8_3aBit = 59,
+  Feature_HasV8_4aBit = 60,
+  Feature_HasV8_5aBit = 61,
+  Feature_HasV8_6aBit = 62,
+  Feature_HasVHBit = 63,
+  Feature_HasLORBit = 21,
+  Feature_HasPABit = 30,
+  Feature_HasJSBit = 20,
+  Feature_HasCCIDXBit = 6,
+  Feature_HasComplxNumBit = 9,
+  Feature_HasNVBit = 29,
+  Feature_HasRASv8_4Bit = 37,
+  Feature_HasMPAMBit = 23,
+  Feature_HasDITBit = 11,
+  Feature_HasTRACEV8_4Bit = 55,
   Feature_HasAMBit = 1,
-  Feature_HasSEL2Bit = 38,
-  Feature_HasPMUBit = 29,
-  Feature_HasTLB_RMIBit = 49,
-  Feature_HasFMIBit = 13,
-  Feature_HasRCPC_IMMOBit = 35,
-  Feature_HasFPARMv8Bit = 15,
-  Feature_HasNEONBit = 24,
-  Feature_HasCryptoBit = 9,
-  Feature_HasSM4Bit = 41,
-  Feature_HasSHA3Bit = 40,
-  Feature_HasSHA2Bit = 39,
+  Feature_HasSEL2Bit = 42,
+  Feature_HasPMUBit = 33,
+  Feature_HasTLB_RMIBit = 53,
+  Feature_HasFMIBit = 14,
+  Feature_HasRCPC_IMMOBit = 39,
+  Feature_HasFPARMv8Bit = 16,
+  Feature_HasNEONBit = 28,
+  Feature_HasCryptoBit = 10,
+  Feature_HasSM4Bit = 45,
+  Feature_HasSHA3Bit = 44,
+  Feature_HasSHA2Bit = 43,
   Feature_HasAESBit = 0,
-  Feature_HasDotProdBit = 11,
-  Feature_HasCRCBit = 7,
-  Feature_HasLSEBit = 21,
-  Feature_HasRASBit = 32,
-  Feature_HasRDMBit = 36,
-  Feature_HasFullFP16Bit = 17,
-  Feature_HasFP16FMLBit = 14,
-  Feature_HasSPEBit = 42,
-  Feature_HasFuseAESBit = 18,
-  Feature_HasSVEBit = 43,
-  Feature_HasSVE2Bit = 44,
-  Feature_HasSVE2AESBit = 45,
-  Feature_HasSVE2SM4Bit = 48,
-  Feature_HasSVE2SHA3Bit = 47,
-  Feature_HasSVE2BitPermBit = 46,
-  Feature_HasRCPCBit = 34,
+  Feature_HasDotProdBit = 12,
+  Feature_HasCRCBit = 8,
+  Feature_HasLSEBit = 22,
+  Feature_HasRASBit = 36,
+  Feature_HasRDMBit = 40,
+  Feature_HasFullFP16Bit = 18,
+  Feature_HasFP16FMLBit = 15,
+  Feature_HasSPEBit = 46,
+  Feature_HasFuseAESBit = 19,
+  Feature_HasSVEBit = 47,
+  Feature_HasSVE2Bit = 48,
+  Feature_HasSVE2AESBit = 49,
+  Feature_HasSVE2SM4Bit = 52,
+  Feature_HasSVE2SHA3Bit = 51,
+  Feature_HasSVE2BitPermBit = 50,
+  Feature_HasRCPCBit = 38,
   Feature_HasAltNZCVBit = 2,
-  Feature_HasFRInt3264Bit = 16,
-  Feature_HasSBBit = 37,
-  Feature_HasPredResBit = 30,
-  Feature_HasCCDPBit = 4,
-  Feature_HasBTIBit = 3,
-  Feature_HasMTEBit = 23,
-  Feature_HasTMEBit = 50,
-  Feature_HasETEBit = 12,
-  Feature_HasTRBEBit = 52,
-  Feature_UseNegativeImmediatesBit = 59,
-  Feature_HasCCPPBit = 6,
-  Feature_HasPANBit = 27,
-  Feature_HasPsUAOBit = 31,
-  Feature_HasPAN_RWVBit = 28,
+  Feature_HasFRInt3264Bit = 17,
+  Feature_HasSBBit = 41,
+  Feature_HasPredResBit = 34,
+  Feature_HasCCDPBit = 5,
+  Feature_HasBTIBit = 4,
+  Feature_HasMTEBit = 24,
+  Feature_HasTMEBit = 54,
+  Feature_HasETEBit = 13,
+  Feature_HasTRBEBit = 56,
+  Feature_HasBF16Bit = 3,
+  Feature_HasMatMulInt8Bit = 27,
+  Feature_HasMatMulFP32Bit = 25,
+  Feature_HasMatMulFP64Bit = 26,
+  Feature_UseNegativeImmediatesBit = 64,
+  Feature_HasCCPPBit = 7,
+  Feature_HasPANBit = 31,
+  Feature_HasPsUAOBit = 35,
+  Feature_HasPAN_RWVBit = 32,
 };
 
 #ifndef NDEBUG
@@ -15721,6 +16077,7 @@ static const char *SubtargetFeatureNames[] = {
   "Feature_HasAES",
   "Feature_HasAM",
   "Feature_HasAltNZCV",
+  "Feature_HasBF16",
   "Feature_HasBTI",
   "Feature_HasCCDP",
   "Feature_HasCCIDX",
@@ -15742,6 +16099,9 @@ static const char *SubtargetFeatureNames[] = {
   "Feature_HasLSE",
   "Feature_HasMPAM",
   "Feature_HasMTE",
+  "Feature_HasMatMulFP32",
+  "Feature_HasMatMulFP64",
+  "Feature_HasMatMulInt8",
   "Feature_HasNEON",
   "Feature_HasNV",
   "Feature_HasPA",
@@ -15776,6 +16136,7 @@ static const char *SubtargetFeatureNames[] = {
   "Feature_HasV8_3a",
   "Feature_HasV8_4a",
   "Feature_HasV8_5a",
+  "Feature_HasV8_6a",
   "Feature_HasVH",
   "Feature_UseNegativeImmediates",
   nullptr
@@ -15785,125 +16146,135 @@ static const char *SubtargetFeatureNames[] = {
 FeatureBitset AArch64MCCodeEmitter::
 computeAvailableFeatures(const FeatureBitset& FB) const {
   FeatureBitset Features;
-  if ((FB[AArch64::HasV8_1aOps]))
+  if (FB[AArch64::HasV8_1aOps])
     Features.set(Feature_HasV8_1aBit);
-  if ((FB[AArch64::HasV8_2aOps]))
+  if (FB[AArch64::HasV8_2aOps])
     Features.set(Feature_HasV8_2aBit);
-  if ((FB[AArch64::HasV8_3aOps]))
+  if (FB[AArch64::HasV8_3aOps])
     Features.set(Feature_HasV8_3aBit);
-  if ((FB[AArch64::HasV8_4aOps]))
+  if (FB[AArch64::HasV8_4aOps])
     Features.set(Feature_HasV8_4aBit);
-  if ((FB[AArch64::HasV8_5aOps]))
+  if (FB[AArch64::HasV8_5aOps])
     Features.set(Feature_HasV8_5aBit);
-  if ((FB[AArch64::FeatureVH]))
+  if (FB[AArch64::HasV8_6aOps])
+    Features.set(Feature_HasV8_6aBit);
+  if (FB[AArch64::FeatureVH])
     Features.set(Feature_HasVHBit);
-  if ((FB[AArch64::FeatureLOR]))
+  if (FB[AArch64::FeatureLOR])
     Features.set(Feature_HasLORBit);
-  if ((FB[AArch64::FeaturePA]))
+  if (FB[AArch64::FeaturePA])
     Features.set(Feature_HasPABit);
-  if ((FB[AArch64::FeatureJS]))
+  if (FB[AArch64::FeatureJS])
     Features.set(Feature_HasJSBit);
-  if ((FB[AArch64::FeatureCCIDX]))
+  if (FB[AArch64::FeatureCCIDX])
     Features.set(Feature_HasCCIDXBit);
-  if ((FB[AArch64::FeatureComplxNum]))
+  if (FB[AArch64::FeatureComplxNum])
     Features.set(Feature_HasComplxNumBit);
-  if ((FB[AArch64::FeatureNV]))
+  if (FB[AArch64::FeatureNV])
     Features.set(Feature_HasNVBit);
-  if ((FB[AArch64::FeatureRASv8_4]))
+  if (FB[AArch64::FeatureRASv8_4])
     Features.set(Feature_HasRASv8_4Bit);
-  if ((FB[AArch64::FeatureMPAM]))
+  if (FB[AArch64::FeatureMPAM])
     Features.set(Feature_HasMPAMBit);
-  if ((FB[AArch64::FeatureDIT]))
+  if (FB[AArch64::FeatureDIT])
     Features.set(Feature_HasDITBit);
-  if ((FB[AArch64::FeatureTRACEV8_4]))
+  if (FB[AArch64::FeatureTRACEV8_4])
     Features.set(Feature_HasTRACEV8_4Bit);
-  if ((FB[AArch64::FeatureAM]))
+  if (FB[AArch64::FeatureAM])
     Features.set(Feature_HasAMBit);
-  if ((FB[AArch64::FeatureSEL2]))
+  if (FB[AArch64::FeatureSEL2])
     Features.set(Feature_HasSEL2Bit);
-  if ((FB[AArch64::FeaturePMU]))
+  if (FB[AArch64::FeaturePMU])
     Features.set(Feature_HasPMUBit);
-  if ((FB[AArch64::FeatureTLB_RMI]))
+  if (FB[AArch64::FeatureTLB_RMI])
     Features.set(Feature_HasTLB_RMIBit);
-  if ((FB[AArch64::FeatureFMI]))
+  if (FB[AArch64::FeatureFMI])
     Features.set(Feature_HasFMIBit);
-  if ((FB[AArch64::FeatureRCPC_IMMO]))
+  if (FB[AArch64::FeatureRCPC_IMMO])
     Features.set(Feature_HasRCPC_IMMOBit);
-  if ((FB[AArch64::FeatureFPARMv8]))
+  if (FB[AArch64::FeatureFPARMv8])
     Features.set(Feature_HasFPARMv8Bit);
-  if ((FB[AArch64::FeatureNEON]))
+  if (FB[AArch64::FeatureNEON])
     Features.set(Feature_HasNEONBit);
-  if ((FB[AArch64::FeatureCrypto]))
+  if (FB[AArch64::FeatureCrypto])
     Features.set(Feature_HasCryptoBit);
-  if ((FB[AArch64::FeatureSM4]))
+  if (FB[AArch64::FeatureSM4])
     Features.set(Feature_HasSM4Bit);
-  if ((FB[AArch64::FeatureSHA3]))
+  if (FB[AArch64::FeatureSHA3])
     Features.set(Feature_HasSHA3Bit);
-  if ((FB[AArch64::FeatureSHA2]))
+  if (FB[AArch64::FeatureSHA2])
     Features.set(Feature_HasSHA2Bit);
-  if ((FB[AArch64::FeatureAES]))
+  if (FB[AArch64::FeatureAES])
     Features.set(Feature_HasAESBit);
-  if ((FB[AArch64::FeatureDotProd]))
+  if (FB[AArch64::FeatureDotProd])
     Features.set(Feature_HasDotProdBit);
-  if ((FB[AArch64::FeatureCRC]))
+  if (FB[AArch64::FeatureCRC])
     Features.set(Feature_HasCRCBit);
-  if ((FB[AArch64::FeatureLSE]))
+  if (FB[AArch64::FeatureLSE])
     Features.set(Feature_HasLSEBit);
-  if ((FB[AArch64::FeatureRAS]))
+  if (FB[AArch64::FeatureRAS])
     Features.set(Feature_HasRASBit);
-  if ((FB[AArch64::FeatureRDM]))
+  if (FB[AArch64::FeatureRDM])
     Features.set(Feature_HasRDMBit);
-  if ((FB[AArch64::FeatureFullFP16]))
+  if (FB[AArch64::FeatureFullFP16])
     Features.set(Feature_HasFullFP16Bit);
-  if ((FB[AArch64::FeatureFP16FML]))
+  if (FB[AArch64::FeatureFP16FML])
     Features.set(Feature_HasFP16FMLBit);
-  if ((FB[AArch64::FeatureSPE]))
+  if (FB[AArch64::FeatureSPE])
     Features.set(Feature_HasSPEBit);
-  if ((FB[AArch64::FeatureFuseAES]))
+  if (FB[AArch64::FeatureFuseAES])
     Features.set(Feature_HasFuseAESBit);
-  if ((FB[AArch64::FeatureSVE]))
+  if (FB[AArch64::FeatureSVE])
     Features.set(Feature_HasSVEBit);
-  if ((FB[AArch64::FeatureSVE2]))
+  if (FB[AArch64::FeatureSVE2])
     Features.set(Feature_HasSVE2Bit);
-  if ((FB[AArch64::FeatureSVE2AES]))
+  if (FB[AArch64::FeatureSVE2AES])
     Features.set(Feature_HasSVE2AESBit);
-  if ((FB[AArch64::FeatureSVE2SM4]))
+  if (FB[AArch64::FeatureSVE2SM4])
     Features.set(Feature_HasSVE2SM4Bit);
-  if ((FB[AArch64::FeatureSVE2SHA3]))
+  if (FB[AArch64::FeatureSVE2SHA3])
     Features.set(Feature_HasSVE2SHA3Bit);
-  if ((FB[AArch64::FeatureSVE2BitPerm]))
+  if (FB[AArch64::FeatureSVE2BitPerm])
     Features.set(Feature_HasSVE2BitPermBit);
-  if ((FB[AArch64::FeatureRCPC]))
+  if (FB[AArch64::FeatureRCPC])
     Features.set(Feature_HasRCPCBit);
-  if ((FB[AArch64::FeatureAltFPCmp]))
+  if (FB[AArch64::FeatureAltFPCmp])
     Features.set(Feature_HasAltNZCVBit);
-  if ((FB[AArch64::FeatureFRInt3264]))
+  if (FB[AArch64::FeatureFRInt3264])
     Features.set(Feature_HasFRInt3264Bit);
-  if ((FB[AArch64::FeatureSB]))
+  if (FB[AArch64::FeatureSB])
     Features.set(Feature_HasSBBit);
-  if ((FB[AArch64::FeaturePredRes]))
+  if (FB[AArch64::FeaturePredRes])
     Features.set(Feature_HasPredResBit);
-  if ((FB[AArch64::FeatureCacheDeepPersist]))
+  if (FB[AArch64::FeatureCacheDeepPersist])
     Features.set(Feature_HasCCDPBit);
-  if ((FB[AArch64::FeatureBranchTargetId]))
+  if (FB[AArch64::FeatureBranchTargetId])
     Features.set(Feature_HasBTIBit);
-  if ((FB[AArch64::FeatureMTE]))
+  if (FB[AArch64::FeatureMTE])
     Features.set(Feature_HasMTEBit);
-  if ((FB[AArch64::FeatureTME]))
+  if (FB[AArch64::FeatureTME])
     Features.set(Feature_HasTMEBit);
-  if ((FB[AArch64::FeatureETE]))
+  if (FB[AArch64::FeatureETE])
     Features.set(Feature_HasETEBit);
-  if ((FB[AArch64::FeatureTRBE]))
+  if (FB[AArch64::FeatureTRBE])
     Features.set(Feature_HasTRBEBit);
-  if ((!FB[AArch64::FeatureNoNegativeImmediates]))
+  if (FB[AArch64::FeatureBF16])
+    Features.set(Feature_HasBF16Bit);
+  if (FB[AArch64::FeatureMatMulInt8])
+    Features.set(Feature_HasMatMulInt8Bit);
+  if (FB[AArch64::FeatureMatMulFP32])
+    Features.set(Feature_HasMatMulFP32Bit);
+  if (FB[AArch64::FeatureMatMulFP64])
+    Features.set(Feature_HasMatMulFP64Bit);
+  if (!FB[AArch64::FeatureNoNegativeImmediates])
     Features.set(Feature_UseNegativeImmediatesBit);
-  if ((FB[AArch64::FeatureCCPP]))
+  if (FB[AArch64::FeatureCCPP])
     Features.set(Feature_HasCCPPBit);
-  if ((FB[AArch64::FeaturePAN]))
+  if (FB[AArch64::FeaturePAN])
     Features.set(Feature_HasPANBit);
-  if ((FB[AArch64::FeaturePsUAO]))
+  if (FB[AArch64::FeaturePsUAO])
     Features.set(Feature_HasPsUAOBit);
-  if ((FB[AArch64::FeaturePAN_RWV]))
+  if (FB[AArch64::FeaturePAN_RWV])
     Features.set(Feature_HasPAN_RWVBit);
   return Features;
 }
@@ -15914,6 +16285,7 @@ enum : uint8_t {
   CEFBS_None,
   CEFBS_HasAES,
   CEFBS_HasAltNZCV,
+  CEFBS_HasBF16,
   CEFBS_HasCRC,
   CEFBS_HasDotProd,
   CEFBS_HasFMI,
@@ -15923,6 +16295,7 @@ enum : uint8_t {
   CEFBS_HasLOR,
   CEFBS_HasLSE,
   CEFBS_HasMTE,
+  CEFBS_HasMatMulInt8,
   CEFBS_HasNEON,
   CEFBS_HasPA,
   CEFBS_HasRCPC,
@@ -15940,11 +16313,15 @@ enum : uint8_t {
   CEFBS_HasSVE2SM4,
   CEFBS_HasTME,
   CEFBS_HasTRACEV8_4,
+  CEFBS_HasBF16_HasSVE,
   CEFBS_HasComplxNum_HasNEON,
   CEFBS_HasJS_HasFPARMv8,
   CEFBS_HasNEON_HasFP16FML,
   CEFBS_HasNEON_HasFullFP16,
   CEFBS_HasNEON_HasRDM,
+  CEFBS_HasSVE_HasMatMulFP32,
+  CEFBS_HasSVE_HasMatMulFP64,
+  CEFBS_HasSVE_HasMatMulInt8,
   CEFBS_HasComplxNum_HasNEON_HasFullFP16,
 };
 
@@ -15952,6 +16329,7 @@ static constexpr FeatureBitset FeatureBitsets[] = {
   {}, // CEFBS_None
   {Feature_HasAESBit, },
   {Feature_HasAltNZCVBit, },
+  {Feature_HasBF16Bit, },
   {Feature_HasCRCBit, },
   {Feature_HasDotProdBit, },
   {Feature_HasFMIBit, },
@@ -15961,6 +16339,7 @@ static constexpr FeatureBitset FeatureBitsets[] = {
   {Feature_HasLORBit, },
   {Feature_HasLSEBit, },
   {Feature_HasMTEBit, },
+  {Feature_HasMatMulInt8Bit, },
   {Feature_HasNEONBit, },
   {Feature_HasPABit, },
   {Feature_HasRCPCBit, },
@@ -15978,11 +16357,15 @@ static constexpr FeatureBitset FeatureBitsets[] = {
   {Feature_HasSVE2SM4Bit, },
   {Feature_HasTMEBit, },
   {Feature_HasTRACEV8_4Bit, },
+  {Feature_HasBF16Bit, Feature_HasSVEBit, },
   {Feature_HasComplxNumBit, Feature_HasNEONBit, },
   {Feature_HasJSBit, Feature_HasFPARMv8Bit, },
   {Feature_HasNEONBit, Feature_HasFP16FMLBit, },
   {Feature_HasNEONBit, Feature_HasFullFP16Bit, },
   {Feature_HasNEONBit, Feature_HasRDMBit, },
+  {Feature_HasSVEBit, Feature_HasMatMulFP32Bit, },
+  {Feature_HasSVEBit, Feature_HasMatMulFP64Bit, },
+  {Feature_HasSVEBit, Feature_HasMatMulInt8Bit, },
   {Feature_HasComplxNumBit, Feature_HasNEONBit, Feature_HasFullFP16Bit, },
 };
 #endif // NDEBUG
@@ -16015,5423 +16398,5737 @@ void AArch64MCCodeEmitter::verifyInstructionPredicates(
     CEFBS_None, // FENTRY_CALL = 21
     CEFBS_None, // PATCHPOINT = 22
     CEFBS_None, // LOAD_STACK_GUARD = 23
-    CEFBS_None, // STATEPOINT = 24
-    CEFBS_None, // LOCAL_ESCAPE = 25
-    CEFBS_None, // FAULTING_OP = 26
-    CEFBS_None, // PATCHABLE_OP = 27
-    CEFBS_None, // PATCHABLE_FUNCTION_ENTER = 28
-    CEFBS_None, // PATCHABLE_RET = 29
-    CEFBS_None, // PATCHABLE_FUNCTION_EXIT = 30
-    CEFBS_None, // PATCHABLE_TAIL_CALL = 31
-    CEFBS_None, // PATCHABLE_EVENT_CALL = 32
-    CEFBS_None, // PATCHABLE_TYPED_EVENT_CALL = 33
-    CEFBS_None, // ICALL_BRANCH_FUNNEL = 34
-    CEFBS_None, // G_ADD = 35
-    CEFBS_None, // G_SUB = 36
-    CEFBS_None, // G_MUL = 37
-    CEFBS_None, // G_SDIV = 38
-    CEFBS_None, // G_UDIV = 39
-    CEFBS_None, // G_SREM = 40
-    CEFBS_None, // G_UREM = 41
-    CEFBS_None, // G_AND = 42
-    CEFBS_None, // G_OR = 43
-    CEFBS_None, // G_XOR = 44
-    CEFBS_None, // G_IMPLICIT_DEF = 45
-    CEFBS_None, // G_PHI = 46
-    CEFBS_None, // G_FRAME_INDEX = 47
-    CEFBS_None, // G_GLOBAL_VALUE = 48
-    CEFBS_None, // G_EXTRACT = 49
-    CEFBS_None, // G_UNMERGE_VALUES = 50
-    CEFBS_None, // G_INSERT = 51
-    CEFBS_None, // G_MERGE_VALUES = 52
-    CEFBS_None, // G_BUILD_VECTOR = 53
-    CEFBS_None, // G_BUILD_VECTOR_TRUNC = 54
-    CEFBS_None, // G_CONCAT_VECTORS = 55
-    CEFBS_None, // G_PTRTOINT = 56
-    CEFBS_None, // G_INTTOPTR = 57
-    CEFBS_None, // G_BITCAST = 58
-    CEFBS_None, // G_INTRINSIC_TRUNC = 59
-    CEFBS_None, // G_INTRINSIC_ROUND = 60
-    CEFBS_None, // G_READCYCLECOUNTER = 61
-    CEFBS_None, // G_LOAD = 62
-    CEFBS_None, // G_SEXTLOAD = 63
-    CEFBS_None, // G_ZEXTLOAD = 64
-    CEFBS_None, // G_INDEXED_LOAD = 65
-    CEFBS_None, // G_INDEXED_SEXTLOAD = 66
-    CEFBS_None, // G_INDEXED_ZEXTLOAD = 67
-    CEFBS_None, // G_STORE = 68
-    CEFBS_None, // G_INDEXED_STORE = 69
-    CEFBS_None, // G_ATOMIC_CMPXCHG_WITH_SUCCESS = 70
-    CEFBS_None, // G_ATOMIC_CMPXCHG = 71
-    CEFBS_None, // G_ATOMICRMW_XCHG = 72
-    CEFBS_None, // G_ATOMICRMW_ADD = 73
-    CEFBS_None, // G_ATOMICRMW_SUB = 74
-    CEFBS_None, // G_ATOMICRMW_AND = 75
-    CEFBS_None, // G_ATOMICRMW_NAND = 76
-    CEFBS_None, // G_ATOMICRMW_OR = 77
-    CEFBS_None, // G_ATOMICRMW_XOR = 78
-    CEFBS_None, // G_ATOMICRMW_MAX = 79
-    CEFBS_None, // G_ATOMICRMW_MIN = 80
-    CEFBS_None, // G_ATOMICRMW_UMAX = 81
-    CEFBS_None, // G_ATOMICRMW_UMIN = 82
-    CEFBS_None, // G_ATOMICRMW_FADD = 83
-    CEFBS_None, // G_ATOMICRMW_FSUB = 84
-    CEFBS_None, // G_FENCE = 85
-    CEFBS_None, // G_BRCOND = 86
-    CEFBS_None, // G_BRINDIRECT = 87
-    CEFBS_None, // G_INTRINSIC = 88
-    CEFBS_None, // G_INTRINSIC_W_SIDE_EFFECTS = 89
-    CEFBS_None, // G_ANYEXT = 90
-    CEFBS_None, // G_TRUNC = 91
-    CEFBS_None, // G_CONSTANT = 92
-    CEFBS_None, // G_FCONSTANT = 93
-    CEFBS_None, // G_VASTART = 94
-    CEFBS_None, // G_VAARG = 95
-    CEFBS_None, // G_SEXT = 96
-    CEFBS_None, // G_SEXT_INREG = 97
-    CEFBS_None, // G_ZEXT = 98
-    CEFBS_None, // G_SHL = 99
-    CEFBS_None, // G_LSHR = 100
-    CEFBS_None, // G_ASHR = 101
-    CEFBS_None, // G_ICMP = 102
-    CEFBS_None, // G_FCMP = 103
-    CEFBS_None, // G_SELECT = 104
-    CEFBS_None, // G_UADDO = 105
-    CEFBS_None, // G_UADDE = 106
-    CEFBS_None, // G_USUBO = 107
-    CEFBS_None, // G_USUBE = 108
-    CEFBS_None, // G_SADDO = 109
-    CEFBS_None, // G_SADDE = 110
-    CEFBS_None, // G_SSUBO = 111
-    CEFBS_None, // G_SSUBE = 112
-    CEFBS_None, // G_UMULO = 113
-    CEFBS_None, // G_SMULO = 114
-    CEFBS_None, // G_UMULH = 115
-    CEFBS_None, // G_SMULH = 116
-    CEFBS_None, // G_FADD = 117
-    CEFBS_None, // G_FSUB = 118
-    CEFBS_None, // G_FMUL = 119
-    CEFBS_None, // G_FMA = 120
-    CEFBS_None, // G_FMAD = 121
-    CEFBS_None, // G_FDIV = 122
-    CEFBS_None, // G_FREM = 123
-    CEFBS_None, // G_FPOW = 124
-    CEFBS_None, // G_FEXP = 125
-    CEFBS_None, // G_FEXP2 = 126
-    CEFBS_None, // G_FLOG = 127
-    CEFBS_None, // G_FLOG2 = 128
-    CEFBS_None, // G_FLOG10 = 129
-    CEFBS_None, // G_FNEG = 130
-    CEFBS_None, // G_FPEXT = 131
-    CEFBS_None, // G_FPTRUNC = 132
-    CEFBS_None, // G_FPTOSI = 133
-    CEFBS_None, // G_FPTOUI = 134
-    CEFBS_None, // G_SITOFP = 135
-    CEFBS_None, // G_UITOFP = 136
-    CEFBS_None, // G_FABS = 137
-    CEFBS_None, // G_FCOPYSIGN = 138
-    CEFBS_None, // G_FCANONICALIZE = 139
-    CEFBS_None, // G_FMINNUM = 140
-    CEFBS_None, // G_FMAXNUM = 141
-    CEFBS_None, // G_FMINNUM_IEEE = 142
-    CEFBS_None, // G_FMAXNUM_IEEE = 143
-    CEFBS_None, // G_FMINIMUM = 144
-    CEFBS_None, // G_FMAXIMUM = 145
-    CEFBS_None, // G_PTR_ADD = 146
-    CEFBS_None, // G_PTR_MASK = 147
-    CEFBS_None, // G_SMIN = 148
-    CEFBS_None, // G_SMAX = 149
-    CEFBS_None, // G_UMIN = 150
-    CEFBS_None, // G_UMAX = 151
-    CEFBS_None, // G_BR = 152
-    CEFBS_None, // G_BRJT = 153
-    CEFBS_None, // G_INSERT_VECTOR_ELT = 154
-    CEFBS_None, // G_EXTRACT_VECTOR_ELT = 155
-    CEFBS_None, // G_SHUFFLE_VECTOR = 156
-    CEFBS_None, // G_CTTZ = 157
-    CEFBS_None, // G_CTTZ_ZERO_UNDEF = 158
-    CEFBS_None, // G_CTLZ = 159
-    CEFBS_None, // G_CTLZ_ZERO_UNDEF = 160
-    CEFBS_None, // G_CTPOP = 161
-    CEFBS_None, // G_BSWAP = 162
-    CEFBS_None, // G_BITREVERSE = 163
-    CEFBS_None, // G_FCEIL = 164
-    CEFBS_None, // G_FCOS = 165
-    CEFBS_None, // G_FSIN = 166
-    CEFBS_None, // G_FSQRT = 167
-    CEFBS_None, // G_FFLOOR = 168
-    CEFBS_None, // G_FRINT = 169
-    CEFBS_None, // G_FNEARBYINT = 170
-    CEFBS_None, // G_ADDRSPACE_CAST = 171
-    CEFBS_None, // G_BLOCK_ADDR = 172
-    CEFBS_None, // G_JUMP_TABLE = 173
-    CEFBS_None, // G_DYN_STACKALLOC = 174
-    CEFBS_None, // G_READ_REGISTER = 175
-    CEFBS_None, // G_WRITE_REGISTER = 176
-    CEFBS_None, // CATCHRET = 177
-    CEFBS_None, // CLEANUPRET = 178
-    CEFBS_HasSVE, // LD1B_D_IMM = 179
-    CEFBS_HasSVE, // LD1B_H_IMM = 180
-    CEFBS_HasSVE, // LD1B_IMM = 181
-    CEFBS_HasSVE, // LD1B_S_IMM = 182
-    CEFBS_HasSVE, // LD1D_IMM = 183
-    CEFBS_HasSVE, // LD1H_D_IMM = 184
-    CEFBS_HasSVE, // LD1H_IMM = 185
-    CEFBS_HasSVE, // LD1H_S_IMM = 186
-    CEFBS_HasSVE, // LD1SB_D_IMM = 187
-    CEFBS_HasSVE, // LD1SB_H_IMM = 188
-    CEFBS_HasSVE, // LD1SB_S_IMM = 189
-    CEFBS_HasSVE, // LD1SH_D_IMM = 190
-    CEFBS_HasSVE, // LD1SH_S_IMM = 191
-    CEFBS_HasSVE, // LD1SW_D_IMM = 192
-    CEFBS_HasSVE, // LD1W_D_IMM = 193
-    CEFBS_HasSVE, // LD1W_IMM = 194
-    CEFBS_HasSVE, // LDFF1B = 195
-    CEFBS_HasSVE, // LDFF1B_D = 196
-    CEFBS_HasSVE, // LDFF1B_H = 197
-    CEFBS_HasSVE, // LDFF1B_S = 198
-    CEFBS_HasSVE, // LDFF1D = 199
-    CEFBS_HasSVE, // LDFF1H = 200
-    CEFBS_HasSVE, // LDFF1H_D = 201
-    CEFBS_HasSVE, // LDFF1H_S = 202
-    CEFBS_HasSVE, // LDFF1SB_D = 203
-    CEFBS_HasSVE, // LDFF1SB_H = 204
-    CEFBS_HasSVE, // LDFF1SB_S = 205
-    CEFBS_HasSVE, // LDFF1SH_D = 206
-    CEFBS_HasSVE, // LDFF1SH_S = 207
-    CEFBS_HasSVE, // LDFF1SW_D = 208
-    CEFBS_HasSVE, // LDFF1W = 209
-    CEFBS_HasSVE, // LDFF1W_D = 210
-    CEFBS_HasSVE, // LDNF1B_D_IMM = 211
-    CEFBS_HasSVE, // LDNF1B_H_IMM = 212
-    CEFBS_HasSVE, // LDNF1B_IMM = 213
-    CEFBS_HasSVE, // LDNF1B_S_IMM = 214
-    CEFBS_HasSVE, // LDNF1D_IMM = 215
-    CEFBS_HasSVE, // LDNF1H_D_IMM = 216
-    CEFBS_HasSVE, // LDNF1H_IMM = 217
-    CEFBS_HasSVE, // LDNF1H_S_IMM = 218
-    CEFBS_HasSVE, // LDNF1SB_D_IMM = 219
-    CEFBS_HasSVE, // LDNF1SB_H_IMM = 220
-    CEFBS_HasSVE, // LDNF1SB_S_IMM = 221
-    CEFBS_HasSVE, // LDNF1SH_D_IMM = 222
-    CEFBS_HasSVE, // LDNF1SH_S_IMM = 223
-    CEFBS_HasSVE, // LDNF1SW_D_IMM = 224
-    CEFBS_HasSVE, // LDNF1W_D_IMM = 225
-    CEFBS_HasSVE, // LDNF1W_IMM = 226
-    CEFBS_HasSVE, // RDFFR_P = 227
-    CEFBS_HasSVE, // RDFFR_PPz = 228
-    CEFBS_None, // SEH_AddFP = 229
-    CEFBS_None, // SEH_EpilogEnd = 230
-    CEFBS_None, // SEH_EpilogStart = 231
-    CEFBS_None, // SEH_Nop = 232
-    CEFBS_None, // SEH_PrologEnd = 233
-    CEFBS_None, // SEH_SaveFPLR = 234
-    CEFBS_None, // SEH_SaveFPLR_X = 235
-    CEFBS_None, // SEH_SaveFReg = 236
-    CEFBS_None, // SEH_SaveFRegP = 237
-    CEFBS_None, // SEH_SaveFRegP_X = 238
-    CEFBS_None, // SEH_SaveFReg_X = 239
-    CEFBS_None, // SEH_SaveReg = 240
-    CEFBS_None, // SEH_SaveRegP = 241
-    CEFBS_None, // SEH_SaveRegP_X = 242
-    CEFBS_None, // SEH_SaveReg_X = 243
-    CEFBS_None, // SEH_SetFP = 244
-    CEFBS_None, // SEH_StackAlloc = 245
-    CEFBS_HasSVE, // ABS_ZPmZ_B = 246
-    CEFBS_HasSVE, // ABS_ZPmZ_D = 247
-    CEFBS_HasSVE, // ABS_ZPmZ_H = 248
-    CEFBS_HasSVE, // ABS_ZPmZ_S = 249
-    CEFBS_HasNEON, // ABSv16i8 = 250
-    CEFBS_HasNEON, // ABSv1i64 = 251
-    CEFBS_HasNEON, // ABSv2i32 = 252
-    CEFBS_HasNEON, // ABSv2i64 = 253
-    CEFBS_HasNEON, // ABSv4i16 = 254
-    CEFBS_HasNEON, // ABSv4i32 = 255
-    CEFBS_HasNEON, // ABSv8i16 = 256
-    CEFBS_HasNEON, // ABSv8i8 = 257
-    CEFBS_HasSVE2, // ADCLB_ZZZ_D = 258
-    CEFBS_HasSVE2, // ADCLB_ZZZ_S = 259
-    CEFBS_HasSVE2, // ADCLT_ZZZ_D = 260
-    CEFBS_HasSVE2, // ADCLT_ZZZ_S = 261
-    CEFBS_None, // ADCSWr = 262
-    CEFBS_None, // ADCSXr = 263
-    CEFBS_None, // ADCWr = 264
-    CEFBS_None, // ADCXr = 265
-    CEFBS_HasMTE, // ADDG = 266
-    CEFBS_HasSVE2, // ADDHNB_ZZZ_B = 267
-    CEFBS_HasSVE2, // ADDHNB_ZZZ_H = 268
-    CEFBS_HasSVE2, // ADDHNB_ZZZ_S = 269
-    CEFBS_HasSVE2, // ADDHNT_ZZZ_B = 270
-    CEFBS_HasSVE2, // ADDHNT_ZZZ_H = 271
-    CEFBS_HasSVE2, // ADDHNT_ZZZ_S = 272
-    CEFBS_HasNEON, // ADDHNv2i64_v2i32 = 273
-    CEFBS_HasNEON, // ADDHNv2i64_v4i32 = 274
-    CEFBS_HasNEON, // ADDHNv4i32_v4i16 = 275
-    CEFBS_HasNEON, // ADDHNv4i32_v8i16 = 276
-    CEFBS_HasNEON, // ADDHNv8i16_v16i8 = 277
-    CEFBS_HasNEON, // ADDHNv8i16_v8i8 = 278
-    CEFBS_HasSVE, // ADDPL_XXI = 279
-    CEFBS_HasSVE2, // ADDP_ZPmZ_B = 280
-    CEFBS_HasSVE2, // ADDP_ZPmZ_D = 281
-    CEFBS_HasSVE2, // ADDP_ZPmZ_H = 282
-    CEFBS_HasSVE2, // ADDP_ZPmZ_S = 283
-    CEFBS_HasNEON, // ADDPv16i8 = 284
-    CEFBS_HasNEON, // ADDPv2i32 = 285
-    CEFBS_HasNEON, // ADDPv2i64 = 286
-    CEFBS_HasNEON, // ADDPv2i64p = 287
-    CEFBS_HasNEON, // ADDPv4i16 = 288
-    CEFBS_HasNEON, // ADDPv4i32 = 289
-    CEFBS_HasNEON, // ADDPv8i16 = 290
-    CEFBS_HasNEON, // ADDPv8i8 = 291
-    CEFBS_None, // ADDSWri = 292
-    CEFBS_None, // ADDSWrr = 293
-    CEFBS_None, // ADDSWrs = 294
-    CEFBS_None, // ADDSWrx = 295
-    CEFBS_None, // ADDSXri = 296
-    CEFBS_None, // ADDSXrr = 297
-    CEFBS_None, // ADDSXrs = 298
-    CEFBS_None, // ADDSXrx = 299
-    CEFBS_None, // ADDSXrx64 = 300
-    CEFBS_HasSVE, // ADDVL_XXI = 301
-    CEFBS_HasNEON, // ADDVv16i8v = 302
-    CEFBS_HasNEON, // ADDVv4i16v = 303
-    CEFBS_HasNEON, // ADDVv4i32v = 304
-    CEFBS_HasNEON, // ADDVv8i16v = 305
-    CEFBS_HasNEON, // ADDVv8i8v = 306
-    CEFBS_None, // ADDWri = 307
-    CEFBS_None, // ADDWrr = 308
-    CEFBS_None, // ADDWrs = 309
-    CEFBS_None, // ADDWrx = 310
-    CEFBS_None, // ADDXri = 311
-    CEFBS_None, // ADDXrr = 312
-    CEFBS_None, // ADDXrs = 313
-    CEFBS_None, // ADDXrx = 314
-    CEFBS_None, // ADDXrx64 = 315
-    CEFBS_HasSVE, // ADD_ZI_B = 316
-    CEFBS_HasSVE, // ADD_ZI_D = 317
-    CEFBS_HasSVE, // ADD_ZI_H = 318
-    CEFBS_HasSVE, // ADD_ZI_S = 319
-    CEFBS_HasSVE, // ADD_ZPmZ_B = 320
-    CEFBS_HasSVE, // ADD_ZPmZ_D = 321
-    CEFBS_HasSVE, // ADD_ZPmZ_H = 322
-    CEFBS_HasSVE, // ADD_ZPmZ_S = 323
-    CEFBS_HasSVE, // ADD_ZZZ_B = 324
-    CEFBS_HasSVE, // ADD_ZZZ_D = 325
-    CEFBS_HasSVE, // ADD_ZZZ_H = 326
-    CEFBS_HasSVE, // ADD_ZZZ_S = 327
-    CEFBS_None, // ADDlowTLS = 328
-    CEFBS_HasNEON, // ADDv16i8 = 329
-    CEFBS_HasNEON, // ADDv1i64 = 330
-    CEFBS_HasNEON, // ADDv2i32 = 331
-    CEFBS_HasNEON, // ADDv2i64 = 332
-    CEFBS_HasNEON, // ADDv4i16 = 333
-    CEFBS_HasNEON, // ADDv4i32 = 334
-    CEFBS_HasNEON, // ADDv8i16 = 335
-    CEFBS_HasNEON, // ADDv8i8 = 336
-    CEFBS_None, // ADJCALLSTACKDOWN = 337
-    CEFBS_None, // ADJCALLSTACKUP = 338
-    CEFBS_None, // ADR = 339
-    CEFBS_None, // ADRP = 340
-    CEFBS_HasSVE, // ADR_LSL_ZZZ_D_0 = 341
-    CEFBS_HasSVE, // ADR_LSL_ZZZ_D_1 = 342
-    CEFBS_HasSVE, // ADR_LSL_ZZZ_D_2 = 343
-    CEFBS_HasSVE, // ADR_LSL_ZZZ_D_3 = 344
-    CEFBS_HasSVE, // ADR_LSL_ZZZ_S_0 = 345
-    CEFBS_HasSVE, // ADR_LSL_ZZZ_S_1 = 346
-    CEFBS_HasSVE, // ADR_LSL_ZZZ_S_2 = 347
-    CEFBS_HasSVE, // ADR_LSL_ZZZ_S_3 = 348
-    CEFBS_HasSVE, // ADR_SXTW_ZZZ_D_0 = 349
-    CEFBS_HasSVE, // ADR_SXTW_ZZZ_D_1 = 350
-    CEFBS_HasSVE, // ADR_SXTW_ZZZ_D_2 = 351
-    CEFBS_HasSVE, // ADR_SXTW_ZZZ_D_3 = 352
-    CEFBS_HasSVE, // ADR_UXTW_ZZZ_D_0 = 353
-    CEFBS_HasSVE, // ADR_UXTW_ZZZ_D_1 = 354
-    CEFBS_HasSVE, // ADR_UXTW_ZZZ_D_2 = 355
-    CEFBS_HasSVE, // ADR_UXTW_ZZZ_D_3 = 356
-    CEFBS_HasSVE2AES, // AESD_ZZZ_B = 357
-    CEFBS_HasAES, // AESDrr = 358
-    CEFBS_HasSVE2AES, // AESE_ZZZ_B = 359
-    CEFBS_HasAES, // AESErr = 360
-    CEFBS_HasSVE2AES, // AESIMC_ZZ_B = 361
-    CEFBS_HasAES, // AESIMCrr = 362
-    CEFBS_None, // AESIMCrrTied = 363
-    CEFBS_HasSVE2AES, // AESMC_ZZ_B = 364
-    CEFBS_HasAES, // AESMCrr = 365
-    CEFBS_None, // AESMCrrTied = 366
-    CEFBS_None, // ANDSWri = 367
-    CEFBS_None, // ANDSWrr = 368
-    CEFBS_None, // ANDSWrs = 369
-    CEFBS_None, // ANDSXri = 370
-    CEFBS_None, // ANDSXrr = 371
-    CEFBS_None, // ANDSXrs = 372
-    CEFBS_HasSVE, // ANDS_PPzPP = 373
-    CEFBS_HasSVE, // ANDV_VPZ_B = 374
-    CEFBS_HasSVE, // ANDV_VPZ_D = 375
-    CEFBS_HasSVE, // ANDV_VPZ_H = 376
-    CEFBS_HasSVE, // ANDV_VPZ_S = 377
-    CEFBS_None, // ANDWri = 378
-    CEFBS_None, // ANDWrr = 379
-    CEFBS_None, // ANDWrs = 380
-    CEFBS_None, // ANDXri = 381
-    CEFBS_None, // ANDXrr = 382
-    CEFBS_None, // ANDXrs = 383
-    CEFBS_HasSVE, // AND_PPzPP = 384
-    CEFBS_HasSVE, // AND_ZI = 385
-    CEFBS_HasSVE, // AND_ZPmZ_B = 386
-    CEFBS_HasSVE, // AND_ZPmZ_D = 387
-    CEFBS_HasSVE, // AND_ZPmZ_H = 388
-    CEFBS_HasSVE, // AND_ZPmZ_S = 389
-    CEFBS_HasSVE, // AND_ZZZ = 390
-    CEFBS_HasNEON, // ANDv16i8 = 391
-    CEFBS_HasNEON, // ANDv8i8 = 392
-    CEFBS_HasSVE, // ASRD_ZPmI_B = 393
-    CEFBS_HasSVE, // ASRD_ZPmI_D = 394
-    CEFBS_HasSVE, // ASRD_ZPmI_H = 395
-    CEFBS_HasSVE, // ASRD_ZPmI_S = 396
-    CEFBS_HasSVE, // ASRR_ZPmZ_B = 397
-    CEFBS_HasSVE, // ASRR_ZPmZ_D = 398
-    CEFBS_HasSVE, // ASRR_ZPmZ_H = 399
-    CEFBS_HasSVE, // ASRR_ZPmZ_S = 400
-    CEFBS_None, // ASRVWr = 401
-    CEFBS_None, // ASRVXr = 402
-    CEFBS_HasSVE, // ASR_WIDE_ZPmZ_B = 403
-    CEFBS_HasSVE, // ASR_WIDE_ZPmZ_H = 404
-    CEFBS_HasSVE, // ASR_WIDE_ZPmZ_S = 405
-    CEFBS_HasSVE, // ASR_WIDE_ZZZ_B = 406
-    CEFBS_HasSVE, // ASR_WIDE_ZZZ_H = 407
-    CEFBS_HasSVE, // ASR_WIDE_ZZZ_S = 408
-    CEFBS_HasSVE, // ASR_ZPmI_B = 409
-    CEFBS_HasSVE, // ASR_ZPmI_D = 410
-    CEFBS_HasSVE, // ASR_ZPmI_H = 411
-    CEFBS_HasSVE, // ASR_ZPmI_S = 412
-    CEFBS_HasSVE, // ASR_ZPmZ_B = 413
-    CEFBS_HasSVE, // ASR_ZPmZ_D = 414
-    CEFBS_HasSVE, // ASR_ZPmZ_H = 415
-    CEFBS_HasSVE, // ASR_ZPmZ_S = 416
-    CEFBS_HasSVE, // ASR_ZZI_B = 417
-    CEFBS_HasSVE, // ASR_ZZI_D = 418
-    CEFBS_HasSVE, // ASR_ZZI_H = 419
-    CEFBS_HasSVE, // ASR_ZZI_S = 420
-    CEFBS_HasPA, // AUTDA = 421
-    CEFBS_HasPA, // AUTDB = 422
-    CEFBS_HasPA, // AUTDZA = 423
-    CEFBS_HasPA, // AUTDZB = 424
-    CEFBS_HasPA, // AUTIA = 425
-    CEFBS_None, // AUTIA1716 = 426
-    CEFBS_None, // AUTIASP = 427
-    CEFBS_None, // AUTIAZ = 428
-    CEFBS_HasPA, // AUTIB = 429
-    CEFBS_None, // AUTIB1716 = 430
-    CEFBS_None, // AUTIBSP = 431
-    CEFBS_None, // AUTIBZ = 432
-    CEFBS_HasPA, // AUTIZA = 433
-    CEFBS_HasPA, // AUTIZB = 434
-    CEFBS_HasAltNZCV, // AXFLAG = 435
-    CEFBS_None, // B = 436
-    CEFBS_HasSHA3, // BCAX = 437
-    CEFBS_HasSVE2, // BCAX_ZZZZ_D = 438
-    CEFBS_HasSVE2BitPerm, // BDEP_ZZZ_B = 439
-    CEFBS_HasSVE2BitPerm, // BDEP_ZZZ_D = 440
-    CEFBS_HasSVE2BitPerm, // BDEP_ZZZ_H = 441
-    CEFBS_HasSVE2BitPerm, // BDEP_ZZZ_S = 442
-    CEFBS_HasSVE2BitPerm, // BEXT_ZZZ_B = 443
-    CEFBS_HasSVE2BitPerm, // BEXT_ZZZ_D = 444
-    CEFBS_HasSVE2BitPerm, // BEXT_ZZZ_H = 445
-    CEFBS_HasSVE2BitPerm, // BEXT_ZZZ_S = 446
-    CEFBS_None, // BFMWri = 447
-    CEFBS_None, // BFMXri = 448
-    CEFBS_HasSVE2BitPerm, // BGRP_ZZZ_B = 449
-    CEFBS_HasSVE2BitPerm, // BGRP_ZZZ_D = 450
-    CEFBS_HasSVE2BitPerm, // BGRP_ZZZ_H = 451
-    CEFBS_HasSVE2BitPerm, // BGRP_ZZZ_S = 452
-    CEFBS_None, // BICSWrr = 453
-    CEFBS_None, // BICSWrs = 454
-    CEFBS_None, // BICSXrr = 455
-    CEFBS_None, // BICSXrs = 456
-    CEFBS_HasSVE, // BICS_PPzPP = 457
-    CEFBS_None, // BICWrr = 458
-    CEFBS_None, // BICWrs = 459
-    CEFBS_None, // BICXrr = 460
-    CEFBS_None, // BICXrs = 461
-    CEFBS_HasSVE, // BIC_PPzPP = 462
-    CEFBS_HasSVE, // BIC_ZPmZ_B = 463
-    CEFBS_HasSVE, // BIC_ZPmZ_D = 464
-    CEFBS_HasSVE, // BIC_ZPmZ_H = 465
-    CEFBS_HasSVE, // BIC_ZPmZ_S = 466
-    CEFBS_HasSVE, // BIC_ZZZ = 467
-    CEFBS_HasNEON, // BICv16i8 = 468
-    CEFBS_HasNEON, // BICv2i32 = 469
-    CEFBS_HasNEON, // BICv4i16 = 470
-    CEFBS_HasNEON, // BICv4i32 = 471
-    CEFBS_HasNEON, // BICv8i16 = 472
-    CEFBS_HasNEON, // BICv8i8 = 473
-    CEFBS_HasNEON, // BIFv16i8 = 474
-    CEFBS_HasNEON, // BIFv8i8 = 475
-    CEFBS_HasNEON, // BITv16i8 = 476
-    CEFBS_HasNEON, // BITv8i8 = 477
-    CEFBS_None, // BL = 478
-    CEFBS_None, // BLR = 479
-    CEFBS_HasPA, // BLRAA = 480
-    CEFBS_HasPA, // BLRAAZ = 481
-    CEFBS_HasPA, // BLRAB = 482
-    CEFBS_HasPA, // BLRABZ = 483
-    CEFBS_None, // BR = 484
-    CEFBS_HasPA, // BRAA = 485
-    CEFBS_HasPA, // BRAAZ = 486
-    CEFBS_HasPA, // BRAB = 487
-    CEFBS_HasPA, // BRABZ = 488
-    CEFBS_None, // BRK = 489
-    CEFBS_HasSVE, // BRKAS_PPzP = 490
-    CEFBS_HasSVE, // BRKA_PPmP = 491
-    CEFBS_HasSVE, // BRKA_PPzP = 492
-    CEFBS_HasSVE, // BRKBS_PPzP = 493
-    CEFBS_HasSVE, // BRKB_PPmP = 494
-    CEFBS_HasSVE, // BRKB_PPzP = 495
-    CEFBS_HasSVE, // BRKNS_PPzP = 496
-    CEFBS_HasSVE, // BRKN_PPzP = 497
-    CEFBS_HasSVE, // BRKPAS_PPzPP = 498
-    CEFBS_HasSVE, // BRKPA_PPzPP = 499
-    CEFBS_HasSVE, // BRKPBS_PPzPP = 500
-    CEFBS_HasSVE, // BRKPB_PPzPP = 501
-    CEFBS_HasSVE2, // BSL1N_ZZZZ_D = 502
-    CEFBS_HasSVE2, // BSL2N_ZZZZ_D = 503
-    CEFBS_HasSVE2, // BSL_ZZZZ_D = 504
-    CEFBS_HasNEON, // BSLv16i8 = 505
-    CEFBS_HasNEON, // BSLv8i8 = 506
-    CEFBS_None, // Bcc = 507
-    CEFBS_HasSVE2, // CADD_ZZI_B = 508
-    CEFBS_HasSVE2, // CADD_ZZI_D = 509
-    CEFBS_HasSVE2, // CADD_ZZI_H = 510
-    CEFBS_HasSVE2, // CADD_ZZI_S = 511
-    CEFBS_HasLSE, // CASAB = 512
-    CEFBS_HasLSE, // CASAH = 513
-    CEFBS_HasLSE, // CASALB = 514
-    CEFBS_HasLSE, // CASALH = 515
-    CEFBS_HasLSE, // CASALW = 516
-    CEFBS_HasLSE, // CASALX = 517
-    CEFBS_HasLSE, // CASAW = 518
-    CEFBS_HasLSE, // CASAX = 519
-    CEFBS_HasLSE, // CASB = 520
-    CEFBS_HasLSE, // CASH = 521
-    CEFBS_HasLSE, // CASLB = 522
-    CEFBS_HasLSE, // CASLH = 523
-    CEFBS_HasLSE, // CASLW = 524
-    CEFBS_HasLSE, // CASLX = 525
-    CEFBS_HasLSE, // CASPALW = 526
-    CEFBS_HasLSE, // CASPALX = 527
-    CEFBS_HasLSE, // CASPAW = 528
-    CEFBS_HasLSE, // CASPAX = 529
-    CEFBS_HasLSE, // CASPLW = 530
-    CEFBS_HasLSE, // CASPLX = 531
-    CEFBS_HasLSE, // CASPW = 532
-    CEFBS_HasLSE, // CASPX = 533
-    CEFBS_HasLSE, // CASW = 534
-    CEFBS_HasLSE, // CASX = 535
-    CEFBS_None, // CBNZW = 536
-    CEFBS_None, // CBNZX = 537
-    CEFBS_None, // CBZW = 538
-    CEFBS_None, // CBZX = 539
-    CEFBS_None, // CCMNWi = 540
-    CEFBS_None, // CCMNWr = 541
-    CEFBS_None, // CCMNXi = 542
-    CEFBS_None, // CCMNXr = 543
-    CEFBS_None, // CCMPWi = 544
-    CEFBS_None, // CCMPWr = 545
-    CEFBS_None, // CCMPXi = 546
-    CEFBS_None, // CCMPXr = 547
-    CEFBS_HasSVE2, // CDOT_ZZZI_D = 548
-    CEFBS_HasSVE2, // CDOT_ZZZI_S = 549
-    CEFBS_HasSVE2, // CDOT_ZZZ_D = 550
-    CEFBS_HasSVE2, // CDOT_ZZZ_S = 551
-    CEFBS_HasFMI, // CFINV = 552
-    CEFBS_HasSVE, // CLASTA_RPZ_B = 553
-    CEFBS_HasSVE, // CLASTA_RPZ_D = 554
-    CEFBS_HasSVE, // CLASTA_RPZ_H = 555
-    CEFBS_HasSVE, // CLASTA_RPZ_S = 556
-    CEFBS_HasSVE, // CLASTA_VPZ_B = 557
-    CEFBS_HasSVE, // CLASTA_VPZ_D = 558
-    CEFBS_HasSVE, // CLASTA_VPZ_H = 559
-    CEFBS_HasSVE, // CLASTA_VPZ_S = 560
-    CEFBS_HasSVE, // CLASTA_ZPZ_B = 561
-    CEFBS_HasSVE, // CLASTA_ZPZ_D = 562
-    CEFBS_HasSVE, // CLASTA_ZPZ_H = 563
-    CEFBS_HasSVE, // CLASTA_ZPZ_S = 564
-    CEFBS_HasSVE, // CLASTB_RPZ_B = 565
-    CEFBS_HasSVE, // CLASTB_RPZ_D = 566
-    CEFBS_HasSVE, // CLASTB_RPZ_H = 567
-    CEFBS_HasSVE, // CLASTB_RPZ_S = 568
-    CEFBS_HasSVE, // CLASTB_VPZ_B = 569
-    CEFBS_HasSVE, // CLASTB_VPZ_D = 570
-    CEFBS_HasSVE, // CLASTB_VPZ_H = 571
-    CEFBS_HasSVE, // CLASTB_VPZ_S = 572
-    CEFBS_HasSVE, // CLASTB_ZPZ_B = 573
-    CEFBS_HasSVE, // CLASTB_ZPZ_D = 574
-    CEFBS_HasSVE, // CLASTB_ZPZ_H = 575
-    CEFBS_HasSVE, // CLASTB_ZPZ_S = 576
-    CEFBS_None, // CLREX = 577
-    CEFBS_None, // CLSWr = 578
-    CEFBS_None, // CLSXr = 579
-    CEFBS_HasSVE, // CLS_ZPmZ_B = 580
-    CEFBS_HasSVE, // CLS_ZPmZ_D = 581
-    CEFBS_HasSVE, // CLS_ZPmZ_H = 582
-    CEFBS_HasSVE, // CLS_ZPmZ_S = 583
-    CEFBS_HasNEON, // CLSv16i8 = 584
-    CEFBS_HasNEON, // CLSv2i32 = 585
-    CEFBS_HasNEON, // CLSv4i16 = 586
-    CEFBS_HasNEON, // CLSv4i32 = 587
-    CEFBS_HasNEON, // CLSv8i16 = 588
-    CEFBS_HasNEON, // CLSv8i8 = 589
-    CEFBS_None, // CLZWr = 590
-    CEFBS_None, // CLZXr = 591
-    CEFBS_HasSVE, // CLZ_ZPmZ_B = 592
-    CEFBS_HasSVE, // CLZ_ZPmZ_D = 593
-    CEFBS_HasSVE, // CLZ_ZPmZ_H = 594
-    CEFBS_HasSVE, // CLZ_ZPmZ_S = 595
-    CEFBS_HasNEON, // CLZv16i8 = 596
-    CEFBS_HasNEON, // CLZv2i32 = 597
-    CEFBS_HasNEON, // CLZv4i16 = 598
-    CEFBS_HasNEON, // CLZv4i32 = 599
-    CEFBS_HasNEON, // CLZv8i16 = 600
-    CEFBS_HasNEON, // CLZv8i8 = 601
-    CEFBS_HasNEON, // CMEQv16i8 = 602
-    CEFBS_HasNEON, // CMEQv16i8rz = 603
-    CEFBS_HasNEON, // CMEQv1i64 = 604
-    CEFBS_HasNEON, // CMEQv1i64rz = 605
-    CEFBS_HasNEON, // CMEQv2i32 = 606
-    CEFBS_HasNEON, // CMEQv2i32rz = 607
-    CEFBS_HasNEON, // CMEQv2i64 = 608
-    CEFBS_HasNEON, // CMEQv2i64rz = 609
-    CEFBS_HasNEON, // CMEQv4i16 = 610
-    CEFBS_HasNEON, // CMEQv4i16rz = 611
-    CEFBS_HasNEON, // CMEQv4i32 = 612
-    CEFBS_HasNEON, // CMEQv4i32rz = 613
-    CEFBS_HasNEON, // CMEQv8i16 = 614
-    CEFBS_HasNEON, // CMEQv8i16rz = 615
-    CEFBS_HasNEON, // CMEQv8i8 = 616
-    CEFBS_HasNEON, // CMEQv8i8rz = 617
-    CEFBS_HasNEON, // CMGEv16i8 = 618
-    CEFBS_HasNEON, // CMGEv16i8rz = 619
-    CEFBS_HasNEON, // CMGEv1i64 = 620
-    CEFBS_HasNEON, // CMGEv1i64rz = 621
-    CEFBS_HasNEON, // CMGEv2i32 = 622
-    CEFBS_HasNEON, // CMGEv2i32rz = 623
-    CEFBS_HasNEON, // CMGEv2i64 = 624
-    CEFBS_HasNEON, // CMGEv2i64rz = 625
-    CEFBS_HasNEON, // CMGEv4i16 = 626
-    CEFBS_HasNEON, // CMGEv4i16rz = 627
-    CEFBS_HasNEON, // CMGEv4i32 = 628
-    CEFBS_HasNEON, // CMGEv4i32rz = 629
-    CEFBS_HasNEON, // CMGEv8i16 = 630
-    CEFBS_HasNEON, // CMGEv8i16rz = 631
-    CEFBS_HasNEON, // CMGEv8i8 = 632
-    CEFBS_HasNEON, // CMGEv8i8rz = 633
-    CEFBS_HasNEON, // CMGTv16i8 = 634
-    CEFBS_HasNEON, // CMGTv16i8rz = 635
-    CEFBS_HasNEON, // CMGTv1i64 = 636
-    CEFBS_HasNEON, // CMGTv1i64rz = 637
-    CEFBS_HasNEON, // CMGTv2i32 = 638
-    CEFBS_HasNEON, // CMGTv2i32rz = 639
-    CEFBS_HasNEON, // CMGTv2i64 = 640
-    CEFBS_HasNEON, // CMGTv2i64rz = 641
-    CEFBS_HasNEON, // CMGTv4i16 = 642
-    CEFBS_HasNEON, // CMGTv4i16rz = 643
-    CEFBS_HasNEON, // CMGTv4i32 = 644
-    CEFBS_HasNEON, // CMGTv4i32rz = 645
-    CEFBS_HasNEON, // CMGTv8i16 = 646
-    CEFBS_HasNEON, // CMGTv8i16rz = 647
-    CEFBS_HasNEON, // CMGTv8i8 = 648
-    CEFBS_HasNEON, // CMGTv8i8rz = 649
-    CEFBS_HasNEON, // CMHIv16i8 = 650
-    CEFBS_HasNEON, // CMHIv1i64 = 651
-    CEFBS_HasNEON, // CMHIv2i32 = 652
-    CEFBS_HasNEON, // CMHIv2i64 = 653
-    CEFBS_HasNEON, // CMHIv4i16 = 654
-    CEFBS_HasNEON, // CMHIv4i32 = 655
-    CEFBS_HasNEON, // CMHIv8i16 = 656
-    CEFBS_HasNEON, // CMHIv8i8 = 657
-    CEFBS_HasNEON, // CMHSv16i8 = 658
-    CEFBS_HasNEON, // CMHSv1i64 = 659
-    CEFBS_HasNEON, // CMHSv2i32 = 660
-    CEFBS_HasNEON, // CMHSv2i64 = 661
-    CEFBS_HasNEON, // CMHSv4i16 = 662
-    CEFBS_HasNEON, // CMHSv4i32 = 663
-    CEFBS_HasNEON, // CMHSv8i16 = 664
-    CEFBS_HasNEON, // CMHSv8i8 = 665
-    CEFBS_HasSVE2, // CMLA_ZZZI_H = 666
-    CEFBS_HasSVE2, // CMLA_ZZZI_S = 667
-    CEFBS_HasSVE2, // CMLA_ZZZ_B = 668
-    CEFBS_HasSVE2, // CMLA_ZZZ_D = 669
-    CEFBS_HasSVE2, // CMLA_ZZZ_H = 670
-    CEFBS_HasSVE2, // CMLA_ZZZ_S = 671
-    CEFBS_HasNEON, // CMLEv16i8rz = 672
-    CEFBS_HasNEON, // CMLEv1i64rz = 673
-    CEFBS_HasNEON, // CMLEv2i32rz = 674
-    CEFBS_HasNEON, // CMLEv2i64rz = 675
-    CEFBS_HasNEON, // CMLEv4i16rz = 676
-    CEFBS_HasNEON, // CMLEv4i32rz = 677
-    CEFBS_HasNEON, // CMLEv8i16rz = 678
-    CEFBS_HasNEON, // CMLEv8i8rz = 679
-    CEFBS_HasNEON, // CMLTv16i8rz = 680
-    CEFBS_HasNEON, // CMLTv1i64rz = 681
-    CEFBS_HasNEON, // CMLTv2i32rz = 682
-    CEFBS_HasNEON, // CMLTv2i64rz = 683
-    CEFBS_HasNEON, // CMLTv4i16rz = 684
-    CEFBS_HasNEON, // CMLTv4i32rz = 685
-    CEFBS_HasNEON, // CMLTv8i16rz = 686
-    CEFBS_HasNEON, // CMLTv8i8rz = 687
-    CEFBS_HasSVE, // CMPEQ_PPzZI_B = 688
-    CEFBS_HasSVE, // CMPEQ_PPzZI_D = 689
-    CEFBS_HasSVE, // CMPEQ_PPzZI_H = 690
-    CEFBS_HasSVE, // CMPEQ_PPzZI_S = 691
-    CEFBS_HasSVE, // CMPEQ_PPzZZ_B = 692
-    CEFBS_HasSVE, // CMPEQ_PPzZZ_D = 693
-    CEFBS_HasSVE, // CMPEQ_PPzZZ_H = 694
-    CEFBS_HasSVE, // CMPEQ_PPzZZ_S = 695
-    CEFBS_HasSVE, // CMPEQ_WIDE_PPzZZ_B = 696
-    CEFBS_HasSVE, // CMPEQ_WIDE_PPzZZ_H = 697
-    CEFBS_HasSVE, // CMPEQ_WIDE_PPzZZ_S = 698
-    CEFBS_HasSVE, // CMPGE_PPzZI_B = 699
-    CEFBS_HasSVE, // CMPGE_PPzZI_D = 700
-    CEFBS_HasSVE, // CMPGE_PPzZI_H = 701
-    CEFBS_HasSVE, // CMPGE_PPzZI_S = 702
-    CEFBS_HasSVE, // CMPGE_PPzZZ_B = 703
-    CEFBS_HasSVE, // CMPGE_PPzZZ_D = 704
-    CEFBS_HasSVE, // CMPGE_PPzZZ_H = 705
-    CEFBS_HasSVE, // CMPGE_PPzZZ_S = 706
-    CEFBS_HasSVE, // CMPGE_WIDE_PPzZZ_B = 707
-    CEFBS_HasSVE, // CMPGE_WIDE_PPzZZ_H = 708
-    CEFBS_HasSVE, // CMPGE_WIDE_PPzZZ_S = 709
-    CEFBS_HasSVE, // CMPGT_PPzZI_B = 710
-    CEFBS_HasSVE, // CMPGT_PPzZI_D = 711
-    CEFBS_HasSVE, // CMPGT_PPzZI_H = 712
-    CEFBS_HasSVE, // CMPGT_PPzZI_S = 713
-    CEFBS_HasSVE, // CMPGT_PPzZZ_B = 714
-    CEFBS_HasSVE, // CMPGT_PPzZZ_D = 715
-    CEFBS_HasSVE, // CMPGT_PPzZZ_H = 716
-    CEFBS_HasSVE, // CMPGT_PPzZZ_S = 717
-    CEFBS_HasSVE, // CMPGT_WIDE_PPzZZ_B = 718
-    CEFBS_HasSVE, // CMPGT_WIDE_PPzZZ_H = 719
-    CEFBS_HasSVE, // CMPGT_WIDE_PPzZZ_S = 720
-    CEFBS_HasSVE, // CMPHI_PPzZI_B = 721
-    CEFBS_HasSVE, // CMPHI_PPzZI_D = 722
-    CEFBS_HasSVE, // CMPHI_PPzZI_H = 723
-    CEFBS_HasSVE, // CMPHI_PPzZI_S = 724
-    CEFBS_HasSVE, // CMPHI_PPzZZ_B = 725
-    CEFBS_HasSVE, // CMPHI_PPzZZ_D = 726
-    CEFBS_HasSVE, // CMPHI_PPzZZ_H = 727
-    CEFBS_HasSVE, // CMPHI_PPzZZ_S = 728
-    CEFBS_HasSVE, // CMPHI_WIDE_PPzZZ_B = 729
-    CEFBS_HasSVE, // CMPHI_WIDE_PPzZZ_H = 730
-    CEFBS_HasSVE, // CMPHI_WIDE_PPzZZ_S = 731
-    CEFBS_HasSVE, // CMPHS_PPzZI_B = 732
-    CEFBS_HasSVE, // CMPHS_PPzZI_D = 733
-    CEFBS_HasSVE, // CMPHS_PPzZI_H = 734
-    CEFBS_HasSVE, // CMPHS_PPzZI_S = 735
-    CEFBS_HasSVE, // CMPHS_PPzZZ_B = 736
-    CEFBS_HasSVE, // CMPHS_PPzZZ_D = 737
-    CEFBS_HasSVE, // CMPHS_PPzZZ_H = 738
-    CEFBS_HasSVE, // CMPHS_PPzZZ_S = 739
-    CEFBS_HasSVE, // CMPHS_WIDE_PPzZZ_B = 740
-    CEFBS_HasSVE, // CMPHS_WIDE_PPzZZ_H = 741
-    CEFBS_HasSVE, // CMPHS_WIDE_PPzZZ_S = 742
-    CEFBS_HasSVE, // CMPLE_PPzZI_B = 743
-    CEFBS_HasSVE, // CMPLE_PPzZI_D = 744
-    CEFBS_HasSVE, // CMPLE_PPzZI_H = 745
-    CEFBS_HasSVE, // CMPLE_PPzZI_S = 746
-    CEFBS_HasSVE, // CMPLE_WIDE_PPzZZ_B = 747
-    CEFBS_HasSVE, // CMPLE_WIDE_PPzZZ_H = 748
-    CEFBS_HasSVE, // CMPLE_WIDE_PPzZZ_S = 749
-    CEFBS_HasSVE, // CMPLO_PPzZI_B = 750
-    CEFBS_HasSVE, // CMPLO_PPzZI_D = 751
-    CEFBS_HasSVE, // CMPLO_PPzZI_H = 752
-    CEFBS_HasSVE, // CMPLO_PPzZI_S = 753
-    CEFBS_HasSVE, // CMPLO_WIDE_PPzZZ_B = 754
-    CEFBS_HasSVE, // CMPLO_WIDE_PPzZZ_H = 755
-    CEFBS_HasSVE, // CMPLO_WIDE_PPzZZ_S = 756
-    CEFBS_HasSVE, // CMPLS_PPzZI_B = 757
-    CEFBS_HasSVE, // CMPLS_PPzZI_D = 758
-    CEFBS_HasSVE, // CMPLS_PPzZI_H = 759
-    CEFBS_HasSVE, // CMPLS_PPzZI_S = 760
-    CEFBS_HasSVE, // CMPLS_WIDE_PPzZZ_B = 761
-    CEFBS_HasSVE, // CMPLS_WIDE_PPzZZ_H = 762
-    CEFBS_HasSVE, // CMPLS_WIDE_PPzZZ_S = 763
-    CEFBS_HasSVE, // CMPLT_PPzZI_B = 764
-    CEFBS_HasSVE, // CMPLT_PPzZI_D = 765
-    CEFBS_HasSVE, // CMPLT_PPzZI_H = 766
-    CEFBS_HasSVE, // CMPLT_PPzZI_S = 767
-    CEFBS_HasSVE, // CMPLT_WIDE_PPzZZ_B = 768
-    CEFBS_HasSVE, // CMPLT_WIDE_PPzZZ_H = 769
-    CEFBS_HasSVE, // CMPLT_WIDE_PPzZZ_S = 770
-    CEFBS_HasSVE, // CMPNE_PPzZI_B = 771
-    CEFBS_HasSVE, // CMPNE_PPzZI_D = 772
-    CEFBS_HasSVE, // CMPNE_PPzZI_H = 773
-    CEFBS_HasSVE, // CMPNE_PPzZI_S = 774
-    CEFBS_HasSVE, // CMPNE_PPzZZ_B = 775
-    CEFBS_HasSVE, // CMPNE_PPzZZ_D = 776
-    CEFBS_HasSVE, // CMPNE_PPzZZ_H = 777
-    CEFBS_HasSVE, // CMPNE_PPzZZ_S = 778
-    CEFBS_HasSVE, // CMPNE_WIDE_PPzZZ_B = 779
-    CEFBS_HasSVE, // CMPNE_WIDE_PPzZZ_H = 780
-    CEFBS_HasSVE, // CMPNE_WIDE_PPzZZ_S = 781
-    CEFBS_None, // CMP_SWAP_128 = 782
-    CEFBS_None, // CMP_SWAP_16 = 783
-    CEFBS_None, // CMP_SWAP_32 = 784
-    CEFBS_None, // CMP_SWAP_64 = 785
-    CEFBS_None, // CMP_SWAP_8 = 786
-    CEFBS_HasNEON, // CMTSTv16i8 = 787
-    CEFBS_HasNEON, // CMTSTv1i64 = 788
-    CEFBS_HasNEON, // CMTSTv2i32 = 789
-    CEFBS_HasNEON, // CMTSTv2i64 = 790
-    CEFBS_HasNEON, // CMTSTv4i16 = 791
-    CEFBS_HasNEON, // CMTSTv4i32 = 792
-    CEFBS_HasNEON, // CMTSTv8i16 = 793
-    CEFBS_HasNEON, // CMTSTv8i8 = 794
-    CEFBS_HasSVE, // CNOT_ZPmZ_B = 795
-    CEFBS_HasSVE, // CNOT_ZPmZ_D = 796
-    CEFBS_HasSVE, // CNOT_ZPmZ_H = 797
-    CEFBS_HasSVE, // CNOT_ZPmZ_S = 798
-    CEFBS_HasSVE, // CNTB_XPiI = 799
-    CEFBS_HasSVE, // CNTD_XPiI = 800
-    CEFBS_HasSVE, // CNTH_XPiI = 801
-    CEFBS_HasSVE, // CNTP_XPP_B = 802
-    CEFBS_HasSVE, // CNTP_XPP_D = 803
-    CEFBS_HasSVE, // CNTP_XPP_H = 804
-    CEFBS_HasSVE, // CNTP_XPP_S = 805
-    CEFBS_HasSVE, // CNTW_XPiI = 806
-    CEFBS_HasSVE, // CNT_ZPmZ_B = 807
-    CEFBS_HasSVE, // CNT_ZPmZ_D = 808
-    CEFBS_HasSVE, // CNT_ZPmZ_H = 809
-    CEFBS_HasSVE, // CNT_ZPmZ_S = 810
-    CEFBS_HasNEON, // CNTv16i8 = 811
-    CEFBS_HasNEON, // CNTv8i8 = 812
-    CEFBS_HasSVE, // COMPACT_ZPZ_D = 813
-    CEFBS_HasSVE, // COMPACT_ZPZ_S = 814
-    CEFBS_HasSVE, // CPY_ZPmI_B = 815
-    CEFBS_HasSVE, // CPY_ZPmI_D = 816
-    CEFBS_HasSVE, // CPY_ZPmI_H = 817
-    CEFBS_HasSVE, // CPY_ZPmI_S = 818
-    CEFBS_HasSVE, // CPY_ZPmR_B = 819
-    CEFBS_HasSVE, // CPY_ZPmR_D = 820
-    CEFBS_HasSVE, // CPY_ZPmR_H = 821
-    CEFBS_HasSVE, // CPY_ZPmR_S = 822
-    CEFBS_HasSVE, // CPY_ZPmV_B = 823
-    CEFBS_HasSVE, // CPY_ZPmV_D = 824
-    CEFBS_HasSVE, // CPY_ZPmV_H = 825
-    CEFBS_HasSVE, // CPY_ZPmV_S = 826
-    CEFBS_HasSVE, // CPY_ZPzI_B = 827
-    CEFBS_HasSVE, // CPY_ZPzI_D = 828
-    CEFBS_HasSVE, // CPY_ZPzI_H = 829
-    CEFBS_HasSVE, // CPY_ZPzI_S = 830
-    CEFBS_HasNEON, // CPYi16 = 831
-    CEFBS_HasNEON, // CPYi32 = 832
-    CEFBS_HasNEON, // CPYi64 = 833
-    CEFBS_HasNEON, // CPYi8 = 834
-    CEFBS_HasCRC, // CRC32Brr = 835
-    CEFBS_HasCRC, // CRC32CBrr = 836
-    CEFBS_HasCRC, // CRC32CHrr = 837
-    CEFBS_HasCRC, // CRC32CWrr = 838
-    CEFBS_HasCRC, // CRC32CXrr = 839
-    CEFBS_HasCRC, // CRC32Hrr = 840
-    CEFBS_HasCRC, // CRC32Wrr = 841
-    CEFBS_HasCRC, // CRC32Xrr = 842
-    CEFBS_None, // CSELWr = 843
-    CEFBS_None, // CSELXr = 844
-    CEFBS_None, // CSINCWr = 845
-    CEFBS_None, // CSINCXr = 846
-    CEFBS_None, // CSINVWr = 847
-    CEFBS_None, // CSINVXr = 848
-    CEFBS_None, // CSNEGWr = 849
-    CEFBS_None, // CSNEGXr = 850
-    CEFBS_HasSVE, // CTERMEQ_WW = 851
-    CEFBS_HasSVE, // CTERMEQ_XX = 852
-    CEFBS_HasSVE, // CTERMNE_WW = 853
-    CEFBS_HasSVE, // CTERMNE_XX = 854
-    CEFBS_None, // CompilerBarrier = 855
-    CEFBS_None, // DCPS1 = 856
-    CEFBS_None, // DCPS2 = 857
-    CEFBS_None, // DCPS3 = 858
-    CEFBS_HasSVE, // DECB_XPiI = 859
-    CEFBS_HasSVE, // DECD_XPiI = 860
-    CEFBS_HasSVE, // DECD_ZPiI = 861
-    CEFBS_HasSVE, // DECH_XPiI = 862
-    CEFBS_HasSVE, // DECH_ZPiI = 863
-    CEFBS_HasSVE, // DECP_XP_B = 864
-    CEFBS_HasSVE, // DECP_XP_D = 865
-    CEFBS_HasSVE, // DECP_XP_H = 866
-    CEFBS_HasSVE, // DECP_XP_S = 867
-    CEFBS_HasSVE, // DECP_ZP_D = 868
-    CEFBS_HasSVE, // DECP_ZP_H = 869
-    CEFBS_HasSVE, // DECP_ZP_S = 870
-    CEFBS_HasSVE, // DECW_XPiI = 871
-    CEFBS_HasSVE, // DECW_ZPiI = 872
-    CEFBS_None, // DMB = 873
-    CEFBS_None, // DRPS = 874
-    CEFBS_None, // DSB = 875
-    CEFBS_HasSVE, // DUPM_ZI = 876
-    CEFBS_HasSVE, // DUP_ZI_B = 877
-    CEFBS_HasSVE, // DUP_ZI_D = 878
-    CEFBS_HasSVE, // DUP_ZI_H = 879
-    CEFBS_HasSVE, // DUP_ZI_S = 880
-    CEFBS_HasSVE, // DUP_ZR_B = 881
-    CEFBS_HasSVE, // DUP_ZR_D = 882
-    CEFBS_HasSVE, // DUP_ZR_H = 883
-    CEFBS_HasSVE, // DUP_ZR_S = 884
-    CEFBS_HasSVE, // DUP_ZZI_B = 885
-    CEFBS_HasSVE, // DUP_ZZI_D = 886
-    CEFBS_HasSVE, // DUP_ZZI_H = 887
-    CEFBS_HasSVE, // DUP_ZZI_Q = 888
-    CEFBS_HasSVE, // DUP_ZZI_S = 889
-    CEFBS_HasNEON, // DUPv16i8gpr = 890
-    CEFBS_HasNEON, // DUPv16i8lane = 891
-    CEFBS_HasNEON, // DUPv2i32gpr = 892
-    CEFBS_HasNEON, // DUPv2i32lane = 893
-    CEFBS_HasNEON, // DUPv2i64gpr = 894
-    CEFBS_HasNEON, // DUPv2i64lane = 895
-    CEFBS_HasNEON, // DUPv4i16gpr = 896
-    CEFBS_HasNEON, // DUPv4i16lane = 897
-    CEFBS_HasNEON, // DUPv4i32gpr = 898
-    CEFBS_HasNEON, // DUPv4i32lane = 899
-    CEFBS_HasNEON, // DUPv8i16gpr = 900
-    CEFBS_HasNEON, // DUPv8i16lane = 901
-    CEFBS_HasNEON, // DUPv8i8gpr = 902
-    CEFBS_HasNEON, // DUPv8i8lane = 903
-    CEFBS_None, // EMITBKEY = 904
-    CEFBS_None, // EONWrr = 905
-    CEFBS_None, // EONWrs = 906
-    CEFBS_None, // EONXrr = 907
-    CEFBS_None, // EONXrs = 908
-    CEFBS_HasSHA3, // EOR3 = 909
-    CEFBS_HasSVE2, // EOR3_ZZZZ_D = 910
-    CEFBS_HasSVE2, // EORBT_ZZZ_B = 911
-    CEFBS_HasSVE2, // EORBT_ZZZ_D = 912
-    CEFBS_HasSVE2, // EORBT_ZZZ_H = 913
-    CEFBS_HasSVE2, // EORBT_ZZZ_S = 914
-    CEFBS_HasSVE, // EORS_PPzPP = 915
-    CEFBS_HasSVE2, // EORTB_ZZZ_B = 916
-    CEFBS_HasSVE2, // EORTB_ZZZ_D = 917
-    CEFBS_HasSVE2, // EORTB_ZZZ_H = 918
-    CEFBS_HasSVE2, // EORTB_ZZZ_S = 919
-    CEFBS_HasSVE, // EORV_VPZ_B = 920
-    CEFBS_HasSVE, // EORV_VPZ_D = 921
-    CEFBS_HasSVE, // EORV_VPZ_H = 922
-    CEFBS_HasSVE, // EORV_VPZ_S = 923
-    CEFBS_None, // EORWri = 924
-    CEFBS_None, // EORWrr = 925
-    CEFBS_None, // EORWrs = 926
-    CEFBS_None, // EORXri = 927
-    CEFBS_None, // EORXrr = 928
-    CEFBS_None, // EORXrs = 929
-    CEFBS_HasSVE, // EOR_PPzPP = 930
-    CEFBS_HasSVE, // EOR_ZI = 931
-    CEFBS_HasSVE, // EOR_ZPmZ_B = 932
-    CEFBS_HasSVE, // EOR_ZPmZ_D = 933
-    CEFBS_HasSVE, // EOR_ZPmZ_H = 934
-    CEFBS_HasSVE, // EOR_ZPmZ_S = 935
-    CEFBS_HasSVE, // EOR_ZZZ = 936
-    CEFBS_HasNEON, // EORv16i8 = 937
-    CEFBS_HasNEON, // EORv8i8 = 938
-    CEFBS_None, // ERET = 939
-    CEFBS_HasPA, // ERETAA = 940
-    CEFBS_HasPA, // ERETAB = 941
-    CEFBS_None, // EXTRWrri = 942
-    CEFBS_None, // EXTRXrri = 943
-    CEFBS_HasSVE, // EXT_ZZI = 944
-    CEFBS_HasSVE2, // EXT_ZZI_B = 945
-    CEFBS_HasNEON, // EXTv16i8 = 946
-    CEFBS_HasNEON, // EXTv8i8 = 947
-    CEFBS_None, // F128CSEL = 948
-    CEFBS_HasNEON_HasFullFP16, // FABD16 = 949
-    CEFBS_HasNEON, // FABD32 = 950
-    CEFBS_HasNEON, // FABD64 = 951
-    CEFBS_HasSVE, // FABD_ZPmZ_D = 952
-    CEFBS_HasSVE, // FABD_ZPmZ_H = 953
-    CEFBS_HasSVE, // FABD_ZPmZ_S = 954
-    CEFBS_HasNEON, // FABDv2f32 = 955
-    CEFBS_HasNEON, // FABDv2f64 = 956
-    CEFBS_HasNEON_HasFullFP16, // FABDv4f16 = 957
-    CEFBS_HasNEON, // FABDv4f32 = 958
-    CEFBS_HasNEON_HasFullFP16, // FABDv8f16 = 959
-    CEFBS_HasFPARMv8, // FABSDr = 960
-    CEFBS_HasFullFP16, // FABSHr = 961
-    CEFBS_HasFPARMv8, // FABSSr = 962
-    CEFBS_HasSVE, // FABS_ZPmZ_D = 963
-    CEFBS_HasSVE, // FABS_ZPmZ_H = 964
-    CEFBS_HasSVE, // FABS_ZPmZ_S = 965
-    CEFBS_HasNEON, // FABSv2f32 = 966
-    CEFBS_HasNEON, // FABSv2f64 = 967
-    CEFBS_HasNEON_HasFullFP16, // FABSv4f16 = 968
-    CEFBS_HasNEON, // FABSv4f32 = 969
-    CEFBS_HasNEON_HasFullFP16, // FABSv8f16 = 970
-    CEFBS_HasNEON_HasFullFP16, // FACGE16 = 971
-    CEFBS_HasNEON, // FACGE32 = 972
-    CEFBS_HasNEON, // FACGE64 = 973
-    CEFBS_HasSVE, // FACGE_PPzZZ_D = 974
-    CEFBS_HasSVE, // FACGE_PPzZZ_H = 975
-    CEFBS_HasSVE, // FACGE_PPzZZ_S = 976
-    CEFBS_HasNEON, // FACGEv2f32 = 977
-    CEFBS_HasNEON, // FACGEv2f64 = 978
-    CEFBS_HasNEON_HasFullFP16, // FACGEv4f16 = 979
-    CEFBS_HasNEON, // FACGEv4f32 = 980
-    CEFBS_HasNEON_HasFullFP16, // FACGEv8f16 = 981
-    CEFBS_HasNEON_HasFullFP16, // FACGT16 = 982
-    CEFBS_HasNEON, // FACGT32 = 983
-    CEFBS_HasNEON, // FACGT64 = 984
-    CEFBS_HasSVE, // FACGT_PPzZZ_D = 985
-    CEFBS_HasSVE, // FACGT_PPzZZ_H = 986
-    CEFBS_HasSVE, // FACGT_PPzZZ_S = 987
-    CEFBS_HasNEON, // FACGTv2f32 = 988
-    CEFBS_HasNEON, // FACGTv2f64 = 989
-    CEFBS_HasNEON_HasFullFP16, // FACGTv4f16 = 990
-    CEFBS_HasNEON, // FACGTv4f32 = 991
-    CEFBS_HasNEON_HasFullFP16, // FACGTv8f16 = 992
-    CEFBS_HasSVE, // FADDA_VPZ_D = 993
-    CEFBS_HasSVE, // FADDA_VPZ_H = 994
-    CEFBS_HasSVE, // FADDA_VPZ_S = 995
-    CEFBS_HasFPARMv8, // FADDDrr = 996
-    CEFBS_HasFullFP16, // FADDHrr = 997
-    CEFBS_HasSVE2, // FADDP_ZPmZZ_D = 998
-    CEFBS_HasSVE2, // FADDP_ZPmZZ_H = 999
-    CEFBS_HasSVE2, // FADDP_ZPmZZ_S = 1000
-    CEFBS_HasNEON, // FADDPv2f32 = 1001
-    CEFBS_HasNEON, // FADDPv2f64 = 1002
-    CEFBS_HasNEON_HasFullFP16, // FADDPv2i16p = 1003
-    CEFBS_HasNEON, // FADDPv2i32p = 1004
-    CEFBS_HasNEON, // FADDPv2i64p = 1005
-    CEFBS_HasNEON_HasFullFP16, // FADDPv4f16 = 1006
-    CEFBS_HasNEON, // FADDPv4f32 = 1007
-    CEFBS_HasNEON_HasFullFP16, // FADDPv8f16 = 1008
-    CEFBS_HasFPARMv8, // FADDSrr = 1009
-    CEFBS_HasSVE, // FADDV_VPZ_D = 1010
-    CEFBS_HasSVE, // FADDV_VPZ_H = 1011
-    CEFBS_HasSVE, // FADDV_VPZ_S = 1012
-    CEFBS_HasSVE, // FADD_ZPmI_D = 1013
-    CEFBS_HasSVE, // FADD_ZPmI_H = 1014
-    CEFBS_HasSVE, // FADD_ZPmI_S = 1015
-    CEFBS_HasSVE, // FADD_ZPmZ_D = 1016
-    CEFBS_HasSVE, // FADD_ZPmZ_H = 1017
-    CEFBS_HasSVE, // FADD_ZPmZ_S = 1018
-    CEFBS_HasSVE, // FADD_ZZZ_D = 1019
-    CEFBS_HasSVE, // FADD_ZZZ_H = 1020
-    CEFBS_HasSVE, // FADD_ZZZ_S = 1021
-    CEFBS_HasNEON, // FADDv2f32 = 1022
-    CEFBS_HasNEON, // FADDv2f64 = 1023
-    CEFBS_HasNEON_HasFullFP16, // FADDv4f16 = 1024
-    CEFBS_HasNEON, // FADDv4f32 = 1025
-    CEFBS_HasNEON_HasFullFP16, // FADDv8f16 = 1026
-    CEFBS_HasSVE, // FCADD_ZPmZ_D = 1027
-    CEFBS_HasSVE, // FCADD_ZPmZ_H = 1028
-    CEFBS_HasSVE, // FCADD_ZPmZ_S = 1029
-    CEFBS_HasComplxNum_HasNEON, // FCADDv2f32 = 1030
-    CEFBS_HasComplxNum_HasNEON, // FCADDv2f64 = 1031
-    CEFBS_HasComplxNum_HasNEON_HasFullFP16, // FCADDv4f16 = 1032
-    CEFBS_HasComplxNum_HasNEON, // FCADDv4f32 = 1033
-    CEFBS_HasComplxNum_HasNEON_HasFullFP16, // FCADDv8f16 = 1034
-    CEFBS_HasFPARMv8, // FCCMPDrr = 1035
-    CEFBS_HasFPARMv8, // FCCMPEDrr = 1036
-    CEFBS_HasFullFP16, // FCCMPEHrr = 1037
-    CEFBS_HasFPARMv8, // FCCMPESrr = 1038
-    CEFBS_HasFullFP16, // FCCMPHrr = 1039
-    CEFBS_HasFPARMv8, // FCCMPSrr = 1040
-    CEFBS_HasNEON_HasFullFP16, // FCMEQ16 = 1041
-    CEFBS_HasNEON, // FCMEQ32 = 1042
-    CEFBS_HasNEON, // FCMEQ64 = 1043
-    CEFBS_HasSVE, // FCMEQ_PPzZ0_D = 1044
-    CEFBS_HasSVE, // FCMEQ_PPzZ0_H = 1045
-    CEFBS_HasSVE, // FCMEQ_PPzZ0_S = 1046
-    CEFBS_HasSVE, // FCMEQ_PPzZZ_D = 1047
-    CEFBS_HasSVE, // FCMEQ_PPzZZ_H = 1048
-    CEFBS_HasSVE, // FCMEQ_PPzZZ_S = 1049
-    CEFBS_HasNEON_HasFullFP16, // FCMEQv1i16rz = 1050
-    CEFBS_HasNEON, // FCMEQv1i32rz = 1051
-    CEFBS_HasNEON, // FCMEQv1i64rz = 1052
-    CEFBS_HasNEON, // FCMEQv2f32 = 1053
-    CEFBS_HasNEON, // FCMEQv2f64 = 1054
-    CEFBS_HasNEON, // FCMEQv2i32rz = 1055
-    CEFBS_HasNEON, // FCMEQv2i64rz = 1056
-    CEFBS_HasNEON_HasFullFP16, // FCMEQv4f16 = 1057
-    CEFBS_HasNEON, // FCMEQv4f32 = 1058
-    CEFBS_HasNEON_HasFullFP16, // FCMEQv4i16rz = 1059
-    CEFBS_HasNEON, // FCMEQv4i32rz = 1060
-    CEFBS_HasNEON_HasFullFP16, // FCMEQv8f16 = 1061
-    CEFBS_HasNEON_HasFullFP16, // FCMEQv8i16rz = 1062
-    CEFBS_HasNEON_HasFullFP16, // FCMGE16 = 1063
-    CEFBS_HasNEON, // FCMGE32 = 1064
-    CEFBS_HasNEON, // FCMGE64 = 1065
-    CEFBS_HasSVE, // FCMGE_PPzZ0_D = 1066
-    CEFBS_HasSVE, // FCMGE_PPzZ0_H = 1067
-    CEFBS_HasSVE, // FCMGE_PPzZ0_S = 1068
-    CEFBS_HasSVE, // FCMGE_PPzZZ_D = 1069
-    CEFBS_HasSVE, // FCMGE_PPzZZ_H = 1070
-    CEFBS_HasSVE, // FCMGE_PPzZZ_S = 1071
-    CEFBS_HasNEON_HasFullFP16, // FCMGEv1i16rz = 1072
-    CEFBS_HasNEON, // FCMGEv1i32rz = 1073
-    CEFBS_HasNEON, // FCMGEv1i64rz = 1074
-    CEFBS_HasNEON, // FCMGEv2f32 = 1075
-    CEFBS_HasNEON, // FCMGEv2f64 = 1076
-    CEFBS_HasNEON, // FCMGEv2i32rz = 1077
-    CEFBS_HasNEON, // FCMGEv2i64rz = 1078
-    CEFBS_HasNEON_HasFullFP16, // FCMGEv4f16 = 1079
-    CEFBS_HasNEON, // FCMGEv4f32 = 1080
-    CEFBS_HasNEON_HasFullFP16, // FCMGEv4i16rz = 1081
-    CEFBS_HasNEON, // FCMGEv4i32rz = 1082
-    CEFBS_HasNEON_HasFullFP16, // FCMGEv8f16 = 1083
-    CEFBS_HasNEON_HasFullFP16, // FCMGEv8i16rz = 1084
-    CEFBS_HasNEON_HasFullFP16, // FCMGT16 = 1085
-    CEFBS_HasNEON, // FCMGT32 = 1086
-    CEFBS_HasNEON, // FCMGT64 = 1087
-    CEFBS_HasSVE, // FCMGT_PPzZ0_D = 1088
-    CEFBS_HasSVE, // FCMGT_PPzZ0_H = 1089
-    CEFBS_HasSVE, // FCMGT_PPzZ0_S = 1090
-    CEFBS_HasSVE, // FCMGT_PPzZZ_D = 1091
-    CEFBS_HasSVE, // FCMGT_PPzZZ_H = 1092
-    CEFBS_HasSVE, // FCMGT_PPzZZ_S = 1093
-    CEFBS_HasNEON_HasFullFP16, // FCMGTv1i16rz = 1094
-    CEFBS_HasNEON, // FCMGTv1i32rz = 1095
-    CEFBS_HasNEON, // FCMGTv1i64rz = 1096
-    CEFBS_HasNEON, // FCMGTv2f32 = 1097
-    CEFBS_HasNEON, // FCMGTv2f64 = 1098
-    CEFBS_HasNEON, // FCMGTv2i32rz = 1099
-    CEFBS_HasNEON, // FCMGTv2i64rz = 1100
-    CEFBS_HasNEON_HasFullFP16, // FCMGTv4f16 = 1101
-    CEFBS_HasNEON, // FCMGTv4f32 = 1102
-    CEFBS_HasNEON_HasFullFP16, // FCMGTv4i16rz = 1103
-    CEFBS_HasNEON, // FCMGTv4i32rz = 1104
-    CEFBS_HasNEON_HasFullFP16, // FCMGTv8f16 = 1105
-    CEFBS_HasNEON_HasFullFP16, // FCMGTv8i16rz = 1106
-    CEFBS_HasSVE, // FCMLA_ZPmZZ_D = 1107
-    CEFBS_HasSVE, // FCMLA_ZPmZZ_H = 1108
-    CEFBS_HasSVE, // FCMLA_ZPmZZ_S = 1109
-    CEFBS_HasSVE, // FCMLA_ZZZI_H = 1110
-    CEFBS_HasSVE, // FCMLA_ZZZI_S = 1111
-    CEFBS_HasComplxNum_HasNEON, // FCMLAv2f32 = 1112
-    CEFBS_HasComplxNum_HasNEON, // FCMLAv2f64 = 1113
-    CEFBS_HasComplxNum_HasNEON_HasFullFP16, // FCMLAv4f16 = 1114
-    CEFBS_HasComplxNum_HasNEON_HasFullFP16, // FCMLAv4f16_indexed = 1115
-    CEFBS_HasComplxNum_HasNEON, // FCMLAv4f32 = 1116
-    CEFBS_HasComplxNum_HasNEON, // FCMLAv4f32_indexed = 1117
-    CEFBS_HasComplxNum_HasNEON_HasFullFP16, // FCMLAv8f16 = 1118
-    CEFBS_HasComplxNum_HasNEON_HasFullFP16, // FCMLAv8f16_indexed = 1119
-    CEFBS_HasSVE, // FCMLE_PPzZ0_D = 1120
-    CEFBS_HasSVE, // FCMLE_PPzZ0_H = 1121
-    CEFBS_HasSVE, // FCMLE_PPzZ0_S = 1122
-    CEFBS_HasNEON_HasFullFP16, // FCMLEv1i16rz = 1123
-    CEFBS_HasNEON, // FCMLEv1i32rz = 1124
-    CEFBS_HasNEON, // FCMLEv1i64rz = 1125
-    CEFBS_HasNEON, // FCMLEv2i32rz = 1126
-    CEFBS_HasNEON, // FCMLEv2i64rz = 1127
-    CEFBS_HasNEON_HasFullFP16, // FCMLEv4i16rz = 1128
-    CEFBS_HasNEON, // FCMLEv4i32rz = 1129
-    CEFBS_HasNEON_HasFullFP16, // FCMLEv8i16rz = 1130
-    CEFBS_HasSVE, // FCMLT_PPzZ0_D = 1131
-    CEFBS_HasSVE, // FCMLT_PPzZ0_H = 1132
-    CEFBS_HasSVE, // FCMLT_PPzZ0_S = 1133
-    CEFBS_HasNEON_HasFullFP16, // FCMLTv1i16rz = 1134
-    CEFBS_HasNEON, // FCMLTv1i32rz = 1135
-    CEFBS_HasNEON, // FCMLTv1i64rz = 1136
-    CEFBS_HasNEON, // FCMLTv2i32rz = 1137
-    CEFBS_HasNEON, // FCMLTv2i64rz = 1138
-    CEFBS_HasNEON_HasFullFP16, // FCMLTv4i16rz = 1139
-    CEFBS_HasNEON, // FCMLTv4i32rz = 1140
-    CEFBS_HasNEON_HasFullFP16, // FCMLTv8i16rz = 1141
-    CEFBS_HasSVE, // FCMNE_PPzZ0_D = 1142
-    CEFBS_HasSVE, // FCMNE_PPzZ0_H = 1143
-    CEFBS_HasSVE, // FCMNE_PPzZ0_S = 1144
-    CEFBS_HasSVE, // FCMNE_PPzZZ_D = 1145
-    CEFBS_HasSVE, // FCMNE_PPzZZ_H = 1146
-    CEFBS_HasSVE, // FCMNE_PPzZZ_S = 1147
-    CEFBS_HasFPARMv8, // FCMPDri = 1148
-    CEFBS_HasFPARMv8, // FCMPDrr = 1149
-    CEFBS_HasFPARMv8, // FCMPEDri = 1150
-    CEFBS_HasFPARMv8, // FCMPEDrr = 1151
-    CEFBS_HasFullFP16, // FCMPEHri = 1152
-    CEFBS_HasFullFP16, // FCMPEHrr = 1153
-    CEFBS_HasFPARMv8, // FCMPESri = 1154
-    CEFBS_HasFPARMv8, // FCMPESrr = 1155
-    CEFBS_HasFullFP16, // FCMPHri = 1156
-    CEFBS_HasFullFP16, // FCMPHrr = 1157
-    CEFBS_HasFPARMv8, // FCMPSri = 1158
-    CEFBS_HasFPARMv8, // FCMPSrr = 1159
-    CEFBS_HasSVE, // FCMUO_PPzZZ_D = 1160
-    CEFBS_HasSVE, // FCMUO_PPzZZ_H = 1161
-    CEFBS_HasSVE, // FCMUO_PPzZZ_S = 1162
-    CEFBS_HasSVE, // FCPY_ZPmI_D = 1163
-    CEFBS_HasSVE, // FCPY_ZPmI_H = 1164
-    CEFBS_HasSVE, // FCPY_ZPmI_S = 1165
-    CEFBS_HasFPARMv8, // FCSELDrrr = 1166
-    CEFBS_HasFullFP16, // FCSELHrrr = 1167
-    CEFBS_HasFPARMv8, // FCSELSrrr = 1168
-    CEFBS_HasFPARMv8, // FCVTASUWDr = 1169
-    CEFBS_HasFullFP16, // FCVTASUWHr = 1170
-    CEFBS_HasFPARMv8, // FCVTASUWSr = 1171
-    CEFBS_HasFPARMv8, // FCVTASUXDr = 1172
-    CEFBS_HasFullFP16, // FCVTASUXHr = 1173
-    CEFBS_HasFPARMv8, // FCVTASUXSr = 1174
-    CEFBS_HasNEON_HasFullFP16, // FCVTASv1f16 = 1175
-    CEFBS_HasNEON, // FCVTASv1i32 = 1176
-    CEFBS_HasNEON, // FCVTASv1i64 = 1177
-    CEFBS_HasNEON, // FCVTASv2f32 = 1178
-    CEFBS_HasNEON, // FCVTASv2f64 = 1179
-    CEFBS_HasNEON_HasFullFP16, // FCVTASv4f16 = 1180
-    CEFBS_HasNEON, // FCVTASv4f32 = 1181
-    CEFBS_HasNEON_HasFullFP16, // FCVTASv8f16 = 1182
-    CEFBS_HasFPARMv8, // FCVTAUUWDr = 1183
-    CEFBS_HasFullFP16, // FCVTAUUWHr = 1184
-    CEFBS_HasFPARMv8, // FCVTAUUWSr = 1185
-    CEFBS_HasFPARMv8, // FCVTAUUXDr = 1186
-    CEFBS_HasFullFP16, // FCVTAUUXHr = 1187
-    CEFBS_HasFPARMv8, // FCVTAUUXSr = 1188
-    CEFBS_HasNEON_HasFullFP16, // FCVTAUv1f16 = 1189
-    CEFBS_HasNEON, // FCVTAUv1i32 = 1190
-    CEFBS_HasNEON, // FCVTAUv1i64 = 1191
-    CEFBS_HasNEON, // FCVTAUv2f32 = 1192
-    CEFBS_HasNEON, // FCVTAUv2f64 = 1193
-    CEFBS_HasNEON_HasFullFP16, // FCVTAUv4f16 = 1194
-    CEFBS_HasNEON, // FCVTAUv4f32 = 1195
-    CEFBS_HasNEON_HasFullFP16, // FCVTAUv8f16 = 1196
-    CEFBS_HasFPARMv8, // FCVTDHr = 1197
-    CEFBS_HasFPARMv8, // FCVTDSr = 1198
-    CEFBS_HasFPARMv8, // FCVTHDr = 1199
-    CEFBS_HasFPARMv8, // FCVTHSr = 1200
-    CEFBS_HasSVE2, // FCVTLT_ZPmZ_HtoS = 1201
-    CEFBS_HasSVE2, // FCVTLT_ZPmZ_StoD = 1202
-    CEFBS_HasNEON, // FCVTLv2i32 = 1203
-    CEFBS_HasNEON, // FCVTLv4i16 = 1204
-    CEFBS_HasNEON, // FCVTLv4i32 = 1205
-    CEFBS_HasNEON, // FCVTLv8i16 = 1206
-    CEFBS_HasFPARMv8, // FCVTMSUWDr = 1207
-    CEFBS_HasFullFP16, // FCVTMSUWHr = 1208
-    CEFBS_HasFPARMv8, // FCVTMSUWSr = 1209
-    CEFBS_HasFPARMv8, // FCVTMSUXDr = 1210
-    CEFBS_HasFullFP16, // FCVTMSUXHr = 1211
-    CEFBS_HasFPARMv8, // FCVTMSUXSr = 1212
-    CEFBS_HasNEON_HasFullFP16, // FCVTMSv1f16 = 1213
-    CEFBS_HasNEON, // FCVTMSv1i32 = 1214
-    CEFBS_HasNEON, // FCVTMSv1i64 = 1215
-    CEFBS_HasNEON, // FCVTMSv2f32 = 1216
-    CEFBS_HasNEON, // FCVTMSv2f64 = 1217
-    CEFBS_HasNEON_HasFullFP16, // FCVTMSv4f16 = 1218
-    CEFBS_HasNEON, // FCVTMSv4f32 = 1219
-    CEFBS_HasNEON_HasFullFP16, // FCVTMSv8f16 = 1220
-    CEFBS_HasFPARMv8, // FCVTMUUWDr = 1221
-    CEFBS_HasFullFP16, // FCVTMUUWHr = 1222
-    CEFBS_HasFPARMv8, // FCVTMUUWSr = 1223
-    CEFBS_HasFPARMv8, // FCVTMUUXDr = 1224
-    CEFBS_HasFullFP16, // FCVTMUUXHr = 1225
-    CEFBS_HasFPARMv8, // FCVTMUUXSr = 1226
-    CEFBS_HasNEON_HasFullFP16, // FCVTMUv1f16 = 1227
-    CEFBS_HasNEON, // FCVTMUv1i32 = 1228
-    CEFBS_HasNEON, // FCVTMUv1i64 = 1229
-    CEFBS_HasNEON, // FCVTMUv2f32 = 1230
-    CEFBS_HasNEON, // FCVTMUv2f64 = 1231
-    CEFBS_HasNEON_HasFullFP16, // FCVTMUv4f16 = 1232
-    CEFBS_HasNEON, // FCVTMUv4f32 = 1233
-    CEFBS_HasNEON_HasFullFP16, // FCVTMUv8f16 = 1234
-    CEFBS_HasFPARMv8, // FCVTNSUWDr = 1235
-    CEFBS_HasFullFP16, // FCVTNSUWHr = 1236
-    CEFBS_HasFPARMv8, // FCVTNSUWSr = 1237
-    CEFBS_HasFPARMv8, // FCVTNSUXDr = 1238
-    CEFBS_HasFullFP16, // FCVTNSUXHr = 1239
-    CEFBS_HasFPARMv8, // FCVTNSUXSr = 1240
-    CEFBS_HasNEON_HasFullFP16, // FCVTNSv1f16 = 1241
-    CEFBS_HasNEON, // FCVTNSv1i32 = 1242
-    CEFBS_HasNEON, // FCVTNSv1i64 = 1243
-    CEFBS_HasNEON, // FCVTNSv2f32 = 1244
-    CEFBS_HasNEON, // FCVTNSv2f64 = 1245
-    CEFBS_HasNEON_HasFullFP16, // FCVTNSv4f16 = 1246
-    CEFBS_HasNEON, // FCVTNSv4f32 = 1247
-    CEFBS_HasNEON_HasFullFP16, // FCVTNSv8f16 = 1248
-    CEFBS_HasSVE2, // FCVTNT_ZPmZ_DtoS = 1249
-    CEFBS_HasSVE2, // FCVTNT_ZPmZ_StoH = 1250
-    CEFBS_HasFPARMv8, // FCVTNUUWDr = 1251
-    CEFBS_HasFullFP16, // FCVTNUUWHr = 1252
-    CEFBS_HasFPARMv8, // FCVTNUUWSr = 1253
-    CEFBS_HasFPARMv8, // FCVTNUUXDr = 1254
-    CEFBS_HasFullFP16, // FCVTNUUXHr = 1255
-    CEFBS_HasFPARMv8, // FCVTNUUXSr = 1256
-    CEFBS_HasNEON_HasFullFP16, // FCVTNUv1f16 = 1257
-    CEFBS_HasNEON, // FCVTNUv1i32 = 1258
-    CEFBS_HasNEON, // FCVTNUv1i64 = 1259
-    CEFBS_HasNEON, // FCVTNUv2f32 = 1260
-    CEFBS_HasNEON, // FCVTNUv2f64 = 1261
-    CEFBS_HasNEON_HasFullFP16, // FCVTNUv4f16 = 1262
-    CEFBS_HasNEON, // FCVTNUv4f32 = 1263
-    CEFBS_HasNEON_HasFullFP16, // FCVTNUv8f16 = 1264
-    CEFBS_HasNEON, // FCVTNv2i32 = 1265
-    CEFBS_HasNEON, // FCVTNv4i16 = 1266
-    CEFBS_HasNEON, // FCVTNv4i32 = 1267
-    CEFBS_HasNEON, // FCVTNv8i16 = 1268
-    CEFBS_HasFPARMv8, // FCVTPSUWDr = 1269
-    CEFBS_HasFullFP16, // FCVTPSUWHr = 1270
-    CEFBS_HasFPARMv8, // FCVTPSUWSr = 1271
-    CEFBS_HasFPARMv8, // FCVTPSUXDr = 1272
-    CEFBS_HasFullFP16, // FCVTPSUXHr = 1273
-    CEFBS_HasFPARMv8, // FCVTPSUXSr = 1274
-    CEFBS_HasNEON_HasFullFP16, // FCVTPSv1f16 = 1275
-    CEFBS_HasNEON, // FCVTPSv1i32 = 1276
-    CEFBS_HasNEON, // FCVTPSv1i64 = 1277
-    CEFBS_HasNEON, // FCVTPSv2f32 = 1278
-    CEFBS_HasNEON, // FCVTPSv2f64 = 1279
-    CEFBS_HasNEON_HasFullFP16, // FCVTPSv4f16 = 1280
-    CEFBS_HasNEON, // FCVTPSv4f32 = 1281
-    CEFBS_HasNEON_HasFullFP16, // FCVTPSv8f16 = 1282
-    CEFBS_HasFPARMv8, // FCVTPUUWDr = 1283
-    CEFBS_HasFullFP16, // FCVTPUUWHr = 1284
-    CEFBS_HasFPARMv8, // FCVTPUUWSr = 1285
-    CEFBS_HasFPARMv8, // FCVTPUUXDr = 1286
-    CEFBS_HasFullFP16, // FCVTPUUXHr = 1287
-    CEFBS_HasFPARMv8, // FCVTPUUXSr = 1288
-    CEFBS_HasNEON_HasFullFP16, // FCVTPUv1f16 = 1289
-    CEFBS_HasNEON, // FCVTPUv1i32 = 1290
-    CEFBS_HasNEON, // FCVTPUv1i64 = 1291
-    CEFBS_HasNEON, // FCVTPUv2f32 = 1292
-    CEFBS_HasNEON, // FCVTPUv2f64 = 1293
-    CEFBS_HasNEON_HasFullFP16, // FCVTPUv4f16 = 1294
-    CEFBS_HasNEON, // FCVTPUv4f32 = 1295
-    CEFBS_HasNEON_HasFullFP16, // FCVTPUv8f16 = 1296
-    CEFBS_HasFPARMv8, // FCVTSDr = 1297
-    CEFBS_HasFPARMv8, // FCVTSHr = 1298
-    CEFBS_HasSVE2, // FCVTXNT_ZPmZ_DtoS = 1299
-    CEFBS_HasNEON, // FCVTXNv1i64 = 1300
-    CEFBS_HasNEON, // FCVTXNv2f32 = 1301
-    CEFBS_HasNEON, // FCVTXNv4f32 = 1302
-    CEFBS_HasSVE2, // FCVTX_ZPmZ_DtoS = 1303
-    CEFBS_HasFPARMv8, // FCVTZSSWDri = 1304
-    CEFBS_HasFullFP16, // FCVTZSSWHri = 1305
-    CEFBS_HasFPARMv8, // FCVTZSSWSri = 1306
-    CEFBS_HasFPARMv8, // FCVTZSSXDri = 1307
-    CEFBS_HasFullFP16, // FCVTZSSXHri = 1308
-    CEFBS_HasFPARMv8, // FCVTZSSXSri = 1309
-    CEFBS_HasFPARMv8, // FCVTZSUWDr = 1310
-    CEFBS_HasFullFP16, // FCVTZSUWHr = 1311
-    CEFBS_HasFPARMv8, // FCVTZSUWSr = 1312
-    CEFBS_HasFPARMv8, // FCVTZSUXDr = 1313
-    CEFBS_HasFullFP16, // FCVTZSUXHr = 1314
-    CEFBS_HasFPARMv8, // FCVTZSUXSr = 1315
-    CEFBS_HasSVE, // FCVTZS_ZPmZ_DtoD = 1316
-    CEFBS_HasSVE, // FCVTZS_ZPmZ_DtoS = 1317
-    CEFBS_HasSVE, // FCVTZS_ZPmZ_HtoD = 1318
-    CEFBS_HasSVE, // FCVTZS_ZPmZ_HtoH = 1319
-    CEFBS_HasSVE, // FCVTZS_ZPmZ_HtoS = 1320
-    CEFBS_HasSVE, // FCVTZS_ZPmZ_StoD = 1321
-    CEFBS_HasSVE, // FCVTZS_ZPmZ_StoS = 1322
-    CEFBS_HasNEON, // FCVTZSd = 1323
-    CEFBS_HasNEON_HasFullFP16, // FCVTZSh = 1324
-    CEFBS_HasNEON, // FCVTZSs = 1325
-    CEFBS_HasNEON_HasFullFP16, // FCVTZSv1f16 = 1326
-    CEFBS_HasNEON, // FCVTZSv1i32 = 1327
-    CEFBS_HasNEON, // FCVTZSv1i64 = 1328
-    CEFBS_HasNEON, // FCVTZSv2f32 = 1329
-    CEFBS_HasNEON, // FCVTZSv2f64 = 1330
-    CEFBS_HasNEON, // FCVTZSv2i32_shift = 1331
-    CEFBS_HasNEON, // FCVTZSv2i64_shift = 1332
-    CEFBS_HasNEON_HasFullFP16, // FCVTZSv4f16 = 1333
-    CEFBS_HasNEON, // FCVTZSv4f32 = 1334
-    CEFBS_HasNEON_HasFullFP16, // FCVTZSv4i16_shift = 1335
-    CEFBS_HasNEON, // FCVTZSv4i32_shift = 1336
-    CEFBS_HasNEON_HasFullFP16, // FCVTZSv8f16 = 1337
-    CEFBS_HasNEON_HasFullFP16, // FCVTZSv8i16_shift = 1338
-    CEFBS_HasFPARMv8, // FCVTZUSWDri = 1339
-    CEFBS_HasFullFP16, // FCVTZUSWHri = 1340
-    CEFBS_HasFPARMv8, // FCVTZUSWSri = 1341
-    CEFBS_HasFPARMv8, // FCVTZUSXDri = 1342
-    CEFBS_HasFullFP16, // FCVTZUSXHri = 1343
-    CEFBS_HasFPARMv8, // FCVTZUSXSri = 1344
-    CEFBS_HasFPARMv8, // FCVTZUUWDr = 1345
-    CEFBS_HasFullFP16, // FCVTZUUWHr = 1346
-    CEFBS_HasFPARMv8, // FCVTZUUWSr = 1347
-    CEFBS_HasFPARMv8, // FCVTZUUXDr = 1348
-    CEFBS_HasFullFP16, // FCVTZUUXHr = 1349
-    CEFBS_HasFPARMv8, // FCVTZUUXSr = 1350
-    CEFBS_HasSVE, // FCVTZU_ZPmZ_DtoD = 1351
-    CEFBS_HasSVE, // FCVTZU_ZPmZ_DtoS = 1352
-    CEFBS_HasSVE, // FCVTZU_ZPmZ_HtoD = 1353
-    CEFBS_HasSVE, // FCVTZU_ZPmZ_HtoH = 1354
-    CEFBS_HasSVE, // FCVTZU_ZPmZ_HtoS = 1355
-    CEFBS_HasSVE, // FCVTZU_ZPmZ_StoD = 1356
-    CEFBS_HasSVE, // FCVTZU_ZPmZ_StoS = 1357
-    CEFBS_HasNEON, // FCVTZUd = 1358
-    CEFBS_HasNEON_HasFullFP16, // FCVTZUh = 1359
-    CEFBS_HasNEON, // FCVTZUs = 1360
-    CEFBS_HasNEON_HasFullFP16, // FCVTZUv1f16 = 1361
-    CEFBS_HasNEON, // FCVTZUv1i32 = 1362
-    CEFBS_HasNEON, // FCVTZUv1i64 = 1363
-    CEFBS_HasNEON, // FCVTZUv2f32 = 1364
-    CEFBS_HasNEON, // FCVTZUv2f64 = 1365
-    CEFBS_HasNEON, // FCVTZUv2i32_shift = 1366
-    CEFBS_HasNEON, // FCVTZUv2i64_shift = 1367
-    CEFBS_HasNEON_HasFullFP16, // FCVTZUv4f16 = 1368
-    CEFBS_HasNEON, // FCVTZUv4f32 = 1369
-    CEFBS_HasNEON_HasFullFP16, // FCVTZUv4i16_shift = 1370
-    CEFBS_HasNEON, // FCVTZUv4i32_shift = 1371
-    CEFBS_HasNEON_HasFullFP16, // FCVTZUv8f16 = 1372
-    CEFBS_HasNEON_HasFullFP16, // FCVTZUv8i16_shift = 1373
-    CEFBS_HasSVE, // FCVT_ZPmZ_DtoH = 1374
-    CEFBS_HasSVE, // FCVT_ZPmZ_DtoS = 1375
-    CEFBS_HasSVE, // FCVT_ZPmZ_HtoD = 1376
-    CEFBS_HasSVE, // FCVT_ZPmZ_HtoS = 1377
-    CEFBS_HasSVE, // FCVT_ZPmZ_StoD = 1378
-    CEFBS_HasSVE, // FCVT_ZPmZ_StoH = 1379
-    CEFBS_HasFPARMv8, // FDIVDrr = 1380
-    CEFBS_HasFullFP16, // FDIVHrr = 1381
-    CEFBS_HasSVE, // FDIVR_ZPmZ_D = 1382
-    CEFBS_HasSVE, // FDIVR_ZPmZ_H = 1383
-    CEFBS_HasSVE, // FDIVR_ZPmZ_S = 1384
-    CEFBS_HasFPARMv8, // FDIVSrr = 1385
-    CEFBS_HasSVE, // FDIV_ZPmZ_D = 1386
-    CEFBS_HasSVE, // FDIV_ZPmZ_H = 1387
-    CEFBS_HasSVE, // FDIV_ZPmZ_S = 1388
-    CEFBS_HasNEON, // FDIVv2f32 = 1389
-    CEFBS_HasNEON, // FDIVv2f64 = 1390
-    CEFBS_HasNEON_HasFullFP16, // FDIVv4f16 = 1391
-    CEFBS_HasNEON, // FDIVv4f32 = 1392
-    CEFBS_HasNEON_HasFullFP16, // FDIVv8f16 = 1393
-    CEFBS_HasSVE, // FDUP_ZI_D = 1394
-    CEFBS_HasSVE, // FDUP_ZI_H = 1395
-    CEFBS_HasSVE, // FDUP_ZI_S = 1396
-    CEFBS_HasSVE, // FEXPA_ZZ_D = 1397
-    CEFBS_HasSVE, // FEXPA_ZZ_H = 1398
-    CEFBS_HasSVE, // FEXPA_ZZ_S = 1399
-    CEFBS_HasJS_HasFPARMv8, // FJCVTZS = 1400
-    CEFBS_HasSVE2, // FLOGB_ZPmZ_D = 1401
-    CEFBS_HasSVE2, // FLOGB_ZPmZ_H = 1402
-    CEFBS_HasSVE2, // FLOGB_ZPmZ_S = 1403
-    CEFBS_HasFPARMv8, // FMADDDrrr = 1404
-    CEFBS_HasFullFP16, // FMADDHrrr = 1405
-    CEFBS_HasFPARMv8, // FMADDSrrr = 1406
-    CEFBS_HasSVE, // FMAD_ZPmZZ_D = 1407
-    CEFBS_HasSVE, // FMAD_ZPmZZ_H = 1408
-    CEFBS_HasSVE, // FMAD_ZPmZZ_S = 1409
-    CEFBS_HasFPARMv8, // FMAXDrr = 1410
-    CEFBS_HasFullFP16, // FMAXHrr = 1411
-    CEFBS_HasFPARMv8, // FMAXNMDrr = 1412
-    CEFBS_HasFullFP16, // FMAXNMHrr = 1413
-    CEFBS_HasSVE2, // FMAXNMP_ZPmZZ_D = 1414
-    CEFBS_HasSVE2, // FMAXNMP_ZPmZZ_H = 1415
-    CEFBS_HasSVE2, // FMAXNMP_ZPmZZ_S = 1416
-    CEFBS_HasNEON, // FMAXNMPv2f32 = 1417
-    CEFBS_HasNEON, // FMAXNMPv2f64 = 1418
-    CEFBS_HasNEON_HasFullFP16, // FMAXNMPv2i16p = 1419
-    CEFBS_HasNEON, // FMAXNMPv2i32p = 1420
-    CEFBS_HasNEON, // FMAXNMPv2i64p = 1421
-    CEFBS_HasNEON_HasFullFP16, // FMAXNMPv4f16 = 1422
-    CEFBS_HasNEON, // FMAXNMPv4f32 = 1423
-    CEFBS_HasNEON_HasFullFP16, // FMAXNMPv8f16 = 1424
-    CEFBS_HasFPARMv8, // FMAXNMSrr = 1425
-    CEFBS_HasSVE, // FMAXNMV_VPZ_D = 1426
-    CEFBS_HasSVE, // FMAXNMV_VPZ_H = 1427
-    CEFBS_HasSVE, // FMAXNMV_VPZ_S = 1428
-    CEFBS_HasNEON_HasFullFP16, // FMAXNMVv4i16v = 1429
-    CEFBS_HasNEON, // FMAXNMVv4i32v = 1430
-    CEFBS_HasNEON_HasFullFP16, // FMAXNMVv8i16v = 1431
-    CEFBS_HasSVE, // FMAXNM_ZPmI_D = 1432
-    CEFBS_HasSVE, // FMAXNM_ZPmI_H = 1433
-    CEFBS_HasSVE, // FMAXNM_ZPmI_S = 1434
-    CEFBS_HasSVE, // FMAXNM_ZPmZ_D = 1435
-    CEFBS_HasSVE, // FMAXNM_ZPmZ_H = 1436
-    CEFBS_HasSVE, // FMAXNM_ZPmZ_S = 1437
-    CEFBS_HasNEON, // FMAXNMv2f32 = 1438
-    CEFBS_HasNEON, // FMAXNMv2f64 = 1439
-    CEFBS_HasNEON_HasFullFP16, // FMAXNMv4f16 = 1440
-    CEFBS_HasNEON, // FMAXNMv4f32 = 1441
-    CEFBS_HasNEON_HasFullFP16, // FMAXNMv8f16 = 1442
-    CEFBS_HasSVE2, // FMAXP_ZPmZZ_D = 1443
-    CEFBS_HasSVE2, // FMAXP_ZPmZZ_H = 1444
-    CEFBS_HasSVE2, // FMAXP_ZPmZZ_S = 1445
-    CEFBS_HasNEON, // FMAXPv2f32 = 1446
-    CEFBS_HasNEON, // FMAXPv2f64 = 1447
-    CEFBS_HasNEON_HasFullFP16, // FMAXPv2i16p = 1448
-    CEFBS_HasNEON, // FMAXPv2i32p = 1449
-    CEFBS_HasNEON, // FMAXPv2i64p = 1450
-    CEFBS_HasNEON_HasFullFP16, // FMAXPv4f16 = 1451
-    CEFBS_HasNEON, // FMAXPv4f32 = 1452
-    CEFBS_HasNEON_HasFullFP16, // FMAXPv8f16 = 1453
-    CEFBS_HasFPARMv8, // FMAXSrr = 1454
-    CEFBS_HasSVE, // FMAXV_VPZ_D = 1455
-    CEFBS_HasSVE, // FMAXV_VPZ_H = 1456
-    CEFBS_HasSVE, // FMAXV_VPZ_S = 1457
-    CEFBS_HasNEON_HasFullFP16, // FMAXVv4i16v = 1458
-    CEFBS_HasNEON, // FMAXVv4i32v = 1459
-    CEFBS_HasNEON_HasFullFP16, // FMAXVv8i16v = 1460
-    CEFBS_HasSVE, // FMAX_ZPmI_D = 1461
-    CEFBS_HasSVE, // FMAX_ZPmI_H = 1462
-    CEFBS_HasSVE, // FMAX_ZPmI_S = 1463
-    CEFBS_HasSVE, // FMAX_ZPmZ_D = 1464
-    CEFBS_HasSVE, // FMAX_ZPmZ_H = 1465
-    CEFBS_HasSVE, // FMAX_ZPmZ_S = 1466
-    CEFBS_HasNEON, // FMAXv2f32 = 1467
-    CEFBS_HasNEON, // FMAXv2f64 = 1468
-    CEFBS_HasNEON_HasFullFP16, // FMAXv4f16 = 1469
-    CEFBS_HasNEON, // FMAXv4f32 = 1470
-    CEFBS_HasNEON_HasFullFP16, // FMAXv8f16 = 1471
-    CEFBS_HasFPARMv8, // FMINDrr = 1472
-    CEFBS_HasFullFP16, // FMINHrr = 1473
-    CEFBS_HasFPARMv8, // FMINNMDrr = 1474
-    CEFBS_HasFullFP16, // FMINNMHrr = 1475
-    CEFBS_HasSVE2, // FMINNMP_ZPmZZ_D = 1476
-    CEFBS_HasSVE2, // FMINNMP_ZPmZZ_H = 1477
-    CEFBS_HasSVE2, // FMINNMP_ZPmZZ_S = 1478
-    CEFBS_HasNEON, // FMINNMPv2f32 = 1479
-    CEFBS_HasNEON, // FMINNMPv2f64 = 1480
-    CEFBS_HasNEON_HasFullFP16, // FMINNMPv2i16p = 1481
-    CEFBS_HasNEON, // FMINNMPv2i32p = 1482
-    CEFBS_HasNEON, // FMINNMPv2i64p = 1483
-    CEFBS_HasNEON_HasFullFP16, // FMINNMPv4f16 = 1484
-    CEFBS_HasNEON, // FMINNMPv4f32 = 1485
-    CEFBS_HasNEON_HasFullFP16, // FMINNMPv8f16 = 1486
-    CEFBS_HasFPARMv8, // FMINNMSrr = 1487
-    CEFBS_HasSVE, // FMINNMV_VPZ_D = 1488
-    CEFBS_HasSVE, // FMINNMV_VPZ_H = 1489
-    CEFBS_HasSVE, // FMINNMV_VPZ_S = 1490
-    CEFBS_HasNEON_HasFullFP16, // FMINNMVv4i16v = 1491
-    CEFBS_HasNEON, // FMINNMVv4i32v = 1492
-    CEFBS_HasNEON_HasFullFP16, // FMINNMVv8i16v = 1493
-    CEFBS_HasSVE, // FMINNM_ZPmI_D = 1494
-    CEFBS_HasSVE, // FMINNM_ZPmI_H = 1495
-    CEFBS_HasSVE, // FMINNM_ZPmI_S = 1496
-    CEFBS_HasSVE, // FMINNM_ZPmZ_D = 1497
-    CEFBS_HasSVE, // FMINNM_ZPmZ_H = 1498
-    CEFBS_HasSVE, // FMINNM_ZPmZ_S = 1499
-    CEFBS_HasNEON, // FMINNMv2f32 = 1500
-    CEFBS_HasNEON, // FMINNMv2f64 = 1501
-    CEFBS_HasNEON_HasFullFP16, // FMINNMv4f16 = 1502
-    CEFBS_HasNEON, // FMINNMv4f32 = 1503
-    CEFBS_HasNEON_HasFullFP16, // FMINNMv8f16 = 1504
-    CEFBS_HasSVE2, // FMINP_ZPmZZ_D = 1505
-    CEFBS_HasSVE2, // FMINP_ZPmZZ_H = 1506
-    CEFBS_HasSVE2, // FMINP_ZPmZZ_S = 1507
-    CEFBS_HasNEON, // FMINPv2f32 = 1508
-    CEFBS_HasNEON, // FMINPv2f64 = 1509
-    CEFBS_HasNEON_HasFullFP16, // FMINPv2i16p = 1510
-    CEFBS_HasNEON, // FMINPv2i32p = 1511
-    CEFBS_HasNEON, // FMINPv2i64p = 1512
-    CEFBS_HasNEON_HasFullFP16, // FMINPv4f16 = 1513
-    CEFBS_HasNEON, // FMINPv4f32 = 1514
-    CEFBS_HasNEON_HasFullFP16, // FMINPv8f16 = 1515
-    CEFBS_HasFPARMv8, // FMINSrr = 1516
-    CEFBS_HasSVE, // FMINV_VPZ_D = 1517
-    CEFBS_HasSVE, // FMINV_VPZ_H = 1518
-    CEFBS_HasSVE, // FMINV_VPZ_S = 1519
-    CEFBS_HasNEON_HasFullFP16, // FMINVv4i16v = 1520
-    CEFBS_HasNEON, // FMINVv4i32v = 1521
-    CEFBS_HasNEON_HasFullFP16, // FMINVv8i16v = 1522
-    CEFBS_HasSVE, // FMIN_ZPmI_D = 1523
-    CEFBS_HasSVE, // FMIN_ZPmI_H = 1524
-    CEFBS_HasSVE, // FMIN_ZPmI_S = 1525
-    CEFBS_HasSVE, // FMIN_ZPmZ_D = 1526
-    CEFBS_HasSVE, // FMIN_ZPmZ_H = 1527
-    CEFBS_HasSVE, // FMIN_ZPmZ_S = 1528
-    CEFBS_HasNEON, // FMINv2f32 = 1529
-    CEFBS_HasNEON, // FMINv2f64 = 1530
-    CEFBS_HasNEON_HasFullFP16, // FMINv4f16 = 1531
-    CEFBS_HasNEON, // FMINv4f32 = 1532
-    CEFBS_HasNEON_HasFullFP16, // FMINv8f16 = 1533
-    CEFBS_HasNEON_HasFP16FML, // FMLAL2lanev4f16 = 1534
-    CEFBS_HasNEON_HasFP16FML, // FMLAL2lanev8f16 = 1535
-    CEFBS_HasNEON_HasFP16FML, // FMLAL2v4f16 = 1536
-    CEFBS_HasNEON_HasFP16FML, // FMLAL2v8f16 = 1537
-    CEFBS_HasSVE2, // FMLALB_ZZZI_SHH = 1538
-    CEFBS_HasSVE2, // FMLALB_ZZZ_SHH = 1539
-    CEFBS_HasSVE2, // FMLALT_ZZZI_SHH = 1540
-    CEFBS_HasSVE2, // FMLALT_ZZZ_SHH = 1541
-    CEFBS_HasNEON_HasFP16FML, // FMLALlanev4f16 = 1542
-    CEFBS_HasNEON_HasFP16FML, // FMLALlanev8f16 = 1543
-    CEFBS_HasNEON_HasFP16FML, // FMLALv4f16 = 1544
-    CEFBS_HasNEON_HasFP16FML, // FMLALv8f16 = 1545
-    CEFBS_HasSVE, // FMLA_ZPmZZ_D = 1546
-    CEFBS_HasSVE, // FMLA_ZPmZZ_H = 1547
-    CEFBS_HasSVE, // FMLA_ZPmZZ_S = 1548
-    CEFBS_HasSVE, // FMLA_ZZZI_D = 1549
-    CEFBS_HasSVE, // FMLA_ZZZI_H = 1550
-    CEFBS_HasSVE, // FMLA_ZZZI_S = 1551
-    CEFBS_HasNEON_HasFullFP16, // FMLAv1i16_indexed = 1552
-    CEFBS_HasNEON, // FMLAv1i32_indexed = 1553
-    CEFBS_HasNEON, // FMLAv1i64_indexed = 1554
-    CEFBS_HasNEON, // FMLAv2f32 = 1555
-    CEFBS_HasNEON, // FMLAv2f64 = 1556
-    CEFBS_HasNEON, // FMLAv2i32_indexed = 1557
-    CEFBS_HasNEON, // FMLAv2i64_indexed = 1558
-    CEFBS_HasNEON_HasFullFP16, // FMLAv4f16 = 1559
-    CEFBS_HasNEON, // FMLAv4f32 = 1560
-    CEFBS_HasNEON_HasFullFP16, // FMLAv4i16_indexed = 1561
-    CEFBS_HasNEON, // FMLAv4i32_indexed = 1562
-    CEFBS_HasNEON_HasFullFP16, // FMLAv8f16 = 1563
-    CEFBS_HasNEON_HasFullFP16, // FMLAv8i16_indexed = 1564
-    CEFBS_HasNEON_HasFP16FML, // FMLSL2lanev4f16 = 1565
-    CEFBS_HasNEON_HasFP16FML, // FMLSL2lanev8f16 = 1566
-    CEFBS_HasNEON_HasFP16FML, // FMLSL2v4f16 = 1567
-    CEFBS_HasNEON_HasFP16FML, // FMLSL2v8f16 = 1568
-    CEFBS_HasSVE2, // FMLSLB_ZZZI_SHH = 1569
-    CEFBS_HasSVE2, // FMLSLB_ZZZ_SHH = 1570
-    CEFBS_HasSVE2, // FMLSLT_ZZZI_SHH = 1571
-    CEFBS_HasSVE2, // FMLSLT_ZZZ_SHH = 1572
-    CEFBS_HasNEON_HasFP16FML, // FMLSLlanev4f16 = 1573
-    CEFBS_HasNEON_HasFP16FML, // FMLSLlanev8f16 = 1574
-    CEFBS_HasNEON_HasFP16FML, // FMLSLv4f16 = 1575
-    CEFBS_HasNEON_HasFP16FML, // FMLSLv8f16 = 1576
-    CEFBS_HasSVE, // FMLS_ZPmZZ_D = 1577
-    CEFBS_HasSVE, // FMLS_ZPmZZ_H = 1578
-    CEFBS_HasSVE, // FMLS_ZPmZZ_S = 1579
-    CEFBS_HasSVE, // FMLS_ZZZI_D = 1580
-    CEFBS_HasSVE, // FMLS_ZZZI_H = 1581
-    CEFBS_HasSVE, // FMLS_ZZZI_S = 1582
-    CEFBS_HasNEON_HasFullFP16, // FMLSv1i16_indexed = 1583
-    CEFBS_HasNEON, // FMLSv1i32_indexed = 1584
-    CEFBS_HasNEON, // FMLSv1i64_indexed = 1585
-    CEFBS_HasNEON, // FMLSv2f32 = 1586
-    CEFBS_HasNEON, // FMLSv2f64 = 1587
-    CEFBS_HasNEON, // FMLSv2i32_indexed = 1588
-    CEFBS_HasNEON, // FMLSv2i64_indexed = 1589
-    CEFBS_HasNEON_HasFullFP16, // FMLSv4f16 = 1590
-    CEFBS_HasNEON, // FMLSv4f32 = 1591
-    CEFBS_HasNEON_HasFullFP16, // FMLSv4i16_indexed = 1592
-    CEFBS_HasNEON, // FMLSv4i32_indexed = 1593
-    CEFBS_HasNEON_HasFullFP16, // FMLSv8f16 = 1594
-    CEFBS_HasNEON_HasFullFP16, // FMLSv8i16_indexed = 1595
-    CEFBS_None, // FMOVD0 = 1596
-    CEFBS_HasFPARMv8, // FMOVDXHighr = 1597
-    CEFBS_HasFPARMv8, // FMOVDXr = 1598
-    CEFBS_HasFPARMv8, // FMOVDi = 1599
-    CEFBS_HasFPARMv8, // FMOVDr = 1600
-    CEFBS_HasFullFP16, // FMOVH0 = 1601
-    CEFBS_HasFullFP16, // FMOVHWr = 1602
-    CEFBS_HasFullFP16, // FMOVHXr = 1603
-    CEFBS_HasFullFP16, // FMOVHi = 1604
-    CEFBS_HasFullFP16, // FMOVHr = 1605
-    CEFBS_None, // FMOVS0 = 1606
-    CEFBS_HasFPARMv8, // FMOVSWr = 1607
-    CEFBS_HasFPARMv8, // FMOVSi = 1608
-    CEFBS_HasFPARMv8, // FMOVSr = 1609
-    CEFBS_HasFullFP16, // FMOVWHr = 1610
-    CEFBS_HasFPARMv8, // FMOVWSr = 1611
-    CEFBS_HasFPARMv8, // FMOVXDHighr = 1612
-    CEFBS_HasFPARMv8, // FMOVXDr = 1613
-    CEFBS_HasFullFP16, // FMOVXHr = 1614
-    CEFBS_HasNEON, // FMOVv2f32_ns = 1615
-    CEFBS_HasNEON, // FMOVv2f64_ns = 1616
-    CEFBS_HasNEON_HasFullFP16, // FMOVv4f16_ns = 1617
-    CEFBS_HasNEON, // FMOVv4f32_ns = 1618
-    CEFBS_HasNEON_HasFullFP16, // FMOVv8f16_ns = 1619
-    CEFBS_HasSVE, // FMSB_ZPmZZ_D = 1620
-    CEFBS_HasSVE, // FMSB_ZPmZZ_H = 1621
-    CEFBS_HasSVE, // FMSB_ZPmZZ_S = 1622
-    CEFBS_HasFPARMv8, // FMSUBDrrr = 1623
-    CEFBS_HasFullFP16, // FMSUBHrrr = 1624
-    CEFBS_HasFPARMv8, // FMSUBSrrr = 1625
-    CEFBS_HasFPARMv8, // FMULDrr = 1626
-    CEFBS_HasFullFP16, // FMULHrr = 1627
-    CEFBS_HasFPARMv8, // FMULSrr = 1628
-    CEFBS_HasNEON_HasFullFP16, // FMULX16 = 1629
-    CEFBS_HasNEON, // FMULX32 = 1630
-    CEFBS_HasNEON, // FMULX64 = 1631
-    CEFBS_HasSVE, // FMULX_ZPmZ_D = 1632
-    CEFBS_HasSVE, // FMULX_ZPmZ_H = 1633
-    CEFBS_HasSVE, // FMULX_ZPmZ_S = 1634
-    CEFBS_HasNEON_HasFullFP16, // FMULXv1i16_indexed = 1635
-    CEFBS_HasNEON, // FMULXv1i32_indexed = 1636
-    CEFBS_HasNEON, // FMULXv1i64_indexed = 1637
-    CEFBS_HasNEON, // FMULXv2f32 = 1638
-    CEFBS_HasNEON, // FMULXv2f64 = 1639
-    CEFBS_HasNEON, // FMULXv2i32_indexed = 1640
-    CEFBS_HasNEON, // FMULXv2i64_indexed = 1641
-    CEFBS_HasNEON_HasFullFP16, // FMULXv4f16 = 1642
-    CEFBS_HasNEON, // FMULXv4f32 = 1643
-    CEFBS_HasNEON_HasFullFP16, // FMULXv4i16_indexed = 1644
-    CEFBS_HasNEON, // FMULXv4i32_indexed = 1645
-    CEFBS_HasNEON_HasFullFP16, // FMULXv8f16 = 1646
-    CEFBS_HasNEON_HasFullFP16, // FMULXv8i16_indexed = 1647
-    CEFBS_HasSVE, // FMUL_ZPmI_D = 1648
-    CEFBS_HasSVE, // FMUL_ZPmI_H = 1649
-    CEFBS_HasSVE, // FMUL_ZPmI_S = 1650
-    CEFBS_HasSVE, // FMUL_ZPmZ_D = 1651
-    CEFBS_HasSVE, // FMUL_ZPmZ_H = 1652
-    CEFBS_HasSVE, // FMUL_ZPmZ_S = 1653
-    CEFBS_HasSVE, // FMUL_ZZZI_D = 1654
-    CEFBS_HasSVE, // FMUL_ZZZI_H = 1655
-    CEFBS_HasSVE, // FMUL_ZZZI_S = 1656
-    CEFBS_HasSVE, // FMUL_ZZZ_D = 1657
-    CEFBS_HasSVE, // FMUL_ZZZ_H = 1658
-    CEFBS_HasSVE, // FMUL_ZZZ_S = 1659
-    CEFBS_HasNEON_HasFullFP16, // FMULv1i16_indexed = 1660
-    CEFBS_HasNEON, // FMULv1i32_indexed = 1661
-    CEFBS_HasNEON, // FMULv1i64_indexed = 1662
-    CEFBS_HasNEON, // FMULv2f32 = 1663
-    CEFBS_HasNEON, // FMULv2f64 = 1664
-    CEFBS_HasNEON, // FMULv2i32_indexed = 1665
-    CEFBS_HasNEON, // FMULv2i64_indexed = 1666
-    CEFBS_HasNEON_HasFullFP16, // FMULv4f16 = 1667
-    CEFBS_HasNEON, // FMULv4f32 = 1668
-    CEFBS_HasNEON_HasFullFP16, // FMULv4i16_indexed = 1669
-    CEFBS_HasNEON, // FMULv4i32_indexed = 1670
-    CEFBS_HasNEON_HasFullFP16, // FMULv8f16 = 1671
-    CEFBS_HasNEON_HasFullFP16, // FMULv8i16_indexed = 1672
-    CEFBS_HasFPARMv8, // FNEGDr = 1673
-    CEFBS_HasFullFP16, // FNEGHr = 1674
-    CEFBS_HasFPARMv8, // FNEGSr = 1675
-    CEFBS_HasSVE, // FNEG_ZPmZ_D = 1676
-    CEFBS_HasSVE, // FNEG_ZPmZ_H = 1677
-    CEFBS_HasSVE, // FNEG_ZPmZ_S = 1678
-    CEFBS_HasNEON, // FNEGv2f32 = 1679
-    CEFBS_HasNEON, // FNEGv2f64 = 1680
-    CEFBS_HasNEON_HasFullFP16, // FNEGv4f16 = 1681
-    CEFBS_HasNEON, // FNEGv4f32 = 1682
-    CEFBS_HasNEON_HasFullFP16, // FNEGv8f16 = 1683
-    CEFBS_HasFPARMv8, // FNMADDDrrr = 1684
-    CEFBS_HasFullFP16, // FNMADDHrrr = 1685
-    CEFBS_HasFPARMv8, // FNMADDSrrr = 1686
-    CEFBS_HasSVE, // FNMAD_ZPmZZ_D = 1687
-    CEFBS_HasSVE, // FNMAD_ZPmZZ_H = 1688
-    CEFBS_HasSVE, // FNMAD_ZPmZZ_S = 1689
-    CEFBS_HasSVE, // FNMLA_ZPmZZ_D = 1690
-    CEFBS_HasSVE, // FNMLA_ZPmZZ_H = 1691
-    CEFBS_HasSVE, // FNMLA_ZPmZZ_S = 1692
-    CEFBS_HasSVE, // FNMLS_ZPmZZ_D = 1693
-    CEFBS_HasSVE, // FNMLS_ZPmZZ_H = 1694
-    CEFBS_HasSVE, // FNMLS_ZPmZZ_S = 1695
-    CEFBS_HasSVE, // FNMSB_ZPmZZ_D = 1696
-    CEFBS_HasSVE, // FNMSB_ZPmZZ_H = 1697
-    CEFBS_HasSVE, // FNMSB_ZPmZZ_S = 1698
-    CEFBS_HasFPARMv8, // FNMSUBDrrr = 1699
-    CEFBS_HasFullFP16, // FNMSUBHrrr = 1700
-    CEFBS_HasFPARMv8, // FNMSUBSrrr = 1701
-    CEFBS_HasFPARMv8, // FNMULDrr = 1702
-    CEFBS_HasFullFP16, // FNMULHrr = 1703
-    CEFBS_HasFPARMv8, // FNMULSrr = 1704
-    CEFBS_HasSVE, // FRECPE_ZZ_D = 1705
-    CEFBS_HasSVE, // FRECPE_ZZ_H = 1706
-    CEFBS_HasSVE, // FRECPE_ZZ_S = 1707
-    CEFBS_HasNEON_HasFullFP16, // FRECPEv1f16 = 1708
-    CEFBS_HasNEON, // FRECPEv1i32 = 1709
-    CEFBS_HasNEON, // FRECPEv1i64 = 1710
-    CEFBS_HasNEON, // FRECPEv2f32 = 1711
-    CEFBS_HasNEON, // FRECPEv2f64 = 1712
-    CEFBS_HasNEON_HasFullFP16, // FRECPEv4f16 = 1713
-    CEFBS_HasNEON, // FRECPEv4f32 = 1714
-    CEFBS_HasNEON_HasFullFP16, // FRECPEv8f16 = 1715
-    CEFBS_HasNEON_HasFullFP16, // FRECPS16 = 1716
-    CEFBS_HasNEON, // FRECPS32 = 1717
-    CEFBS_HasNEON, // FRECPS64 = 1718
-    CEFBS_HasSVE, // FRECPS_ZZZ_D = 1719
-    CEFBS_HasSVE, // FRECPS_ZZZ_H = 1720
-    CEFBS_HasSVE, // FRECPS_ZZZ_S = 1721
-    CEFBS_HasNEON, // FRECPSv2f32 = 1722
-    CEFBS_HasNEON, // FRECPSv2f64 = 1723
-    CEFBS_HasNEON_HasFullFP16, // FRECPSv4f16 = 1724
-    CEFBS_HasNEON, // FRECPSv4f32 = 1725
-    CEFBS_HasNEON_HasFullFP16, // FRECPSv8f16 = 1726
-    CEFBS_HasSVE, // FRECPX_ZPmZ_D = 1727
-    CEFBS_HasSVE, // FRECPX_ZPmZ_H = 1728
-    CEFBS_HasSVE, // FRECPX_ZPmZ_S = 1729
-    CEFBS_HasNEON_HasFullFP16, // FRECPXv1f16 = 1730
-    CEFBS_HasNEON, // FRECPXv1i32 = 1731
-    CEFBS_HasNEON, // FRECPXv1i64 = 1732
-    CEFBS_HasFRInt3264, // FRINT32XDr = 1733
-    CEFBS_HasFRInt3264, // FRINT32XSr = 1734
-    CEFBS_HasFRInt3264, // FRINT32Xv2f32 = 1735
-    CEFBS_HasFRInt3264, // FRINT32Xv2f64 = 1736
-    CEFBS_HasFRInt3264, // FRINT32Xv4f32 = 1737
-    CEFBS_HasFRInt3264, // FRINT32ZDr = 1738
-    CEFBS_HasFRInt3264, // FRINT32ZSr = 1739
-    CEFBS_HasFRInt3264, // FRINT32Zv2f32 = 1740
-    CEFBS_HasFRInt3264, // FRINT32Zv2f64 = 1741
-    CEFBS_HasFRInt3264, // FRINT32Zv4f32 = 1742
-    CEFBS_HasFRInt3264, // FRINT64XDr = 1743
-    CEFBS_HasFRInt3264, // FRINT64XSr = 1744
-    CEFBS_HasFRInt3264, // FRINT64Xv2f32 = 1745
-    CEFBS_HasFRInt3264, // FRINT64Xv2f64 = 1746
-    CEFBS_HasFRInt3264, // FRINT64Xv4f32 = 1747
-    CEFBS_HasFRInt3264, // FRINT64ZDr = 1748
-    CEFBS_HasFRInt3264, // FRINT64ZSr = 1749
-    CEFBS_HasFRInt3264, // FRINT64Zv2f32 = 1750
-    CEFBS_HasFRInt3264, // FRINT64Zv2f64 = 1751
-    CEFBS_HasFRInt3264, // FRINT64Zv4f32 = 1752
-    CEFBS_HasFPARMv8, // FRINTADr = 1753
-    CEFBS_HasFullFP16, // FRINTAHr = 1754
-    CEFBS_HasFPARMv8, // FRINTASr = 1755
-    CEFBS_HasSVE, // FRINTA_ZPmZ_D = 1756
-    CEFBS_HasSVE, // FRINTA_ZPmZ_H = 1757
-    CEFBS_HasSVE, // FRINTA_ZPmZ_S = 1758
-    CEFBS_HasNEON, // FRINTAv2f32 = 1759
-    CEFBS_HasNEON, // FRINTAv2f64 = 1760
-    CEFBS_HasNEON_HasFullFP16, // FRINTAv4f16 = 1761
-    CEFBS_HasNEON, // FRINTAv4f32 = 1762
-    CEFBS_HasNEON_HasFullFP16, // FRINTAv8f16 = 1763
-    CEFBS_HasFPARMv8, // FRINTIDr = 1764
-    CEFBS_HasFullFP16, // FRINTIHr = 1765
-    CEFBS_HasFPARMv8, // FRINTISr = 1766
-    CEFBS_HasSVE, // FRINTI_ZPmZ_D = 1767
-    CEFBS_HasSVE, // FRINTI_ZPmZ_H = 1768
-    CEFBS_HasSVE, // FRINTI_ZPmZ_S = 1769
-    CEFBS_HasNEON, // FRINTIv2f32 = 1770
-    CEFBS_HasNEON, // FRINTIv2f64 = 1771
-    CEFBS_HasNEON_HasFullFP16, // FRINTIv4f16 = 1772
-    CEFBS_HasNEON, // FRINTIv4f32 = 1773
-    CEFBS_HasNEON_HasFullFP16, // FRINTIv8f16 = 1774
-    CEFBS_HasFPARMv8, // FRINTMDr = 1775
-    CEFBS_HasFullFP16, // FRINTMHr = 1776
-    CEFBS_HasFPARMv8, // FRINTMSr = 1777
-    CEFBS_HasSVE, // FRINTM_ZPmZ_D = 1778
-    CEFBS_HasSVE, // FRINTM_ZPmZ_H = 1779
-    CEFBS_HasSVE, // FRINTM_ZPmZ_S = 1780
-    CEFBS_HasNEON, // FRINTMv2f32 = 1781
-    CEFBS_HasNEON, // FRINTMv2f64 = 1782
-    CEFBS_HasNEON_HasFullFP16, // FRINTMv4f16 = 1783
-    CEFBS_HasNEON, // FRINTMv4f32 = 1784
-    CEFBS_HasNEON_HasFullFP16, // FRINTMv8f16 = 1785
-    CEFBS_HasFPARMv8, // FRINTNDr = 1786
-    CEFBS_HasFullFP16, // FRINTNHr = 1787
-    CEFBS_HasFPARMv8, // FRINTNSr = 1788
-    CEFBS_HasSVE, // FRINTN_ZPmZ_D = 1789
-    CEFBS_HasSVE, // FRINTN_ZPmZ_H = 1790
-    CEFBS_HasSVE, // FRINTN_ZPmZ_S = 1791
-    CEFBS_HasNEON, // FRINTNv2f32 = 1792
-    CEFBS_HasNEON, // FRINTNv2f64 = 1793
-    CEFBS_HasNEON_HasFullFP16, // FRINTNv4f16 = 1794
-    CEFBS_HasNEON, // FRINTNv4f32 = 1795
-    CEFBS_HasNEON_HasFullFP16, // FRINTNv8f16 = 1796
-    CEFBS_HasFPARMv8, // FRINTPDr = 1797
-    CEFBS_HasFullFP16, // FRINTPHr = 1798
-    CEFBS_HasFPARMv8, // FRINTPSr = 1799
-    CEFBS_HasSVE, // FRINTP_ZPmZ_D = 1800
-    CEFBS_HasSVE, // FRINTP_ZPmZ_H = 1801
-    CEFBS_HasSVE, // FRINTP_ZPmZ_S = 1802
-    CEFBS_HasNEON, // FRINTPv2f32 = 1803
-    CEFBS_HasNEON, // FRINTPv2f64 = 1804
-    CEFBS_HasNEON_HasFullFP16, // FRINTPv4f16 = 1805
-    CEFBS_HasNEON, // FRINTPv4f32 = 1806
-    CEFBS_HasNEON_HasFullFP16, // FRINTPv8f16 = 1807
-    CEFBS_HasFPARMv8, // FRINTXDr = 1808
-    CEFBS_HasFullFP16, // FRINTXHr = 1809
-    CEFBS_HasFPARMv8, // FRINTXSr = 1810
-    CEFBS_HasSVE, // FRINTX_ZPmZ_D = 1811
-    CEFBS_HasSVE, // FRINTX_ZPmZ_H = 1812
-    CEFBS_HasSVE, // FRINTX_ZPmZ_S = 1813
-    CEFBS_HasNEON, // FRINTXv2f32 = 1814
-    CEFBS_HasNEON, // FRINTXv2f64 = 1815
-    CEFBS_HasNEON_HasFullFP16, // FRINTXv4f16 = 1816
-    CEFBS_HasNEON, // FRINTXv4f32 = 1817
-    CEFBS_HasNEON_HasFullFP16, // FRINTXv8f16 = 1818
-    CEFBS_HasFPARMv8, // FRINTZDr = 1819
-    CEFBS_HasFullFP16, // FRINTZHr = 1820
-    CEFBS_HasFPARMv8, // FRINTZSr = 1821
-    CEFBS_HasSVE, // FRINTZ_ZPmZ_D = 1822
-    CEFBS_HasSVE, // FRINTZ_ZPmZ_H = 1823
-    CEFBS_HasSVE, // FRINTZ_ZPmZ_S = 1824
-    CEFBS_HasNEON, // FRINTZv2f32 = 1825
-    CEFBS_HasNEON, // FRINTZv2f64 = 1826
-    CEFBS_HasNEON_HasFullFP16, // FRINTZv4f16 = 1827
-    CEFBS_HasNEON, // FRINTZv4f32 = 1828
-    CEFBS_HasNEON_HasFullFP16, // FRINTZv8f16 = 1829
-    CEFBS_HasSVE, // FRSQRTE_ZZ_D = 1830
-    CEFBS_HasSVE, // FRSQRTE_ZZ_H = 1831
-    CEFBS_HasSVE, // FRSQRTE_ZZ_S = 1832
-    CEFBS_HasNEON_HasFullFP16, // FRSQRTEv1f16 = 1833
-    CEFBS_HasNEON, // FRSQRTEv1i32 = 1834
-    CEFBS_HasNEON, // FRSQRTEv1i64 = 1835
-    CEFBS_HasNEON, // FRSQRTEv2f32 = 1836
-    CEFBS_HasNEON, // FRSQRTEv2f64 = 1837
-    CEFBS_HasNEON_HasFullFP16, // FRSQRTEv4f16 = 1838
-    CEFBS_HasNEON, // FRSQRTEv4f32 = 1839
-    CEFBS_HasNEON_HasFullFP16, // FRSQRTEv8f16 = 1840
-    CEFBS_HasNEON_HasFullFP16, // FRSQRTS16 = 1841
-    CEFBS_HasNEON, // FRSQRTS32 = 1842
-    CEFBS_HasNEON, // FRSQRTS64 = 1843
-    CEFBS_HasSVE, // FRSQRTS_ZZZ_D = 1844
-    CEFBS_HasSVE, // FRSQRTS_ZZZ_H = 1845
-    CEFBS_HasSVE, // FRSQRTS_ZZZ_S = 1846
-    CEFBS_HasNEON, // FRSQRTSv2f32 = 1847
-    CEFBS_HasNEON, // FRSQRTSv2f64 = 1848
-    CEFBS_HasNEON_HasFullFP16, // FRSQRTSv4f16 = 1849
-    CEFBS_HasNEON, // FRSQRTSv4f32 = 1850
-    CEFBS_HasNEON_HasFullFP16, // FRSQRTSv8f16 = 1851
-    CEFBS_HasSVE, // FSCALE_ZPmZ_D = 1852
-    CEFBS_HasSVE, // FSCALE_ZPmZ_H = 1853
-    CEFBS_HasSVE, // FSCALE_ZPmZ_S = 1854
-    CEFBS_HasFPARMv8, // FSQRTDr = 1855
-    CEFBS_HasFullFP16, // FSQRTHr = 1856
-    CEFBS_HasFPARMv8, // FSQRTSr = 1857
-    CEFBS_HasSVE, // FSQRT_ZPmZ_D = 1858
-    CEFBS_HasSVE, // FSQRT_ZPmZ_H = 1859
-    CEFBS_HasSVE, // FSQRT_ZPmZ_S = 1860
-    CEFBS_HasNEON, // FSQRTv2f32 = 1861
-    CEFBS_HasNEON, // FSQRTv2f64 = 1862
-    CEFBS_HasNEON_HasFullFP16, // FSQRTv4f16 = 1863
-    CEFBS_HasNEON, // FSQRTv4f32 = 1864
-    CEFBS_HasNEON_HasFullFP16, // FSQRTv8f16 = 1865
-    CEFBS_HasFPARMv8, // FSUBDrr = 1866
-    CEFBS_HasFullFP16, // FSUBHrr = 1867
-    CEFBS_HasSVE, // FSUBR_ZPmI_D = 1868
-    CEFBS_HasSVE, // FSUBR_ZPmI_H = 1869
-    CEFBS_HasSVE, // FSUBR_ZPmI_S = 1870
-    CEFBS_HasSVE, // FSUBR_ZPmZ_D = 1871
-    CEFBS_HasSVE, // FSUBR_ZPmZ_H = 1872
-    CEFBS_HasSVE, // FSUBR_ZPmZ_S = 1873
-    CEFBS_HasFPARMv8, // FSUBSrr = 1874
-    CEFBS_HasSVE, // FSUB_ZPmI_D = 1875
-    CEFBS_HasSVE, // FSUB_ZPmI_H = 1876
-    CEFBS_HasSVE, // FSUB_ZPmI_S = 1877
-    CEFBS_HasSVE, // FSUB_ZPmZ_D = 1878
-    CEFBS_HasSVE, // FSUB_ZPmZ_H = 1879
-    CEFBS_HasSVE, // FSUB_ZPmZ_S = 1880
-    CEFBS_HasSVE, // FSUB_ZZZ_D = 1881
-    CEFBS_HasSVE, // FSUB_ZZZ_H = 1882
-    CEFBS_HasSVE, // FSUB_ZZZ_S = 1883
-    CEFBS_HasNEON, // FSUBv2f32 = 1884
-    CEFBS_HasNEON, // FSUBv2f64 = 1885
-    CEFBS_HasNEON_HasFullFP16, // FSUBv4f16 = 1886
-    CEFBS_HasNEON, // FSUBv4f32 = 1887
-    CEFBS_HasNEON_HasFullFP16, // FSUBv8f16 = 1888
-    CEFBS_HasSVE, // FTMAD_ZZI_D = 1889
-    CEFBS_HasSVE, // FTMAD_ZZI_H = 1890
-    CEFBS_HasSVE, // FTMAD_ZZI_S = 1891
-    CEFBS_HasSVE, // FTSMUL_ZZZ_D = 1892
-    CEFBS_HasSVE, // FTSMUL_ZZZ_H = 1893
-    CEFBS_HasSVE, // FTSMUL_ZZZ_S = 1894
-    CEFBS_HasSVE, // FTSSEL_ZZZ_D = 1895
-    CEFBS_HasSVE, // FTSSEL_ZZZ_H = 1896
-    CEFBS_HasSVE, // FTSSEL_ZZZ_S = 1897
-    CEFBS_HasSVE, // GLD1B_D_IMM_REAL = 1898
-    CEFBS_HasSVE, // GLD1B_D_REAL = 1899
-    CEFBS_HasSVE, // GLD1B_D_SXTW_REAL = 1900
-    CEFBS_HasSVE, // GLD1B_D_UXTW_REAL = 1901
-    CEFBS_HasSVE, // GLD1B_S_IMM_REAL = 1902
-    CEFBS_HasSVE, // GLD1B_S_SXTW_REAL = 1903
-    CEFBS_HasSVE, // GLD1B_S_UXTW_REAL = 1904
-    CEFBS_HasSVE, // GLD1D_IMM_REAL = 1905
-    CEFBS_HasSVE, // GLD1D_REAL = 1906
-    CEFBS_HasSVE, // GLD1D_SCALED_REAL = 1907
-    CEFBS_HasSVE, // GLD1D_SXTW_REAL = 1908
-    CEFBS_HasSVE, // GLD1D_SXTW_SCALED_REAL = 1909
-    CEFBS_HasSVE, // GLD1D_UXTW_REAL = 1910
-    CEFBS_HasSVE, // GLD1D_UXTW_SCALED_REAL = 1911
-    CEFBS_HasSVE, // GLD1H_D_IMM_REAL = 1912
-    CEFBS_HasSVE, // GLD1H_D_REAL = 1913
-    CEFBS_HasSVE, // GLD1H_D_SCALED_REAL = 1914
-    CEFBS_HasSVE, // GLD1H_D_SXTW_REAL = 1915
-    CEFBS_HasSVE, // GLD1H_D_SXTW_SCALED_REAL = 1916
-    CEFBS_HasSVE, // GLD1H_D_UXTW_REAL = 1917
-    CEFBS_HasSVE, // GLD1H_D_UXTW_SCALED_REAL = 1918
-    CEFBS_HasSVE, // GLD1H_S_IMM_REAL = 1919
-    CEFBS_HasSVE, // GLD1H_S_SXTW_REAL = 1920
-    CEFBS_HasSVE, // GLD1H_S_SXTW_SCALED_REAL = 1921
-    CEFBS_HasSVE, // GLD1H_S_UXTW_REAL = 1922
-    CEFBS_HasSVE, // GLD1H_S_UXTW_SCALED_REAL = 1923
-    CEFBS_HasSVE, // GLD1SB_D_IMM_REAL = 1924
-    CEFBS_HasSVE, // GLD1SB_D_REAL = 1925
-    CEFBS_HasSVE, // GLD1SB_D_SXTW_REAL = 1926
-    CEFBS_HasSVE, // GLD1SB_D_UXTW_REAL = 1927
-    CEFBS_HasSVE, // GLD1SB_S_IMM_REAL = 1928
-    CEFBS_HasSVE, // GLD1SB_S_SXTW_REAL = 1929
-    CEFBS_HasSVE, // GLD1SB_S_UXTW_REAL = 1930
-    CEFBS_HasSVE, // GLD1SH_D_IMM_REAL = 1931
-    CEFBS_HasSVE, // GLD1SH_D_REAL = 1932
-    CEFBS_HasSVE, // GLD1SH_D_SCALED_REAL = 1933
-    CEFBS_HasSVE, // GLD1SH_D_SXTW_REAL = 1934
-    CEFBS_HasSVE, // GLD1SH_D_SXTW_SCALED_REAL = 1935
-    CEFBS_HasSVE, // GLD1SH_D_UXTW_REAL = 1936
-    CEFBS_HasSVE, // GLD1SH_D_UXTW_SCALED_REAL = 1937
-    CEFBS_HasSVE, // GLD1SH_S_IMM_REAL = 1938
-    CEFBS_HasSVE, // GLD1SH_S_SXTW_REAL = 1939
-    CEFBS_HasSVE, // GLD1SH_S_SXTW_SCALED_REAL = 1940
-    CEFBS_HasSVE, // GLD1SH_S_UXTW_REAL = 1941
-    CEFBS_HasSVE, // GLD1SH_S_UXTW_SCALED_REAL = 1942
-    CEFBS_HasSVE, // GLD1SW_D_IMM_REAL = 1943
-    CEFBS_HasSVE, // GLD1SW_D_REAL = 1944
-    CEFBS_HasSVE, // GLD1SW_D_SCALED_REAL = 1945
-    CEFBS_HasSVE, // GLD1SW_D_SXTW_REAL = 1946
-    CEFBS_HasSVE, // GLD1SW_D_SXTW_SCALED_REAL = 1947
-    CEFBS_HasSVE, // GLD1SW_D_UXTW_REAL = 1948
-    CEFBS_HasSVE, // GLD1SW_D_UXTW_SCALED_REAL = 1949
-    CEFBS_HasSVE, // GLD1W_D_IMM_REAL = 1950
-    CEFBS_HasSVE, // GLD1W_D_REAL = 1951
-    CEFBS_HasSVE, // GLD1W_D_SCALED_REAL = 1952
-    CEFBS_HasSVE, // GLD1W_D_SXTW_REAL = 1953
-    CEFBS_HasSVE, // GLD1W_D_SXTW_SCALED_REAL = 1954
-    CEFBS_HasSVE, // GLD1W_D_UXTW_REAL = 1955
-    CEFBS_HasSVE, // GLD1W_D_UXTW_SCALED_REAL = 1956
-    CEFBS_HasSVE, // GLD1W_IMM_REAL = 1957
-    CEFBS_HasSVE, // GLD1W_SXTW_REAL = 1958
-    CEFBS_HasSVE, // GLD1W_SXTW_SCALED_REAL = 1959
-    CEFBS_HasSVE, // GLD1W_UXTW_REAL = 1960
-    CEFBS_HasSVE, // GLD1W_UXTW_SCALED_REAL = 1961
-    CEFBS_HasSVE, // GLDFF1B_D_IMM_REAL = 1962
-    CEFBS_HasSVE, // GLDFF1B_D_REAL = 1963
-    CEFBS_HasSVE, // GLDFF1B_D_SXTW_REAL = 1964
-    CEFBS_HasSVE, // GLDFF1B_D_UXTW_REAL = 1965
-    CEFBS_HasSVE, // GLDFF1B_S_IMM_REAL = 1966
-    CEFBS_HasSVE, // GLDFF1B_S_SXTW_REAL = 1967
-    CEFBS_HasSVE, // GLDFF1B_S_UXTW_REAL = 1968
-    CEFBS_HasSVE, // GLDFF1D_IMM_REAL = 1969
-    CEFBS_HasSVE, // GLDFF1D_REAL = 1970
-    CEFBS_HasSVE, // GLDFF1D_SCALED_REAL = 1971
-    CEFBS_HasSVE, // GLDFF1D_SXTW_REAL = 1972
-    CEFBS_HasSVE, // GLDFF1D_SXTW_SCALED_REAL = 1973
-    CEFBS_HasSVE, // GLDFF1D_UXTW_REAL = 1974
-    CEFBS_HasSVE, // GLDFF1D_UXTW_SCALED_REAL = 1975
-    CEFBS_HasSVE, // GLDFF1H_D_IMM_REAL = 1976
-    CEFBS_HasSVE, // GLDFF1H_D_REAL = 1977
-    CEFBS_HasSVE, // GLDFF1H_D_SCALED_REAL = 1978
-    CEFBS_HasSVE, // GLDFF1H_D_SXTW_REAL = 1979
-    CEFBS_HasSVE, // GLDFF1H_D_SXTW_SCALED_REAL = 1980
-    CEFBS_HasSVE, // GLDFF1H_D_UXTW_REAL = 1981
-    CEFBS_HasSVE, // GLDFF1H_D_UXTW_SCALED_REAL = 1982
-    CEFBS_HasSVE, // GLDFF1H_S_IMM_REAL = 1983
-    CEFBS_HasSVE, // GLDFF1H_S_SXTW_REAL = 1984
-    CEFBS_HasSVE, // GLDFF1H_S_SXTW_SCALED_REAL = 1985
-    CEFBS_HasSVE, // GLDFF1H_S_UXTW_REAL = 1986
-    CEFBS_HasSVE, // GLDFF1H_S_UXTW_SCALED_REAL = 1987
-    CEFBS_HasSVE, // GLDFF1SB_D_IMM_REAL = 1988
-    CEFBS_HasSVE, // GLDFF1SB_D_REAL = 1989
-    CEFBS_HasSVE, // GLDFF1SB_D_SXTW_REAL = 1990
-    CEFBS_HasSVE, // GLDFF1SB_D_UXTW_REAL = 1991
-    CEFBS_HasSVE, // GLDFF1SB_S_IMM_REAL = 1992
-    CEFBS_HasSVE, // GLDFF1SB_S_SXTW_REAL = 1993
-    CEFBS_HasSVE, // GLDFF1SB_S_UXTW_REAL = 1994
-    CEFBS_HasSVE, // GLDFF1SH_D_IMM_REAL = 1995
-    CEFBS_HasSVE, // GLDFF1SH_D_REAL = 1996
-    CEFBS_HasSVE, // GLDFF1SH_D_SCALED_REAL = 1997
-    CEFBS_HasSVE, // GLDFF1SH_D_SXTW_REAL = 1998
-    CEFBS_HasSVE, // GLDFF1SH_D_SXTW_SCALED_REAL = 1999
-    CEFBS_HasSVE, // GLDFF1SH_D_UXTW_REAL = 2000
-    CEFBS_HasSVE, // GLDFF1SH_D_UXTW_SCALED_REAL = 2001
-    CEFBS_HasSVE, // GLDFF1SH_S_IMM_REAL = 2002
-    CEFBS_HasSVE, // GLDFF1SH_S_SXTW_REAL = 2003
-    CEFBS_HasSVE, // GLDFF1SH_S_SXTW_SCALED_REAL = 2004
-    CEFBS_HasSVE, // GLDFF1SH_S_UXTW_REAL = 2005
-    CEFBS_HasSVE, // GLDFF1SH_S_UXTW_SCALED_REAL = 2006
-    CEFBS_HasSVE, // GLDFF1SW_D_IMM_REAL = 2007
-    CEFBS_HasSVE, // GLDFF1SW_D_REAL = 2008
-    CEFBS_HasSVE, // GLDFF1SW_D_SCALED_REAL = 2009
-    CEFBS_HasSVE, // GLDFF1SW_D_SXTW_REAL = 2010
-    CEFBS_HasSVE, // GLDFF1SW_D_SXTW_SCALED_REAL = 2011
-    CEFBS_HasSVE, // GLDFF1SW_D_UXTW_REAL = 2012
-    CEFBS_HasSVE, // GLDFF1SW_D_UXTW_SCALED_REAL = 2013
-    CEFBS_HasSVE, // GLDFF1W_D_IMM_REAL = 2014
-    CEFBS_HasSVE, // GLDFF1W_D_REAL = 2015
-    CEFBS_HasSVE, // GLDFF1W_D_SCALED_REAL = 2016
-    CEFBS_HasSVE, // GLDFF1W_D_SXTW_REAL = 2017
-    CEFBS_HasSVE, // GLDFF1W_D_SXTW_SCALED_REAL = 2018
-    CEFBS_HasSVE, // GLDFF1W_D_UXTW_REAL = 2019
-    CEFBS_HasSVE, // GLDFF1W_D_UXTW_SCALED_REAL = 2020
-    CEFBS_HasSVE, // GLDFF1W_IMM_REAL = 2021
-    CEFBS_HasSVE, // GLDFF1W_SXTW_REAL = 2022
-    CEFBS_HasSVE, // GLDFF1W_SXTW_SCALED_REAL = 2023
-    CEFBS_HasSVE, // GLDFF1W_UXTW_REAL = 2024
-    CEFBS_HasSVE, // GLDFF1W_UXTW_SCALED_REAL = 2025
-    CEFBS_HasMTE, // GMI = 2026
-    CEFBS_None, // HINT = 2027
-    CEFBS_HasSVE2, // HISTCNT_ZPzZZ_D = 2028
-    CEFBS_HasSVE2, // HISTCNT_ZPzZZ_S = 2029
-    CEFBS_HasSVE2, // HISTSEG_ZZZ = 2030
-    CEFBS_None, // HLT = 2031
-    CEFBS_None, // HVC = 2032
-    CEFBS_None, // HWASAN_CHECK_MEMACCESS = 2033
-    CEFBS_None, // HWASAN_CHECK_MEMACCESS_SHORTGRANULES = 2034
-    CEFBS_HasSVE, // INCB_XPiI = 2035
-    CEFBS_HasSVE, // INCD_XPiI = 2036
-    CEFBS_HasSVE, // INCD_ZPiI = 2037
-    CEFBS_HasSVE, // INCH_XPiI = 2038
-    CEFBS_HasSVE, // INCH_ZPiI = 2039
-    CEFBS_HasSVE, // INCP_XP_B = 2040
-    CEFBS_HasSVE, // INCP_XP_D = 2041
-    CEFBS_HasSVE, // INCP_XP_H = 2042
-    CEFBS_HasSVE, // INCP_XP_S = 2043
-    CEFBS_HasSVE, // INCP_ZP_D = 2044
-    CEFBS_HasSVE, // INCP_ZP_H = 2045
-    CEFBS_HasSVE, // INCP_ZP_S = 2046
-    CEFBS_HasSVE, // INCW_XPiI = 2047
-    CEFBS_HasSVE, // INCW_ZPiI = 2048
-    CEFBS_HasSVE, // INDEX_II_B = 2049
-    CEFBS_HasSVE, // INDEX_II_D = 2050
-    CEFBS_HasSVE, // INDEX_II_H = 2051
-    CEFBS_HasSVE, // INDEX_II_S = 2052
-    CEFBS_HasSVE, // INDEX_IR_B = 2053
-    CEFBS_HasSVE, // INDEX_IR_D = 2054
-    CEFBS_HasSVE, // INDEX_IR_H = 2055
-    CEFBS_HasSVE, // INDEX_IR_S = 2056
-    CEFBS_HasSVE, // INDEX_RI_B = 2057
-    CEFBS_HasSVE, // INDEX_RI_D = 2058
-    CEFBS_HasSVE, // INDEX_RI_H = 2059
-    CEFBS_HasSVE, // INDEX_RI_S = 2060
-    CEFBS_HasSVE, // INDEX_RR_B = 2061
-    CEFBS_HasSVE, // INDEX_RR_D = 2062
-    CEFBS_HasSVE, // INDEX_RR_H = 2063
-    CEFBS_HasSVE, // INDEX_RR_S = 2064
-    CEFBS_HasSVE, // INSR_ZR_B = 2065
-    CEFBS_HasSVE, // INSR_ZR_D = 2066
-    CEFBS_HasSVE, // INSR_ZR_H = 2067
-    CEFBS_HasSVE, // INSR_ZR_S = 2068
-    CEFBS_HasSVE, // INSR_ZV_B = 2069
-    CEFBS_HasSVE, // INSR_ZV_D = 2070
-    CEFBS_HasSVE, // INSR_ZV_H = 2071
-    CEFBS_HasSVE, // INSR_ZV_S = 2072
-    CEFBS_HasNEON, // INSvi16gpr = 2073
-    CEFBS_HasNEON, // INSvi16lane = 2074
-    CEFBS_HasNEON, // INSvi32gpr = 2075
-    CEFBS_HasNEON, // INSvi32lane = 2076
-    CEFBS_HasNEON, // INSvi64gpr = 2077
-    CEFBS_HasNEON, // INSvi64lane = 2078
-    CEFBS_HasNEON, // INSvi8gpr = 2079
-    CEFBS_HasNEON, // INSvi8lane = 2080
-    CEFBS_HasMTE, // IRG = 2081
-    CEFBS_HasMTE, // IRGstack = 2082
-    CEFBS_None, // ISB = 2083
-    CEFBS_None, // JumpTableDest16 = 2084
-    CEFBS_None, // JumpTableDest32 = 2085
-    CEFBS_None, // JumpTableDest8 = 2086
-    CEFBS_HasSVE, // LASTA_RPZ_B = 2087
-    CEFBS_HasSVE, // LASTA_RPZ_D = 2088
-    CEFBS_HasSVE, // LASTA_RPZ_H = 2089
-    CEFBS_HasSVE, // LASTA_RPZ_S = 2090
-    CEFBS_HasSVE, // LASTA_VPZ_B = 2091
-    CEFBS_HasSVE, // LASTA_VPZ_D = 2092
-    CEFBS_HasSVE, // LASTA_VPZ_H = 2093
-    CEFBS_HasSVE, // LASTA_VPZ_S = 2094
-    CEFBS_HasSVE, // LASTB_RPZ_B = 2095
-    CEFBS_HasSVE, // LASTB_RPZ_D = 2096
-    CEFBS_HasSVE, // LASTB_RPZ_H = 2097
-    CEFBS_HasSVE, // LASTB_RPZ_S = 2098
-    CEFBS_HasSVE, // LASTB_VPZ_B = 2099
-    CEFBS_HasSVE, // LASTB_VPZ_D = 2100
-    CEFBS_HasSVE, // LASTB_VPZ_H = 2101
-    CEFBS_HasSVE, // LASTB_VPZ_S = 2102
-    CEFBS_HasSVE, // LD1B = 2103
-    CEFBS_HasSVE, // LD1B_D = 2104
-    CEFBS_HasSVE, // LD1B_D_IMM_REAL = 2105
-    CEFBS_HasSVE, // LD1B_H = 2106
-    CEFBS_HasSVE, // LD1B_H_IMM_REAL = 2107
-    CEFBS_HasSVE, // LD1B_IMM_REAL = 2108
-    CEFBS_HasSVE, // LD1B_S = 2109
-    CEFBS_HasSVE, // LD1B_S_IMM_REAL = 2110
-    CEFBS_HasSVE, // LD1D = 2111
-    CEFBS_HasSVE, // LD1D_IMM_REAL = 2112
-    CEFBS_HasNEON, // LD1Fourv16b = 2113
-    CEFBS_HasNEON, // LD1Fourv16b_POST = 2114
-    CEFBS_HasNEON, // LD1Fourv1d = 2115
-    CEFBS_HasNEON, // LD1Fourv1d_POST = 2116
-    CEFBS_HasNEON, // LD1Fourv2d = 2117
-    CEFBS_HasNEON, // LD1Fourv2d_POST = 2118
-    CEFBS_HasNEON, // LD1Fourv2s = 2119
-    CEFBS_HasNEON, // LD1Fourv2s_POST = 2120
-    CEFBS_HasNEON, // LD1Fourv4h = 2121
-    CEFBS_HasNEON, // LD1Fourv4h_POST = 2122
-    CEFBS_HasNEON, // LD1Fourv4s = 2123
-    CEFBS_HasNEON, // LD1Fourv4s_POST = 2124
-    CEFBS_HasNEON, // LD1Fourv8b = 2125
-    CEFBS_HasNEON, // LD1Fourv8b_POST = 2126
-    CEFBS_HasNEON, // LD1Fourv8h = 2127
-    CEFBS_HasNEON, // LD1Fourv8h_POST = 2128
-    CEFBS_HasSVE, // LD1H = 2129
-    CEFBS_HasSVE, // LD1H_D = 2130
-    CEFBS_HasSVE, // LD1H_D_IMM_REAL = 2131
-    CEFBS_HasSVE, // LD1H_IMM_REAL = 2132
-    CEFBS_HasSVE, // LD1H_S = 2133
-    CEFBS_HasSVE, // LD1H_S_IMM_REAL = 2134
-    CEFBS_HasNEON, // LD1Onev16b = 2135
-    CEFBS_HasNEON, // LD1Onev16b_POST = 2136
-    CEFBS_HasNEON, // LD1Onev1d = 2137
-    CEFBS_HasNEON, // LD1Onev1d_POST = 2138
-    CEFBS_HasNEON, // LD1Onev2d = 2139
-    CEFBS_HasNEON, // LD1Onev2d_POST = 2140
-    CEFBS_HasNEON, // LD1Onev2s = 2141
-    CEFBS_HasNEON, // LD1Onev2s_POST = 2142
-    CEFBS_HasNEON, // LD1Onev4h = 2143
-    CEFBS_HasNEON, // LD1Onev4h_POST = 2144
-    CEFBS_HasNEON, // LD1Onev4s = 2145
-    CEFBS_HasNEON, // LD1Onev4s_POST = 2146
-    CEFBS_HasNEON, // LD1Onev8b = 2147
-    CEFBS_HasNEON, // LD1Onev8b_POST = 2148
-    CEFBS_HasNEON, // LD1Onev8h = 2149
-    CEFBS_HasNEON, // LD1Onev8h_POST = 2150
-    CEFBS_HasSVE, // LD1RB_D_IMM = 2151
-    CEFBS_HasSVE, // LD1RB_H_IMM = 2152
-    CEFBS_HasSVE, // LD1RB_IMM = 2153
-    CEFBS_HasSVE, // LD1RB_S_IMM = 2154
-    CEFBS_HasSVE, // LD1RD_IMM = 2155
-    CEFBS_HasSVE, // LD1RH_D_IMM = 2156
-    CEFBS_HasSVE, // LD1RH_IMM = 2157
-    CEFBS_HasSVE, // LD1RH_S_IMM = 2158
-    CEFBS_HasSVE, // LD1RQ_B = 2159
-    CEFBS_HasSVE, // LD1RQ_B_IMM = 2160
-    CEFBS_HasSVE, // LD1RQ_D = 2161
-    CEFBS_HasSVE, // LD1RQ_D_IMM = 2162
-    CEFBS_HasSVE, // LD1RQ_H = 2163
-    CEFBS_HasSVE, // LD1RQ_H_IMM = 2164
-    CEFBS_HasSVE, // LD1RQ_W = 2165
-    CEFBS_HasSVE, // LD1RQ_W_IMM = 2166
-    CEFBS_HasSVE, // LD1RSB_D_IMM = 2167
-    CEFBS_HasSVE, // LD1RSB_H_IMM = 2168
-    CEFBS_HasSVE, // LD1RSB_S_IMM = 2169
-    CEFBS_HasSVE, // LD1RSH_D_IMM = 2170
-    CEFBS_HasSVE, // LD1RSH_S_IMM = 2171
-    CEFBS_HasSVE, // LD1RSW_IMM = 2172
-    CEFBS_HasSVE, // LD1RW_D_IMM = 2173
-    CEFBS_HasSVE, // LD1RW_IMM = 2174
-    CEFBS_HasNEON, // LD1Rv16b = 2175
-    CEFBS_HasNEON, // LD1Rv16b_POST = 2176
-    CEFBS_HasNEON, // LD1Rv1d = 2177
-    CEFBS_HasNEON, // LD1Rv1d_POST = 2178
-    CEFBS_HasNEON, // LD1Rv2d = 2179
-    CEFBS_HasNEON, // LD1Rv2d_POST = 2180
-    CEFBS_HasNEON, // LD1Rv2s = 2181
-    CEFBS_HasNEON, // LD1Rv2s_POST = 2182
-    CEFBS_HasNEON, // LD1Rv4h = 2183
-    CEFBS_HasNEON, // LD1Rv4h_POST = 2184
-    CEFBS_HasNEON, // LD1Rv4s = 2185
-    CEFBS_HasNEON, // LD1Rv4s_POST = 2186
-    CEFBS_HasNEON, // LD1Rv8b = 2187
-    CEFBS_HasNEON, // LD1Rv8b_POST = 2188
-    CEFBS_HasNEON, // LD1Rv8h = 2189
-    CEFBS_HasNEON, // LD1Rv8h_POST = 2190
-    CEFBS_HasSVE, // LD1SB_D = 2191
-    CEFBS_HasSVE, // LD1SB_D_IMM_REAL = 2192
-    CEFBS_HasSVE, // LD1SB_H = 2193
-    CEFBS_HasSVE, // LD1SB_H_IMM_REAL = 2194
-    CEFBS_HasSVE, // LD1SB_S = 2195
-    CEFBS_HasSVE, // LD1SB_S_IMM_REAL = 2196
-    CEFBS_HasSVE, // LD1SH_D = 2197
-    CEFBS_HasSVE, // LD1SH_D_IMM_REAL = 2198
-    CEFBS_HasSVE, // LD1SH_S = 2199
-    CEFBS_HasSVE, // LD1SH_S_IMM_REAL = 2200
-    CEFBS_HasSVE, // LD1SW_D = 2201
-    CEFBS_HasSVE, // LD1SW_D_IMM_REAL = 2202
-    CEFBS_HasNEON, // LD1Threev16b = 2203
-    CEFBS_HasNEON, // LD1Threev16b_POST = 2204
-    CEFBS_HasNEON, // LD1Threev1d = 2205
-    CEFBS_HasNEON, // LD1Threev1d_POST = 2206
-    CEFBS_HasNEON, // LD1Threev2d = 2207
-    CEFBS_HasNEON, // LD1Threev2d_POST = 2208
-    CEFBS_HasNEON, // LD1Threev2s = 2209
-    CEFBS_HasNEON, // LD1Threev2s_POST = 2210
-    CEFBS_HasNEON, // LD1Threev4h = 2211
-    CEFBS_HasNEON, // LD1Threev4h_POST = 2212
-    CEFBS_HasNEON, // LD1Threev4s = 2213
-    CEFBS_HasNEON, // LD1Threev4s_POST = 2214
-    CEFBS_HasNEON, // LD1Threev8b = 2215
-    CEFBS_HasNEON, // LD1Threev8b_POST = 2216
-    CEFBS_HasNEON, // LD1Threev8h = 2217
-    CEFBS_HasNEON, // LD1Threev8h_POST = 2218
-    CEFBS_HasNEON, // LD1Twov16b = 2219
-    CEFBS_HasNEON, // LD1Twov16b_POST = 2220
-    CEFBS_HasNEON, // LD1Twov1d = 2221
-    CEFBS_HasNEON, // LD1Twov1d_POST = 2222
-    CEFBS_HasNEON, // LD1Twov2d = 2223
-    CEFBS_HasNEON, // LD1Twov2d_POST = 2224
-    CEFBS_HasNEON, // LD1Twov2s = 2225
-    CEFBS_HasNEON, // LD1Twov2s_POST = 2226
-    CEFBS_HasNEON, // LD1Twov4h = 2227
-    CEFBS_HasNEON, // LD1Twov4h_POST = 2228
-    CEFBS_HasNEON, // LD1Twov4s = 2229
-    CEFBS_HasNEON, // LD1Twov4s_POST = 2230
-    CEFBS_HasNEON, // LD1Twov8b = 2231
-    CEFBS_HasNEON, // LD1Twov8b_POST = 2232
-    CEFBS_HasNEON, // LD1Twov8h = 2233
-    CEFBS_HasNEON, // LD1Twov8h_POST = 2234
-    CEFBS_HasSVE, // LD1W = 2235
-    CEFBS_HasSVE, // LD1W_D = 2236
-    CEFBS_HasSVE, // LD1W_D_IMM_REAL = 2237
-    CEFBS_HasSVE, // LD1W_IMM_REAL = 2238
-    CEFBS_HasNEON, // LD1i16 = 2239
-    CEFBS_HasNEON, // LD1i16_POST = 2240
-    CEFBS_HasNEON, // LD1i32 = 2241
-    CEFBS_HasNEON, // LD1i32_POST = 2242
-    CEFBS_HasNEON, // LD1i64 = 2243
-    CEFBS_HasNEON, // LD1i64_POST = 2244
-    CEFBS_HasNEON, // LD1i8 = 2245
-    CEFBS_HasNEON, // LD1i8_POST = 2246
-    CEFBS_HasSVE, // LD2B = 2247
-    CEFBS_HasSVE, // LD2B_IMM = 2248
-    CEFBS_HasSVE, // LD2D = 2249
-    CEFBS_HasSVE, // LD2D_IMM = 2250
-    CEFBS_HasSVE, // LD2H = 2251
-    CEFBS_HasSVE, // LD2H_IMM = 2252
-    CEFBS_HasNEON, // LD2Rv16b = 2253
-    CEFBS_HasNEON, // LD2Rv16b_POST = 2254
-    CEFBS_HasNEON, // LD2Rv1d = 2255
-    CEFBS_HasNEON, // LD2Rv1d_POST = 2256
-    CEFBS_HasNEON, // LD2Rv2d = 2257
-    CEFBS_HasNEON, // LD2Rv2d_POST = 2258
-    CEFBS_HasNEON, // LD2Rv2s = 2259
-    CEFBS_HasNEON, // LD2Rv2s_POST = 2260
-    CEFBS_HasNEON, // LD2Rv4h = 2261
-    CEFBS_HasNEON, // LD2Rv4h_POST = 2262
-    CEFBS_HasNEON, // LD2Rv4s = 2263
-    CEFBS_HasNEON, // LD2Rv4s_POST = 2264
-    CEFBS_HasNEON, // LD2Rv8b = 2265
-    CEFBS_HasNEON, // LD2Rv8b_POST = 2266
-    CEFBS_HasNEON, // LD2Rv8h = 2267
-    CEFBS_HasNEON, // LD2Rv8h_POST = 2268
-    CEFBS_HasNEON, // LD2Twov16b = 2269
-    CEFBS_HasNEON, // LD2Twov16b_POST = 2270
-    CEFBS_HasNEON, // LD2Twov2d = 2271
-    CEFBS_HasNEON, // LD2Twov2d_POST = 2272
-    CEFBS_HasNEON, // LD2Twov2s = 2273
-    CEFBS_HasNEON, // LD2Twov2s_POST = 2274
-    CEFBS_HasNEON, // LD2Twov4h = 2275
-    CEFBS_HasNEON, // LD2Twov4h_POST = 2276
-    CEFBS_HasNEON, // LD2Twov4s = 2277
-    CEFBS_HasNEON, // LD2Twov4s_POST = 2278
-    CEFBS_HasNEON, // LD2Twov8b = 2279
-    CEFBS_HasNEON, // LD2Twov8b_POST = 2280
-    CEFBS_HasNEON, // LD2Twov8h = 2281
-    CEFBS_HasNEON, // LD2Twov8h_POST = 2282
-    CEFBS_HasSVE, // LD2W = 2283
-    CEFBS_HasSVE, // LD2W_IMM = 2284
-    CEFBS_HasNEON, // LD2i16 = 2285
-    CEFBS_HasNEON, // LD2i16_POST = 2286
-    CEFBS_HasNEON, // LD2i32 = 2287
-    CEFBS_HasNEON, // LD2i32_POST = 2288
-    CEFBS_HasNEON, // LD2i64 = 2289
-    CEFBS_HasNEON, // LD2i64_POST = 2290
-    CEFBS_HasNEON, // LD2i8 = 2291
-    CEFBS_HasNEON, // LD2i8_POST = 2292
-    CEFBS_HasSVE, // LD3B = 2293
-    CEFBS_HasSVE, // LD3B_IMM = 2294
-    CEFBS_HasSVE, // LD3D = 2295
-    CEFBS_HasSVE, // LD3D_IMM = 2296
-    CEFBS_HasSVE, // LD3H = 2297
-    CEFBS_HasSVE, // LD3H_IMM = 2298
-    CEFBS_HasNEON, // LD3Rv16b = 2299
-    CEFBS_HasNEON, // LD3Rv16b_POST = 2300
-    CEFBS_HasNEON, // LD3Rv1d = 2301
-    CEFBS_HasNEON, // LD3Rv1d_POST = 2302
-    CEFBS_HasNEON, // LD3Rv2d = 2303
-    CEFBS_HasNEON, // LD3Rv2d_POST = 2304
-    CEFBS_HasNEON, // LD3Rv2s = 2305
-    CEFBS_HasNEON, // LD3Rv2s_POST = 2306
-    CEFBS_HasNEON, // LD3Rv4h = 2307
-    CEFBS_HasNEON, // LD3Rv4h_POST = 2308
-    CEFBS_HasNEON, // LD3Rv4s = 2309
-    CEFBS_HasNEON, // LD3Rv4s_POST = 2310
-    CEFBS_HasNEON, // LD3Rv8b = 2311
-    CEFBS_HasNEON, // LD3Rv8b_POST = 2312
-    CEFBS_HasNEON, // LD3Rv8h = 2313
-    CEFBS_HasNEON, // LD3Rv8h_POST = 2314
-    CEFBS_HasNEON, // LD3Threev16b = 2315
-    CEFBS_HasNEON, // LD3Threev16b_POST = 2316
-    CEFBS_HasNEON, // LD3Threev2d = 2317
-    CEFBS_HasNEON, // LD3Threev2d_POST = 2318
-    CEFBS_HasNEON, // LD3Threev2s = 2319
-    CEFBS_HasNEON, // LD3Threev2s_POST = 2320
-    CEFBS_HasNEON, // LD3Threev4h = 2321
-    CEFBS_HasNEON, // LD3Threev4h_POST = 2322
-    CEFBS_HasNEON, // LD3Threev4s = 2323
-    CEFBS_HasNEON, // LD3Threev4s_POST = 2324
-    CEFBS_HasNEON, // LD3Threev8b = 2325
-    CEFBS_HasNEON, // LD3Threev8b_POST = 2326
-    CEFBS_HasNEON, // LD3Threev8h = 2327
-    CEFBS_HasNEON, // LD3Threev8h_POST = 2328
-    CEFBS_HasSVE, // LD3W = 2329
-    CEFBS_HasSVE, // LD3W_IMM = 2330
-    CEFBS_HasNEON, // LD3i16 = 2331
-    CEFBS_HasNEON, // LD3i16_POST = 2332
-    CEFBS_HasNEON, // LD3i32 = 2333
-    CEFBS_HasNEON, // LD3i32_POST = 2334
-    CEFBS_HasNEON, // LD3i64 = 2335
-    CEFBS_HasNEON, // LD3i64_POST = 2336
-    CEFBS_HasNEON, // LD3i8 = 2337
-    CEFBS_HasNEON, // LD3i8_POST = 2338
-    CEFBS_HasSVE, // LD4B = 2339
-    CEFBS_HasSVE, // LD4B_IMM = 2340
-    CEFBS_HasSVE, // LD4D = 2341
-    CEFBS_HasSVE, // LD4D_IMM = 2342
-    CEFBS_HasNEON, // LD4Fourv16b = 2343
-    CEFBS_HasNEON, // LD4Fourv16b_POST = 2344
-    CEFBS_HasNEON, // LD4Fourv2d = 2345
-    CEFBS_HasNEON, // LD4Fourv2d_POST = 2346
-    CEFBS_HasNEON, // LD4Fourv2s = 2347
-    CEFBS_HasNEON, // LD4Fourv2s_POST = 2348
-    CEFBS_HasNEON, // LD4Fourv4h = 2349
-    CEFBS_HasNEON, // LD4Fourv4h_POST = 2350
-    CEFBS_HasNEON, // LD4Fourv4s = 2351
-    CEFBS_HasNEON, // LD4Fourv4s_POST = 2352
-    CEFBS_HasNEON, // LD4Fourv8b = 2353
-    CEFBS_HasNEON, // LD4Fourv8b_POST = 2354
-    CEFBS_HasNEON, // LD4Fourv8h = 2355
-    CEFBS_HasNEON, // LD4Fourv8h_POST = 2356
-    CEFBS_HasSVE, // LD4H = 2357
-    CEFBS_HasSVE, // LD4H_IMM = 2358
-    CEFBS_HasNEON, // LD4Rv16b = 2359
-    CEFBS_HasNEON, // LD4Rv16b_POST = 2360
-    CEFBS_HasNEON, // LD4Rv1d = 2361
-    CEFBS_HasNEON, // LD4Rv1d_POST = 2362
-    CEFBS_HasNEON, // LD4Rv2d = 2363
-    CEFBS_HasNEON, // LD4Rv2d_POST = 2364
-    CEFBS_HasNEON, // LD4Rv2s = 2365
-    CEFBS_HasNEON, // LD4Rv2s_POST = 2366
-    CEFBS_HasNEON, // LD4Rv4h = 2367
-    CEFBS_HasNEON, // LD4Rv4h_POST = 2368
-    CEFBS_HasNEON, // LD4Rv4s = 2369
-    CEFBS_HasNEON, // LD4Rv4s_POST = 2370
-    CEFBS_HasNEON, // LD4Rv8b = 2371
-    CEFBS_HasNEON, // LD4Rv8b_POST = 2372
-    CEFBS_HasNEON, // LD4Rv8h = 2373
-    CEFBS_HasNEON, // LD4Rv8h_POST = 2374
-    CEFBS_HasSVE, // LD4W = 2375
-    CEFBS_HasSVE, // LD4W_IMM = 2376
-    CEFBS_HasNEON, // LD4i16 = 2377
-    CEFBS_HasNEON, // LD4i16_POST = 2378
-    CEFBS_HasNEON, // LD4i32 = 2379
-    CEFBS_HasNEON, // LD4i32_POST = 2380
-    CEFBS_HasNEON, // LD4i64 = 2381
-    CEFBS_HasNEON, // LD4i64_POST = 2382
-    CEFBS_HasNEON, // LD4i8 = 2383
-    CEFBS_HasNEON, // LD4i8_POST = 2384
-    CEFBS_HasLSE, // LDADDAB = 2385
-    CEFBS_HasLSE, // LDADDAH = 2386
-    CEFBS_HasLSE, // LDADDALB = 2387
-    CEFBS_HasLSE, // LDADDALH = 2388
-    CEFBS_HasLSE, // LDADDALW = 2389
-    CEFBS_HasLSE, // LDADDALX = 2390
-    CEFBS_HasLSE, // LDADDAW = 2391
-    CEFBS_HasLSE, // LDADDAX = 2392
-    CEFBS_HasLSE, // LDADDB = 2393
-    CEFBS_HasLSE, // LDADDH = 2394
-    CEFBS_HasLSE, // LDADDLB = 2395
-    CEFBS_HasLSE, // LDADDLH = 2396
-    CEFBS_HasLSE, // LDADDLW = 2397
-    CEFBS_HasLSE, // LDADDLX = 2398
-    CEFBS_HasLSE, // LDADDW = 2399
-    CEFBS_HasLSE, // LDADDX = 2400
-    CEFBS_HasRCPC, // LDAPRB = 2401
-    CEFBS_HasRCPC, // LDAPRH = 2402
-    CEFBS_HasRCPC, // LDAPRW = 2403
-    CEFBS_HasRCPC, // LDAPRX = 2404
-    CEFBS_HasRCPC_IMMO, // LDAPURBi = 2405
-    CEFBS_HasRCPC_IMMO, // LDAPURHi = 2406
-    CEFBS_HasRCPC_IMMO, // LDAPURSBWi = 2407
-    CEFBS_HasRCPC_IMMO, // LDAPURSBXi = 2408
-    CEFBS_HasRCPC_IMMO, // LDAPURSHWi = 2409
-    CEFBS_HasRCPC_IMMO, // LDAPURSHXi = 2410
-    CEFBS_HasRCPC_IMMO, // LDAPURSWi = 2411
-    CEFBS_HasRCPC_IMMO, // LDAPURXi = 2412
-    CEFBS_HasRCPC_IMMO, // LDAPURi = 2413
-    CEFBS_None, // LDARB = 2414
-    CEFBS_None, // LDARH = 2415
-    CEFBS_None, // LDARW = 2416
-    CEFBS_None, // LDARX = 2417
-    CEFBS_None, // LDAXPW = 2418
-    CEFBS_None, // LDAXPX = 2419
-    CEFBS_None, // LDAXRB = 2420
-    CEFBS_None, // LDAXRH = 2421
-    CEFBS_None, // LDAXRW = 2422
-    CEFBS_None, // LDAXRX = 2423
-    CEFBS_HasLSE, // LDCLRAB = 2424
-    CEFBS_HasLSE, // LDCLRAH = 2425
-    CEFBS_HasLSE, // LDCLRALB = 2426
-    CEFBS_HasLSE, // LDCLRALH = 2427
-    CEFBS_HasLSE, // LDCLRALW = 2428
-    CEFBS_HasLSE, // LDCLRALX = 2429
-    CEFBS_HasLSE, // LDCLRAW = 2430
-    CEFBS_HasLSE, // LDCLRAX = 2431
-    CEFBS_HasLSE, // LDCLRB = 2432
-    CEFBS_HasLSE, // LDCLRH = 2433
-    CEFBS_HasLSE, // LDCLRLB = 2434
-    CEFBS_HasLSE, // LDCLRLH = 2435
-    CEFBS_HasLSE, // LDCLRLW = 2436
-    CEFBS_HasLSE, // LDCLRLX = 2437
-    CEFBS_HasLSE, // LDCLRW = 2438
-    CEFBS_HasLSE, // LDCLRX = 2439
-    CEFBS_HasLSE, // LDEORAB = 2440
-    CEFBS_HasLSE, // LDEORAH = 2441
-    CEFBS_HasLSE, // LDEORALB = 2442
-    CEFBS_HasLSE, // LDEORALH = 2443
-    CEFBS_HasLSE, // LDEORALW = 2444
-    CEFBS_HasLSE, // LDEORALX = 2445
-    CEFBS_HasLSE, // LDEORAW = 2446
-    CEFBS_HasLSE, // LDEORAX = 2447
-    CEFBS_HasLSE, // LDEORB = 2448
-    CEFBS_HasLSE, // LDEORH = 2449
-    CEFBS_HasLSE, // LDEORLB = 2450
-    CEFBS_HasLSE, // LDEORLH = 2451
-    CEFBS_HasLSE, // LDEORLW = 2452
-    CEFBS_HasLSE, // LDEORLX = 2453
-    CEFBS_HasLSE, // LDEORW = 2454
-    CEFBS_HasLSE, // LDEORX = 2455
-    CEFBS_HasSVE, // LDFF1B_D_REAL = 2456
-    CEFBS_HasSVE, // LDFF1B_H_REAL = 2457
-    CEFBS_HasSVE, // LDFF1B_REAL = 2458
-    CEFBS_HasSVE, // LDFF1B_S_REAL = 2459
-    CEFBS_HasSVE, // LDFF1D_REAL = 2460
-    CEFBS_HasSVE, // LDFF1H_D_REAL = 2461
-    CEFBS_HasSVE, // LDFF1H_REAL = 2462
-    CEFBS_HasSVE, // LDFF1H_S_REAL = 2463
-    CEFBS_HasSVE, // LDFF1SB_D_REAL = 2464
-    CEFBS_HasSVE, // LDFF1SB_H_REAL = 2465
-    CEFBS_HasSVE, // LDFF1SB_S_REAL = 2466
-    CEFBS_HasSVE, // LDFF1SH_D_REAL = 2467
-    CEFBS_HasSVE, // LDFF1SH_S_REAL = 2468
-    CEFBS_HasSVE, // LDFF1SW_D_REAL = 2469
-    CEFBS_HasSVE, // LDFF1W_D_REAL = 2470
-    CEFBS_HasSVE, // LDFF1W_REAL = 2471
-    CEFBS_HasMTE, // LDG = 2472
-    CEFBS_HasMTE, // LDGM = 2473
-    CEFBS_HasLOR, // LDLARB = 2474
-    CEFBS_HasLOR, // LDLARH = 2475
-    CEFBS_HasLOR, // LDLARW = 2476
-    CEFBS_HasLOR, // LDLARX = 2477
-    CEFBS_HasSVE, // LDNF1B_D_IMM_REAL = 2478
-    CEFBS_HasSVE, // LDNF1B_H_IMM_REAL = 2479
-    CEFBS_HasSVE, // LDNF1B_IMM_REAL = 2480
-    CEFBS_HasSVE, // LDNF1B_S_IMM_REAL = 2481
-    CEFBS_HasSVE, // LDNF1D_IMM_REAL = 2482
-    CEFBS_HasSVE, // LDNF1H_D_IMM_REAL = 2483
-    CEFBS_HasSVE, // LDNF1H_IMM_REAL = 2484
-    CEFBS_HasSVE, // LDNF1H_S_IMM_REAL = 2485
-    CEFBS_HasSVE, // LDNF1SB_D_IMM_REAL = 2486
-    CEFBS_HasSVE, // LDNF1SB_H_IMM_REAL = 2487
-    CEFBS_HasSVE, // LDNF1SB_S_IMM_REAL = 2488
-    CEFBS_HasSVE, // LDNF1SH_D_IMM_REAL = 2489
-    CEFBS_HasSVE, // LDNF1SH_S_IMM_REAL = 2490
-    CEFBS_HasSVE, // LDNF1SW_D_IMM_REAL = 2491
-    CEFBS_HasSVE, // LDNF1W_D_IMM_REAL = 2492
-    CEFBS_HasSVE, // LDNF1W_IMM_REAL = 2493
-    CEFBS_None, // LDNPDi = 2494
-    CEFBS_None, // LDNPQi = 2495
-    CEFBS_None, // LDNPSi = 2496
-    CEFBS_None, // LDNPWi = 2497
-    CEFBS_None, // LDNPXi = 2498
-    CEFBS_HasSVE, // LDNT1B_ZRI = 2499
-    CEFBS_HasSVE, // LDNT1B_ZRR = 2500
-    CEFBS_HasSVE2, // LDNT1B_ZZR_D_REAL = 2501
-    CEFBS_HasSVE2, // LDNT1B_ZZR_S_REAL = 2502
-    CEFBS_HasSVE, // LDNT1D_ZRI = 2503
-    CEFBS_HasSVE, // LDNT1D_ZRR = 2504
-    CEFBS_HasSVE2, // LDNT1D_ZZR_D_REAL = 2505
-    CEFBS_HasSVE, // LDNT1H_ZRI = 2506
-    CEFBS_HasSVE, // LDNT1H_ZRR = 2507
-    CEFBS_HasSVE2, // LDNT1H_ZZR_D_REAL = 2508
-    CEFBS_HasSVE2, // LDNT1H_ZZR_S_REAL = 2509
-    CEFBS_HasSVE2, // LDNT1SB_ZZR_D_REAL = 2510
-    CEFBS_HasSVE2, // LDNT1SB_ZZR_S_REAL = 2511
-    CEFBS_HasSVE2, // LDNT1SH_ZZR_D_REAL = 2512
-    CEFBS_HasSVE2, // LDNT1SH_ZZR_S_REAL = 2513
-    CEFBS_HasSVE2, // LDNT1SW_ZZR_D_REAL = 2514
-    CEFBS_HasSVE, // LDNT1W_ZRI = 2515
-    CEFBS_HasSVE, // LDNT1W_ZRR = 2516
-    CEFBS_HasSVE2, // LDNT1W_ZZR_D_REAL = 2517
-    CEFBS_HasSVE2, // LDNT1W_ZZR_S_REAL = 2518
-    CEFBS_None, // LDPDi = 2519
-    CEFBS_None, // LDPDpost = 2520
-    CEFBS_None, // LDPDpre = 2521
-    CEFBS_None, // LDPQi = 2522
-    CEFBS_None, // LDPQpost = 2523
-    CEFBS_None, // LDPQpre = 2524
-    CEFBS_None, // LDPSWi = 2525
-    CEFBS_None, // LDPSWpost = 2526
-    CEFBS_None, // LDPSWpre = 2527
-    CEFBS_None, // LDPSi = 2528
-    CEFBS_None, // LDPSpost = 2529
-    CEFBS_None, // LDPSpre = 2530
-    CEFBS_None, // LDPWi = 2531
-    CEFBS_None, // LDPWpost = 2532
-    CEFBS_None, // LDPWpre = 2533
-    CEFBS_None, // LDPXi = 2534
-    CEFBS_None, // LDPXpost = 2535
-    CEFBS_None, // LDPXpre = 2536
-    CEFBS_HasPA, // LDRAAindexed = 2537
-    CEFBS_HasPA, // LDRAAwriteback = 2538
-    CEFBS_HasPA, // LDRABindexed = 2539
-    CEFBS_HasPA, // LDRABwriteback = 2540
-    CEFBS_None, // LDRBBpost = 2541
-    CEFBS_None, // LDRBBpre = 2542
-    CEFBS_None, // LDRBBroW = 2543
-    CEFBS_None, // LDRBBroX = 2544
-    CEFBS_None, // LDRBBui = 2545
-    CEFBS_None, // LDRBpost = 2546
-    CEFBS_None, // LDRBpre = 2547
-    CEFBS_None, // LDRBroW = 2548
-    CEFBS_None, // LDRBroX = 2549
-    CEFBS_None, // LDRBui = 2550
-    CEFBS_None, // LDRDl = 2551
-    CEFBS_None, // LDRDpost = 2552
-    CEFBS_None, // LDRDpre = 2553
-    CEFBS_None, // LDRDroW = 2554
-    CEFBS_None, // LDRDroX = 2555
-    CEFBS_None, // LDRDui = 2556
-    CEFBS_None, // LDRHHpost = 2557
-    CEFBS_None, // LDRHHpre = 2558
-    CEFBS_None, // LDRHHroW = 2559
-    CEFBS_None, // LDRHHroX = 2560
-    CEFBS_None, // LDRHHui = 2561
-    CEFBS_None, // LDRHpost = 2562
-    CEFBS_None, // LDRHpre = 2563
-    CEFBS_None, // LDRHroW = 2564
-    CEFBS_None, // LDRHroX = 2565
-    CEFBS_None, // LDRHui = 2566
-    CEFBS_None, // LDRQl = 2567
-    CEFBS_None, // LDRQpost = 2568
-    CEFBS_None, // LDRQpre = 2569
-    CEFBS_None, // LDRQroW = 2570
-    CEFBS_None, // LDRQroX = 2571
-    CEFBS_None, // LDRQui = 2572
-    CEFBS_None, // LDRSBWpost = 2573
-    CEFBS_None, // LDRSBWpre = 2574
-    CEFBS_None, // LDRSBWroW = 2575
-    CEFBS_None, // LDRSBWroX = 2576
-    CEFBS_None, // LDRSBWui = 2577
-    CEFBS_None, // LDRSBXpost = 2578
-    CEFBS_None, // LDRSBXpre = 2579
-    CEFBS_None, // LDRSBXroW = 2580
-    CEFBS_None, // LDRSBXroX = 2581
-    CEFBS_None, // LDRSBXui = 2582
-    CEFBS_None, // LDRSHWpost = 2583
-    CEFBS_None, // LDRSHWpre = 2584
-    CEFBS_None, // LDRSHWroW = 2585
-    CEFBS_None, // LDRSHWroX = 2586
-    CEFBS_None, // LDRSHWui = 2587
-    CEFBS_None, // LDRSHXpost = 2588
-    CEFBS_None, // LDRSHXpre = 2589
-    CEFBS_None, // LDRSHXroW = 2590
-    CEFBS_None, // LDRSHXroX = 2591
-    CEFBS_None, // LDRSHXui = 2592
-    CEFBS_None, // LDRSWl = 2593
-    CEFBS_None, // LDRSWpost = 2594
-    CEFBS_None, // LDRSWpre = 2595
-    CEFBS_None, // LDRSWroW = 2596
-    CEFBS_None, // LDRSWroX = 2597
-    CEFBS_None, // LDRSWui = 2598
-    CEFBS_None, // LDRSl = 2599
-    CEFBS_None, // LDRSpost = 2600
-    CEFBS_None, // LDRSpre = 2601
-    CEFBS_None, // LDRSroW = 2602
-    CEFBS_None, // LDRSroX = 2603
-    CEFBS_None, // LDRSui = 2604
-    CEFBS_None, // LDRWl = 2605
-    CEFBS_None, // LDRWpost = 2606
-    CEFBS_None, // LDRWpre = 2607
-    CEFBS_None, // LDRWroW = 2608
-    CEFBS_None, // LDRWroX = 2609
-    CEFBS_None, // LDRWui = 2610
-    CEFBS_None, // LDRXl = 2611
-    CEFBS_None, // LDRXpost = 2612
-    CEFBS_None, // LDRXpre = 2613
-    CEFBS_None, // LDRXroW = 2614
-    CEFBS_None, // LDRXroX = 2615
-    CEFBS_None, // LDRXui = 2616
-    CEFBS_HasSVE, // LDR_PXI = 2617
-    CEFBS_HasSVE, // LDR_ZXI = 2618
-    CEFBS_HasLSE, // LDSETAB = 2619
-    CEFBS_HasLSE, // LDSETAH = 2620
-    CEFBS_HasLSE, // LDSETALB = 2621
-    CEFBS_HasLSE, // LDSETALH = 2622
-    CEFBS_HasLSE, // LDSETALW = 2623
-    CEFBS_HasLSE, // LDSETALX = 2624
-    CEFBS_HasLSE, // LDSETAW = 2625
-    CEFBS_HasLSE, // LDSETAX = 2626
-    CEFBS_HasLSE, // LDSETB = 2627
-    CEFBS_HasLSE, // LDSETH = 2628
-    CEFBS_HasLSE, // LDSETLB = 2629
-    CEFBS_HasLSE, // LDSETLH = 2630
-    CEFBS_HasLSE, // LDSETLW = 2631
-    CEFBS_HasLSE, // LDSETLX = 2632
-    CEFBS_HasLSE, // LDSETW = 2633
-    CEFBS_HasLSE, // LDSETX = 2634
-    CEFBS_HasLSE, // LDSMAXAB = 2635
-    CEFBS_HasLSE, // LDSMAXAH = 2636
-    CEFBS_HasLSE, // LDSMAXALB = 2637
-    CEFBS_HasLSE, // LDSMAXALH = 2638
-    CEFBS_HasLSE, // LDSMAXALW = 2639
-    CEFBS_HasLSE, // LDSMAXALX = 2640
-    CEFBS_HasLSE, // LDSMAXAW = 2641
-    CEFBS_HasLSE, // LDSMAXAX = 2642
-    CEFBS_HasLSE, // LDSMAXB = 2643
-    CEFBS_HasLSE, // LDSMAXH = 2644
-    CEFBS_HasLSE, // LDSMAXLB = 2645
-    CEFBS_HasLSE, // LDSMAXLH = 2646
-    CEFBS_HasLSE, // LDSMAXLW = 2647
-    CEFBS_HasLSE, // LDSMAXLX = 2648
-    CEFBS_HasLSE, // LDSMAXW = 2649
-    CEFBS_HasLSE, // LDSMAXX = 2650
-    CEFBS_HasLSE, // LDSMINAB = 2651
-    CEFBS_HasLSE, // LDSMINAH = 2652
-    CEFBS_HasLSE, // LDSMINALB = 2653
-    CEFBS_HasLSE, // LDSMINALH = 2654
-    CEFBS_HasLSE, // LDSMINALW = 2655
-    CEFBS_HasLSE, // LDSMINALX = 2656
-    CEFBS_HasLSE, // LDSMINAW = 2657
-    CEFBS_HasLSE, // LDSMINAX = 2658
-    CEFBS_HasLSE, // LDSMINB = 2659
-    CEFBS_HasLSE, // LDSMINH = 2660
-    CEFBS_HasLSE, // LDSMINLB = 2661
-    CEFBS_HasLSE, // LDSMINLH = 2662
-    CEFBS_HasLSE, // LDSMINLW = 2663
-    CEFBS_HasLSE, // LDSMINLX = 2664
-    CEFBS_HasLSE, // LDSMINW = 2665
-    CEFBS_HasLSE, // LDSMINX = 2666
-    CEFBS_None, // LDTRBi = 2667
-    CEFBS_None, // LDTRHi = 2668
-    CEFBS_None, // LDTRSBWi = 2669
-    CEFBS_None, // LDTRSBXi = 2670
-    CEFBS_None, // LDTRSHWi = 2671
-    CEFBS_None, // LDTRSHXi = 2672
-    CEFBS_None, // LDTRSWi = 2673
-    CEFBS_None, // LDTRWi = 2674
-    CEFBS_None, // LDTRXi = 2675
-    CEFBS_HasLSE, // LDUMAXAB = 2676
-    CEFBS_HasLSE, // LDUMAXAH = 2677
-    CEFBS_HasLSE, // LDUMAXALB = 2678
-    CEFBS_HasLSE, // LDUMAXALH = 2679
-    CEFBS_HasLSE, // LDUMAXALW = 2680
-    CEFBS_HasLSE, // LDUMAXALX = 2681
-    CEFBS_HasLSE, // LDUMAXAW = 2682
-    CEFBS_HasLSE, // LDUMAXAX = 2683
-    CEFBS_HasLSE, // LDUMAXB = 2684
-    CEFBS_HasLSE, // LDUMAXH = 2685
-    CEFBS_HasLSE, // LDUMAXLB = 2686
-    CEFBS_HasLSE, // LDUMAXLH = 2687
-    CEFBS_HasLSE, // LDUMAXLW = 2688
-    CEFBS_HasLSE, // LDUMAXLX = 2689
-    CEFBS_HasLSE, // LDUMAXW = 2690
-    CEFBS_HasLSE, // LDUMAXX = 2691
-    CEFBS_HasLSE, // LDUMINAB = 2692
-    CEFBS_HasLSE, // LDUMINAH = 2693
-    CEFBS_HasLSE, // LDUMINALB = 2694
-    CEFBS_HasLSE, // LDUMINALH = 2695
-    CEFBS_HasLSE, // LDUMINALW = 2696
-    CEFBS_HasLSE, // LDUMINALX = 2697
-    CEFBS_HasLSE, // LDUMINAW = 2698
-    CEFBS_HasLSE, // LDUMINAX = 2699
-    CEFBS_HasLSE, // LDUMINB = 2700
-    CEFBS_HasLSE, // LDUMINH = 2701
-    CEFBS_HasLSE, // LDUMINLB = 2702
-    CEFBS_HasLSE, // LDUMINLH = 2703
-    CEFBS_HasLSE, // LDUMINLW = 2704
-    CEFBS_HasLSE, // LDUMINLX = 2705
-    CEFBS_HasLSE, // LDUMINW = 2706
-    CEFBS_HasLSE, // LDUMINX = 2707
-    CEFBS_None, // LDURBBi = 2708
-    CEFBS_None, // LDURBi = 2709
-    CEFBS_None, // LDURDi = 2710
-    CEFBS_None, // LDURHHi = 2711
-    CEFBS_None, // LDURHi = 2712
-    CEFBS_None, // LDURQi = 2713
-    CEFBS_None, // LDURSBWi = 2714
-    CEFBS_None, // LDURSBXi = 2715
-    CEFBS_None, // LDURSHWi = 2716
-    CEFBS_None, // LDURSHXi = 2717
-    CEFBS_None, // LDURSWi = 2718
-    CEFBS_None, // LDURSi = 2719
-    CEFBS_None, // LDURWi = 2720
-    CEFBS_None, // LDURXi = 2721
-    CEFBS_None, // LDXPW = 2722
-    CEFBS_None, // LDXPX = 2723
-    CEFBS_None, // LDXRB = 2724
-    CEFBS_None, // LDXRH = 2725
-    CEFBS_None, // LDXRW = 2726
-    CEFBS_None, // LDXRX = 2727
-    CEFBS_None, // LOADgot = 2728
-    CEFBS_HasSVE, // LSLR_ZPmZ_B = 2729
-    CEFBS_HasSVE, // LSLR_ZPmZ_D = 2730
-    CEFBS_HasSVE, // LSLR_ZPmZ_H = 2731
-    CEFBS_HasSVE, // LSLR_ZPmZ_S = 2732
-    CEFBS_None, // LSLVWr = 2733
-    CEFBS_None, // LSLVXr = 2734
-    CEFBS_HasSVE, // LSL_WIDE_ZPmZ_B = 2735
-    CEFBS_HasSVE, // LSL_WIDE_ZPmZ_H = 2736
-    CEFBS_HasSVE, // LSL_WIDE_ZPmZ_S = 2737
-    CEFBS_HasSVE, // LSL_WIDE_ZZZ_B = 2738
-    CEFBS_HasSVE, // LSL_WIDE_ZZZ_H = 2739
-    CEFBS_HasSVE, // LSL_WIDE_ZZZ_S = 2740
-    CEFBS_HasSVE, // LSL_ZPmI_B = 2741
-    CEFBS_HasSVE, // LSL_ZPmI_D = 2742
-    CEFBS_HasSVE, // LSL_ZPmI_H = 2743
-    CEFBS_HasSVE, // LSL_ZPmI_S = 2744
-    CEFBS_HasSVE, // LSL_ZPmZ_B = 2745
-    CEFBS_HasSVE, // LSL_ZPmZ_D = 2746
-    CEFBS_HasSVE, // LSL_ZPmZ_H = 2747
-    CEFBS_HasSVE, // LSL_ZPmZ_S = 2748
-    CEFBS_HasSVE, // LSL_ZZI_B = 2749
-    CEFBS_HasSVE, // LSL_ZZI_D = 2750
-    CEFBS_HasSVE, // LSL_ZZI_H = 2751
-    CEFBS_HasSVE, // LSL_ZZI_S = 2752
-    CEFBS_HasSVE, // LSRR_ZPmZ_B = 2753
-    CEFBS_HasSVE, // LSRR_ZPmZ_D = 2754
-    CEFBS_HasSVE, // LSRR_ZPmZ_H = 2755
-    CEFBS_HasSVE, // LSRR_ZPmZ_S = 2756
-    CEFBS_None, // LSRVWr = 2757
-    CEFBS_None, // LSRVXr = 2758
-    CEFBS_HasSVE, // LSR_WIDE_ZPmZ_B = 2759
-    CEFBS_HasSVE, // LSR_WIDE_ZPmZ_H = 2760
-    CEFBS_HasSVE, // LSR_WIDE_ZPmZ_S = 2761
-    CEFBS_HasSVE, // LSR_WIDE_ZZZ_B = 2762
-    CEFBS_HasSVE, // LSR_WIDE_ZZZ_H = 2763
-    CEFBS_HasSVE, // LSR_WIDE_ZZZ_S = 2764
-    CEFBS_HasSVE, // LSR_ZPmI_B = 2765
-    CEFBS_HasSVE, // LSR_ZPmI_D = 2766
-    CEFBS_HasSVE, // LSR_ZPmI_H = 2767
-    CEFBS_HasSVE, // LSR_ZPmI_S = 2768
-    CEFBS_HasSVE, // LSR_ZPmZ_B = 2769
-    CEFBS_HasSVE, // LSR_ZPmZ_D = 2770
-    CEFBS_HasSVE, // LSR_ZPmZ_H = 2771
-    CEFBS_HasSVE, // LSR_ZPmZ_S = 2772
-    CEFBS_HasSVE, // LSR_ZZI_B = 2773
-    CEFBS_HasSVE, // LSR_ZZI_D = 2774
-    CEFBS_HasSVE, // LSR_ZZI_H = 2775
-    CEFBS_HasSVE, // LSR_ZZI_S = 2776
-    CEFBS_None, // MADDWrrr = 2777
-    CEFBS_None, // MADDXrrr = 2778
-    CEFBS_HasSVE, // MAD_ZPmZZ_B = 2779
-    CEFBS_HasSVE, // MAD_ZPmZZ_D = 2780
-    CEFBS_HasSVE, // MAD_ZPmZZ_H = 2781
-    CEFBS_HasSVE, // MAD_ZPmZZ_S = 2782
-    CEFBS_HasSVE2, // MATCH_PPzZZ_B = 2783
-    CEFBS_HasSVE2, // MATCH_PPzZZ_H = 2784
-    CEFBS_HasSVE, // MLA_ZPmZZ_B = 2785
-    CEFBS_HasSVE, // MLA_ZPmZZ_D = 2786
-    CEFBS_HasSVE, // MLA_ZPmZZ_H = 2787
-    CEFBS_HasSVE, // MLA_ZPmZZ_S = 2788
-    CEFBS_HasSVE2, // MLA_ZZZI_D = 2789
-    CEFBS_HasSVE2, // MLA_ZZZI_H = 2790
-    CEFBS_HasSVE2, // MLA_ZZZI_S = 2791
-    CEFBS_HasNEON, // MLAv16i8 = 2792
-    CEFBS_HasNEON, // MLAv2i32 = 2793
-    CEFBS_HasNEON, // MLAv2i32_indexed = 2794
-    CEFBS_HasNEON, // MLAv4i16 = 2795
-    CEFBS_HasNEON, // MLAv4i16_indexed = 2796
-    CEFBS_HasNEON, // MLAv4i32 = 2797
-    CEFBS_HasNEON, // MLAv4i32_indexed = 2798
-    CEFBS_HasNEON, // MLAv8i16 = 2799
-    CEFBS_HasNEON, // MLAv8i16_indexed = 2800
-    CEFBS_HasNEON, // MLAv8i8 = 2801
-    CEFBS_HasSVE, // MLS_ZPmZZ_B = 2802
-    CEFBS_HasSVE, // MLS_ZPmZZ_D = 2803
-    CEFBS_HasSVE, // MLS_ZPmZZ_H = 2804
-    CEFBS_HasSVE, // MLS_ZPmZZ_S = 2805
-    CEFBS_HasSVE2, // MLS_ZZZI_D = 2806
-    CEFBS_HasSVE2, // MLS_ZZZI_H = 2807
-    CEFBS_HasSVE2, // MLS_ZZZI_S = 2808
-    CEFBS_HasNEON, // MLSv16i8 = 2809
-    CEFBS_HasNEON, // MLSv2i32 = 2810
-    CEFBS_HasNEON, // MLSv2i32_indexed = 2811
-    CEFBS_HasNEON, // MLSv4i16 = 2812
-    CEFBS_HasNEON, // MLSv4i16_indexed = 2813
-    CEFBS_HasNEON, // MLSv4i32 = 2814
-    CEFBS_HasNEON, // MLSv4i32_indexed = 2815
-    CEFBS_HasNEON, // MLSv8i16 = 2816
-    CEFBS_HasNEON, // MLSv8i16_indexed = 2817
-    CEFBS_HasNEON, // MLSv8i8 = 2818
-    CEFBS_HasNEON, // MOVID = 2819
-    CEFBS_HasNEON, // MOVIv16b_ns = 2820
-    CEFBS_HasNEON, // MOVIv2d_ns = 2821
-    CEFBS_HasNEON, // MOVIv2i32 = 2822
-    CEFBS_HasNEON, // MOVIv2s_msl = 2823
-    CEFBS_HasNEON, // MOVIv4i16 = 2824
-    CEFBS_HasNEON, // MOVIv4i32 = 2825
-    CEFBS_HasNEON, // MOVIv4s_msl = 2826
-    CEFBS_HasNEON, // MOVIv8b_ns = 2827
-    CEFBS_HasNEON, // MOVIv8i16 = 2828
-    CEFBS_None, // MOVKWi = 2829
-    CEFBS_None, // MOVKXi = 2830
-    CEFBS_None, // MOVMCSym = 2831
-    CEFBS_None, // MOVNWi = 2832
-    CEFBS_None, // MOVNXi = 2833
-    CEFBS_HasSVE, // MOVPRFX_ZPmZ_B = 2834
-    CEFBS_HasSVE, // MOVPRFX_ZPmZ_D = 2835
-    CEFBS_HasSVE, // MOVPRFX_ZPmZ_H = 2836
-    CEFBS_HasSVE, // MOVPRFX_ZPmZ_S = 2837
-    CEFBS_HasSVE, // MOVPRFX_ZPzZ_B = 2838
-    CEFBS_HasSVE, // MOVPRFX_ZPzZ_D = 2839
-    CEFBS_HasSVE, // MOVPRFX_ZPzZ_H = 2840
-    CEFBS_HasSVE, // MOVPRFX_ZPzZ_S = 2841
-    CEFBS_HasSVE, // MOVPRFX_ZZ = 2842
-    CEFBS_None, // MOVZWi = 2843
-    CEFBS_None, // MOVZXi = 2844
-    CEFBS_None, // MOVaddr = 2845
-    CEFBS_None, // MOVaddrBA = 2846
-    CEFBS_None, // MOVaddrCP = 2847
-    CEFBS_None, // MOVaddrEXT = 2848
-    CEFBS_None, // MOVaddrJT = 2849
-    CEFBS_None, // MOVaddrTLS = 2850
-    CEFBS_None, // MOVbaseTLS = 2851
-    CEFBS_None, // MOVi32imm = 2852
-    CEFBS_None, // MOVi64imm = 2853
-    CEFBS_None, // MRS = 2854
-    CEFBS_HasSVE, // MSB_ZPmZZ_B = 2855
-    CEFBS_HasSVE, // MSB_ZPmZZ_D = 2856
-    CEFBS_HasSVE, // MSB_ZPmZZ_H = 2857
-    CEFBS_HasSVE, // MSB_ZPmZZ_S = 2858
-    CEFBS_None, // MSR = 2859
-    CEFBS_None, // MSRpstateImm1 = 2860
-    CEFBS_None, // MSRpstateImm4 = 2861
-    CEFBS_None, // MSUBWrrr = 2862
-    CEFBS_None, // MSUBXrrr = 2863
-    CEFBS_HasSVE, // MUL_ZI_B = 2864
-    CEFBS_HasSVE, // MUL_ZI_D = 2865
-    CEFBS_HasSVE, // MUL_ZI_H = 2866
-    CEFBS_HasSVE, // MUL_ZI_S = 2867
-    CEFBS_HasSVE, // MUL_ZPmZ_B = 2868
-    CEFBS_HasSVE, // MUL_ZPmZ_D = 2869
-    CEFBS_HasSVE, // MUL_ZPmZ_H = 2870
-    CEFBS_HasSVE, // MUL_ZPmZ_S = 2871
-    CEFBS_HasSVE2, // MUL_ZZZI_D = 2872
-    CEFBS_HasSVE2, // MUL_ZZZI_H = 2873
-    CEFBS_HasSVE2, // MUL_ZZZI_S = 2874
-    CEFBS_HasSVE2, // MUL_ZZZ_B = 2875
-    CEFBS_HasSVE2, // MUL_ZZZ_D = 2876
-    CEFBS_HasSVE2, // MUL_ZZZ_H = 2877
-    CEFBS_HasSVE2, // MUL_ZZZ_S = 2878
-    CEFBS_HasNEON, // MULv16i8 = 2879
-    CEFBS_HasNEON, // MULv2i32 = 2880
-    CEFBS_HasNEON, // MULv2i32_indexed = 2881
-    CEFBS_HasNEON, // MULv4i16 = 2882
-    CEFBS_HasNEON, // MULv4i16_indexed = 2883
-    CEFBS_HasNEON, // MULv4i32 = 2884
-    CEFBS_HasNEON, // MULv4i32_indexed = 2885
-    CEFBS_HasNEON, // MULv8i16 = 2886
-    CEFBS_HasNEON, // MULv8i16_indexed = 2887
-    CEFBS_HasNEON, // MULv8i8 = 2888
-    CEFBS_HasNEON, // MVNIv2i32 = 2889
-    CEFBS_HasNEON, // MVNIv2s_msl = 2890
-    CEFBS_HasNEON, // MVNIv4i16 = 2891
-    CEFBS_HasNEON, // MVNIv4i32 = 2892
-    CEFBS_HasNEON, // MVNIv4s_msl = 2893
-    CEFBS_HasNEON, // MVNIv8i16 = 2894
-    CEFBS_HasSVE, // NANDS_PPzPP = 2895
-    CEFBS_HasSVE, // NAND_PPzPP = 2896
-    CEFBS_HasSVE2, // NBSL_ZZZZ_D = 2897
-    CEFBS_HasSVE, // NEG_ZPmZ_B = 2898
-    CEFBS_HasSVE, // NEG_ZPmZ_D = 2899
-    CEFBS_HasSVE, // NEG_ZPmZ_H = 2900
-    CEFBS_HasSVE, // NEG_ZPmZ_S = 2901
-    CEFBS_HasNEON, // NEGv16i8 = 2902
-    CEFBS_HasNEON, // NEGv1i64 = 2903
-    CEFBS_HasNEON, // NEGv2i32 = 2904
-    CEFBS_HasNEON, // NEGv2i64 = 2905
-    CEFBS_HasNEON, // NEGv4i16 = 2906
-    CEFBS_HasNEON, // NEGv4i32 = 2907
-    CEFBS_HasNEON, // NEGv8i16 = 2908
-    CEFBS_HasNEON, // NEGv8i8 = 2909
-    CEFBS_HasSVE2, // NMATCH_PPzZZ_B = 2910
-    CEFBS_HasSVE2, // NMATCH_PPzZZ_H = 2911
-    CEFBS_HasSVE, // NORS_PPzPP = 2912
-    CEFBS_HasSVE, // NOR_PPzPP = 2913
-    CEFBS_HasSVE, // NOT_ZPmZ_B = 2914
-    CEFBS_HasSVE, // NOT_ZPmZ_D = 2915
-    CEFBS_HasSVE, // NOT_ZPmZ_H = 2916
-    CEFBS_HasSVE, // NOT_ZPmZ_S = 2917
-    CEFBS_HasNEON, // NOTv16i8 = 2918
-    CEFBS_HasNEON, // NOTv8i8 = 2919
-    CEFBS_HasSVE, // ORNS_PPzPP = 2920
-    CEFBS_None, // ORNWrr = 2921
-    CEFBS_None, // ORNWrs = 2922
-    CEFBS_None, // ORNXrr = 2923
-    CEFBS_None, // ORNXrs = 2924
-    CEFBS_HasSVE, // ORN_PPzPP = 2925
-    CEFBS_HasNEON, // ORNv16i8 = 2926
-    CEFBS_HasNEON, // ORNv8i8 = 2927
-    CEFBS_HasSVE, // ORRS_PPzPP = 2928
-    CEFBS_None, // ORRWri = 2929
-    CEFBS_None, // ORRWrr = 2930
-    CEFBS_None, // ORRWrs = 2931
-    CEFBS_None, // ORRXri = 2932
-    CEFBS_None, // ORRXrr = 2933
-    CEFBS_None, // ORRXrs = 2934
-    CEFBS_HasSVE, // ORR_PPzPP = 2935
-    CEFBS_HasSVE, // ORR_ZI = 2936
-    CEFBS_HasSVE, // ORR_ZPmZ_B = 2937
-    CEFBS_HasSVE, // ORR_ZPmZ_D = 2938
-    CEFBS_HasSVE, // ORR_ZPmZ_H = 2939
-    CEFBS_HasSVE, // ORR_ZPmZ_S = 2940
-    CEFBS_HasSVE, // ORR_ZZZ = 2941
-    CEFBS_HasNEON, // ORRv16i8 = 2942
-    CEFBS_HasNEON, // ORRv2i32 = 2943
-    CEFBS_HasNEON, // ORRv4i16 = 2944
-    CEFBS_HasNEON, // ORRv4i32 = 2945
-    CEFBS_HasNEON, // ORRv8i16 = 2946
-    CEFBS_HasNEON, // ORRv8i8 = 2947
-    CEFBS_HasSVE, // ORV_VPZ_B = 2948
-    CEFBS_HasSVE, // ORV_VPZ_D = 2949
-    CEFBS_HasSVE, // ORV_VPZ_H = 2950
-    CEFBS_HasSVE, // ORV_VPZ_S = 2951
-    CEFBS_HasPA, // PACDA = 2952
-    CEFBS_HasPA, // PACDB = 2953
-    CEFBS_HasPA, // PACDZA = 2954
-    CEFBS_HasPA, // PACDZB = 2955
-    CEFBS_HasPA, // PACGA = 2956
-    CEFBS_HasPA, // PACIA = 2957
-    CEFBS_None, // PACIA1716 = 2958
-    CEFBS_None, // PACIASP = 2959
-    CEFBS_None, // PACIAZ = 2960
-    CEFBS_HasPA, // PACIB = 2961
-    CEFBS_None, // PACIB1716 = 2962
-    CEFBS_None, // PACIBSP = 2963
-    CEFBS_None, // PACIBZ = 2964
-    CEFBS_HasPA, // PACIZA = 2965
-    CEFBS_HasPA, // PACIZB = 2966
-    CEFBS_HasSVE, // PFALSE = 2967
-    CEFBS_HasSVE, // PFIRST_B = 2968
-    CEFBS_HasSVE2, // PMULLB_ZZZ_D = 2969
-    CEFBS_HasSVE2, // PMULLB_ZZZ_H = 2970
-    CEFBS_HasSVE2AES, // PMULLB_ZZZ_Q = 2971
-    CEFBS_HasSVE2, // PMULLT_ZZZ_D = 2972
-    CEFBS_HasSVE2, // PMULLT_ZZZ_H = 2973
-    CEFBS_HasSVE2AES, // PMULLT_ZZZ_Q = 2974
-    CEFBS_HasNEON, // PMULLv16i8 = 2975
-    CEFBS_HasAES, // PMULLv1i64 = 2976
-    CEFBS_HasAES, // PMULLv2i64 = 2977
-    CEFBS_HasNEON, // PMULLv8i8 = 2978
-    CEFBS_HasSVE2, // PMUL_ZZZ_B = 2979
-    CEFBS_HasNEON, // PMULv16i8 = 2980
-    CEFBS_HasNEON, // PMULv8i8 = 2981
-    CEFBS_HasSVE, // PNEXT_B = 2982
-    CEFBS_HasSVE, // PNEXT_D = 2983
-    CEFBS_HasSVE, // PNEXT_H = 2984
-    CEFBS_HasSVE, // PNEXT_S = 2985
-    CEFBS_HasSVE, // PRFB_D_PZI = 2986
-    CEFBS_HasSVE, // PRFB_D_SCALED = 2987
-    CEFBS_HasSVE, // PRFB_D_SXTW_SCALED = 2988
-    CEFBS_HasSVE, // PRFB_D_UXTW_SCALED = 2989
-    CEFBS_HasSVE, // PRFB_PRI = 2990
-    CEFBS_HasSVE, // PRFB_PRR = 2991
-    CEFBS_HasSVE, // PRFB_S_PZI = 2992
-    CEFBS_HasSVE, // PRFB_S_SXTW_SCALED = 2993
-    CEFBS_HasSVE, // PRFB_S_UXTW_SCALED = 2994
-    CEFBS_HasSVE, // PRFD_D_PZI = 2995
-    CEFBS_HasSVE, // PRFD_D_SCALED = 2996
-    CEFBS_HasSVE, // PRFD_D_SXTW_SCALED = 2997
-    CEFBS_HasSVE, // PRFD_D_UXTW_SCALED = 2998
-    CEFBS_HasSVE, // PRFD_PRI = 2999
-    CEFBS_HasSVE, // PRFD_PRR = 3000
-    CEFBS_HasSVE, // PRFD_S_PZI = 3001
-    CEFBS_HasSVE, // PRFD_S_SXTW_SCALED = 3002
-    CEFBS_HasSVE, // PRFD_S_UXTW_SCALED = 3003
-    CEFBS_HasSVE, // PRFH_D_PZI = 3004
-    CEFBS_HasSVE, // PRFH_D_SCALED = 3005
-    CEFBS_HasSVE, // PRFH_D_SXTW_SCALED = 3006
-    CEFBS_HasSVE, // PRFH_D_UXTW_SCALED = 3007
-    CEFBS_HasSVE, // PRFH_PRI = 3008
-    CEFBS_HasSVE, // PRFH_PRR = 3009
-    CEFBS_HasSVE, // PRFH_S_PZI = 3010
-    CEFBS_HasSVE, // PRFH_S_SXTW_SCALED = 3011
-    CEFBS_HasSVE, // PRFH_S_UXTW_SCALED = 3012
-    CEFBS_None, // PRFMl = 3013
-    CEFBS_None, // PRFMroW = 3014
-    CEFBS_None, // PRFMroX = 3015
-    CEFBS_None, // PRFMui = 3016
-    CEFBS_HasSVE, // PRFS_PRR = 3017
-    CEFBS_None, // PRFUMi = 3018
-    CEFBS_HasSVE, // PRFW_D_PZI = 3019
-    CEFBS_HasSVE, // PRFW_D_SCALED = 3020
-    CEFBS_HasSVE, // PRFW_D_SXTW_SCALED = 3021
-    CEFBS_HasSVE, // PRFW_D_UXTW_SCALED = 3022
-    CEFBS_HasSVE, // PRFW_PRI = 3023
-    CEFBS_HasSVE, // PRFW_S_PZI = 3024
-    CEFBS_HasSVE, // PRFW_S_SXTW_SCALED = 3025
-    CEFBS_HasSVE, // PRFW_S_UXTW_SCALED = 3026
-    CEFBS_HasSVE, // PTEST_PP = 3027
-    CEFBS_HasSVE, // PTRUES_B = 3028
-    CEFBS_HasSVE, // PTRUES_D = 3029
-    CEFBS_HasSVE, // PTRUES_H = 3030
-    CEFBS_HasSVE, // PTRUES_S = 3031
-    CEFBS_HasSVE, // PTRUE_B = 3032
-    CEFBS_HasSVE, // PTRUE_D = 3033
-    CEFBS_HasSVE, // PTRUE_H = 3034
-    CEFBS_HasSVE, // PTRUE_S = 3035
-    CEFBS_HasSVE, // PUNPKHI_PP = 3036
-    CEFBS_HasSVE, // PUNPKLO_PP = 3037
-    CEFBS_HasSVE2, // RADDHNB_ZZZ_B = 3038
-    CEFBS_HasSVE2, // RADDHNB_ZZZ_H = 3039
-    CEFBS_HasSVE2, // RADDHNB_ZZZ_S = 3040
-    CEFBS_HasSVE2, // RADDHNT_ZZZ_B = 3041
-    CEFBS_HasSVE2, // RADDHNT_ZZZ_H = 3042
-    CEFBS_HasSVE2, // RADDHNT_ZZZ_S = 3043
-    CEFBS_HasNEON, // RADDHNv2i64_v2i32 = 3044
-    CEFBS_HasNEON, // RADDHNv2i64_v4i32 = 3045
-    CEFBS_HasNEON, // RADDHNv4i32_v4i16 = 3046
-    CEFBS_HasNEON, // RADDHNv4i32_v8i16 = 3047
-    CEFBS_HasNEON, // RADDHNv8i16_v16i8 = 3048
-    CEFBS_HasNEON, // RADDHNv8i16_v8i8 = 3049
-    CEFBS_HasSHA3, // RAX1 = 3050
-    CEFBS_HasSVE2SHA3, // RAX1_ZZZ_D = 3051
-    CEFBS_None, // RBITWr = 3052
-    CEFBS_None, // RBITXr = 3053
-    CEFBS_HasSVE, // RBIT_ZPmZ_B = 3054
-    CEFBS_HasSVE, // RBIT_ZPmZ_D = 3055
-    CEFBS_HasSVE, // RBIT_ZPmZ_H = 3056
-    CEFBS_HasSVE, // RBIT_ZPmZ_S = 3057
-    CEFBS_HasNEON, // RBITv16i8 = 3058
-    CEFBS_HasNEON, // RBITv8i8 = 3059
-    CEFBS_HasSVE, // RDFFRS_PPz = 3060
-    CEFBS_HasSVE, // RDFFR_PPz_REAL = 3061
-    CEFBS_HasSVE, // RDFFR_P_REAL = 3062
-    CEFBS_HasSVE, // RDVLI_XI = 3063
-    CEFBS_None, // RET = 3064
-    CEFBS_HasPA, // RETAA = 3065
-    CEFBS_HasPA, // RETAB = 3066
-    CEFBS_None, // RET_ReallyLR = 3067
-    CEFBS_None, // REV16Wr = 3068
-    CEFBS_None, // REV16Xr = 3069
-    CEFBS_HasNEON, // REV16v16i8 = 3070
-    CEFBS_HasNEON, // REV16v8i8 = 3071
-    CEFBS_None, // REV32Xr = 3072
-    CEFBS_HasNEON, // REV32v16i8 = 3073
-    CEFBS_HasNEON, // REV32v4i16 = 3074
-    CEFBS_HasNEON, // REV32v8i16 = 3075
-    CEFBS_HasNEON, // REV32v8i8 = 3076
-    CEFBS_HasNEON, // REV64v16i8 = 3077
-    CEFBS_HasNEON, // REV64v2i32 = 3078
-    CEFBS_HasNEON, // REV64v4i16 = 3079
-    CEFBS_HasNEON, // REV64v4i32 = 3080
-    CEFBS_HasNEON, // REV64v8i16 = 3081
-    CEFBS_HasNEON, // REV64v8i8 = 3082
-    CEFBS_HasSVE, // REVB_ZPmZ_D = 3083
-    CEFBS_HasSVE, // REVB_ZPmZ_H = 3084
-    CEFBS_HasSVE, // REVB_ZPmZ_S = 3085
-    CEFBS_HasSVE, // REVH_ZPmZ_D = 3086
-    CEFBS_HasSVE, // REVH_ZPmZ_S = 3087
-    CEFBS_HasSVE, // REVW_ZPmZ_D = 3088
-    CEFBS_None, // REVWr = 3089
-    CEFBS_None, // REVXr = 3090
-    CEFBS_HasSVE, // REV_PP_B = 3091
-    CEFBS_HasSVE, // REV_PP_D = 3092
-    CEFBS_HasSVE, // REV_PP_H = 3093
-    CEFBS_HasSVE, // REV_PP_S = 3094
-    CEFBS_HasSVE, // REV_ZZ_B = 3095
-    CEFBS_HasSVE, // REV_ZZ_D = 3096
-    CEFBS_HasSVE, // REV_ZZ_H = 3097
-    CEFBS_HasSVE, // REV_ZZ_S = 3098
-    CEFBS_HasFMI, // RMIF = 3099
-    CEFBS_None, // RORVWr = 3100
-    CEFBS_None, // RORVXr = 3101
-    CEFBS_HasSVE2, // RSHRNB_ZZI_B = 3102
-    CEFBS_HasSVE2, // RSHRNB_ZZI_H = 3103
-    CEFBS_HasSVE2, // RSHRNB_ZZI_S = 3104
-    CEFBS_HasSVE2, // RSHRNT_ZZI_B = 3105
-    CEFBS_HasSVE2, // RSHRNT_ZZI_H = 3106
-    CEFBS_HasSVE2, // RSHRNT_ZZI_S = 3107
-    CEFBS_HasNEON, // RSHRNv16i8_shift = 3108
-    CEFBS_HasNEON, // RSHRNv2i32_shift = 3109
-    CEFBS_HasNEON, // RSHRNv4i16_shift = 3110
-    CEFBS_HasNEON, // RSHRNv4i32_shift = 3111
-    CEFBS_HasNEON, // RSHRNv8i16_shift = 3112
-    CEFBS_HasNEON, // RSHRNv8i8_shift = 3113
-    CEFBS_HasSVE2, // RSUBHNB_ZZZ_B = 3114
-    CEFBS_HasSVE2, // RSUBHNB_ZZZ_H = 3115
-    CEFBS_HasSVE2, // RSUBHNB_ZZZ_S = 3116
-    CEFBS_HasSVE2, // RSUBHNT_ZZZ_B = 3117
-    CEFBS_HasSVE2, // RSUBHNT_ZZZ_H = 3118
-    CEFBS_HasSVE2, // RSUBHNT_ZZZ_S = 3119
-    CEFBS_HasNEON, // RSUBHNv2i64_v2i32 = 3120
-    CEFBS_HasNEON, // RSUBHNv2i64_v4i32 = 3121
-    CEFBS_HasNEON, // RSUBHNv4i32_v4i16 = 3122
-    CEFBS_HasNEON, // RSUBHNv4i32_v8i16 = 3123
-    CEFBS_HasNEON, // RSUBHNv8i16_v16i8 = 3124
-    CEFBS_HasNEON, // RSUBHNv8i16_v8i8 = 3125
-    CEFBS_HasSVE2, // SABALB_ZZZ_D = 3126
-    CEFBS_HasSVE2, // SABALB_ZZZ_H = 3127
-    CEFBS_HasSVE2, // SABALB_ZZZ_S = 3128
-    CEFBS_HasSVE2, // SABALT_ZZZ_D = 3129
-    CEFBS_HasSVE2, // SABALT_ZZZ_H = 3130
-    CEFBS_HasSVE2, // SABALT_ZZZ_S = 3131
-    CEFBS_HasNEON, // SABALv16i8_v8i16 = 3132
-    CEFBS_HasNEON, // SABALv2i32_v2i64 = 3133
-    CEFBS_HasNEON, // SABALv4i16_v4i32 = 3134
-    CEFBS_HasNEON, // SABALv4i32_v2i64 = 3135
-    CEFBS_HasNEON, // SABALv8i16_v4i32 = 3136
-    CEFBS_HasNEON, // SABALv8i8_v8i16 = 3137
-    CEFBS_HasSVE2, // SABA_ZZZ_B = 3138
-    CEFBS_HasSVE2, // SABA_ZZZ_D = 3139
-    CEFBS_HasSVE2, // SABA_ZZZ_H = 3140
-    CEFBS_HasSVE2, // SABA_ZZZ_S = 3141
-    CEFBS_HasNEON, // SABAv16i8 = 3142
-    CEFBS_HasNEON, // SABAv2i32 = 3143
-    CEFBS_HasNEON, // SABAv4i16 = 3144
-    CEFBS_HasNEON, // SABAv4i32 = 3145
-    CEFBS_HasNEON, // SABAv8i16 = 3146
-    CEFBS_HasNEON, // SABAv8i8 = 3147
-    CEFBS_HasSVE2, // SABDLB_ZZZ_D = 3148
-    CEFBS_HasSVE2, // SABDLB_ZZZ_H = 3149
-    CEFBS_HasSVE2, // SABDLB_ZZZ_S = 3150
-    CEFBS_HasSVE2, // SABDLT_ZZZ_D = 3151
-    CEFBS_HasSVE2, // SABDLT_ZZZ_H = 3152
-    CEFBS_HasSVE2, // SABDLT_ZZZ_S = 3153
-    CEFBS_HasNEON, // SABDLv16i8_v8i16 = 3154
-    CEFBS_HasNEON, // SABDLv2i32_v2i64 = 3155
-    CEFBS_HasNEON, // SABDLv4i16_v4i32 = 3156
-    CEFBS_HasNEON, // SABDLv4i32_v2i64 = 3157
-    CEFBS_HasNEON, // SABDLv8i16_v4i32 = 3158
-    CEFBS_HasNEON, // SABDLv8i8_v8i16 = 3159
-    CEFBS_HasSVE, // SABD_ZPmZ_B = 3160
-    CEFBS_HasSVE, // SABD_ZPmZ_D = 3161
-    CEFBS_HasSVE, // SABD_ZPmZ_H = 3162
-    CEFBS_HasSVE, // SABD_ZPmZ_S = 3163
-    CEFBS_HasNEON, // SABDv16i8 = 3164
-    CEFBS_HasNEON, // SABDv2i32 = 3165
-    CEFBS_HasNEON, // SABDv4i16 = 3166
-    CEFBS_HasNEON, // SABDv4i32 = 3167
-    CEFBS_HasNEON, // SABDv8i16 = 3168
-    CEFBS_HasNEON, // SABDv8i8 = 3169
-    CEFBS_HasSVE2, // SADALP_ZPmZ_D = 3170
-    CEFBS_HasSVE2, // SADALP_ZPmZ_H = 3171
-    CEFBS_HasSVE2, // SADALP_ZPmZ_S = 3172
-    CEFBS_HasNEON, // SADALPv16i8_v8i16 = 3173
-    CEFBS_HasNEON, // SADALPv2i32_v1i64 = 3174
-    CEFBS_HasNEON, // SADALPv4i16_v2i32 = 3175
-    CEFBS_HasNEON, // SADALPv4i32_v2i64 = 3176
-    CEFBS_HasNEON, // SADALPv8i16_v4i32 = 3177
-    CEFBS_HasNEON, // SADALPv8i8_v4i16 = 3178
-    CEFBS_HasSVE2, // SADDLBT_ZZZ_D = 3179
-    CEFBS_HasSVE2, // SADDLBT_ZZZ_H = 3180
-    CEFBS_HasSVE2, // SADDLBT_ZZZ_S = 3181
-    CEFBS_HasSVE2, // SADDLB_ZZZ_D = 3182
-    CEFBS_HasSVE2, // SADDLB_ZZZ_H = 3183
-    CEFBS_HasSVE2, // SADDLB_ZZZ_S = 3184
-    CEFBS_HasNEON, // SADDLPv16i8_v8i16 = 3185
-    CEFBS_HasNEON, // SADDLPv2i32_v1i64 = 3186
-    CEFBS_HasNEON, // SADDLPv4i16_v2i32 = 3187
-    CEFBS_HasNEON, // SADDLPv4i32_v2i64 = 3188
-    CEFBS_HasNEON, // SADDLPv8i16_v4i32 = 3189
-    CEFBS_HasNEON, // SADDLPv8i8_v4i16 = 3190
-    CEFBS_HasSVE2, // SADDLT_ZZZ_D = 3191
-    CEFBS_HasSVE2, // SADDLT_ZZZ_H = 3192
-    CEFBS_HasSVE2, // SADDLT_ZZZ_S = 3193
-    CEFBS_HasNEON, // SADDLVv16i8v = 3194
-    CEFBS_HasNEON, // SADDLVv4i16v = 3195
-    CEFBS_HasNEON, // SADDLVv4i32v = 3196
-    CEFBS_HasNEON, // SADDLVv8i16v = 3197
-    CEFBS_HasNEON, // SADDLVv8i8v = 3198
-    CEFBS_HasNEON, // SADDLv16i8_v8i16 = 3199
-    CEFBS_HasNEON, // SADDLv2i32_v2i64 = 3200
-    CEFBS_HasNEON, // SADDLv4i16_v4i32 = 3201
-    CEFBS_HasNEON, // SADDLv4i32_v2i64 = 3202
-    CEFBS_HasNEON, // SADDLv8i16_v4i32 = 3203
-    CEFBS_HasNEON, // SADDLv8i8_v8i16 = 3204
-    CEFBS_HasSVE, // SADDV_VPZ_B = 3205
-    CEFBS_HasSVE, // SADDV_VPZ_H = 3206
-    CEFBS_HasSVE, // SADDV_VPZ_S = 3207
-    CEFBS_HasSVE2, // SADDWB_ZZZ_D = 3208
-    CEFBS_HasSVE2, // SADDWB_ZZZ_H = 3209
-    CEFBS_HasSVE2, // SADDWB_ZZZ_S = 3210
-    CEFBS_HasSVE2, // SADDWT_ZZZ_D = 3211
-    CEFBS_HasSVE2, // SADDWT_ZZZ_H = 3212
-    CEFBS_HasSVE2, // SADDWT_ZZZ_S = 3213
-    CEFBS_HasNEON, // SADDWv16i8_v8i16 = 3214
-    CEFBS_HasNEON, // SADDWv2i32_v2i64 = 3215
-    CEFBS_HasNEON, // SADDWv4i16_v4i32 = 3216
-    CEFBS_HasNEON, // SADDWv4i32_v2i64 = 3217
-    CEFBS_HasNEON, // SADDWv8i16_v4i32 = 3218
-    CEFBS_HasNEON, // SADDWv8i8_v8i16 = 3219
-    CEFBS_HasSB, // SB = 3220
-    CEFBS_HasSVE2, // SBCLB_ZZZ_D = 3221
-    CEFBS_HasSVE2, // SBCLB_ZZZ_S = 3222
-    CEFBS_HasSVE2, // SBCLT_ZZZ_D = 3223
-    CEFBS_HasSVE2, // SBCLT_ZZZ_S = 3224
-    CEFBS_None, // SBCSWr = 3225
-    CEFBS_None, // SBCSXr = 3226
-    CEFBS_None, // SBCWr = 3227
-    CEFBS_None, // SBCXr = 3228
-    CEFBS_None, // SBFMWri = 3229
-    CEFBS_None, // SBFMXri = 3230
-    CEFBS_HasFPARMv8, // SCVTFSWDri = 3231
-    CEFBS_HasFullFP16, // SCVTFSWHri = 3232
-    CEFBS_HasFPARMv8, // SCVTFSWSri = 3233
-    CEFBS_HasFPARMv8, // SCVTFSXDri = 3234
-    CEFBS_HasFullFP16, // SCVTFSXHri = 3235
-    CEFBS_HasFPARMv8, // SCVTFSXSri = 3236
-    CEFBS_HasFPARMv8, // SCVTFUWDri = 3237
-    CEFBS_HasFullFP16, // SCVTFUWHri = 3238
-    CEFBS_HasFPARMv8, // SCVTFUWSri = 3239
-    CEFBS_HasFPARMv8, // SCVTFUXDri = 3240
-    CEFBS_HasFullFP16, // SCVTFUXHri = 3241
-    CEFBS_HasFPARMv8, // SCVTFUXSri = 3242
-    CEFBS_HasSVE, // SCVTF_ZPmZ_DtoD = 3243
-    CEFBS_HasSVE, // SCVTF_ZPmZ_DtoH = 3244
-    CEFBS_HasSVE, // SCVTF_ZPmZ_DtoS = 3245
-    CEFBS_HasSVE, // SCVTF_ZPmZ_HtoH = 3246
-    CEFBS_HasSVE, // SCVTF_ZPmZ_StoD = 3247
-    CEFBS_HasSVE, // SCVTF_ZPmZ_StoH = 3248
-    CEFBS_HasSVE, // SCVTF_ZPmZ_StoS = 3249
-    CEFBS_HasNEON, // SCVTFd = 3250
-    CEFBS_HasNEON_HasFullFP16, // SCVTFh = 3251
-    CEFBS_HasNEON, // SCVTFs = 3252
-    CEFBS_HasNEON_HasFullFP16, // SCVTFv1i16 = 3253
-    CEFBS_HasNEON, // SCVTFv1i32 = 3254
-    CEFBS_HasNEON, // SCVTFv1i64 = 3255
-    CEFBS_HasNEON, // SCVTFv2f32 = 3256
-    CEFBS_HasNEON, // SCVTFv2f64 = 3257
-    CEFBS_HasNEON, // SCVTFv2i32_shift = 3258
-    CEFBS_HasNEON, // SCVTFv2i64_shift = 3259
-    CEFBS_HasNEON_HasFullFP16, // SCVTFv4f16 = 3260
-    CEFBS_HasNEON, // SCVTFv4f32 = 3261
-    CEFBS_HasNEON_HasFullFP16, // SCVTFv4i16_shift = 3262
-    CEFBS_HasNEON, // SCVTFv4i32_shift = 3263
-    CEFBS_HasNEON_HasFullFP16, // SCVTFv8f16 = 3264
-    CEFBS_HasNEON_HasFullFP16, // SCVTFv8i16_shift = 3265
-    CEFBS_HasSVE, // SDIVR_ZPmZ_D = 3266
-    CEFBS_HasSVE, // SDIVR_ZPmZ_S = 3267
-    CEFBS_None, // SDIVWr = 3268
-    CEFBS_None, // SDIVXr = 3269
-    CEFBS_HasSVE, // SDIV_ZPmZ_D = 3270
-    CEFBS_HasSVE, // SDIV_ZPmZ_S = 3271
-    CEFBS_HasSVE, // SDOT_ZZZI_D = 3272
-    CEFBS_HasSVE, // SDOT_ZZZI_S = 3273
-    CEFBS_HasSVE, // SDOT_ZZZ_D = 3274
-    CEFBS_HasSVE, // SDOT_ZZZ_S = 3275
-    CEFBS_HasDotProd, // SDOTlanev16i8 = 3276
-    CEFBS_HasDotProd, // SDOTlanev8i8 = 3277
-    CEFBS_HasDotProd, // SDOTv16i8 = 3278
-    CEFBS_HasDotProd, // SDOTv8i8 = 3279
-    CEFBS_HasSVE, // SEL_PPPP = 3280
-    CEFBS_HasSVE, // SEL_ZPZZ_B = 3281
-    CEFBS_HasSVE, // SEL_ZPZZ_D = 3282
-    CEFBS_HasSVE, // SEL_ZPZZ_H = 3283
-    CEFBS_HasSVE, // SEL_ZPZZ_S = 3284
-    CEFBS_HasFMI, // SETF16 = 3285
-    CEFBS_HasFMI, // SETF8 = 3286
-    CEFBS_HasSVE, // SETFFR = 3287
-    CEFBS_HasSHA2, // SHA1Crrr = 3288
-    CEFBS_HasSHA2, // SHA1Hrr = 3289
-    CEFBS_HasSHA2, // SHA1Mrrr = 3290
-    CEFBS_HasSHA2, // SHA1Prrr = 3291
-    CEFBS_HasSHA2, // SHA1SU0rrr = 3292
-    CEFBS_HasSHA2, // SHA1SU1rr = 3293
-    CEFBS_HasSHA2, // SHA256H2rrr = 3294
-    CEFBS_HasSHA2, // SHA256Hrrr = 3295
-    CEFBS_HasSHA2, // SHA256SU0rr = 3296
-    CEFBS_HasSHA2, // SHA256SU1rrr = 3297
-    CEFBS_HasSHA3, // SHA512H = 3298
-    CEFBS_HasSHA3, // SHA512H2 = 3299
-    CEFBS_HasSHA3, // SHA512SU0 = 3300
-    CEFBS_HasSHA3, // SHA512SU1 = 3301
-    CEFBS_HasSVE2, // SHADD_ZPmZ_B = 3302
-    CEFBS_HasSVE2, // SHADD_ZPmZ_D = 3303
-    CEFBS_HasSVE2, // SHADD_ZPmZ_H = 3304
-    CEFBS_HasSVE2, // SHADD_ZPmZ_S = 3305
-    CEFBS_HasNEON, // SHADDv16i8 = 3306
-    CEFBS_HasNEON, // SHADDv2i32 = 3307
-    CEFBS_HasNEON, // SHADDv4i16 = 3308
-    CEFBS_HasNEON, // SHADDv4i32 = 3309
-    CEFBS_HasNEON, // SHADDv8i16 = 3310
-    CEFBS_HasNEON, // SHADDv8i8 = 3311
-    CEFBS_HasNEON, // SHLLv16i8 = 3312
-    CEFBS_HasNEON, // SHLLv2i32 = 3313
-    CEFBS_HasNEON, // SHLLv4i16 = 3314
-    CEFBS_HasNEON, // SHLLv4i32 = 3315
-    CEFBS_HasNEON, // SHLLv8i16 = 3316
-    CEFBS_HasNEON, // SHLLv8i8 = 3317
-    CEFBS_HasNEON, // SHLd = 3318
-    CEFBS_HasNEON, // SHLv16i8_shift = 3319
-    CEFBS_HasNEON, // SHLv2i32_shift = 3320
-    CEFBS_HasNEON, // SHLv2i64_shift = 3321
-    CEFBS_HasNEON, // SHLv4i16_shift = 3322
-    CEFBS_HasNEON, // SHLv4i32_shift = 3323
-    CEFBS_HasNEON, // SHLv8i16_shift = 3324
-    CEFBS_HasNEON, // SHLv8i8_shift = 3325
-    CEFBS_HasSVE2, // SHRNB_ZZI_B = 3326
-    CEFBS_HasSVE2, // SHRNB_ZZI_H = 3327
-    CEFBS_HasSVE2, // SHRNB_ZZI_S = 3328
-    CEFBS_HasSVE2, // SHRNT_ZZI_B = 3329
-    CEFBS_HasSVE2, // SHRNT_ZZI_H = 3330
-    CEFBS_HasSVE2, // SHRNT_ZZI_S = 3331
-    CEFBS_HasNEON, // SHRNv16i8_shift = 3332
-    CEFBS_HasNEON, // SHRNv2i32_shift = 3333
-    CEFBS_HasNEON, // SHRNv4i16_shift = 3334
-    CEFBS_HasNEON, // SHRNv4i32_shift = 3335
-    CEFBS_HasNEON, // SHRNv8i16_shift = 3336
-    CEFBS_HasNEON, // SHRNv8i8_shift = 3337
-    CEFBS_HasSVE2, // SHSUBR_ZPmZ_B = 3338
-    CEFBS_HasSVE2, // SHSUBR_ZPmZ_D = 3339
-    CEFBS_HasSVE2, // SHSUBR_ZPmZ_H = 3340
-    CEFBS_HasSVE2, // SHSUBR_ZPmZ_S = 3341
-    CEFBS_HasSVE2, // SHSUB_ZPmZ_B = 3342
-    CEFBS_HasSVE2, // SHSUB_ZPmZ_D = 3343
-    CEFBS_HasSVE2, // SHSUB_ZPmZ_H = 3344
-    CEFBS_HasSVE2, // SHSUB_ZPmZ_S = 3345
-    CEFBS_HasNEON, // SHSUBv16i8 = 3346
-    CEFBS_HasNEON, // SHSUBv2i32 = 3347
-    CEFBS_HasNEON, // SHSUBv4i16 = 3348
-    CEFBS_HasNEON, // SHSUBv4i32 = 3349
-    CEFBS_HasNEON, // SHSUBv8i16 = 3350
-    CEFBS_HasNEON, // SHSUBv8i8 = 3351
-    CEFBS_HasSVE2, // SLI_ZZI_B = 3352
-    CEFBS_HasSVE2, // SLI_ZZI_D = 3353
-    CEFBS_HasSVE2, // SLI_ZZI_H = 3354
-    CEFBS_HasSVE2, // SLI_ZZI_S = 3355
-    CEFBS_HasNEON, // SLId = 3356
-    CEFBS_HasNEON, // SLIv16i8_shift = 3357
-    CEFBS_HasNEON, // SLIv2i32_shift = 3358
-    CEFBS_HasNEON, // SLIv2i64_shift = 3359
-    CEFBS_HasNEON, // SLIv4i16_shift = 3360
-    CEFBS_HasNEON, // SLIv4i32_shift = 3361
-    CEFBS_HasNEON, // SLIv8i16_shift = 3362
-    CEFBS_HasNEON, // SLIv8i8_shift = 3363
-    CEFBS_HasSM4, // SM3PARTW1 = 3364
-    CEFBS_HasSM4, // SM3PARTW2 = 3365
-    CEFBS_HasSM4, // SM3SS1 = 3366
-    CEFBS_HasSM4, // SM3TT1A = 3367
-    CEFBS_HasSM4, // SM3TT1B = 3368
-    CEFBS_HasSM4, // SM3TT2A = 3369
-    CEFBS_HasSM4, // SM3TT2B = 3370
-    CEFBS_HasSM4, // SM4E = 3371
-    CEFBS_HasSVE2SM4, // SM4EKEY_ZZZ_S = 3372
-    CEFBS_HasSM4, // SM4ENCKEY = 3373
-    CEFBS_HasSVE2SM4, // SM4E_ZZZ_S = 3374
-    CEFBS_None, // SMADDLrrr = 3375
-    CEFBS_HasSVE2, // SMAXP_ZPmZ_B = 3376
-    CEFBS_HasSVE2, // SMAXP_ZPmZ_D = 3377
-    CEFBS_HasSVE2, // SMAXP_ZPmZ_H = 3378
-    CEFBS_HasSVE2, // SMAXP_ZPmZ_S = 3379
-    CEFBS_HasNEON, // SMAXPv16i8 = 3380
-    CEFBS_HasNEON, // SMAXPv2i32 = 3381
-    CEFBS_HasNEON, // SMAXPv4i16 = 3382
-    CEFBS_HasNEON, // SMAXPv4i32 = 3383
-    CEFBS_HasNEON, // SMAXPv8i16 = 3384
-    CEFBS_HasNEON, // SMAXPv8i8 = 3385
-    CEFBS_HasSVE, // SMAXV_VPZ_B = 3386
-    CEFBS_HasSVE, // SMAXV_VPZ_D = 3387
-    CEFBS_HasSVE, // SMAXV_VPZ_H = 3388
-    CEFBS_HasSVE, // SMAXV_VPZ_S = 3389
-    CEFBS_HasNEON, // SMAXVv16i8v = 3390
-    CEFBS_HasNEON, // SMAXVv4i16v = 3391
-    CEFBS_HasNEON, // SMAXVv4i32v = 3392
-    CEFBS_HasNEON, // SMAXVv8i16v = 3393
-    CEFBS_HasNEON, // SMAXVv8i8v = 3394
-    CEFBS_HasSVE, // SMAX_ZI_B = 3395
-    CEFBS_HasSVE, // SMAX_ZI_D = 3396
-    CEFBS_HasSVE, // SMAX_ZI_H = 3397
-    CEFBS_HasSVE, // SMAX_ZI_S = 3398
-    CEFBS_HasSVE, // SMAX_ZPmZ_B = 3399
-    CEFBS_HasSVE, // SMAX_ZPmZ_D = 3400
-    CEFBS_HasSVE, // SMAX_ZPmZ_H = 3401
-    CEFBS_HasSVE, // SMAX_ZPmZ_S = 3402
-    CEFBS_HasNEON, // SMAXv16i8 = 3403
-    CEFBS_HasNEON, // SMAXv2i32 = 3404
-    CEFBS_HasNEON, // SMAXv4i16 = 3405
-    CEFBS_HasNEON, // SMAXv4i32 = 3406
-    CEFBS_HasNEON, // SMAXv8i16 = 3407
-    CEFBS_HasNEON, // SMAXv8i8 = 3408
-    CEFBS_None, // SMC = 3409
-    CEFBS_HasSVE2, // SMINP_ZPmZ_B = 3410
-    CEFBS_HasSVE2, // SMINP_ZPmZ_D = 3411
-    CEFBS_HasSVE2, // SMINP_ZPmZ_H = 3412
-    CEFBS_HasSVE2, // SMINP_ZPmZ_S = 3413
-    CEFBS_HasNEON, // SMINPv16i8 = 3414
-    CEFBS_HasNEON, // SMINPv2i32 = 3415
-    CEFBS_HasNEON, // SMINPv4i16 = 3416
-    CEFBS_HasNEON, // SMINPv4i32 = 3417
-    CEFBS_HasNEON, // SMINPv8i16 = 3418
-    CEFBS_HasNEON, // SMINPv8i8 = 3419
-    CEFBS_HasSVE, // SMINV_VPZ_B = 3420
-    CEFBS_HasSVE, // SMINV_VPZ_D = 3421
-    CEFBS_HasSVE, // SMINV_VPZ_H = 3422
-    CEFBS_HasSVE, // SMINV_VPZ_S = 3423
-    CEFBS_HasNEON, // SMINVv16i8v = 3424
-    CEFBS_HasNEON, // SMINVv4i16v = 3425
-    CEFBS_HasNEON, // SMINVv4i32v = 3426
-    CEFBS_HasNEON, // SMINVv8i16v = 3427
-    CEFBS_HasNEON, // SMINVv8i8v = 3428
-    CEFBS_HasSVE, // SMIN_ZI_B = 3429
-    CEFBS_HasSVE, // SMIN_ZI_D = 3430
-    CEFBS_HasSVE, // SMIN_ZI_H = 3431
-    CEFBS_HasSVE, // SMIN_ZI_S = 3432
-    CEFBS_HasSVE, // SMIN_ZPmZ_B = 3433
-    CEFBS_HasSVE, // SMIN_ZPmZ_D = 3434
-    CEFBS_HasSVE, // SMIN_ZPmZ_H = 3435
-    CEFBS_HasSVE, // SMIN_ZPmZ_S = 3436
-    CEFBS_HasNEON, // SMINv16i8 = 3437
-    CEFBS_HasNEON, // SMINv2i32 = 3438
-    CEFBS_HasNEON, // SMINv4i16 = 3439
-    CEFBS_HasNEON, // SMINv4i32 = 3440
-    CEFBS_HasNEON, // SMINv8i16 = 3441
-    CEFBS_HasNEON, // SMINv8i8 = 3442
-    CEFBS_HasSVE2, // SMLALB_ZZZI_D = 3443
-    CEFBS_HasSVE2, // SMLALB_ZZZI_S = 3444
-    CEFBS_HasSVE2, // SMLALB_ZZZ_D = 3445
-    CEFBS_HasSVE2, // SMLALB_ZZZ_H = 3446
-    CEFBS_HasSVE2, // SMLALB_ZZZ_S = 3447
-    CEFBS_HasSVE2, // SMLALT_ZZZI_D = 3448
-    CEFBS_HasSVE2, // SMLALT_ZZZI_S = 3449
-    CEFBS_HasSVE2, // SMLALT_ZZZ_D = 3450
-    CEFBS_HasSVE2, // SMLALT_ZZZ_H = 3451
-    CEFBS_HasSVE2, // SMLALT_ZZZ_S = 3452
-    CEFBS_HasNEON, // SMLALv16i8_v8i16 = 3453
-    CEFBS_HasNEON, // SMLALv2i32_indexed = 3454
-    CEFBS_HasNEON, // SMLALv2i32_v2i64 = 3455
-    CEFBS_HasNEON, // SMLALv4i16_indexed = 3456
-    CEFBS_HasNEON, // SMLALv4i16_v4i32 = 3457
-    CEFBS_HasNEON, // SMLALv4i32_indexed = 3458
-    CEFBS_HasNEON, // SMLALv4i32_v2i64 = 3459
-    CEFBS_HasNEON, // SMLALv8i16_indexed = 3460
-    CEFBS_HasNEON, // SMLALv8i16_v4i32 = 3461
-    CEFBS_HasNEON, // SMLALv8i8_v8i16 = 3462
-    CEFBS_HasSVE2, // SMLSLB_ZZZI_D = 3463
-    CEFBS_HasSVE2, // SMLSLB_ZZZI_S = 3464
-    CEFBS_HasSVE2, // SMLSLB_ZZZ_D = 3465
-    CEFBS_HasSVE2, // SMLSLB_ZZZ_H = 3466
-    CEFBS_HasSVE2, // SMLSLB_ZZZ_S = 3467
-    CEFBS_HasSVE2, // SMLSLT_ZZZI_D = 3468
-    CEFBS_HasSVE2, // SMLSLT_ZZZI_S = 3469
-    CEFBS_HasSVE2, // SMLSLT_ZZZ_D = 3470
-    CEFBS_HasSVE2, // SMLSLT_ZZZ_H = 3471
-    CEFBS_HasSVE2, // SMLSLT_ZZZ_S = 3472
-    CEFBS_HasNEON, // SMLSLv16i8_v8i16 = 3473
-    CEFBS_HasNEON, // SMLSLv2i32_indexed = 3474
-    CEFBS_HasNEON, // SMLSLv2i32_v2i64 = 3475
-    CEFBS_HasNEON, // SMLSLv4i16_indexed = 3476
-    CEFBS_HasNEON, // SMLSLv4i16_v4i32 = 3477
-    CEFBS_HasNEON, // SMLSLv4i32_indexed = 3478
-    CEFBS_HasNEON, // SMLSLv4i32_v2i64 = 3479
-    CEFBS_HasNEON, // SMLSLv8i16_indexed = 3480
-    CEFBS_HasNEON, // SMLSLv8i16_v4i32 = 3481
-    CEFBS_HasNEON, // SMLSLv8i8_v8i16 = 3482
-    CEFBS_HasNEON, // SMOVvi16to32 = 3483
-    CEFBS_HasNEON, // SMOVvi16to64 = 3484
-    CEFBS_HasNEON, // SMOVvi32to64 = 3485
-    CEFBS_HasNEON, // SMOVvi8to32 = 3486
-    CEFBS_HasNEON, // SMOVvi8to64 = 3487
-    CEFBS_None, // SMSUBLrrr = 3488
-    CEFBS_HasSVE, // SMULH_ZPmZ_B = 3489
-    CEFBS_HasSVE, // SMULH_ZPmZ_D = 3490
-    CEFBS_HasSVE, // SMULH_ZPmZ_H = 3491
-    CEFBS_HasSVE, // SMULH_ZPmZ_S = 3492
-    CEFBS_HasSVE2, // SMULH_ZZZ_B = 3493
-    CEFBS_HasSVE2, // SMULH_ZZZ_D = 3494
-    CEFBS_HasSVE2, // SMULH_ZZZ_H = 3495
-    CEFBS_HasSVE2, // SMULH_ZZZ_S = 3496
-    CEFBS_None, // SMULHrr = 3497
-    CEFBS_HasSVE2, // SMULLB_ZZZI_D = 3498
-    CEFBS_HasSVE2, // SMULLB_ZZZI_S = 3499
-    CEFBS_HasSVE2, // SMULLB_ZZZ_D = 3500
-    CEFBS_HasSVE2, // SMULLB_ZZZ_H = 3501
-    CEFBS_HasSVE2, // SMULLB_ZZZ_S = 3502
-    CEFBS_HasSVE2, // SMULLT_ZZZI_D = 3503
-    CEFBS_HasSVE2, // SMULLT_ZZZI_S = 3504
-    CEFBS_HasSVE2, // SMULLT_ZZZ_D = 3505
-    CEFBS_HasSVE2, // SMULLT_ZZZ_H = 3506
-    CEFBS_HasSVE2, // SMULLT_ZZZ_S = 3507
-    CEFBS_HasNEON, // SMULLv16i8_v8i16 = 3508
-    CEFBS_HasNEON, // SMULLv2i32_indexed = 3509
-    CEFBS_HasNEON, // SMULLv2i32_v2i64 = 3510
-    CEFBS_HasNEON, // SMULLv4i16_indexed = 3511
-    CEFBS_HasNEON, // SMULLv4i16_v4i32 = 3512
-    CEFBS_HasNEON, // SMULLv4i32_indexed = 3513
-    CEFBS_HasNEON, // SMULLv4i32_v2i64 = 3514
-    CEFBS_HasNEON, // SMULLv8i16_indexed = 3515
-    CEFBS_HasNEON, // SMULLv8i16_v4i32 = 3516
-    CEFBS_HasNEON, // SMULLv8i8_v8i16 = 3517
-    CEFBS_None, // SPACE = 3518
-    CEFBS_HasSVE2, // SPLICE_ZPZZ_B = 3519
-    CEFBS_HasSVE2, // SPLICE_ZPZZ_D = 3520
-    CEFBS_HasSVE2, // SPLICE_ZPZZ_H = 3521
-    CEFBS_HasSVE2, // SPLICE_ZPZZ_S = 3522
-    CEFBS_HasSVE, // SPLICE_ZPZ_B = 3523
-    CEFBS_HasSVE, // SPLICE_ZPZ_D = 3524
-    CEFBS_HasSVE, // SPLICE_ZPZ_H = 3525
-    CEFBS_HasSVE, // SPLICE_ZPZ_S = 3526
-    CEFBS_HasSVE2, // SQABS_ZPmZ_B = 3527
-    CEFBS_HasSVE2, // SQABS_ZPmZ_D = 3528
-    CEFBS_HasSVE2, // SQABS_ZPmZ_H = 3529
-    CEFBS_HasSVE2, // SQABS_ZPmZ_S = 3530
-    CEFBS_HasNEON, // SQABSv16i8 = 3531
-    CEFBS_HasNEON, // SQABSv1i16 = 3532
-    CEFBS_HasNEON, // SQABSv1i32 = 3533
-    CEFBS_HasNEON, // SQABSv1i64 = 3534
-    CEFBS_HasNEON, // SQABSv1i8 = 3535
-    CEFBS_HasNEON, // SQABSv2i32 = 3536
-    CEFBS_HasNEON, // SQABSv2i64 = 3537
-    CEFBS_HasNEON, // SQABSv4i16 = 3538
-    CEFBS_HasNEON, // SQABSv4i32 = 3539
-    CEFBS_HasNEON, // SQABSv8i16 = 3540
-    CEFBS_HasNEON, // SQABSv8i8 = 3541
-    CEFBS_HasSVE, // SQADD_ZI_B = 3542
-    CEFBS_HasSVE, // SQADD_ZI_D = 3543
-    CEFBS_HasSVE, // SQADD_ZI_H = 3544
-    CEFBS_HasSVE, // SQADD_ZI_S = 3545
-    CEFBS_HasSVE2, // SQADD_ZPmZ_B = 3546
-    CEFBS_HasSVE2, // SQADD_ZPmZ_D = 3547
-    CEFBS_HasSVE2, // SQADD_ZPmZ_H = 3548
-    CEFBS_HasSVE2, // SQADD_ZPmZ_S = 3549
-    CEFBS_HasSVE, // SQADD_ZZZ_B = 3550
-    CEFBS_HasSVE, // SQADD_ZZZ_D = 3551
-    CEFBS_HasSVE, // SQADD_ZZZ_H = 3552
-    CEFBS_HasSVE, // SQADD_ZZZ_S = 3553
-    CEFBS_HasNEON, // SQADDv16i8 = 3554
-    CEFBS_HasNEON, // SQADDv1i16 = 3555
-    CEFBS_HasNEON, // SQADDv1i32 = 3556
-    CEFBS_HasNEON, // SQADDv1i64 = 3557
-    CEFBS_HasNEON, // SQADDv1i8 = 3558
-    CEFBS_HasNEON, // SQADDv2i32 = 3559
-    CEFBS_HasNEON, // SQADDv2i64 = 3560
-    CEFBS_HasNEON, // SQADDv4i16 = 3561
-    CEFBS_HasNEON, // SQADDv4i32 = 3562
-    CEFBS_HasNEON, // SQADDv8i16 = 3563
-    CEFBS_HasNEON, // SQADDv8i8 = 3564
-    CEFBS_HasSVE2, // SQCADD_ZZI_B = 3565
-    CEFBS_HasSVE2, // SQCADD_ZZI_D = 3566
-    CEFBS_HasSVE2, // SQCADD_ZZI_H = 3567
-    CEFBS_HasSVE2, // SQCADD_ZZI_S = 3568
-    CEFBS_HasSVE, // SQDECB_XPiI = 3569
-    CEFBS_HasSVE, // SQDECB_XPiWdI = 3570
-    CEFBS_HasSVE, // SQDECD_XPiI = 3571
-    CEFBS_HasSVE, // SQDECD_XPiWdI = 3572
-    CEFBS_HasSVE, // SQDECD_ZPiI = 3573
-    CEFBS_HasSVE, // SQDECH_XPiI = 3574
-    CEFBS_HasSVE, // SQDECH_XPiWdI = 3575
-    CEFBS_HasSVE, // SQDECH_ZPiI = 3576
-    CEFBS_HasSVE, // SQDECP_XPWd_B = 3577
-    CEFBS_HasSVE, // SQDECP_XPWd_D = 3578
-    CEFBS_HasSVE, // SQDECP_XPWd_H = 3579
-    CEFBS_HasSVE, // SQDECP_XPWd_S = 3580
-    CEFBS_HasSVE, // SQDECP_XP_B = 3581
-    CEFBS_HasSVE, // SQDECP_XP_D = 3582
-    CEFBS_HasSVE, // SQDECP_XP_H = 3583
-    CEFBS_HasSVE, // SQDECP_XP_S = 3584
-    CEFBS_HasSVE, // SQDECP_ZP_D = 3585
-    CEFBS_HasSVE, // SQDECP_ZP_H = 3586
-    CEFBS_HasSVE, // SQDECP_ZP_S = 3587
-    CEFBS_HasSVE, // SQDECW_XPiI = 3588
-    CEFBS_HasSVE, // SQDECW_XPiWdI = 3589
-    CEFBS_HasSVE, // SQDECW_ZPiI = 3590
-    CEFBS_HasSVE2, // SQDMLALBT_ZZZ_D = 3591
-    CEFBS_HasSVE2, // SQDMLALBT_ZZZ_H = 3592
-    CEFBS_HasSVE2, // SQDMLALBT_ZZZ_S = 3593
-    CEFBS_HasSVE2, // SQDMLALB_ZZZI_D = 3594
-    CEFBS_HasSVE2, // SQDMLALB_ZZZI_S = 3595
-    CEFBS_HasSVE2, // SQDMLALB_ZZZ_D = 3596
-    CEFBS_HasSVE2, // SQDMLALB_ZZZ_H = 3597
-    CEFBS_HasSVE2, // SQDMLALB_ZZZ_S = 3598
-    CEFBS_HasSVE2, // SQDMLALT_ZZZI_D = 3599
-    CEFBS_HasSVE2, // SQDMLALT_ZZZI_S = 3600
-    CEFBS_HasSVE2, // SQDMLALT_ZZZ_D = 3601
-    CEFBS_HasSVE2, // SQDMLALT_ZZZ_H = 3602
-    CEFBS_HasSVE2, // SQDMLALT_ZZZ_S = 3603
-    CEFBS_HasNEON, // SQDMLALi16 = 3604
-    CEFBS_HasNEON, // SQDMLALi32 = 3605
-    CEFBS_HasNEON, // SQDMLALv1i32_indexed = 3606
-    CEFBS_HasNEON, // SQDMLALv1i64_indexed = 3607
-    CEFBS_HasNEON, // SQDMLALv2i32_indexed = 3608
-    CEFBS_HasNEON, // SQDMLALv2i32_v2i64 = 3609
-    CEFBS_HasNEON, // SQDMLALv4i16_indexed = 3610
-    CEFBS_HasNEON, // SQDMLALv4i16_v4i32 = 3611
-    CEFBS_HasNEON, // SQDMLALv4i32_indexed = 3612
-    CEFBS_HasNEON, // SQDMLALv4i32_v2i64 = 3613
-    CEFBS_HasNEON, // SQDMLALv8i16_indexed = 3614
-    CEFBS_HasNEON, // SQDMLALv8i16_v4i32 = 3615
-    CEFBS_HasSVE2, // SQDMLSLBT_ZZZ_D = 3616
-    CEFBS_HasSVE2, // SQDMLSLBT_ZZZ_H = 3617
-    CEFBS_HasSVE2, // SQDMLSLBT_ZZZ_S = 3618
-    CEFBS_HasSVE2, // SQDMLSLB_ZZZI_D = 3619
-    CEFBS_HasSVE2, // SQDMLSLB_ZZZI_S = 3620
-    CEFBS_HasSVE2, // SQDMLSLB_ZZZ_D = 3621
-    CEFBS_HasSVE2, // SQDMLSLB_ZZZ_H = 3622
-    CEFBS_HasSVE2, // SQDMLSLB_ZZZ_S = 3623
-    CEFBS_HasSVE2, // SQDMLSLT_ZZZI_D = 3624
-    CEFBS_HasSVE2, // SQDMLSLT_ZZZI_S = 3625
-    CEFBS_HasSVE2, // SQDMLSLT_ZZZ_D = 3626
-    CEFBS_HasSVE2, // SQDMLSLT_ZZZ_H = 3627
-    CEFBS_HasSVE2, // SQDMLSLT_ZZZ_S = 3628
-    CEFBS_HasNEON, // SQDMLSLi16 = 3629
-    CEFBS_HasNEON, // SQDMLSLi32 = 3630
-    CEFBS_HasNEON, // SQDMLSLv1i32_indexed = 3631
-    CEFBS_HasNEON, // SQDMLSLv1i64_indexed = 3632
-    CEFBS_HasNEON, // SQDMLSLv2i32_indexed = 3633
-    CEFBS_HasNEON, // SQDMLSLv2i32_v2i64 = 3634
-    CEFBS_HasNEON, // SQDMLSLv4i16_indexed = 3635
-    CEFBS_HasNEON, // SQDMLSLv4i16_v4i32 = 3636
-    CEFBS_HasNEON, // SQDMLSLv4i32_indexed = 3637
-    CEFBS_HasNEON, // SQDMLSLv4i32_v2i64 = 3638
-    CEFBS_HasNEON, // SQDMLSLv8i16_indexed = 3639
-    CEFBS_HasNEON, // SQDMLSLv8i16_v4i32 = 3640
-    CEFBS_HasSVE2, // SQDMULH_ZZZI_D = 3641
-    CEFBS_HasSVE2, // SQDMULH_ZZZI_H = 3642
-    CEFBS_HasSVE2, // SQDMULH_ZZZI_S = 3643
-    CEFBS_HasSVE2, // SQDMULH_ZZZ_B = 3644
-    CEFBS_HasSVE2, // SQDMULH_ZZZ_D = 3645
-    CEFBS_HasSVE2, // SQDMULH_ZZZ_H = 3646
-    CEFBS_HasSVE2, // SQDMULH_ZZZ_S = 3647
-    CEFBS_HasNEON, // SQDMULHv1i16 = 3648
-    CEFBS_HasNEON, // SQDMULHv1i16_indexed = 3649
-    CEFBS_HasNEON, // SQDMULHv1i32 = 3650
-    CEFBS_HasNEON, // SQDMULHv1i32_indexed = 3651
-    CEFBS_HasNEON, // SQDMULHv2i32 = 3652
-    CEFBS_HasNEON, // SQDMULHv2i32_indexed = 3653
-    CEFBS_HasNEON, // SQDMULHv4i16 = 3654
-    CEFBS_HasNEON, // SQDMULHv4i16_indexed = 3655
-    CEFBS_HasNEON, // SQDMULHv4i32 = 3656
-    CEFBS_HasNEON, // SQDMULHv4i32_indexed = 3657
-    CEFBS_HasNEON, // SQDMULHv8i16 = 3658
-    CEFBS_HasNEON, // SQDMULHv8i16_indexed = 3659
-    CEFBS_HasSVE2, // SQDMULLB_ZZZI_D = 3660
-    CEFBS_HasSVE2, // SQDMULLB_ZZZI_S = 3661
-    CEFBS_HasSVE2, // SQDMULLB_ZZZ_D = 3662
-    CEFBS_HasSVE2, // SQDMULLB_ZZZ_H = 3663
-    CEFBS_HasSVE2, // SQDMULLB_ZZZ_S = 3664
-    CEFBS_HasSVE2, // SQDMULLT_ZZZI_D = 3665
-    CEFBS_HasSVE2, // SQDMULLT_ZZZI_S = 3666
-    CEFBS_HasSVE2, // SQDMULLT_ZZZ_D = 3667
-    CEFBS_HasSVE2, // SQDMULLT_ZZZ_H = 3668
-    CEFBS_HasSVE2, // SQDMULLT_ZZZ_S = 3669
-    CEFBS_HasNEON, // SQDMULLi16 = 3670
-    CEFBS_HasNEON, // SQDMULLi32 = 3671
-    CEFBS_HasNEON, // SQDMULLv1i32_indexed = 3672
-    CEFBS_HasNEON, // SQDMULLv1i64_indexed = 3673
-    CEFBS_HasNEON, // SQDMULLv2i32_indexed = 3674
-    CEFBS_HasNEON, // SQDMULLv2i32_v2i64 = 3675
-    CEFBS_HasNEON, // SQDMULLv4i16_indexed = 3676
-    CEFBS_HasNEON, // SQDMULLv4i16_v4i32 = 3677
-    CEFBS_HasNEON, // SQDMULLv4i32_indexed = 3678
-    CEFBS_HasNEON, // SQDMULLv4i32_v2i64 = 3679
-    CEFBS_HasNEON, // SQDMULLv8i16_indexed = 3680
-    CEFBS_HasNEON, // SQDMULLv8i16_v4i32 = 3681
-    CEFBS_HasSVE, // SQINCB_XPiI = 3682
-    CEFBS_HasSVE, // SQINCB_XPiWdI = 3683
-    CEFBS_HasSVE, // SQINCD_XPiI = 3684
-    CEFBS_HasSVE, // SQINCD_XPiWdI = 3685
-    CEFBS_HasSVE, // SQINCD_ZPiI = 3686
-    CEFBS_HasSVE, // SQINCH_XPiI = 3687
-    CEFBS_HasSVE, // SQINCH_XPiWdI = 3688
-    CEFBS_HasSVE, // SQINCH_ZPiI = 3689
-    CEFBS_HasSVE, // SQINCP_XPWd_B = 3690
-    CEFBS_HasSVE, // SQINCP_XPWd_D = 3691
-    CEFBS_HasSVE, // SQINCP_XPWd_H = 3692
-    CEFBS_HasSVE, // SQINCP_XPWd_S = 3693
-    CEFBS_HasSVE, // SQINCP_XP_B = 3694
-    CEFBS_HasSVE, // SQINCP_XP_D = 3695
-    CEFBS_HasSVE, // SQINCP_XP_H = 3696
-    CEFBS_HasSVE, // SQINCP_XP_S = 3697
-    CEFBS_HasSVE, // SQINCP_ZP_D = 3698
-    CEFBS_HasSVE, // SQINCP_ZP_H = 3699
-    CEFBS_HasSVE, // SQINCP_ZP_S = 3700
-    CEFBS_HasSVE, // SQINCW_XPiI = 3701
-    CEFBS_HasSVE, // SQINCW_XPiWdI = 3702
-    CEFBS_HasSVE, // SQINCW_ZPiI = 3703
-    CEFBS_HasSVE2, // SQNEG_ZPmZ_B = 3704
-    CEFBS_HasSVE2, // SQNEG_ZPmZ_D = 3705
-    CEFBS_HasSVE2, // SQNEG_ZPmZ_H = 3706
-    CEFBS_HasSVE2, // SQNEG_ZPmZ_S = 3707
-    CEFBS_HasNEON, // SQNEGv16i8 = 3708
-    CEFBS_HasNEON, // SQNEGv1i16 = 3709
-    CEFBS_HasNEON, // SQNEGv1i32 = 3710
-    CEFBS_HasNEON, // SQNEGv1i64 = 3711
-    CEFBS_HasNEON, // SQNEGv1i8 = 3712
-    CEFBS_HasNEON, // SQNEGv2i32 = 3713
-    CEFBS_HasNEON, // SQNEGv2i64 = 3714
-    CEFBS_HasNEON, // SQNEGv4i16 = 3715
-    CEFBS_HasNEON, // SQNEGv4i32 = 3716
-    CEFBS_HasNEON, // SQNEGv8i16 = 3717
-    CEFBS_HasNEON, // SQNEGv8i8 = 3718
-    CEFBS_HasSVE2, // SQRDCMLAH_ZZZI_H = 3719
-    CEFBS_HasSVE2, // SQRDCMLAH_ZZZI_S = 3720
-    CEFBS_HasSVE2, // SQRDCMLAH_ZZZ_B = 3721
-    CEFBS_HasSVE2, // SQRDCMLAH_ZZZ_D = 3722
-    CEFBS_HasSVE2, // SQRDCMLAH_ZZZ_H = 3723
-    CEFBS_HasSVE2, // SQRDCMLAH_ZZZ_S = 3724
-    CEFBS_HasSVE2, // SQRDMLAH_ZZZI_D = 3725
-    CEFBS_HasSVE2, // SQRDMLAH_ZZZI_H = 3726
-    CEFBS_HasSVE2, // SQRDMLAH_ZZZI_S = 3727
-    CEFBS_HasSVE2, // SQRDMLAH_ZZZ_B = 3728
-    CEFBS_HasSVE2, // SQRDMLAH_ZZZ_D = 3729
-    CEFBS_HasSVE2, // SQRDMLAH_ZZZ_H = 3730
-    CEFBS_HasSVE2, // SQRDMLAH_ZZZ_S = 3731
-    CEFBS_HasNEON_HasRDM, // SQRDMLAHi16_indexed = 3732
-    CEFBS_HasNEON_HasRDM, // SQRDMLAHi32_indexed = 3733
-    CEFBS_HasRDM, // SQRDMLAHv1i16 = 3734
-    CEFBS_HasRDM, // SQRDMLAHv1i32 = 3735
-    CEFBS_HasNEON_HasRDM, // SQRDMLAHv2i32 = 3736
-    CEFBS_HasNEON_HasRDM, // SQRDMLAHv2i32_indexed = 3737
-    CEFBS_HasNEON_HasRDM, // SQRDMLAHv4i16 = 3738
-    CEFBS_HasNEON_HasRDM, // SQRDMLAHv4i16_indexed = 3739
-    CEFBS_HasNEON_HasRDM, // SQRDMLAHv4i32 = 3740
-    CEFBS_HasNEON_HasRDM, // SQRDMLAHv4i32_indexed = 3741
-    CEFBS_HasNEON_HasRDM, // SQRDMLAHv8i16 = 3742
-    CEFBS_HasNEON_HasRDM, // SQRDMLAHv8i16_indexed = 3743
-    CEFBS_HasSVE2, // SQRDMLSH_ZZZI_D = 3744
-    CEFBS_HasSVE2, // SQRDMLSH_ZZZI_H = 3745
-    CEFBS_HasSVE2, // SQRDMLSH_ZZZI_S = 3746
-    CEFBS_HasSVE2, // SQRDMLSH_ZZZ_B = 3747
-    CEFBS_HasSVE2, // SQRDMLSH_ZZZ_D = 3748
-    CEFBS_HasSVE2, // SQRDMLSH_ZZZ_H = 3749
-    CEFBS_HasSVE2, // SQRDMLSH_ZZZ_S = 3750
-    CEFBS_HasNEON_HasRDM, // SQRDMLSHi16_indexed = 3751
-    CEFBS_HasNEON_HasRDM, // SQRDMLSHi32_indexed = 3752
-    CEFBS_HasRDM, // SQRDMLSHv1i16 = 3753
-    CEFBS_HasRDM, // SQRDMLSHv1i32 = 3754
-    CEFBS_HasNEON_HasRDM, // SQRDMLSHv2i32 = 3755
-    CEFBS_HasNEON_HasRDM, // SQRDMLSHv2i32_indexed = 3756
-    CEFBS_HasNEON_HasRDM, // SQRDMLSHv4i16 = 3757
-    CEFBS_HasNEON_HasRDM, // SQRDMLSHv4i16_indexed = 3758
-    CEFBS_HasNEON_HasRDM, // SQRDMLSHv4i32 = 3759
-    CEFBS_HasNEON_HasRDM, // SQRDMLSHv4i32_indexed = 3760
-    CEFBS_HasNEON_HasRDM, // SQRDMLSHv8i16 = 3761
-    CEFBS_HasNEON_HasRDM, // SQRDMLSHv8i16_indexed = 3762
-    CEFBS_HasSVE2, // SQRDMULH_ZZZI_D = 3763
-    CEFBS_HasSVE2, // SQRDMULH_ZZZI_H = 3764
-    CEFBS_HasSVE2, // SQRDMULH_ZZZI_S = 3765
-    CEFBS_HasSVE2, // SQRDMULH_ZZZ_B = 3766
-    CEFBS_HasSVE2, // SQRDMULH_ZZZ_D = 3767
-    CEFBS_HasSVE2, // SQRDMULH_ZZZ_H = 3768
-    CEFBS_HasSVE2, // SQRDMULH_ZZZ_S = 3769
-    CEFBS_HasNEON, // SQRDMULHv1i16 = 3770
-    CEFBS_HasNEON, // SQRDMULHv1i16_indexed = 3771
-    CEFBS_HasNEON, // SQRDMULHv1i32 = 3772
-    CEFBS_HasNEON, // SQRDMULHv1i32_indexed = 3773
-    CEFBS_HasNEON, // SQRDMULHv2i32 = 3774
-    CEFBS_HasNEON, // SQRDMULHv2i32_indexed = 3775
-    CEFBS_HasNEON, // SQRDMULHv4i16 = 3776
-    CEFBS_HasNEON, // SQRDMULHv4i16_indexed = 3777
-    CEFBS_HasNEON, // SQRDMULHv4i32 = 3778
-    CEFBS_HasNEON, // SQRDMULHv4i32_indexed = 3779
-    CEFBS_HasNEON, // SQRDMULHv8i16 = 3780
-    CEFBS_HasNEON, // SQRDMULHv8i16_indexed = 3781
-    CEFBS_HasSVE2, // SQRSHLR_ZPmZ_B = 3782
-    CEFBS_HasSVE2, // SQRSHLR_ZPmZ_D = 3783
-    CEFBS_HasSVE2, // SQRSHLR_ZPmZ_H = 3784
-    CEFBS_HasSVE2, // SQRSHLR_ZPmZ_S = 3785
-    CEFBS_HasSVE2, // SQRSHL_ZPmZ_B = 3786
-    CEFBS_HasSVE2, // SQRSHL_ZPmZ_D = 3787
-    CEFBS_HasSVE2, // SQRSHL_ZPmZ_H = 3788
-    CEFBS_HasSVE2, // SQRSHL_ZPmZ_S = 3789
-    CEFBS_HasNEON, // SQRSHLv16i8 = 3790
-    CEFBS_HasNEON, // SQRSHLv1i16 = 3791
-    CEFBS_HasNEON, // SQRSHLv1i32 = 3792
-    CEFBS_HasNEON, // SQRSHLv1i64 = 3793
-    CEFBS_HasNEON, // SQRSHLv1i8 = 3794
-    CEFBS_HasNEON, // SQRSHLv2i32 = 3795
-    CEFBS_HasNEON, // SQRSHLv2i64 = 3796
-    CEFBS_HasNEON, // SQRSHLv4i16 = 3797
-    CEFBS_HasNEON, // SQRSHLv4i32 = 3798
-    CEFBS_HasNEON, // SQRSHLv8i16 = 3799
-    CEFBS_HasNEON, // SQRSHLv8i8 = 3800
-    CEFBS_HasSVE2, // SQRSHRNB_ZZI_B = 3801
-    CEFBS_HasSVE2, // SQRSHRNB_ZZI_H = 3802
-    CEFBS_HasSVE2, // SQRSHRNB_ZZI_S = 3803
-    CEFBS_HasSVE2, // SQRSHRNT_ZZI_B = 3804
-    CEFBS_HasSVE2, // SQRSHRNT_ZZI_H = 3805
-    CEFBS_HasSVE2, // SQRSHRNT_ZZI_S = 3806
-    CEFBS_HasNEON, // SQRSHRNb = 3807
-    CEFBS_HasNEON, // SQRSHRNh = 3808
-    CEFBS_HasNEON, // SQRSHRNs = 3809
-    CEFBS_HasNEON, // SQRSHRNv16i8_shift = 3810
-    CEFBS_HasNEON, // SQRSHRNv2i32_shift = 3811
-    CEFBS_HasNEON, // SQRSHRNv4i16_shift = 3812
-    CEFBS_HasNEON, // SQRSHRNv4i32_shift = 3813
-    CEFBS_HasNEON, // SQRSHRNv8i16_shift = 3814
-    CEFBS_HasNEON, // SQRSHRNv8i8_shift = 3815
-    CEFBS_HasSVE2, // SQRSHRUNB_ZZI_B = 3816
-    CEFBS_HasSVE2, // SQRSHRUNB_ZZI_H = 3817
-    CEFBS_HasSVE2, // SQRSHRUNB_ZZI_S = 3818
-    CEFBS_HasSVE2, // SQRSHRUNT_ZZI_B = 3819
-    CEFBS_HasSVE2, // SQRSHRUNT_ZZI_H = 3820
-    CEFBS_HasSVE2, // SQRSHRUNT_ZZI_S = 3821
-    CEFBS_HasNEON, // SQRSHRUNb = 3822
-    CEFBS_HasNEON, // SQRSHRUNh = 3823
-    CEFBS_HasNEON, // SQRSHRUNs = 3824
-    CEFBS_HasNEON, // SQRSHRUNv16i8_shift = 3825
-    CEFBS_HasNEON, // SQRSHRUNv2i32_shift = 3826
-    CEFBS_HasNEON, // SQRSHRUNv4i16_shift = 3827
-    CEFBS_HasNEON, // SQRSHRUNv4i32_shift = 3828
-    CEFBS_HasNEON, // SQRSHRUNv8i16_shift = 3829
-    CEFBS_HasNEON, // SQRSHRUNv8i8_shift = 3830
-    CEFBS_HasSVE2, // SQSHLR_ZPmZ_B = 3831
-    CEFBS_HasSVE2, // SQSHLR_ZPmZ_D = 3832
-    CEFBS_HasSVE2, // SQSHLR_ZPmZ_H = 3833
-    CEFBS_HasSVE2, // SQSHLR_ZPmZ_S = 3834
-    CEFBS_HasSVE2, // SQSHLU_ZPmI_B = 3835
-    CEFBS_HasSVE2, // SQSHLU_ZPmI_D = 3836
-    CEFBS_HasSVE2, // SQSHLU_ZPmI_H = 3837
-    CEFBS_HasSVE2, // SQSHLU_ZPmI_S = 3838
-    CEFBS_HasNEON, // SQSHLUb = 3839
-    CEFBS_HasNEON, // SQSHLUd = 3840
-    CEFBS_HasNEON, // SQSHLUh = 3841
-    CEFBS_HasNEON, // SQSHLUs = 3842
-    CEFBS_HasNEON, // SQSHLUv16i8_shift = 3843
-    CEFBS_HasNEON, // SQSHLUv2i32_shift = 3844
-    CEFBS_HasNEON, // SQSHLUv2i64_shift = 3845
-    CEFBS_HasNEON, // SQSHLUv4i16_shift = 3846
-    CEFBS_HasNEON, // SQSHLUv4i32_shift = 3847
-    CEFBS_HasNEON, // SQSHLUv8i16_shift = 3848
-    CEFBS_HasNEON, // SQSHLUv8i8_shift = 3849
-    CEFBS_HasSVE2, // SQSHL_ZPmI_B = 3850
-    CEFBS_HasSVE2, // SQSHL_ZPmI_D = 3851
-    CEFBS_HasSVE2, // SQSHL_ZPmI_H = 3852
-    CEFBS_HasSVE2, // SQSHL_ZPmI_S = 3853
-    CEFBS_HasSVE2, // SQSHL_ZPmZ_B = 3854
-    CEFBS_HasSVE2, // SQSHL_ZPmZ_D = 3855
-    CEFBS_HasSVE2, // SQSHL_ZPmZ_H = 3856
-    CEFBS_HasSVE2, // SQSHL_ZPmZ_S = 3857
-    CEFBS_HasNEON, // SQSHLb = 3858
-    CEFBS_HasNEON, // SQSHLd = 3859
-    CEFBS_HasNEON, // SQSHLh = 3860
-    CEFBS_HasNEON, // SQSHLs = 3861
-    CEFBS_HasNEON, // SQSHLv16i8 = 3862
-    CEFBS_HasNEON, // SQSHLv16i8_shift = 3863
-    CEFBS_HasNEON, // SQSHLv1i16 = 3864
-    CEFBS_HasNEON, // SQSHLv1i32 = 3865
-    CEFBS_HasNEON, // SQSHLv1i64 = 3866
-    CEFBS_HasNEON, // SQSHLv1i8 = 3867
-    CEFBS_HasNEON, // SQSHLv2i32 = 3868
-    CEFBS_HasNEON, // SQSHLv2i32_shift = 3869
-    CEFBS_HasNEON, // SQSHLv2i64 = 3870
-    CEFBS_HasNEON, // SQSHLv2i64_shift = 3871
-    CEFBS_HasNEON, // SQSHLv4i16 = 3872
-    CEFBS_HasNEON, // SQSHLv4i16_shift = 3873
-    CEFBS_HasNEON, // SQSHLv4i32 = 3874
-    CEFBS_HasNEON, // SQSHLv4i32_shift = 3875
-    CEFBS_HasNEON, // SQSHLv8i16 = 3876
-    CEFBS_HasNEON, // SQSHLv8i16_shift = 3877
-    CEFBS_HasNEON, // SQSHLv8i8 = 3878
-    CEFBS_HasNEON, // SQSHLv8i8_shift = 3879
-    CEFBS_HasSVE2, // SQSHRNB_ZZI_B = 3880
-    CEFBS_HasSVE2, // SQSHRNB_ZZI_H = 3881
-    CEFBS_HasSVE2, // SQSHRNB_ZZI_S = 3882
-    CEFBS_HasSVE2, // SQSHRNT_ZZI_B = 3883
-    CEFBS_HasSVE2, // SQSHRNT_ZZI_H = 3884
-    CEFBS_HasSVE2, // SQSHRNT_ZZI_S = 3885
-    CEFBS_HasNEON, // SQSHRNb = 3886
-    CEFBS_HasNEON, // SQSHRNh = 3887
-    CEFBS_HasNEON, // SQSHRNs = 3888
-    CEFBS_HasNEON, // SQSHRNv16i8_shift = 3889
-    CEFBS_HasNEON, // SQSHRNv2i32_shift = 3890
-    CEFBS_HasNEON, // SQSHRNv4i16_shift = 3891
-    CEFBS_HasNEON, // SQSHRNv4i32_shift = 3892
-    CEFBS_HasNEON, // SQSHRNv8i16_shift = 3893
-    CEFBS_HasNEON, // SQSHRNv8i8_shift = 3894
-    CEFBS_HasSVE2, // SQSHRUNB_ZZI_B = 3895
-    CEFBS_HasSVE2, // SQSHRUNB_ZZI_H = 3896
-    CEFBS_HasSVE2, // SQSHRUNB_ZZI_S = 3897
-    CEFBS_HasSVE2, // SQSHRUNT_ZZI_B = 3898
-    CEFBS_HasSVE2, // SQSHRUNT_ZZI_H = 3899
-    CEFBS_HasSVE2, // SQSHRUNT_ZZI_S = 3900
-    CEFBS_HasNEON, // SQSHRUNb = 3901
-    CEFBS_HasNEON, // SQSHRUNh = 3902
-    CEFBS_HasNEON, // SQSHRUNs = 3903
-    CEFBS_HasNEON, // SQSHRUNv16i8_shift = 3904
-    CEFBS_HasNEON, // SQSHRUNv2i32_shift = 3905
-    CEFBS_HasNEON, // SQSHRUNv4i16_shift = 3906
-    CEFBS_HasNEON, // SQSHRUNv4i32_shift = 3907
-    CEFBS_HasNEON, // SQSHRUNv8i16_shift = 3908
-    CEFBS_HasNEON, // SQSHRUNv8i8_shift = 3909
-    CEFBS_HasSVE2, // SQSUBR_ZPmZ_B = 3910
-    CEFBS_HasSVE2, // SQSUBR_ZPmZ_D = 3911
-    CEFBS_HasSVE2, // SQSUBR_ZPmZ_H = 3912
-    CEFBS_HasSVE2, // SQSUBR_ZPmZ_S = 3913
-    CEFBS_HasSVE, // SQSUB_ZI_B = 3914
-    CEFBS_HasSVE, // SQSUB_ZI_D = 3915
-    CEFBS_HasSVE, // SQSUB_ZI_H = 3916
-    CEFBS_HasSVE, // SQSUB_ZI_S = 3917
-    CEFBS_HasSVE2, // SQSUB_ZPmZ_B = 3918
-    CEFBS_HasSVE2, // SQSUB_ZPmZ_D = 3919
-    CEFBS_HasSVE2, // SQSUB_ZPmZ_H = 3920
-    CEFBS_HasSVE2, // SQSUB_ZPmZ_S = 3921
-    CEFBS_HasSVE, // SQSUB_ZZZ_B = 3922
-    CEFBS_HasSVE, // SQSUB_ZZZ_D = 3923
-    CEFBS_HasSVE, // SQSUB_ZZZ_H = 3924
-    CEFBS_HasSVE, // SQSUB_ZZZ_S = 3925
-    CEFBS_HasNEON, // SQSUBv16i8 = 3926
-    CEFBS_HasNEON, // SQSUBv1i16 = 3927
-    CEFBS_HasNEON, // SQSUBv1i32 = 3928
-    CEFBS_HasNEON, // SQSUBv1i64 = 3929
-    CEFBS_HasNEON, // SQSUBv1i8 = 3930
-    CEFBS_HasNEON, // SQSUBv2i32 = 3931
-    CEFBS_HasNEON, // SQSUBv2i64 = 3932
-    CEFBS_HasNEON, // SQSUBv4i16 = 3933
-    CEFBS_HasNEON, // SQSUBv4i32 = 3934
-    CEFBS_HasNEON, // SQSUBv8i16 = 3935
-    CEFBS_HasNEON, // SQSUBv8i8 = 3936
-    CEFBS_HasSVE2, // SQXTNB_ZZ_B = 3937
-    CEFBS_HasSVE2, // SQXTNB_ZZ_H = 3938
-    CEFBS_HasSVE2, // SQXTNB_ZZ_S = 3939
-    CEFBS_HasSVE2, // SQXTNT_ZZ_B = 3940
-    CEFBS_HasSVE2, // SQXTNT_ZZ_H = 3941
-    CEFBS_HasSVE2, // SQXTNT_ZZ_S = 3942
-    CEFBS_HasNEON, // SQXTNv16i8 = 3943
-    CEFBS_HasNEON, // SQXTNv1i16 = 3944
-    CEFBS_HasNEON, // SQXTNv1i32 = 3945
-    CEFBS_HasNEON, // SQXTNv1i8 = 3946
-    CEFBS_HasNEON, // SQXTNv2i32 = 3947
-    CEFBS_HasNEON, // SQXTNv4i16 = 3948
-    CEFBS_HasNEON, // SQXTNv4i32 = 3949
-    CEFBS_HasNEON, // SQXTNv8i16 = 3950
-    CEFBS_HasNEON, // SQXTNv8i8 = 3951
-    CEFBS_HasSVE2, // SQXTUNB_ZZ_B = 3952
-    CEFBS_HasSVE2, // SQXTUNB_ZZ_H = 3953
-    CEFBS_HasSVE2, // SQXTUNB_ZZ_S = 3954
-    CEFBS_HasSVE2, // SQXTUNT_ZZ_B = 3955
-    CEFBS_HasSVE2, // SQXTUNT_ZZ_H = 3956
-    CEFBS_HasSVE2, // SQXTUNT_ZZ_S = 3957
-    CEFBS_HasNEON, // SQXTUNv16i8 = 3958
-    CEFBS_HasNEON, // SQXTUNv1i16 = 3959
-    CEFBS_HasNEON, // SQXTUNv1i32 = 3960
-    CEFBS_HasNEON, // SQXTUNv1i8 = 3961
-    CEFBS_HasNEON, // SQXTUNv2i32 = 3962
-    CEFBS_HasNEON, // SQXTUNv4i16 = 3963
-    CEFBS_HasNEON, // SQXTUNv4i32 = 3964
-    CEFBS_HasNEON, // SQXTUNv8i16 = 3965
-    CEFBS_HasNEON, // SQXTUNv8i8 = 3966
-    CEFBS_HasSVE2, // SRHADD_ZPmZ_B = 3967
-    CEFBS_HasSVE2, // SRHADD_ZPmZ_D = 3968
-    CEFBS_HasSVE2, // SRHADD_ZPmZ_H = 3969
-    CEFBS_HasSVE2, // SRHADD_ZPmZ_S = 3970
-    CEFBS_HasNEON, // SRHADDv16i8 = 3971
-    CEFBS_HasNEON, // SRHADDv2i32 = 3972
-    CEFBS_HasNEON, // SRHADDv4i16 = 3973
-    CEFBS_HasNEON, // SRHADDv4i32 = 3974
-    CEFBS_HasNEON, // SRHADDv8i16 = 3975
-    CEFBS_HasNEON, // SRHADDv8i8 = 3976
-    CEFBS_HasSVE2, // SRI_ZZI_B = 3977
-    CEFBS_HasSVE2, // SRI_ZZI_D = 3978
-    CEFBS_HasSVE2, // SRI_ZZI_H = 3979
-    CEFBS_HasSVE2, // SRI_ZZI_S = 3980
-    CEFBS_HasNEON, // SRId = 3981
-    CEFBS_HasNEON, // SRIv16i8_shift = 3982
-    CEFBS_HasNEON, // SRIv2i32_shift = 3983
-    CEFBS_HasNEON, // SRIv2i64_shift = 3984
-    CEFBS_HasNEON, // SRIv4i16_shift = 3985
-    CEFBS_HasNEON, // SRIv4i32_shift = 3986
-    CEFBS_HasNEON, // SRIv8i16_shift = 3987
-    CEFBS_HasNEON, // SRIv8i8_shift = 3988
-    CEFBS_HasSVE2, // SRSHLR_ZPmZ_B = 3989
-    CEFBS_HasSVE2, // SRSHLR_ZPmZ_D = 3990
-    CEFBS_HasSVE2, // SRSHLR_ZPmZ_H = 3991
-    CEFBS_HasSVE2, // SRSHLR_ZPmZ_S = 3992
-    CEFBS_HasSVE2, // SRSHL_ZPmZ_B = 3993
-    CEFBS_HasSVE2, // SRSHL_ZPmZ_D = 3994
-    CEFBS_HasSVE2, // SRSHL_ZPmZ_H = 3995
-    CEFBS_HasSVE2, // SRSHL_ZPmZ_S = 3996
-    CEFBS_HasNEON, // SRSHLv16i8 = 3997
-    CEFBS_HasNEON, // SRSHLv1i64 = 3998
-    CEFBS_HasNEON, // SRSHLv2i32 = 3999
-    CEFBS_HasNEON, // SRSHLv2i64 = 4000
-    CEFBS_HasNEON, // SRSHLv4i16 = 4001
-    CEFBS_HasNEON, // SRSHLv4i32 = 4002
-    CEFBS_HasNEON, // SRSHLv8i16 = 4003
-    CEFBS_HasNEON, // SRSHLv8i8 = 4004
-    CEFBS_HasSVE2, // SRSHR_ZPmI_B = 4005
-    CEFBS_HasSVE2, // SRSHR_ZPmI_D = 4006
-    CEFBS_HasSVE2, // SRSHR_ZPmI_H = 4007
-    CEFBS_HasSVE2, // SRSHR_ZPmI_S = 4008
-    CEFBS_HasNEON, // SRSHRd = 4009
-    CEFBS_HasNEON, // SRSHRv16i8_shift = 4010
-    CEFBS_HasNEON, // SRSHRv2i32_shift = 4011
-    CEFBS_HasNEON, // SRSHRv2i64_shift = 4012
-    CEFBS_HasNEON, // SRSHRv4i16_shift = 4013
-    CEFBS_HasNEON, // SRSHRv4i32_shift = 4014
-    CEFBS_HasNEON, // SRSHRv8i16_shift = 4015
-    CEFBS_HasNEON, // SRSHRv8i8_shift = 4016
-    CEFBS_HasSVE2, // SRSRA_ZZI_B = 4017
-    CEFBS_HasSVE2, // SRSRA_ZZI_D = 4018
-    CEFBS_HasSVE2, // SRSRA_ZZI_H = 4019
-    CEFBS_HasSVE2, // SRSRA_ZZI_S = 4020
-    CEFBS_HasNEON, // SRSRAd = 4021
-    CEFBS_HasNEON, // SRSRAv16i8_shift = 4022
-    CEFBS_HasNEON, // SRSRAv2i32_shift = 4023
-    CEFBS_HasNEON, // SRSRAv2i64_shift = 4024
-    CEFBS_HasNEON, // SRSRAv4i16_shift = 4025
-    CEFBS_HasNEON, // SRSRAv4i32_shift = 4026
-    CEFBS_HasNEON, // SRSRAv8i16_shift = 4027
-    CEFBS_HasNEON, // SRSRAv8i8_shift = 4028
-    CEFBS_HasSVE2, // SSHLLB_ZZI_D = 4029
-    CEFBS_HasSVE2, // SSHLLB_ZZI_H = 4030
-    CEFBS_HasSVE2, // SSHLLB_ZZI_S = 4031
-    CEFBS_HasSVE2, // SSHLLT_ZZI_D = 4032
-    CEFBS_HasSVE2, // SSHLLT_ZZI_H = 4033
-    CEFBS_HasSVE2, // SSHLLT_ZZI_S = 4034
-    CEFBS_HasNEON, // SSHLLv16i8_shift = 4035
-    CEFBS_HasNEON, // SSHLLv2i32_shift = 4036
-    CEFBS_HasNEON, // SSHLLv4i16_shift = 4037
-    CEFBS_HasNEON, // SSHLLv4i32_shift = 4038
-    CEFBS_HasNEON, // SSHLLv8i16_shift = 4039
-    CEFBS_HasNEON, // SSHLLv8i8_shift = 4040
-    CEFBS_HasNEON, // SSHLv16i8 = 4041
-    CEFBS_HasNEON, // SSHLv1i64 = 4042
-    CEFBS_HasNEON, // SSHLv2i32 = 4043
-    CEFBS_HasNEON, // SSHLv2i64 = 4044
-    CEFBS_HasNEON, // SSHLv4i16 = 4045
-    CEFBS_HasNEON, // SSHLv4i32 = 4046
-    CEFBS_HasNEON, // SSHLv8i16 = 4047
-    CEFBS_HasNEON, // SSHLv8i8 = 4048
-    CEFBS_HasNEON, // SSHRd = 4049
-    CEFBS_HasNEON, // SSHRv16i8_shift = 4050
-    CEFBS_HasNEON, // SSHRv2i32_shift = 4051
-    CEFBS_HasNEON, // SSHRv2i64_shift = 4052
-    CEFBS_HasNEON, // SSHRv4i16_shift = 4053
-    CEFBS_HasNEON, // SSHRv4i32_shift = 4054
-    CEFBS_HasNEON, // SSHRv8i16_shift = 4055
-    CEFBS_HasNEON, // SSHRv8i8_shift = 4056
-    CEFBS_HasSVE2, // SSRA_ZZI_B = 4057
-    CEFBS_HasSVE2, // SSRA_ZZI_D = 4058
-    CEFBS_HasSVE2, // SSRA_ZZI_H = 4059
-    CEFBS_HasSVE2, // SSRA_ZZI_S = 4060
-    CEFBS_HasNEON, // SSRAd = 4061
-    CEFBS_HasNEON, // SSRAv16i8_shift = 4062
-    CEFBS_HasNEON, // SSRAv2i32_shift = 4063
-    CEFBS_HasNEON, // SSRAv2i64_shift = 4064
-    CEFBS_HasNEON, // SSRAv4i16_shift = 4065
-    CEFBS_HasNEON, // SSRAv4i32_shift = 4066
-    CEFBS_HasNEON, // SSRAv8i16_shift = 4067
-    CEFBS_HasNEON, // SSRAv8i8_shift = 4068
-    CEFBS_HasSVE, // SST1B_D_IMM = 4069
-    CEFBS_HasSVE, // SST1B_D_REAL = 4070
-    CEFBS_HasSVE, // SST1B_D_SXTW = 4071
-    CEFBS_HasSVE, // SST1B_D_UXTW = 4072
-    CEFBS_HasSVE, // SST1B_S_IMM = 4073
-    CEFBS_HasSVE, // SST1B_S_SXTW = 4074
-    CEFBS_HasSVE, // SST1B_S_UXTW = 4075
-    CEFBS_HasSVE, // SST1D_IMM = 4076
-    CEFBS_HasSVE, // SST1D_REAL = 4077
-    CEFBS_HasSVE, // SST1D_SCALED_SCALED_REAL = 4078
-    CEFBS_HasSVE, // SST1D_SXTW = 4079
-    CEFBS_HasSVE, // SST1D_SXTW_SCALED = 4080
-    CEFBS_HasSVE, // SST1D_UXTW = 4081
-    CEFBS_HasSVE, // SST1D_UXTW_SCALED = 4082
-    CEFBS_HasSVE, // SST1H_D_IMM = 4083
-    CEFBS_HasSVE, // SST1H_D_REAL = 4084
-    CEFBS_HasSVE, // SST1H_D_SCALED_SCALED_REAL = 4085
-    CEFBS_HasSVE, // SST1H_D_SXTW = 4086
-    CEFBS_HasSVE, // SST1H_D_SXTW_SCALED = 4087
-    CEFBS_HasSVE, // SST1H_D_UXTW = 4088
-    CEFBS_HasSVE, // SST1H_D_UXTW_SCALED = 4089
-    CEFBS_HasSVE, // SST1H_S_IMM = 4090
-    CEFBS_HasSVE, // SST1H_S_SXTW = 4091
-    CEFBS_HasSVE, // SST1H_S_SXTW_SCALED = 4092
-    CEFBS_HasSVE, // SST1H_S_UXTW = 4093
-    CEFBS_HasSVE, // SST1H_S_UXTW_SCALED = 4094
-    CEFBS_HasSVE, // SST1W_D_IMM = 4095
-    CEFBS_HasSVE, // SST1W_D_REAL = 4096
-    CEFBS_HasSVE, // SST1W_D_SCALED_SCALED_REAL = 4097
-    CEFBS_HasSVE, // SST1W_D_SXTW = 4098
-    CEFBS_HasSVE, // SST1W_D_SXTW_SCALED = 4099
-    CEFBS_HasSVE, // SST1W_D_UXTW = 4100
-    CEFBS_HasSVE, // SST1W_D_UXTW_SCALED = 4101
-    CEFBS_HasSVE, // SST1W_IMM = 4102
-    CEFBS_HasSVE, // SST1W_SXTW = 4103
-    CEFBS_HasSVE, // SST1W_SXTW_SCALED = 4104
-    CEFBS_HasSVE, // SST1W_UXTW = 4105
-    CEFBS_HasSVE, // SST1W_UXTW_SCALED = 4106
-    CEFBS_HasSVE2, // SSUBLBT_ZZZ_D = 4107
-    CEFBS_HasSVE2, // SSUBLBT_ZZZ_H = 4108
-    CEFBS_HasSVE2, // SSUBLBT_ZZZ_S = 4109
-    CEFBS_HasSVE2, // SSUBLB_ZZZ_D = 4110
-    CEFBS_HasSVE2, // SSUBLB_ZZZ_H = 4111
-    CEFBS_HasSVE2, // SSUBLB_ZZZ_S = 4112
-    CEFBS_HasSVE2, // SSUBLTB_ZZZ_D = 4113
-    CEFBS_HasSVE2, // SSUBLTB_ZZZ_H = 4114
-    CEFBS_HasSVE2, // SSUBLTB_ZZZ_S = 4115
-    CEFBS_HasSVE2, // SSUBLT_ZZZ_D = 4116
-    CEFBS_HasSVE2, // SSUBLT_ZZZ_H = 4117
-    CEFBS_HasSVE2, // SSUBLT_ZZZ_S = 4118
-    CEFBS_HasNEON, // SSUBLv16i8_v8i16 = 4119
-    CEFBS_HasNEON, // SSUBLv2i32_v2i64 = 4120
-    CEFBS_HasNEON, // SSUBLv4i16_v4i32 = 4121
-    CEFBS_HasNEON, // SSUBLv4i32_v2i64 = 4122
-    CEFBS_HasNEON, // SSUBLv8i16_v4i32 = 4123
-    CEFBS_HasNEON, // SSUBLv8i8_v8i16 = 4124
-    CEFBS_HasSVE2, // SSUBWB_ZZZ_D = 4125
-    CEFBS_HasSVE2, // SSUBWB_ZZZ_H = 4126
-    CEFBS_HasSVE2, // SSUBWB_ZZZ_S = 4127
-    CEFBS_HasSVE2, // SSUBWT_ZZZ_D = 4128
-    CEFBS_HasSVE2, // SSUBWT_ZZZ_H = 4129
-    CEFBS_HasSVE2, // SSUBWT_ZZZ_S = 4130
-    CEFBS_HasNEON, // SSUBWv16i8_v8i16 = 4131
-    CEFBS_HasNEON, // SSUBWv2i32_v2i64 = 4132
-    CEFBS_HasNEON, // SSUBWv4i16_v4i32 = 4133
-    CEFBS_HasNEON, // SSUBWv4i32_v2i64 = 4134
-    CEFBS_HasNEON, // SSUBWv8i16_v4i32 = 4135
-    CEFBS_HasNEON, // SSUBWv8i8_v8i16 = 4136
-    CEFBS_HasSVE, // ST1B = 4137
-    CEFBS_HasSVE, // ST1B_D = 4138
-    CEFBS_HasSVE, // ST1B_D_IMM = 4139
-    CEFBS_HasSVE, // ST1B_H = 4140
-    CEFBS_HasSVE, // ST1B_H_IMM = 4141
-    CEFBS_HasSVE, // ST1B_IMM = 4142
-    CEFBS_HasSVE, // ST1B_S = 4143
-    CEFBS_HasSVE, // ST1B_S_IMM = 4144
-    CEFBS_HasSVE, // ST1D = 4145
-    CEFBS_HasSVE, // ST1D_IMM = 4146
-    CEFBS_HasNEON, // ST1Fourv16b = 4147
-    CEFBS_HasNEON, // ST1Fourv16b_POST = 4148
-    CEFBS_HasNEON, // ST1Fourv1d = 4149
-    CEFBS_HasNEON, // ST1Fourv1d_POST = 4150
-    CEFBS_HasNEON, // ST1Fourv2d = 4151
-    CEFBS_HasNEON, // ST1Fourv2d_POST = 4152
-    CEFBS_HasNEON, // ST1Fourv2s = 4153
-    CEFBS_HasNEON, // ST1Fourv2s_POST = 4154
-    CEFBS_HasNEON, // ST1Fourv4h = 4155
-    CEFBS_HasNEON, // ST1Fourv4h_POST = 4156
-    CEFBS_HasNEON, // ST1Fourv4s = 4157
-    CEFBS_HasNEON, // ST1Fourv4s_POST = 4158
-    CEFBS_HasNEON, // ST1Fourv8b = 4159
-    CEFBS_HasNEON, // ST1Fourv8b_POST = 4160
-    CEFBS_HasNEON, // ST1Fourv8h = 4161
-    CEFBS_HasNEON, // ST1Fourv8h_POST = 4162
-    CEFBS_HasSVE, // ST1H = 4163
-    CEFBS_HasSVE, // ST1H_D = 4164
-    CEFBS_HasSVE, // ST1H_D_IMM = 4165
-    CEFBS_HasSVE, // ST1H_IMM = 4166
-    CEFBS_HasSVE, // ST1H_S = 4167
-    CEFBS_HasSVE, // ST1H_S_IMM = 4168
-    CEFBS_HasNEON, // ST1Onev16b = 4169
-    CEFBS_HasNEON, // ST1Onev16b_POST = 4170
-    CEFBS_HasNEON, // ST1Onev1d = 4171
-    CEFBS_HasNEON, // ST1Onev1d_POST = 4172
-    CEFBS_HasNEON, // ST1Onev2d = 4173
-    CEFBS_HasNEON, // ST1Onev2d_POST = 4174
-    CEFBS_HasNEON, // ST1Onev2s = 4175
-    CEFBS_HasNEON, // ST1Onev2s_POST = 4176
-    CEFBS_HasNEON, // ST1Onev4h = 4177
-    CEFBS_HasNEON, // ST1Onev4h_POST = 4178
-    CEFBS_HasNEON, // ST1Onev4s = 4179
-    CEFBS_HasNEON, // ST1Onev4s_POST = 4180
-    CEFBS_HasNEON, // ST1Onev8b = 4181
-    CEFBS_HasNEON, // ST1Onev8b_POST = 4182
-    CEFBS_HasNEON, // ST1Onev8h = 4183
-    CEFBS_HasNEON, // ST1Onev8h_POST = 4184
-    CEFBS_HasNEON, // ST1Threev16b = 4185
-    CEFBS_HasNEON, // ST1Threev16b_POST = 4186
-    CEFBS_HasNEON, // ST1Threev1d = 4187
-    CEFBS_HasNEON, // ST1Threev1d_POST = 4188
-    CEFBS_HasNEON, // ST1Threev2d = 4189
-    CEFBS_HasNEON, // ST1Threev2d_POST = 4190
-    CEFBS_HasNEON, // ST1Threev2s = 4191
-    CEFBS_HasNEON, // ST1Threev2s_POST = 4192
-    CEFBS_HasNEON, // ST1Threev4h = 4193
-    CEFBS_HasNEON, // ST1Threev4h_POST = 4194
-    CEFBS_HasNEON, // ST1Threev4s = 4195
-    CEFBS_HasNEON, // ST1Threev4s_POST = 4196
-    CEFBS_HasNEON, // ST1Threev8b = 4197
-    CEFBS_HasNEON, // ST1Threev8b_POST = 4198
-    CEFBS_HasNEON, // ST1Threev8h = 4199
-    CEFBS_HasNEON, // ST1Threev8h_POST = 4200
-    CEFBS_HasNEON, // ST1Twov16b = 4201
-    CEFBS_HasNEON, // ST1Twov16b_POST = 4202
-    CEFBS_HasNEON, // ST1Twov1d = 4203
-    CEFBS_HasNEON, // ST1Twov1d_POST = 4204
-    CEFBS_HasNEON, // ST1Twov2d = 4205
-    CEFBS_HasNEON, // ST1Twov2d_POST = 4206
-    CEFBS_HasNEON, // ST1Twov2s = 4207
-    CEFBS_HasNEON, // ST1Twov2s_POST = 4208
-    CEFBS_HasNEON, // ST1Twov4h = 4209
-    CEFBS_HasNEON, // ST1Twov4h_POST = 4210
-    CEFBS_HasNEON, // ST1Twov4s = 4211
-    CEFBS_HasNEON, // ST1Twov4s_POST = 4212
-    CEFBS_HasNEON, // ST1Twov8b = 4213
-    CEFBS_HasNEON, // ST1Twov8b_POST = 4214
-    CEFBS_HasNEON, // ST1Twov8h = 4215
-    CEFBS_HasNEON, // ST1Twov8h_POST = 4216
-    CEFBS_HasSVE, // ST1W = 4217
-    CEFBS_HasSVE, // ST1W_D = 4218
-    CEFBS_HasSVE, // ST1W_D_IMM = 4219
-    CEFBS_HasSVE, // ST1W_IMM = 4220
-    CEFBS_HasNEON, // ST1i16 = 4221
-    CEFBS_HasNEON, // ST1i16_POST = 4222
-    CEFBS_HasNEON, // ST1i32 = 4223
-    CEFBS_HasNEON, // ST1i32_POST = 4224
-    CEFBS_HasNEON, // ST1i64 = 4225
-    CEFBS_HasNEON, // ST1i64_POST = 4226
-    CEFBS_HasNEON, // ST1i8 = 4227
-    CEFBS_HasNEON, // ST1i8_POST = 4228
-    CEFBS_HasSVE, // ST2B = 4229
-    CEFBS_HasSVE, // ST2B_IMM = 4230
-    CEFBS_HasSVE, // ST2D = 4231
-    CEFBS_HasSVE, // ST2D_IMM = 4232
-    CEFBS_HasMTE, // ST2GOffset = 4233
-    CEFBS_HasMTE, // ST2GPostIndex = 4234
-    CEFBS_HasMTE, // ST2GPreIndex = 4235
-    CEFBS_HasSVE, // ST2H = 4236
-    CEFBS_HasSVE, // ST2H_IMM = 4237
-    CEFBS_HasNEON, // ST2Twov16b = 4238
-    CEFBS_HasNEON, // ST2Twov16b_POST = 4239
-    CEFBS_HasNEON, // ST2Twov2d = 4240
-    CEFBS_HasNEON, // ST2Twov2d_POST = 4241
-    CEFBS_HasNEON, // ST2Twov2s = 4242
-    CEFBS_HasNEON, // ST2Twov2s_POST = 4243
-    CEFBS_HasNEON, // ST2Twov4h = 4244
-    CEFBS_HasNEON, // ST2Twov4h_POST = 4245
-    CEFBS_HasNEON, // ST2Twov4s = 4246
-    CEFBS_HasNEON, // ST2Twov4s_POST = 4247
-    CEFBS_HasNEON, // ST2Twov8b = 4248
-    CEFBS_HasNEON, // ST2Twov8b_POST = 4249
-    CEFBS_HasNEON, // ST2Twov8h = 4250
-    CEFBS_HasNEON, // ST2Twov8h_POST = 4251
-    CEFBS_HasSVE, // ST2W = 4252
-    CEFBS_HasSVE, // ST2W_IMM = 4253
-    CEFBS_HasNEON, // ST2i16 = 4254
-    CEFBS_HasNEON, // ST2i16_POST = 4255
-    CEFBS_HasNEON, // ST2i32 = 4256
-    CEFBS_HasNEON, // ST2i32_POST = 4257
-    CEFBS_HasNEON, // ST2i64 = 4258
-    CEFBS_HasNEON, // ST2i64_POST = 4259
-    CEFBS_HasNEON, // ST2i8 = 4260
-    CEFBS_HasNEON, // ST2i8_POST = 4261
-    CEFBS_HasSVE, // ST3B = 4262
-    CEFBS_HasSVE, // ST3B_IMM = 4263
-    CEFBS_HasSVE, // ST3D = 4264
-    CEFBS_HasSVE, // ST3D_IMM = 4265
-    CEFBS_HasSVE, // ST3H = 4266
-    CEFBS_HasSVE, // ST3H_IMM = 4267
-    CEFBS_HasNEON, // ST3Threev16b = 4268
-    CEFBS_HasNEON, // ST3Threev16b_POST = 4269
-    CEFBS_HasNEON, // ST3Threev2d = 4270
-    CEFBS_HasNEON, // ST3Threev2d_POST = 4271
-    CEFBS_HasNEON, // ST3Threev2s = 4272
-    CEFBS_HasNEON, // ST3Threev2s_POST = 4273
-    CEFBS_HasNEON, // ST3Threev4h = 4274
-    CEFBS_HasNEON, // ST3Threev4h_POST = 4275
-    CEFBS_HasNEON, // ST3Threev4s = 4276
-    CEFBS_HasNEON, // ST3Threev4s_POST = 4277
-    CEFBS_HasNEON, // ST3Threev8b = 4278
-    CEFBS_HasNEON, // ST3Threev8b_POST = 4279
-    CEFBS_HasNEON, // ST3Threev8h = 4280
-    CEFBS_HasNEON, // ST3Threev8h_POST = 4281
-    CEFBS_HasSVE, // ST3W = 4282
-    CEFBS_HasSVE, // ST3W_IMM = 4283
-    CEFBS_HasNEON, // ST3i16 = 4284
-    CEFBS_HasNEON, // ST3i16_POST = 4285
-    CEFBS_HasNEON, // ST3i32 = 4286
-    CEFBS_HasNEON, // ST3i32_POST = 4287
-    CEFBS_HasNEON, // ST3i64 = 4288
-    CEFBS_HasNEON, // ST3i64_POST = 4289
-    CEFBS_HasNEON, // ST3i8 = 4290
-    CEFBS_HasNEON, // ST3i8_POST = 4291
-    CEFBS_HasSVE, // ST4B = 4292
-    CEFBS_HasSVE, // ST4B_IMM = 4293
-    CEFBS_HasSVE, // ST4D = 4294
-    CEFBS_HasSVE, // ST4D_IMM = 4295
-    CEFBS_HasNEON, // ST4Fourv16b = 4296
-    CEFBS_HasNEON, // ST4Fourv16b_POST = 4297
-    CEFBS_HasNEON, // ST4Fourv2d = 4298
-    CEFBS_HasNEON, // ST4Fourv2d_POST = 4299
-    CEFBS_HasNEON, // ST4Fourv2s = 4300
-    CEFBS_HasNEON, // ST4Fourv2s_POST = 4301
-    CEFBS_HasNEON, // ST4Fourv4h = 4302
-    CEFBS_HasNEON, // ST4Fourv4h_POST = 4303
-    CEFBS_HasNEON, // ST4Fourv4s = 4304
-    CEFBS_HasNEON, // ST4Fourv4s_POST = 4305
-    CEFBS_HasNEON, // ST4Fourv8b = 4306
-    CEFBS_HasNEON, // ST4Fourv8b_POST = 4307
-    CEFBS_HasNEON, // ST4Fourv8h = 4308
-    CEFBS_HasNEON, // ST4Fourv8h_POST = 4309
-    CEFBS_HasSVE, // ST4H = 4310
-    CEFBS_HasSVE, // ST4H_IMM = 4311
-    CEFBS_HasSVE, // ST4W = 4312
-    CEFBS_HasSVE, // ST4W_IMM = 4313
-    CEFBS_HasNEON, // ST4i16 = 4314
-    CEFBS_HasNEON, // ST4i16_POST = 4315
-    CEFBS_HasNEON, // ST4i32 = 4316
-    CEFBS_HasNEON, // ST4i32_POST = 4317
-    CEFBS_HasNEON, // ST4i64 = 4318
-    CEFBS_HasNEON, // ST4i64_POST = 4319
-    CEFBS_HasNEON, // ST4i8 = 4320
-    CEFBS_HasNEON, // ST4i8_POST = 4321
-    CEFBS_HasMTE, // STGM = 4322
-    CEFBS_HasMTE, // STGOffset = 4323
-    CEFBS_HasMTE, // STGPi = 4324
-    CEFBS_HasMTE, // STGPostIndex = 4325
-    CEFBS_HasMTE, // STGPpost = 4326
-    CEFBS_HasMTE, // STGPpre = 4327
-    CEFBS_HasMTE, // STGPreIndex = 4328
-    CEFBS_HasMTE, // STGloop = 4329
-    CEFBS_HasMTE, // STGloop_wback = 4330
-    CEFBS_HasLOR, // STLLRB = 4331
-    CEFBS_HasLOR, // STLLRH = 4332
-    CEFBS_HasLOR, // STLLRW = 4333
-    CEFBS_HasLOR, // STLLRX = 4334
-    CEFBS_None, // STLRB = 4335
-    CEFBS_None, // STLRH = 4336
-    CEFBS_None, // STLRW = 4337
-    CEFBS_None, // STLRX = 4338
-    CEFBS_HasRCPC_IMMO, // STLURBi = 4339
-    CEFBS_HasRCPC_IMMO, // STLURHi = 4340
-    CEFBS_HasRCPC_IMMO, // STLURWi = 4341
-    CEFBS_HasRCPC_IMMO, // STLURXi = 4342
-    CEFBS_None, // STLXPW = 4343
-    CEFBS_None, // STLXPX = 4344
-    CEFBS_None, // STLXRB = 4345
-    CEFBS_None, // STLXRH = 4346
-    CEFBS_None, // STLXRW = 4347
-    CEFBS_None, // STLXRX = 4348
-    CEFBS_None, // STNPDi = 4349
-    CEFBS_None, // STNPQi = 4350
-    CEFBS_None, // STNPSi = 4351
-    CEFBS_None, // STNPWi = 4352
-    CEFBS_None, // STNPXi = 4353
-    CEFBS_HasSVE, // STNT1B_ZRI = 4354
-    CEFBS_HasSVE, // STNT1B_ZRR = 4355
-    CEFBS_HasSVE2, // STNT1B_ZZR_D_REAL = 4356
-    CEFBS_HasSVE2, // STNT1B_ZZR_S_REAL = 4357
-    CEFBS_HasSVE, // STNT1D_ZRI = 4358
-    CEFBS_HasSVE, // STNT1D_ZRR = 4359
-    CEFBS_HasSVE2, // STNT1D_ZZR_D_REAL = 4360
-    CEFBS_HasSVE, // STNT1H_ZRI = 4361
-    CEFBS_HasSVE, // STNT1H_ZRR = 4362
-    CEFBS_HasSVE2, // STNT1H_ZZR_D_REAL = 4363
-    CEFBS_HasSVE2, // STNT1H_ZZR_S_REAL = 4364
-    CEFBS_HasSVE, // STNT1W_ZRI = 4365
-    CEFBS_HasSVE, // STNT1W_ZRR = 4366
-    CEFBS_HasSVE2, // STNT1W_ZZR_D_REAL = 4367
-    CEFBS_HasSVE2, // STNT1W_ZZR_S_REAL = 4368
-    CEFBS_None, // STPDi = 4369
-    CEFBS_None, // STPDpost = 4370
-    CEFBS_None, // STPDpre = 4371
-    CEFBS_None, // STPQi = 4372
-    CEFBS_None, // STPQpost = 4373
-    CEFBS_None, // STPQpre = 4374
-    CEFBS_None, // STPSi = 4375
-    CEFBS_None, // STPSpost = 4376
-    CEFBS_None, // STPSpre = 4377
-    CEFBS_None, // STPWi = 4378
-    CEFBS_None, // STPWpost = 4379
-    CEFBS_None, // STPWpre = 4380
-    CEFBS_None, // STPXi = 4381
-    CEFBS_None, // STPXpost = 4382
-    CEFBS_None, // STPXpre = 4383
-    CEFBS_None, // STRBBpost = 4384
-    CEFBS_None, // STRBBpre = 4385
-    CEFBS_None, // STRBBroW = 4386
-    CEFBS_None, // STRBBroX = 4387
-    CEFBS_None, // STRBBui = 4388
-    CEFBS_None, // STRBpost = 4389
-    CEFBS_None, // STRBpre = 4390
-    CEFBS_None, // STRBroW = 4391
-    CEFBS_None, // STRBroX = 4392
-    CEFBS_None, // STRBui = 4393
-    CEFBS_None, // STRDpost = 4394
-    CEFBS_None, // STRDpre = 4395
-    CEFBS_None, // STRDroW = 4396
-    CEFBS_None, // STRDroX = 4397
-    CEFBS_None, // STRDui = 4398
-    CEFBS_None, // STRHHpost = 4399
-    CEFBS_None, // STRHHpre = 4400
-    CEFBS_None, // STRHHroW = 4401
-    CEFBS_None, // STRHHroX = 4402
-    CEFBS_None, // STRHHui = 4403
-    CEFBS_None, // STRHpost = 4404
-    CEFBS_None, // STRHpre = 4405
-    CEFBS_None, // STRHroW = 4406
-    CEFBS_None, // STRHroX = 4407
-    CEFBS_None, // STRHui = 4408
-    CEFBS_None, // STRQpost = 4409
-    CEFBS_None, // STRQpre = 4410
-    CEFBS_None, // STRQroW = 4411
-    CEFBS_None, // STRQroX = 4412
-    CEFBS_None, // STRQui = 4413
-    CEFBS_None, // STRSpost = 4414
-    CEFBS_None, // STRSpre = 4415
-    CEFBS_None, // STRSroW = 4416
-    CEFBS_None, // STRSroX = 4417
-    CEFBS_None, // STRSui = 4418
-    CEFBS_None, // STRWpost = 4419
-    CEFBS_None, // STRWpre = 4420
-    CEFBS_None, // STRWroW = 4421
-    CEFBS_None, // STRWroX = 4422
-    CEFBS_None, // STRWui = 4423
-    CEFBS_None, // STRXpost = 4424
-    CEFBS_None, // STRXpre = 4425
-    CEFBS_None, // STRXroW = 4426
-    CEFBS_None, // STRXroX = 4427
-    CEFBS_None, // STRXui = 4428
-    CEFBS_HasSVE, // STR_PXI = 4429
-    CEFBS_HasSVE, // STR_ZXI = 4430
-    CEFBS_None, // STTRBi = 4431
-    CEFBS_None, // STTRHi = 4432
-    CEFBS_None, // STTRWi = 4433
-    CEFBS_None, // STTRXi = 4434
-    CEFBS_None, // STURBBi = 4435
-    CEFBS_None, // STURBi = 4436
-    CEFBS_None, // STURDi = 4437
-    CEFBS_None, // STURHHi = 4438
-    CEFBS_None, // STURHi = 4439
-    CEFBS_None, // STURQi = 4440
-    CEFBS_None, // STURSi = 4441
-    CEFBS_None, // STURWi = 4442
-    CEFBS_None, // STURXi = 4443
-    CEFBS_None, // STXPW = 4444
-    CEFBS_None, // STXPX = 4445
-    CEFBS_None, // STXRB = 4446
-    CEFBS_None, // STXRH = 4447
-    CEFBS_None, // STXRW = 4448
-    CEFBS_None, // STXRX = 4449
-    CEFBS_HasMTE, // STZ2GOffset = 4450
-    CEFBS_HasMTE, // STZ2GPostIndex = 4451
-    CEFBS_HasMTE, // STZ2GPreIndex = 4452
-    CEFBS_HasMTE, // STZGM = 4453
-    CEFBS_HasMTE, // STZGOffset = 4454
-    CEFBS_HasMTE, // STZGPostIndex = 4455
-    CEFBS_HasMTE, // STZGPreIndex = 4456
-    CEFBS_HasMTE, // STZGloop = 4457
-    CEFBS_HasMTE, // STZGloop_wback = 4458
-    CEFBS_HasMTE, // SUBG = 4459
-    CEFBS_HasSVE2, // SUBHNB_ZZZ_B = 4460
-    CEFBS_HasSVE2, // SUBHNB_ZZZ_H = 4461
-    CEFBS_HasSVE2, // SUBHNB_ZZZ_S = 4462
-    CEFBS_HasSVE2, // SUBHNT_ZZZ_B = 4463
-    CEFBS_HasSVE2, // SUBHNT_ZZZ_H = 4464
-    CEFBS_HasSVE2, // SUBHNT_ZZZ_S = 4465
-    CEFBS_HasNEON, // SUBHNv2i64_v2i32 = 4466
-    CEFBS_HasNEON, // SUBHNv2i64_v4i32 = 4467
-    CEFBS_HasNEON, // SUBHNv4i32_v4i16 = 4468
-    CEFBS_HasNEON, // SUBHNv4i32_v8i16 = 4469
-    CEFBS_HasNEON, // SUBHNv8i16_v16i8 = 4470
-    CEFBS_HasNEON, // SUBHNv8i16_v8i8 = 4471
-    CEFBS_HasMTE, // SUBP = 4472
-    CEFBS_HasMTE, // SUBPS = 4473
-    CEFBS_HasSVE, // SUBR_ZI_B = 4474
-    CEFBS_HasSVE, // SUBR_ZI_D = 4475
-    CEFBS_HasSVE, // SUBR_ZI_H = 4476
-    CEFBS_HasSVE, // SUBR_ZI_S = 4477
-    CEFBS_HasSVE, // SUBR_ZPmZ_B = 4478
-    CEFBS_HasSVE, // SUBR_ZPmZ_D = 4479
-    CEFBS_HasSVE, // SUBR_ZPmZ_H = 4480
-    CEFBS_HasSVE, // SUBR_ZPmZ_S = 4481
-    CEFBS_None, // SUBSWri = 4482
-    CEFBS_None, // SUBSWrr = 4483
-    CEFBS_None, // SUBSWrs = 4484
-    CEFBS_None, // SUBSWrx = 4485
-    CEFBS_None, // SUBSXri = 4486
-    CEFBS_None, // SUBSXrr = 4487
-    CEFBS_None, // SUBSXrs = 4488
-    CEFBS_None, // SUBSXrx = 4489
-    CEFBS_None, // SUBSXrx64 = 4490
-    CEFBS_None, // SUBWri = 4491
-    CEFBS_None, // SUBWrr = 4492
-    CEFBS_None, // SUBWrs = 4493
-    CEFBS_None, // SUBWrx = 4494
-    CEFBS_None, // SUBXri = 4495
-    CEFBS_None, // SUBXrr = 4496
-    CEFBS_None, // SUBXrs = 4497
-    CEFBS_None, // SUBXrx = 4498
-    CEFBS_None, // SUBXrx64 = 4499
-    CEFBS_HasSVE, // SUB_ZI_B = 4500
-    CEFBS_HasSVE, // SUB_ZI_D = 4501
-    CEFBS_HasSVE, // SUB_ZI_H = 4502
-    CEFBS_HasSVE, // SUB_ZI_S = 4503
-    CEFBS_HasSVE, // SUB_ZPmZ_B = 4504
-    CEFBS_HasSVE, // SUB_ZPmZ_D = 4505
-    CEFBS_HasSVE, // SUB_ZPmZ_H = 4506
-    CEFBS_HasSVE, // SUB_ZPmZ_S = 4507
-    CEFBS_HasSVE, // SUB_ZZZ_B = 4508
-    CEFBS_HasSVE, // SUB_ZZZ_D = 4509
-    CEFBS_HasSVE, // SUB_ZZZ_H = 4510
-    CEFBS_HasSVE, // SUB_ZZZ_S = 4511
-    CEFBS_HasNEON, // SUBv16i8 = 4512
-    CEFBS_HasNEON, // SUBv1i64 = 4513
-    CEFBS_HasNEON, // SUBv2i32 = 4514
-    CEFBS_HasNEON, // SUBv2i64 = 4515
-    CEFBS_HasNEON, // SUBv4i16 = 4516
-    CEFBS_HasNEON, // SUBv4i32 = 4517
-    CEFBS_HasNEON, // SUBv8i16 = 4518
-    CEFBS_HasNEON, // SUBv8i8 = 4519
-    CEFBS_HasSVE, // SUNPKHI_ZZ_D = 4520
-    CEFBS_HasSVE, // SUNPKHI_ZZ_H = 4521
-    CEFBS_HasSVE, // SUNPKHI_ZZ_S = 4522
-    CEFBS_HasSVE, // SUNPKLO_ZZ_D = 4523
-    CEFBS_HasSVE, // SUNPKLO_ZZ_H = 4524
-    CEFBS_HasSVE, // SUNPKLO_ZZ_S = 4525
-    CEFBS_HasSVE2, // SUQADD_ZPmZ_B = 4526
-    CEFBS_HasSVE2, // SUQADD_ZPmZ_D = 4527
-    CEFBS_HasSVE2, // SUQADD_ZPmZ_H = 4528
-    CEFBS_HasSVE2, // SUQADD_ZPmZ_S = 4529
-    CEFBS_HasNEON, // SUQADDv16i8 = 4530
-    CEFBS_HasNEON, // SUQADDv1i16 = 4531
-    CEFBS_HasNEON, // SUQADDv1i32 = 4532
-    CEFBS_HasNEON, // SUQADDv1i64 = 4533
-    CEFBS_HasNEON, // SUQADDv1i8 = 4534
-    CEFBS_HasNEON, // SUQADDv2i32 = 4535
-    CEFBS_HasNEON, // SUQADDv2i64 = 4536
-    CEFBS_HasNEON, // SUQADDv4i16 = 4537
-    CEFBS_HasNEON, // SUQADDv4i32 = 4538
-    CEFBS_HasNEON, // SUQADDv8i16 = 4539
-    CEFBS_HasNEON, // SUQADDv8i8 = 4540
-    CEFBS_None, // SVC = 4541
-    CEFBS_HasLSE, // SWPAB = 4542
-    CEFBS_HasLSE, // SWPAH = 4543
-    CEFBS_HasLSE, // SWPALB = 4544
-    CEFBS_HasLSE, // SWPALH = 4545
-    CEFBS_HasLSE, // SWPALW = 4546
-    CEFBS_HasLSE, // SWPALX = 4547
-    CEFBS_HasLSE, // SWPAW = 4548
-    CEFBS_HasLSE, // SWPAX = 4549
-    CEFBS_HasLSE, // SWPB = 4550
-    CEFBS_HasLSE, // SWPH = 4551
-    CEFBS_HasLSE, // SWPLB = 4552
-    CEFBS_HasLSE, // SWPLH = 4553
-    CEFBS_HasLSE, // SWPLW = 4554
-    CEFBS_HasLSE, // SWPLX = 4555
-    CEFBS_HasLSE, // SWPW = 4556
-    CEFBS_HasLSE, // SWPX = 4557
-    CEFBS_HasSVE, // SXTB_ZPmZ_D = 4558
-    CEFBS_HasSVE, // SXTB_ZPmZ_H = 4559
-    CEFBS_HasSVE, // SXTB_ZPmZ_S = 4560
-    CEFBS_HasSVE, // SXTH_ZPmZ_D = 4561
-    CEFBS_HasSVE, // SXTH_ZPmZ_S = 4562
-    CEFBS_HasSVE, // SXTW_ZPmZ_D = 4563
-    CEFBS_None, // SYSLxt = 4564
-    CEFBS_None, // SYSxt = 4565
-    CEFBS_None, // SpeculationSafeValueW = 4566
-    CEFBS_None, // SpeculationSafeValueX = 4567
-    CEFBS_HasMTE, // TAGPstack = 4568
-    CEFBS_HasSVE2, // TBL_ZZZZ_B = 4569
-    CEFBS_HasSVE2, // TBL_ZZZZ_D = 4570
-    CEFBS_HasSVE2, // TBL_ZZZZ_H = 4571
-    CEFBS_HasSVE2, // TBL_ZZZZ_S = 4572
-    CEFBS_HasSVE, // TBL_ZZZ_B = 4573
-    CEFBS_HasSVE, // TBL_ZZZ_D = 4574
-    CEFBS_HasSVE, // TBL_ZZZ_H = 4575
-    CEFBS_HasSVE, // TBL_ZZZ_S = 4576
-    CEFBS_HasNEON, // TBLv16i8Four = 4577
-    CEFBS_HasNEON, // TBLv16i8One = 4578
-    CEFBS_HasNEON, // TBLv16i8Three = 4579
-    CEFBS_HasNEON, // TBLv16i8Two = 4580
-    CEFBS_HasNEON, // TBLv8i8Four = 4581
-    CEFBS_HasNEON, // TBLv8i8One = 4582
-    CEFBS_HasNEON, // TBLv8i8Three = 4583
-    CEFBS_HasNEON, // TBLv8i8Two = 4584
-    CEFBS_None, // TBNZW = 4585
-    CEFBS_None, // TBNZX = 4586
-    CEFBS_HasSVE2, // TBX_ZZZ_B = 4587
-    CEFBS_HasSVE2, // TBX_ZZZ_D = 4588
-    CEFBS_HasSVE2, // TBX_ZZZ_H = 4589
-    CEFBS_HasSVE2, // TBX_ZZZ_S = 4590
-    CEFBS_HasNEON, // TBXv16i8Four = 4591
-    CEFBS_HasNEON, // TBXv16i8One = 4592
-    CEFBS_HasNEON, // TBXv16i8Three = 4593
-    CEFBS_HasNEON, // TBXv16i8Two = 4594
-    CEFBS_HasNEON, // TBXv8i8Four = 4595
-    CEFBS_HasNEON, // TBXv8i8One = 4596
-    CEFBS_HasNEON, // TBXv8i8Three = 4597
-    CEFBS_HasNEON, // TBXv8i8Two = 4598
-    CEFBS_None, // TBZW = 4599
-    CEFBS_None, // TBZX = 4600
-    CEFBS_HasTME, // TCANCEL = 4601
-    CEFBS_HasTME, // TCOMMIT = 4602
-    CEFBS_None, // TCRETURNdi = 4603
-    CEFBS_None, // TCRETURNri = 4604
-    CEFBS_None, // TCRETURNriALL = 4605
-    CEFBS_None, // TCRETURNriBTI = 4606
-    CEFBS_None, // TLSDESCCALL = 4607
-    CEFBS_None, // TLSDESC_CALLSEQ = 4608
-    CEFBS_HasSVE, // TRN1_PPP_B = 4609
-    CEFBS_HasSVE, // TRN1_PPP_D = 4610
-    CEFBS_HasSVE, // TRN1_PPP_H = 4611
-    CEFBS_HasSVE, // TRN1_PPP_S = 4612
-    CEFBS_HasSVE, // TRN1_ZZZ_B = 4613
-    CEFBS_HasSVE, // TRN1_ZZZ_D = 4614
-    CEFBS_HasSVE, // TRN1_ZZZ_H = 4615
-    CEFBS_HasSVE, // TRN1_ZZZ_S = 4616
-    CEFBS_HasNEON, // TRN1v16i8 = 4617
-    CEFBS_HasNEON, // TRN1v2i32 = 4618
-    CEFBS_HasNEON, // TRN1v2i64 = 4619
-    CEFBS_HasNEON, // TRN1v4i16 = 4620
-    CEFBS_HasNEON, // TRN1v4i32 = 4621
-    CEFBS_HasNEON, // TRN1v8i16 = 4622
-    CEFBS_HasNEON, // TRN1v8i8 = 4623
-    CEFBS_HasSVE, // TRN2_PPP_B = 4624
-    CEFBS_HasSVE, // TRN2_PPP_D = 4625
-    CEFBS_HasSVE, // TRN2_PPP_H = 4626
-    CEFBS_HasSVE, // TRN2_PPP_S = 4627
-    CEFBS_HasSVE, // TRN2_ZZZ_B = 4628
-    CEFBS_HasSVE, // TRN2_ZZZ_D = 4629
-    CEFBS_HasSVE, // TRN2_ZZZ_H = 4630
-    CEFBS_HasSVE, // TRN2_ZZZ_S = 4631
-    CEFBS_HasNEON, // TRN2v16i8 = 4632
-    CEFBS_HasNEON, // TRN2v2i32 = 4633
-    CEFBS_HasNEON, // TRN2v2i64 = 4634
-    CEFBS_HasNEON, // TRN2v4i16 = 4635
-    CEFBS_HasNEON, // TRN2v4i32 = 4636
-    CEFBS_HasNEON, // TRN2v8i16 = 4637
-    CEFBS_HasNEON, // TRN2v8i8 = 4638
-    CEFBS_HasTRACEV8_4, // TSB = 4639
-    CEFBS_HasTME, // TSTART = 4640
-    CEFBS_HasTME, // TTEST = 4641
-    CEFBS_HasSVE2, // UABALB_ZZZ_D = 4642
-    CEFBS_HasSVE2, // UABALB_ZZZ_H = 4643
-    CEFBS_HasSVE2, // UABALB_ZZZ_S = 4644
-    CEFBS_HasSVE2, // UABALT_ZZZ_D = 4645
-    CEFBS_HasSVE2, // UABALT_ZZZ_H = 4646
-    CEFBS_HasSVE2, // UABALT_ZZZ_S = 4647
-    CEFBS_HasNEON, // UABALv16i8_v8i16 = 4648
-    CEFBS_HasNEON, // UABALv2i32_v2i64 = 4649
-    CEFBS_HasNEON, // UABALv4i16_v4i32 = 4650
-    CEFBS_HasNEON, // UABALv4i32_v2i64 = 4651
-    CEFBS_HasNEON, // UABALv8i16_v4i32 = 4652
-    CEFBS_HasNEON, // UABALv8i8_v8i16 = 4653
-    CEFBS_HasSVE2, // UABA_ZZZ_B = 4654
-    CEFBS_HasSVE2, // UABA_ZZZ_D = 4655
-    CEFBS_HasSVE2, // UABA_ZZZ_H = 4656
-    CEFBS_HasSVE2, // UABA_ZZZ_S = 4657
-    CEFBS_HasNEON, // UABAv16i8 = 4658
-    CEFBS_HasNEON, // UABAv2i32 = 4659
-    CEFBS_HasNEON, // UABAv4i16 = 4660
-    CEFBS_HasNEON, // UABAv4i32 = 4661
-    CEFBS_HasNEON, // UABAv8i16 = 4662
-    CEFBS_HasNEON, // UABAv8i8 = 4663
-    CEFBS_HasSVE2, // UABDLB_ZZZ_D = 4664
-    CEFBS_HasSVE2, // UABDLB_ZZZ_H = 4665
-    CEFBS_HasSVE2, // UABDLB_ZZZ_S = 4666
-    CEFBS_HasSVE2, // UABDLT_ZZZ_D = 4667
-    CEFBS_HasSVE2, // UABDLT_ZZZ_H = 4668
-    CEFBS_HasSVE2, // UABDLT_ZZZ_S = 4669
-    CEFBS_HasNEON, // UABDLv16i8_v8i16 = 4670
-    CEFBS_HasNEON, // UABDLv2i32_v2i64 = 4671
-    CEFBS_HasNEON, // UABDLv4i16_v4i32 = 4672
-    CEFBS_HasNEON, // UABDLv4i32_v2i64 = 4673
-    CEFBS_HasNEON, // UABDLv8i16_v4i32 = 4674
-    CEFBS_HasNEON, // UABDLv8i8_v8i16 = 4675
-    CEFBS_HasSVE, // UABD_ZPmZ_B = 4676
-    CEFBS_HasSVE, // UABD_ZPmZ_D = 4677
-    CEFBS_HasSVE, // UABD_ZPmZ_H = 4678
-    CEFBS_HasSVE, // UABD_ZPmZ_S = 4679
-    CEFBS_HasNEON, // UABDv16i8 = 4680
-    CEFBS_HasNEON, // UABDv2i32 = 4681
-    CEFBS_HasNEON, // UABDv4i16 = 4682
-    CEFBS_HasNEON, // UABDv4i32 = 4683
-    CEFBS_HasNEON, // UABDv8i16 = 4684
-    CEFBS_HasNEON, // UABDv8i8 = 4685
-    CEFBS_HasSVE2, // UADALP_ZPmZ_D = 4686
-    CEFBS_HasSVE2, // UADALP_ZPmZ_H = 4687
-    CEFBS_HasSVE2, // UADALP_ZPmZ_S = 4688
-    CEFBS_HasNEON, // UADALPv16i8_v8i16 = 4689
-    CEFBS_HasNEON, // UADALPv2i32_v1i64 = 4690
-    CEFBS_HasNEON, // UADALPv4i16_v2i32 = 4691
-    CEFBS_HasNEON, // UADALPv4i32_v2i64 = 4692
-    CEFBS_HasNEON, // UADALPv8i16_v4i32 = 4693
-    CEFBS_HasNEON, // UADALPv8i8_v4i16 = 4694
-    CEFBS_HasSVE2, // UADDLB_ZZZ_D = 4695
-    CEFBS_HasSVE2, // UADDLB_ZZZ_H = 4696
-    CEFBS_HasSVE2, // UADDLB_ZZZ_S = 4697
-    CEFBS_HasNEON, // UADDLPv16i8_v8i16 = 4698
-    CEFBS_HasNEON, // UADDLPv2i32_v1i64 = 4699
-    CEFBS_HasNEON, // UADDLPv4i16_v2i32 = 4700
-    CEFBS_HasNEON, // UADDLPv4i32_v2i64 = 4701
-    CEFBS_HasNEON, // UADDLPv8i16_v4i32 = 4702
-    CEFBS_HasNEON, // UADDLPv8i8_v4i16 = 4703
-    CEFBS_HasSVE2, // UADDLT_ZZZ_D = 4704
-    CEFBS_HasSVE2, // UADDLT_ZZZ_H = 4705
-    CEFBS_HasSVE2, // UADDLT_ZZZ_S = 4706
-    CEFBS_HasNEON, // UADDLVv16i8v = 4707
-    CEFBS_HasNEON, // UADDLVv4i16v = 4708
-    CEFBS_HasNEON, // UADDLVv4i32v = 4709
-    CEFBS_HasNEON, // UADDLVv8i16v = 4710
-    CEFBS_HasNEON, // UADDLVv8i8v = 4711
-    CEFBS_HasNEON, // UADDLv16i8_v8i16 = 4712
-    CEFBS_HasNEON, // UADDLv2i32_v2i64 = 4713
-    CEFBS_HasNEON, // UADDLv4i16_v4i32 = 4714
-    CEFBS_HasNEON, // UADDLv4i32_v2i64 = 4715
-    CEFBS_HasNEON, // UADDLv8i16_v4i32 = 4716
-    CEFBS_HasNEON, // UADDLv8i8_v8i16 = 4717
-    CEFBS_HasSVE, // UADDV_VPZ_B = 4718
-    CEFBS_HasSVE, // UADDV_VPZ_D = 4719
-    CEFBS_HasSVE, // UADDV_VPZ_H = 4720
-    CEFBS_HasSVE, // UADDV_VPZ_S = 4721
-    CEFBS_HasSVE2, // UADDWB_ZZZ_D = 4722
-    CEFBS_HasSVE2, // UADDWB_ZZZ_H = 4723
-    CEFBS_HasSVE2, // UADDWB_ZZZ_S = 4724
-    CEFBS_HasSVE2, // UADDWT_ZZZ_D = 4725
-    CEFBS_HasSVE2, // UADDWT_ZZZ_H = 4726
-    CEFBS_HasSVE2, // UADDWT_ZZZ_S = 4727
-    CEFBS_HasNEON, // UADDWv16i8_v8i16 = 4728
-    CEFBS_HasNEON, // UADDWv2i32_v2i64 = 4729
-    CEFBS_HasNEON, // UADDWv4i16_v4i32 = 4730
-    CEFBS_HasNEON, // UADDWv4i32_v2i64 = 4731
-    CEFBS_HasNEON, // UADDWv8i16_v4i32 = 4732
-    CEFBS_HasNEON, // UADDWv8i8_v8i16 = 4733
-    CEFBS_None, // UBFMWri = 4734
-    CEFBS_None, // UBFMXri = 4735
-    CEFBS_HasFPARMv8, // UCVTFSWDri = 4736
-    CEFBS_HasFullFP16, // UCVTFSWHri = 4737
-    CEFBS_HasFPARMv8, // UCVTFSWSri = 4738
-    CEFBS_HasFPARMv8, // UCVTFSXDri = 4739
-    CEFBS_HasFullFP16, // UCVTFSXHri = 4740
-    CEFBS_HasFPARMv8, // UCVTFSXSri = 4741
-    CEFBS_HasFPARMv8, // UCVTFUWDri = 4742
-    CEFBS_HasFullFP16, // UCVTFUWHri = 4743
-    CEFBS_HasFPARMv8, // UCVTFUWSri = 4744
-    CEFBS_HasFPARMv8, // UCVTFUXDri = 4745
-    CEFBS_HasFullFP16, // UCVTFUXHri = 4746
-    CEFBS_HasFPARMv8, // UCVTFUXSri = 4747
-    CEFBS_HasSVE, // UCVTF_ZPmZ_DtoD = 4748
-    CEFBS_HasSVE, // UCVTF_ZPmZ_DtoH = 4749
-    CEFBS_HasSVE, // UCVTF_ZPmZ_DtoS = 4750
-    CEFBS_HasSVE, // UCVTF_ZPmZ_HtoH = 4751
-    CEFBS_HasSVE, // UCVTF_ZPmZ_StoD = 4752
-    CEFBS_HasSVE, // UCVTF_ZPmZ_StoH = 4753
-    CEFBS_HasSVE, // UCVTF_ZPmZ_StoS = 4754
-    CEFBS_HasNEON, // UCVTFd = 4755
-    CEFBS_HasNEON_HasFullFP16, // UCVTFh = 4756
-    CEFBS_HasNEON, // UCVTFs = 4757
-    CEFBS_HasNEON_HasFullFP16, // UCVTFv1i16 = 4758
-    CEFBS_HasNEON, // UCVTFv1i32 = 4759
-    CEFBS_HasNEON, // UCVTFv1i64 = 4760
-    CEFBS_HasNEON, // UCVTFv2f32 = 4761
-    CEFBS_HasNEON, // UCVTFv2f64 = 4762
-    CEFBS_HasNEON, // UCVTFv2i32_shift = 4763
-    CEFBS_HasNEON, // UCVTFv2i64_shift = 4764
-    CEFBS_HasNEON_HasFullFP16, // UCVTFv4f16 = 4765
-    CEFBS_HasNEON, // UCVTFv4f32 = 4766
-    CEFBS_HasNEON_HasFullFP16, // UCVTFv4i16_shift = 4767
-    CEFBS_HasNEON, // UCVTFv4i32_shift = 4768
-    CEFBS_HasNEON_HasFullFP16, // UCVTFv8f16 = 4769
-    CEFBS_HasNEON_HasFullFP16, // UCVTFv8i16_shift = 4770
-    CEFBS_None, // UDF = 4771
-    CEFBS_HasSVE, // UDIVR_ZPmZ_D = 4772
-    CEFBS_HasSVE, // UDIVR_ZPmZ_S = 4773
-    CEFBS_None, // UDIVWr = 4774
-    CEFBS_None, // UDIVXr = 4775
-    CEFBS_HasSVE, // UDIV_ZPmZ_D = 4776
-    CEFBS_HasSVE, // UDIV_ZPmZ_S = 4777
-    CEFBS_HasSVE, // UDOT_ZZZI_D = 4778
-    CEFBS_HasSVE, // UDOT_ZZZI_S = 4779
-    CEFBS_HasSVE, // UDOT_ZZZ_D = 4780
-    CEFBS_HasSVE, // UDOT_ZZZ_S = 4781
-    CEFBS_HasDotProd, // UDOTlanev16i8 = 4782
-    CEFBS_HasDotProd, // UDOTlanev8i8 = 4783
-    CEFBS_HasDotProd, // UDOTv16i8 = 4784
-    CEFBS_HasDotProd, // UDOTv8i8 = 4785
-    CEFBS_HasSVE2, // UHADD_ZPmZ_B = 4786
-    CEFBS_HasSVE2, // UHADD_ZPmZ_D = 4787
-    CEFBS_HasSVE2, // UHADD_ZPmZ_H = 4788
-    CEFBS_HasSVE2, // UHADD_ZPmZ_S = 4789
-    CEFBS_HasNEON, // UHADDv16i8 = 4790
-    CEFBS_HasNEON, // UHADDv2i32 = 4791
-    CEFBS_HasNEON, // UHADDv4i16 = 4792
-    CEFBS_HasNEON, // UHADDv4i32 = 4793
-    CEFBS_HasNEON, // UHADDv8i16 = 4794
-    CEFBS_HasNEON, // UHADDv8i8 = 4795
-    CEFBS_HasSVE2, // UHSUBR_ZPmZ_B = 4796
-    CEFBS_HasSVE2, // UHSUBR_ZPmZ_D = 4797
-    CEFBS_HasSVE2, // UHSUBR_ZPmZ_H = 4798
-    CEFBS_HasSVE2, // UHSUBR_ZPmZ_S = 4799
-    CEFBS_HasSVE2, // UHSUB_ZPmZ_B = 4800
-    CEFBS_HasSVE2, // UHSUB_ZPmZ_D = 4801
-    CEFBS_HasSVE2, // UHSUB_ZPmZ_H = 4802
-    CEFBS_HasSVE2, // UHSUB_ZPmZ_S = 4803
-    CEFBS_HasNEON, // UHSUBv16i8 = 4804
-    CEFBS_HasNEON, // UHSUBv2i32 = 4805
-    CEFBS_HasNEON, // UHSUBv4i16 = 4806
-    CEFBS_HasNEON, // UHSUBv4i32 = 4807
-    CEFBS_HasNEON, // UHSUBv8i16 = 4808
-    CEFBS_HasNEON, // UHSUBv8i8 = 4809
-    CEFBS_None, // UMADDLrrr = 4810
-    CEFBS_HasSVE2, // UMAXP_ZPmZ_B = 4811
-    CEFBS_HasSVE2, // UMAXP_ZPmZ_D = 4812
-    CEFBS_HasSVE2, // UMAXP_ZPmZ_H = 4813
-    CEFBS_HasSVE2, // UMAXP_ZPmZ_S = 4814
-    CEFBS_HasNEON, // UMAXPv16i8 = 4815
-    CEFBS_HasNEON, // UMAXPv2i32 = 4816
-    CEFBS_HasNEON, // UMAXPv4i16 = 4817
-    CEFBS_HasNEON, // UMAXPv4i32 = 4818
-    CEFBS_HasNEON, // UMAXPv8i16 = 4819
-    CEFBS_HasNEON, // UMAXPv8i8 = 4820
-    CEFBS_HasSVE, // UMAXV_VPZ_B = 4821
-    CEFBS_HasSVE, // UMAXV_VPZ_D = 4822
-    CEFBS_HasSVE, // UMAXV_VPZ_H = 4823
-    CEFBS_HasSVE, // UMAXV_VPZ_S = 4824
-    CEFBS_HasNEON, // UMAXVv16i8v = 4825
-    CEFBS_HasNEON, // UMAXVv4i16v = 4826
-    CEFBS_HasNEON, // UMAXVv4i32v = 4827
-    CEFBS_HasNEON, // UMAXVv8i16v = 4828
-    CEFBS_HasNEON, // UMAXVv8i8v = 4829
-    CEFBS_HasSVE, // UMAX_ZI_B = 4830
-    CEFBS_HasSVE, // UMAX_ZI_D = 4831
-    CEFBS_HasSVE, // UMAX_ZI_H = 4832
-    CEFBS_HasSVE, // UMAX_ZI_S = 4833
-    CEFBS_HasSVE, // UMAX_ZPmZ_B = 4834
-    CEFBS_HasSVE, // UMAX_ZPmZ_D = 4835
-    CEFBS_HasSVE, // UMAX_ZPmZ_H = 4836
-    CEFBS_HasSVE, // UMAX_ZPmZ_S = 4837
-    CEFBS_HasNEON, // UMAXv16i8 = 4838
-    CEFBS_HasNEON, // UMAXv2i32 = 4839
-    CEFBS_HasNEON, // UMAXv4i16 = 4840
-    CEFBS_HasNEON, // UMAXv4i32 = 4841
-    CEFBS_HasNEON, // UMAXv8i16 = 4842
-    CEFBS_HasNEON, // UMAXv8i8 = 4843
-    CEFBS_HasSVE2, // UMINP_ZPmZ_B = 4844
-    CEFBS_HasSVE2, // UMINP_ZPmZ_D = 4845
-    CEFBS_HasSVE2, // UMINP_ZPmZ_H = 4846
-    CEFBS_HasSVE2, // UMINP_ZPmZ_S = 4847
-    CEFBS_HasNEON, // UMINPv16i8 = 4848
-    CEFBS_HasNEON, // UMINPv2i32 = 4849
-    CEFBS_HasNEON, // UMINPv4i16 = 4850
-    CEFBS_HasNEON, // UMINPv4i32 = 4851
-    CEFBS_HasNEON, // UMINPv8i16 = 4852
-    CEFBS_HasNEON, // UMINPv8i8 = 4853
-    CEFBS_HasSVE, // UMINV_VPZ_B = 4854
-    CEFBS_HasSVE, // UMINV_VPZ_D = 4855
-    CEFBS_HasSVE, // UMINV_VPZ_H = 4856
-    CEFBS_HasSVE, // UMINV_VPZ_S = 4857
-    CEFBS_HasNEON, // UMINVv16i8v = 4858
-    CEFBS_HasNEON, // UMINVv4i16v = 4859
-    CEFBS_HasNEON, // UMINVv4i32v = 4860
-    CEFBS_HasNEON, // UMINVv8i16v = 4861
-    CEFBS_HasNEON, // UMINVv8i8v = 4862
-    CEFBS_HasSVE, // UMIN_ZI_B = 4863
-    CEFBS_HasSVE, // UMIN_ZI_D = 4864
-    CEFBS_HasSVE, // UMIN_ZI_H = 4865
-    CEFBS_HasSVE, // UMIN_ZI_S = 4866
-    CEFBS_HasSVE, // UMIN_ZPmZ_B = 4867
-    CEFBS_HasSVE, // UMIN_ZPmZ_D = 4868
-    CEFBS_HasSVE, // UMIN_ZPmZ_H = 4869
-    CEFBS_HasSVE, // UMIN_ZPmZ_S = 4870
-    CEFBS_HasNEON, // UMINv16i8 = 4871
-    CEFBS_HasNEON, // UMINv2i32 = 4872
-    CEFBS_HasNEON, // UMINv4i16 = 4873
-    CEFBS_HasNEON, // UMINv4i32 = 4874
-    CEFBS_HasNEON, // UMINv8i16 = 4875
-    CEFBS_HasNEON, // UMINv8i8 = 4876
-    CEFBS_HasSVE2, // UMLALB_ZZZI_D = 4877
-    CEFBS_HasSVE2, // UMLALB_ZZZI_S = 4878
-    CEFBS_HasSVE2, // UMLALB_ZZZ_D = 4879
-    CEFBS_HasSVE2, // UMLALB_ZZZ_H = 4880
-    CEFBS_HasSVE2, // UMLALB_ZZZ_S = 4881
-    CEFBS_HasSVE2, // UMLALT_ZZZI_D = 4882
-    CEFBS_HasSVE2, // UMLALT_ZZZI_S = 4883
-    CEFBS_HasSVE2, // UMLALT_ZZZ_D = 4884
-    CEFBS_HasSVE2, // UMLALT_ZZZ_H = 4885
-    CEFBS_HasSVE2, // UMLALT_ZZZ_S = 4886
-    CEFBS_HasNEON, // UMLALv16i8_v8i16 = 4887
-    CEFBS_HasNEON, // UMLALv2i32_indexed = 4888
-    CEFBS_HasNEON, // UMLALv2i32_v2i64 = 4889
-    CEFBS_HasNEON, // UMLALv4i16_indexed = 4890
-    CEFBS_HasNEON, // UMLALv4i16_v4i32 = 4891
-    CEFBS_HasNEON, // UMLALv4i32_indexed = 4892
-    CEFBS_HasNEON, // UMLALv4i32_v2i64 = 4893
-    CEFBS_HasNEON, // UMLALv8i16_indexed = 4894
-    CEFBS_HasNEON, // UMLALv8i16_v4i32 = 4895
-    CEFBS_HasNEON, // UMLALv8i8_v8i16 = 4896
-    CEFBS_HasSVE2, // UMLSLB_ZZZI_D = 4897
-    CEFBS_HasSVE2, // UMLSLB_ZZZI_S = 4898
-    CEFBS_HasSVE2, // UMLSLB_ZZZ_D = 4899
-    CEFBS_HasSVE2, // UMLSLB_ZZZ_H = 4900
-    CEFBS_HasSVE2, // UMLSLB_ZZZ_S = 4901
-    CEFBS_HasSVE2, // UMLSLT_ZZZI_D = 4902
-    CEFBS_HasSVE2, // UMLSLT_ZZZI_S = 4903
-    CEFBS_HasSVE2, // UMLSLT_ZZZ_D = 4904
-    CEFBS_HasSVE2, // UMLSLT_ZZZ_H = 4905
-    CEFBS_HasSVE2, // UMLSLT_ZZZ_S = 4906
-    CEFBS_HasNEON, // UMLSLv16i8_v8i16 = 4907
-    CEFBS_HasNEON, // UMLSLv2i32_indexed = 4908
-    CEFBS_HasNEON, // UMLSLv2i32_v2i64 = 4909
-    CEFBS_HasNEON, // UMLSLv4i16_indexed = 4910
-    CEFBS_HasNEON, // UMLSLv4i16_v4i32 = 4911
-    CEFBS_HasNEON, // UMLSLv4i32_indexed = 4912
-    CEFBS_HasNEON, // UMLSLv4i32_v2i64 = 4913
-    CEFBS_HasNEON, // UMLSLv8i16_indexed = 4914
-    CEFBS_HasNEON, // UMLSLv8i16_v4i32 = 4915
-    CEFBS_HasNEON, // UMLSLv8i8_v8i16 = 4916
-    CEFBS_HasNEON, // UMOVvi16 = 4917
-    CEFBS_HasNEON, // UMOVvi32 = 4918
-    CEFBS_HasNEON, // UMOVvi64 = 4919
-    CEFBS_HasNEON, // UMOVvi8 = 4920
-    CEFBS_None, // UMSUBLrrr = 4921
-    CEFBS_HasSVE, // UMULH_ZPmZ_B = 4922
-    CEFBS_HasSVE, // UMULH_ZPmZ_D = 4923
-    CEFBS_HasSVE, // UMULH_ZPmZ_H = 4924
-    CEFBS_HasSVE, // UMULH_ZPmZ_S = 4925
-    CEFBS_HasSVE2, // UMULH_ZZZ_B = 4926
-    CEFBS_HasSVE2, // UMULH_ZZZ_D = 4927
-    CEFBS_HasSVE2, // UMULH_ZZZ_H = 4928
-    CEFBS_HasSVE2, // UMULH_ZZZ_S = 4929
-    CEFBS_None, // UMULHrr = 4930
-    CEFBS_HasSVE2, // UMULLB_ZZZI_D = 4931
-    CEFBS_HasSVE2, // UMULLB_ZZZI_S = 4932
-    CEFBS_HasSVE2, // UMULLB_ZZZ_D = 4933
-    CEFBS_HasSVE2, // UMULLB_ZZZ_H = 4934
-    CEFBS_HasSVE2, // UMULLB_ZZZ_S = 4935
-    CEFBS_HasSVE2, // UMULLT_ZZZI_D = 4936
-    CEFBS_HasSVE2, // UMULLT_ZZZI_S = 4937
-    CEFBS_HasSVE2, // UMULLT_ZZZ_D = 4938
-    CEFBS_HasSVE2, // UMULLT_ZZZ_H = 4939
-    CEFBS_HasSVE2, // UMULLT_ZZZ_S = 4940
-    CEFBS_HasNEON, // UMULLv16i8_v8i16 = 4941
-    CEFBS_HasNEON, // UMULLv2i32_indexed = 4942
-    CEFBS_HasNEON, // UMULLv2i32_v2i64 = 4943
-    CEFBS_HasNEON, // UMULLv4i16_indexed = 4944
-    CEFBS_HasNEON, // UMULLv4i16_v4i32 = 4945
-    CEFBS_HasNEON, // UMULLv4i32_indexed = 4946
-    CEFBS_HasNEON, // UMULLv4i32_v2i64 = 4947
-    CEFBS_HasNEON, // UMULLv8i16_indexed = 4948
-    CEFBS_HasNEON, // UMULLv8i16_v4i32 = 4949
-    CEFBS_HasNEON, // UMULLv8i8_v8i16 = 4950
-    CEFBS_HasSVE, // UQADD_ZI_B = 4951
-    CEFBS_HasSVE, // UQADD_ZI_D = 4952
-    CEFBS_HasSVE, // UQADD_ZI_H = 4953
-    CEFBS_HasSVE, // UQADD_ZI_S = 4954
-    CEFBS_HasSVE2, // UQADD_ZPmZ_B = 4955
-    CEFBS_HasSVE2, // UQADD_ZPmZ_D = 4956
-    CEFBS_HasSVE2, // UQADD_ZPmZ_H = 4957
-    CEFBS_HasSVE2, // UQADD_ZPmZ_S = 4958
-    CEFBS_HasSVE, // UQADD_ZZZ_B = 4959
-    CEFBS_HasSVE, // UQADD_ZZZ_D = 4960
-    CEFBS_HasSVE, // UQADD_ZZZ_H = 4961
-    CEFBS_HasSVE, // UQADD_ZZZ_S = 4962
-    CEFBS_HasNEON, // UQADDv16i8 = 4963
-    CEFBS_HasNEON, // UQADDv1i16 = 4964
-    CEFBS_HasNEON, // UQADDv1i32 = 4965
-    CEFBS_HasNEON, // UQADDv1i64 = 4966
-    CEFBS_HasNEON, // UQADDv1i8 = 4967
-    CEFBS_HasNEON, // UQADDv2i32 = 4968
-    CEFBS_HasNEON, // UQADDv2i64 = 4969
-    CEFBS_HasNEON, // UQADDv4i16 = 4970
-    CEFBS_HasNEON, // UQADDv4i32 = 4971
-    CEFBS_HasNEON, // UQADDv8i16 = 4972
-    CEFBS_HasNEON, // UQADDv8i8 = 4973
-    CEFBS_HasSVE, // UQDECB_WPiI = 4974
-    CEFBS_HasSVE, // UQDECB_XPiI = 4975
-    CEFBS_HasSVE, // UQDECD_WPiI = 4976
-    CEFBS_HasSVE, // UQDECD_XPiI = 4977
-    CEFBS_HasSVE, // UQDECD_ZPiI = 4978
-    CEFBS_HasSVE, // UQDECH_WPiI = 4979
-    CEFBS_HasSVE, // UQDECH_XPiI = 4980
-    CEFBS_HasSVE, // UQDECH_ZPiI = 4981
-    CEFBS_HasSVE, // UQDECP_WP_B = 4982
-    CEFBS_HasSVE, // UQDECP_WP_D = 4983
-    CEFBS_HasSVE, // UQDECP_WP_H = 4984
-    CEFBS_HasSVE, // UQDECP_WP_S = 4985
-    CEFBS_HasSVE, // UQDECP_XP_B = 4986
-    CEFBS_HasSVE, // UQDECP_XP_D = 4987
-    CEFBS_HasSVE, // UQDECP_XP_H = 4988
-    CEFBS_HasSVE, // UQDECP_XP_S = 4989
-    CEFBS_HasSVE, // UQDECP_ZP_D = 4990
-    CEFBS_HasSVE, // UQDECP_ZP_H = 4991
-    CEFBS_HasSVE, // UQDECP_ZP_S = 4992
-    CEFBS_HasSVE, // UQDECW_WPiI = 4993
-    CEFBS_HasSVE, // UQDECW_XPiI = 4994
-    CEFBS_HasSVE, // UQDECW_ZPiI = 4995
-    CEFBS_HasSVE, // UQINCB_WPiI = 4996
-    CEFBS_HasSVE, // UQINCB_XPiI = 4997
-    CEFBS_HasSVE, // UQINCD_WPiI = 4998
-    CEFBS_HasSVE, // UQINCD_XPiI = 4999
-    CEFBS_HasSVE, // UQINCD_ZPiI = 5000
-    CEFBS_HasSVE, // UQINCH_WPiI = 5001
-    CEFBS_HasSVE, // UQINCH_XPiI = 5002
-    CEFBS_HasSVE, // UQINCH_ZPiI = 5003
-    CEFBS_HasSVE, // UQINCP_WP_B = 5004
-    CEFBS_HasSVE, // UQINCP_WP_D = 5005
-    CEFBS_HasSVE, // UQINCP_WP_H = 5006
-    CEFBS_HasSVE, // UQINCP_WP_S = 5007
-    CEFBS_HasSVE, // UQINCP_XP_B = 5008
-    CEFBS_HasSVE, // UQINCP_XP_D = 5009
-    CEFBS_HasSVE, // UQINCP_XP_H = 5010
-    CEFBS_HasSVE, // UQINCP_XP_S = 5011
-    CEFBS_HasSVE, // UQINCP_ZP_D = 5012
-    CEFBS_HasSVE, // UQINCP_ZP_H = 5013
-    CEFBS_HasSVE, // UQINCP_ZP_S = 5014
-    CEFBS_HasSVE, // UQINCW_WPiI = 5015
-    CEFBS_HasSVE, // UQINCW_XPiI = 5016
-    CEFBS_HasSVE, // UQINCW_ZPiI = 5017
-    CEFBS_HasSVE2, // UQRSHLR_ZPmZ_B = 5018
-    CEFBS_HasSVE2, // UQRSHLR_ZPmZ_D = 5019
-    CEFBS_HasSVE2, // UQRSHLR_ZPmZ_H = 5020
-    CEFBS_HasSVE2, // UQRSHLR_ZPmZ_S = 5021
-    CEFBS_HasSVE2, // UQRSHL_ZPmZ_B = 5022
-    CEFBS_HasSVE2, // UQRSHL_ZPmZ_D = 5023
-    CEFBS_HasSVE2, // UQRSHL_ZPmZ_H = 5024
-    CEFBS_HasSVE2, // UQRSHL_ZPmZ_S = 5025
-    CEFBS_HasNEON, // UQRSHLv16i8 = 5026
-    CEFBS_HasNEON, // UQRSHLv1i16 = 5027
-    CEFBS_HasNEON, // UQRSHLv1i32 = 5028
-    CEFBS_HasNEON, // UQRSHLv1i64 = 5029
-    CEFBS_HasNEON, // UQRSHLv1i8 = 5030
-    CEFBS_HasNEON, // UQRSHLv2i32 = 5031
-    CEFBS_HasNEON, // UQRSHLv2i64 = 5032
-    CEFBS_HasNEON, // UQRSHLv4i16 = 5033
-    CEFBS_HasNEON, // UQRSHLv4i32 = 5034
-    CEFBS_HasNEON, // UQRSHLv8i16 = 5035
-    CEFBS_HasNEON, // UQRSHLv8i8 = 5036
-    CEFBS_HasSVE2, // UQRSHRNB_ZZI_B = 5037
-    CEFBS_HasSVE2, // UQRSHRNB_ZZI_H = 5038
-    CEFBS_HasSVE2, // UQRSHRNB_ZZI_S = 5039
-    CEFBS_HasSVE2, // UQRSHRNT_ZZI_B = 5040
-    CEFBS_HasSVE2, // UQRSHRNT_ZZI_H = 5041
-    CEFBS_HasSVE2, // UQRSHRNT_ZZI_S = 5042
-    CEFBS_HasNEON, // UQRSHRNb = 5043
-    CEFBS_HasNEON, // UQRSHRNh = 5044
-    CEFBS_HasNEON, // UQRSHRNs = 5045
-    CEFBS_HasNEON, // UQRSHRNv16i8_shift = 5046
-    CEFBS_HasNEON, // UQRSHRNv2i32_shift = 5047
-    CEFBS_HasNEON, // UQRSHRNv4i16_shift = 5048
-    CEFBS_HasNEON, // UQRSHRNv4i32_shift = 5049
-    CEFBS_HasNEON, // UQRSHRNv8i16_shift = 5050
-    CEFBS_HasNEON, // UQRSHRNv8i8_shift = 5051
-    CEFBS_HasSVE2, // UQSHLR_ZPmZ_B = 5052
-    CEFBS_HasSVE2, // UQSHLR_ZPmZ_D = 5053
-    CEFBS_HasSVE2, // UQSHLR_ZPmZ_H = 5054
-    CEFBS_HasSVE2, // UQSHLR_ZPmZ_S = 5055
-    CEFBS_HasSVE2, // UQSHL_ZPmI_B = 5056
-    CEFBS_HasSVE2, // UQSHL_ZPmI_D = 5057
-    CEFBS_HasSVE2, // UQSHL_ZPmI_H = 5058
-    CEFBS_HasSVE2, // UQSHL_ZPmI_S = 5059
-    CEFBS_HasSVE2, // UQSHL_ZPmZ_B = 5060
-    CEFBS_HasSVE2, // UQSHL_ZPmZ_D = 5061
-    CEFBS_HasSVE2, // UQSHL_ZPmZ_H = 5062
-    CEFBS_HasSVE2, // UQSHL_ZPmZ_S = 5063
-    CEFBS_HasNEON, // UQSHLb = 5064
-    CEFBS_HasNEON, // UQSHLd = 5065
-    CEFBS_HasNEON, // UQSHLh = 5066
-    CEFBS_HasNEON, // UQSHLs = 5067
-    CEFBS_HasNEON, // UQSHLv16i8 = 5068
-    CEFBS_HasNEON, // UQSHLv16i8_shift = 5069
-    CEFBS_HasNEON, // UQSHLv1i16 = 5070
-    CEFBS_HasNEON, // UQSHLv1i32 = 5071
-    CEFBS_HasNEON, // UQSHLv1i64 = 5072
-    CEFBS_HasNEON, // UQSHLv1i8 = 5073
-    CEFBS_HasNEON, // UQSHLv2i32 = 5074
-    CEFBS_HasNEON, // UQSHLv2i32_shift = 5075
-    CEFBS_HasNEON, // UQSHLv2i64 = 5076
-    CEFBS_HasNEON, // UQSHLv2i64_shift = 5077
-    CEFBS_HasNEON, // UQSHLv4i16 = 5078
-    CEFBS_HasNEON, // UQSHLv4i16_shift = 5079
-    CEFBS_HasNEON, // UQSHLv4i32 = 5080
-    CEFBS_HasNEON, // UQSHLv4i32_shift = 5081
-    CEFBS_HasNEON, // UQSHLv8i16 = 5082
-    CEFBS_HasNEON, // UQSHLv8i16_shift = 5083
-    CEFBS_HasNEON, // UQSHLv8i8 = 5084
-    CEFBS_HasNEON, // UQSHLv8i8_shift = 5085
-    CEFBS_HasSVE2, // UQSHRNB_ZZI_B = 5086
-    CEFBS_HasSVE2, // UQSHRNB_ZZI_H = 5087
-    CEFBS_HasSVE2, // UQSHRNB_ZZI_S = 5088
-    CEFBS_HasSVE2, // UQSHRNT_ZZI_B = 5089
-    CEFBS_HasSVE2, // UQSHRNT_ZZI_H = 5090
-    CEFBS_HasSVE2, // UQSHRNT_ZZI_S = 5091
-    CEFBS_HasNEON, // UQSHRNb = 5092
-    CEFBS_HasNEON, // UQSHRNh = 5093
-    CEFBS_HasNEON, // UQSHRNs = 5094
-    CEFBS_HasNEON, // UQSHRNv16i8_shift = 5095
-    CEFBS_HasNEON, // UQSHRNv2i32_shift = 5096
-    CEFBS_HasNEON, // UQSHRNv4i16_shift = 5097
-    CEFBS_HasNEON, // UQSHRNv4i32_shift = 5098
-    CEFBS_HasNEON, // UQSHRNv8i16_shift = 5099
-    CEFBS_HasNEON, // UQSHRNv8i8_shift = 5100
-    CEFBS_HasSVE2, // UQSUBR_ZPmZ_B = 5101
-    CEFBS_HasSVE2, // UQSUBR_ZPmZ_D = 5102
-    CEFBS_HasSVE2, // UQSUBR_ZPmZ_H = 5103
-    CEFBS_HasSVE2, // UQSUBR_ZPmZ_S = 5104
-    CEFBS_HasSVE, // UQSUB_ZI_B = 5105
-    CEFBS_HasSVE, // UQSUB_ZI_D = 5106
-    CEFBS_HasSVE, // UQSUB_ZI_H = 5107
-    CEFBS_HasSVE, // UQSUB_ZI_S = 5108
-    CEFBS_HasSVE2, // UQSUB_ZPmZ_B = 5109
-    CEFBS_HasSVE2, // UQSUB_ZPmZ_D = 5110
-    CEFBS_HasSVE2, // UQSUB_ZPmZ_H = 5111
-    CEFBS_HasSVE2, // UQSUB_ZPmZ_S = 5112
-    CEFBS_HasSVE, // UQSUB_ZZZ_B = 5113
-    CEFBS_HasSVE, // UQSUB_ZZZ_D = 5114
-    CEFBS_HasSVE, // UQSUB_ZZZ_H = 5115
-    CEFBS_HasSVE, // UQSUB_ZZZ_S = 5116
-    CEFBS_HasNEON, // UQSUBv16i8 = 5117
-    CEFBS_HasNEON, // UQSUBv1i16 = 5118
-    CEFBS_HasNEON, // UQSUBv1i32 = 5119
-    CEFBS_HasNEON, // UQSUBv1i64 = 5120
-    CEFBS_HasNEON, // UQSUBv1i8 = 5121
-    CEFBS_HasNEON, // UQSUBv2i32 = 5122
-    CEFBS_HasNEON, // UQSUBv2i64 = 5123
-    CEFBS_HasNEON, // UQSUBv4i16 = 5124
-    CEFBS_HasNEON, // UQSUBv4i32 = 5125
-    CEFBS_HasNEON, // UQSUBv8i16 = 5126
-    CEFBS_HasNEON, // UQSUBv8i8 = 5127
-    CEFBS_HasSVE2, // UQXTNB_ZZ_B = 5128
-    CEFBS_HasSVE2, // UQXTNB_ZZ_H = 5129
-    CEFBS_HasSVE2, // UQXTNB_ZZ_S = 5130
-    CEFBS_HasSVE2, // UQXTNT_ZZ_B = 5131
-    CEFBS_HasSVE2, // UQXTNT_ZZ_H = 5132
-    CEFBS_HasSVE2, // UQXTNT_ZZ_S = 5133
-    CEFBS_HasNEON, // UQXTNv16i8 = 5134
-    CEFBS_HasNEON, // UQXTNv1i16 = 5135
-    CEFBS_HasNEON, // UQXTNv1i32 = 5136
-    CEFBS_HasNEON, // UQXTNv1i8 = 5137
-    CEFBS_HasNEON, // UQXTNv2i32 = 5138
-    CEFBS_HasNEON, // UQXTNv4i16 = 5139
-    CEFBS_HasNEON, // UQXTNv4i32 = 5140
-    CEFBS_HasNEON, // UQXTNv8i16 = 5141
-    CEFBS_HasNEON, // UQXTNv8i8 = 5142
-    CEFBS_HasSVE2, // URECPE_ZPmZ_S = 5143
-    CEFBS_HasNEON, // URECPEv2i32 = 5144
-    CEFBS_HasNEON, // URECPEv4i32 = 5145
-    CEFBS_HasSVE2, // URHADD_ZPmZ_B = 5146
-    CEFBS_HasSVE2, // URHADD_ZPmZ_D = 5147
-    CEFBS_HasSVE2, // URHADD_ZPmZ_H = 5148
-    CEFBS_HasSVE2, // URHADD_ZPmZ_S = 5149
-    CEFBS_HasNEON, // URHADDv16i8 = 5150
-    CEFBS_HasNEON, // URHADDv2i32 = 5151
-    CEFBS_HasNEON, // URHADDv4i16 = 5152
-    CEFBS_HasNEON, // URHADDv4i32 = 5153
-    CEFBS_HasNEON, // URHADDv8i16 = 5154
-    CEFBS_HasNEON, // URHADDv8i8 = 5155
-    CEFBS_HasSVE2, // URSHLR_ZPmZ_B = 5156
-    CEFBS_HasSVE2, // URSHLR_ZPmZ_D = 5157
-    CEFBS_HasSVE2, // URSHLR_ZPmZ_H = 5158
-    CEFBS_HasSVE2, // URSHLR_ZPmZ_S = 5159
-    CEFBS_HasSVE2, // URSHL_ZPmZ_B = 5160
-    CEFBS_HasSVE2, // URSHL_ZPmZ_D = 5161
-    CEFBS_HasSVE2, // URSHL_ZPmZ_H = 5162
-    CEFBS_HasSVE2, // URSHL_ZPmZ_S = 5163
-    CEFBS_HasNEON, // URSHLv16i8 = 5164
-    CEFBS_HasNEON, // URSHLv1i64 = 5165
-    CEFBS_HasNEON, // URSHLv2i32 = 5166
-    CEFBS_HasNEON, // URSHLv2i64 = 5167
-    CEFBS_HasNEON, // URSHLv4i16 = 5168
-    CEFBS_HasNEON, // URSHLv4i32 = 5169
-    CEFBS_HasNEON, // URSHLv8i16 = 5170
-    CEFBS_HasNEON, // URSHLv8i8 = 5171
-    CEFBS_HasSVE2, // URSHR_ZPmI_B = 5172
-    CEFBS_HasSVE2, // URSHR_ZPmI_D = 5173
-    CEFBS_HasSVE2, // URSHR_ZPmI_H = 5174
-    CEFBS_HasSVE2, // URSHR_ZPmI_S = 5175
-    CEFBS_HasNEON, // URSHRd = 5176
-    CEFBS_HasNEON, // URSHRv16i8_shift = 5177
-    CEFBS_HasNEON, // URSHRv2i32_shift = 5178
-    CEFBS_HasNEON, // URSHRv2i64_shift = 5179
-    CEFBS_HasNEON, // URSHRv4i16_shift = 5180
-    CEFBS_HasNEON, // URSHRv4i32_shift = 5181
-    CEFBS_HasNEON, // URSHRv8i16_shift = 5182
-    CEFBS_HasNEON, // URSHRv8i8_shift = 5183
-    CEFBS_HasSVE2, // URSQRTE_ZPmZ_S = 5184
-    CEFBS_HasNEON, // URSQRTEv2i32 = 5185
-    CEFBS_HasNEON, // URSQRTEv4i32 = 5186
-    CEFBS_HasSVE2, // URSRA_ZZI_B = 5187
-    CEFBS_HasSVE2, // URSRA_ZZI_D = 5188
-    CEFBS_HasSVE2, // URSRA_ZZI_H = 5189
-    CEFBS_HasSVE2, // URSRA_ZZI_S = 5190
-    CEFBS_HasNEON, // URSRAd = 5191
-    CEFBS_HasNEON, // URSRAv16i8_shift = 5192
-    CEFBS_HasNEON, // URSRAv2i32_shift = 5193
-    CEFBS_HasNEON, // URSRAv2i64_shift = 5194
-    CEFBS_HasNEON, // URSRAv4i16_shift = 5195
-    CEFBS_HasNEON, // URSRAv4i32_shift = 5196
-    CEFBS_HasNEON, // URSRAv8i16_shift = 5197
-    CEFBS_HasNEON, // URSRAv8i8_shift = 5198
-    CEFBS_HasSVE2, // USHLLB_ZZI_D = 5199
-    CEFBS_HasSVE2, // USHLLB_ZZI_H = 5200
-    CEFBS_HasSVE2, // USHLLB_ZZI_S = 5201
-    CEFBS_HasSVE2, // USHLLT_ZZI_D = 5202
-    CEFBS_HasSVE2, // USHLLT_ZZI_H = 5203
-    CEFBS_HasSVE2, // USHLLT_ZZI_S = 5204
-    CEFBS_HasNEON, // USHLLv16i8_shift = 5205
-    CEFBS_HasNEON, // USHLLv2i32_shift = 5206
-    CEFBS_HasNEON, // USHLLv4i16_shift = 5207
-    CEFBS_HasNEON, // USHLLv4i32_shift = 5208
-    CEFBS_HasNEON, // USHLLv8i16_shift = 5209
-    CEFBS_HasNEON, // USHLLv8i8_shift = 5210
-    CEFBS_HasNEON, // USHLv16i8 = 5211
-    CEFBS_HasNEON, // USHLv1i64 = 5212
-    CEFBS_HasNEON, // USHLv2i32 = 5213
-    CEFBS_HasNEON, // USHLv2i64 = 5214
-    CEFBS_HasNEON, // USHLv4i16 = 5215
-    CEFBS_HasNEON, // USHLv4i32 = 5216
-    CEFBS_HasNEON, // USHLv8i16 = 5217
-    CEFBS_HasNEON, // USHLv8i8 = 5218
-    CEFBS_HasNEON, // USHRd = 5219
-    CEFBS_HasNEON, // USHRv16i8_shift = 5220
-    CEFBS_HasNEON, // USHRv2i32_shift = 5221
-    CEFBS_HasNEON, // USHRv2i64_shift = 5222
-    CEFBS_HasNEON, // USHRv4i16_shift = 5223
-    CEFBS_HasNEON, // USHRv4i32_shift = 5224
-    CEFBS_HasNEON, // USHRv8i16_shift = 5225
-    CEFBS_HasNEON, // USHRv8i8_shift = 5226
-    CEFBS_HasSVE2, // USQADD_ZPmZ_B = 5227
-    CEFBS_HasSVE2, // USQADD_ZPmZ_D = 5228
-    CEFBS_HasSVE2, // USQADD_ZPmZ_H = 5229
-    CEFBS_HasSVE2, // USQADD_ZPmZ_S = 5230
-    CEFBS_HasNEON, // USQADDv16i8 = 5231
-    CEFBS_HasNEON, // USQADDv1i16 = 5232
-    CEFBS_HasNEON, // USQADDv1i32 = 5233
-    CEFBS_HasNEON, // USQADDv1i64 = 5234
-    CEFBS_HasNEON, // USQADDv1i8 = 5235
-    CEFBS_HasNEON, // USQADDv2i32 = 5236
-    CEFBS_HasNEON, // USQADDv2i64 = 5237
-    CEFBS_HasNEON, // USQADDv4i16 = 5238
-    CEFBS_HasNEON, // USQADDv4i32 = 5239
-    CEFBS_HasNEON, // USQADDv8i16 = 5240
-    CEFBS_HasNEON, // USQADDv8i8 = 5241
-    CEFBS_HasSVE2, // USRA_ZZI_B = 5242
-    CEFBS_HasSVE2, // USRA_ZZI_D = 5243
-    CEFBS_HasSVE2, // USRA_ZZI_H = 5244
-    CEFBS_HasSVE2, // USRA_ZZI_S = 5245
-    CEFBS_HasNEON, // USRAd = 5246
-    CEFBS_HasNEON, // USRAv16i8_shift = 5247
-    CEFBS_HasNEON, // USRAv2i32_shift = 5248
-    CEFBS_HasNEON, // USRAv2i64_shift = 5249
-    CEFBS_HasNEON, // USRAv4i16_shift = 5250
-    CEFBS_HasNEON, // USRAv4i32_shift = 5251
-    CEFBS_HasNEON, // USRAv8i16_shift = 5252
-    CEFBS_HasNEON, // USRAv8i8_shift = 5253
-    CEFBS_HasSVE2, // USUBLB_ZZZ_D = 5254
-    CEFBS_HasSVE2, // USUBLB_ZZZ_H = 5255
-    CEFBS_HasSVE2, // USUBLB_ZZZ_S = 5256
-    CEFBS_HasSVE2, // USUBLT_ZZZ_D = 5257
-    CEFBS_HasSVE2, // USUBLT_ZZZ_H = 5258
-    CEFBS_HasSVE2, // USUBLT_ZZZ_S = 5259
-    CEFBS_HasNEON, // USUBLv16i8_v8i16 = 5260
-    CEFBS_HasNEON, // USUBLv2i32_v2i64 = 5261
-    CEFBS_HasNEON, // USUBLv4i16_v4i32 = 5262
-    CEFBS_HasNEON, // USUBLv4i32_v2i64 = 5263
-    CEFBS_HasNEON, // USUBLv8i16_v4i32 = 5264
-    CEFBS_HasNEON, // USUBLv8i8_v8i16 = 5265
-    CEFBS_HasSVE2, // USUBWB_ZZZ_D = 5266
-    CEFBS_HasSVE2, // USUBWB_ZZZ_H = 5267
-    CEFBS_HasSVE2, // USUBWB_ZZZ_S = 5268
-    CEFBS_HasSVE2, // USUBWT_ZZZ_D = 5269
-    CEFBS_HasSVE2, // USUBWT_ZZZ_H = 5270
-    CEFBS_HasSVE2, // USUBWT_ZZZ_S = 5271
-    CEFBS_HasNEON, // USUBWv16i8_v8i16 = 5272
-    CEFBS_HasNEON, // USUBWv2i32_v2i64 = 5273
-    CEFBS_HasNEON, // USUBWv4i16_v4i32 = 5274
-    CEFBS_HasNEON, // USUBWv4i32_v2i64 = 5275
-    CEFBS_HasNEON, // USUBWv8i16_v4i32 = 5276
-    CEFBS_HasNEON, // USUBWv8i8_v8i16 = 5277
-    CEFBS_HasSVE, // UUNPKHI_ZZ_D = 5278
-    CEFBS_HasSVE, // UUNPKHI_ZZ_H = 5279
-    CEFBS_HasSVE, // UUNPKHI_ZZ_S = 5280
-    CEFBS_HasSVE, // UUNPKLO_ZZ_D = 5281
-    CEFBS_HasSVE, // UUNPKLO_ZZ_H = 5282
-    CEFBS_HasSVE, // UUNPKLO_ZZ_S = 5283
-    CEFBS_HasSVE, // UXTB_ZPmZ_D = 5284
-    CEFBS_HasSVE, // UXTB_ZPmZ_H = 5285
-    CEFBS_HasSVE, // UXTB_ZPmZ_S = 5286
-    CEFBS_HasSVE, // UXTH_ZPmZ_D = 5287
-    CEFBS_HasSVE, // UXTH_ZPmZ_S = 5288
-    CEFBS_HasSVE, // UXTW_ZPmZ_D = 5289
-    CEFBS_HasSVE, // UZP1_PPP_B = 5290
-    CEFBS_HasSVE, // UZP1_PPP_D = 5291
-    CEFBS_HasSVE, // UZP1_PPP_H = 5292
-    CEFBS_HasSVE, // UZP1_PPP_S = 5293
-    CEFBS_HasSVE, // UZP1_ZZZ_B = 5294
-    CEFBS_HasSVE, // UZP1_ZZZ_D = 5295
-    CEFBS_HasSVE, // UZP1_ZZZ_H = 5296
-    CEFBS_HasSVE, // UZP1_ZZZ_S = 5297
-    CEFBS_HasNEON, // UZP1v16i8 = 5298
-    CEFBS_HasNEON, // UZP1v2i32 = 5299
-    CEFBS_HasNEON, // UZP1v2i64 = 5300
-    CEFBS_HasNEON, // UZP1v4i16 = 5301
-    CEFBS_HasNEON, // UZP1v4i32 = 5302
-    CEFBS_HasNEON, // UZP1v8i16 = 5303
-    CEFBS_HasNEON, // UZP1v8i8 = 5304
-    CEFBS_HasSVE, // UZP2_PPP_B = 5305
-    CEFBS_HasSVE, // UZP2_PPP_D = 5306
-    CEFBS_HasSVE, // UZP2_PPP_H = 5307
-    CEFBS_HasSVE, // UZP2_PPP_S = 5308
-    CEFBS_HasSVE, // UZP2_ZZZ_B = 5309
-    CEFBS_HasSVE, // UZP2_ZZZ_D = 5310
-    CEFBS_HasSVE, // UZP2_ZZZ_H = 5311
-    CEFBS_HasSVE, // UZP2_ZZZ_S = 5312
-    CEFBS_HasNEON, // UZP2v16i8 = 5313
-    CEFBS_HasNEON, // UZP2v2i32 = 5314
-    CEFBS_HasNEON, // UZP2v2i64 = 5315
-    CEFBS_HasNEON, // UZP2v4i16 = 5316
-    CEFBS_HasNEON, // UZP2v4i32 = 5317
-    CEFBS_HasNEON, // UZP2v8i16 = 5318
-    CEFBS_HasNEON, // UZP2v8i8 = 5319
-    CEFBS_HasSVE2, // WHILEGE_PWW_B = 5320
-    CEFBS_HasSVE2, // WHILEGE_PWW_D = 5321
-    CEFBS_HasSVE2, // WHILEGE_PWW_H = 5322
-    CEFBS_HasSVE2, // WHILEGE_PWW_S = 5323
-    CEFBS_HasSVE2, // WHILEGE_PXX_B = 5324
-    CEFBS_HasSVE2, // WHILEGE_PXX_D = 5325
-    CEFBS_HasSVE2, // WHILEGE_PXX_H = 5326
-    CEFBS_HasSVE2, // WHILEGE_PXX_S = 5327
-    CEFBS_HasSVE2, // WHILEGT_PWW_B = 5328
-    CEFBS_HasSVE2, // WHILEGT_PWW_D = 5329
-    CEFBS_HasSVE2, // WHILEGT_PWW_H = 5330
-    CEFBS_HasSVE2, // WHILEGT_PWW_S = 5331
-    CEFBS_HasSVE2, // WHILEGT_PXX_B = 5332
-    CEFBS_HasSVE2, // WHILEGT_PXX_D = 5333
-    CEFBS_HasSVE2, // WHILEGT_PXX_H = 5334
-    CEFBS_HasSVE2, // WHILEGT_PXX_S = 5335
-    CEFBS_HasSVE2, // WHILEHI_PWW_B = 5336
-    CEFBS_HasSVE2, // WHILEHI_PWW_D = 5337
-    CEFBS_HasSVE2, // WHILEHI_PWW_H = 5338
-    CEFBS_HasSVE2, // WHILEHI_PWW_S = 5339
-    CEFBS_HasSVE2, // WHILEHI_PXX_B = 5340
-    CEFBS_HasSVE2, // WHILEHI_PXX_D = 5341
-    CEFBS_HasSVE2, // WHILEHI_PXX_H = 5342
-    CEFBS_HasSVE2, // WHILEHI_PXX_S = 5343
-    CEFBS_HasSVE2, // WHILEHS_PWW_B = 5344
-    CEFBS_HasSVE2, // WHILEHS_PWW_D = 5345
-    CEFBS_HasSVE2, // WHILEHS_PWW_H = 5346
-    CEFBS_HasSVE2, // WHILEHS_PWW_S = 5347
-    CEFBS_HasSVE2, // WHILEHS_PXX_B = 5348
-    CEFBS_HasSVE2, // WHILEHS_PXX_D = 5349
-    CEFBS_HasSVE2, // WHILEHS_PXX_H = 5350
-    CEFBS_HasSVE2, // WHILEHS_PXX_S = 5351
-    CEFBS_HasSVE, // WHILELE_PWW_B = 5352
-    CEFBS_HasSVE, // WHILELE_PWW_D = 5353
-    CEFBS_HasSVE, // WHILELE_PWW_H = 5354
-    CEFBS_HasSVE, // WHILELE_PWW_S = 5355
-    CEFBS_HasSVE, // WHILELE_PXX_B = 5356
-    CEFBS_HasSVE, // WHILELE_PXX_D = 5357
-    CEFBS_HasSVE, // WHILELE_PXX_H = 5358
-    CEFBS_HasSVE, // WHILELE_PXX_S = 5359
-    CEFBS_HasSVE, // WHILELO_PWW_B = 5360
-    CEFBS_HasSVE, // WHILELO_PWW_D = 5361
-    CEFBS_HasSVE, // WHILELO_PWW_H = 5362
-    CEFBS_HasSVE, // WHILELO_PWW_S = 5363
-    CEFBS_HasSVE, // WHILELO_PXX_B = 5364
-    CEFBS_HasSVE, // WHILELO_PXX_D = 5365
-    CEFBS_HasSVE, // WHILELO_PXX_H = 5366
-    CEFBS_HasSVE, // WHILELO_PXX_S = 5367
-    CEFBS_HasSVE, // WHILELS_PWW_B = 5368
-    CEFBS_HasSVE, // WHILELS_PWW_D = 5369
-    CEFBS_HasSVE, // WHILELS_PWW_H = 5370
-    CEFBS_HasSVE, // WHILELS_PWW_S = 5371
-    CEFBS_HasSVE, // WHILELS_PXX_B = 5372
-    CEFBS_HasSVE, // WHILELS_PXX_D = 5373
-    CEFBS_HasSVE, // WHILELS_PXX_H = 5374
-    CEFBS_HasSVE, // WHILELS_PXX_S = 5375
-    CEFBS_HasSVE, // WHILELT_PWW_B = 5376
-    CEFBS_HasSVE, // WHILELT_PWW_D = 5377
-    CEFBS_HasSVE, // WHILELT_PWW_H = 5378
-    CEFBS_HasSVE, // WHILELT_PWW_S = 5379
-    CEFBS_HasSVE, // WHILELT_PXX_B = 5380
-    CEFBS_HasSVE, // WHILELT_PXX_D = 5381
-    CEFBS_HasSVE, // WHILELT_PXX_H = 5382
-    CEFBS_HasSVE, // WHILELT_PXX_S = 5383
-    CEFBS_HasSVE2, // WHILERW_PXX_B = 5384
-    CEFBS_HasSVE2, // WHILERW_PXX_D = 5385
-    CEFBS_HasSVE2, // WHILERW_PXX_H = 5386
-    CEFBS_HasSVE2, // WHILERW_PXX_S = 5387
-    CEFBS_HasSVE2, // WHILEWR_PXX_B = 5388
-    CEFBS_HasSVE2, // WHILEWR_PXX_D = 5389
-    CEFBS_HasSVE2, // WHILEWR_PXX_H = 5390
-    CEFBS_HasSVE2, // WHILEWR_PXX_S = 5391
-    CEFBS_HasSVE, // WRFFR = 5392
-    CEFBS_HasAltNZCV, // XAFLAG = 5393
-    CEFBS_HasSHA3, // XAR = 5394
-    CEFBS_HasSVE2, // XAR_ZZZI_B = 5395
-    CEFBS_HasSVE2, // XAR_ZZZI_D = 5396
-    CEFBS_HasSVE2, // XAR_ZZZI_H = 5397
-    CEFBS_HasSVE2, // XAR_ZZZI_S = 5398
-    CEFBS_HasPA, // XPACD = 5399
-    CEFBS_HasPA, // XPACI = 5400
-    CEFBS_None, // XPACLRI = 5401
-    CEFBS_HasNEON, // XTNv16i8 = 5402
-    CEFBS_HasNEON, // XTNv2i32 = 5403
-    CEFBS_HasNEON, // XTNv4i16 = 5404
-    CEFBS_HasNEON, // XTNv4i32 = 5405
-    CEFBS_HasNEON, // XTNv8i16 = 5406
-    CEFBS_HasNEON, // XTNv8i8 = 5407
-    CEFBS_HasSVE, // ZIP1_PPP_B = 5408
-    CEFBS_HasSVE, // ZIP1_PPP_D = 5409
-    CEFBS_HasSVE, // ZIP1_PPP_H = 5410
-    CEFBS_HasSVE, // ZIP1_PPP_S = 5411
-    CEFBS_HasSVE, // ZIP1_ZZZ_B = 5412
-    CEFBS_HasSVE, // ZIP1_ZZZ_D = 5413
-    CEFBS_HasSVE, // ZIP1_ZZZ_H = 5414
-    CEFBS_HasSVE, // ZIP1_ZZZ_S = 5415
-    CEFBS_HasNEON, // ZIP1v16i8 = 5416
-    CEFBS_HasNEON, // ZIP1v2i32 = 5417
-    CEFBS_HasNEON, // ZIP1v2i64 = 5418
-    CEFBS_HasNEON, // ZIP1v4i16 = 5419
-    CEFBS_HasNEON, // ZIP1v4i32 = 5420
-    CEFBS_HasNEON, // ZIP1v8i16 = 5421
-    CEFBS_HasNEON, // ZIP1v8i8 = 5422
-    CEFBS_HasSVE, // ZIP2_PPP_B = 5423
-    CEFBS_HasSVE, // ZIP2_PPP_D = 5424
-    CEFBS_HasSVE, // ZIP2_PPP_H = 5425
-    CEFBS_HasSVE, // ZIP2_PPP_S = 5426
-    CEFBS_HasSVE, // ZIP2_ZZZ_B = 5427
-    CEFBS_HasSVE, // ZIP2_ZZZ_D = 5428
-    CEFBS_HasSVE, // ZIP2_ZZZ_H = 5429
-    CEFBS_HasSVE, // ZIP2_ZZZ_S = 5430
-    CEFBS_HasNEON, // ZIP2v16i8 = 5431
-    CEFBS_HasNEON, // ZIP2v2i32 = 5432
-    CEFBS_HasNEON, // ZIP2v2i64 = 5433
-    CEFBS_HasNEON, // ZIP2v4i16 = 5434
-    CEFBS_HasNEON, // ZIP2v4i32 = 5435
-    CEFBS_HasNEON, // ZIP2v8i16 = 5436
-    CEFBS_HasNEON, // ZIP2v8i8 = 5437
+    CEFBS_None, // PREALLOCATED_SETUP = 24
+    CEFBS_None, // PREALLOCATED_ARG = 25
+    CEFBS_None, // STATEPOINT = 26
+    CEFBS_None, // LOCAL_ESCAPE = 27
+    CEFBS_None, // FAULTING_OP = 28
+    CEFBS_None, // PATCHABLE_OP = 29
+    CEFBS_None, // PATCHABLE_FUNCTION_ENTER = 30
+    CEFBS_None, // PATCHABLE_RET = 31
+    CEFBS_None, // PATCHABLE_FUNCTION_EXIT = 32
+    CEFBS_None, // PATCHABLE_TAIL_CALL = 33
+    CEFBS_None, // PATCHABLE_EVENT_CALL = 34
+    CEFBS_None, // PATCHABLE_TYPED_EVENT_CALL = 35
+    CEFBS_None, // ICALL_BRANCH_FUNNEL = 36
+    CEFBS_None, // G_ADD = 37
+    CEFBS_None, // G_SUB = 38
+    CEFBS_None, // G_MUL = 39
+    CEFBS_None, // G_SDIV = 40
+    CEFBS_None, // G_UDIV = 41
+    CEFBS_None, // G_SREM = 42
+    CEFBS_None, // G_UREM = 43
+    CEFBS_None, // G_AND = 44
+    CEFBS_None, // G_OR = 45
+    CEFBS_None, // G_XOR = 46
+    CEFBS_None, // G_IMPLICIT_DEF = 47
+    CEFBS_None, // G_PHI = 48
+    CEFBS_None, // G_FRAME_INDEX = 49
+    CEFBS_None, // G_GLOBAL_VALUE = 50
+    CEFBS_None, // G_EXTRACT = 51
+    CEFBS_None, // G_UNMERGE_VALUES = 52
+    CEFBS_None, // G_INSERT = 53
+    CEFBS_None, // G_MERGE_VALUES = 54
+    CEFBS_None, // G_BUILD_VECTOR = 55
+    CEFBS_None, // G_BUILD_VECTOR_TRUNC = 56
+    CEFBS_None, // G_CONCAT_VECTORS = 57
+    CEFBS_None, // G_PTRTOINT = 58
+    CEFBS_None, // G_INTTOPTR = 59
+    CEFBS_None, // G_BITCAST = 60
+    CEFBS_None, // G_FREEZE = 61
+    CEFBS_None, // G_INTRINSIC_TRUNC = 62
+    CEFBS_None, // G_INTRINSIC_ROUND = 63
+    CEFBS_None, // G_READCYCLECOUNTER = 64
+    CEFBS_None, // G_LOAD = 65
+    CEFBS_None, // G_SEXTLOAD = 66
+    CEFBS_None, // G_ZEXTLOAD = 67
+    CEFBS_None, // G_INDEXED_LOAD = 68
+    CEFBS_None, // G_INDEXED_SEXTLOAD = 69
+    CEFBS_None, // G_INDEXED_ZEXTLOAD = 70
+    CEFBS_None, // G_STORE = 71
+    CEFBS_None, // G_INDEXED_STORE = 72
+    CEFBS_None, // G_ATOMIC_CMPXCHG_WITH_SUCCESS = 73
+    CEFBS_None, // G_ATOMIC_CMPXCHG = 74
+    CEFBS_None, // G_ATOMICRMW_XCHG = 75
+    CEFBS_None, // G_ATOMICRMW_ADD = 76
+    CEFBS_None, // G_ATOMICRMW_SUB = 77
+    CEFBS_None, // G_ATOMICRMW_AND = 78
+    CEFBS_None, // G_ATOMICRMW_NAND = 79
+    CEFBS_None, // G_ATOMICRMW_OR = 80
+    CEFBS_None, // G_ATOMICRMW_XOR = 81
+    CEFBS_None, // G_ATOMICRMW_MAX = 82
+    CEFBS_None, // G_ATOMICRMW_MIN = 83
+    CEFBS_None, // G_ATOMICRMW_UMAX = 84
+    CEFBS_None, // G_ATOMICRMW_UMIN = 85
+    CEFBS_None, // G_ATOMICRMW_FADD = 86
+    CEFBS_None, // G_ATOMICRMW_FSUB = 87
+    CEFBS_None, // G_FENCE = 88
+    CEFBS_None, // G_BRCOND = 89
+    CEFBS_None, // G_BRINDIRECT = 90
+    CEFBS_None, // G_INTRINSIC = 91
+    CEFBS_None, // G_INTRINSIC_W_SIDE_EFFECTS = 92
+    CEFBS_None, // G_ANYEXT = 93
+    CEFBS_None, // G_TRUNC = 94
+    CEFBS_None, // G_CONSTANT = 95
+    CEFBS_None, // G_FCONSTANT = 96
+    CEFBS_None, // G_VASTART = 97
+    CEFBS_None, // G_VAARG = 98
+    CEFBS_None, // G_SEXT = 99
+    CEFBS_None, // G_SEXT_INREG = 100
+    CEFBS_None, // G_ZEXT = 101
+    CEFBS_None, // G_SHL = 102
+    CEFBS_None, // G_LSHR = 103
+    CEFBS_None, // G_ASHR = 104
+    CEFBS_None, // G_FSHL = 105
+    CEFBS_None, // G_FSHR = 106
+    CEFBS_None, // G_ICMP = 107
+    CEFBS_None, // G_FCMP = 108
+    CEFBS_None, // G_SELECT = 109
+    CEFBS_None, // G_UADDO = 110
+    CEFBS_None, // G_UADDE = 111
+    CEFBS_None, // G_USUBO = 112
+    CEFBS_None, // G_USUBE = 113
+    CEFBS_None, // G_SADDO = 114
+    CEFBS_None, // G_SADDE = 115
+    CEFBS_None, // G_SSUBO = 116
+    CEFBS_None, // G_SSUBE = 117
+    CEFBS_None, // G_UMULO = 118
+    CEFBS_None, // G_SMULO = 119
+    CEFBS_None, // G_UMULH = 120
+    CEFBS_None, // G_SMULH = 121
+    CEFBS_None, // G_UADDSAT = 122
+    CEFBS_None, // G_SADDSAT = 123
+    CEFBS_None, // G_USUBSAT = 124
+    CEFBS_None, // G_SSUBSAT = 125
+    CEFBS_None, // G_FADD = 126
+    CEFBS_None, // G_FSUB = 127
+    CEFBS_None, // G_FMUL = 128
+    CEFBS_None, // G_FMA = 129
+    CEFBS_None, // G_FMAD = 130
+    CEFBS_None, // G_FDIV = 131
+    CEFBS_None, // G_FREM = 132
+    CEFBS_None, // G_FPOW = 133
+    CEFBS_None, // G_FEXP = 134
+    CEFBS_None, // G_FEXP2 = 135
+    CEFBS_None, // G_FLOG = 136
+    CEFBS_None, // G_FLOG2 = 137
+    CEFBS_None, // G_FLOG10 = 138
+    CEFBS_None, // G_FNEG = 139
+    CEFBS_None, // G_FPEXT = 140
+    CEFBS_None, // G_FPTRUNC = 141
+    CEFBS_None, // G_FPTOSI = 142
+    CEFBS_None, // G_FPTOUI = 143
+    CEFBS_None, // G_SITOFP = 144
+    CEFBS_None, // G_UITOFP = 145
+    CEFBS_None, // G_FABS = 146
+    CEFBS_None, // G_FCOPYSIGN = 147
+    CEFBS_None, // G_FCANONICALIZE = 148
+    CEFBS_None, // G_FMINNUM = 149
+    CEFBS_None, // G_FMAXNUM = 150
+    CEFBS_None, // G_FMINNUM_IEEE = 151
+    CEFBS_None, // G_FMAXNUM_IEEE = 152
+    CEFBS_None, // G_FMINIMUM = 153
+    CEFBS_None, // G_FMAXIMUM = 154
+    CEFBS_None, // G_PTR_ADD = 155
+    CEFBS_None, // G_PTRMASK = 156
+    CEFBS_None, // G_SMIN = 157
+    CEFBS_None, // G_SMAX = 158
+    CEFBS_None, // G_UMIN = 159
+    CEFBS_None, // G_UMAX = 160
+    CEFBS_None, // G_BR = 161
+    CEFBS_None, // G_BRJT = 162
+    CEFBS_None, // G_INSERT_VECTOR_ELT = 163
+    CEFBS_None, // G_EXTRACT_VECTOR_ELT = 164
+    CEFBS_None, // G_SHUFFLE_VECTOR = 165
+    CEFBS_None, // G_CTTZ = 166
+    CEFBS_None, // G_CTTZ_ZERO_UNDEF = 167
+    CEFBS_None, // G_CTLZ = 168
+    CEFBS_None, // G_CTLZ_ZERO_UNDEF = 169
+    CEFBS_None, // G_CTPOP = 170
+    CEFBS_None, // G_BSWAP = 171
+    CEFBS_None, // G_BITREVERSE = 172
+    CEFBS_None, // G_FCEIL = 173
+    CEFBS_None, // G_FCOS = 174
+    CEFBS_None, // G_FSIN = 175
+    CEFBS_None, // G_FSQRT = 176
+    CEFBS_None, // G_FFLOOR = 177
+    CEFBS_None, // G_FRINT = 178
+    CEFBS_None, // G_FNEARBYINT = 179
+    CEFBS_None, // G_ADDRSPACE_CAST = 180
+    CEFBS_None, // G_BLOCK_ADDR = 181
+    CEFBS_None, // G_JUMP_TABLE = 182
+    CEFBS_None, // G_DYN_STACKALLOC = 183
+    CEFBS_None, // G_STRICT_FADD = 184
+    CEFBS_None, // G_STRICT_FSUB = 185
+    CEFBS_None, // G_STRICT_FMUL = 186
+    CEFBS_None, // G_STRICT_FDIV = 187
+    CEFBS_None, // G_STRICT_FREM = 188
+    CEFBS_None, // G_STRICT_FMA = 189
+    CEFBS_None, // G_STRICT_FSQRT = 190
+    CEFBS_None, // G_READ_REGISTER = 191
+    CEFBS_None, // G_WRITE_REGISTER = 192
+    CEFBS_None, // ADDSWrr = 193
+    CEFBS_None, // ADDSXrr = 194
+    CEFBS_None, // ADDWrr = 195
+    CEFBS_None, // ADDXrr = 196
+    CEFBS_HasSVE, // ADD_ZPZZ_UNDEF_B = 197
+    CEFBS_HasSVE, // ADD_ZPZZ_UNDEF_D = 198
+    CEFBS_HasSVE, // ADD_ZPZZ_UNDEF_H = 199
+    CEFBS_HasSVE, // ADD_ZPZZ_UNDEF_S = 200
+    CEFBS_HasSVE, // ADD_ZPZZ_ZERO_B = 201
+    CEFBS_HasSVE, // ADD_ZPZZ_ZERO_D = 202
+    CEFBS_HasSVE, // ADD_ZPZZ_ZERO_H = 203
+    CEFBS_HasSVE, // ADD_ZPZZ_ZERO_S = 204
+    CEFBS_None, // ADDlowTLS = 205
+    CEFBS_None, // ADJCALLSTACKDOWN = 206
+    CEFBS_None, // ADJCALLSTACKUP = 207
+    CEFBS_None, // AESIMCrrTied = 208
+    CEFBS_None, // AESMCrrTied = 209
+    CEFBS_None, // ANDSWrr = 210
+    CEFBS_None, // ANDSXrr = 211
+    CEFBS_None, // ANDWrr = 212
+    CEFBS_None, // ANDXrr = 213
+    CEFBS_HasSVE, // ASRD_ZPZI_ZERO_B = 214
+    CEFBS_HasSVE, // ASRD_ZPZI_ZERO_D = 215
+    CEFBS_HasSVE, // ASRD_ZPZI_ZERO_H = 216
+    CEFBS_HasSVE, // ASRD_ZPZI_ZERO_S = 217
+    CEFBS_HasSVE, // ASR_ZPZZ_ZERO_B = 218
+    CEFBS_HasSVE, // ASR_ZPZZ_ZERO_D = 219
+    CEFBS_HasSVE, // ASR_ZPZZ_ZERO_H = 220
+    CEFBS_HasSVE, // ASR_ZPZZ_ZERO_S = 221
+    CEFBS_None, // BICSWrr = 222
+    CEFBS_None, // BICSXrr = 223
+    CEFBS_None, // BICWrr = 224
+    CEFBS_None, // BICXrr = 225
+    CEFBS_None, // BLRNoIP = 226
+    CEFBS_HasNEON, // BSPv16i8 = 227
+    CEFBS_HasNEON, // BSPv8i8 = 228
+    CEFBS_None, // CATCHRET = 229
+    CEFBS_None, // CLEANUPRET = 230
+    CEFBS_None, // CMP_SWAP_128 = 231
+    CEFBS_None, // CMP_SWAP_16 = 232
+    CEFBS_None, // CMP_SWAP_32 = 233
+    CEFBS_None, // CMP_SWAP_64 = 234
+    CEFBS_None, // CMP_SWAP_8 = 235
+    CEFBS_None, // CompilerBarrier = 236
+    CEFBS_None, // EMITBKEY = 237
+    CEFBS_None, // EONWrr = 238
+    CEFBS_None, // EONXrr = 239
+    CEFBS_None, // EORWrr = 240
+    CEFBS_None, // EORXrr = 241
+    CEFBS_None, // F128CSEL = 242
+    CEFBS_HasSVE, // FABD_ZPZZ_ZERO_D = 243
+    CEFBS_HasSVE, // FABD_ZPZZ_ZERO_H = 244
+    CEFBS_HasSVE, // FABD_ZPZZ_ZERO_S = 245
+    CEFBS_HasSVE, // FADD_ZPZZ_UNDEF_D = 246
+    CEFBS_HasSVE, // FADD_ZPZZ_UNDEF_H = 247
+    CEFBS_HasSVE, // FADD_ZPZZ_UNDEF_S = 248
+    CEFBS_HasSVE, // FADD_ZPZZ_ZERO_D = 249
+    CEFBS_HasSVE, // FADD_ZPZZ_ZERO_H = 250
+    CEFBS_HasSVE, // FADD_ZPZZ_ZERO_S = 251
+    CEFBS_HasSVE, // FDIVR_ZPZZ_ZERO_D = 252
+    CEFBS_HasSVE, // FDIVR_ZPZZ_ZERO_H = 253
+    CEFBS_HasSVE, // FDIVR_ZPZZ_ZERO_S = 254
+    CEFBS_HasSVE, // FDIV_ZPZZ_ZERO_D = 255
+    CEFBS_HasSVE, // FDIV_ZPZZ_ZERO_H = 256
+    CEFBS_HasSVE, // FDIV_ZPZZ_ZERO_S = 257
+    CEFBS_HasSVE, // FMAXNM_ZPZZ_ZERO_D = 258
+    CEFBS_HasSVE, // FMAXNM_ZPZZ_ZERO_H = 259
+    CEFBS_HasSVE, // FMAXNM_ZPZZ_ZERO_S = 260
+    CEFBS_HasSVE, // FMAX_ZPZZ_ZERO_D = 261
+    CEFBS_HasSVE, // FMAX_ZPZZ_ZERO_H = 262
+    CEFBS_HasSVE, // FMAX_ZPZZ_ZERO_S = 263
+    CEFBS_HasSVE, // FMINNM_ZPZZ_ZERO_D = 264
+    CEFBS_HasSVE, // FMINNM_ZPZZ_ZERO_H = 265
+    CEFBS_HasSVE, // FMINNM_ZPZZ_ZERO_S = 266
+    CEFBS_HasSVE, // FMIN_ZPZZ_ZERO_D = 267
+    CEFBS_HasSVE, // FMIN_ZPZZ_ZERO_H = 268
+    CEFBS_HasSVE, // FMIN_ZPZZ_ZERO_S = 269
+    CEFBS_None, // FMOVD0 = 270
+    CEFBS_HasFullFP16, // FMOVH0 = 271
+    CEFBS_None, // FMOVS0 = 272
+    CEFBS_HasSVE, // FMULX_ZPZZ_ZERO_D = 273
+    CEFBS_HasSVE, // FMULX_ZPZZ_ZERO_H = 274
+    CEFBS_HasSVE, // FMULX_ZPZZ_ZERO_S = 275
+    CEFBS_HasSVE, // FMUL_ZPZZ_ZERO_D = 276
+    CEFBS_HasSVE, // FMUL_ZPZZ_ZERO_H = 277
+    CEFBS_HasSVE, // FMUL_ZPZZ_ZERO_S = 278
+    CEFBS_HasSVE, // FSUBR_ZPZZ_ZERO_D = 279
+    CEFBS_HasSVE, // FSUBR_ZPZZ_ZERO_H = 280
+    CEFBS_HasSVE, // FSUBR_ZPZZ_ZERO_S = 281
+    CEFBS_HasSVE, // FSUB_ZPZZ_ZERO_D = 282
+    CEFBS_HasSVE, // FSUB_ZPZZ_ZERO_H = 283
+    CEFBS_HasSVE, // FSUB_ZPZZ_ZERO_S = 284
+    CEFBS_HasSVE, // GLD1B_D = 285
+    CEFBS_HasSVE, // GLD1B_D_IMM = 286
+    CEFBS_HasSVE, // GLD1B_D_SXTW = 287
+    CEFBS_HasSVE, // GLD1B_D_UXTW = 288
+    CEFBS_HasSVE, // GLD1B_S_IMM = 289
+    CEFBS_HasSVE, // GLD1B_S_SXTW = 290
+    CEFBS_HasSVE, // GLD1B_S_UXTW = 291
+    CEFBS_HasSVE, // GLD1D = 292
+    CEFBS_HasSVE, // GLD1D_IMM = 293
+    CEFBS_HasSVE, // GLD1D_SCALED = 294
+    CEFBS_HasSVE, // GLD1D_SXTW = 295
+    CEFBS_HasSVE, // GLD1D_SXTW_SCALED = 296
+    CEFBS_HasSVE, // GLD1D_UXTW = 297
+    CEFBS_HasSVE, // GLD1D_UXTW_SCALED = 298
+    CEFBS_HasSVE, // GLD1H_D = 299
+    CEFBS_HasSVE, // GLD1H_D_IMM = 300
+    CEFBS_HasSVE, // GLD1H_D_SCALED = 301
+    CEFBS_HasSVE, // GLD1H_D_SXTW = 302
+    CEFBS_HasSVE, // GLD1H_D_SXTW_SCALED = 303
+    CEFBS_HasSVE, // GLD1H_D_UXTW = 304
+    CEFBS_HasSVE, // GLD1H_D_UXTW_SCALED = 305
+    CEFBS_HasSVE, // GLD1H_S_IMM = 306
+    CEFBS_HasSVE, // GLD1H_S_SXTW = 307
+    CEFBS_HasSVE, // GLD1H_S_SXTW_SCALED = 308
+    CEFBS_HasSVE, // GLD1H_S_UXTW = 309
+    CEFBS_HasSVE, // GLD1H_S_UXTW_SCALED = 310
+    CEFBS_HasSVE, // GLD1SB_D = 311
+    CEFBS_HasSVE, // GLD1SB_D_IMM = 312
+    CEFBS_HasSVE, // GLD1SB_D_SXTW = 313
+    CEFBS_HasSVE, // GLD1SB_D_UXTW = 314
+    CEFBS_HasSVE, // GLD1SB_S_IMM = 315
+    CEFBS_HasSVE, // GLD1SB_S_SXTW = 316
+    CEFBS_HasSVE, // GLD1SB_S_UXTW = 317
+    CEFBS_HasSVE, // GLD1SH_D = 318
+    CEFBS_HasSVE, // GLD1SH_D_IMM = 319
+    CEFBS_HasSVE, // GLD1SH_D_SCALED = 320
+    CEFBS_HasSVE, // GLD1SH_D_SXTW = 321
+    CEFBS_HasSVE, // GLD1SH_D_SXTW_SCALED = 322
+    CEFBS_HasSVE, // GLD1SH_D_UXTW = 323
+    CEFBS_HasSVE, // GLD1SH_D_UXTW_SCALED = 324
+    CEFBS_HasSVE, // GLD1SH_S_IMM = 325
+    CEFBS_HasSVE, // GLD1SH_S_SXTW = 326
+    CEFBS_HasSVE, // GLD1SH_S_SXTW_SCALED = 327
+    CEFBS_HasSVE, // GLD1SH_S_UXTW = 328
+    CEFBS_HasSVE, // GLD1SH_S_UXTW_SCALED = 329
+    CEFBS_HasSVE, // GLD1SW_D = 330
+    CEFBS_HasSVE, // GLD1SW_D_IMM = 331
+    CEFBS_HasSVE, // GLD1SW_D_SCALED = 332
+    CEFBS_HasSVE, // GLD1SW_D_SXTW = 333
+    CEFBS_HasSVE, // GLD1SW_D_SXTW_SCALED = 334
+    CEFBS_HasSVE, // GLD1SW_D_UXTW = 335
+    CEFBS_HasSVE, // GLD1SW_D_UXTW_SCALED = 336
+    CEFBS_HasSVE, // GLD1W_D = 337
+    CEFBS_HasSVE, // GLD1W_D_IMM = 338
+    CEFBS_HasSVE, // GLD1W_D_SCALED = 339
+    CEFBS_HasSVE, // GLD1W_D_SXTW = 340
+    CEFBS_HasSVE, // GLD1W_D_SXTW_SCALED = 341
+    CEFBS_HasSVE, // GLD1W_D_UXTW = 342
+    CEFBS_HasSVE, // GLD1W_D_UXTW_SCALED = 343
+    CEFBS_HasSVE, // GLD1W_IMM = 344
+    CEFBS_HasSVE, // GLD1W_SXTW = 345
+    CEFBS_HasSVE, // GLD1W_SXTW_SCALED = 346
+    CEFBS_HasSVE, // GLD1W_UXTW = 347
+    CEFBS_HasSVE, // GLD1W_UXTW_SCALED = 348
+    CEFBS_HasSVE, // GLDFF1B_D = 349
+    CEFBS_HasSVE, // GLDFF1B_D_IMM = 350
+    CEFBS_HasSVE, // GLDFF1B_D_SXTW = 351
+    CEFBS_HasSVE, // GLDFF1B_D_UXTW = 352
+    CEFBS_HasSVE, // GLDFF1B_S_IMM = 353
+    CEFBS_HasSVE, // GLDFF1B_S_SXTW = 354
+    CEFBS_HasSVE, // GLDFF1B_S_UXTW = 355
+    CEFBS_HasSVE, // GLDFF1D = 356
+    CEFBS_HasSVE, // GLDFF1D_IMM = 357
+    CEFBS_HasSVE, // GLDFF1D_SCALED = 358
+    CEFBS_HasSVE, // GLDFF1D_SXTW = 359
+    CEFBS_HasSVE, // GLDFF1D_SXTW_SCALED = 360
+    CEFBS_HasSVE, // GLDFF1D_UXTW = 361
+    CEFBS_HasSVE, // GLDFF1D_UXTW_SCALED = 362
+    CEFBS_HasSVE, // GLDFF1H_D = 363
+    CEFBS_HasSVE, // GLDFF1H_D_IMM = 364
+    CEFBS_HasSVE, // GLDFF1H_D_SCALED = 365
+    CEFBS_HasSVE, // GLDFF1H_D_SXTW = 366
+    CEFBS_HasSVE, // GLDFF1H_D_SXTW_SCALED = 367
+    CEFBS_HasSVE, // GLDFF1H_D_UXTW = 368
+    CEFBS_HasSVE, // GLDFF1H_D_UXTW_SCALED = 369
+    CEFBS_HasSVE, // GLDFF1H_S_IMM = 370
+    CEFBS_HasSVE, // GLDFF1H_S_SXTW = 371
+    CEFBS_HasSVE, // GLDFF1H_S_SXTW_SCALED = 372
+    CEFBS_HasSVE, // GLDFF1H_S_UXTW = 373
+    CEFBS_HasSVE, // GLDFF1H_S_UXTW_SCALED = 374
+    CEFBS_HasSVE, // GLDFF1SB_D = 375
+    CEFBS_HasSVE, // GLDFF1SB_D_IMM = 376
+    CEFBS_HasSVE, // GLDFF1SB_D_SXTW = 377
+    CEFBS_HasSVE, // GLDFF1SB_D_UXTW = 378
+    CEFBS_HasSVE, // GLDFF1SB_S_IMM = 379
+    CEFBS_HasSVE, // GLDFF1SB_S_SXTW = 380
+    CEFBS_HasSVE, // GLDFF1SB_S_UXTW = 381
+    CEFBS_HasSVE, // GLDFF1SH_D = 382
+    CEFBS_HasSVE, // GLDFF1SH_D_IMM = 383
+    CEFBS_HasSVE, // GLDFF1SH_D_SCALED = 384
+    CEFBS_HasSVE, // GLDFF1SH_D_SXTW = 385
+    CEFBS_HasSVE, // GLDFF1SH_D_SXTW_SCALED = 386
+    CEFBS_HasSVE, // GLDFF1SH_D_UXTW = 387
+    CEFBS_HasSVE, // GLDFF1SH_D_UXTW_SCALED = 388
+    CEFBS_HasSVE, // GLDFF1SH_S_IMM = 389
+    CEFBS_HasSVE, // GLDFF1SH_S_SXTW = 390
+    CEFBS_HasSVE, // GLDFF1SH_S_SXTW_SCALED = 391
+    CEFBS_HasSVE, // GLDFF1SH_S_UXTW = 392
+    CEFBS_HasSVE, // GLDFF1SH_S_UXTW_SCALED = 393
+    CEFBS_HasSVE, // GLDFF1SW_D = 394
+    CEFBS_HasSVE, // GLDFF1SW_D_IMM = 395
+    CEFBS_HasSVE, // GLDFF1SW_D_SCALED = 396
+    CEFBS_HasSVE, // GLDFF1SW_D_SXTW = 397
+    CEFBS_HasSVE, // GLDFF1SW_D_SXTW_SCALED = 398
+    CEFBS_HasSVE, // GLDFF1SW_D_UXTW = 399
+    CEFBS_HasSVE, // GLDFF1SW_D_UXTW_SCALED = 400
+    CEFBS_HasSVE, // GLDFF1W_D = 401
+    CEFBS_HasSVE, // GLDFF1W_D_IMM = 402
+    CEFBS_HasSVE, // GLDFF1W_D_SCALED = 403
+    CEFBS_HasSVE, // GLDFF1W_D_SXTW = 404
+    CEFBS_HasSVE, // GLDFF1W_D_SXTW_SCALED = 405
+    CEFBS_HasSVE, // GLDFF1W_D_UXTW = 406
+    CEFBS_HasSVE, // GLDFF1W_D_UXTW_SCALED = 407
+    CEFBS_HasSVE, // GLDFF1W_IMM = 408
+    CEFBS_HasSVE, // GLDFF1W_SXTW = 409
+    CEFBS_HasSVE, // GLDFF1W_SXTW_SCALED = 410
+    CEFBS_HasSVE, // GLDFF1W_UXTW = 411
+    CEFBS_HasSVE, // GLDFF1W_UXTW_SCALED = 412
+    CEFBS_None, // G_ADD_LOW = 413
+    CEFBS_None, // G_DUP = 414
+    CEFBS_None, // G_EXT = 415
+    CEFBS_None, // G_REV16 = 416
+    CEFBS_None, // G_REV32 = 417
+    CEFBS_None, // G_REV64 = 418
+    CEFBS_None, // G_TRN1 = 419
+    CEFBS_None, // G_TRN2 = 420
+    CEFBS_None, // G_UZP1 = 421
+    CEFBS_None, // G_UZP2 = 422
+    CEFBS_None, // G_ZIP1 = 423
+    CEFBS_None, // G_ZIP2 = 424
+    CEFBS_None, // HWASAN_CHECK_MEMACCESS = 425
+    CEFBS_None, // HWASAN_CHECK_MEMACCESS_SHORTGRANULES = 426
+    CEFBS_HasMTE, // IRGstack = 427
+    CEFBS_None, // JumpTableDest16 = 428
+    CEFBS_None, // JumpTableDest32 = 429
+    CEFBS_None, // JumpTableDest8 = 430
+    CEFBS_HasSVE, // LD1B_D_IMM = 431
+    CEFBS_HasSVE, // LD1B_H_IMM = 432
+    CEFBS_HasSVE, // LD1B_IMM = 433
+    CEFBS_HasSVE, // LD1B_S_IMM = 434
+    CEFBS_HasSVE, // LD1D_IMM = 435
+    CEFBS_HasSVE, // LD1H_D_IMM = 436
+    CEFBS_HasSVE, // LD1H_IMM = 437
+    CEFBS_HasSVE, // LD1H_S_IMM = 438
+    CEFBS_HasSVE, // LD1SB_D_IMM = 439
+    CEFBS_HasSVE, // LD1SB_H_IMM = 440
+    CEFBS_HasSVE, // LD1SB_S_IMM = 441
+    CEFBS_HasSVE, // LD1SH_D_IMM = 442
+    CEFBS_HasSVE, // LD1SH_S_IMM = 443
+    CEFBS_HasSVE, // LD1SW_D_IMM = 444
+    CEFBS_HasSVE, // LD1W_D_IMM = 445
+    CEFBS_HasSVE, // LD1W_IMM = 446
+    CEFBS_HasSVE, // LDFF1B = 447
+    CEFBS_HasSVE, // LDFF1B_D = 448
+    CEFBS_HasSVE, // LDFF1B_H = 449
+    CEFBS_HasSVE, // LDFF1B_S = 450
+    CEFBS_HasSVE, // LDFF1D = 451
+    CEFBS_HasSVE, // LDFF1H = 452
+    CEFBS_HasSVE, // LDFF1H_D = 453
+    CEFBS_HasSVE, // LDFF1H_S = 454
+    CEFBS_HasSVE, // LDFF1SB_D = 455
+    CEFBS_HasSVE, // LDFF1SB_H = 456
+    CEFBS_HasSVE, // LDFF1SB_S = 457
+    CEFBS_HasSVE, // LDFF1SH_D = 458
+    CEFBS_HasSVE, // LDFF1SH_S = 459
+    CEFBS_HasSVE, // LDFF1SW_D = 460
+    CEFBS_HasSVE, // LDFF1W = 461
+    CEFBS_HasSVE, // LDFF1W_D = 462
+    CEFBS_HasSVE, // LDNF1B_D_IMM = 463
+    CEFBS_HasSVE, // LDNF1B_H_IMM = 464
+    CEFBS_HasSVE, // LDNF1B_IMM = 465
+    CEFBS_HasSVE, // LDNF1B_S_IMM = 466
+    CEFBS_HasSVE, // LDNF1D_IMM = 467
+    CEFBS_HasSVE, // LDNF1H_D_IMM = 468
+    CEFBS_HasSVE, // LDNF1H_IMM = 469
+    CEFBS_HasSVE, // LDNF1H_S_IMM = 470
+    CEFBS_HasSVE, // LDNF1SB_D_IMM = 471
+    CEFBS_HasSVE, // LDNF1SB_H_IMM = 472
+    CEFBS_HasSVE, // LDNF1SB_S_IMM = 473
+    CEFBS_HasSVE, // LDNF1SH_D_IMM = 474
+    CEFBS_HasSVE, // LDNF1SH_S_IMM = 475
+    CEFBS_HasSVE, // LDNF1SW_D_IMM = 476
+    CEFBS_HasSVE, // LDNF1W_D_IMM = 477
+    CEFBS_HasSVE, // LDNF1W_IMM = 478
+    CEFBS_HasSVE, // LDR_ZZXI = 479
+    CEFBS_HasSVE, // LDR_ZZZXI = 480
+    CEFBS_HasSVE, // LDR_ZZZZXI = 481
+    CEFBS_None, // LOADgot = 482
+    CEFBS_HasSVE, // LSL_ZPZZ_ZERO_B = 483
+    CEFBS_HasSVE, // LSL_ZPZZ_ZERO_D = 484
+    CEFBS_HasSVE, // LSL_ZPZZ_ZERO_H = 485
+    CEFBS_HasSVE, // LSL_ZPZZ_ZERO_S = 486
+    CEFBS_HasSVE, // LSR_ZPZZ_ZERO_B = 487
+    CEFBS_HasSVE, // LSR_ZPZZ_ZERO_D = 488
+    CEFBS_HasSVE, // LSR_ZPZZ_ZERO_H = 489
+    CEFBS_HasSVE, // LSR_ZPZZ_ZERO_S = 490
+    CEFBS_None, // MOVMCSym = 491
+    CEFBS_None, // MOVaddr = 492
+    CEFBS_None, // MOVaddrBA = 493
+    CEFBS_None, // MOVaddrCP = 494
+    CEFBS_None, // MOVaddrEXT = 495
+    CEFBS_None, // MOVaddrJT = 496
+    CEFBS_None, // MOVaddrTLS = 497
+    CEFBS_None, // MOVbaseTLS = 498
+    CEFBS_None, // MOVi32imm = 499
+    CEFBS_None, // MOVi64imm = 500
+    CEFBS_None, // ORNWrr = 501
+    CEFBS_None, // ORNXrr = 502
+    CEFBS_None, // ORRWrr = 503
+    CEFBS_None, // ORRXrr = 504
+    CEFBS_HasSVE, // RDFFR_P = 505
+    CEFBS_HasSVE, // RDFFR_PPz = 506
+    CEFBS_None, // RET_ReallyLR = 507
+    CEFBS_HasSVE, // SDIV_ZPZZ_UNDEF_D = 508
+    CEFBS_HasSVE, // SDIV_ZPZZ_UNDEF_S = 509
+    CEFBS_None, // SEH_AddFP = 510
+    CEFBS_None, // SEH_EpilogEnd = 511
+    CEFBS_None, // SEH_EpilogStart = 512
+    CEFBS_None, // SEH_Nop = 513
+    CEFBS_None, // SEH_PrologEnd = 514
+    CEFBS_None, // SEH_SaveFPLR = 515
+    CEFBS_None, // SEH_SaveFPLR_X = 516
+    CEFBS_None, // SEH_SaveFReg = 517
+    CEFBS_None, // SEH_SaveFRegP = 518
+    CEFBS_None, // SEH_SaveFRegP_X = 519
+    CEFBS_None, // SEH_SaveFReg_X = 520
+    CEFBS_None, // SEH_SaveReg = 521
+    CEFBS_None, // SEH_SaveRegP = 522
+    CEFBS_None, // SEH_SaveRegP_X = 523
+    CEFBS_None, // SEH_SaveReg_X = 524
+    CEFBS_None, // SEH_SetFP = 525
+    CEFBS_None, // SEH_StackAlloc = 526
+    CEFBS_None, // SPACE = 527
+    CEFBS_HasSVE2, // SQSHLU_ZPZI_ZERO_B = 528
+    CEFBS_HasSVE2, // SQSHLU_ZPZI_ZERO_D = 529
+    CEFBS_HasSVE2, // SQSHLU_ZPZI_ZERO_H = 530
+    CEFBS_HasSVE2, // SQSHLU_ZPZI_ZERO_S = 531
+    CEFBS_HasSVE2, // SQSHL_ZPZI_ZERO_B = 532
+    CEFBS_HasSVE2, // SQSHL_ZPZI_ZERO_D = 533
+    CEFBS_HasSVE2, // SQSHL_ZPZI_ZERO_H = 534
+    CEFBS_HasSVE2, // SQSHL_ZPZI_ZERO_S = 535
+    CEFBS_HasSVE2, // SRSHR_ZPZI_ZERO_B = 536
+    CEFBS_HasSVE2, // SRSHR_ZPZI_ZERO_D = 537
+    CEFBS_HasSVE2, // SRSHR_ZPZI_ZERO_H = 538
+    CEFBS_HasSVE2, // SRSHR_ZPZI_ZERO_S = 539
+    CEFBS_HasMTE, // STGloop = 540
+    CEFBS_HasMTE, // STGloop_wback = 541
+    CEFBS_HasSVE, // STR_ZZXI = 542
+    CEFBS_HasSVE, // STR_ZZZXI = 543
+    CEFBS_HasSVE, // STR_ZZZZXI = 544
+    CEFBS_HasMTE, // STZGloop = 545
+    CEFBS_HasMTE, // STZGloop_wback = 546
+    CEFBS_HasSVE, // SUBR_ZPZZ_ZERO_B = 547
+    CEFBS_HasSVE, // SUBR_ZPZZ_ZERO_D = 548
+    CEFBS_HasSVE, // SUBR_ZPZZ_ZERO_H = 549
+    CEFBS_HasSVE, // SUBR_ZPZZ_ZERO_S = 550
+    CEFBS_None, // SUBSWrr = 551
+    CEFBS_None, // SUBSXrr = 552
+    CEFBS_None, // SUBWrr = 553
+    CEFBS_None, // SUBXrr = 554
+    CEFBS_HasSVE, // SUB_ZPZZ_ZERO_B = 555
+    CEFBS_HasSVE, // SUB_ZPZZ_ZERO_D = 556
+    CEFBS_HasSVE, // SUB_ZPZZ_ZERO_H = 557
+    CEFBS_HasSVE, // SUB_ZPZZ_ZERO_S = 558
+    CEFBS_None, // SpeculationBarrierISBDSBEndBB = 559
+    CEFBS_None, // SpeculationBarrierSBEndBB = 560
+    CEFBS_None, // SpeculationSafeValueW = 561
+    CEFBS_None, // SpeculationSafeValueX = 562
+    CEFBS_HasMTE, // TAGPstack = 563
+    CEFBS_None, // TCRETURNdi = 564
+    CEFBS_None, // TCRETURNri = 565
+    CEFBS_None, // TCRETURNriALL = 566
+    CEFBS_None, // TCRETURNriBTI = 567
+    CEFBS_None, // TLSDESCCALL = 568
+    CEFBS_None, // TLSDESC_CALLSEQ = 569
+    CEFBS_HasSVE, // UDIV_ZPZZ_UNDEF_D = 570
+    CEFBS_HasSVE, // UDIV_ZPZZ_UNDEF_S = 571
+    CEFBS_HasSVE2, // UQSHL_ZPZI_ZERO_B = 572
+    CEFBS_HasSVE2, // UQSHL_ZPZI_ZERO_D = 573
+    CEFBS_HasSVE2, // UQSHL_ZPZI_ZERO_H = 574
+    CEFBS_HasSVE2, // UQSHL_ZPZI_ZERO_S = 575
+    CEFBS_HasSVE2, // URSHR_ZPZI_ZERO_B = 576
+    CEFBS_HasSVE2, // URSHR_ZPZI_ZERO_D = 577
+    CEFBS_HasSVE2, // URSHR_ZPZI_ZERO_H = 578
+    CEFBS_HasSVE2, // URSHR_ZPZI_ZERO_S = 579
+    CEFBS_HasSVE, // ABS_ZPmZ_B = 580
+    CEFBS_HasSVE, // ABS_ZPmZ_D = 581
+    CEFBS_HasSVE, // ABS_ZPmZ_H = 582
+    CEFBS_HasSVE, // ABS_ZPmZ_S = 583
+    CEFBS_HasNEON, // ABSv16i8 = 584
+    CEFBS_HasNEON, // ABSv1i64 = 585
+    CEFBS_HasNEON, // ABSv2i32 = 586
+    CEFBS_HasNEON, // ABSv2i64 = 587
+    CEFBS_HasNEON, // ABSv4i16 = 588
+    CEFBS_HasNEON, // ABSv4i32 = 589
+    CEFBS_HasNEON, // ABSv8i16 = 590
+    CEFBS_HasNEON, // ABSv8i8 = 591
+    CEFBS_HasSVE2, // ADCLB_ZZZ_D = 592
+    CEFBS_HasSVE2, // ADCLB_ZZZ_S = 593
+    CEFBS_HasSVE2, // ADCLT_ZZZ_D = 594
+    CEFBS_HasSVE2, // ADCLT_ZZZ_S = 595
+    CEFBS_None, // ADCSWr = 596
+    CEFBS_None, // ADCSXr = 597
+    CEFBS_None, // ADCWr = 598
+    CEFBS_None, // ADCXr = 599
+    CEFBS_HasMTE, // ADDG = 600
+    CEFBS_HasSVE2, // ADDHNB_ZZZ_B = 601
+    CEFBS_HasSVE2, // ADDHNB_ZZZ_H = 602
+    CEFBS_HasSVE2, // ADDHNB_ZZZ_S = 603
+    CEFBS_HasSVE2, // ADDHNT_ZZZ_B = 604
+    CEFBS_HasSVE2, // ADDHNT_ZZZ_H = 605
+    CEFBS_HasSVE2, // ADDHNT_ZZZ_S = 606
+    CEFBS_HasNEON, // ADDHNv2i64_v2i32 = 607
+    CEFBS_HasNEON, // ADDHNv2i64_v4i32 = 608
+    CEFBS_HasNEON, // ADDHNv4i32_v4i16 = 609
+    CEFBS_HasNEON, // ADDHNv4i32_v8i16 = 610
+    CEFBS_HasNEON, // ADDHNv8i16_v16i8 = 611
+    CEFBS_HasNEON, // ADDHNv8i16_v8i8 = 612
+    CEFBS_HasSVE, // ADDPL_XXI = 613
+    CEFBS_HasSVE2, // ADDP_ZPmZ_B = 614
+    CEFBS_HasSVE2, // ADDP_ZPmZ_D = 615
+    CEFBS_HasSVE2, // ADDP_ZPmZ_H = 616
+    CEFBS_HasSVE2, // ADDP_ZPmZ_S = 617
+    CEFBS_HasNEON, // ADDPv16i8 = 618
+    CEFBS_HasNEON, // ADDPv2i32 = 619
+    CEFBS_HasNEON, // ADDPv2i64 = 620
+    CEFBS_HasNEON, // ADDPv2i64p = 621
+    CEFBS_HasNEON, // ADDPv4i16 = 622
+    CEFBS_HasNEON, // ADDPv4i32 = 623
+    CEFBS_HasNEON, // ADDPv8i16 = 624
+    CEFBS_HasNEON, // ADDPv8i8 = 625
+    CEFBS_None, // ADDSWri = 626
+    CEFBS_None, // ADDSWrs = 627
+    CEFBS_None, // ADDSWrx = 628
+    CEFBS_None, // ADDSXri = 629
+    CEFBS_None, // ADDSXrs = 630
+    CEFBS_None, // ADDSXrx = 631
+    CEFBS_None, // ADDSXrx64 = 632
+    CEFBS_HasSVE, // ADDVL_XXI = 633
+    CEFBS_HasNEON, // ADDVv16i8v = 634
+    CEFBS_HasNEON, // ADDVv4i16v = 635
+    CEFBS_HasNEON, // ADDVv4i32v = 636
+    CEFBS_HasNEON, // ADDVv8i16v = 637
+    CEFBS_HasNEON, // ADDVv8i8v = 638
+    CEFBS_None, // ADDWri = 639
+    CEFBS_None, // ADDWrs = 640
+    CEFBS_None, // ADDWrx = 641
+    CEFBS_None, // ADDXri = 642
+    CEFBS_None, // ADDXrs = 643
+    CEFBS_None, // ADDXrx = 644
+    CEFBS_None, // ADDXrx64 = 645
+    CEFBS_HasSVE, // ADD_ZI_B = 646
+    CEFBS_HasSVE, // ADD_ZI_D = 647
+    CEFBS_HasSVE, // ADD_ZI_H = 648
+    CEFBS_HasSVE, // ADD_ZI_S = 649
+    CEFBS_HasSVE, // ADD_ZPmZ_B = 650
+    CEFBS_HasSVE, // ADD_ZPmZ_D = 651
+    CEFBS_HasSVE, // ADD_ZPmZ_H = 652
+    CEFBS_HasSVE, // ADD_ZPmZ_S = 653
+    CEFBS_HasSVE, // ADD_ZZZ_B = 654
+    CEFBS_HasSVE, // ADD_ZZZ_D = 655
+    CEFBS_HasSVE, // ADD_ZZZ_H = 656
+    CEFBS_HasSVE, // ADD_ZZZ_S = 657
+    CEFBS_HasNEON, // ADDv16i8 = 658
+    CEFBS_HasNEON, // ADDv1i64 = 659
+    CEFBS_HasNEON, // ADDv2i32 = 660
+    CEFBS_HasNEON, // ADDv2i64 = 661
+    CEFBS_HasNEON, // ADDv4i16 = 662
+    CEFBS_HasNEON, // ADDv4i32 = 663
+    CEFBS_HasNEON, // ADDv8i16 = 664
+    CEFBS_HasNEON, // ADDv8i8 = 665
+    CEFBS_None, // ADR = 666
+    CEFBS_None, // ADRP = 667
+    CEFBS_HasSVE, // ADR_LSL_ZZZ_D_0 = 668
+    CEFBS_HasSVE, // ADR_LSL_ZZZ_D_1 = 669
+    CEFBS_HasSVE, // ADR_LSL_ZZZ_D_2 = 670
+    CEFBS_HasSVE, // ADR_LSL_ZZZ_D_3 = 671
+    CEFBS_HasSVE, // ADR_LSL_ZZZ_S_0 = 672
+    CEFBS_HasSVE, // ADR_LSL_ZZZ_S_1 = 673
+    CEFBS_HasSVE, // ADR_LSL_ZZZ_S_2 = 674
+    CEFBS_HasSVE, // ADR_LSL_ZZZ_S_3 = 675
+    CEFBS_HasSVE, // ADR_SXTW_ZZZ_D_0 = 676
+    CEFBS_HasSVE, // ADR_SXTW_ZZZ_D_1 = 677
+    CEFBS_HasSVE, // ADR_SXTW_ZZZ_D_2 = 678
+    CEFBS_HasSVE, // ADR_SXTW_ZZZ_D_3 = 679
+    CEFBS_HasSVE, // ADR_UXTW_ZZZ_D_0 = 680
+    CEFBS_HasSVE, // ADR_UXTW_ZZZ_D_1 = 681
+    CEFBS_HasSVE, // ADR_UXTW_ZZZ_D_2 = 682
+    CEFBS_HasSVE, // ADR_UXTW_ZZZ_D_3 = 683
+    CEFBS_HasSVE2AES, // AESD_ZZZ_B = 684
+    CEFBS_HasAES, // AESDrr = 685
+    CEFBS_HasSVE2AES, // AESE_ZZZ_B = 686
+    CEFBS_HasAES, // AESErr = 687
+    CEFBS_HasSVE2AES, // AESIMC_ZZ_B = 688
+    CEFBS_HasAES, // AESIMCrr = 689
+    CEFBS_HasSVE2AES, // AESMC_ZZ_B = 690
+    CEFBS_HasAES, // AESMCrr = 691
+    CEFBS_None, // ANDSWri = 692
+    CEFBS_None, // ANDSWrs = 693
+    CEFBS_None, // ANDSXri = 694
+    CEFBS_None, // ANDSXrs = 695
+    CEFBS_HasSVE, // ANDS_PPzPP = 696
+    CEFBS_HasSVE, // ANDV_VPZ_B = 697
+    CEFBS_HasSVE, // ANDV_VPZ_D = 698
+    CEFBS_HasSVE, // ANDV_VPZ_H = 699
+    CEFBS_HasSVE, // ANDV_VPZ_S = 700
+    CEFBS_None, // ANDWri = 701
+    CEFBS_None, // ANDWrs = 702
+    CEFBS_None, // ANDXri = 703
+    CEFBS_None, // ANDXrs = 704
+    CEFBS_HasSVE, // AND_PPzPP = 705
+    CEFBS_HasSVE, // AND_ZI = 706
+    CEFBS_HasSVE, // AND_ZPmZ_B = 707
+    CEFBS_HasSVE, // AND_ZPmZ_D = 708
+    CEFBS_HasSVE, // AND_ZPmZ_H = 709
+    CEFBS_HasSVE, // AND_ZPmZ_S = 710
+    CEFBS_HasSVE, // AND_ZZZ = 711
+    CEFBS_HasNEON, // ANDv16i8 = 712
+    CEFBS_HasNEON, // ANDv8i8 = 713
+    CEFBS_HasSVE, // ASRD_ZPmI_B = 714
+    CEFBS_HasSVE, // ASRD_ZPmI_D = 715
+    CEFBS_HasSVE, // ASRD_ZPmI_H = 716
+    CEFBS_HasSVE, // ASRD_ZPmI_S = 717
+    CEFBS_HasSVE, // ASRR_ZPmZ_B = 718
+    CEFBS_HasSVE, // ASRR_ZPmZ_D = 719
+    CEFBS_HasSVE, // ASRR_ZPmZ_H = 720
+    CEFBS_HasSVE, // ASRR_ZPmZ_S = 721
+    CEFBS_None, // ASRVWr = 722
+    CEFBS_None, // ASRVXr = 723
+    CEFBS_HasSVE, // ASR_WIDE_ZPmZ_B = 724
+    CEFBS_HasSVE, // ASR_WIDE_ZPmZ_H = 725
+    CEFBS_HasSVE, // ASR_WIDE_ZPmZ_S = 726
+    CEFBS_HasSVE, // ASR_WIDE_ZZZ_B = 727
+    CEFBS_HasSVE, // ASR_WIDE_ZZZ_H = 728
+    CEFBS_HasSVE, // ASR_WIDE_ZZZ_S = 729
+    CEFBS_HasSVE, // ASR_ZPmI_B = 730
+    CEFBS_HasSVE, // ASR_ZPmI_D = 731
+    CEFBS_HasSVE, // ASR_ZPmI_H = 732
+    CEFBS_HasSVE, // ASR_ZPmI_S = 733
+    CEFBS_HasSVE, // ASR_ZPmZ_B = 734
+    CEFBS_HasSVE, // ASR_ZPmZ_D = 735
+    CEFBS_HasSVE, // ASR_ZPmZ_H = 736
+    CEFBS_HasSVE, // ASR_ZPmZ_S = 737
+    CEFBS_HasSVE, // ASR_ZZI_B = 738
+    CEFBS_HasSVE, // ASR_ZZI_D = 739
+    CEFBS_HasSVE, // ASR_ZZI_H = 740
+    CEFBS_HasSVE, // ASR_ZZI_S = 741
+    CEFBS_HasPA, // AUTDA = 742
+    CEFBS_HasPA, // AUTDB = 743
+    CEFBS_HasPA, // AUTDZA = 744
+    CEFBS_HasPA, // AUTDZB = 745
+    CEFBS_HasPA, // AUTIA = 746
+    CEFBS_None, // AUTIA1716 = 747
+    CEFBS_None, // AUTIASP = 748
+    CEFBS_None, // AUTIAZ = 749
+    CEFBS_HasPA, // AUTIB = 750
+    CEFBS_None, // AUTIB1716 = 751
+    CEFBS_None, // AUTIBSP = 752
+    CEFBS_None, // AUTIBZ = 753
+    CEFBS_HasPA, // AUTIZA = 754
+    CEFBS_HasPA, // AUTIZB = 755
+    CEFBS_HasAltNZCV, // AXFLAG = 756
+    CEFBS_None, // B = 757
+    CEFBS_HasSHA3, // BCAX = 758
+    CEFBS_HasSVE2, // BCAX_ZZZZ = 759
+    CEFBS_HasSVE2BitPerm, // BDEP_ZZZ_B = 760
+    CEFBS_HasSVE2BitPerm, // BDEP_ZZZ_D = 761
+    CEFBS_HasSVE2BitPerm, // BDEP_ZZZ_H = 762
+    CEFBS_HasSVE2BitPerm, // BDEP_ZZZ_S = 763
+    CEFBS_HasSVE2BitPerm, // BEXT_ZZZ_B = 764
+    CEFBS_HasSVE2BitPerm, // BEXT_ZZZ_D = 765
+    CEFBS_HasSVE2BitPerm, // BEXT_ZZZ_H = 766
+    CEFBS_HasSVE2BitPerm, // BEXT_ZZZ_S = 767
+    CEFBS_HasBF16, // BF16DOTlanev4bf16 = 768
+    CEFBS_HasBF16, // BF16DOTlanev8bf16 = 769
+    CEFBS_HasBF16, // BFCVT = 770
+    CEFBS_HasBF16, // BFCVTN = 771
+    CEFBS_HasBF16, // BFCVTN2 = 772
+    CEFBS_HasBF16_HasSVE, // BFCVTNT_ZPmZ = 773
+    CEFBS_HasBF16_HasSVE, // BFCVT_ZPmZ = 774
+    CEFBS_HasBF16_HasSVE, // BFDOT_ZZI = 775
+    CEFBS_HasBF16_HasSVE, // BFDOT_ZZZ = 776
+    CEFBS_HasBF16, // BFDOTv4bf16 = 777
+    CEFBS_HasBF16, // BFDOTv8bf16 = 778
+    CEFBS_HasBF16, // BFMLALB = 779
+    CEFBS_HasBF16, // BFMLALBIdx = 780
+    CEFBS_HasBF16, // BFMLALT = 781
+    CEFBS_HasBF16, // BFMLALTIdx = 782
+    CEFBS_HasBF16, // BFMMLA = 783
+    CEFBS_HasBF16_HasSVE, // BFMMLA_B_ZZI = 784
+    CEFBS_HasBF16_HasSVE, // BFMMLA_B_ZZZ = 785
+    CEFBS_HasBF16_HasSVE, // BFMMLA_T_ZZI = 786
+    CEFBS_HasBF16_HasSVE, // BFMMLA_T_ZZZ = 787
+    CEFBS_HasBF16_HasSVE, // BFMMLA_ZZZ = 788
+    CEFBS_None, // BFMWri = 789
+    CEFBS_None, // BFMXri = 790
+    CEFBS_HasSVE2BitPerm, // BGRP_ZZZ_B = 791
+    CEFBS_HasSVE2BitPerm, // BGRP_ZZZ_D = 792
+    CEFBS_HasSVE2BitPerm, // BGRP_ZZZ_H = 793
+    CEFBS_HasSVE2BitPerm, // BGRP_ZZZ_S = 794
+    CEFBS_None, // BICSWrs = 795
+    CEFBS_None, // BICSXrs = 796
+    CEFBS_HasSVE, // BICS_PPzPP = 797
+    CEFBS_None, // BICWrs = 798
+    CEFBS_None, // BICXrs = 799
+    CEFBS_HasSVE, // BIC_PPzPP = 800
+    CEFBS_HasSVE, // BIC_ZPmZ_B = 801
+    CEFBS_HasSVE, // BIC_ZPmZ_D = 802
+    CEFBS_HasSVE, // BIC_ZPmZ_H = 803
+    CEFBS_HasSVE, // BIC_ZPmZ_S = 804
+    CEFBS_HasSVE, // BIC_ZZZ = 805
+    CEFBS_HasNEON, // BICv16i8 = 806
+    CEFBS_HasNEON, // BICv2i32 = 807
+    CEFBS_HasNEON, // BICv4i16 = 808
+    CEFBS_HasNEON, // BICv4i32 = 809
+    CEFBS_HasNEON, // BICv8i16 = 810
+    CEFBS_HasNEON, // BICv8i8 = 811
+    CEFBS_HasNEON, // BIFv16i8 = 812
+    CEFBS_HasNEON, // BIFv8i8 = 813
+    CEFBS_HasNEON, // BITv16i8 = 814
+    CEFBS_HasNEON, // BITv8i8 = 815
+    CEFBS_None, // BL = 816
+    CEFBS_None, // BLR = 817
+    CEFBS_HasPA, // BLRAA = 818
+    CEFBS_HasPA, // BLRAAZ = 819
+    CEFBS_HasPA, // BLRAB = 820
+    CEFBS_HasPA, // BLRABZ = 821
+    CEFBS_None, // BR = 822
+    CEFBS_HasPA, // BRAA = 823
+    CEFBS_HasPA, // BRAAZ = 824
+    CEFBS_HasPA, // BRAB = 825
+    CEFBS_HasPA, // BRABZ = 826
+    CEFBS_None, // BRK = 827
+    CEFBS_HasSVE, // BRKAS_PPzP = 828
+    CEFBS_HasSVE, // BRKA_PPmP = 829
+    CEFBS_HasSVE, // BRKA_PPzP = 830
+    CEFBS_HasSVE, // BRKBS_PPzP = 831
+    CEFBS_HasSVE, // BRKB_PPmP = 832
+    CEFBS_HasSVE, // BRKB_PPzP = 833
+    CEFBS_HasSVE, // BRKNS_PPzP = 834
+    CEFBS_HasSVE, // BRKN_PPzP = 835
+    CEFBS_HasSVE, // BRKPAS_PPzPP = 836
+    CEFBS_HasSVE, // BRKPA_PPzPP = 837
+    CEFBS_HasSVE, // BRKPBS_PPzPP = 838
+    CEFBS_HasSVE, // BRKPB_PPzPP = 839
+    CEFBS_HasSVE2, // BSL1N_ZZZZ = 840
+    CEFBS_HasSVE2, // BSL2N_ZZZZ = 841
+    CEFBS_HasSVE2, // BSL_ZZZZ = 842
+    CEFBS_HasNEON, // BSLv16i8 = 843
+    CEFBS_HasNEON, // BSLv8i8 = 844
+    CEFBS_None, // Bcc = 845
+    CEFBS_HasSVE2, // CADD_ZZI_B = 846
+    CEFBS_HasSVE2, // CADD_ZZI_D = 847
+    CEFBS_HasSVE2, // CADD_ZZI_H = 848
+    CEFBS_HasSVE2, // CADD_ZZI_S = 849
+    CEFBS_HasLSE, // CASAB = 850
+    CEFBS_HasLSE, // CASAH = 851
+    CEFBS_HasLSE, // CASALB = 852
+    CEFBS_HasLSE, // CASALH = 853
+    CEFBS_HasLSE, // CASALW = 854
+    CEFBS_HasLSE, // CASALX = 855
+    CEFBS_HasLSE, // CASAW = 856
+    CEFBS_HasLSE, // CASAX = 857
+    CEFBS_HasLSE, // CASB = 858
+    CEFBS_HasLSE, // CASH = 859
+    CEFBS_HasLSE, // CASLB = 860
+    CEFBS_HasLSE, // CASLH = 861
+    CEFBS_HasLSE, // CASLW = 862
+    CEFBS_HasLSE, // CASLX = 863
+    CEFBS_HasLSE, // CASPALW = 864
+    CEFBS_HasLSE, // CASPALX = 865
+    CEFBS_HasLSE, // CASPAW = 866
+    CEFBS_HasLSE, // CASPAX = 867
+    CEFBS_HasLSE, // CASPLW = 868
+    CEFBS_HasLSE, // CASPLX = 869
+    CEFBS_HasLSE, // CASPW = 870
+    CEFBS_HasLSE, // CASPX = 871
+    CEFBS_HasLSE, // CASW = 872
+    CEFBS_HasLSE, // CASX = 873
+    CEFBS_None, // CBNZW = 874
+    CEFBS_None, // CBNZX = 875
+    CEFBS_None, // CBZW = 876
+    CEFBS_None, // CBZX = 877
+    CEFBS_None, // CCMNWi = 878
+    CEFBS_None, // CCMNWr = 879
+    CEFBS_None, // CCMNXi = 880
+    CEFBS_None, // CCMNXr = 881
+    CEFBS_None, // CCMPWi = 882
+    CEFBS_None, // CCMPWr = 883
+    CEFBS_None, // CCMPXi = 884
+    CEFBS_None, // CCMPXr = 885
+    CEFBS_HasSVE2, // CDOT_ZZZI_D = 886
+    CEFBS_HasSVE2, // CDOT_ZZZI_S = 887
+    CEFBS_HasSVE2, // CDOT_ZZZ_D = 888
+    CEFBS_HasSVE2, // CDOT_ZZZ_S = 889
+    CEFBS_HasFMI, // CFINV = 890
+    CEFBS_HasSVE, // CLASTA_RPZ_B = 891
+    CEFBS_HasSVE, // CLASTA_RPZ_D = 892
+    CEFBS_HasSVE, // CLASTA_RPZ_H = 893
+    CEFBS_HasSVE, // CLASTA_RPZ_S = 894
+    CEFBS_HasSVE, // CLASTA_VPZ_B = 895
+    CEFBS_HasSVE, // CLASTA_VPZ_D = 896
+    CEFBS_HasSVE, // CLASTA_VPZ_H = 897
+    CEFBS_HasSVE, // CLASTA_VPZ_S = 898
+    CEFBS_HasSVE, // CLASTA_ZPZ_B = 899
+    CEFBS_HasSVE, // CLASTA_ZPZ_D = 900
+    CEFBS_HasSVE, // CLASTA_ZPZ_H = 901
+    CEFBS_HasSVE, // CLASTA_ZPZ_S = 902
+    CEFBS_HasSVE, // CLASTB_RPZ_B = 903
+    CEFBS_HasSVE, // CLASTB_RPZ_D = 904
+    CEFBS_HasSVE, // CLASTB_RPZ_H = 905
+    CEFBS_HasSVE, // CLASTB_RPZ_S = 906
+    CEFBS_HasSVE, // CLASTB_VPZ_B = 907
+    CEFBS_HasSVE, // CLASTB_VPZ_D = 908
+    CEFBS_HasSVE, // CLASTB_VPZ_H = 909
+    CEFBS_HasSVE, // CLASTB_VPZ_S = 910
+    CEFBS_HasSVE, // CLASTB_ZPZ_B = 911
+    CEFBS_HasSVE, // CLASTB_ZPZ_D = 912
+    CEFBS_HasSVE, // CLASTB_ZPZ_H = 913
+    CEFBS_HasSVE, // CLASTB_ZPZ_S = 914
+    CEFBS_None, // CLREX = 915
+    CEFBS_None, // CLSWr = 916
+    CEFBS_None, // CLSXr = 917
+    CEFBS_HasSVE, // CLS_ZPmZ_B = 918
+    CEFBS_HasSVE, // CLS_ZPmZ_D = 919
+    CEFBS_HasSVE, // CLS_ZPmZ_H = 920
+    CEFBS_HasSVE, // CLS_ZPmZ_S = 921
+    CEFBS_HasNEON, // CLSv16i8 = 922
+    CEFBS_HasNEON, // CLSv2i32 = 923
+    CEFBS_HasNEON, // CLSv4i16 = 924
+    CEFBS_HasNEON, // CLSv4i32 = 925
+    CEFBS_HasNEON, // CLSv8i16 = 926
+    CEFBS_HasNEON, // CLSv8i8 = 927
+    CEFBS_None, // CLZWr = 928
+    CEFBS_None, // CLZXr = 929
+    CEFBS_HasSVE, // CLZ_ZPmZ_B = 930
+    CEFBS_HasSVE, // CLZ_ZPmZ_D = 931
+    CEFBS_HasSVE, // CLZ_ZPmZ_H = 932
+    CEFBS_HasSVE, // CLZ_ZPmZ_S = 933
+    CEFBS_HasNEON, // CLZv16i8 = 934
+    CEFBS_HasNEON, // CLZv2i32 = 935
+    CEFBS_HasNEON, // CLZv4i16 = 936
+    CEFBS_HasNEON, // CLZv4i32 = 937
+    CEFBS_HasNEON, // CLZv8i16 = 938
+    CEFBS_HasNEON, // CLZv8i8 = 939
+    CEFBS_HasNEON, // CMEQv16i8 = 940
+    CEFBS_HasNEON, // CMEQv16i8rz = 941
+    CEFBS_HasNEON, // CMEQv1i64 = 942
+    CEFBS_HasNEON, // CMEQv1i64rz = 943
+    CEFBS_HasNEON, // CMEQv2i32 = 944
+    CEFBS_HasNEON, // CMEQv2i32rz = 945
+    CEFBS_HasNEON, // CMEQv2i64 = 946
+    CEFBS_HasNEON, // CMEQv2i64rz = 947
+    CEFBS_HasNEON, // CMEQv4i16 = 948
+    CEFBS_HasNEON, // CMEQv4i16rz = 949
+    CEFBS_HasNEON, // CMEQv4i32 = 950
+    CEFBS_HasNEON, // CMEQv4i32rz = 951
+    CEFBS_HasNEON, // CMEQv8i16 = 952
+    CEFBS_HasNEON, // CMEQv8i16rz = 953
+    CEFBS_HasNEON, // CMEQv8i8 = 954
+    CEFBS_HasNEON, // CMEQv8i8rz = 955
+    CEFBS_HasNEON, // CMGEv16i8 = 956
+    CEFBS_HasNEON, // CMGEv16i8rz = 957
+    CEFBS_HasNEON, // CMGEv1i64 = 958
+    CEFBS_HasNEON, // CMGEv1i64rz = 959
+    CEFBS_HasNEON, // CMGEv2i32 = 960
+    CEFBS_HasNEON, // CMGEv2i32rz = 961
+    CEFBS_HasNEON, // CMGEv2i64 = 962
+    CEFBS_HasNEON, // CMGEv2i64rz = 963
+    CEFBS_HasNEON, // CMGEv4i16 = 964
+    CEFBS_HasNEON, // CMGEv4i16rz = 965
+    CEFBS_HasNEON, // CMGEv4i32 = 966
+    CEFBS_HasNEON, // CMGEv4i32rz = 967
+    CEFBS_HasNEON, // CMGEv8i16 = 968
+    CEFBS_HasNEON, // CMGEv8i16rz = 969
+    CEFBS_HasNEON, // CMGEv8i8 = 970
+    CEFBS_HasNEON, // CMGEv8i8rz = 971
+    CEFBS_HasNEON, // CMGTv16i8 = 972
+    CEFBS_HasNEON, // CMGTv16i8rz = 973
+    CEFBS_HasNEON, // CMGTv1i64 = 974
+    CEFBS_HasNEON, // CMGTv1i64rz = 975
+    CEFBS_HasNEON, // CMGTv2i32 = 976
+    CEFBS_HasNEON, // CMGTv2i32rz = 977
+    CEFBS_HasNEON, // CMGTv2i64 = 978
+    CEFBS_HasNEON, // CMGTv2i64rz = 979
+    CEFBS_HasNEON, // CMGTv4i16 = 980
+    CEFBS_HasNEON, // CMGTv4i16rz = 981
+    CEFBS_HasNEON, // CMGTv4i32 = 982
+    CEFBS_HasNEON, // CMGTv4i32rz = 983
+    CEFBS_HasNEON, // CMGTv8i16 = 984
+    CEFBS_HasNEON, // CMGTv8i16rz = 985
+    CEFBS_HasNEON, // CMGTv8i8 = 986
+    CEFBS_HasNEON, // CMGTv8i8rz = 987
+    CEFBS_HasNEON, // CMHIv16i8 = 988
+    CEFBS_HasNEON, // CMHIv1i64 = 989
+    CEFBS_HasNEON, // CMHIv2i32 = 990
+    CEFBS_HasNEON, // CMHIv2i64 = 991
+    CEFBS_HasNEON, // CMHIv4i16 = 992
+    CEFBS_HasNEON, // CMHIv4i32 = 993
+    CEFBS_HasNEON, // CMHIv8i16 = 994
+    CEFBS_HasNEON, // CMHIv8i8 = 995
+    CEFBS_HasNEON, // CMHSv16i8 = 996
+    CEFBS_HasNEON, // CMHSv1i64 = 997
+    CEFBS_HasNEON, // CMHSv2i32 = 998
+    CEFBS_HasNEON, // CMHSv2i64 = 999
+    CEFBS_HasNEON, // CMHSv4i16 = 1000
+    CEFBS_HasNEON, // CMHSv4i32 = 1001
+    CEFBS_HasNEON, // CMHSv8i16 = 1002
+    CEFBS_HasNEON, // CMHSv8i8 = 1003
+    CEFBS_HasSVE2, // CMLA_ZZZI_H = 1004
+    CEFBS_HasSVE2, // CMLA_ZZZI_S = 1005
+    CEFBS_HasSVE2, // CMLA_ZZZ_B = 1006
+    CEFBS_HasSVE2, // CMLA_ZZZ_D = 1007
+    CEFBS_HasSVE2, // CMLA_ZZZ_H = 1008
+    CEFBS_HasSVE2, // CMLA_ZZZ_S = 1009
+    CEFBS_HasNEON, // CMLEv16i8rz = 1010
+    CEFBS_HasNEON, // CMLEv1i64rz = 1011
+    CEFBS_HasNEON, // CMLEv2i32rz = 1012
+    CEFBS_HasNEON, // CMLEv2i64rz = 1013
+    CEFBS_HasNEON, // CMLEv4i16rz = 1014
+    CEFBS_HasNEON, // CMLEv4i32rz = 1015
+    CEFBS_HasNEON, // CMLEv8i16rz = 1016
+    CEFBS_HasNEON, // CMLEv8i8rz = 1017
+    CEFBS_HasNEON, // CMLTv16i8rz = 1018
+    CEFBS_HasNEON, // CMLTv1i64rz = 1019
+    CEFBS_HasNEON, // CMLTv2i32rz = 1020
+    CEFBS_HasNEON, // CMLTv2i64rz = 1021
+    CEFBS_HasNEON, // CMLTv4i16rz = 1022
+    CEFBS_HasNEON, // CMLTv4i32rz = 1023
+    CEFBS_HasNEON, // CMLTv8i16rz = 1024
+    CEFBS_HasNEON, // CMLTv8i8rz = 1025
+    CEFBS_HasSVE, // CMPEQ_PPzZI_B = 1026
+    CEFBS_HasSVE, // CMPEQ_PPzZI_D = 1027
+    CEFBS_HasSVE, // CMPEQ_PPzZI_H = 1028
+    CEFBS_HasSVE, // CMPEQ_PPzZI_S = 1029
+    CEFBS_HasSVE, // CMPEQ_PPzZZ_B = 1030
+    CEFBS_HasSVE, // CMPEQ_PPzZZ_D = 1031
+    CEFBS_HasSVE, // CMPEQ_PPzZZ_H = 1032
+    CEFBS_HasSVE, // CMPEQ_PPzZZ_S = 1033
+    CEFBS_HasSVE, // CMPEQ_WIDE_PPzZZ_B = 1034
+    CEFBS_HasSVE, // CMPEQ_WIDE_PPzZZ_H = 1035
+    CEFBS_HasSVE, // CMPEQ_WIDE_PPzZZ_S = 1036
+    CEFBS_HasSVE, // CMPGE_PPzZI_B = 1037
+    CEFBS_HasSVE, // CMPGE_PPzZI_D = 1038
+    CEFBS_HasSVE, // CMPGE_PPzZI_H = 1039
+    CEFBS_HasSVE, // CMPGE_PPzZI_S = 1040
+    CEFBS_HasSVE, // CMPGE_PPzZZ_B = 1041
+    CEFBS_HasSVE, // CMPGE_PPzZZ_D = 1042
+    CEFBS_HasSVE, // CMPGE_PPzZZ_H = 1043
+    CEFBS_HasSVE, // CMPGE_PPzZZ_S = 1044
+    CEFBS_HasSVE, // CMPGE_WIDE_PPzZZ_B = 1045
+    CEFBS_HasSVE, // CMPGE_WIDE_PPzZZ_H = 1046
+    CEFBS_HasSVE, // CMPGE_WIDE_PPzZZ_S = 1047
+    CEFBS_HasSVE, // CMPGT_PPzZI_B = 1048
+    CEFBS_HasSVE, // CMPGT_PPzZI_D = 1049
+    CEFBS_HasSVE, // CMPGT_PPzZI_H = 1050
+    CEFBS_HasSVE, // CMPGT_PPzZI_S = 1051
+    CEFBS_HasSVE, // CMPGT_PPzZZ_B = 1052
+    CEFBS_HasSVE, // CMPGT_PPzZZ_D = 1053
+    CEFBS_HasSVE, // CMPGT_PPzZZ_H = 1054
+    CEFBS_HasSVE, // CMPGT_PPzZZ_S = 1055
+    CEFBS_HasSVE, // CMPGT_WIDE_PPzZZ_B = 1056
+    CEFBS_HasSVE, // CMPGT_WIDE_PPzZZ_H = 1057
+    CEFBS_HasSVE, // CMPGT_WIDE_PPzZZ_S = 1058
+    CEFBS_HasSVE, // CMPHI_PPzZI_B = 1059
+    CEFBS_HasSVE, // CMPHI_PPzZI_D = 1060
+    CEFBS_HasSVE, // CMPHI_PPzZI_H = 1061
+    CEFBS_HasSVE, // CMPHI_PPzZI_S = 1062
+    CEFBS_HasSVE, // CMPHI_PPzZZ_B = 1063
+    CEFBS_HasSVE, // CMPHI_PPzZZ_D = 1064
+    CEFBS_HasSVE, // CMPHI_PPzZZ_H = 1065
+    CEFBS_HasSVE, // CMPHI_PPzZZ_S = 1066
+    CEFBS_HasSVE, // CMPHI_WIDE_PPzZZ_B = 1067
+    CEFBS_HasSVE, // CMPHI_WIDE_PPzZZ_H = 1068
+    CEFBS_HasSVE, // CMPHI_WIDE_PPzZZ_S = 1069
+    CEFBS_HasSVE, // CMPHS_PPzZI_B = 1070
+    CEFBS_HasSVE, // CMPHS_PPzZI_D = 1071
+    CEFBS_HasSVE, // CMPHS_PPzZI_H = 1072
+    CEFBS_HasSVE, // CMPHS_PPzZI_S = 1073
+    CEFBS_HasSVE, // CMPHS_PPzZZ_B = 1074
+    CEFBS_HasSVE, // CMPHS_PPzZZ_D = 1075
+    CEFBS_HasSVE, // CMPHS_PPzZZ_H = 1076
+    CEFBS_HasSVE, // CMPHS_PPzZZ_S = 1077
+    CEFBS_HasSVE, // CMPHS_WIDE_PPzZZ_B = 1078
+    CEFBS_HasSVE, // CMPHS_WIDE_PPzZZ_H = 1079
+    CEFBS_HasSVE, // CMPHS_WIDE_PPzZZ_S = 1080
+    CEFBS_HasSVE, // CMPLE_PPzZI_B = 1081
+    CEFBS_HasSVE, // CMPLE_PPzZI_D = 1082
+    CEFBS_HasSVE, // CMPLE_PPzZI_H = 1083
+    CEFBS_HasSVE, // CMPLE_PPzZI_S = 1084
+    CEFBS_HasSVE, // CMPLE_WIDE_PPzZZ_B = 1085
+    CEFBS_HasSVE, // CMPLE_WIDE_PPzZZ_H = 1086
+    CEFBS_HasSVE, // CMPLE_WIDE_PPzZZ_S = 1087
+    CEFBS_HasSVE, // CMPLO_PPzZI_B = 1088
+    CEFBS_HasSVE, // CMPLO_PPzZI_D = 1089
+    CEFBS_HasSVE, // CMPLO_PPzZI_H = 1090
+    CEFBS_HasSVE, // CMPLO_PPzZI_S = 1091
+    CEFBS_HasSVE, // CMPLO_WIDE_PPzZZ_B = 1092
+    CEFBS_HasSVE, // CMPLO_WIDE_PPzZZ_H = 1093
+    CEFBS_HasSVE, // CMPLO_WIDE_PPzZZ_S = 1094
+    CEFBS_HasSVE, // CMPLS_PPzZI_B = 1095
+    CEFBS_HasSVE, // CMPLS_PPzZI_D = 1096
+    CEFBS_HasSVE, // CMPLS_PPzZI_H = 1097
+    CEFBS_HasSVE, // CMPLS_PPzZI_S = 1098
+    CEFBS_HasSVE, // CMPLS_WIDE_PPzZZ_B = 1099
+    CEFBS_HasSVE, // CMPLS_WIDE_PPzZZ_H = 1100
+    CEFBS_HasSVE, // CMPLS_WIDE_PPzZZ_S = 1101
+    CEFBS_HasSVE, // CMPLT_PPzZI_B = 1102
+    CEFBS_HasSVE, // CMPLT_PPzZI_D = 1103
+    CEFBS_HasSVE, // CMPLT_PPzZI_H = 1104
+    CEFBS_HasSVE, // CMPLT_PPzZI_S = 1105
+    CEFBS_HasSVE, // CMPLT_WIDE_PPzZZ_B = 1106
+    CEFBS_HasSVE, // CMPLT_WIDE_PPzZZ_H = 1107
+    CEFBS_HasSVE, // CMPLT_WIDE_PPzZZ_S = 1108
+    CEFBS_HasSVE, // CMPNE_PPzZI_B = 1109
+    CEFBS_HasSVE, // CMPNE_PPzZI_D = 1110
+    CEFBS_HasSVE, // CMPNE_PPzZI_H = 1111
+    CEFBS_HasSVE, // CMPNE_PPzZI_S = 1112
+    CEFBS_HasSVE, // CMPNE_PPzZZ_B = 1113
+    CEFBS_HasSVE, // CMPNE_PPzZZ_D = 1114
+    CEFBS_HasSVE, // CMPNE_PPzZZ_H = 1115
+    CEFBS_HasSVE, // CMPNE_PPzZZ_S = 1116
+    CEFBS_HasSVE, // CMPNE_WIDE_PPzZZ_B = 1117
+    CEFBS_HasSVE, // CMPNE_WIDE_PPzZZ_H = 1118
+    CEFBS_HasSVE, // CMPNE_WIDE_PPzZZ_S = 1119
+    CEFBS_HasNEON, // CMTSTv16i8 = 1120
+    CEFBS_HasNEON, // CMTSTv1i64 = 1121
+    CEFBS_HasNEON, // CMTSTv2i32 = 1122
+    CEFBS_HasNEON, // CMTSTv2i64 = 1123
+    CEFBS_HasNEON, // CMTSTv4i16 = 1124
+    CEFBS_HasNEON, // CMTSTv4i32 = 1125
+    CEFBS_HasNEON, // CMTSTv8i16 = 1126
+    CEFBS_HasNEON, // CMTSTv8i8 = 1127
+    CEFBS_HasSVE, // CNOT_ZPmZ_B = 1128
+    CEFBS_HasSVE, // CNOT_ZPmZ_D = 1129
+    CEFBS_HasSVE, // CNOT_ZPmZ_H = 1130
+    CEFBS_HasSVE, // CNOT_ZPmZ_S = 1131
+    CEFBS_HasSVE, // CNTB_XPiI = 1132
+    CEFBS_HasSVE, // CNTD_XPiI = 1133
+    CEFBS_HasSVE, // CNTH_XPiI = 1134
+    CEFBS_HasSVE, // CNTP_XPP_B = 1135
+    CEFBS_HasSVE, // CNTP_XPP_D = 1136
+    CEFBS_HasSVE, // CNTP_XPP_H = 1137
+    CEFBS_HasSVE, // CNTP_XPP_S = 1138
+    CEFBS_HasSVE, // CNTW_XPiI = 1139
+    CEFBS_HasSVE, // CNT_ZPmZ_B = 1140
+    CEFBS_HasSVE, // CNT_ZPmZ_D = 1141
+    CEFBS_HasSVE, // CNT_ZPmZ_H = 1142
+    CEFBS_HasSVE, // CNT_ZPmZ_S = 1143
+    CEFBS_HasNEON, // CNTv16i8 = 1144
+    CEFBS_HasNEON, // CNTv8i8 = 1145
+    CEFBS_HasSVE, // COMPACT_ZPZ_D = 1146
+    CEFBS_HasSVE, // COMPACT_ZPZ_S = 1147
+    CEFBS_HasSVE, // CPY_ZPmI_B = 1148
+    CEFBS_HasSVE, // CPY_ZPmI_D = 1149
+    CEFBS_HasSVE, // CPY_ZPmI_H = 1150
+    CEFBS_HasSVE, // CPY_ZPmI_S = 1151
+    CEFBS_HasSVE, // CPY_ZPmR_B = 1152
+    CEFBS_HasSVE, // CPY_ZPmR_D = 1153
+    CEFBS_HasSVE, // CPY_ZPmR_H = 1154
+    CEFBS_HasSVE, // CPY_ZPmR_S = 1155
+    CEFBS_HasSVE, // CPY_ZPmV_B = 1156
+    CEFBS_HasSVE, // CPY_ZPmV_D = 1157
+    CEFBS_HasSVE, // CPY_ZPmV_H = 1158
+    CEFBS_HasSVE, // CPY_ZPmV_S = 1159
+    CEFBS_HasSVE, // CPY_ZPzI_B = 1160
+    CEFBS_HasSVE, // CPY_ZPzI_D = 1161
+    CEFBS_HasSVE, // CPY_ZPzI_H = 1162
+    CEFBS_HasSVE, // CPY_ZPzI_S = 1163
+    CEFBS_HasNEON, // CPYi16 = 1164
+    CEFBS_HasNEON, // CPYi32 = 1165
+    CEFBS_HasNEON, // CPYi64 = 1166
+    CEFBS_HasNEON, // CPYi8 = 1167
+    CEFBS_HasCRC, // CRC32Brr = 1168
+    CEFBS_HasCRC, // CRC32CBrr = 1169
+    CEFBS_HasCRC, // CRC32CHrr = 1170
+    CEFBS_HasCRC, // CRC32CWrr = 1171
+    CEFBS_HasCRC, // CRC32CXrr = 1172
+    CEFBS_HasCRC, // CRC32Hrr = 1173
+    CEFBS_HasCRC, // CRC32Wrr = 1174
+    CEFBS_HasCRC, // CRC32Xrr = 1175
+    CEFBS_None, // CSELWr = 1176
+    CEFBS_None, // CSELXr = 1177
+    CEFBS_None, // CSINCWr = 1178
+    CEFBS_None, // CSINCXr = 1179
+    CEFBS_None, // CSINVWr = 1180
+    CEFBS_None, // CSINVXr = 1181
+    CEFBS_None, // CSNEGWr = 1182
+    CEFBS_None, // CSNEGXr = 1183
+    CEFBS_HasSVE, // CTERMEQ_WW = 1184
+    CEFBS_HasSVE, // CTERMEQ_XX = 1185
+    CEFBS_HasSVE, // CTERMNE_WW = 1186
+    CEFBS_HasSVE, // CTERMNE_XX = 1187
+    CEFBS_None, // DCPS1 = 1188
+    CEFBS_None, // DCPS2 = 1189
+    CEFBS_None, // DCPS3 = 1190
+    CEFBS_HasSVE, // DECB_XPiI = 1191
+    CEFBS_HasSVE, // DECD_XPiI = 1192
+    CEFBS_HasSVE, // DECD_ZPiI = 1193
+    CEFBS_HasSVE, // DECH_XPiI = 1194
+    CEFBS_HasSVE, // DECH_ZPiI = 1195
+    CEFBS_HasSVE, // DECP_XP_B = 1196
+    CEFBS_HasSVE, // DECP_XP_D = 1197
+    CEFBS_HasSVE, // DECP_XP_H = 1198
+    CEFBS_HasSVE, // DECP_XP_S = 1199
+    CEFBS_HasSVE, // DECP_ZP_D = 1200
+    CEFBS_HasSVE, // DECP_ZP_H = 1201
+    CEFBS_HasSVE, // DECP_ZP_S = 1202
+    CEFBS_HasSVE, // DECW_XPiI = 1203
+    CEFBS_HasSVE, // DECW_ZPiI = 1204
+    CEFBS_None, // DMB = 1205
+    CEFBS_None, // DRPS = 1206
+    CEFBS_None, // DSB = 1207
+    CEFBS_HasSVE, // DUPM_ZI = 1208
+    CEFBS_HasSVE, // DUP_ZI_B = 1209
+    CEFBS_HasSVE, // DUP_ZI_D = 1210
+    CEFBS_HasSVE, // DUP_ZI_H = 1211
+    CEFBS_HasSVE, // DUP_ZI_S = 1212
+    CEFBS_HasSVE, // DUP_ZR_B = 1213
+    CEFBS_HasSVE, // DUP_ZR_D = 1214
+    CEFBS_HasSVE, // DUP_ZR_H = 1215
+    CEFBS_HasSVE, // DUP_ZR_S = 1216
+    CEFBS_HasSVE, // DUP_ZZI_B = 1217
+    CEFBS_HasSVE, // DUP_ZZI_D = 1218
+    CEFBS_HasSVE, // DUP_ZZI_H = 1219
+    CEFBS_HasSVE, // DUP_ZZI_Q = 1220
+    CEFBS_HasSVE, // DUP_ZZI_S = 1221
+    CEFBS_HasNEON, // DUPv16i8gpr = 1222
+    CEFBS_HasNEON, // DUPv16i8lane = 1223
+    CEFBS_HasNEON, // DUPv2i32gpr = 1224
+    CEFBS_HasNEON, // DUPv2i32lane = 1225
+    CEFBS_HasNEON, // DUPv2i64gpr = 1226
+    CEFBS_HasNEON, // DUPv2i64lane = 1227
+    CEFBS_HasNEON, // DUPv4i16gpr = 1228
+    CEFBS_HasNEON, // DUPv4i16lane = 1229
+    CEFBS_HasNEON, // DUPv4i32gpr = 1230
+    CEFBS_HasNEON, // DUPv4i32lane = 1231
+    CEFBS_HasNEON, // DUPv8i16gpr = 1232
+    CEFBS_HasNEON, // DUPv8i16lane = 1233
+    CEFBS_HasNEON, // DUPv8i8gpr = 1234
+    CEFBS_HasNEON, // DUPv8i8lane = 1235
+    CEFBS_None, // EONWrs = 1236
+    CEFBS_None, // EONXrs = 1237
+    CEFBS_HasSHA3, // EOR3 = 1238
+    CEFBS_HasSVE2, // EOR3_ZZZZ = 1239
+    CEFBS_HasSVE2, // EORBT_ZZZ_B = 1240
+    CEFBS_HasSVE2, // EORBT_ZZZ_D = 1241
+    CEFBS_HasSVE2, // EORBT_ZZZ_H = 1242
+    CEFBS_HasSVE2, // EORBT_ZZZ_S = 1243
+    CEFBS_HasSVE, // EORS_PPzPP = 1244
+    CEFBS_HasSVE2, // EORTB_ZZZ_B = 1245
+    CEFBS_HasSVE2, // EORTB_ZZZ_D = 1246
+    CEFBS_HasSVE2, // EORTB_ZZZ_H = 1247
+    CEFBS_HasSVE2, // EORTB_ZZZ_S = 1248
+    CEFBS_HasSVE, // EORV_VPZ_B = 1249
+    CEFBS_HasSVE, // EORV_VPZ_D = 1250
+    CEFBS_HasSVE, // EORV_VPZ_H = 1251
+    CEFBS_HasSVE, // EORV_VPZ_S = 1252
+    CEFBS_None, // EORWri = 1253
+    CEFBS_None, // EORWrs = 1254
+    CEFBS_None, // EORXri = 1255
+    CEFBS_None, // EORXrs = 1256
+    CEFBS_HasSVE, // EOR_PPzPP = 1257
+    CEFBS_HasSVE, // EOR_ZI = 1258
+    CEFBS_HasSVE, // EOR_ZPmZ_B = 1259
+    CEFBS_HasSVE, // EOR_ZPmZ_D = 1260
+    CEFBS_HasSVE, // EOR_ZPmZ_H = 1261
+    CEFBS_HasSVE, // EOR_ZPmZ_S = 1262
+    CEFBS_HasSVE, // EOR_ZZZ = 1263
+    CEFBS_HasNEON, // EORv16i8 = 1264
+    CEFBS_HasNEON, // EORv8i8 = 1265
+    CEFBS_None, // ERET = 1266
+    CEFBS_HasPA, // ERETAA = 1267
+    CEFBS_HasPA, // ERETAB = 1268
+    CEFBS_None, // EXTRWrri = 1269
+    CEFBS_None, // EXTRXrri = 1270
+    CEFBS_HasSVE, // EXT_ZZI = 1271
+    CEFBS_HasSVE2, // EXT_ZZI_B = 1272
+    CEFBS_HasNEON, // EXTv16i8 = 1273
+    CEFBS_HasNEON, // EXTv8i8 = 1274
+    CEFBS_HasNEON_HasFullFP16, // FABD16 = 1275
+    CEFBS_HasNEON, // FABD32 = 1276
+    CEFBS_HasNEON, // FABD64 = 1277
+    CEFBS_HasSVE, // FABD_ZPmZ_D = 1278
+    CEFBS_HasSVE, // FABD_ZPmZ_H = 1279
+    CEFBS_HasSVE, // FABD_ZPmZ_S = 1280
+    CEFBS_HasNEON, // FABDv2f32 = 1281
+    CEFBS_HasNEON, // FABDv2f64 = 1282
+    CEFBS_HasNEON_HasFullFP16, // FABDv4f16 = 1283
+    CEFBS_HasNEON, // FABDv4f32 = 1284
+    CEFBS_HasNEON_HasFullFP16, // FABDv8f16 = 1285
+    CEFBS_HasFPARMv8, // FABSDr = 1286
+    CEFBS_HasFullFP16, // FABSHr = 1287
+    CEFBS_HasFPARMv8, // FABSSr = 1288
+    CEFBS_HasSVE, // FABS_ZPmZ_D = 1289
+    CEFBS_HasSVE, // FABS_ZPmZ_H = 1290
+    CEFBS_HasSVE, // FABS_ZPmZ_S = 1291
+    CEFBS_HasNEON, // FABSv2f32 = 1292
+    CEFBS_HasNEON, // FABSv2f64 = 1293
+    CEFBS_HasNEON_HasFullFP16, // FABSv4f16 = 1294
+    CEFBS_HasNEON, // FABSv4f32 = 1295
+    CEFBS_HasNEON_HasFullFP16, // FABSv8f16 = 1296
+    CEFBS_HasNEON_HasFullFP16, // FACGE16 = 1297
+    CEFBS_HasNEON, // FACGE32 = 1298
+    CEFBS_HasNEON, // FACGE64 = 1299
+    CEFBS_HasSVE, // FACGE_PPzZZ_D = 1300
+    CEFBS_HasSVE, // FACGE_PPzZZ_H = 1301
+    CEFBS_HasSVE, // FACGE_PPzZZ_S = 1302
+    CEFBS_HasNEON, // FACGEv2f32 = 1303
+    CEFBS_HasNEON, // FACGEv2f64 = 1304
+    CEFBS_HasNEON_HasFullFP16, // FACGEv4f16 = 1305
+    CEFBS_HasNEON, // FACGEv4f32 = 1306
+    CEFBS_HasNEON_HasFullFP16, // FACGEv8f16 = 1307
+    CEFBS_HasNEON_HasFullFP16, // FACGT16 = 1308
+    CEFBS_HasNEON, // FACGT32 = 1309
+    CEFBS_HasNEON, // FACGT64 = 1310
+    CEFBS_HasSVE, // FACGT_PPzZZ_D = 1311
+    CEFBS_HasSVE, // FACGT_PPzZZ_H = 1312
+    CEFBS_HasSVE, // FACGT_PPzZZ_S = 1313
+    CEFBS_HasNEON, // FACGTv2f32 = 1314
+    CEFBS_HasNEON, // FACGTv2f64 = 1315
+    CEFBS_HasNEON_HasFullFP16, // FACGTv4f16 = 1316
+    CEFBS_HasNEON, // FACGTv4f32 = 1317
+    CEFBS_HasNEON_HasFullFP16, // FACGTv8f16 = 1318
+    CEFBS_HasSVE, // FADDA_VPZ_D = 1319
+    CEFBS_HasSVE, // FADDA_VPZ_H = 1320
+    CEFBS_HasSVE, // FADDA_VPZ_S = 1321
+    CEFBS_HasFPARMv8, // FADDDrr = 1322
+    CEFBS_HasFullFP16, // FADDHrr = 1323
+    CEFBS_HasSVE2, // FADDP_ZPmZZ_D = 1324
+    CEFBS_HasSVE2, // FADDP_ZPmZZ_H = 1325
+    CEFBS_HasSVE2, // FADDP_ZPmZZ_S = 1326
+    CEFBS_HasNEON, // FADDPv2f32 = 1327
+    CEFBS_HasNEON, // FADDPv2f64 = 1328
+    CEFBS_HasNEON_HasFullFP16, // FADDPv2i16p = 1329
+    CEFBS_HasNEON, // FADDPv2i32p = 1330
+    CEFBS_HasNEON, // FADDPv2i64p = 1331
+    CEFBS_HasNEON_HasFullFP16, // FADDPv4f16 = 1332
+    CEFBS_HasNEON, // FADDPv4f32 = 1333
+    CEFBS_HasNEON_HasFullFP16, // FADDPv8f16 = 1334
+    CEFBS_HasFPARMv8, // FADDSrr = 1335
+    CEFBS_HasSVE, // FADDV_VPZ_D = 1336
+    CEFBS_HasSVE, // FADDV_VPZ_H = 1337
+    CEFBS_HasSVE, // FADDV_VPZ_S = 1338
+    CEFBS_HasSVE, // FADD_ZPmI_D = 1339
+    CEFBS_HasSVE, // FADD_ZPmI_H = 1340
+    CEFBS_HasSVE, // FADD_ZPmI_S = 1341
+    CEFBS_HasSVE, // FADD_ZPmZ_D = 1342
+    CEFBS_HasSVE, // FADD_ZPmZ_H = 1343
+    CEFBS_HasSVE, // FADD_ZPmZ_S = 1344
+    CEFBS_HasSVE, // FADD_ZZZ_D = 1345
+    CEFBS_HasSVE, // FADD_ZZZ_H = 1346
+    CEFBS_HasSVE, // FADD_ZZZ_S = 1347
+    CEFBS_HasNEON, // FADDv2f32 = 1348
+    CEFBS_HasNEON, // FADDv2f64 = 1349
+    CEFBS_HasNEON_HasFullFP16, // FADDv4f16 = 1350
+    CEFBS_HasNEON, // FADDv4f32 = 1351
+    CEFBS_HasNEON_HasFullFP16, // FADDv8f16 = 1352
+    CEFBS_HasSVE, // FCADD_ZPmZ_D = 1353
+    CEFBS_HasSVE, // FCADD_ZPmZ_H = 1354
+    CEFBS_HasSVE, // FCADD_ZPmZ_S = 1355
+    CEFBS_HasComplxNum_HasNEON, // FCADDv2f32 = 1356
+    CEFBS_HasComplxNum_HasNEON, // FCADDv2f64 = 1357
+    CEFBS_HasComplxNum_HasNEON_HasFullFP16, // FCADDv4f16 = 1358
+    CEFBS_HasComplxNum_HasNEON, // FCADDv4f32 = 1359
+    CEFBS_HasComplxNum_HasNEON_HasFullFP16, // FCADDv8f16 = 1360
+    CEFBS_HasFPARMv8, // FCCMPDrr = 1361
+    CEFBS_HasFPARMv8, // FCCMPEDrr = 1362
+    CEFBS_HasFullFP16, // FCCMPEHrr = 1363
+    CEFBS_HasFPARMv8, // FCCMPESrr = 1364
+    CEFBS_HasFullFP16, // FCCMPHrr = 1365
+    CEFBS_HasFPARMv8, // FCCMPSrr = 1366
+    CEFBS_HasNEON_HasFullFP16, // FCMEQ16 = 1367
+    CEFBS_HasNEON, // FCMEQ32 = 1368
+    CEFBS_HasNEON, // FCMEQ64 = 1369
+    CEFBS_HasSVE, // FCMEQ_PPzZ0_D = 1370
+    CEFBS_HasSVE, // FCMEQ_PPzZ0_H = 1371
+    CEFBS_HasSVE, // FCMEQ_PPzZ0_S = 1372
+    CEFBS_HasSVE, // FCMEQ_PPzZZ_D = 1373
+    CEFBS_HasSVE, // FCMEQ_PPzZZ_H = 1374
+    CEFBS_HasSVE, // FCMEQ_PPzZZ_S = 1375
+    CEFBS_HasNEON_HasFullFP16, // FCMEQv1i16rz = 1376
+    CEFBS_HasNEON, // FCMEQv1i32rz = 1377
+    CEFBS_HasNEON, // FCMEQv1i64rz = 1378
+    CEFBS_HasNEON, // FCMEQv2f32 = 1379
+    CEFBS_HasNEON, // FCMEQv2f64 = 1380
+    CEFBS_HasNEON, // FCMEQv2i32rz = 1381
+    CEFBS_HasNEON, // FCMEQv2i64rz = 1382
+    CEFBS_HasNEON_HasFullFP16, // FCMEQv4f16 = 1383
+    CEFBS_HasNEON, // FCMEQv4f32 = 1384
+    CEFBS_HasNEON_HasFullFP16, // FCMEQv4i16rz = 1385
+    CEFBS_HasNEON, // FCMEQv4i32rz = 1386
+    CEFBS_HasNEON_HasFullFP16, // FCMEQv8f16 = 1387
+    CEFBS_HasNEON_HasFullFP16, // FCMEQv8i16rz = 1388
+    CEFBS_HasNEON_HasFullFP16, // FCMGE16 = 1389
+    CEFBS_HasNEON, // FCMGE32 = 1390
+    CEFBS_HasNEON, // FCMGE64 = 1391
+    CEFBS_HasSVE, // FCMGE_PPzZ0_D = 1392
+    CEFBS_HasSVE, // FCMGE_PPzZ0_H = 1393
+    CEFBS_HasSVE, // FCMGE_PPzZ0_S = 1394
+    CEFBS_HasSVE, // FCMGE_PPzZZ_D = 1395
+    CEFBS_HasSVE, // FCMGE_PPzZZ_H = 1396
+    CEFBS_HasSVE, // FCMGE_PPzZZ_S = 1397
+    CEFBS_HasNEON_HasFullFP16, // FCMGEv1i16rz = 1398
+    CEFBS_HasNEON, // FCMGEv1i32rz = 1399
+    CEFBS_HasNEON, // FCMGEv1i64rz = 1400
+    CEFBS_HasNEON, // FCMGEv2f32 = 1401
+    CEFBS_HasNEON, // FCMGEv2f64 = 1402
+    CEFBS_HasNEON, // FCMGEv2i32rz = 1403
+    CEFBS_HasNEON, // FCMGEv2i64rz = 1404
+    CEFBS_HasNEON_HasFullFP16, // FCMGEv4f16 = 1405
+    CEFBS_HasNEON, // FCMGEv4f32 = 1406
+    CEFBS_HasNEON_HasFullFP16, // FCMGEv4i16rz = 1407
+    CEFBS_HasNEON, // FCMGEv4i32rz = 1408
+    CEFBS_HasNEON_HasFullFP16, // FCMGEv8f16 = 1409
+    CEFBS_HasNEON_HasFullFP16, // FCMGEv8i16rz = 1410
+    CEFBS_HasNEON_HasFullFP16, // FCMGT16 = 1411
+    CEFBS_HasNEON, // FCMGT32 = 1412
+    CEFBS_HasNEON, // FCMGT64 = 1413
+    CEFBS_HasSVE, // FCMGT_PPzZ0_D = 1414
+    CEFBS_HasSVE, // FCMGT_PPzZ0_H = 1415
+    CEFBS_HasSVE, // FCMGT_PPzZ0_S = 1416
+    CEFBS_HasSVE, // FCMGT_PPzZZ_D = 1417
+    CEFBS_HasSVE, // FCMGT_PPzZZ_H = 1418
+    CEFBS_HasSVE, // FCMGT_PPzZZ_S = 1419
+    CEFBS_HasNEON_HasFullFP16, // FCMGTv1i16rz = 1420
+    CEFBS_HasNEON, // FCMGTv1i32rz = 1421
+    CEFBS_HasNEON, // FCMGTv1i64rz = 1422
+    CEFBS_HasNEON, // FCMGTv2f32 = 1423
+    CEFBS_HasNEON, // FCMGTv2f64 = 1424
+    CEFBS_HasNEON, // FCMGTv2i32rz = 1425
+    CEFBS_HasNEON, // FCMGTv2i64rz = 1426
+    CEFBS_HasNEON_HasFullFP16, // FCMGTv4f16 = 1427
+    CEFBS_HasNEON, // FCMGTv4f32 = 1428
+    CEFBS_HasNEON_HasFullFP16, // FCMGTv4i16rz = 1429
+    CEFBS_HasNEON, // FCMGTv4i32rz = 1430
+    CEFBS_HasNEON_HasFullFP16, // FCMGTv8f16 = 1431
+    CEFBS_HasNEON_HasFullFP16, // FCMGTv8i16rz = 1432
+    CEFBS_HasSVE, // FCMLA_ZPmZZ_D = 1433
+    CEFBS_HasSVE, // FCMLA_ZPmZZ_H = 1434
+    CEFBS_HasSVE, // FCMLA_ZPmZZ_S = 1435
+    CEFBS_HasSVE, // FCMLA_ZZZI_H = 1436
+    CEFBS_HasSVE, // FCMLA_ZZZI_S = 1437
+    CEFBS_HasComplxNum_HasNEON, // FCMLAv2f32 = 1438
+    CEFBS_HasComplxNum_HasNEON, // FCMLAv2f64 = 1439
+    CEFBS_HasComplxNum_HasNEON_HasFullFP16, // FCMLAv4f16 = 1440
+    CEFBS_HasComplxNum_HasNEON_HasFullFP16, // FCMLAv4f16_indexed = 1441
+    CEFBS_HasComplxNum_HasNEON, // FCMLAv4f32 = 1442
+    CEFBS_HasComplxNum_HasNEON, // FCMLAv4f32_indexed = 1443
+    CEFBS_HasComplxNum_HasNEON_HasFullFP16, // FCMLAv8f16 = 1444
+    CEFBS_HasComplxNum_HasNEON_HasFullFP16, // FCMLAv8f16_indexed = 1445
+    CEFBS_HasSVE, // FCMLE_PPzZ0_D = 1446
+    CEFBS_HasSVE, // FCMLE_PPzZ0_H = 1447
+    CEFBS_HasSVE, // FCMLE_PPzZ0_S = 1448
+    CEFBS_HasNEON_HasFullFP16, // FCMLEv1i16rz = 1449
+    CEFBS_HasNEON, // FCMLEv1i32rz = 1450
+    CEFBS_HasNEON, // FCMLEv1i64rz = 1451
+    CEFBS_HasNEON, // FCMLEv2i32rz = 1452
+    CEFBS_HasNEON, // FCMLEv2i64rz = 1453
+    CEFBS_HasNEON_HasFullFP16, // FCMLEv4i16rz = 1454
+    CEFBS_HasNEON, // FCMLEv4i32rz = 1455
+    CEFBS_HasNEON_HasFullFP16, // FCMLEv8i16rz = 1456
+    CEFBS_HasSVE, // FCMLT_PPzZ0_D = 1457
+    CEFBS_HasSVE, // FCMLT_PPzZ0_H = 1458
+    CEFBS_HasSVE, // FCMLT_PPzZ0_S = 1459
+    CEFBS_HasNEON_HasFullFP16, // FCMLTv1i16rz = 1460
+    CEFBS_HasNEON, // FCMLTv1i32rz = 1461
+    CEFBS_HasNEON, // FCMLTv1i64rz = 1462
+    CEFBS_HasNEON, // FCMLTv2i32rz = 1463
+    CEFBS_HasNEON, // FCMLTv2i64rz = 1464
+    CEFBS_HasNEON_HasFullFP16, // FCMLTv4i16rz = 1465
+    CEFBS_HasNEON, // FCMLTv4i32rz = 1466
+    CEFBS_HasNEON_HasFullFP16, // FCMLTv8i16rz = 1467
+    CEFBS_HasSVE, // FCMNE_PPzZ0_D = 1468
+    CEFBS_HasSVE, // FCMNE_PPzZ0_H = 1469
+    CEFBS_HasSVE, // FCMNE_PPzZ0_S = 1470
+    CEFBS_HasSVE, // FCMNE_PPzZZ_D = 1471
+    CEFBS_HasSVE, // FCMNE_PPzZZ_H = 1472
+    CEFBS_HasSVE, // FCMNE_PPzZZ_S = 1473
+    CEFBS_HasFPARMv8, // FCMPDri = 1474
+    CEFBS_HasFPARMv8, // FCMPDrr = 1475
+    CEFBS_HasFPARMv8, // FCMPEDri = 1476
+    CEFBS_HasFPARMv8, // FCMPEDrr = 1477
+    CEFBS_HasFullFP16, // FCMPEHri = 1478
+    CEFBS_HasFullFP16, // FCMPEHrr = 1479
+    CEFBS_HasFPARMv8, // FCMPESri = 1480
+    CEFBS_HasFPARMv8, // FCMPESrr = 1481
+    CEFBS_HasFullFP16, // FCMPHri = 1482
+    CEFBS_HasFullFP16, // FCMPHrr = 1483
+    CEFBS_HasFPARMv8, // FCMPSri = 1484
+    CEFBS_HasFPARMv8, // FCMPSrr = 1485
+    CEFBS_HasSVE, // FCMUO_PPzZZ_D = 1486
+    CEFBS_HasSVE, // FCMUO_PPzZZ_H = 1487
+    CEFBS_HasSVE, // FCMUO_PPzZZ_S = 1488
+    CEFBS_HasSVE, // FCPY_ZPmI_D = 1489
+    CEFBS_HasSVE, // FCPY_ZPmI_H = 1490
+    CEFBS_HasSVE, // FCPY_ZPmI_S = 1491
+    CEFBS_HasFPARMv8, // FCSELDrrr = 1492
+    CEFBS_HasFullFP16, // FCSELHrrr = 1493
+    CEFBS_HasFPARMv8, // FCSELSrrr = 1494
+    CEFBS_HasFPARMv8, // FCVTASUWDr = 1495
+    CEFBS_HasFullFP16, // FCVTASUWHr = 1496
+    CEFBS_HasFPARMv8, // FCVTASUWSr = 1497
+    CEFBS_HasFPARMv8, // FCVTASUXDr = 1498
+    CEFBS_HasFullFP16, // FCVTASUXHr = 1499
+    CEFBS_HasFPARMv8, // FCVTASUXSr = 1500
+    CEFBS_HasNEON_HasFullFP16, // FCVTASv1f16 = 1501
+    CEFBS_HasNEON, // FCVTASv1i32 = 1502
+    CEFBS_HasNEON, // FCVTASv1i64 = 1503
+    CEFBS_HasNEON, // FCVTASv2f32 = 1504
+    CEFBS_HasNEON, // FCVTASv2f64 = 1505
+    CEFBS_HasNEON_HasFullFP16, // FCVTASv4f16 = 1506
+    CEFBS_HasNEON, // FCVTASv4f32 = 1507
+    CEFBS_HasNEON_HasFullFP16, // FCVTASv8f16 = 1508
+    CEFBS_HasFPARMv8, // FCVTAUUWDr = 1509
+    CEFBS_HasFullFP16, // FCVTAUUWHr = 1510
+    CEFBS_HasFPARMv8, // FCVTAUUWSr = 1511
+    CEFBS_HasFPARMv8, // FCVTAUUXDr = 1512
+    CEFBS_HasFullFP16, // FCVTAUUXHr = 1513
+    CEFBS_HasFPARMv8, // FCVTAUUXSr = 1514
+    CEFBS_HasNEON_HasFullFP16, // FCVTAUv1f16 = 1515
+    CEFBS_HasNEON, // FCVTAUv1i32 = 1516
+    CEFBS_HasNEON, // FCVTAUv1i64 = 1517
+    CEFBS_HasNEON, // FCVTAUv2f32 = 1518
+    CEFBS_HasNEON, // FCVTAUv2f64 = 1519
+    CEFBS_HasNEON_HasFullFP16, // FCVTAUv4f16 = 1520
+    CEFBS_HasNEON, // FCVTAUv4f32 = 1521
+    CEFBS_HasNEON_HasFullFP16, // FCVTAUv8f16 = 1522
+    CEFBS_HasFPARMv8, // FCVTDHr = 1523
+    CEFBS_HasFPARMv8, // FCVTDSr = 1524
+    CEFBS_HasFPARMv8, // FCVTHDr = 1525
+    CEFBS_HasFPARMv8, // FCVTHSr = 1526
+    CEFBS_HasSVE2, // FCVTLT_ZPmZ_HtoS = 1527
+    CEFBS_HasSVE2, // FCVTLT_ZPmZ_StoD = 1528
+    CEFBS_HasNEON, // FCVTLv2i32 = 1529
+    CEFBS_HasNEON, // FCVTLv4i16 = 1530
+    CEFBS_HasNEON, // FCVTLv4i32 = 1531
+    CEFBS_HasNEON, // FCVTLv8i16 = 1532
+    CEFBS_HasFPARMv8, // FCVTMSUWDr = 1533
+    CEFBS_HasFullFP16, // FCVTMSUWHr = 1534
+    CEFBS_HasFPARMv8, // FCVTMSUWSr = 1535
+    CEFBS_HasFPARMv8, // FCVTMSUXDr = 1536
+    CEFBS_HasFullFP16, // FCVTMSUXHr = 1537
+    CEFBS_HasFPARMv8, // FCVTMSUXSr = 1538
+    CEFBS_HasNEON_HasFullFP16, // FCVTMSv1f16 = 1539
+    CEFBS_HasNEON, // FCVTMSv1i32 = 1540
+    CEFBS_HasNEON, // FCVTMSv1i64 = 1541
+    CEFBS_HasNEON, // FCVTMSv2f32 = 1542
+    CEFBS_HasNEON, // FCVTMSv2f64 = 1543
+    CEFBS_HasNEON_HasFullFP16, // FCVTMSv4f16 = 1544
+    CEFBS_HasNEON, // FCVTMSv4f32 = 1545
+    CEFBS_HasNEON_HasFullFP16, // FCVTMSv8f16 = 1546
+    CEFBS_HasFPARMv8, // FCVTMUUWDr = 1547
+    CEFBS_HasFullFP16, // FCVTMUUWHr = 1548
+    CEFBS_HasFPARMv8, // FCVTMUUWSr = 1549
+    CEFBS_HasFPARMv8, // FCVTMUUXDr = 1550
+    CEFBS_HasFullFP16, // FCVTMUUXHr = 1551
+    CEFBS_HasFPARMv8, // FCVTMUUXSr = 1552
+    CEFBS_HasNEON_HasFullFP16, // FCVTMUv1f16 = 1553
+    CEFBS_HasNEON, // FCVTMUv1i32 = 1554
+    CEFBS_HasNEON, // FCVTMUv1i64 = 1555
+    CEFBS_HasNEON, // FCVTMUv2f32 = 1556
+    CEFBS_HasNEON, // FCVTMUv2f64 = 1557
+    CEFBS_HasNEON_HasFullFP16, // FCVTMUv4f16 = 1558
+    CEFBS_HasNEON, // FCVTMUv4f32 = 1559
+    CEFBS_HasNEON_HasFullFP16, // FCVTMUv8f16 = 1560
+    CEFBS_HasFPARMv8, // FCVTNSUWDr = 1561
+    CEFBS_HasFullFP16, // FCVTNSUWHr = 1562
+    CEFBS_HasFPARMv8, // FCVTNSUWSr = 1563
+    CEFBS_HasFPARMv8, // FCVTNSUXDr = 1564
+    CEFBS_HasFullFP16, // FCVTNSUXHr = 1565
+    CEFBS_HasFPARMv8, // FCVTNSUXSr = 1566
+    CEFBS_HasNEON_HasFullFP16, // FCVTNSv1f16 = 1567
+    CEFBS_HasNEON, // FCVTNSv1i32 = 1568
+    CEFBS_HasNEON, // FCVTNSv1i64 = 1569
+    CEFBS_HasNEON, // FCVTNSv2f32 = 1570
+    CEFBS_HasNEON, // FCVTNSv2f64 = 1571
+    CEFBS_HasNEON_HasFullFP16, // FCVTNSv4f16 = 1572
+    CEFBS_HasNEON, // FCVTNSv4f32 = 1573
+    CEFBS_HasNEON_HasFullFP16, // FCVTNSv8f16 = 1574
+    CEFBS_HasSVE2, // FCVTNT_ZPmZ_DtoS = 1575
+    CEFBS_HasSVE2, // FCVTNT_ZPmZ_StoH = 1576
+    CEFBS_HasFPARMv8, // FCVTNUUWDr = 1577
+    CEFBS_HasFullFP16, // FCVTNUUWHr = 1578
+    CEFBS_HasFPARMv8, // FCVTNUUWSr = 1579
+    CEFBS_HasFPARMv8, // FCVTNUUXDr = 1580
+    CEFBS_HasFullFP16, // FCVTNUUXHr = 1581
+    CEFBS_HasFPARMv8, // FCVTNUUXSr = 1582
+    CEFBS_HasNEON_HasFullFP16, // FCVTNUv1f16 = 1583
+    CEFBS_HasNEON, // FCVTNUv1i32 = 1584
+    CEFBS_HasNEON, // FCVTNUv1i64 = 1585
+    CEFBS_HasNEON, // FCVTNUv2f32 = 1586
+    CEFBS_HasNEON, // FCVTNUv2f64 = 1587
+    CEFBS_HasNEON_HasFullFP16, // FCVTNUv4f16 = 1588
+    CEFBS_HasNEON, // FCVTNUv4f32 = 1589
+    CEFBS_HasNEON_HasFullFP16, // FCVTNUv8f16 = 1590
+    CEFBS_HasNEON, // FCVTNv2i32 = 1591
+    CEFBS_HasNEON, // FCVTNv4i16 = 1592
+    CEFBS_HasNEON, // FCVTNv4i32 = 1593
+    CEFBS_HasNEON, // FCVTNv8i16 = 1594
+    CEFBS_HasFPARMv8, // FCVTPSUWDr = 1595
+    CEFBS_HasFullFP16, // FCVTPSUWHr = 1596
+    CEFBS_HasFPARMv8, // FCVTPSUWSr = 1597
+    CEFBS_HasFPARMv8, // FCVTPSUXDr = 1598
+    CEFBS_HasFullFP16, // FCVTPSUXHr = 1599
+    CEFBS_HasFPARMv8, // FCVTPSUXSr = 1600
+    CEFBS_HasNEON_HasFullFP16, // FCVTPSv1f16 = 1601
+    CEFBS_HasNEON, // FCVTPSv1i32 = 1602
+    CEFBS_HasNEON, // FCVTPSv1i64 = 1603
+    CEFBS_HasNEON, // FCVTPSv2f32 = 1604
+    CEFBS_HasNEON, // FCVTPSv2f64 = 1605
+    CEFBS_HasNEON_HasFullFP16, // FCVTPSv4f16 = 1606
+    CEFBS_HasNEON, // FCVTPSv4f32 = 1607
+    CEFBS_HasNEON_HasFullFP16, // FCVTPSv8f16 = 1608
+    CEFBS_HasFPARMv8, // FCVTPUUWDr = 1609
+    CEFBS_HasFullFP16, // FCVTPUUWHr = 1610
+    CEFBS_HasFPARMv8, // FCVTPUUWSr = 1611
+    CEFBS_HasFPARMv8, // FCVTPUUXDr = 1612
+    CEFBS_HasFullFP16, // FCVTPUUXHr = 1613
+    CEFBS_HasFPARMv8, // FCVTPUUXSr = 1614
+    CEFBS_HasNEON_HasFullFP16, // FCVTPUv1f16 = 1615
+    CEFBS_HasNEON, // FCVTPUv1i32 = 1616
+    CEFBS_HasNEON, // FCVTPUv1i64 = 1617
+    CEFBS_HasNEON, // FCVTPUv2f32 = 1618
+    CEFBS_HasNEON, // FCVTPUv2f64 = 1619
+    CEFBS_HasNEON_HasFullFP16, // FCVTPUv4f16 = 1620
+    CEFBS_HasNEON, // FCVTPUv4f32 = 1621
+    CEFBS_HasNEON_HasFullFP16, // FCVTPUv8f16 = 1622
+    CEFBS_HasFPARMv8, // FCVTSDr = 1623
+    CEFBS_HasFPARMv8, // FCVTSHr = 1624
+    CEFBS_HasSVE2, // FCVTXNT_ZPmZ_DtoS = 1625
+    CEFBS_HasNEON, // FCVTXNv1i64 = 1626
+    CEFBS_HasNEON, // FCVTXNv2f32 = 1627
+    CEFBS_HasNEON, // FCVTXNv4f32 = 1628
+    CEFBS_HasSVE2, // FCVTX_ZPmZ_DtoS = 1629
+    CEFBS_HasFPARMv8, // FCVTZSSWDri = 1630
+    CEFBS_HasFullFP16, // FCVTZSSWHri = 1631
+    CEFBS_HasFPARMv8, // FCVTZSSWSri = 1632
+    CEFBS_HasFPARMv8, // FCVTZSSXDri = 1633
+    CEFBS_HasFullFP16, // FCVTZSSXHri = 1634
+    CEFBS_HasFPARMv8, // FCVTZSSXSri = 1635
+    CEFBS_HasFPARMv8, // FCVTZSUWDr = 1636
+    CEFBS_HasFullFP16, // FCVTZSUWHr = 1637
+    CEFBS_HasFPARMv8, // FCVTZSUWSr = 1638
+    CEFBS_HasFPARMv8, // FCVTZSUXDr = 1639
+    CEFBS_HasFullFP16, // FCVTZSUXHr = 1640
+    CEFBS_HasFPARMv8, // FCVTZSUXSr = 1641
+    CEFBS_HasSVE, // FCVTZS_ZPmZ_DtoD = 1642
+    CEFBS_HasSVE, // FCVTZS_ZPmZ_DtoS = 1643
+    CEFBS_HasSVE, // FCVTZS_ZPmZ_HtoD = 1644
+    CEFBS_HasSVE, // FCVTZS_ZPmZ_HtoH = 1645
+    CEFBS_HasSVE, // FCVTZS_ZPmZ_HtoS = 1646
+    CEFBS_HasSVE, // FCVTZS_ZPmZ_StoD = 1647
+    CEFBS_HasSVE, // FCVTZS_ZPmZ_StoS = 1648
+    CEFBS_HasNEON, // FCVTZSd = 1649
+    CEFBS_HasNEON_HasFullFP16, // FCVTZSh = 1650
+    CEFBS_HasNEON, // FCVTZSs = 1651
+    CEFBS_HasNEON_HasFullFP16, // FCVTZSv1f16 = 1652
+    CEFBS_HasNEON, // FCVTZSv1i32 = 1653
+    CEFBS_HasNEON, // FCVTZSv1i64 = 1654
+    CEFBS_HasNEON, // FCVTZSv2f32 = 1655
+    CEFBS_HasNEON, // FCVTZSv2f64 = 1656
+    CEFBS_HasNEON, // FCVTZSv2i32_shift = 1657
+    CEFBS_HasNEON, // FCVTZSv2i64_shift = 1658
+    CEFBS_HasNEON_HasFullFP16, // FCVTZSv4f16 = 1659
+    CEFBS_HasNEON, // FCVTZSv4f32 = 1660
+    CEFBS_HasNEON_HasFullFP16, // FCVTZSv4i16_shift = 1661
+    CEFBS_HasNEON, // FCVTZSv4i32_shift = 1662
+    CEFBS_HasNEON_HasFullFP16, // FCVTZSv8f16 = 1663
+    CEFBS_HasNEON_HasFullFP16, // FCVTZSv8i16_shift = 1664
+    CEFBS_HasFPARMv8, // FCVTZUSWDri = 1665
+    CEFBS_HasFullFP16, // FCVTZUSWHri = 1666
+    CEFBS_HasFPARMv8, // FCVTZUSWSri = 1667
+    CEFBS_HasFPARMv8, // FCVTZUSXDri = 1668
+    CEFBS_HasFullFP16, // FCVTZUSXHri = 1669
+    CEFBS_HasFPARMv8, // FCVTZUSXSri = 1670
+    CEFBS_HasFPARMv8, // FCVTZUUWDr = 1671
+    CEFBS_HasFullFP16, // FCVTZUUWHr = 1672
+    CEFBS_HasFPARMv8, // FCVTZUUWSr = 1673
+    CEFBS_HasFPARMv8, // FCVTZUUXDr = 1674
+    CEFBS_HasFullFP16, // FCVTZUUXHr = 1675
+    CEFBS_HasFPARMv8, // FCVTZUUXSr = 1676
+    CEFBS_HasSVE, // FCVTZU_ZPmZ_DtoD = 1677
+    CEFBS_HasSVE, // FCVTZU_ZPmZ_DtoS = 1678
+    CEFBS_HasSVE, // FCVTZU_ZPmZ_HtoD = 1679
+    CEFBS_HasSVE, // FCVTZU_ZPmZ_HtoH = 1680
+    CEFBS_HasSVE, // FCVTZU_ZPmZ_HtoS = 1681
+    CEFBS_HasSVE, // FCVTZU_ZPmZ_StoD = 1682
+    CEFBS_HasSVE, // FCVTZU_ZPmZ_StoS = 1683
+    CEFBS_HasNEON, // FCVTZUd = 1684
+    CEFBS_HasNEON_HasFullFP16, // FCVTZUh = 1685
+    CEFBS_HasNEON, // FCVTZUs = 1686
+    CEFBS_HasNEON_HasFullFP16, // FCVTZUv1f16 = 1687
+    CEFBS_HasNEON, // FCVTZUv1i32 = 1688
+    CEFBS_HasNEON, // FCVTZUv1i64 = 1689
+    CEFBS_HasNEON, // FCVTZUv2f32 = 1690
+    CEFBS_HasNEON, // FCVTZUv2f64 = 1691
+    CEFBS_HasNEON, // FCVTZUv2i32_shift = 1692
+    CEFBS_HasNEON, // FCVTZUv2i64_shift = 1693
+    CEFBS_HasNEON_HasFullFP16, // FCVTZUv4f16 = 1694
+    CEFBS_HasNEON, // FCVTZUv4f32 = 1695
+    CEFBS_HasNEON_HasFullFP16, // FCVTZUv4i16_shift = 1696
+    CEFBS_HasNEON, // FCVTZUv4i32_shift = 1697
+    CEFBS_HasNEON_HasFullFP16, // FCVTZUv8f16 = 1698
+    CEFBS_HasNEON_HasFullFP16, // FCVTZUv8i16_shift = 1699
+    CEFBS_HasSVE, // FCVT_ZPmZ_DtoH = 1700
+    CEFBS_HasSVE, // FCVT_ZPmZ_DtoS = 1701
+    CEFBS_HasSVE, // FCVT_ZPmZ_HtoD = 1702
+    CEFBS_HasSVE, // FCVT_ZPmZ_HtoS = 1703
+    CEFBS_HasSVE, // FCVT_ZPmZ_StoD = 1704
+    CEFBS_HasSVE, // FCVT_ZPmZ_StoH = 1705
+    CEFBS_HasFPARMv8, // FDIVDrr = 1706
+    CEFBS_HasFullFP16, // FDIVHrr = 1707
+    CEFBS_HasSVE, // FDIVR_ZPmZ_D = 1708
+    CEFBS_HasSVE, // FDIVR_ZPmZ_H = 1709
+    CEFBS_HasSVE, // FDIVR_ZPmZ_S = 1710
+    CEFBS_HasFPARMv8, // FDIVSrr = 1711
+    CEFBS_HasSVE, // FDIV_ZPmZ_D = 1712
+    CEFBS_HasSVE, // FDIV_ZPmZ_H = 1713
+    CEFBS_HasSVE, // FDIV_ZPmZ_S = 1714
+    CEFBS_HasNEON, // FDIVv2f32 = 1715
+    CEFBS_HasNEON, // FDIVv2f64 = 1716
+    CEFBS_HasNEON_HasFullFP16, // FDIVv4f16 = 1717
+    CEFBS_HasNEON, // FDIVv4f32 = 1718
+    CEFBS_HasNEON_HasFullFP16, // FDIVv8f16 = 1719
+    CEFBS_HasSVE, // FDUP_ZI_D = 1720
+    CEFBS_HasSVE, // FDUP_ZI_H = 1721
+    CEFBS_HasSVE, // FDUP_ZI_S = 1722
+    CEFBS_HasSVE, // FEXPA_ZZ_D = 1723
+    CEFBS_HasSVE, // FEXPA_ZZ_H = 1724
+    CEFBS_HasSVE, // FEXPA_ZZ_S = 1725
+    CEFBS_HasJS_HasFPARMv8, // FJCVTZS = 1726
+    CEFBS_HasSVE2, // FLOGB_ZPmZ_D = 1727
+    CEFBS_HasSVE2, // FLOGB_ZPmZ_H = 1728
+    CEFBS_HasSVE2, // FLOGB_ZPmZ_S = 1729
+    CEFBS_HasFPARMv8, // FMADDDrrr = 1730
+    CEFBS_HasFullFP16, // FMADDHrrr = 1731
+    CEFBS_HasFPARMv8, // FMADDSrrr = 1732
+    CEFBS_HasSVE, // FMAD_ZPmZZ_D = 1733
+    CEFBS_HasSVE, // FMAD_ZPmZZ_H = 1734
+    CEFBS_HasSVE, // FMAD_ZPmZZ_S = 1735
+    CEFBS_HasFPARMv8, // FMAXDrr = 1736
+    CEFBS_HasFullFP16, // FMAXHrr = 1737
+    CEFBS_HasFPARMv8, // FMAXNMDrr = 1738
+    CEFBS_HasFullFP16, // FMAXNMHrr = 1739
+    CEFBS_HasSVE2, // FMAXNMP_ZPmZZ_D = 1740
+    CEFBS_HasSVE2, // FMAXNMP_ZPmZZ_H = 1741
+    CEFBS_HasSVE2, // FMAXNMP_ZPmZZ_S = 1742
+    CEFBS_HasNEON, // FMAXNMPv2f32 = 1743
+    CEFBS_HasNEON, // FMAXNMPv2f64 = 1744
+    CEFBS_HasNEON_HasFullFP16, // FMAXNMPv2i16p = 1745
+    CEFBS_HasNEON, // FMAXNMPv2i32p = 1746
+    CEFBS_HasNEON, // FMAXNMPv2i64p = 1747
+    CEFBS_HasNEON_HasFullFP16, // FMAXNMPv4f16 = 1748
+    CEFBS_HasNEON, // FMAXNMPv4f32 = 1749
+    CEFBS_HasNEON_HasFullFP16, // FMAXNMPv8f16 = 1750
+    CEFBS_HasFPARMv8, // FMAXNMSrr = 1751
+    CEFBS_HasSVE, // FMAXNMV_VPZ_D = 1752
+    CEFBS_HasSVE, // FMAXNMV_VPZ_H = 1753
+    CEFBS_HasSVE, // FMAXNMV_VPZ_S = 1754
+    CEFBS_HasNEON_HasFullFP16, // FMAXNMVv4i16v = 1755
+    CEFBS_HasNEON, // FMAXNMVv4i32v = 1756
+    CEFBS_HasNEON_HasFullFP16, // FMAXNMVv8i16v = 1757
+    CEFBS_HasSVE, // FMAXNM_ZPmI_D = 1758
+    CEFBS_HasSVE, // FMAXNM_ZPmI_H = 1759
+    CEFBS_HasSVE, // FMAXNM_ZPmI_S = 1760
+    CEFBS_HasSVE, // FMAXNM_ZPmZ_D = 1761
+    CEFBS_HasSVE, // FMAXNM_ZPmZ_H = 1762
+    CEFBS_HasSVE, // FMAXNM_ZPmZ_S = 1763
+    CEFBS_HasNEON, // FMAXNMv2f32 = 1764
+    CEFBS_HasNEON, // FMAXNMv2f64 = 1765
+    CEFBS_HasNEON_HasFullFP16, // FMAXNMv4f16 = 1766
+    CEFBS_HasNEON, // FMAXNMv4f32 = 1767
+    CEFBS_HasNEON_HasFullFP16, // FMAXNMv8f16 = 1768
+    CEFBS_HasSVE2, // FMAXP_ZPmZZ_D = 1769
+    CEFBS_HasSVE2, // FMAXP_ZPmZZ_H = 1770
+    CEFBS_HasSVE2, // FMAXP_ZPmZZ_S = 1771
+    CEFBS_HasNEON, // FMAXPv2f32 = 1772
+    CEFBS_HasNEON, // FMAXPv2f64 = 1773
+    CEFBS_HasNEON_HasFullFP16, // FMAXPv2i16p = 1774
+    CEFBS_HasNEON, // FMAXPv2i32p = 1775
+    CEFBS_HasNEON, // FMAXPv2i64p = 1776
+    CEFBS_HasNEON_HasFullFP16, // FMAXPv4f16 = 1777
+    CEFBS_HasNEON, // FMAXPv4f32 = 1778
+    CEFBS_HasNEON_HasFullFP16, // FMAXPv8f16 = 1779
+    CEFBS_HasFPARMv8, // FMAXSrr = 1780
+    CEFBS_HasSVE, // FMAXV_VPZ_D = 1781
+    CEFBS_HasSVE, // FMAXV_VPZ_H = 1782
+    CEFBS_HasSVE, // FMAXV_VPZ_S = 1783
+    CEFBS_HasNEON_HasFullFP16, // FMAXVv4i16v = 1784
+    CEFBS_HasNEON, // FMAXVv4i32v = 1785
+    CEFBS_HasNEON_HasFullFP16, // FMAXVv8i16v = 1786
+    CEFBS_HasSVE, // FMAX_ZPmI_D = 1787
+    CEFBS_HasSVE, // FMAX_ZPmI_H = 1788
+    CEFBS_HasSVE, // FMAX_ZPmI_S = 1789
+    CEFBS_HasSVE, // FMAX_ZPmZ_D = 1790
+    CEFBS_HasSVE, // FMAX_ZPmZ_H = 1791
+    CEFBS_HasSVE, // FMAX_ZPmZ_S = 1792
+    CEFBS_HasNEON, // FMAXv2f32 = 1793
+    CEFBS_HasNEON, // FMAXv2f64 = 1794
+    CEFBS_HasNEON_HasFullFP16, // FMAXv4f16 = 1795
+    CEFBS_HasNEON, // FMAXv4f32 = 1796
+    CEFBS_HasNEON_HasFullFP16, // FMAXv8f16 = 1797
+    CEFBS_HasFPARMv8, // FMINDrr = 1798
+    CEFBS_HasFullFP16, // FMINHrr = 1799
+    CEFBS_HasFPARMv8, // FMINNMDrr = 1800
+    CEFBS_HasFullFP16, // FMINNMHrr = 1801
+    CEFBS_HasSVE2, // FMINNMP_ZPmZZ_D = 1802
+    CEFBS_HasSVE2, // FMINNMP_ZPmZZ_H = 1803
+    CEFBS_HasSVE2, // FMINNMP_ZPmZZ_S = 1804
+    CEFBS_HasNEON, // FMINNMPv2f32 = 1805
+    CEFBS_HasNEON, // FMINNMPv2f64 = 1806
+    CEFBS_HasNEON_HasFullFP16, // FMINNMPv2i16p = 1807
+    CEFBS_HasNEON, // FMINNMPv2i32p = 1808
+    CEFBS_HasNEON, // FMINNMPv2i64p = 1809
+    CEFBS_HasNEON_HasFullFP16, // FMINNMPv4f16 = 1810
+    CEFBS_HasNEON, // FMINNMPv4f32 = 1811
+    CEFBS_HasNEON_HasFullFP16, // FMINNMPv8f16 = 1812
+    CEFBS_HasFPARMv8, // FMINNMSrr = 1813
+    CEFBS_HasSVE, // FMINNMV_VPZ_D = 1814
+    CEFBS_HasSVE, // FMINNMV_VPZ_H = 1815
+    CEFBS_HasSVE, // FMINNMV_VPZ_S = 1816
+    CEFBS_HasNEON_HasFullFP16, // FMINNMVv4i16v = 1817
+    CEFBS_HasNEON, // FMINNMVv4i32v = 1818
+    CEFBS_HasNEON_HasFullFP16, // FMINNMVv8i16v = 1819
+    CEFBS_HasSVE, // FMINNM_ZPmI_D = 1820
+    CEFBS_HasSVE, // FMINNM_ZPmI_H = 1821
+    CEFBS_HasSVE, // FMINNM_ZPmI_S = 1822
+    CEFBS_HasSVE, // FMINNM_ZPmZ_D = 1823
+    CEFBS_HasSVE, // FMINNM_ZPmZ_H = 1824
+    CEFBS_HasSVE, // FMINNM_ZPmZ_S = 1825
+    CEFBS_HasNEON, // FMINNMv2f32 = 1826
+    CEFBS_HasNEON, // FMINNMv2f64 = 1827
+    CEFBS_HasNEON_HasFullFP16, // FMINNMv4f16 = 1828
+    CEFBS_HasNEON, // FMINNMv4f32 = 1829
+    CEFBS_HasNEON_HasFullFP16, // FMINNMv8f16 = 1830
+    CEFBS_HasSVE2, // FMINP_ZPmZZ_D = 1831
+    CEFBS_HasSVE2, // FMINP_ZPmZZ_H = 1832
+    CEFBS_HasSVE2, // FMINP_ZPmZZ_S = 1833
+    CEFBS_HasNEON, // FMINPv2f32 = 1834
+    CEFBS_HasNEON, // FMINPv2f64 = 1835
+    CEFBS_HasNEON_HasFullFP16, // FMINPv2i16p = 1836
+    CEFBS_HasNEON, // FMINPv2i32p = 1837
+    CEFBS_HasNEON, // FMINPv2i64p = 1838
+    CEFBS_HasNEON_HasFullFP16, // FMINPv4f16 = 1839
+    CEFBS_HasNEON, // FMINPv4f32 = 1840
+    CEFBS_HasNEON_HasFullFP16, // FMINPv8f16 = 1841
+    CEFBS_HasFPARMv8, // FMINSrr = 1842
+    CEFBS_HasSVE, // FMINV_VPZ_D = 1843
+    CEFBS_HasSVE, // FMINV_VPZ_H = 1844
+    CEFBS_HasSVE, // FMINV_VPZ_S = 1845
+    CEFBS_HasNEON_HasFullFP16, // FMINVv4i16v = 1846
+    CEFBS_HasNEON, // FMINVv4i32v = 1847
+    CEFBS_HasNEON_HasFullFP16, // FMINVv8i16v = 1848
+    CEFBS_HasSVE, // FMIN_ZPmI_D = 1849
+    CEFBS_HasSVE, // FMIN_ZPmI_H = 1850
+    CEFBS_HasSVE, // FMIN_ZPmI_S = 1851
+    CEFBS_HasSVE, // FMIN_ZPmZ_D = 1852
+    CEFBS_HasSVE, // FMIN_ZPmZ_H = 1853
+    CEFBS_HasSVE, // FMIN_ZPmZ_S = 1854
+    CEFBS_HasNEON, // FMINv2f32 = 1855
+    CEFBS_HasNEON, // FMINv2f64 = 1856
+    CEFBS_HasNEON_HasFullFP16, // FMINv4f16 = 1857
+    CEFBS_HasNEON, // FMINv4f32 = 1858
+    CEFBS_HasNEON_HasFullFP16, // FMINv8f16 = 1859
+    CEFBS_HasNEON_HasFP16FML, // FMLAL2lanev4f16 = 1860
+    CEFBS_HasNEON_HasFP16FML, // FMLAL2lanev8f16 = 1861
+    CEFBS_HasNEON_HasFP16FML, // FMLAL2v4f16 = 1862
+    CEFBS_HasNEON_HasFP16FML, // FMLAL2v8f16 = 1863
+    CEFBS_HasSVE2, // FMLALB_ZZZI_SHH = 1864
+    CEFBS_HasSVE2, // FMLALB_ZZZ_SHH = 1865
+    CEFBS_HasSVE2, // FMLALT_ZZZI_SHH = 1866
+    CEFBS_HasSVE2, // FMLALT_ZZZ_SHH = 1867
+    CEFBS_HasNEON_HasFP16FML, // FMLALlanev4f16 = 1868
+    CEFBS_HasNEON_HasFP16FML, // FMLALlanev8f16 = 1869
+    CEFBS_HasNEON_HasFP16FML, // FMLALv4f16 = 1870
+    CEFBS_HasNEON_HasFP16FML, // FMLALv8f16 = 1871
+    CEFBS_HasSVE, // FMLA_ZPmZZ_D = 1872
+    CEFBS_HasSVE, // FMLA_ZPmZZ_H = 1873
+    CEFBS_HasSVE, // FMLA_ZPmZZ_S = 1874
+    CEFBS_HasSVE, // FMLA_ZZZI_D = 1875
+    CEFBS_HasSVE, // FMLA_ZZZI_H = 1876
+    CEFBS_HasSVE, // FMLA_ZZZI_S = 1877
+    CEFBS_HasNEON_HasFullFP16, // FMLAv1i16_indexed = 1878
+    CEFBS_HasNEON, // FMLAv1i32_indexed = 1879
+    CEFBS_HasNEON, // FMLAv1i64_indexed = 1880
+    CEFBS_HasNEON, // FMLAv2f32 = 1881
+    CEFBS_HasNEON, // FMLAv2f64 = 1882
+    CEFBS_HasNEON, // FMLAv2i32_indexed = 1883
+    CEFBS_HasNEON, // FMLAv2i64_indexed = 1884
+    CEFBS_HasNEON_HasFullFP16, // FMLAv4f16 = 1885
+    CEFBS_HasNEON, // FMLAv4f32 = 1886
+    CEFBS_HasNEON_HasFullFP16, // FMLAv4i16_indexed = 1887
+    CEFBS_HasNEON, // FMLAv4i32_indexed = 1888
+    CEFBS_HasNEON_HasFullFP16, // FMLAv8f16 = 1889
+    CEFBS_HasNEON_HasFullFP16, // FMLAv8i16_indexed = 1890
+    CEFBS_HasNEON_HasFP16FML, // FMLSL2lanev4f16 = 1891
+    CEFBS_HasNEON_HasFP16FML, // FMLSL2lanev8f16 = 1892
+    CEFBS_HasNEON_HasFP16FML, // FMLSL2v4f16 = 1893
+    CEFBS_HasNEON_HasFP16FML, // FMLSL2v8f16 = 1894
+    CEFBS_HasSVE2, // FMLSLB_ZZZI_SHH = 1895
+    CEFBS_HasSVE2, // FMLSLB_ZZZ_SHH = 1896
+    CEFBS_HasSVE2, // FMLSLT_ZZZI_SHH = 1897
+    CEFBS_HasSVE2, // FMLSLT_ZZZ_SHH = 1898
+    CEFBS_HasNEON_HasFP16FML, // FMLSLlanev4f16 = 1899
+    CEFBS_HasNEON_HasFP16FML, // FMLSLlanev8f16 = 1900
+    CEFBS_HasNEON_HasFP16FML, // FMLSLv4f16 = 1901
+    CEFBS_HasNEON_HasFP16FML, // FMLSLv8f16 = 1902
+    CEFBS_HasSVE, // FMLS_ZPmZZ_D = 1903
+    CEFBS_HasSVE, // FMLS_ZPmZZ_H = 1904
+    CEFBS_HasSVE, // FMLS_ZPmZZ_S = 1905
+    CEFBS_HasSVE, // FMLS_ZZZI_D = 1906
+    CEFBS_HasSVE, // FMLS_ZZZI_H = 1907
+    CEFBS_HasSVE, // FMLS_ZZZI_S = 1908
+    CEFBS_HasNEON_HasFullFP16, // FMLSv1i16_indexed = 1909
+    CEFBS_HasNEON, // FMLSv1i32_indexed = 1910
+    CEFBS_HasNEON, // FMLSv1i64_indexed = 1911
+    CEFBS_HasNEON, // FMLSv2f32 = 1912
+    CEFBS_HasNEON, // FMLSv2f64 = 1913
+    CEFBS_HasNEON, // FMLSv2i32_indexed = 1914
+    CEFBS_HasNEON, // FMLSv2i64_indexed = 1915
+    CEFBS_HasNEON_HasFullFP16, // FMLSv4f16 = 1916
+    CEFBS_HasNEON, // FMLSv4f32 = 1917
+    CEFBS_HasNEON_HasFullFP16, // FMLSv4i16_indexed = 1918
+    CEFBS_HasNEON, // FMLSv4i32_indexed = 1919
+    CEFBS_HasNEON_HasFullFP16, // FMLSv8f16 = 1920
+    CEFBS_HasNEON_HasFullFP16, // FMLSv8i16_indexed = 1921
+    CEFBS_HasSVE_HasMatMulFP64, // FMMLA_ZZZ_D = 1922
+    CEFBS_HasSVE_HasMatMulFP32, // FMMLA_ZZZ_S = 1923
+    CEFBS_HasFPARMv8, // FMOVDXHighr = 1924
+    CEFBS_HasFPARMv8, // FMOVDXr = 1925
+    CEFBS_HasFPARMv8, // FMOVDi = 1926
+    CEFBS_HasFPARMv8, // FMOVDr = 1927
+    CEFBS_HasFullFP16, // FMOVHWr = 1928
+    CEFBS_HasFullFP16, // FMOVHXr = 1929
+    CEFBS_HasFullFP16, // FMOVHi = 1930
+    CEFBS_HasFullFP16, // FMOVHr = 1931
+    CEFBS_HasFPARMv8, // FMOVSWr = 1932
+    CEFBS_HasFPARMv8, // FMOVSi = 1933
+    CEFBS_HasFPARMv8, // FMOVSr = 1934
+    CEFBS_HasFullFP16, // FMOVWHr = 1935
+    CEFBS_HasFPARMv8, // FMOVWSr = 1936
+    CEFBS_HasFPARMv8, // FMOVXDHighr = 1937
+    CEFBS_HasFPARMv8, // FMOVXDr = 1938
+    CEFBS_HasFullFP16, // FMOVXHr = 1939
+    CEFBS_HasNEON, // FMOVv2f32_ns = 1940
+    CEFBS_HasNEON, // FMOVv2f64_ns = 1941
+    CEFBS_HasNEON_HasFullFP16, // FMOVv4f16_ns = 1942
+    CEFBS_HasNEON, // FMOVv4f32_ns = 1943
+    CEFBS_HasNEON_HasFullFP16, // FMOVv8f16_ns = 1944
+    CEFBS_HasSVE, // FMSB_ZPmZZ_D = 1945
+    CEFBS_HasSVE, // FMSB_ZPmZZ_H = 1946
+    CEFBS_HasSVE, // FMSB_ZPmZZ_S = 1947
+    CEFBS_HasFPARMv8, // FMSUBDrrr = 1948
+    CEFBS_HasFullFP16, // FMSUBHrrr = 1949
+    CEFBS_HasFPARMv8, // FMSUBSrrr = 1950
+    CEFBS_HasFPARMv8, // FMULDrr = 1951
+    CEFBS_HasFullFP16, // FMULHrr = 1952
+    CEFBS_HasFPARMv8, // FMULSrr = 1953
+    CEFBS_HasNEON_HasFullFP16, // FMULX16 = 1954
+    CEFBS_HasNEON, // FMULX32 = 1955
+    CEFBS_HasNEON, // FMULX64 = 1956
+    CEFBS_HasSVE, // FMULX_ZPmZ_D = 1957
+    CEFBS_HasSVE, // FMULX_ZPmZ_H = 1958
+    CEFBS_HasSVE, // FMULX_ZPmZ_S = 1959
+    CEFBS_HasNEON_HasFullFP16, // FMULXv1i16_indexed = 1960
+    CEFBS_HasNEON, // FMULXv1i32_indexed = 1961
+    CEFBS_HasNEON, // FMULXv1i64_indexed = 1962
+    CEFBS_HasNEON, // FMULXv2f32 = 1963
+    CEFBS_HasNEON, // FMULXv2f64 = 1964
+    CEFBS_HasNEON, // FMULXv2i32_indexed = 1965
+    CEFBS_HasNEON, // FMULXv2i64_indexed = 1966
+    CEFBS_HasNEON_HasFullFP16, // FMULXv4f16 = 1967
+    CEFBS_HasNEON, // FMULXv4f32 = 1968
+    CEFBS_HasNEON_HasFullFP16, // FMULXv4i16_indexed = 1969
+    CEFBS_HasNEON, // FMULXv4i32_indexed = 1970
+    CEFBS_HasNEON_HasFullFP16, // FMULXv8f16 = 1971
+    CEFBS_HasNEON_HasFullFP16, // FMULXv8i16_indexed = 1972
+    CEFBS_HasSVE, // FMUL_ZPmI_D = 1973
+    CEFBS_HasSVE, // FMUL_ZPmI_H = 1974
+    CEFBS_HasSVE, // FMUL_ZPmI_S = 1975
+    CEFBS_HasSVE, // FMUL_ZPmZ_D = 1976
+    CEFBS_HasSVE, // FMUL_ZPmZ_H = 1977
+    CEFBS_HasSVE, // FMUL_ZPmZ_S = 1978
+    CEFBS_HasSVE, // FMUL_ZZZI_D = 1979
+    CEFBS_HasSVE, // FMUL_ZZZI_H = 1980
+    CEFBS_HasSVE, // FMUL_ZZZI_S = 1981
+    CEFBS_HasSVE, // FMUL_ZZZ_D = 1982
+    CEFBS_HasSVE, // FMUL_ZZZ_H = 1983
+    CEFBS_HasSVE, // FMUL_ZZZ_S = 1984
+    CEFBS_HasNEON_HasFullFP16, // FMULv1i16_indexed = 1985
+    CEFBS_HasNEON, // FMULv1i32_indexed = 1986
+    CEFBS_HasNEON, // FMULv1i64_indexed = 1987
+    CEFBS_HasNEON, // FMULv2f32 = 1988
+    CEFBS_HasNEON, // FMULv2f64 = 1989
+    CEFBS_HasNEON, // FMULv2i32_indexed = 1990
+    CEFBS_HasNEON, // FMULv2i64_indexed = 1991
+    CEFBS_HasNEON_HasFullFP16, // FMULv4f16 = 1992
+    CEFBS_HasNEON, // FMULv4f32 = 1993
+    CEFBS_HasNEON_HasFullFP16, // FMULv4i16_indexed = 1994
+    CEFBS_HasNEON, // FMULv4i32_indexed = 1995
+    CEFBS_HasNEON_HasFullFP16, // FMULv8f16 = 1996
+    CEFBS_HasNEON_HasFullFP16, // FMULv8i16_indexed = 1997
+    CEFBS_HasFPARMv8, // FNEGDr = 1998
+    CEFBS_HasFullFP16, // FNEGHr = 1999
+    CEFBS_HasFPARMv8, // FNEGSr = 2000
+    CEFBS_HasSVE, // FNEG_ZPmZ_D = 2001
+    CEFBS_HasSVE, // FNEG_ZPmZ_H = 2002
+    CEFBS_HasSVE, // FNEG_ZPmZ_S = 2003
+    CEFBS_HasNEON, // FNEGv2f32 = 2004
+    CEFBS_HasNEON, // FNEGv2f64 = 2005
+    CEFBS_HasNEON_HasFullFP16, // FNEGv4f16 = 2006
+    CEFBS_HasNEON, // FNEGv4f32 = 2007
+    CEFBS_HasNEON_HasFullFP16, // FNEGv8f16 = 2008
+    CEFBS_HasFPARMv8, // FNMADDDrrr = 2009
+    CEFBS_HasFullFP16, // FNMADDHrrr = 2010
+    CEFBS_HasFPARMv8, // FNMADDSrrr = 2011
+    CEFBS_HasSVE, // FNMAD_ZPmZZ_D = 2012
+    CEFBS_HasSVE, // FNMAD_ZPmZZ_H = 2013
+    CEFBS_HasSVE, // FNMAD_ZPmZZ_S = 2014
+    CEFBS_HasSVE, // FNMLA_ZPmZZ_D = 2015
+    CEFBS_HasSVE, // FNMLA_ZPmZZ_H = 2016
+    CEFBS_HasSVE, // FNMLA_ZPmZZ_S = 2017
+    CEFBS_HasSVE, // FNMLS_ZPmZZ_D = 2018
+    CEFBS_HasSVE, // FNMLS_ZPmZZ_H = 2019
+    CEFBS_HasSVE, // FNMLS_ZPmZZ_S = 2020
+    CEFBS_HasSVE, // FNMSB_ZPmZZ_D = 2021
+    CEFBS_HasSVE, // FNMSB_ZPmZZ_H = 2022
+    CEFBS_HasSVE, // FNMSB_ZPmZZ_S = 2023
+    CEFBS_HasFPARMv8, // FNMSUBDrrr = 2024
+    CEFBS_HasFullFP16, // FNMSUBHrrr = 2025
+    CEFBS_HasFPARMv8, // FNMSUBSrrr = 2026
+    CEFBS_HasFPARMv8, // FNMULDrr = 2027
+    CEFBS_HasFullFP16, // FNMULHrr = 2028
+    CEFBS_HasFPARMv8, // FNMULSrr = 2029
+    CEFBS_HasSVE, // FRECPE_ZZ_D = 2030
+    CEFBS_HasSVE, // FRECPE_ZZ_H = 2031
+    CEFBS_HasSVE, // FRECPE_ZZ_S = 2032
+    CEFBS_HasNEON_HasFullFP16, // FRECPEv1f16 = 2033
+    CEFBS_HasNEON, // FRECPEv1i32 = 2034
+    CEFBS_HasNEON, // FRECPEv1i64 = 2035
+    CEFBS_HasNEON, // FRECPEv2f32 = 2036
+    CEFBS_HasNEON, // FRECPEv2f64 = 2037
+    CEFBS_HasNEON_HasFullFP16, // FRECPEv4f16 = 2038
+    CEFBS_HasNEON, // FRECPEv4f32 = 2039
+    CEFBS_HasNEON_HasFullFP16, // FRECPEv8f16 = 2040
+    CEFBS_HasNEON_HasFullFP16, // FRECPS16 = 2041
+    CEFBS_HasNEON, // FRECPS32 = 2042
+    CEFBS_HasNEON, // FRECPS64 = 2043
+    CEFBS_HasSVE, // FRECPS_ZZZ_D = 2044
+    CEFBS_HasSVE, // FRECPS_ZZZ_H = 2045
+    CEFBS_HasSVE, // FRECPS_ZZZ_S = 2046
+    CEFBS_HasNEON, // FRECPSv2f32 = 2047
+    CEFBS_HasNEON, // FRECPSv2f64 = 2048
+    CEFBS_HasNEON_HasFullFP16, // FRECPSv4f16 = 2049
+    CEFBS_HasNEON, // FRECPSv4f32 = 2050
+    CEFBS_HasNEON_HasFullFP16, // FRECPSv8f16 = 2051
+    CEFBS_HasSVE, // FRECPX_ZPmZ_D = 2052
+    CEFBS_HasSVE, // FRECPX_ZPmZ_H = 2053
+    CEFBS_HasSVE, // FRECPX_ZPmZ_S = 2054
+    CEFBS_HasNEON_HasFullFP16, // FRECPXv1f16 = 2055
+    CEFBS_HasNEON, // FRECPXv1i32 = 2056
+    CEFBS_HasNEON, // FRECPXv1i64 = 2057
+    CEFBS_HasFRInt3264, // FRINT32XDr = 2058
+    CEFBS_HasFRInt3264, // FRINT32XSr = 2059
+    CEFBS_HasFRInt3264, // FRINT32Xv2f32 = 2060
+    CEFBS_HasFRInt3264, // FRINT32Xv2f64 = 2061
+    CEFBS_HasFRInt3264, // FRINT32Xv4f32 = 2062
+    CEFBS_HasFRInt3264, // FRINT32ZDr = 2063
+    CEFBS_HasFRInt3264, // FRINT32ZSr = 2064
+    CEFBS_HasFRInt3264, // FRINT32Zv2f32 = 2065
+    CEFBS_HasFRInt3264, // FRINT32Zv2f64 = 2066
+    CEFBS_HasFRInt3264, // FRINT32Zv4f32 = 2067
+    CEFBS_HasFRInt3264, // FRINT64XDr = 2068
+    CEFBS_HasFRInt3264, // FRINT64XSr = 2069
+    CEFBS_HasFRInt3264, // FRINT64Xv2f32 = 2070
+    CEFBS_HasFRInt3264, // FRINT64Xv2f64 = 2071
+    CEFBS_HasFRInt3264, // FRINT64Xv4f32 = 2072
+    CEFBS_HasFRInt3264, // FRINT64ZDr = 2073
+    CEFBS_HasFRInt3264, // FRINT64ZSr = 2074
+    CEFBS_HasFRInt3264, // FRINT64Zv2f32 = 2075
+    CEFBS_HasFRInt3264, // FRINT64Zv2f64 = 2076
+    CEFBS_HasFRInt3264, // FRINT64Zv4f32 = 2077
+    CEFBS_HasFPARMv8, // FRINTADr = 2078
+    CEFBS_HasFullFP16, // FRINTAHr = 2079
+    CEFBS_HasFPARMv8, // FRINTASr = 2080
+    CEFBS_HasSVE, // FRINTA_ZPmZ_D = 2081
+    CEFBS_HasSVE, // FRINTA_ZPmZ_H = 2082
+    CEFBS_HasSVE, // FRINTA_ZPmZ_S = 2083
+    CEFBS_HasNEON, // FRINTAv2f32 = 2084
+    CEFBS_HasNEON, // FRINTAv2f64 = 2085
+    CEFBS_HasNEON_HasFullFP16, // FRINTAv4f16 = 2086
+    CEFBS_HasNEON, // FRINTAv4f32 = 2087
+    CEFBS_HasNEON_HasFullFP16, // FRINTAv8f16 = 2088
+    CEFBS_HasFPARMv8, // FRINTIDr = 2089
+    CEFBS_HasFullFP16, // FRINTIHr = 2090
+    CEFBS_HasFPARMv8, // FRINTISr = 2091
+    CEFBS_HasSVE, // FRINTI_ZPmZ_D = 2092
+    CEFBS_HasSVE, // FRINTI_ZPmZ_H = 2093
+    CEFBS_HasSVE, // FRINTI_ZPmZ_S = 2094
+    CEFBS_HasNEON, // FRINTIv2f32 = 2095
+    CEFBS_HasNEON, // FRINTIv2f64 = 2096
+    CEFBS_HasNEON_HasFullFP16, // FRINTIv4f16 = 2097
+    CEFBS_HasNEON, // FRINTIv4f32 = 2098
+    CEFBS_HasNEON_HasFullFP16, // FRINTIv8f16 = 2099
+    CEFBS_HasFPARMv8, // FRINTMDr = 2100
+    CEFBS_HasFullFP16, // FRINTMHr = 2101
+    CEFBS_HasFPARMv8, // FRINTMSr = 2102
+    CEFBS_HasSVE, // FRINTM_ZPmZ_D = 2103
+    CEFBS_HasSVE, // FRINTM_ZPmZ_H = 2104
+    CEFBS_HasSVE, // FRINTM_ZPmZ_S = 2105
+    CEFBS_HasNEON, // FRINTMv2f32 = 2106
+    CEFBS_HasNEON, // FRINTMv2f64 = 2107
+    CEFBS_HasNEON_HasFullFP16, // FRINTMv4f16 = 2108
+    CEFBS_HasNEON, // FRINTMv4f32 = 2109
+    CEFBS_HasNEON_HasFullFP16, // FRINTMv8f16 = 2110
+    CEFBS_HasFPARMv8, // FRINTNDr = 2111
+    CEFBS_HasFullFP16, // FRINTNHr = 2112
+    CEFBS_HasFPARMv8, // FRINTNSr = 2113
+    CEFBS_HasSVE, // FRINTN_ZPmZ_D = 2114
+    CEFBS_HasSVE, // FRINTN_ZPmZ_H = 2115
+    CEFBS_HasSVE, // FRINTN_ZPmZ_S = 2116
+    CEFBS_HasNEON, // FRINTNv2f32 = 2117
+    CEFBS_HasNEON, // FRINTNv2f64 = 2118
+    CEFBS_HasNEON_HasFullFP16, // FRINTNv4f16 = 2119
+    CEFBS_HasNEON, // FRINTNv4f32 = 2120
+    CEFBS_HasNEON_HasFullFP16, // FRINTNv8f16 = 2121
+    CEFBS_HasFPARMv8, // FRINTPDr = 2122
+    CEFBS_HasFullFP16, // FRINTPHr = 2123
+    CEFBS_HasFPARMv8, // FRINTPSr = 2124
+    CEFBS_HasSVE, // FRINTP_ZPmZ_D = 2125
+    CEFBS_HasSVE, // FRINTP_ZPmZ_H = 2126
+    CEFBS_HasSVE, // FRINTP_ZPmZ_S = 2127
+    CEFBS_HasNEON, // FRINTPv2f32 = 2128
+    CEFBS_HasNEON, // FRINTPv2f64 = 2129
+    CEFBS_HasNEON_HasFullFP16, // FRINTPv4f16 = 2130
+    CEFBS_HasNEON, // FRINTPv4f32 = 2131
+    CEFBS_HasNEON_HasFullFP16, // FRINTPv8f16 = 2132
+    CEFBS_HasFPARMv8, // FRINTXDr = 2133
+    CEFBS_HasFullFP16, // FRINTXHr = 2134
+    CEFBS_HasFPARMv8, // FRINTXSr = 2135
+    CEFBS_HasSVE, // FRINTX_ZPmZ_D = 2136
+    CEFBS_HasSVE, // FRINTX_ZPmZ_H = 2137
+    CEFBS_HasSVE, // FRINTX_ZPmZ_S = 2138
+    CEFBS_HasNEON, // FRINTXv2f32 = 2139
+    CEFBS_HasNEON, // FRINTXv2f64 = 2140
+    CEFBS_HasNEON_HasFullFP16, // FRINTXv4f16 = 2141
+    CEFBS_HasNEON, // FRINTXv4f32 = 2142
+    CEFBS_HasNEON_HasFullFP16, // FRINTXv8f16 = 2143
+    CEFBS_HasFPARMv8, // FRINTZDr = 2144
+    CEFBS_HasFullFP16, // FRINTZHr = 2145
+    CEFBS_HasFPARMv8, // FRINTZSr = 2146
+    CEFBS_HasSVE, // FRINTZ_ZPmZ_D = 2147
+    CEFBS_HasSVE, // FRINTZ_ZPmZ_H = 2148
+    CEFBS_HasSVE, // FRINTZ_ZPmZ_S = 2149
+    CEFBS_HasNEON, // FRINTZv2f32 = 2150
+    CEFBS_HasNEON, // FRINTZv2f64 = 2151
+    CEFBS_HasNEON_HasFullFP16, // FRINTZv4f16 = 2152
+    CEFBS_HasNEON, // FRINTZv4f32 = 2153
+    CEFBS_HasNEON_HasFullFP16, // FRINTZv8f16 = 2154
+    CEFBS_HasSVE, // FRSQRTE_ZZ_D = 2155
+    CEFBS_HasSVE, // FRSQRTE_ZZ_H = 2156
+    CEFBS_HasSVE, // FRSQRTE_ZZ_S = 2157
+    CEFBS_HasNEON_HasFullFP16, // FRSQRTEv1f16 = 2158
+    CEFBS_HasNEON, // FRSQRTEv1i32 = 2159
+    CEFBS_HasNEON, // FRSQRTEv1i64 = 2160
+    CEFBS_HasNEON, // FRSQRTEv2f32 = 2161
+    CEFBS_HasNEON, // FRSQRTEv2f64 = 2162
+    CEFBS_HasNEON_HasFullFP16, // FRSQRTEv4f16 = 2163
+    CEFBS_HasNEON, // FRSQRTEv4f32 = 2164
+    CEFBS_HasNEON_HasFullFP16, // FRSQRTEv8f16 = 2165
+    CEFBS_HasNEON_HasFullFP16, // FRSQRTS16 = 2166
+    CEFBS_HasNEON, // FRSQRTS32 = 2167
+    CEFBS_HasNEON, // FRSQRTS64 = 2168
+    CEFBS_HasSVE, // FRSQRTS_ZZZ_D = 2169
+    CEFBS_HasSVE, // FRSQRTS_ZZZ_H = 2170
+    CEFBS_HasSVE, // FRSQRTS_ZZZ_S = 2171
+    CEFBS_HasNEON, // FRSQRTSv2f32 = 2172
+    CEFBS_HasNEON, // FRSQRTSv2f64 = 2173
+    CEFBS_HasNEON_HasFullFP16, // FRSQRTSv4f16 = 2174
+    CEFBS_HasNEON, // FRSQRTSv4f32 = 2175
+    CEFBS_HasNEON_HasFullFP16, // FRSQRTSv8f16 = 2176
+    CEFBS_HasSVE, // FSCALE_ZPmZ_D = 2177
+    CEFBS_HasSVE, // FSCALE_ZPmZ_H = 2178
+    CEFBS_HasSVE, // FSCALE_ZPmZ_S = 2179
+    CEFBS_HasFPARMv8, // FSQRTDr = 2180
+    CEFBS_HasFullFP16, // FSQRTHr = 2181
+    CEFBS_HasFPARMv8, // FSQRTSr = 2182
+    CEFBS_HasSVE, // FSQRT_ZPmZ_D = 2183
+    CEFBS_HasSVE, // FSQRT_ZPmZ_H = 2184
+    CEFBS_HasSVE, // FSQRT_ZPmZ_S = 2185
+    CEFBS_HasNEON, // FSQRTv2f32 = 2186
+    CEFBS_HasNEON, // FSQRTv2f64 = 2187
+    CEFBS_HasNEON_HasFullFP16, // FSQRTv4f16 = 2188
+    CEFBS_HasNEON, // FSQRTv4f32 = 2189
+    CEFBS_HasNEON_HasFullFP16, // FSQRTv8f16 = 2190
+    CEFBS_HasFPARMv8, // FSUBDrr = 2191
+    CEFBS_HasFullFP16, // FSUBHrr = 2192
+    CEFBS_HasSVE, // FSUBR_ZPmI_D = 2193
+    CEFBS_HasSVE, // FSUBR_ZPmI_H = 2194
+    CEFBS_HasSVE, // FSUBR_ZPmI_S = 2195
+    CEFBS_HasSVE, // FSUBR_ZPmZ_D = 2196
+    CEFBS_HasSVE, // FSUBR_ZPmZ_H = 2197
+    CEFBS_HasSVE, // FSUBR_ZPmZ_S = 2198
+    CEFBS_HasFPARMv8, // FSUBSrr = 2199
+    CEFBS_HasSVE, // FSUB_ZPmI_D = 2200
+    CEFBS_HasSVE, // FSUB_ZPmI_H = 2201
+    CEFBS_HasSVE, // FSUB_ZPmI_S = 2202
+    CEFBS_HasSVE, // FSUB_ZPmZ_D = 2203
+    CEFBS_HasSVE, // FSUB_ZPmZ_H = 2204
+    CEFBS_HasSVE, // FSUB_ZPmZ_S = 2205
+    CEFBS_HasSVE, // FSUB_ZZZ_D = 2206
+    CEFBS_HasSVE, // FSUB_ZZZ_H = 2207
+    CEFBS_HasSVE, // FSUB_ZZZ_S = 2208
+    CEFBS_HasNEON, // FSUBv2f32 = 2209
+    CEFBS_HasNEON, // FSUBv2f64 = 2210
+    CEFBS_HasNEON_HasFullFP16, // FSUBv4f16 = 2211
+    CEFBS_HasNEON, // FSUBv4f32 = 2212
+    CEFBS_HasNEON_HasFullFP16, // FSUBv8f16 = 2213
+    CEFBS_HasSVE, // FTMAD_ZZI_D = 2214
+    CEFBS_HasSVE, // FTMAD_ZZI_H = 2215
+    CEFBS_HasSVE, // FTMAD_ZZI_S = 2216
+    CEFBS_HasSVE, // FTSMUL_ZZZ_D = 2217
+    CEFBS_HasSVE, // FTSMUL_ZZZ_H = 2218
+    CEFBS_HasSVE, // FTSMUL_ZZZ_S = 2219
+    CEFBS_HasSVE, // FTSSEL_ZZZ_D = 2220
+    CEFBS_HasSVE, // FTSSEL_ZZZ_H = 2221
+    CEFBS_HasSVE, // FTSSEL_ZZZ_S = 2222
+    CEFBS_HasSVE, // GLD1B_D_IMM_REAL = 2223
+    CEFBS_HasSVE, // GLD1B_D_REAL = 2224
+    CEFBS_HasSVE, // GLD1B_D_SXTW_REAL = 2225
+    CEFBS_HasSVE, // GLD1B_D_UXTW_REAL = 2226
+    CEFBS_HasSVE, // GLD1B_S_IMM_REAL = 2227
+    CEFBS_HasSVE, // GLD1B_S_SXTW_REAL = 2228
+    CEFBS_HasSVE, // GLD1B_S_UXTW_REAL = 2229
+    CEFBS_HasSVE, // GLD1D_IMM_REAL = 2230
+    CEFBS_HasSVE, // GLD1D_REAL = 2231
+    CEFBS_HasSVE, // GLD1D_SCALED_REAL = 2232
+    CEFBS_HasSVE, // GLD1D_SXTW_REAL = 2233
+    CEFBS_HasSVE, // GLD1D_SXTW_SCALED_REAL = 2234
+    CEFBS_HasSVE, // GLD1D_UXTW_REAL = 2235
+    CEFBS_HasSVE, // GLD1D_UXTW_SCALED_REAL = 2236
+    CEFBS_HasSVE, // GLD1H_D_IMM_REAL = 2237
+    CEFBS_HasSVE, // GLD1H_D_REAL = 2238
+    CEFBS_HasSVE, // GLD1H_D_SCALED_REAL = 2239
+    CEFBS_HasSVE, // GLD1H_D_SXTW_REAL = 2240
+    CEFBS_HasSVE, // GLD1H_D_SXTW_SCALED_REAL = 2241
+    CEFBS_HasSVE, // GLD1H_D_UXTW_REAL = 2242
+    CEFBS_HasSVE, // GLD1H_D_UXTW_SCALED_REAL = 2243
+    CEFBS_HasSVE, // GLD1H_S_IMM_REAL = 2244
+    CEFBS_HasSVE, // GLD1H_S_SXTW_REAL = 2245
+    CEFBS_HasSVE, // GLD1H_S_SXTW_SCALED_REAL = 2246
+    CEFBS_HasSVE, // GLD1H_S_UXTW_REAL = 2247
+    CEFBS_HasSVE, // GLD1H_S_UXTW_SCALED_REAL = 2248
+    CEFBS_HasSVE, // GLD1SB_D_IMM_REAL = 2249
+    CEFBS_HasSVE, // GLD1SB_D_REAL = 2250
+    CEFBS_HasSVE, // GLD1SB_D_SXTW_REAL = 2251
+    CEFBS_HasSVE, // GLD1SB_D_UXTW_REAL = 2252
+    CEFBS_HasSVE, // GLD1SB_S_IMM_REAL = 2253
+    CEFBS_HasSVE, // GLD1SB_S_SXTW_REAL = 2254
+    CEFBS_HasSVE, // GLD1SB_S_UXTW_REAL = 2255
+    CEFBS_HasSVE, // GLD1SH_D_IMM_REAL = 2256
+    CEFBS_HasSVE, // GLD1SH_D_REAL = 2257
+    CEFBS_HasSVE, // GLD1SH_D_SCALED_REAL = 2258
+    CEFBS_HasSVE, // GLD1SH_D_SXTW_REAL = 2259
+    CEFBS_HasSVE, // GLD1SH_D_SXTW_SCALED_REAL = 2260
+    CEFBS_HasSVE, // GLD1SH_D_UXTW_REAL = 2261
+    CEFBS_HasSVE, // GLD1SH_D_UXTW_SCALED_REAL = 2262
+    CEFBS_HasSVE, // GLD1SH_S_IMM_REAL = 2263
+    CEFBS_HasSVE, // GLD1SH_S_SXTW_REAL = 2264
+    CEFBS_HasSVE, // GLD1SH_S_SXTW_SCALED_REAL = 2265
+    CEFBS_HasSVE, // GLD1SH_S_UXTW_REAL = 2266
+    CEFBS_HasSVE, // GLD1SH_S_UXTW_SCALED_REAL = 2267
+    CEFBS_HasSVE, // GLD1SW_D_IMM_REAL = 2268
+    CEFBS_HasSVE, // GLD1SW_D_REAL = 2269
+    CEFBS_HasSVE, // GLD1SW_D_SCALED_REAL = 2270
+    CEFBS_HasSVE, // GLD1SW_D_SXTW_REAL = 2271
+    CEFBS_HasSVE, // GLD1SW_D_SXTW_SCALED_REAL = 2272
+    CEFBS_HasSVE, // GLD1SW_D_UXTW_REAL = 2273
+    CEFBS_HasSVE, // GLD1SW_D_UXTW_SCALED_REAL = 2274
+    CEFBS_HasSVE, // GLD1W_D_IMM_REAL = 2275
+    CEFBS_HasSVE, // GLD1W_D_REAL = 2276
+    CEFBS_HasSVE, // GLD1W_D_SCALED_REAL = 2277
+    CEFBS_HasSVE, // GLD1W_D_SXTW_REAL = 2278
+    CEFBS_HasSVE, // GLD1W_D_SXTW_SCALED_REAL = 2279
+    CEFBS_HasSVE, // GLD1W_D_UXTW_REAL = 2280
+    CEFBS_HasSVE, // GLD1W_D_UXTW_SCALED_REAL = 2281
+    CEFBS_HasSVE, // GLD1W_IMM_REAL = 2282
+    CEFBS_HasSVE, // GLD1W_SXTW_REAL = 2283
+    CEFBS_HasSVE, // GLD1W_SXTW_SCALED_REAL = 2284
+    CEFBS_HasSVE, // GLD1W_UXTW_REAL = 2285
+    CEFBS_HasSVE, // GLD1W_UXTW_SCALED_REAL = 2286
+    CEFBS_HasSVE, // GLDFF1B_D_IMM_REAL = 2287
+    CEFBS_HasSVE, // GLDFF1B_D_REAL = 2288
+    CEFBS_HasSVE, // GLDFF1B_D_SXTW_REAL = 2289
+    CEFBS_HasSVE, // GLDFF1B_D_UXTW_REAL = 2290
+    CEFBS_HasSVE, // GLDFF1B_S_IMM_REAL = 2291
+    CEFBS_HasSVE, // GLDFF1B_S_SXTW_REAL = 2292
+    CEFBS_HasSVE, // GLDFF1B_S_UXTW_REAL = 2293
+    CEFBS_HasSVE, // GLDFF1D_IMM_REAL = 2294
+    CEFBS_HasSVE, // GLDFF1D_REAL = 2295
+    CEFBS_HasSVE, // GLDFF1D_SCALED_REAL = 2296
+    CEFBS_HasSVE, // GLDFF1D_SXTW_REAL = 2297
+    CEFBS_HasSVE, // GLDFF1D_SXTW_SCALED_REAL = 2298
+    CEFBS_HasSVE, // GLDFF1D_UXTW_REAL = 2299
+    CEFBS_HasSVE, // GLDFF1D_UXTW_SCALED_REAL = 2300
+    CEFBS_HasSVE, // GLDFF1H_D_IMM_REAL = 2301
+    CEFBS_HasSVE, // GLDFF1H_D_REAL = 2302
+    CEFBS_HasSVE, // GLDFF1H_D_SCALED_REAL = 2303
+    CEFBS_HasSVE, // GLDFF1H_D_SXTW_REAL = 2304
+    CEFBS_HasSVE, // GLDFF1H_D_SXTW_SCALED_REAL = 2305
+    CEFBS_HasSVE, // GLDFF1H_D_UXTW_REAL = 2306
+    CEFBS_HasSVE, // GLDFF1H_D_UXTW_SCALED_REAL = 2307
+    CEFBS_HasSVE, // GLDFF1H_S_IMM_REAL = 2308
+    CEFBS_HasSVE, // GLDFF1H_S_SXTW_REAL = 2309
+    CEFBS_HasSVE, // GLDFF1H_S_SXTW_SCALED_REAL = 2310
+    CEFBS_HasSVE, // GLDFF1H_S_UXTW_REAL = 2311
+    CEFBS_HasSVE, // GLDFF1H_S_UXTW_SCALED_REAL = 2312
+    CEFBS_HasSVE, // GLDFF1SB_D_IMM_REAL = 2313
+    CEFBS_HasSVE, // GLDFF1SB_D_REAL = 2314
+    CEFBS_HasSVE, // GLDFF1SB_D_SXTW_REAL = 2315
+    CEFBS_HasSVE, // GLDFF1SB_D_UXTW_REAL = 2316
+    CEFBS_HasSVE, // GLDFF1SB_S_IMM_REAL = 2317
+    CEFBS_HasSVE, // GLDFF1SB_S_SXTW_REAL = 2318
+    CEFBS_HasSVE, // GLDFF1SB_S_UXTW_REAL = 2319
+    CEFBS_HasSVE, // GLDFF1SH_D_IMM_REAL = 2320
+    CEFBS_HasSVE, // GLDFF1SH_D_REAL = 2321
+    CEFBS_HasSVE, // GLDFF1SH_D_SCALED_REAL = 2322
+    CEFBS_HasSVE, // GLDFF1SH_D_SXTW_REAL = 2323
+    CEFBS_HasSVE, // GLDFF1SH_D_SXTW_SCALED_REAL = 2324
+    CEFBS_HasSVE, // GLDFF1SH_D_UXTW_REAL = 2325
+    CEFBS_HasSVE, // GLDFF1SH_D_UXTW_SCALED_REAL = 2326
+    CEFBS_HasSVE, // GLDFF1SH_S_IMM_REAL = 2327
+    CEFBS_HasSVE, // GLDFF1SH_S_SXTW_REAL = 2328
+    CEFBS_HasSVE, // GLDFF1SH_S_SXTW_SCALED_REAL = 2329
+    CEFBS_HasSVE, // GLDFF1SH_S_UXTW_REAL = 2330
+    CEFBS_HasSVE, // GLDFF1SH_S_UXTW_SCALED_REAL = 2331
+    CEFBS_HasSVE, // GLDFF1SW_D_IMM_REAL = 2332
+    CEFBS_HasSVE, // GLDFF1SW_D_REAL = 2333
+    CEFBS_HasSVE, // GLDFF1SW_D_SCALED_REAL = 2334
+    CEFBS_HasSVE, // GLDFF1SW_D_SXTW_REAL = 2335
+    CEFBS_HasSVE, // GLDFF1SW_D_SXTW_SCALED_REAL = 2336
+    CEFBS_HasSVE, // GLDFF1SW_D_UXTW_REAL = 2337
+    CEFBS_HasSVE, // GLDFF1SW_D_UXTW_SCALED_REAL = 2338
+    CEFBS_HasSVE, // GLDFF1W_D_IMM_REAL = 2339
+    CEFBS_HasSVE, // GLDFF1W_D_REAL = 2340
+    CEFBS_HasSVE, // GLDFF1W_D_SCALED_REAL = 2341
+    CEFBS_HasSVE, // GLDFF1W_D_SXTW_REAL = 2342
+    CEFBS_HasSVE, // GLDFF1W_D_SXTW_SCALED_REAL = 2343
+    CEFBS_HasSVE, // GLDFF1W_D_UXTW_REAL = 2344
+    CEFBS_HasSVE, // GLDFF1W_D_UXTW_SCALED_REAL = 2345
+    CEFBS_HasSVE, // GLDFF1W_IMM_REAL = 2346
+    CEFBS_HasSVE, // GLDFF1W_SXTW_REAL = 2347
+    CEFBS_HasSVE, // GLDFF1W_SXTW_SCALED_REAL = 2348
+    CEFBS_HasSVE, // GLDFF1W_UXTW_REAL = 2349
+    CEFBS_HasSVE, // GLDFF1W_UXTW_SCALED_REAL = 2350
+    CEFBS_HasMTE, // GMI = 2351
+    CEFBS_None, // HINT = 2352
+    CEFBS_HasSVE2, // HISTCNT_ZPzZZ_D = 2353
+    CEFBS_HasSVE2, // HISTCNT_ZPzZZ_S = 2354
+    CEFBS_HasSVE2, // HISTSEG_ZZZ = 2355
+    CEFBS_None, // HLT = 2356
+    CEFBS_None, // HVC = 2357
+    CEFBS_HasSVE, // INCB_XPiI = 2358
+    CEFBS_HasSVE, // INCD_XPiI = 2359
+    CEFBS_HasSVE, // INCD_ZPiI = 2360
+    CEFBS_HasSVE, // INCH_XPiI = 2361
+    CEFBS_HasSVE, // INCH_ZPiI = 2362
+    CEFBS_HasSVE, // INCP_XP_B = 2363
+    CEFBS_HasSVE, // INCP_XP_D = 2364
+    CEFBS_HasSVE, // INCP_XP_H = 2365
+    CEFBS_HasSVE, // INCP_XP_S = 2366
+    CEFBS_HasSVE, // INCP_ZP_D = 2367
+    CEFBS_HasSVE, // INCP_ZP_H = 2368
+    CEFBS_HasSVE, // INCP_ZP_S = 2369
+    CEFBS_HasSVE, // INCW_XPiI = 2370
+    CEFBS_HasSVE, // INCW_ZPiI = 2371
+    CEFBS_HasSVE, // INDEX_II_B = 2372
+    CEFBS_HasSVE, // INDEX_II_D = 2373
+    CEFBS_HasSVE, // INDEX_II_H = 2374
+    CEFBS_HasSVE, // INDEX_II_S = 2375
+    CEFBS_HasSVE, // INDEX_IR_B = 2376
+    CEFBS_HasSVE, // INDEX_IR_D = 2377
+    CEFBS_HasSVE, // INDEX_IR_H = 2378
+    CEFBS_HasSVE, // INDEX_IR_S = 2379
+    CEFBS_HasSVE, // INDEX_RI_B = 2380
+    CEFBS_HasSVE, // INDEX_RI_D = 2381
+    CEFBS_HasSVE, // INDEX_RI_H = 2382
+    CEFBS_HasSVE, // INDEX_RI_S = 2383
+    CEFBS_HasSVE, // INDEX_RR_B = 2384
+    CEFBS_HasSVE, // INDEX_RR_D = 2385
+    CEFBS_HasSVE, // INDEX_RR_H = 2386
+    CEFBS_HasSVE, // INDEX_RR_S = 2387
+    CEFBS_HasSVE, // INSR_ZR_B = 2388
+    CEFBS_HasSVE, // INSR_ZR_D = 2389
+    CEFBS_HasSVE, // INSR_ZR_H = 2390
+    CEFBS_HasSVE, // INSR_ZR_S = 2391
+    CEFBS_HasSVE, // INSR_ZV_B = 2392
+    CEFBS_HasSVE, // INSR_ZV_D = 2393
+    CEFBS_HasSVE, // INSR_ZV_H = 2394
+    CEFBS_HasSVE, // INSR_ZV_S = 2395
+    CEFBS_HasNEON, // INSvi16gpr = 2396
+    CEFBS_HasNEON, // INSvi16lane = 2397
+    CEFBS_HasNEON, // INSvi32gpr = 2398
+    CEFBS_HasNEON, // INSvi32lane = 2399
+    CEFBS_HasNEON, // INSvi64gpr = 2400
+    CEFBS_HasNEON, // INSvi64lane = 2401
+    CEFBS_HasNEON, // INSvi8gpr = 2402
+    CEFBS_HasNEON, // INSvi8lane = 2403
+    CEFBS_HasMTE, // IRG = 2404
+    CEFBS_None, // ISB = 2405
+    CEFBS_HasSVE, // LASTA_RPZ_B = 2406
+    CEFBS_HasSVE, // LASTA_RPZ_D = 2407
+    CEFBS_HasSVE, // LASTA_RPZ_H = 2408
+    CEFBS_HasSVE, // LASTA_RPZ_S = 2409
+    CEFBS_HasSVE, // LASTA_VPZ_B = 2410
+    CEFBS_HasSVE, // LASTA_VPZ_D = 2411
+    CEFBS_HasSVE, // LASTA_VPZ_H = 2412
+    CEFBS_HasSVE, // LASTA_VPZ_S = 2413
+    CEFBS_HasSVE, // LASTB_RPZ_B = 2414
+    CEFBS_HasSVE, // LASTB_RPZ_D = 2415
+    CEFBS_HasSVE, // LASTB_RPZ_H = 2416
+    CEFBS_HasSVE, // LASTB_RPZ_S = 2417
+    CEFBS_HasSVE, // LASTB_VPZ_B = 2418
+    CEFBS_HasSVE, // LASTB_VPZ_D = 2419
+    CEFBS_HasSVE, // LASTB_VPZ_H = 2420
+    CEFBS_HasSVE, // LASTB_VPZ_S = 2421
+    CEFBS_HasSVE, // LD1B = 2422
+    CEFBS_HasSVE, // LD1B_D = 2423
+    CEFBS_HasSVE, // LD1B_D_IMM_REAL = 2424
+    CEFBS_HasSVE, // LD1B_H = 2425
+    CEFBS_HasSVE, // LD1B_H_IMM_REAL = 2426
+    CEFBS_HasSVE, // LD1B_IMM_REAL = 2427
+    CEFBS_HasSVE, // LD1B_S = 2428
+    CEFBS_HasSVE, // LD1B_S_IMM_REAL = 2429
+    CEFBS_HasSVE, // LD1D = 2430
+    CEFBS_HasSVE, // LD1D_IMM_REAL = 2431
+    CEFBS_HasNEON, // LD1Fourv16b = 2432
+    CEFBS_HasNEON, // LD1Fourv16b_POST = 2433
+    CEFBS_HasNEON, // LD1Fourv1d = 2434
+    CEFBS_HasNEON, // LD1Fourv1d_POST = 2435
+    CEFBS_HasNEON, // LD1Fourv2d = 2436
+    CEFBS_HasNEON, // LD1Fourv2d_POST = 2437
+    CEFBS_HasNEON, // LD1Fourv2s = 2438
+    CEFBS_HasNEON, // LD1Fourv2s_POST = 2439
+    CEFBS_HasNEON, // LD1Fourv4h = 2440
+    CEFBS_HasNEON, // LD1Fourv4h_POST = 2441
+    CEFBS_HasNEON, // LD1Fourv4s = 2442
+    CEFBS_HasNEON, // LD1Fourv4s_POST = 2443
+    CEFBS_HasNEON, // LD1Fourv8b = 2444
+    CEFBS_HasNEON, // LD1Fourv8b_POST = 2445
+    CEFBS_HasNEON, // LD1Fourv8h = 2446
+    CEFBS_HasNEON, // LD1Fourv8h_POST = 2447
+    CEFBS_HasSVE, // LD1H = 2448
+    CEFBS_HasSVE, // LD1H_D = 2449
+    CEFBS_HasSVE, // LD1H_D_IMM_REAL = 2450
+    CEFBS_HasSVE, // LD1H_IMM_REAL = 2451
+    CEFBS_HasSVE, // LD1H_S = 2452
+    CEFBS_HasSVE, // LD1H_S_IMM_REAL = 2453
+    CEFBS_HasNEON, // LD1Onev16b = 2454
+    CEFBS_HasNEON, // LD1Onev16b_POST = 2455
+    CEFBS_HasNEON, // LD1Onev1d = 2456
+    CEFBS_HasNEON, // LD1Onev1d_POST = 2457
+    CEFBS_HasNEON, // LD1Onev2d = 2458
+    CEFBS_HasNEON, // LD1Onev2d_POST = 2459
+    CEFBS_HasNEON, // LD1Onev2s = 2460
+    CEFBS_HasNEON, // LD1Onev2s_POST = 2461
+    CEFBS_HasNEON, // LD1Onev4h = 2462
+    CEFBS_HasNEON, // LD1Onev4h_POST = 2463
+    CEFBS_HasNEON, // LD1Onev4s = 2464
+    CEFBS_HasNEON, // LD1Onev4s_POST = 2465
+    CEFBS_HasNEON, // LD1Onev8b = 2466
+    CEFBS_HasNEON, // LD1Onev8b_POST = 2467
+    CEFBS_HasNEON, // LD1Onev8h = 2468
+    CEFBS_HasNEON, // LD1Onev8h_POST = 2469
+    CEFBS_HasSVE, // LD1RB_D_IMM = 2470
+    CEFBS_HasSVE, // LD1RB_H_IMM = 2471
+    CEFBS_HasSVE, // LD1RB_IMM = 2472
+    CEFBS_HasSVE, // LD1RB_S_IMM = 2473
+    CEFBS_HasSVE, // LD1RD_IMM = 2474
+    CEFBS_HasSVE, // LD1RH_D_IMM = 2475
+    CEFBS_HasSVE, // LD1RH_IMM = 2476
+    CEFBS_HasSVE, // LD1RH_S_IMM = 2477
+    CEFBS_HasSVE_HasMatMulFP64, // LD1RO_B = 2478
+    CEFBS_HasSVE_HasMatMulFP64, // LD1RO_B_IMM = 2479
+    CEFBS_HasSVE_HasMatMulFP64, // LD1RO_D = 2480
+    CEFBS_HasSVE_HasMatMulFP64, // LD1RO_D_IMM = 2481
+    CEFBS_HasSVE_HasMatMulFP64, // LD1RO_H = 2482
+    CEFBS_HasSVE_HasMatMulFP64, // LD1RO_H_IMM = 2483
+    CEFBS_HasSVE_HasMatMulFP64, // LD1RO_W = 2484
+    CEFBS_HasSVE_HasMatMulFP64, // LD1RO_W_IMM = 2485
+    CEFBS_HasSVE, // LD1RQ_B = 2486
+    CEFBS_HasSVE, // LD1RQ_B_IMM = 2487
+    CEFBS_HasSVE, // LD1RQ_D = 2488
+    CEFBS_HasSVE, // LD1RQ_D_IMM = 2489
+    CEFBS_HasSVE, // LD1RQ_H = 2490
+    CEFBS_HasSVE, // LD1RQ_H_IMM = 2491
+    CEFBS_HasSVE, // LD1RQ_W = 2492
+    CEFBS_HasSVE, // LD1RQ_W_IMM = 2493
+    CEFBS_HasSVE, // LD1RSB_D_IMM = 2494
+    CEFBS_HasSVE, // LD1RSB_H_IMM = 2495
+    CEFBS_HasSVE, // LD1RSB_S_IMM = 2496
+    CEFBS_HasSVE, // LD1RSH_D_IMM = 2497
+    CEFBS_HasSVE, // LD1RSH_S_IMM = 2498
+    CEFBS_HasSVE, // LD1RSW_IMM = 2499
+    CEFBS_HasSVE, // LD1RW_D_IMM = 2500
+    CEFBS_HasSVE, // LD1RW_IMM = 2501
+    CEFBS_HasNEON, // LD1Rv16b = 2502
+    CEFBS_HasNEON, // LD1Rv16b_POST = 2503
+    CEFBS_HasNEON, // LD1Rv1d = 2504
+    CEFBS_HasNEON, // LD1Rv1d_POST = 2505
+    CEFBS_HasNEON, // LD1Rv2d = 2506
+    CEFBS_HasNEON, // LD1Rv2d_POST = 2507
+    CEFBS_HasNEON, // LD1Rv2s = 2508
+    CEFBS_HasNEON, // LD1Rv2s_POST = 2509
+    CEFBS_HasNEON, // LD1Rv4h = 2510
+    CEFBS_HasNEON, // LD1Rv4h_POST = 2511
+    CEFBS_HasNEON, // LD1Rv4s = 2512
+    CEFBS_HasNEON, // LD1Rv4s_POST = 2513
+    CEFBS_HasNEON, // LD1Rv8b = 2514
+    CEFBS_HasNEON, // LD1Rv8b_POST = 2515
+    CEFBS_HasNEON, // LD1Rv8h = 2516
+    CEFBS_HasNEON, // LD1Rv8h_POST = 2517
+    CEFBS_HasSVE, // LD1SB_D = 2518
+    CEFBS_HasSVE, // LD1SB_D_IMM_REAL = 2519
+    CEFBS_HasSVE, // LD1SB_H = 2520
+    CEFBS_HasSVE, // LD1SB_H_IMM_REAL = 2521
+    CEFBS_HasSVE, // LD1SB_S = 2522
+    CEFBS_HasSVE, // LD1SB_S_IMM_REAL = 2523
+    CEFBS_HasSVE, // LD1SH_D = 2524
+    CEFBS_HasSVE, // LD1SH_D_IMM_REAL = 2525
+    CEFBS_HasSVE, // LD1SH_S = 2526
+    CEFBS_HasSVE, // LD1SH_S_IMM_REAL = 2527
+    CEFBS_HasSVE, // LD1SW_D = 2528
+    CEFBS_HasSVE, // LD1SW_D_IMM_REAL = 2529
+    CEFBS_HasNEON, // LD1Threev16b = 2530
+    CEFBS_HasNEON, // LD1Threev16b_POST = 2531
+    CEFBS_HasNEON, // LD1Threev1d = 2532
+    CEFBS_HasNEON, // LD1Threev1d_POST = 2533
+    CEFBS_HasNEON, // LD1Threev2d = 2534
+    CEFBS_HasNEON, // LD1Threev2d_POST = 2535
+    CEFBS_HasNEON, // LD1Threev2s = 2536
+    CEFBS_HasNEON, // LD1Threev2s_POST = 2537
+    CEFBS_HasNEON, // LD1Threev4h = 2538
+    CEFBS_HasNEON, // LD1Threev4h_POST = 2539
+    CEFBS_HasNEON, // LD1Threev4s = 2540
+    CEFBS_HasNEON, // LD1Threev4s_POST = 2541
+    CEFBS_HasNEON, // LD1Threev8b = 2542
+    CEFBS_HasNEON, // LD1Threev8b_POST = 2543
+    CEFBS_HasNEON, // LD1Threev8h = 2544
+    CEFBS_HasNEON, // LD1Threev8h_POST = 2545
+    CEFBS_HasNEON, // LD1Twov16b = 2546
+    CEFBS_HasNEON, // LD1Twov16b_POST = 2547
+    CEFBS_HasNEON, // LD1Twov1d = 2548
+    CEFBS_HasNEON, // LD1Twov1d_POST = 2549
+    CEFBS_HasNEON, // LD1Twov2d = 2550
+    CEFBS_HasNEON, // LD1Twov2d_POST = 2551
+    CEFBS_HasNEON, // LD1Twov2s = 2552
+    CEFBS_HasNEON, // LD1Twov2s_POST = 2553
+    CEFBS_HasNEON, // LD1Twov4h = 2554
+    CEFBS_HasNEON, // LD1Twov4h_POST = 2555
+    CEFBS_HasNEON, // LD1Twov4s = 2556
+    CEFBS_HasNEON, // LD1Twov4s_POST = 2557
+    CEFBS_HasNEON, // LD1Twov8b = 2558
+    CEFBS_HasNEON, // LD1Twov8b_POST = 2559
+    CEFBS_HasNEON, // LD1Twov8h = 2560
+    CEFBS_HasNEON, // LD1Twov8h_POST = 2561
+    CEFBS_HasSVE, // LD1W = 2562
+    CEFBS_HasSVE, // LD1W_D = 2563
+    CEFBS_HasSVE, // LD1W_D_IMM_REAL = 2564
+    CEFBS_HasSVE, // LD1W_IMM_REAL = 2565
+    CEFBS_HasNEON, // LD1i16 = 2566
+    CEFBS_HasNEON, // LD1i16_POST = 2567
+    CEFBS_HasNEON, // LD1i32 = 2568
+    CEFBS_HasNEON, // LD1i32_POST = 2569
+    CEFBS_HasNEON, // LD1i64 = 2570
+    CEFBS_HasNEON, // LD1i64_POST = 2571
+    CEFBS_HasNEON, // LD1i8 = 2572
+    CEFBS_HasNEON, // LD1i8_POST = 2573
+    CEFBS_HasSVE, // LD2B = 2574
+    CEFBS_HasSVE, // LD2B_IMM = 2575
+    CEFBS_HasSVE, // LD2D = 2576
+    CEFBS_HasSVE, // LD2D_IMM = 2577
+    CEFBS_HasSVE, // LD2H = 2578
+    CEFBS_HasSVE, // LD2H_IMM = 2579
+    CEFBS_HasNEON, // LD2Rv16b = 2580
+    CEFBS_HasNEON, // LD2Rv16b_POST = 2581
+    CEFBS_HasNEON, // LD2Rv1d = 2582
+    CEFBS_HasNEON, // LD2Rv1d_POST = 2583
+    CEFBS_HasNEON, // LD2Rv2d = 2584
+    CEFBS_HasNEON, // LD2Rv2d_POST = 2585
+    CEFBS_HasNEON, // LD2Rv2s = 2586
+    CEFBS_HasNEON, // LD2Rv2s_POST = 2587
+    CEFBS_HasNEON, // LD2Rv4h = 2588
+    CEFBS_HasNEON, // LD2Rv4h_POST = 2589
+    CEFBS_HasNEON, // LD2Rv4s = 2590
+    CEFBS_HasNEON, // LD2Rv4s_POST = 2591
+    CEFBS_HasNEON, // LD2Rv8b = 2592
+    CEFBS_HasNEON, // LD2Rv8b_POST = 2593
+    CEFBS_HasNEON, // LD2Rv8h = 2594
+    CEFBS_HasNEON, // LD2Rv8h_POST = 2595
+    CEFBS_HasNEON, // LD2Twov16b = 2596
+    CEFBS_HasNEON, // LD2Twov16b_POST = 2597
+    CEFBS_HasNEON, // LD2Twov2d = 2598
+    CEFBS_HasNEON, // LD2Twov2d_POST = 2599
+    CEFBS_HasNEON, // LD2Twov2s = 2600
+    CEFBS_HasNEON, // LD2Twov2s_POST = 2601
+    CEFBS_HasNEON, // LD2Twov4h = 2602
+    CEFBS_HasNEON, // LD2Twov4h_POST = 2603
+    CEFBS_HasNEON, // LD2Twov4s = 2604
+    CEFBS_HasNEON, // LD2Twov4s_POST = 2605
+    CEFBS_HasNEON, // LD2Twov8b = 2606
+    CEFBS_HasNEON, // LD2Twov8b_POST = 2607
+    CEFBS_HasNEON, // LD2Twov8h = 2608
+    CEFBS_HasNEON, // LD2Twov8h_POST = 2609
+    CEFBS_HasSVE, // LD2W = 2610
+    CEFBS_HasSVE, // LD2W_IMM = 2611
+    CEFBS_HasNEON, // LD2i16 = 2612
+    CEFBS_HasNEON, // LD2i16_POST = 2613
+    CEFBS_HasNEON, // LD2i32 = 2614
+    CEFBS_HasNEON, // LD2i32_POST = 2615
+    CEFBS_HasNEON, // LD2i64 = 2616
+    CEFBS_HasNEON, // LD2i64_POST = 2617
+    CEFBS_HasNEON, // LD2i8 = 2618
+    CEFBS_HasNEON, // LD2i8_POST = 2619
+    CEFBS_HasSVE, // LD3B = 2620
+    CEFBS_HasSVE, // LD3B_IMM = 2621
+    CEFBS_HasSVE, // LD3D = 2622
+    CEFBS_HasSVE, // LD3D_IMM = 2623
+    CEFBS_HasSVE, // LD3H = 2624
+    CEFBS_HasSVE, // LD3H_IMM = 2625
+    CEFBS_HasNEON, // LD3Rv16b = 2626
+    CEFBS_HasNEON, // LD3Rv16b_POST = 2627
+    CEFBS_HasNEON, // LD3Rv1d = 2628
+    CEFBS_HasNEON, // LD3Rv1d_POST = 2629
+    CEFBS_HasNEON, // LD3Rv2d = 2630
+    CEFBS_HasNEON, // LD3Rv2d_POST = 2631
+    CEFBS_HasNEON, // LD3Rv2s = 2632
+    CEFBS_HasNEON, // LD3Rv2s_POST = 2633
+    CEFBS_HasNEON, // LD3Rv4h = 2634
+    CEFBS_HasNEON, // LD3Rv4h_POST = 2635
+    CEFBS_HasNEON, // LD3Rv4s = 2636
+    CEFBS_HasNEON, // LD3Rv4s_POST = 2637
+    CEFBS_HasNEON, // LD3Rv8b = 2638
+    CEFBS_HasNEON, // LD3Rv8b_POST = 2639
+    CEFBS_HasNEON, // LD3Rv8h = 2640
+    CEFBS_HasNEON, // LD3Rv8h_POST = 2641
+    CEFBS_HasNEON, // LD3Threev16b = 2642
+    CEFBS_HasNEON, // LD3Threev16b_POST = 2643
+    CEFBS_HasNEON, // LD3Threev2d = 2644
+    CEFBS_HasNEON, // LD3Threev2d_POST = 2645
+    CEFBS_HasNEON, // LD3Threev2s = 2646
+    CEFBS_HasNEON, // LD3Threev2s_POST = 2647
+    CEFBS_HasNEON, // LD3Threev4h = 2648
+    CEFBS_HasNEON, // LD3Threev4h_POST = 2649
+    CEFBS_HasNEON, // LD3Threev4s = 2650
+    CEFBS_HasNEON, // LD3Threev4s_POST = 2651
+    CEFBS_HasNEON, // LD3Threev8b = 2652
+    CEFBS_HasNEON, // LD3Threev8b_POST = 2653
+    CEFBS_HasNEON, // LD3Threev8h = 2654
+    CEFBS_HasNEON, // LD3Threev8h_POST = 2655
+    CEFBS_HasSVE, // LD3W = 2656
+    CEFBS_HasSVE, // LD3W_IMM = 2657
+    CEFBS_HasNEON, // LD3i16 = 2658
+    CEFBS_HasNEON, // LD3i16_POST = 2659
+    CEFBS_HasNEON, // LD3i32 = 2660
+    CEFBS_HasNEON, // LD3i32_POST = 2661
+    CEFBS_HasNEON, // LD3i64 = 2662
+    CEFBS_HasNEON, // LD3i64_POST = 2663
+    CEFBS_HasNEON, // LD3i8 = 2664
+    CEFBS_HasNEON, // LD3i8_POST = 2665
+    CEFBS_HasSVE, // LD4B = 2666
+    CEFBS_HasSVE, // LD4B_IMM = 2667
+    CEFBS_HasSVE, // LD4D = 2668
+    CEFBS_HasSVE, // LD4D_IMM = 2669
+    CEFBS_HasNEON, // LD4Fourv16b = 2670
+    CEFBS_HasNEON, // LD4Fourv16b_POST = 2671
+    CEFBS_HasNEON, // LD4Fourv2d = 2672
+    CEFBS_HasNEON, // LD4Fourv2d_POST = 2673
+    CEFBS_HasNEON, // LD4Fourv2s = 2674
+    CEFBS_HasNEON, // LD4Fourv2s_POST = 2675
+    CEFBS_HasNEON, // LD4Fourv4h = 2676
+    CEFBS_HasNEON, // LD4Fourv4h_POST = 2677
+    CEFBS_HasNEON, // LD4Fourv4s = 2678
+    CEFBS_HasNEON, // LD4Fourv4s_POST = 2679
+    CEFBS_HasNEON, // LD4Fourv8b = 2680
+    CEFBS_HasNEON, // LD4Fourv8b_POST = 2681
+    CEFBS_HasNEON, // LD4Fourv8h = 2682
+    CEFBS_HasNEON, // LD4Fourv8h_POST = 2683
+    CEFBS_HasSVE, // LD4H = 2684
+    CEFBS_HasSVE, // LD4H_IMM = 2685
+    CEFBS_HasNEON, // LD4Rv16b = 2686
+    CEFBS_HasNEON, // LD4Rv16b_POST = 2687
+    CEFBS_HasNEON, // LD4Rv1d = 2688
+    CEFBS_HasNEON, // LD4Rv1d_POST = 2689
+    CEFBS_HasNEON, // LD4Rv2d = 2690
+    CEFBS_HasNEON, // LD4Rv2d_POST = 2691
+    CEFBS_HasNEON, // LD4Rv2s = 2692
+    CEFBS_HasNEON, // LD4Rv2s_POST = 2693
+    CEFBS_HasNEON, // LD4Rv4h = 2694
+    CEFBS_HasNEON, // LD4Rv4h_POST = 2695
+    CEFBS_HasNEON, // LD4Rv4s = 2696
+    CEFBS_HasNEON, // LD4Rv4s_POST = 2697
+    CEFBS_HasNEON, // LD4Rv8b = 2698
+    CEFBS_HasNEON, // LD4Rv8b_POST = 2699
+    CEFBS_HasNEON, // LD4Rv8h = 2700
+    CEFBS_HasNEON, // LD4Rv8h_POST = 2701
+    CEFBS_HasSVE, // LD4W = 2702
+    CEFBS_HasSVE, // LD4W_IMM = 2703
+    CEFBS_HasNEON, // LD4i16 = 2704
+    CEFBS_HasNEON, // LD4i16_POST = 2705
+    CEFBS_HasNEON, // LD4i32 = 2706
+    CEFBS_HasNEON, // LD4i32_POST = 2707
+    CEFBS_HasNEON, // LD4i64 = 2708
+    CEFBS_HasNEON, // LD4i64_POST = 2709
+    CEFBS_HasNEON, // LD4i8 = 2710
+    CEFBS_HasNEON, // LD4i8_POST = 2711
+    CEFBS_HasLSE, // LDADDAB = 2712
+    CEFBS_HasLSE, // LDADDAH = 2713
+    CEFBS_HasLSE, // LDADDALB = 2714
+    CEFBS_HasLSE, // LDADDALH = 2715
+    CEFBS_HasLSE, // LDADDALW = 2716
+    CEFBS_HasLSE, // LDADDALX = 2717
+    CEFBS_HasLSE, // LDADDAW = 2718
+    CEFBS_HasLSE, // LDADDAX = 2719
+    CEFBS_HasLSE, // LDADDB = 2720
+    CEFBS_HasLSE, // LDADDH = 2721
+    CEFBS_HasLSE, // LDADDLB = 2722
+    CEFBS_HasLSE, // LDADDLH = 2723
+    CEFBS_HasLSE, // LDADDLW = 2724
+    CEFBS_HasLSE, // LDADDLX = 2725
+    CEFBS_HasLSE, // LDADDW = 2726
+    CEFBS_HasLSE, // LDADDX = 2727
+    CEFBS_HasRCPC, // LDAPRB = 2728
+    CEFBS_HasRCPC, // LDAPRH = 2729
+    CEFBS_HasRCPC, // LDAPRW = 2730
+    CEFBS_HasRCPC, // LDAPRX = 2731
+    CEFBS_HasRCPC_IMMO, // LDAPURBi = 2732
+    CEFBS_HasRCPC_IMMO, // LDAPURHi = 2733
+    CEFBS_HasRCPC_IMMO, // LDAPURSBWi = 2734
+    CEFBS_HasRCPC_IMMO, // LDAPURSBXi = 2735
+    CEFBS_HasRCPC_IMMO, // LDAPURSHWi = 2736
+    CEFBS_HasRCPC_IMMO, // LDAPURSHXi = 2737
+    CEFBS_HasRCPC_IMMO, // LDAPURSWi = 2738
+    CEFBS_HasRCPC_IMMO, // LDAPURXi = 2739
+    CEFBS_HasRCPC_IMMO, // LDAPURi = 2740
+    CEFBS_None, // LDARB = 2741
+    CEFBS_None, // LDARH = 2742
+    CEFBS_None, // LDARW = 2743
+    CEFBS_None, // LDARX = 2744
+    CEFBS_None, // LDAXPW = 2745
+    CEFBS_None, // LDAXPX = 2746
+    CEFBS_None, // LDAXRB = 2747
+    CEFBS_None, // LDAXRH = 2748
+    CEFBS_None, // LDAXRW = 2749
+    CEFBS_None, // LDAXRX = 2750
+    CEFBS_HasLSE, // LDCLRAB = 2751
+    CEFBS_HasLSE, // LDCLRAH = 2752
+    CEFBS_HasLSE, // LDCLRALB = 2753
+    CEFBS_HasLSE, // LDCLRALH = 2754
+    CEFBS_HasLSE, // LDCLRALW = 2755
+    CEFBS_HasLSE, // LDCLRALX = 2756
+    CEFBS_HasLSE, // LDCLRAW = 2757
+    CEFBS_HasLSE, // LDCLRAX = 2758
+    CEFBS_HasLSE, // LDCLRB = 2759
+    CEFBS_HasLSE, // LDCLRH = 2760
+    CEFBS_HasLSE, // LDCLRLB = 2761
+    CEFBS_HasLSE, // LDCLRLH = 2762
+    CEFBS_HasLSE, // LDCLRLW = 2763
+    CEFBS_HasLSE, // LDCLRLX = 2764
+    CEFBS_HasLSE, // LDCLRW = 2765
+    CEFBS_HasLSE, // LDCLRX = 2766
+    CEFBS_HasLSE, // LDEORAB = 2767
+    CEFBS_HasLSE, // LDEORAH = 2768
+    CEFBS_HasLSE, // LDEORALB = 2769
+    CEFBS_HasLSE, // LDEORALH = 2770
+    CEFBS_HasLSE, // LDEORALW = 2771
+    CEFBS_HasLSE, // LDEORALX = 2772
+    CEFBS_HasLSE, // LDEORAW = 2773
+    CEFBS_HasLSE, // LDEORAX = 2774
+    CEFBS_HasLSE, // LDEORB = 2775
+    CEFBS_HasLSE, // LDEORH = 2776
+    CEFBS_HasLSE, // LDEORLB = 2777
+    CEFBS_HasLSE, // LDEORLH = 2778
+    CEFBS_HasLSE, // LDEORLW = 2779
+    CEFBS_HasLSE, // LDEORLX = 2780
+    CEFBS_HasLSE, // LDEORW = 2781
+    CEFBS_HasLSE, // LDEORX = 2782
+    CEFBS_HasSVE, // LDFF1B_D_REAL = 2783
+    CEFBS_HasSVE, // LDFF1B_H_REAL = 2784
+    CEFBS_HasSVE, // LDFF1B_REAL = 2785
+    CEFBS_HasSVE, // LDFF1B_S_REAL = 2786
+    CEFBS_HasSVE, // LDFF1D_REAL = 2787
+    CEFBS_HasSVE, // LDFF1H_D_REAL = 2788
+    CEFBS_HasSVE, // LDFF1H_REAL = 2789
+    CEFBS_HasSVE, // LDFF1H_S_REAL = 2790
+    CEFBS_HasSVE, // LDFF1SB_D_REAL = 2791
+    CEFBS_HasSVE, // LDFF1SB_H_REAL = 2792
+    CEFBS_HasSVE, // LDFF1SB_S_REAL = 2793
+    CEFBS_HasSVE, // LDFF1SH_D_REAL = 2794
+    CEFBS_HasSVE, // LDFF1SH_S_REAL = 2795
+    CEFBS_HasSVE, // LDFF1SW_D_REAL = 2796
+    CEFBS_HasSVE, // LDFF1W_D_REAL = 2797
+    CEFBS_HasSVE, // LDFF1W_REAL = 2798
+    CEFBS_HasMTE, // LDG = 2799
+    CEFBS_HasMTE, // LDGM = 2800
+    CEFBS_HasLOR, // LDLARB = 2801
+    CEFBS_HasLOR, // LDLARH = 2802
+    CEFBS_HasLOR, // LDLARW = 2803
+    CEFBS_HasLOR, // LDLARX = 2804
+    CEFBS_HasSVE, // LDNF1B_D_IMM_REAL = 2805
+    CEFBS_HasSVE, // LDNF1B_H_IMM_REAL = 2806
+    CEFBS_HasSVE, // LDNF1B_IMM_REAL = 2807
+    CEFBS_HasSVE, // LDNF1B_S_IMM_REAL = 2808
+    CEFBS_HasSVE, // LDNF1D_IMM_REAL = 2809
+    CEFBS_HasSVE, // LDNF1H_D_IMM_REAL = 2810
+    CEFBS_HasSVE, // LDNF1H_IMM_REAL = 2811
+    CEFBS_HasSVE, // LDNF1H_S_IMM_REAL = 2812
+    CEFBS_HasSVE, // LDNF1SB_D_IMM_REAL = 2813
+    CEFBS_HasSVE, // LDNF1SB_H_IMM_REAL = 2814
+    CEFBS_HasSVE, // LDNF1SB_S_IMM_REAL = 2815
+    CEFBS_HasSVE, // LDNF1SH_D_IMM_REAL = 2816
+    CEFBS_HasSVE, // LDNF1SH_S_IMM_REAL = 2817
+    CEFBS_HasSVE, // LDNF1SW_D_IMM_REAL = 2818
+    CEFBS_HasSVE, // LDNF1W_D_IMM_REAL = 2819
+    CEFBS_HasSVE, // LDNF1W_IMM_REAL = 2820
+    CEFBS_None, // LDNPDi = 2821
+    CEFBS_None, // LDNPQi = 2822
+    CEFBS_None, // LDNPSi = 2823
+    CEFBS_None, // LDNPWi = 2824
+    CEFBS_None, // LDNPXi = 2825
+    CEFBS_HasSVE, // LDNT1B_ZRI = 2826
+    CEFBS_HasSVE, // LDNT1B_ZRR = 2827
+    CEFBS_HasSVE2, // LDNT1B_ZZR_D_REAL = 2828
+    CEFBS_HasSVE2, // LDNT1B_ZZR_S_REAL = 2829
+    CEFBS_HasSVE, // LDNT1D_ZRI = 2830
+    CEFBS_HasSVE, // LDNT1D_ZRR = 2831
+    CEFBS_HasSVE2, // LDNT1D_ZZR_D_REAL = 2832
+    CEFBS_HasSVE, // LDNT1H_ZRI = 2833
+    CEFBS_HasSVE, // LDNT1H_ZRR = 2834
+    CEFBS_HasSVE2, // LDNT1H_ZZR_D_REAL = 2835
+    CEFBS_HasSVE2, // LDNT1H_ZZR_S_REAL = 2836
+    CEFBS_HasSVE2, // LDNT1SB_ZZR_D_REAL = 2837
+    CEFBS_HasSVE2, // LDNT1SB_ZZR_S_REAL = 2838
+    CEFBS_HasSVE2, // LDNT1SH_ZZR_D_REAL = 2839
+    CEFBS_HasSVE2, // LDNT1SH_ZZR_S_REAL = 2840
+    CEFBS_HasSVE2, // LDNT1SW_ZZR_D_REAL = 2841
+    CEFBS_HasSVE, // LDNT1W_ZRI = 2842
+    CEFBS_HasSVE, // LDNT1W_ZRR = 2843
+    CEFBS_HasSVE2, // LDNT1W_ZZR_D_REAL = 2844
+    CEFBS_HasSVE2, // LDNT1W_ZZR_S_REAL = 2845
+    CEFBS_None, // LDPDi = 2846
+    CEFBS_None, // LDPDpost = 2847
+    CEFBS_None, // LDPDpre = 2848
+    CEFBS_None, // LDPQi = 2849
+    CEFBS_None, // LDPQpost = 2850
+    CEFBS_None, // LDPQpre = 2851
+    CEFBS_None, // LDPSWi = 2852
+    CEFBS_None, // LDPSWpost = 2853
+    CEFBS_None, // LDPSWpre = 2854
+    CEFBS_None, // LDPSi = 2855
+    CEFBS_None, // LDPSpost = 2856
+    CEFBS_None, // LDPSpre = 2857
+    CEFBS_None, // LDPWi = 2858
+    CEFBS_None, // LDPWpost = 2859
+    CEFBS_None, // LDPWpre = 2860
+    CEFBS_None, // LDPXi = 2861
+    CEFBS_None, // LDPXpost = 2862
+    CEFBS_None, // LDPXpre = 2863
+    CEFBS_HasPA, // LDRAAindexed = 2864
+    CEFBS_HasPA, // LDRAAwriteback = 2865
+    CEFBS_HasPA, // LDRABindexed = 2866
+    CEFBS_HasPA, // LDRABwriteback = 2867
+    CEFBS_None, // LDRBBpost = 2868
+    CEFBS_None, // LDRBBpre = 2869
+    CEFBS_None, // LDRBBroW = 2870
+    CEFBS_None, // LDRBBroX = 2871
+    CEFBS_None, // LDRBBui = 2872
+    CEFBS_None, // LDRBpost = 2873
+    CEFBS_None, // LDRBpre = 2874
+    CEFBS_None, // LDRBroW = 2875
+    CEFBS_None, // LDRBroX = 2876
+    CEFBS_None, // LDRBui = 2877
+    CEFBS_None, // LDRDl = 2878
+    CEFBS_None, // LDRDpost = 2879
+    CEFBS_None, // LDRDpre = 2880
+    CEFBS_None, // LDRDroW = 2881
+    CEFBS_None, // LDRDroX = 2882
+    CEFBS_None, // LDRDui = 2883
+    CEFBS_None, // LDRHHpost = 2884
+    CEFBS_None, // LDRHHpre = 2885
+    CEFBS_None, // LDRHHroW = 2886
+    CEFBS_None, // LDRHHroX = 2887
+    CEFBS_None, // LDRHHui = 2888
+    CEFBS_None, // LDRHpost = 2889
+    CEFBS_None, // LDRHpre = 2890
+    CEFBS_None, // LDRHroW = 2891
+    CEFBS_None, // LDRHroX = 2892
+    CEFBS_None, // LDRHui = 2893
+    CEFBS_None, // LDRQl = 2894
+    CEFBS_None, // LDRQpost = 2895
+    CEFBS_None, // LDRQpre = 2896
+    CEFBS_None, // LDRQroW = 2897
+    CEFBS_None, // LDRQroX = 2898
+    CEFBS_None, // LDRQui = 2899
+    CEFBS_None, // LDRSBWpost = 2900
+    CEFBS_None, // LDRSBWpre = 2901
+    CEFBS_None, // LDRSBWroW = 2902
+    CEFBS_None, // LDRSBWroX = 2903
+    CEFBS_None, // LDRSBWui = 2904
+    CEFBS_None, // LDRSBXpost = 2905
+    CEFBS_None, // LDRSBXpre = 2906
+    CEFBS_None, // LDRSBXroW = 2907
+    CEFBS_None, // LDRSBXroX = 2908
+    CEFBS_None, // LDRSBXui = 2909
+    CEFBS_None, // LDRSHWpost = 2910
+    CEFBS_None, // LDRSHWpre = 2911
+    CEFBS_None, // LDRSHWroW = 2912
+    CEFBS_None, // LDRSHWroX = 2913
+    CEFBS_None, // LDRSHWui = 2914
+    CEFBS_None, // LDRSHXpost = 2915
+    CEFBS_None, // LDRSHXpre = 2916
+    CEFBS_None, // LDRSHXroW = 2917
+    CEFBS_None, // LDRSHXroX = 2918
+    CEFBS_None, // LDRSHXui = 2919
+    CEFBS_None, // LDRSWl = 2920
+    CEFBS_None, // LDRSWpost = 2921
+    CEFBS_None, // LDRSWpre = 2922
+    CEFBS_None, // LDRSWroW = 2923
+    CEFBS_None, // LDRSWroX = 2924
+    CEFBS_None, // LDRSWui = 2925
+    CEFBS_None, // LDRSl = 2926
+    CEFBS_None, // LDRSpost = 2927
+    CEFBS_None, // LDRSpre = 2928
+    CEFBS_None, // LDRSroW = 2929
+    CEFBS_None, // LDRSroX = 2930
+    CEFBS_None, // LDRSui = 2931
+    CEFBS_None, // LDRWl = 2932
+    CEFBS_None, // LDRWpost = 2933
+    CEFBS_None, // LDRWpre = 2934
+    CEFBS_None, // LDRWroW = 2935
+    CEFBS_None, // LDRWroX = 2936
+    CEFBS_None, // LDRWui = 2937
+    CEFBS_None, // LDRXl = 2938
+    CEFBS_None, // LDRXpost = 2939
+    CEFBS_None, // LDRXpre = 2940
+    CEFBS_None, // LDRXroW = 2941
+    CEFBS_None, // LDRXroX = 2942
+    CEFBS_None, // LDRXui = 2943
+    CEFBS_HasSVE, // LDR_PXI = 2944
+    CEFBS_HasSVE, // LDR_ZXI = 2945
+    CEFBS_HasLSE, // LDSETAB = 2946
+    CEFBS_HasLSE, // LDSETAH = 2947
+    CEFBS_HasLSE, // LDSETALB = 2948
+    CEFBS_HasLSE, // LDSETALH = 2949
+    CEFBS_HasLSE, // LDSETALW = 2950
+    CEFBS_HasLSE, // LDSETALX = 2951
+    CEFBS_HasLSE, // LDSETAW = 2952
+    CEFBS_HasLSE, // LDSETAX = 2953
+    CEFBS_HasLSE, // LDSETB = 2954
+    CEFBS_HasLSE, // LDSETH = 2955
+    CEFBS_HasLSE, // LDSETLB = 2956
+    CEFBS_HasLSE, // LDSETLH = 2957
+    CEFBS_HasLSE, // LDSETLW = 2958
+    CEFBS_HasLSE, // LDSETLX = 2959
+    CEFBS_HasLSE, // LDSETW = 2960
+    CEFBS_HasLSE, // LDSETX = 2961
+    CEFBS_HasLSE, // LDSMAXAB = 2962
+    CEFBS_HasLSE, // LDSMAXAH = 2963
+    CEFBS_HasLSE, // LDSMAXALB = 2964
+    CEFBS_HasLSE, // LDSMAXALH = 2965
+    CEFBS_HasLSE, // LDSMAXALW = 2966
+    CEFBS_HasLSE, // LDSMAXALX = 2967
+    CEFBS_HasLSE, // LDSMAXAW = 2968
+    CEFBS_HasLSE, // LDSMAXAX = 2969
+    CEFBS_HasLSE, // LDSMAXB = 2970
+    CEFBS_HasLSE, // LDSMAXH = 2971
+    CEFBS_HasLSE, // LDSMAXLB = 2972
+    CEFBS_HasLSE, // LDSMAXLH = 2973
+    CEFBS_HasLSE, // LDSMAXLW = 2974
+    CEFBS_HasLSE, // LDSMAXLX = 2975
+    CEFBS_HasLSE, // LDSMAXW = 2976
+    CEFBS_HasLSE, // LDSMAXX = 2977
+    CEFBS_HasLSE, // LDSMINAB = 2978
+    CEFBS_HasLSE, // LDSMINAH = 2979
+    CEFBS_HasLSE, // LDSMINALB = 2980
+    CEFBS_HasLSE, // LDSMINALH = 2981
+    CEFBS_HasLSE, // LDSMINALW = 2982
+    CEFBS_HasLSE, // LDSMINALX = 2983
+    CEFBS_HasLSE, // LDSMINAW = 2984
+    CEFBS_HasLSE, // LDSMINAX = 2985
+    CEFBS_HasLSE, // LDSMINB = 2986
+    CEFBS_HasLSE, // LDSMINH = 2987
+    CEFBS_HasLSE, // LDSMINLB = 2988
+    CEFBS_HasLSE, // LDSMINLH = 2989
+    CEFBS_HasLSE, // LDSMINLW = 2990
+    CEFBS_HasLSE, // LDSMINLX = 2991
+    CEFBS_HasLSE, // LDSMINW = 2992
+    CEFBS_HasLSE, // LDSMINX = 2993
+    CEFBS_None, // LDTRBi = 2994
+    CEFBS_None, // LDTRHi = 2995
+    CEFBS_None, // LDTRSBWi = 2996
+    CEFBS_None, // LDTRSBXi = 2997
+    CEFBS_None, // LDTRSHWi = 2998
+    CEFBS_None, // LDTRSHXi = 2999
+    CEFBS_None, // LDTRSWi = 3000
+    CEFBS_None, // LDTRWi = 3001
+    CEFBS_None, // LDTRXi = 3002
+    CEFBS_HasLSE, // LDUMAXAB = 3003
+    CEFBS_HasLSE, // LDUMAXAH = 3004
+    CEFBS_HasLSE, // LDUMAXALB = 3005
+    CEFBS_HasLSE, // LDUMAXALH = 3006
+    CEFBS_HasLSE, // LDUMAXALW = 3007
+    CEFBS_HasLSE, // LDUMAXALX = 3008
+    CEFBS_HasLSE, // LDUMAXAW = 3009
+    CEFBS_HasLSE, // LDUMAXAX = 3010
+    CEFBS_HasLSE, // LDUMAXB = 3011
+    CEFBS_HasLSE, // LDUMAXH = 3012
+    CEFBS_HasLSE, // LDUMAXLB = 3013
+    CEFBS_HasLSE, // LDUMAXLH = 3014
+    CEFBS_HasLSE, // LDUMAXLW = 3015
+    CEFBS_HasLSE, // LDUMAXLX = 3016
+    CEFBS_HasLSE, // LDUMAXW = 3017
+    CEFBS_HasLSE, // LDUMAXX = 3018
+    CEFBS_HasLSE, // LDUMINAB = 3019
+    CEFBS_HasLSE, // LDUMINAH = 3020
+    CEFBS_HasLSE, // LDUMINALB = 3021
+    CEFBS_HasLSE, // LDUMINALH = 3022
+    CEFBS_HasLSE, // LDUMINALW = 3023
+    CEFBS_HasLSE, // LDUMINALX = 3024
+    CEFBS_HasLSE, // LDUMINAW = 3025
+    CEFBS_HasLSE, // LDUMINAX = 3026
+    CEFBS_HasLSE, // LDUMINB = 3027
+    CEFBS_HasLSE, // LDUMINH = 3028
+    CEFBS_HasLSE, // LDUMINLB = 3029
+    CEFBS_HasLSE, // LDUMINLH = 3030
+    CEFBS_HasLSE, // LDUMINLW = 3031
+    CEFBS_HasLSE, // LDUMINLX = 3032
+    CEFBS_HasLSE, // LDUMINW = 3033
+    CEFBS_HasLSE, // LDUMINX = 3034
+    CEFBS_None, // LDURBBi = 3035
+    CEFBS_None, // LDURBi = 3036
+    CEFBS_None, // LDURDi = 3037
+    CEFBS_None, // LDURHHi = 3038
+    CEFBS_None, // LDURHi = 3039
+    CEFBS_None, // LDURQi = 3040
+    CEFBS_None, // LDURSBWi = 3041
+    CEFBS_None, // LDURSBXi = 3042
+    CEFBS_None, // LDURSHWi = 3043
+    CEFBS_None, // LDURSHXi = 3044
+    CEFBS_None, // LDURSWi = 3045
+    CEFBS_None, // LDURSi = 3046
+    CEFBS_None, // LDURWi = 3047
+    CEFBS_None, // LDURXi = 3048
+    CEFBS_None, // LDXPW = 3049
+    CEFBS_None, // LDXPX = 3050
+    CEFBS_None, // LDXRB = 3051
+    CEFBS_None, // LDXRH = 3052
+    CEFBS_None, // LDXRW = 3053
+    CEFBS_None, // LDXRX = 3054
+    CEFBS_HasSVE, // LSLR_ZPmZ_B = 3055
+    CEFBS_HasSVE, // LSLR_ZPmZ_D = 3056
+    CEFBS_HasSVE, // LSLR_ZPmZ_H = 3057
+    CEFBS_HasSVE, // LSLR_ZPmZ_S = 3058
+    CEFBS_None, // LSLVWr = 3059
+    CEFBS_None, // LSLVXr = 3060
+    CEFBS_HasSVE, // LSL_WIDE_ZPmZ_B = 3061
+    CEFBS_HasSVE, // LSL_WIDE_ZPmZ_H = 3062
+    CEFBS_HasSVE, // LSL_WIDE_ZPmZ_S = 3063
+    CEFBS_HasSVE, // LSL_WIDE_ZZZ_B = 3064
+    CEFBS_HasSVE, // LSL_WIDE_ZZZ_H = 3065
+    CEFBS_HasSVE, // LSL_WIDE_ZZZ_S = 3066
+    CEFBS_HasSVE, // LSL_ZPmI_B = 3067
+    CEFBS_HasSVE, // LSL_ZPmI_D = 3068
+    CEFBS_HasSVE, // LSL_ZPmI_H = 3069
+    CEFBS_HasSVE, // LSL_ZPmI_S = 3070
+    CEFBS_HasSVE, // LSL_ZPmZ_B = 3071
+    CEFBS_HasSVE, // LSL_ZPmZ_D = 3072
+    CEFBS_HasSVE, // LSL_ZPmZ_H = 3073
+    CEFBS_HasSVE, // LSL_ZPmZ_S = 3074
+    CEFBS_HasSVE, // LSL_ZZI_B = 3075
+    CEFBS_HasSVE, // LSL_ZZI_D = 3076
+    CEFBS_HasSVE, // LSL_ZZI_H = 3077
+    CEFBS_HasSVE, // LSL_ZZI_S = 3078
+    CEFBS_HasSVE, // LSRR_ZPmZ_B = 3079
+    CEFBS_HasSVE, // LSRR_ZPmZ_D = 3080
+    CEFBS_HasSVE, // LSRR_ZPmZ_H = 3081
+    CEFBS_HasSVE, // LSRR_ZPmZ_S = 3082
+    CEFBS_None, // LSRVWr = 3083
+    CEFBS_None, // LSRVXr = 3084
+    CEFBS_HasSVE, // LSR_WIDE_ZPmZ_B = 3085
+    CEFBS_HasSVE, // LSR_WIDE_ZPmZ_H = 3086
+    CEFBS_HasSVE, // LSR_WIDE_ZPmZ_S = 3087
+    CEFBS_HasSVE, // LSR_WIDE_ZZZ_B = 3088
+    CEFBS_HasSVE, // LSR_WIDE_ZZZ_H = 3089
+    CEFBS_HasSVE, // LSR_WIDE_ZZZ_S = 3090
+    CEFBS_HasSVE, // LSR_ZPmI_B = 3091
+    CEFBS_HasSVE, // LSR_ZPmI_D = 3092
+    CEFBS_HasSVE, // LSR_ZPmI_H = 3093
+    CEFBS_HasSVE, // LSR_ZPmI_S = 3094
+    CEFBS_HasSVE, // LSR_ZPmZ_B = 3095
+    CEFBS_HasSVE, // LSR_ZPmZ_D = 3096
+    CEFBS_HasSVE, // LSR_ZPmZ_H = 3097
+    CEFBS_HasSVE, // LSR_ZPmZ_S = 3098
+    CEFBS_HasSVE, // LSR_ZZI_B = 3099
+    CEFBS_HasSVE, // LSR_ZZI_D = 3100
+    CEFBS_HasSVE, // LSR_ZZI_H = 3101
+    CEFBS_HasSVE, // LSR_ZZI_S = 3102
+    CEFBS_None, // MADDWrrr = 3103
+    CEFBS_None, // MADDXrrr = 3104
+    CEFBS_HasSVE, // MAD_ZPmZZ_B = 3105
+    CEFBS_HasSVE, // MAD_ZPmZZ_D = 3106
+    CEFBS_HasSVE, // MAD_ZPmZZ_H = 3107
+    CEFBS_HasSVE, // MAD_ZPmZZ_S = 3108
+    CEFBS_HasSVE2, // MATCH_PPzZZ_B = 3109
+    CEFBS_HasSVE2, // MATCH_PPzZZ_H = 3110
+    CEFBS_HasSVE, // MLA_ZPmZZ_B = 3111
+    CEFBS_HasSVE, // MLA_ZPmZZ_D = 3112
+    CEFBS_HasSVE, // MLA_ZPmZZ_H = 3113
+    CEFBS_HasSVE, // MLA_ZPmZZ_S = 3114
+    CEFBS_HasSVE2, // MLA_ZZZI_D = 3115
+    CEFBS_HasSVE2, // MLA_ZZZI_H = 3116
+    CEFBS_HasSVE2, // MLA_ZZZI_S = 3117
+    CEFBS_HasNEON, // MLAv16i8 = 3118
+    CEFBS_HasNEON, // MLAv2i32 = 3119
+    CEFBS_HasNEON, // MLAv2i32_indexed = 3120
+    CEFBS_HasNEON, // MLAv4i16 = 3121
+    CEFBS_HasNEON, // MLAv4i16_indexed = 3122
+    CEFBS_HasNEON, // MLAv4i32 = 3123
+    CEFBS_HasNEON, // MLAv4i32_indexed = 3124
+    CEFBS_HasNEON, // MLAv8i16 = 3125
+    CEFBS_HasNEON, // MLAv8i16_indexed = 3126
+    CEFBS_HasNEON, // MLAv8i8 = 3127
+    CEFBS_HasSVE, // MLS_ZPmZZ_B = 3128
+    CEFBS_HasSVE, // MLS_ZPmZZ_D = 3129
+    CEFBS_HasSVE, // MLS_ZPmZZ_H = 3130
+    CEFBS_HasSVE, // MLS_ZPmZZ_S = 3131
+    CEFBS_HasSVE2, // MLS_ZZZI_D = 3132
+    CEFBS_HasSVE2, // MLS_ZZZI_H = 3133
+    CEFBS_HasSVE2, // MLS_ZZZI_S = 3134
+    CEFBS_HasNEON, // MLSv16i8 = 3135
+    CEFBS_HasNEON, // MLSv2i32 = 3136
+    CEFBS_HasNEON, // MLSv2i32_indexed = 3137
+    CEFBS_HasNEON, // MLSv4i16 = 3138
+    CEFBS_HasNEON, // MLSv4i16_indexed = 3139
+    CEFBS_HasNEON, // MLSv4i32 = 3140
+    CEFBS_HasNEON, // MLSv4i32_indexed = 3141
+    CEFBS_HasNEON, // MLSv8i16 = 3142
+    CEFBS_HasNEON, // MLSv8i16_indexed = 3143
+    CEFBS_HasNEON, // MLSv8i8 = 3144
+    CEFBS_HasNEON, // MOVID = 3145
+    CEFBS_HasNEON, // MOVIv16b_ns = 3146
+    CEFBS_HasNEON, // MOVIv2d_ns = 3147
+    CEFBS_HasNEON, // MOVIv2i32 = 3148
+    CEFBS_HasNEON, // MOVIv2s_msl = 3149
+    CEFBS_HasNEON, // MOVIv4i16 = 3150
+    CEFBS_HasNEON, // MOVIv4i32 = 3151
+    CEFBS_HasNEON, // MOVIv4s_msl = 3152
+    CEFBS_HasNEON, // MOVIv8b_ns = 3153
+    CEFBS_HasNEON, // MOVIv8i16 = 3154
+    CEFBS_None, // MOVKWi = 3155
+    CEFBS_None, // MOVKXi = 3156
+    CEFBS_None, // MOVNWi = 3157
+    CEFBS_None, // MOVNXi = 3158
+    CEFBS_HasSVE, // MOVPRFX_ZPmZ_B = 3159
+    CEFBS_HasSVE, // MOVPRFX_ZPmZ_D = 3160
+    CEFBS_HasSVE, // MOVPRFX_ZPmZ_H = 3161
+    CEFBS_HasSVE, // MOVPRFX_ZPmZ_S = 3162
+    CEFBS_HasSVE, // MOVPRFX_ZPzZ_B = 3163
+    CEFBS_HasSVE, // MOVPRFX_ZPzZ_D = 3164
+    CEFBS_HasSVE, // MOVPRFX_ZPzZ_H = 3165
+    CEFBS_HasSVE, // MOVPRFX_ZPzZ_S = 3166
+    CEFBS_HasSVE, // MOVPRFX_ZZ = 3167
+    CEFBS_None, // MOVZWi = 3168
+    CEFBS_None, // MOVZXi = 3169
+    CEFBS_None, // MRS = 3170
+    CEFBS_HasSVE, // MSB_ZPmZZ_B = 3171
+    CEFBS_HasSVE, // MSB_ZPmZZ_D = 3172
+    CEFBS_HasSVE, // MSB_ZPmZZ_H = 3173
+    CEFBS_HasSVE, // MSB_ZPmZZ_S = 3174
+    CEFBS_None, // MSR = 3175
+    CEFBS_None, // MSRpstateImm1 = 3176
+    CEFBS_None, // MSRpstateImm4 = 3177
+    CEFBS_None, // MSUBWrrr = 3178
+    CEFBS_None, // MSUBXrrr = 3179
+    CEFBS_HasSVE, // MUL_ZI_B = 3180
+    CEFBS_HasSVE, // MUL_ZI_D = 3181
+    CEFBS_HasSVE, // MUL_ZI_H = 3182
+    CEFBS_HasSVE, // MUL_ZI_S = 3183
+    CEFBS_HasSVE, // MUL_ZPmZ_B = 3184
+    CEFBS_HasSVE, // MUL_ZPmZ_D = 3185
+    CEFBS_HasSVE, // MUL_ZPmZ_H = 3186
+    CEFBS_HasSVE, // MUL_ZPmZ_S = 3187
+    CEFBS_HasSVE2, // MUL_ZZZI_D = 3188
+    CEFBS_HasSVE2, // MUL_ZZZI_H = 3189
+    CEFBS_HasSVE2, // MUL_ZZZI_S = 3190
+    CEFBS_HasSVE2, // MUL_ZZZ_B = 3191
+    CEFBS_HasSVE2, // MUL_ZZZ_D = 3192
+    CEFBS_HasSVE2, // MUL_ZZZ_H = 3193
+    CEFBS_HasSVE2, // MUL_ZZZ_S = 3194
+    CEFBS_HasNEON, // MULv16i8 = 3195
+    CEFBS_HasNEON, // MULv2i32 = 3196
+    CEFBS_HasNEON, // MULv2i32_indexed = 3197
+    CEFBS_HasNEON, // MULv4i16 = 3198
+    CEFBS_HasNEON, // MULv4i16_indexed = 3199
+    CEFBS_HasNEON, // MULv4i32 = 3200
+    CEFBS_HasNEON, // MULv4i32_indexed = 3201
+    CEFBS_HasNEON, // MULv8i16 = 3202
+    CEFBS_HasNEON, // MULv8i16_indexed = 3203
+    CEFBS_HasNEON, // MULv8i8 = 3204
+    CEFBS_HasNEON, // MVNIv2i32 = 3205
+    CEFBS_HasNEON, // MVNIv2s_msl = 3206
+    CEFBS_HasNEON, // MVNIv4i16 = 3207
+    CEFBS_HasNEON, // MVNIv4i32 = 3208
+    CEFBS_HasNEON, // MVNIv4s_msl = 3209
+    CEFBS_HasNEON, // MVNIv8i16 = 3210
+    CEFBS_HasSVE, // NANDS_PPzPP = 3211
+    CEFBS_HasSVE, // NAND_PPzPP = 3212
+    CEFBS_HasSVE2, // NBSL_ZZZZ = 3213
+    CEFBS_HasSVE, // NEG_ZPmZ_B = 3214
+    CEFBS_HasSVE, // NEG_ZPmZ_D = 3215
+    CEFBS_HasSVE, // NEG_ZPmZ_H = 3216
+    CEFBS_HasSVE, // NEG_ZPmZ_S = 3217
+    CEFBS_HasNEON, // NEGv16i8 = 3218
+    CEFBS_HasNEON, // NEGv1i64 = 3219
+    CEFBS_HasNEON, // NEGv2i32 = 3220
+    CEFBS_HasNEON, // NEGv2i64 = 3221
+    CEFBS_HasNEON, // NEGv4i16 = 3222
+    CEFBS_HasNEON, // NEGv4i32 = 3223
+    CEFBS_HasNEON, // NEGv8i16 = 3224
+    CEFBS_HasNEON, // NEGv8i8 = 3225
+    CEFBS_HasSVE2, // NMATCH_PPzZZ_B = 3226
+    CEFBS_HasSVE2, // NMATCH_PPzZZ_H = 3227
+    CEFBS_HasSVE, // NORS_PPzPP = 3228
+    CEFBS_HasSVE, // NOR_PPzPP = 3229
+    CEFBS_HasSVE, // NOT_ZPmZ_B = 3230
+    CEFBS_HasSVE, // NOT_ZPmZ_D = 3231
+    CEFBS_HasSVE, // NOT_ZPmZ_H = 3232
+    CEFBS_HasSVE, // NOT_ZPmZ_S = 3233
+    CEFBS_HasNEON, // NOTv16i8 = 3234
+    CEFBS_HasNEON, // NOTv8i8 = 3235
+    CEFBS_HasSVE, // ORNS_PPzPP = 3236
+    CEFBS_None, // ORNWrs = 3237
+    CEFBS_None, // ORNXrs = 3238
+    CEFBS_HasSVE, // ORN_PPzPP = 3239
+    CEFBS_HasNEON, // ORNv16i8 = 3240
+    CEFBS_HasNEON, // ORNv8i8 = 3241
+    CEFBS_HasSVE, // ORRS_PPzPP = 3242
+    CEFBS_None, // ORRWri = 3243
+    CEFBS_None, // ORRWrs = 3244
+    CEFBS_None, // ORRXri = 3245
+    CEFBS_None, // ORRXrs = 3246
+    CEFBS_HasSVE, // ORR_PPzPP = 3247
+    CEFBS_HasSVE, // ORR_ZI = 3248
+    CEFBS_HasSVE, // ORR_ZPmZ_B = 3249
+    CEFBS_HasSVE, // ORR_ZPmZ_D = 3250
+    CEFBS_HasSVE, // ORR_ZPmZ_H = 3251
+    CEFBS_HasSVE, // ORR_ZPmZ_S = 3252
+    CEFBS_HasSVE, // ORR_ZZZ = 3253
+    CEFBS_HasNEON, // ORRv16i8 = 3254
+    CEFBS_HasNEON, // ORRv2i32 = 3255
+    CEFBS_HasNEON, // ORRv4i16 = 3256
+    CEFBS_HasNEON, // ORRv4i32 = 3257
+    CEFBS_HasNEON, // ORRv8i16 = 3258
+    CEFBS_HasNEON, // ORRv8i8 = 3259
+    CEFBS_HasSVE, // ORV_VPZ_B = 3260
+    CEFBS_HasSVE, // ORV_VPZ_D = 3261
+    CEFBS_HasSVE, // ORV_VPZ_H = 3262
+    CEFBS_HasSVE, // ORV_VPZ_S = 3263
+    CEFBS_HasPA, // PACDA = 3264
+    CEFBS_HasPA, // PACDB = 3265
+    CEFBS_HasPA, // PACDZA = 3266
+    CEFBS_HasPA, // PACDZB = 3267
+    CEFBS_HasPA, // PACGA = 3268
+    CEFBS_HasPA, // PACIA = 3269
+    CEFBS_None, // PACIA1716 = 3270
+    CEFBS_None, // PACIASP = 3271
+    CEFBS_None, // PACIAZ = 3272
+    CEFBS_HasPA, // PACIB = 3273
+    CEFBS_None, // PACIB1716 = 3274
+    CEFBS_None, // PACIBSP = 3275
+    CEFBS_None, // PACIBZ = 3276
+    CEFBS_HasPA, // PACIZA = 3277
+    CEFBS_HasPA, // PACIZB = 3278
+    CEFBS_HasSVE, // PFALSE = 3279
+    CEFBS_HasSVE, // PFIRST_B = 3280
+    CEFBS_HasSVE2, // PMULLB_ZZZ_D = 3281
+    CEFBS_HasSVE2, // PMULLB_ZZZ_H = 3282
+    CEFBS_HasSVE2AES, // PMULLB_ZZZ_Q = 3283
+    CEFBS_HasSVE2, // PMULLT_ZZZ_D = 3284
+    CEFBS_HasSVE2, // PMULLT_ZZZ_H = 3285
+    CEFBS_HasSVE2AES, // PMULLT_ZZZ_Q = 3286
+    CEFBS_HasNEON, // PMULLv16i8 = 3287
+    CEFBS_HasAES, // PMULLv1i64 = 3288
+    CEFBS_HasAES, // PMULLv2i64 = 3289
+    CEFBS_HasNEON, // PMULLv8i8 = 3290
+    CEFBS_HasSVE2, // PMUL_ZZZ_B = 3291
+    CEFBS_HasNEON, // PMULv16i8 = 3292
+    CEFBS_HasNEON, // PMULv8i8 = 3293
+    CEFBS_HasSVE, // PNEXT_B = 3294
+    CEFBS_HasSVE, // PNEXT_D = 3295
+    CEFBS_HasSVE, // PNEXT_H = 3296
+    CEFBS_HasSVE, // PNEXT_S = 3297
+    CEFBS_HasSVE, // PRFB_D_PZI = 3298
+    CEFBS_HasSVE, // PRFB_D_SCALED = 3299
+    CEFBS_HasSVE, // PRFB_D_SXTW_SCALED = 3300
+    CEFBS_HasSVE, // PRFB_D_UXTW_SCALED = 3301
+    CEFBS_HasSVE, // PRFB_PRI = 3302
+    CEFBS_HasSVE, // PRFB_PRR = 3303
+    CEFBS_HasSVE, // PRFB_S_PZI = 3304
+    CEFBS_HasSVE, // PRFB_S_SXTW_SCALED = 3305
+    CEFBS_HasSVE, // PRFB_S_UXTW_SCALED = 3306
+    CEFBS_HasSVE, // PRFD_D_PZI = 3307
+    CEFBS_HasSVE, // PRFD_D_SCALED = 3308
+    CEFBS_HasSVE, // PRFD_D_SXTW_SCALED = 3309
+    CEFBS_HasSVE, // PRFD_D_UXTW_SCALED = 3310
+    CEFBS_HasSVE, // PRFD_PRI = 3311
+    CEFBS_HasSVE, // PRFD_PRR = 3312
+    CEFBS_HasSVE, // PRFD_S_PZI = 3313
+    CEFBS_HasSVE, // PRFD_S_SXTW_SCALED = 3314
+    CEFBS_HasSVE, // PRFD_S_UXTW_SCALED = 3315
+    CEFBS_HasSVE, // PRFH_D_PZI = 3316
+    CEFBS_HasSVE, // PRFH_D_SCALED = 3317
+    CEFBS_HasSVE, // PRFH_D_SXTW_SCALED = 3318
+    CEFBS_HasSVE, // PRFH_D_UXTW_SCALED = 3319
+    CEFBS_HasSVE, // PRFH_PRI = 3320
+    CEFBS_HasSVE, // PRFH_PRR = 3321
+    CEFBS_HasSVE, // PRFH_S_PZI = 3322
+    CEFBS_HasSVE, // PRFH_S_SXTW_SCALED = 3323
+    CEFBS_HasSVE, // PRFH_S_UXTW_SCALED = 3324
+    CEFBS_None, // PRFMl = 3325
+    CEFBS_None, // PRFMroW = 3326
+    CEFBS_None, // PRFMroX = 3327
+    CEFBS_None, // PRFMui = 3328
+    CEFBS_HasSVE, // PRFS_PRR = 3329
+    CEFBS_None, // PRFUMi = 3330
+    CEFBS_HasSVE, // PRFW_D_PZI = 3331
+    CEFBS_HasSVE, // PRFW_D_SCALED = 3332
+    CEFBS_HasSVE, // PRFW_D_SXTW_SCALED = 3333
+    CEFBS_HasSVE, // PRFW_D_UXTW_SCALED = 3334
+    CEFBS_HasSVE, // PRFW_PRI = 3335
+    CEFBS_HasSVE, // PRFW_S_PZI = 3336
+    CEFBS_HasSVE, // PRFW_S_SXTW_SCALED = 3337
+    CEFBS_HasSVE, // PRFW_S_UXTW_SCALED = 3338
+    CEFBS_HasSVE, // PTEST_PP = 3339
+    CEFBS_HasSVE, // PTRUES_B = 3340
+    CEFBS_HasSVE, // PTRUES_D = 3341
+    CEFBS_HasSVE, // PTRUES_H = 3342
+    CEFBS_HasSVE, // PTRUES_S = 3343
+    CEFBS_HasSVE, // PTRUE_B = 3344
+    CEFBS_HasSVE, // PTRUE_D = 3345
+    CEFBS_HasSVE, // PTRUE_H = 3346
+    CEFBS_HasSVE, // PTRUE_S = 3347
+    CEFBS_HasSVE, // PUNPKHI_PP = 3348
+    CEFBS_HasSVE, // PUNPKLO_PP = 3349
+    CEFBS_HasSVE2, // RADDHNB_ZZZ_B = 3350
+    CEFBS_HasSVE2, // RADDHNB_ZZZ_H = 3351
+    CEFBS_HasSVE2, // RADDHNB_ZZZ_S = 3352
+    CEFBS_HasSVE2, // RADDHNT_ZZZ_B = 3353
+    CEFBS_HasSVE2, // RADDHNT_ZZZ_H = 3354
+    CEFBS_HasSVE2, // RADDHNT_ZZZ_S = 3355
+    CEFBS_HasNEON, // RADDHNv2i64_v2i32 = 3356
+    CEFBS_HasNEON, // RADDHNv2i64_v4i32 = 3357
+    CEFBS_HasNEON, // RADDHNv4i32_v4i16 = 3358
+    CEFBS_HasNEON, // RADDHNv4i32_v8i16 = 3359
+    CEFBS_HasNEON, // RADDHNv8i16_v16i8 = 3360
+    CEFBS_HasNEON, // RADDHNv8i16_v8i8 = 3361
+    CEFBS_HasSHA3, // RAX1 = 3362
+    CEFBS_HasSVE2SHA3, // RAX1_ZZZ_D = 3363
+    CEFBS_None, // RBITWr = 3364
+    CEFBS_None, // RBITXr = 3365
+    CEFBS_HasSVE, // RBIT_ZPmZ_B = 3366
+    CEFBS_HasSVE, // RBIT_ZPmZ_D = 3367
+    CEFBS_HasSVE, // RBIT_ZPmZ_H = 3368
+    CEFBS_HasSVE, // RBIT_ZPmZ_S = 3369
+    CEFBS_HasNEON, // RBITv16i8 = 3370
+    CEFBS_HasNEON, // RBITv8i8 = 3371
+    CEFBS_HasSVE, // RDFFRS_PPz = 3372
+    CEFBS_HasSVE, // RDFFR_PPz_REAL = 3373
+    CEFBS_HasSVE, // RDFFR_P_REAL = 3374
+    CEFBS_HasSVE, // RDVLI_XI = 3375
+    CEFBS_None, // RET = 3376
+    CEFBS_HasPA, // RETAA = 3377
+    CEFBS_HasPA, // RETAB = 3378
+    CEFBS_None, // REV16Wr = 3379
+    CEFBS_None, // REV16Xr = 3380
+    CEFBS_HasNEON, // REV16v16i8 = 3381
+    CEFBS_HasNEON, // REV16v8i8 = 3382
+    CEFBS_None, // REV32Xr = 3383
+    CEFBS_HasNEON, // REV32v16i8 = 3384
+    CEFBS_HasNEON, // REV32v4i16 = 3385
+    CEFBS_HasNEON, // REV32v8i16 = 3386
+    CEFBS_HasNEON, // REV32v8i8 = 3387
+    CEFBS_HasNEON, // REV64v16i8 = 3388
+    CEFBS_HasNEON, // REV64v2i32 = 3389
+    CEFBS_HasNEON, // REV64v4i16 = 3390
+    CEFBS_HasNEON, // REV64v4i32 = 3391
+    CEFBS_HasNEON, // REV64v8i16 = 3392
+    CEFBS_HasNEON, // REV64v8i8 = 3393
+    CEFBS_HasSVE, // REVB_ZPmZ_D = 3394
+    CEFBS_HasSVE, // REVB_ZPmZ_H = 3395
+    CEFBS_HasSVE, // REVB_ZPmZ_S = 3396
+    CEFBS_HasSVE, // REVH_ZPmZ_D = 3397
+    CEFBS_HasSVE, // REVH_ZPmZ_S = 3398
+    CEFBS_HasSVE, // REVW_ZPmZ_D = 3399
+    CEFBS_None, // REVWr = 3400
+    CEFBS_None, // REVXr = 3401
+    CEFBS_HasSVE, // REV_PP_B = 3402
+    CEFBS_HasSVE, // REV_PP_D = 3403
+    CEFBS_HasSVE, // REV_PP_H = 3404
+    CEFBS_HasSVE, // REV_PP_S = 3405
+    CEFBS_HasSVE, // REV_ZZ_B = 3406
+    CEFBS_HasSVE, // REV_ZZ_D = 3407
+    CEFBS_HasSVE, // REV_ZZ_H = 3408
+    CEFBS_HasSVE, // REV_ZZ_S = 3409
+    CEFBS_HasFMI, // RMIF = 3410
+    CEFBS_None, // RORVWr = 3411
+    CEFBS_None, // RORVXr = 3412
+    CEFBS_HasSVE2, // RSHRNB_ZZI_B = 3413
+    CEFBS_HasSVE2, // RSHRNB_ZZI_H = 3414
+    CEFBS_HasSVE2, // RSHRNB_ZZI_S = 3415
+    CEFBS_HasSVE2, // RSHRNT_ZZI_B = 3416
+    CEFBS_HasSVE2, // RSHRNT_ZZI_H = 3417
+    CEFBS_HasSVE2, // RSHRNT_ZZI_S = 3418
+    CEFBS_HasNEON, // RSHRNv16i8_shift = 3419
+    CEFBS_HasNEON, // RSHRNv2i32_shift = 3420
+    CEFBS_HasNEON, // RSHRNv4i16_shift = 3421
+    CEFBS_HasNEON, // RSHRNv4i32_shift = 3422
+    CEFBS_HasNEON, // RSHRNv8i16_shift = 3423
+    CEFBS_HasNEON, // RSHRNv8i8_shift = 3424
+    CEFBS_HasSVE2, // RSUBHNB_ZZZ_B = 3425
+    CEFBS_HasSVE2, // RSUBHNB_ZZZ_H = 3426
+    CEFBS_HasSVE2, // RSUBHNB_ZZZ_S = 3427
+    CEFBS_HasSVE2, // RSUBHNT_ZZZ_B = 3428
+    CEFBS_HasSVE2, // RSUBHNT_ZZZ_H = 3429
+    CEFBS_HasSVE2, // RSUBHNT_ZZZ_S = 3430
+    CEFBS_HasNEON, // RSUBHNv2i64_v2i32 = 3431
+    CEFBS_HasNEON, // RSUBHNv2i64_v4i32 = 3432
+    CEFBS_HasNEON, // RSUBHNv4i32_v4i16 = 3433
+    CEFBS_HasNEON, // RSUBHNv4i32_v8i16 = 3434
+    CEFBS_HasNEON, // RSUBHNv8i16_v16i8 = 3435
+    CEFBS_HasNEON, // RSUBHNv8i16_v8i8 = 3436
+    CEFBS_HasSVE2, // SABALB_ZZZ_D = 3437
+    CEFBS_HasSVE2, // SABALB_ZZZ_H = 3438
+    CEFBS_HasSVE2, // SABALB_ZZZ_S = 3439
+    CEFBS_HasSVE2, // SABALT_ZZZ_D = 3440
+    CEFBS_HasSVE2, // SABALT_ZZZ_H = 3441
+    CEFBS_HasSVE2, // SABALT_ZZZ_S = 3442
+    CEFBS_HasNEON, // SABALv16i8_v8i16 = 3443
+    CEFBS_HasNEON, // SABALv2i32_v2i64 = 3444
+    CEFBS_HasNEON, // SABALv4i16_v4i32 = 3445
+    CEFBS_HasNEON, // SABALv4i32_v2i64 = 3446
+    CEFBS_HasNEON, // SABALv8i16_v4i32 = 3447
+    CEFBS_HasNEON, // SABALv8i8_v8i16 = 3448
+    CEFBS_HasSVE2, // SABA_ZZZ_B = 3449
+    CEFBS_HasSVE2, // SABA_ZZZ_D = 3450
+    CEFBS_HasSVE2, // SABA_ZZZ_H = 3451
+    CEFBS_HasSVE2, // SABA_ZZZ_S = 3452
+    CEFBS_HasNEON, // SABAv16i8 = 3453
+    CEFBS_HasNEON, // SABAv2i32 = 3454
+    CEFBS_HasNEON, // SABAv4i16 = 3455
+    CEFBS_HasNEON, // SABAv4i32 = 3456
+    CEFBS_HasNEON, // SABAv8i16 = 3457
+    CEFBS_HasNEON, // SABAv8i8 = 3458
+    CEFBS_HasSVE2, // SABDLB_ZZZ_D = 3459
+    CEFBS_HasSVE2, // SABDLB_ZZZ_H = 3460
+    CEFBS_HasSVE2, // SABDLB_ZZZ_S = 3461
+    CEFBS_HasSVE2, // SABDLT_ZZZ_D = 3462
+    CEFBS_HasSVE2, // SABDLT_ZZZ_H = 3463
+    CEFBS_HasSVE2, // SABDLT_ZZZ_S = 3464
+    CEFBS_HasNEON, // SABDLv16i8_v8i16 = 3465
+    CEFBS_HasNEON, // SABDLv2i32_v2i64 = 3466
+    CEFBS_HasNEON, // SABDLv4i16_v4i32 = 3467
+    CEFBS_HasNEON, // SABDLv4i32_v2i64 = 3468
+    CEFBS_HasNEON, // SABDLv8i16_v4i32 = 3469
+    CEFBS_HasNEON, // SABDLv8i8_v8i16 = 3470
+    CEFBS_HasSVE, // SABD_ZPmZ_B = 3471
+    CEFBS_HasSVE, // SABD_ZPmZ_D = 3472
+    CEFBS_HasSVE, // SABD_ZPmZ_H = 3473
+    CEFBS_HasSVE, // SABD_ZPmZ_S = 3474
+    CEFBS_HasNEON, // SABDv16i8 = 3475
+    CEFBS_HasNEON, // SABDv2i32 = 3476
+    CEFBS_HasNEON, // SABDv4i16 = 3477
+    CEFBS_HasNEON, // SABDv4i32 = 3478
+    CEFBS_HasNEON, // SABDv8i16 = 3479
+    CEFBS_HasNEON, // SABDv8i8 = 3480
+    CEFBS_HasSVE2, // SADALP_ZPmZ_D = 3481
+    CEFBS_HasSVE2, // SADALP_ZPmZ_H = 3482
+    CEFBS_HasSVE2, // SADALP_ZPmZ_S = 3483
+    CEFBS_HasNEON, // SADALPv16i8_v8i16 = 3484
+    CEFBS_HasNEON, // SADALPv2i32_v1i64 = 3485
+    CEFBS_HasNEON, // SADALPv4i16_v2i32 = 3486
+    CEFBS_HasNEON, // SADALPv4i32_v2i64 = 3487
+    CEFBS_HasNEON, // SADALPv8i16_v4i32 = 3488
+    CEFBS_HasNEON, // SADALPv8i8_v4i16 = 3489
+    CEFBS_HasSVE2, // SADDLBT_ZZZ_D = 3490
+    CEFBS_HasSVE2, // SADDLBT_ZZZ_H = 3491
+    CEFBS_HasSVE2, // SADDLBT_ZZZ_S = 3492
+    CEFBS_HasSVE2, // SADDLB_ZZZ_D = 3493
+    CEFBS_HasSVE2, // SADDLB_ZZZ_H = 3494
+    CEFBS_HasSVE2, // SADDLB_ZZZ_S = 3495
+    CEFBS_HasNEON, // SADDLPv16i8_v8i16 = 3496
+    CEFBS_HasNEON, // SADDLPv2i32_v1i64 = 3497
+    CEFBS_HasNEON, // SADDLPv4i16_v2i32 = 3498
+    CEFBS_HasNEON, // SADDLPv4i32_v2i64 = 3499
+    CEFBS_HasNEON, // SADDLPv8i16_v4i32 = 3500
+    CEFBS_HasNEON, // SADDLPv8i8_v4i16 = 3501
+    CEFBS_HasSVE2, // SADDLT_ZZZ_D = 3502
+    CEFBS_HasSVE2, // SADDLT_ZZZ_H = 3503
+    CEFBS_HasSVE2, // SADDLT_ZZZ_S = 3504
+    CEFBS_HasNEON, // SADDLVv16i8v = 3505
+    CEFBS_HasNEON, // SADDLVv4i16v = 3506
+    CEFBS_HasNEON, // SADDLVv4i32v = 3507
+    CEFBS_HasNEON, // SADDLVv8i16v = 3508
+    CEFBS_HasNEON, // SADDLVv8i8v = 3509
+    CEFBS_HasNEON, // SADDLv16i8_v8i16 = 3510
+    CEFBS_HasNEON, // SADDLv2i32_v2i64 = 3511
+    CEFBS_HasNEON, // SADDLv4i16_v4i32 = 3512
+    CEFBS_HasNEON, // SADDLv4i32_v2i64 = 3513
+    CEFBS_HasNEON, // SADDLv8i16_v4i32 = 3514
+    CEFBS_HasNEON, // SADDLv8i8_v8i16 = 3515
+    CEFBS_HasSVE, // SADDV_VPZ_B = 3516
+    CEFBS_HasSVE, // SADDV_VPZ_H = 3517
+    CEFBS_HasSVE, // SADDV_VPZ_S = 3518
+    CEFBS_HasSVE2, // SADDWB_ZZZ_D = 3519
+    CEFBS_HasSVE2, // SADDWB_ZZZ_H = 3520
+    CEFBS_HasSVE2, // SADDWB_ZZZ_S = 3521
+    CEFBS_HasSVE2, // SADDWT_ZZZ_D = 3522
+    CEFBS_HasSVE2, // SADDWT_ZZZ_H = 3523
+    CEFBS_HasSVE2, // SADDWT_ZZZ_S = 3524
+    CEFBS_HasNEON, // SADDWv16i8_v8i16 = 3525
+    CEFBS_HasNEON, // SADDWv2i32_v2i64 = 3526
+    CEFBS_HasNEON, // SADDWv4i16_v4i32 = 3527
+    CEFBS_HasNEON, // SADDWv4i32_v2i64 = 3528
+    CEFBS_HasNEON, // SADDWv8i16_v4i32 = 3529
+    CEFBS_HasNEON, // SADDWv8i8_v8i16 = 3530
+    CEFBS_HasSB, // SB = 3531
+    CEFBS_HasSVE2, // SBCLB_ZZZ_D = 3532
+    CEFBS_HasSVE2, // SBCLB_ZZZ_S = 3533
+    CEFBS_HasSVE2, // SBCLT_ZZZ_D = 3534
+    CEFBS_HasSVE2, // SBCLT_ZZZ_S = 3535
+    CEFBS_None, // SBCSWr = 3536
+    CEFBS_None, // SBCSXr = 3537
+    CEFBS_None, // SBCWr = 3538
+    CEFBS_None, // SBCXr = 3539
+    CEFBS_None, // SBFMWri = 3540
+    CEFBS_None, // SBFMXri = 3541
+    CEFBS_HasFPARMv8, // SCVTFSWDri = 3542
+    CEFBS_HasFullFP16, // SCVTFSWHri = 3543
+    CEFBS_HasFPARMv8, // SCVTFSWSri = 3544
+    CEFBS_HasFPARMv8, // SCVTFSXDri = 3545
+    CEFBS_HasFullFP16, // SCVTFSXHri = 3546
+    CEFBS_HasFPARMv8, // SCVTFSXSri = 3547
+    CEFBS_HasFPARMv8, // SCVTFUWDri = 3548
+    CEFBS_HasFullFP16, // SCVTFUWHri = 3549
+    CEFBS_HasFPARMv8, // SCVTFUWSri = 3550
+    CEFBS_HasFPARMv8, // SCVTFUXDri = 3551
+    CEFBS_HasFullFP16, // SCVTFUXHri = 3552
+    CEFBS_HasFPARMv8, // SCVTFUXSri = 3553
+    CEFBS_HasSVE, // SCVTF_ZPmZ_DtoD = 3554
+    CEFBS_HasSVE, // SCVTF_ZPmZ_DtoH = 3555
+    CEFBS_HasSVE, // SCVTF_ZPmZ_DtoS = 3556
+    CEFBS_HasSVE, // SCVTF_ZPmZ_HtoH = 3557
+    CEFBS_HasSVE, // SCVTF_ZPmZ_StoD = 3558
+    CEFBS_HasSVE, // SCVTF_ZPmZ_StoH = 3559
+    CEFBS_HasSVE, // SCVTF_ZPmZ_StoS = 3560
+    CEFBS_HasNEON, // SCVTFd = 3561
+    CEFBS_HasNEON_HasFullFP16, // SCVTFh = 3562
+    CEFBS_HasNEON, // SCVTFs = 3563
+    CEFBS_HasNEON_HasFullFP16, // SCVTFv1i16 = 3564
+    CEFBS_HasNEON, // SCVTFv1i32 = 3565
+    CEFBS_HasNEON, // SCVTFv1i64 = 3566
+    CEFBS_HasNEON, // SCVTFv2f32 = 3567
+    CEFBS_HasNEON, // SCVTFv2f64 = 3568
+    CEFBS_HasNEON, // SCVTFv2i32_shift = 3569
+    CEFBS_HasNEON, // SCVTFv2i64_shift = 3570
+    CEFBS_HasNEON_HasFullFP16, // SCVTFv4f16 = 3571
+    CEFBS_HasNEON, // SCVTFv4f32 = 3572
+    CEFBS_HasNEON_HasFullFP16, // SCVTFv4i16_shift = 3573
+    CEFBS_HasNEON, // SCVTFv4i32_shift = 3574
+    CEFBS_HasNEON_HasFullFP16, // SCVTFv8f16 = 3575
+    CEFBS_HasNEON_HasFullFP16, // SCVTFv8i16_shift = 3576
+    CEFBS_HasSVE, // SDIVR_ZPmZ_D = 3577
+    CEFBS_HasSVE, // SDIVR_ZPmZ_S = 3578
+    CEFBS_None, // SDIVWr = 3579
+    CEFBS_None, // SDIVXr = 3580
+    CEFBS_HasSVE, // SDIV_ZPmZ_D = 3581
+    CEFBS_HasSVE, // SDIV_ZPmZ_S = 3582
+    CEFBS_HasSVE, // SDOT_ZZZI_D = 3583
+    CEFBS_HasSVE, // SDOT_ZZZI_S = 3584
+    CEFBS_HasSVE, // SDOT_ZZZ_D = 3585
+    CEFBS_HasSVE, // SDOT_ZZZ_S = 3586
+    CEFBS_HasDotProd, // SDOTlanev16i8 = 3587
+    CEFBS_HasDotProd, // SDOTlanev8i8 = 3588
+    CEFBS_HasDotProd, // SDOTv16i8 = 3589
+    CEFBS_HasDotProd, // SDOTv8i8 = 3590
+    CEFBS_HasSVE, // SEL_PPPP = 3591
+    CEFBS_HasSVE, // SEL_ZPZZ_B = 3592
+    CEFBS_HasSVE, // SEL_ZPZZ_D = 3593
+    CEFBS_HasSVE, // SEL_ZPZZ_H = 3594
+    CEFBS_HasSVE, // SEL_ZPZZ_S = 3595
+    CEFBS_HasFMI, // SETF16 = 3596
+    CEFBS_HasFMI, // SETF8 = 3597
+    CEFBS_HasSVE, // SETFFR = 3598
+    CEFBS_HasSHA2, // SHA1Crrr = 3599
+    CEFBS_HasSHA2, // SHA1Hrr = 3600
+    CEFBS_HasSHA2, // SHA1Mrrr = 3601
+    CEFBS_HasSHA2, // SHA1Prrr = 3602
+    CEFBS_HasSHA2, // SHA1SU0rrr = 3603
+    CEFBS_HasSHA2, // SHA1SU1rr = 3604
+    CEFBS_HasSHA2, // SHA256H2rrr = 3605
+    CEFBS_HasSHA2, // SHA256Hrrr = 3606
+    CEFBS_HasSHA2, // SHA256SU0rr = 3607
+    CEFBS_HasSHA2, // SHA256SU1rrr = 3608
+    CEFBS_HasSHA3, // SHA512H = 3609
+    CEFBS_HasSHA3, // SHA512H2 = 3610
+    CEFBS_HasSHA3, // SHA512SU0 = 3611
+    CEFBS_HasSHA3, // SHA512SU1 = 3612
+    CEFBS_HasSVE2, // SHADD_ZPmZ_B = 3613
+    CEFBS_HasSVE2, // SHADD_ZPmZ_D = 3614
+    CEFBS_HasSVE2, // SHADD_ZPmZ_H = 3615
+    CEFBS_HasSVE2, // SHADD_ZPmZ_S = 3616
+    CEFBS_HasNEON, // SHADDv16i8 = 3617
+    CEFBS_HasNEON, // SHADDv2i32 = 3618
+    CEFBS_HasNEON, // SHADDv4i16 = 3619
+    CEFBS_HasNEON, // SHADDv4i32 = 3620
+    CEFBS_HasNEON, // SHADDv8i16 = 3621
+    CEFBS_HasNEON, // SHADDv8i8 = 3622
+    CEFBS_HasNEON, // SHLLv16i8 = 3623
+    CEFBS_HasNEON, // SHLLv2i32 = 3624
+    CEFBS_HasNEON, // SHLLv4i16 = 3625
+    CEFBS_HasNEON, // SHLLv4i32 = 3626
+    CEFBS_HasNEON, // SHLLv8i16 = 3627
+    CEFBS_HasNEON, // SHLLv8i8 = 3628
+    CEFBS_HasNEON, // SHLd = 3629
+    CEFBS_HasNEON, // SHLv16i8_shift = 3630
+    CEFBS_HasNEON, // SHLv2i32_shift = 3631
+    CEFBS_HasNEON, // SHLv2i64_shift = 3632
+    CEFBS_HasNEON, // SHLv4i16_shift = 3633
+    CEFBS_HasNEON, // SHLv4i32_shift = 3634
+    CEFBS_HasNEON, // SHLv8i16_shift = 3635
+    CEFBS_HasNEON, // SHLv8i8_shift = 3636
+    CEFBS_HasSVE2, // SHRNB_ZZI_B = 3637
+    CEFBS_HasSVE2, // SHRNB_ZZI_H = 3638
+    CEFBS_HasSVE2, // SHRNB_ZZI_S = 3639
+    CEFBS_HasSVE2, // SHRNT_ZZI_B = 3640
+    CEFBS_HasSVE2, // SHRNT_ZZI_H = 3641
+    CEFBS_HasSVE2, // SHRNT_ZZI_S = 3642
+    CEFBS_HasNEON, // SHRNv16i8_shift = 3643
+    CEFBS_HasNEON, // SHRNv2i32_shift = 3644
+    CEFBS_HasNEON, // SHRNv4i16_shift = 3645
+    CEFBS_HasNEON, // SHRNv4i32_shift = 3646
+    CEFBS_HasNEON, // SHRNv8i16_shift = 3647
+    CEFBS_HasNEON, // SHRNv8i8_shift = 3648
+    CEFBS_HasSVE2, // SHSUBR_ZPmZ_B = 3649
+    CEFBS_HasSVE2, // SHSUBR_ZPmZ_D = 3650
+    CEFBS_HasSVE2, // SHSUBR_ZPmZ_H = 3651
+    CEFBS_HasSVE2, // SHSUBR_ZPmZ_S = 3652
+    CEFBS_HasSVE2, // SHSUB_ZPmZ_B = 3653
+    CEFBS_HasSVE2, // SHSUB_ZPmZ_D = 3654
+    CEFBS_HasSVE2, // SHSUB_ZPmZ_H = 3655
+    CEFBS_HasSVE2, // SHSUB_ZPmZ_S = 3656
+    CEFBS_HasNEON, // SHSUBv16i8 = 3657
+    CEFBS_HasNEON, // SHSUBv2i32 = 3658
+    CEFBS_HasNEON, // SHSUBv4i16 = 3659
+    CEFBS_HasNEON, // SHSUBv4i32 = 3660
+    CEFBS_HasNEON, // SHSUBv8i16 = 3661
+    CEFBS_HasNEON, // SHSUBv8i8 = 3662
+    CEFBS_HasSVE2, // SLI_ZZI_B = 3663
+    CEFBS_HasSVE2, // SLI_ZZI_D = 3664
+    CEFBS_HasSVE2, // SLI_ZZI_H = 3665
+    CEFBS_HasSVE2, // SLI_ZZI_S = 3666
+    CEFBS_HasNEON, // SLId = 3667
+    CEFBS_HasNEON, // SLIv16i8_shift = 3668
+    CEFBS_HasNEON, // SLIv2i32_shift = 3669
+    CEFBS_HasNEON, // SLIv2i64_shift = 3670
+    CEFBS_HasNEON, // SLIv4i16_shift = 3671
+    CEFBS_HasNEON, // SLIv4i32_shift = 3672
+    CEFBS_HasNEON, // SLIv8i16_shift = 3673
+    CEFBS_HasNEON, // SLIv8i8_shift = 3674
+    CEFBS_HasSM4, // SM3PARTW1 = 3675
+    CEFBS_HasSM4, // SM3PARTW2 = 3676
+    CEFBS_HasSM4, // SM3SS1 = 3677
+    CEFBS_HasSM4, // SM3TT1A = 3678
+    CEFBS_HasSM4, // SM3TT1B = 3679
+    CEFBS_HasSM4, // SM3TT2A = 3680
+    CEFBS_HasSM4, // SM3TT2B = 3681
+    CEFBS_HasSM4, // SM4E = 3682
+    CEFBS_HasSVE2SM4, // SM4EKEY_ZZZ_S = 3683
+    CEFBS_HasSM4, // SM4ENCKEY = 3684
+    CEFBS_HasSVE2SM4, // SM4E_ZZZ_S = 3685
+    CEFBS_None, // SMADDLrrr = 3686
+    CEFBS_HasSVE2, // SMAXP_ZPmZ_B = 3687
+    CEFBS_HasSVE2, // SMAXP_ZPmZ_D = 3688
+    CEFBS_HasSVE2, // SMAXP_ZPmZ_H = 3689
+    CEFBS_HasSVE2, // SMAXP_ZPmZ_S = 3690
+    CEFBS_HasNEON, // SMAXPv16i8 = 3691
+    CEFBS_HasNEON, // SMAXPv2i32 = 3692
+    CEFBS_HasNEON, // SMAXPv4i16 = 3693
+    CEFBS_HasNEON, // SMAXPv4i32 = 3694
+    CEFBS_HasNEON, // SMAXPv8i16 = 3695
+    CEFBS_HasNEON, // SMAXPv8i8 = 3696
+    CEFBS_HasSVE, // SMAXV_VPZ_B = 3697
+    CEFBS_HasSVE, // SMAXV_VPZ_D = 3698
+    CEFBS_HasSVE, // SMAXV_VPZ_H = 3699
+    CEFBS_HasSVE, // SMAXV_VPZ_S = 3700
+    CEFBS_HasNEON, // SMAXVv16i8v = 3701
+    CEFBS_HasNEON, // SMAXVv4i16v = 3702
+    CEFBS_HasNEON, // SMAXVv4i32v = 3703
+    CEFBS_HasNEON, // SMAXVv8i16v = 3704
+    CEFBS_HasNEON, // SMAXVv8i8v = 3705
+    CEFBS_HasSVE, // SMAX_ZI_B = 3706
+    CEFBS_HasSVE, // SMAX_ZI_D = 3707
+    CEFBS_HasSVE, // SMAX_ZI_H = 3708
+    CEFBS_HasSVE, // SMAX_ZI_S = 3709
+    CEFBS_HasSVE, // SMAX_ZPmZ_B = 3710
+    CEFBS_HasSVE, // SMAX_ZPmZ_D = 3711
+    CEFBS_HasSVE, // SMAX_ZPmZ_H = 3712
+    CEFBS_HasSVE, // SMAX_ZPmZ_S = 3713
+    CEFBS_HasNEON, // SMAXv16i8 = 3714
+    CEFBS_HasNEON, // SMAXv2i32 = 3715
+    CEFBS_HasNEON, // SMAXv4i16 = 3716
+    CEFBS_HasNEON, // SMAXv4i32 = 3717
+    CEFBS_HasNEON, // SMAXv8i16 = 3718
+    CEFBS_HasNEON, // SMAXv8i8 = 3719
+    CEFBS_None, // SMC = 3720
+    CEFBS_HasSVE2, // SMINP_ZPmZ_B = 3721
+    CEFBS_HasSVE2, // SMINP_ZPmZ_D = 3722
+    CEFBS_HasSVE2, // SMINP_ZPmZ_H = 3723
+    CEFBS_HasSVE2, // SMINP_ZPmZ_S = 3724
+    CEFBS_HasNEON, // SMINPv16i8 = 3725
+    CEFBS_HasNEON, // SMINPv2i32 = 3726
+    CEFBS_HasNEON, // SMINPv4i16 = 3727
+    CEFBS_HasNEON, // SMINPv4i32 = 3728
+    CEFBS_HasNEON, // SMINPv8i16 = 3729
+    CEFBS_HasNEON, // SMINPv8i8 = 3730
+    CEFBS_HasSVE, // SMINV_VPZ_B = 3731
+    CEFBS_HasSVE, // SMINV_VPZ_D = 3732
+    CEFBS_HasSVE, // SMINV_VPZ_H = 3733
+    CEFBS_HasSVE, // SMINV_VPZ_S = 3734
+    CEFBS_HasNEON, // SMINVv16i8v = 3735
+    CEFBS_HasNEON, // SMINVv4i16v = 3736
+    CEFBS_HasNEON, // SMINVv4i32v = 3737
+    CEFBS_HasNEON, // SMINVv8i16v = 3738
+    CEFBS_HasNEON, // SMINVv8i8v = 3739
+    CEFBS_HasSVE, // SMIN_ZI_B = 3740
+    CEFBS_HasSVE, // SMIN_ZI_D = 3741
+    CEFBS_HasSVE, // SMIN_ZI_H = 3742
+    CEFBS_HasSVE, // SMIN_ZI_S = 3743
+    CEFBS_HasSVE, // SMIN_ZPmZ_B = 3744
+    CEFBS_HasSVE, // SMIN_ZPmZ_D = 3745
+    CEFBS_HasSVE, // SMIN_ZPmZ_H = 3746
+    CEFBS_HasSVE, // SMIN_ZPmZ_S = 3747
+    CEFBS_HasNEON, // SMINv16i8 = 3748
+    CEFBS_HasNEON, // SMINv2i32 = 3749
+    CEFBS_HasNEON, // SMINv4i16 = 3750
+    CEFBS_HasNEON, // SMINv4i32 = 3751
+    CEFBS_HasNEON, // SMINv8i16 = 3752
+    CEFBS_HasNEON, // SMINv8i8 = 3753
+    CEFBS_HasSVE2, // SMLALB_ZZZI_D = 3754
+    CEFBS_HasSVE2, // SMLALB_ZZZI_S = 3755
+    CEFBS_HasSVE2, // SMLALB_ZZZ_D = 3756
+    CEFBS_HasSVE2, // SMLALB_ZZZ_H = 3757
+    CEFBS_HasSVE2, // SMLALB_ZZZ_S = 3758
+    CEFBS_HasSVE2, // SMLALT_ZZZI_D = 3759
+    CEFBS_HasSVE2, // SMLALT_ZZZI_S = 3760
+    CEFBS_HasSVE2, // SMLALT_ZZZ_D = 3761
+    CEFBS_HasSVE2, // SMLALT_ZZZ_H = 3762
+    CEFBS_HasSVE2, // SMLALT_ZZZ_S = 3763
+    CEFBS_HasNEON, // SMLALv16i8_v8i16 = 3764
+    CEFBS_HasNEON, // SMLALv2i32_indexed = 3765
+    CEFBS_HasNEON, // SMLALv2i32_v2i64 = 3766
+    CEFBS_HasNEON, // SMLALv4i16_indexed = 3767
+    CEFBS_HasNEON, // SMLALv4i16_v4i32 = 3768
+    CEFBS_HasNEON, // SMLALv4i32_indexed = 3769
+    CEFBS_HasNEON, // SMLALv4i32_v2i64 = 3770
+    CEFBS_HasNEON, // SMLALv8i16_indexed = 3771
+    CEFBS_HasNEON, // SMLALv8i16_v4i32 = 3772
+    CEFBS_HasNEON, // SMLALv8i8_v8i16 = 3773
+    CEFBS_HasSVE2, // SMLSLB_ZZZI_D = 3774
+    CEFBS_HasSVE2, // SMLSLB_ZZZI_S = 3775
+    CEFBS_HasSVE2, // SMLSLB_ZZZ_D = 3776
+    CEFBS_HasSVE2, // SMLSLB_ZZZ_H = 3777
+    CEFBS_HasSVE2, // SMLSLB_ZZZ_S = 3778
+    CEFBS_HasSVE2, // SMLSLT_ZZZI_D = 3779
+    CEFBS_HasSVE2, // SMLSLT_ZZZI_S = 3780
+    CEFBS_HasSVE2, // SMLSLT_ZZZ_D = 3781
+    CEFBS_HasSVE2, // SMLSLT_ZZZ_H = 3782
+    CEFBS_HasSVE2, // SMLSLT_ZZZ_S = 3783
+    CEFBS_HasNEON, // SMLSLv16i8_v8i16 = 3784
+    CEFBS_HasNEON, // SMLSLv2i32_indexed = 3785
+    CEFBS_HasNEON, // SMLSLv2i32_v2i64 = 3786
+    CEFBS_HasNEON, // SMLSLv4i16_indexed = 3787
+    CEFBS_HasNEON, // SMLSLv4i16_v4i32 = 3788
+    CEFBS_HasNEON, // SMLSLv4i32_indexed = 3789
+    CEFBS_HasNEON, // SMLSLv4i32_v2i64 = 3790
+    CEFBS_HasNEON, // SMLSLv8i16_indexed = 3791
+    CEFBS_HasNEON, // SMLSLv8i16_v4i32 = 3792
+    CEFBS_HasNEON, // SMLSLv8i8_v8i16 = 3793
+    CEFBS_HasMatMulInt8, // SMMLA = 3794
+    CEFBS_HasSVE_HasMatMulInt8, // SMMLA_ZZZ = 3795
+    CEFBS_HasNEON, // SMOVvi16to32 = 3796
+    CEFBS_HasNEON, // SMOVvi16to64 = 3797
+    CEFBS_HasNEON, // SMOVvi32to64 = 3798
+    CEFBS_HasNEON, // SMOVvi8to32 = 3799
+    CEFBS_HasNEON, // SMOVvi8to64 = 3800
+    CEFBS_None, // SMSUBLrrr = 3801
+    CEFBS_HasSVE, // SMULH_ZPmZ_B = 3802
+    CEFBS_HasSVE, // SMULH_ZPmZ_D = 3803
+    CEFBS_HasSVE, // SMULH_ZPmZ_H = 3804
+    CEFBS_HasSVE, // SMULH_ZPmZ_S = 3805
+    CEFBS_HasSVE2, // SMULH_ZZZ_B = 3806
+    CEFBS_HasSVE2, // SMULH_ZZZ_D = 3807
+    CEFBS_HasSVE2, // SMULH_ZZZ_H = 3808
+    CEFBS_HasSVE2, // SMULH_ZZZ_S = 3809
+    CEFBS_None, // SMULHrr = 3810
+    CEFBS_HasSVE2, // SMULLB_ZZZI_D = 3811
+    CEFBS_HasSVE2, // SMULLB_ZZZI_S = 3812
+    CEFBS_HasSVE2, // SMULLB_ZZZ_D = 3813
+    CEFBS_HasSVE2, // SMULLB_ZZZ_H = 3814
+    CEFBS_HasSVE2, // SMULLB_ZZZ_S = 3815
+    CEFBS_HasSVE2, // SMULLT_ZZZI_D = 3816
+    CEFBS_HasSVE2, // SMULLT_ZZZI_S = 3817
+    CEFBS_HasSVE2, // SMULLT_ZZZ_D = 3818
+    CEFBS_HasSVE2, // SMULLT_ZZZ_H = 3819
+    CEFBS_HasSVE2, // SMULLT_ZZZ_S = 3820
+    CEFBS_HasNEON, // SMULLv16i8_v8i16 = 3821
+    CEFBS_HasNEON, // SMULLv2i32_indexed = 3822
+    CEFBS_HasNEON, // SMULLv2i32_v2i64 = 3823
+    CEFBS_HasNEON, // SMULLv4i16_indexed = 3824
+    CEFBS_HasNEON, // SMULLv4i16_v4i32 = 3825
+    CEFBS_HasNEON, // SMULLv4i32_indexed = 3826
+    CEFBS_HasNEON, // SMULLv4i32_v2i64 = 3827
+    CEFBS_HasNEON, // SMULLv8i16_indexed = 3828
+    CEFBS_HasNEON, // SMULLv8i16_v4i32 = 3829
+    CEFBS_HasNEON, // SMULLv8i8_v8i16 = 3830
+    CEFBS_HasSVE2, // SPLICE_ZPZZ_B = 3831
+    CEFBS_HasSVE2, // SPLICE_ZPZZ_D = 3832
+    CEFBS_HasSVE2, // SPLICE_ZPZZ_H = 3833
+    CEFBS_HasSVE2, // SPLICE_ZPZZ_S = 3834
+    CEFBS_HasSVE, // SPLICE_ZPZ_B = 3835
+    CEFBS_HasSVE, // SPLICE_ZPZ_D = 3836
+    CEFBS_HasSVE, // SPLICE_ZPZ_H = 3837
+    CEFBS_HasSVE, // SPLICE_ZPZ_S = 3838
+    CEFBS_HasSVE2, // SQABS_ZPmZ_B = 3839
+    CEFBS_HasSVE2, // SQABS_ZPmZ_D = 3840
+    CEFBS_HasSVE2, // SQABS_ZPmZ_H = 3841
+    CEFBS_HasSVE2, // SQABS_ZPmZ_S = 3842
+    CEFBS_HasNEON, // SQABSv16i8 = 3843
+    CEFBS_HasNEON, // SQABSv1i16 = 3844
+    CEFBS_HasNEON, // SQABSv1i32 = 3845
+    CEFBS_HasNEON, // SQABSv1i64 = 3846
+    CEFBS_HasNEON, // SQABSv1i8 = 3847
+    CEFBS_HasNEON, // SQABSv2i32 = 3848
+    CEFBS_HasNEON, // SQABSv2i64 = 3849
+    CEFBS_HasNEON, // SQABSv4i16 = 3850
+    CEFBS_HasNEON, // SQABSv4i32 = 3851
+    CEFBS_HasNEON, // SQABSv8i16 = 3852
+    CEFBS_HasNEON, // SQABSv8i8 = 3853
+    CEFBS_HasSVE, // SQADD_ZI_B = 3854
+    CEFBS_HasSVE, // SQADD_ZI_D = 3855
+    CEFBS_HasSVE, // SQADD_ZI_H = 3856
+    CEFBS_HasSVE, // SQADD_ZI_S = 3857
+    CEFBS_HasSVE2, // SQADD_ZPmZ_B = 3858
+    CEFBS_HasSVE2, // SQADD_ZPmZ_D = 3859
+    CEFBS_HasSVE2, // SQADD_ZPmZ_H = 3860
+    CEFBS_HasSVE2, // SQADD_ZPmZ_S = 3861
+    CEFBS_HasSVE, // SQADD_ZZZ_B = 3862
+    CEFBS_HasSVE, // SQADD_ZZZ_D = 3863
+    CEFBS_HasSVE, // SQADD_ZZZ_H = 3864
+    CEFBS_HasSVE, // SQADD_ZZZ_S = 3865
+    CEFBS_HasNEON, // SQADDv16i8 = 3866
+    CEFBS_HasNEON, // SQADDv1i16 = 3867
+    CEFBS_HasNEON, // SQADDv1i32 = 3868
+    CEFBS_HasNEON, // SQADDv1i64 = 3869
+    CEFBS_HasNEON, // SQADDv1i8 = 3870
+    CEFBS_HasNEON, // SQADDv2i32 = 3871
+    CEFBS_HasNEON, // SQADDv2i64 = 3872
+    CEFBS_HasNEON, // SQADDv4i16 = 3873
+    CEFBS_HasNEON, // SQADDv4i32 = 3874
+    CEFBS_HasNEON, // SQADDv8i16 = 3875
+    CEFBS_HasNEON, // SQADDv8i8 = 3876
+    CEFBS_HasSVE2, // SQCADD_ZZI_B = 3877
+    CEFBS_HasSVE2, // SQCADD_ZZI_D = 3878
+    CEFBS_HasSVE2, // SQCADD_ZZI_H = 3879
+    CEFBS_HasSVE2, // SQCADD_ZZI_S = 3880
+    CEFBS_HasSVE, // SQDECB_XPiI = 3881
+    CEFBS_HasSVE, // SQDECB_XPiWdI = 3882
+    CEFBS_HasSVE, // SQDECD_XPiI = 3883
+    CEFBS_HasSVE, // SQDECD_XPiWdI = 3884
+    CEFBS_HasSVE, // SQDECD_ZPiI = 3885
+    CEFBS_HasSVE, // SQDECH_XPiI = 3886
+    CEFBS_HasSVE, // SQDECH_XPiWdI = 3887
+    CEFBS_HasSVE, // SQDECH_ZPiI = 3888
+    CEFBS_HasSVE, // SQDECP_XPWd_B = 3889
+    CEFBS_HasSVE, // SQDECP_XPWd_D = 3890
+    CEFBS_HasSVE, // SQDECP_XPWd_H = 3891
+    CEFBS_HasSVE, // SQDECP_XPWd_S = 3892
+    CEFBS_HasSVE, // SQDECP_XP_B = 3893
+    CEFBS_HasSVE, // SQDECP_XP_D = 3894
+    CEFBS_HasSVE, // SQDECP_XP_H = 3895
+    CEFBS_HasSVE, // SQDECP_XP_S = 3896
+    CEFBS_HasSVE, // SQDECP_ZP_D = 3897
+    CEFBS_HasSVE, // SQDECP_ZP_H = 3898
+    CEFBS_HasSVE, // SQDECP_ZP_S = 3899
+    CEFBS_HasSVE, // SQDECW_XPiI = 3900
+    CEFBS_HasSVE, // SQDECW_XPiWdI = 3901
+    CEFBS_HasSVE, // SQDECW_ZPiI = 3902
+    CEFBS_HasSVE2, // SQDMLALBT_ZZZ_D = 3903
+    CEFBS_HasSVE2, // SQDMLALBT_ZZZ_H = 3904
+    CEFBS_HasSVE2, // SQDMLALBT_ZZZ_S = 3905
+    CEFBS_HasSVE2, // SQDMLALB_ZZZI_D = 3906
+    CEFBS_HasSVE2, // SQDMLALB_ZZZI_S = 3907
+    CEFBS_HasSVE2, // SQDMLALB_ZZZ_D = 3908
+    CEFBS_HasSVE2, // SQDMLALB_ZZZ_H = 3909
+    CEFBS_HasSVE2, // SQDMLALB_ZZZ_S = 3910
+    CEFBS_HasSVE2, // SQDMLALT_ZZZI_D = 3911
+    CEFBS_HasSVE2, // SQDMLALT_ZZZI_S = 3912
+    CEFBS_HasSVE2, // SQDMLALT_ZZZ_D = 3913
+    CEFBS_HasSVE2, // SQDMLALT_ZZZ_H = 3914
+    CEFBS_HasSVE2, // SQDMLALT_ZZZ_S = 3915
+    CEFBS_HasNEON, // SQDMLALi16 = 3916
+    CEFBS_HasNEON, // SQDMLALi32 = 3917
+    CEFBS_HasNEON, // SQDMLALv1i32_indexed = 3918
+    CEFBS_HasNEON, // SQDMLALv1i64_indexed = 3919
+    CEFBS_HasNEON, // SQDMLALv2i32_indexed = 3920
+    CEFBS_HasNEON, // SQDMLALv2i32_v2i64 = 3921
+    CEFBS_HasNEON, // SQDMLALv4i16_indexed = 3922
+    CEFBS_HasNEON, // SQDMLALv4i16_v4i32 = 3923
+    CEFBS_HasNEON, // SQDMLALv4i32_indexed = 3924
+    CEFBS_HasNEON, // SQDMLALv4i32_v2i64 = 3925
+    CEFBS_HasNEON, // SQDMLALv8i16_indexed = 3926
+    CEFBS_HasNEON, // SQDMLALv8i16_v4i32 = 3927
+    CEFBS_HasSVE2, // SQDMLSLBT_ZZZ_D = 3928
+    CEFBS_HasSVE2, // SQDMLSLBT_ZZZ_H = 3929
+    CEFBS_HasSVE2, // SQDMLSLBT_ZZZ_S = 3930
+    CEFBS_HasSVE2, // SQDMLSLB_ZZZI_D = 3931
+    CEFBS_HasSVE2, // SQDMLSLB_ZZZI_S = 3932
+    CEFBS_HasSVE2, // SQDMLSLB_ZZZ_D = 3933
+    CEFBS_HasSVE2, // SQDMLSLB_ZZZ_H = 3934
+    CEFBS_HasSVE2, // SQDMLSLB_ZZZ_S = 3935
+    CEFBS_HasSVE2, // SQDMLSLT_ZZZI_D = 3936
+    CEFBS_HasSVE2, // SQDMLSLT_ZZZI_S = 3937
+    CEFBS_HasSVE2, // SQDMLSLT_ZZZ_D = 3938
+    CEFBS_HasSVE2, // SQDMLSLT_ZZZ_H = 3939
+    CEFBS_HasSVE2, // SQDMLSLT_ZZZ_S = 3940
+    CEFBS_HasNEON, // SQDMLSLi16 = 3941
+    CEFBS_HasNEON, // SQDMLSLi32 = 3942
+    CEFBS_HasNEON, // SQDMLSLv1i32_indexed = 3943
+    CEFBS_HasNEON, // SQDMLSLv1i64_indexed = 3944
+    CEFBS_HasNEON, // SQDMLSLv2i32_indexed = 3945
+    CEFBS_HasNEON, // SQDMLSLv2i32_v2i64 = 3946
+    CEFBS_HasNEON, // SQDMLSLv4i16_indexed = 3947
+    CEFBS_HasNEON, // SQDMLSLv4i16_v4i32 = 3948
+    CEFBS_HasNEON, // SQDMLSLv4i32_indexed = 3949
+    CEFBS_HasNEON, // SQDMLSLv4i32_v2i64 = 3950
+    CEFBS_HasNEON, // SQDMLSLv8i16_indexed = 3951
+    CEFBS_HasNEON, // SQDMLSLv8i16_v4i32 = 3952
+    CEFBS_HasSVE2, // SQDMULH_ZZZI_D = 3953
+    CEFBS_HasSVE2, // SQDMULH_ZZZI_H = 3954
+    CEFBS_HasSVE2, // SQDMULH_ZZZI_S = 3955
+    CEFBS_HasSVE2, // SQDMULH_ZZZ_B = 3956
+    CEFBS_HasSVE2, // SQDMULH_ZZZ_D = 3957
+    CEFBS_HasSVE2, // SQDMULH_ZZZ_H = 3958
+    CEFBS_HasSVE2, // SQDMULH_ZZZ_S = 3959
+    CEFBS_HasNEON, // SQDMULHv1i16 = 3960
+    CEFBS_HasNEON, // SQDMULHv1i16_indexed = 3961
+    CEFBS_HasNEON, // SQDMULHv1i32 = 3962
+    CEFBS_HasNEON, // SQDMULHv1i32_indexed = 3963
+    CEFBS_HasNEON, // SQDMULHv2i32 = 3964
+    CEFBS_HasNEON, // SQDMULHv2i32_indexed = 3965
+    CEFBS_HasNEON, // SQDMULHv4i16 = 3966
+    CEFBS_HasNEON, // SQDMULHv4i16_indexed = 3967
+    CEFBS_HasNEON, // SQDMULHv4i32 = 3968
+    CEFBS_HasNEON, // SQDMULHv4i32_indexed = 3969
+    CEFBS_HasNEON, // SQDMULHv8i16 = 3970
+    CEFBS_HasNEON, // SQDMULHv8i16_indexed = 3971
+    CEFBS_HasSVE2, // SQDMULLB_ZZZI_D = 3972
+    CEFBS_HasSVE2, // SQDMULLB_ZZZI_S = 3973
+    CEFBS_HasSVE2, // SQDMULLB_ZZZ_D = 3974
+    CEFBS_HasSVE2, // SQDMULLB_ZZZ_H = 3975
+    CEFBS_HasSVE2, // SQDMULLB_ZZZ_S = 3976
+    CEFBS_HasSVE2, // SQDMULLT_ZZZI_D = 3977
+    CEFBS_HasSVE2, // SQDMULLT_ZZZI_S = 3978
+    CEFBS_HasSVE2, // SQDMULLT_ZZZ_D = 3979
+    CEFBS_HasSVE2, // SQDMULLT_ZZZ_H = 3980
+    CEFBS_HasSVE2, // SQDMULLT_ZZZ_S = 3981
+    CEFBS_HasNEON, // SQDMULLi16 = 3982
+    CEFBS_HasNEON, // SQDMULLi32 = 3983
+    CEFBS_HasNEON, // SQDMULLv1i32_indexed = 3984
+    CEFBS_HasNEON, // SQDMULLv1i64_indexed = 3985
+    CEFBS_HasNEON, // SQDMULLv2i32_indexed = 3986
+    CEFBS_HasNEON, // SQDMULLv2i32_v2i64 = 3987
+    CEFBS_HasNEON, // SQDMULLv4i16_indexed = 3988
+    CEFBS_HasNEON, // SQDMULLv4i16_v4i32 = 3989
+    CEFBS_HasNEON, // SQDMULLv4i32_indexed = 3990
+    CEFBS_HasNEON, // SQDMULLv4i32_v2i64 = 3991
+    CEFBS_HasNEON, // SQDMULLv8i16_indexed = 3992
+    CEFBS_HasNEON, // SQDMULLv8i16_v4i32 = 3993
+    CEFBS_HasSVE, // SQINCB_XPiI = 3994
+    CEFBS_HasSVE, // SQINCB_XPiWdI = 3995
+    CEFBS_HasSVE, // SQINCD_XPiI = 3996
+    CEFBS_HasSVE, // SQINCD_XPiWdI = 3997
+    CEFBS_HasSVE, // SQINCD_ZPiI = 3998
+    CEFBS_HasSVE, // SQINCH_XPiI = 3999
+    CEFBS_HasSVE, // SQINCH_XPiWdI = 4000
+    CEFBS_HasSVE, // SQINCH_ZPiI = 4001
+    CEFBS_HasSVE, // SQINCP_XPWd_B = 4002
+    CEFBS_HasSVE, // SQINCP_XPWd_D = 4003
+    CEFBS_HasSVE, // SQINCP_XPWd_H = 4004
+    CEFBS_HasSVE, // SQINCP_XPWd_S = 4005
+    CEFBS_HasSVE, // SQINCP_XP_B = 4006
+    CEFBS_HasSVE, // SQINCP_XP_D = 4007
+    CEFBS_HasSVE, // SQINCP_XP_H = 4008
+    CEFBS_HasSVE, // SQINCP_XP_S = 4009
+    CEFBS_HasSVE, // SQINCP_ZP_D = 4010
+    CEFBS_HasSVE, // SQINCP_ZP_H = 4011
+    CEFBS_HasSVE, // SQINCP_ZP_S = 4012
+    CEFBS_HasSVE, // SQINCW_XPiI = 4013
+    CEFBS_HasSVE, // SQINCW_XPiWdI = 4014
+    CEFBS_HasSVE, // SQINCW_ZPiI = 4015
+    CEFBS_HasSVE2, // SQNEG_ZPmZ_B = 4016
+    CEFBS_HasSVE2, // SQNEG_ZPmZ_D = 4017
+    CEFBS_HasSVE2, // SQNEG_ZPmZ_H = 4018
+    CEFBS_HasSVE2, // SQNEG_ZPmZ_S = 4019
+    CEFBS_HasNEON, // SQNEGv16i8 = 4020
+    CEFBS_HasNEON, // SQNEGv1i16 = 4021
+    CEFBS_HasNEON, // SQNEGv1i32 = 4022
+    CEFBS_HasNEON, // SQNEGv1i64 = 4023
+    CEFBS_HasNEON, // SQNEGv1i8 = 4024
+    CEFBS_HasNEON, // SQNEGv2i32 = 4025
+    CEFBS_HasNEON, // SQNEGv2i64 = 4026
+    CEFBS_HasNEON, // SQNEGv4i16 = 4027
+    CEFBS_HasNEON, // SQNEGv4i32 = 4028
+    CEFBS_HasNEON, // SQNEGv8i16 = 4029
+    CEFBS_HasNEON, // SQNEGv8i8 = 4030
+    CEFBS_HasSVE2, // SQRDCMLAH_ZZZI_H = 4031
+    CEFBS_HasSVE2, // SQRDCMLAH_ZZZI_S = 4032
+    CEFBS_HasSVE2, // SQRDCMLAH_ZZZ_B = 4033
+    CEFBS_HasSVE2, // SQRDCMLAH_ZZZ_D = 4034
+    CEFBS_HasSVE2, // SQRDCMLAH_ZZZ_H = 4035
+    CEFBS_HasSVE2, // SQRDCMLAH_ZZZ_S = 4036
+    CEFBS_HasSVE2, // SQRDMLAH_ZZZI_D = 4037
+    CEFBS_HasSVE2, // SQRDMLAH_ZZZI_H = 4038
+    CEFBS_HasSVE2, // SQRDMLAH_ZZZI_S = 4039
+    CEFBS_HasSVE2, // SQRDMLAH_ZZZ_B = 4040
+    CEFBS_HasSVE2, // SQRDMLAH_ZZZ_D = 4041
+    CEFBS_HasSVE2, // SQRDMLAH_ZZZ_H = 4042
+    CEFBS_HasSVE2, // SQRDMLAH_ZZZ_S = 4043
+    CEFBS_HasNEON_HasRDM, // SQRDMLAHi16_indexed = 4044
+    CEFBS_HasNEON_HasRDM, // SQRDMLAHi32_indexed = 4045
+    CEFBS_HasRDM, // SQRDMLAHv1i16 = 4046
+    CEFBS_HasRDM, // SQRDMLAHv1i32 = 4047
+    CEFBS_HasNEON_HasRDM, // SQRDMLAHv2i32 = 4048
+    CEFBS_HasNEON_HasRDM, // SQRDMLAHv2i32_indexed = 4049
+    CEFBS_HasNEON_HasRDM, // SQRDMLAHv4i16 = 4050
+    CEFBS_HasNEON_HasRDM, // SQRDMLAHv4i16_indexed = 4051
+    CEFBS_HasNEON_HasRDM, // SQRDMLAHv4i32 = 4052
+    CEFBS_HasNEON_HasRDM, // SQRDMLAHv4i32_indexed = 4053
+    CEFBS_HasNEON_HasRDM, // SQRDMLAHv8i16 = 4054
+    CEFBS_HasNEON_HasRDM, // SQRDMLAHv8i16_indexed = 4055
+    CEFBS_HasSVE2, // SQRDMLSH_ZZZI_D = 4056
+    CEFBS_HasSVE2, // SQRDMLSH_ZZZI_H = 4057
+    CEFBS_HasSVE2, // SQRDMLSH_ZZZI_S = 4058
+    CEFBS_HasSVE2, // SQRDMLSH_ZZZ_B = 4059
+    CEFBS_HasSVE2, // SQRDMLSH_ZZZ_D = 4060
+    CEFBS_HasSVE2, // SQRDMLSH_ZZZ_H = 4061
+    CEFBS_HasSVE2, // SQRDMLSH_ZZZ_S = 4062
+    CEFBS_HasNEON_HasRDM, // SQRDMLSHi16_indexed = 4063
+    CEFBS_HasNEON_HasRDM, // SQRDMLSHi32_indexed = 4064
+    CEFBS_HasRDM, // SQRDMLSHv1i16 = 4065
+    CEFBS_HasRDM, // SQRDMLSHv1i32 = 4066
+    CEFBS_HasNEON_HasRDM, // SQRDMLSHv2i32 = 4067
+    CEFBS_HasNEON_HasRDM, // SQRDMLSHv2i32_indexed = 4068
+    CEFBS_HasNEON_HasRDM, // SQRDMLSHv4i16 = 4069
+    CEFBS_HasNEON_HasRDM, // SQRDMLSHv4i16_indexed = 4070
+    CEFBS_HasNEON_HasRDM, // SQRDMLSHv4i32 = 4071
+    CEFBS_HasNEON_HasRDM, // SQRDMLSHv4i32_indexed = 4072
+    CEFBS_HasNEON_HasRDM, // SQRDMLSHv8i16 = 4073
+    CEFBS_HasNEON_HasRDM, // SQRDMLSHv8i16_indexed = 4074
+    CEFBS_HasSVE2, // SQRDMULH_ZZZI_D = 4075
+    CEFBS_HasSVE2, // SQRDMULH_ZZZI_H = 4076
+    CEFBS_HasSVE2, // SQRDMULH_ZZZI_S = 4077
+    CEFBS_HasSVE2, // SQRDMULH_ZZZ_B = 4078
+    CEFBS_HasSVE2, // SQRDMULH_ZZZ_D = 4079
+    CEFBS_HasSVE2, // SQRDMULH_ZZZ_H = 4080
+    CEFBS_HasSVE2, // SQRDMULH_ZZZ_S = 4081
+    CEFBS_HasNEON, // SQRDMULHv1i16 = 4082
+    CEFBS_HasNEON, // SQRDMULHv1i16_indexed = 4083
+    CEFBS_HasNEON, // SQRDMULHv1i32 = 4084
+    CEFBS_HasNEON, // SQRDMULHv1i32_indexed = 4085
+    CEFBS_HasNEON, // SQRDMULHv2i32 = 4086
+    CEFBS_HasNEON, // SQRDMULHv2i32_indexed = 4087
+    CEFBS_HasNEON, // SQRDMULHv4i16 = 4088
+    CEFBS_HasNEON, // SQRDMULHv4i16_indexed = 4089
+    CEFBS_HasNEON, // SQRDMULHv4i32 = 4090
+    CEFBS_HasNEON, // SQRDMULHv4i32_indexed = 4091
+    CEFBS_HasNEON, // SQRDMULHv8i16 = 4092
+    CEFBS_HasNEON, // SQRDMULHv8i16_indexed = 4093
+    CEFBS_HasSVE2, // SQRSHLR_ZPmZ_B = 4094
+    CEFBS_HasSVE2, // SQRSHLR_ZPmZ_D = 4095
+    CEFBS_HasSVE2, // SQRSHLR_ZPmZ_H = 4096
+    CEFBS_HasSVE2, // SQRSHLR_ZPmZ_S = 4097
+    CEFBS_HasSVE2, // SQRSHL_ZPmZ_B = 4098
+    CEFBS_HasSVE2, // SQRSHL_ZPmZ_D = 4099
+    CEFBS_HasSVE2, // SQRSHL_ZPmZ_H = 4100
+    CEFBS_HasSVE2, // SQRSHL_ZPmZ_S = 4101
+    CEFBS_HasNEON, // SQRSHLv16i8 = 4102
+    CEFBS_HasNEON, // SQRSHLv1i16 = 4103
+    CEFBS_HasNEON, // SQRSHLv1i32 = 4104
+    CEFBS_HasNEON, // SQRSHLv1i64 = 4105
+    CEFBS_HasNEON, // SQRSHLv1i8 = 4106
+    CEFBS_HasNEON, // SQRSHLv2i32 = 4107
+    CEFBS_HasNEON, // SQRSHLv2i64 = 4108
+    CEFBS_HasNEON, // SQRSHLv4i16 = 4109
+    CEFBS_HasNEON, // SQRSHLv4i32 = 4110
+    CEFBS_HasNEON, // SQRSHLv8i16 = 4111
+    CEFBS_HasNEON, // SQRSHLv8i8 = 4112
+    CEFBS_HasSVE2, // SQRSHRNB_ZZI_B = 4113
+    CEFBS_HasSVE2, // SQRSHRNB_ZZI_H = 4114
+    CEFBS_HasSVE2, // SQRSHRNB_ZZI_S = 4115
+    CEFBS_HasSVE2, // SQRSHRNT_ZZI_B = 4116
+    CEFBS_HasSVE2, // SQRSHRNT_ZZI_H = 4117
+    CEFBS_HasSVE2, // SQRSHRNT_ZZI_S = 4118
+    CEFBS_HasNEON, // SQRSHRNb = 4119
+    CEFBS_HasNEON, // SQRSHRNh = 4120
+    CEFBS_HasNEON, // SQRSHRNs = 4121
+    CEFBS_HasNEON, // SQRSHRNv16i8_shift = 4122
+    CEFBS_HasNEON, // SQRSHRNv2i32_shift = 4123
+    CEFBS_HasNEON, // SQRSHRNv4i16_shift = 4124
+    CEFBS_HasNEON, // SQRSHRNv4i32_shift = 4125
+    CEFBS_HasNEON, // SQRSHRNv8i16_shift = 4126
+    CEFBS_HasNEON, // SQRSHRNv8i8_shift = 4127
+    CEFBS_HasSVE2, // SQRSHRUNB_ZZI_B = 4128
+    CEFBS_HasSVE2, // SQRSHRUNB_ZZI_H = 4129
+    CEFBS_HasSVE2, // SQRSHRUNB_ZZI_S = 4130
+    CEFBS_HasSVE2, // SQRSHRUNT_ZZI_B = 4131
+    CEFBS_HasSVE2, // SQRSHRUNT_ZZI_H = 4132
+    CEFBS_HasSVE2, // SQRSHRUNT_ZZI_S = 4133
+    CEFBS_HasNEON, // SQRSHRUNb = 4134
+    CEFBS_HasNEON, // SQRSHRUNh = 4135
+    CEFBS_HasNEON, // SQRSHRUNs = 4136
+    CEFBS_HasNEON, // SQRSHRUNv16i8_shift = 4137
+    CEFBS_HasNEON, // SQRSHRUNv2i32_shift = 4138
+    CEFBS_HasNEON, // SQRSHRUNv4i16_shift = 4139
+    CEFBS_HasNEON, // SQRSHRUNv4i32_shift = 4140
+    CEFBS_HasNEON, // SQRSHRUNv8i16_shift = 4141
+    CEFBS_HasNEON, // SQRSHRUNv8i8_shift = 4142
+    CEFBS_HasSVE2, // SQSHLR_ZPmZ_B = 4143
+    CEFBS_HasSVE2, // SQSHLR_ZPmZ_D = 4144
+    CEFBS_HasSVE2, // SQSHLR_ZPmZ_H = 4145
+    CEFBS_HasSVE2, // SQSHLR_ZPmZ_S = 4146
+    CEFBS_HasSVE2, // SQSHLU_ZPmI_B = 4147
+    CEFBS_HasSVE2, // SQSHLU_ZPmI_D = 4148
+    CEFBS_HasSVE2, // SQSHLU_ZPmI_H = 4149
+    CEFBS_HasSVE2, // SQSHLU_ZPmI_S = 4150
+    CEFBS_HasNEON, // SQSHLUb = 4151
+    CEFBS_HasNEON, // SQSHLUd = 4152
+    CEFBS_HasNEON, // SQSHLUh = 4153
+    CEFBS_HasNEON, // SQSHLUs = 4154
+    CEFBS_HasNEON, // SQSHLUv16i8_shift = 4155
+    CEFBS_HasNEON, // SQSHLUv2i32_shift = 4156
+    CEFBS_HasNEON, // SQSHLUv2i64_shift = 4157
+    CEFBS_HasNEON, // SQSHLUv4i16_shift = 4158
+    CEFBS_HasNEON, // SQSHLUv4i32_shift = 4159
+    CEFBS_HasNEON, // SQSHLUv8i16_shift = 4160
+    CEFBS_HasNEON, // SQSHLUv8i8_shift = 4161
+    CEFBS_HasSVE2, // SQSHL_ZPmI_B = 4162
+    CEFBS_HasSVE2, // SQSHL_ZPmI_D = 4163
+    CEFBS_HasSVE2, // SQSHL_ZPmI_H = 4164
+    CEFBS_HasSVE2, // SQSHL_ZPmI_S = 4165
+    CEFBS_HasSVE2, // SQSHL_ZPmZ_B = 4166
+    CEFBS_HasSVE2, // SQSHL_ZPmZ_D = 4167
+    CEFBS_HasSVE2, // SQSHL_ZPmZ_H = 4168
+    CEFBS_HasSVE2, // SQSHL_ZPmZ_S = 4169
+    CEFBS_HasNEON, // SQSHLb = 4170
+    CEFBS_HasNEON, // SQSHLd = 4171
+    CEFBS_HasNEON, // SQSHLh = 4172
+    CEFBS_HasNEON, // SQSHLs = 4173
+    CEFBS_HasNEON, // SQSHLv16i8 = 4174
+    CEFBS_HasNEON, // SQSHLv16i8_shift = 4175
+    CEFBS_HasNEON, // SQSHLv1i16 = 4176
+    CEFBS_HasNEON, // SQSHLv1i32 = 4177
+    CEFBS_HasNEON, // SQSHLv1i64 = 4178
+    CEFBS_HasNEON, // SQSHLv1i8 = 4179
+    CEFBS_HasNEON, // SQSHLv2i32 = 4180
+    CEFBS_HasNEON, // SQSHLv2i32_shift = 4181
+    CEFBS_HasNEON, // SQSHLv2i64 = 4182
+    CEFBS_HasNEON, // SQSHLv2i64_shift = 4183
+    CEFBS_HasNEON, // SQSHLv4i16 = 4184
+    CEFBS_HasNEON, // SQSHLv4i16_shift = 4185
+    CEFBS_HasNEON, // SQSHLv4i32 = 4186
+    CEFBS_HasNEON, // SQSHLv4i32_shift = 4187
+    CEFBS_HasNEON, // SQSHLv8i16 = 4188
+    CEFBS_HasNEON, // SQSHLv8i16_shift = 4189
+    CEFBS_HasNEON, // SQSHLv8i8 = 4190
+    CEFBS_HasNEON, // SQSHLv8i8_shift = 4191
+    CEFBS_HasSVE2, // SQSHRNB_ZZI_B = 4192
+    CEFBS_HasSVE2, // SQSHRNB_ZZI_H = 4193
+    CEFBS_HasSVE2, // SQSHRNB_ZZI_S = 4194
+    CEFBS_HasSVE2, // SQSHRNT_ZZI_B = 4195
+    CEFBS_HasSVE2, // SQSHRNT_ZZI_H = 4196
+    CEFBS_HasSVE2, // SQSHRNT_ZZI_S = 4197
+    CEFBS_HasNEON, // SQSHRNb = 4198
+    CEFBS_HasNEON, // SQSHRNh = 4199
+    CEFBS_HasNEON, // SQSHRNs = 4200
+    CEFBS_HasNEON, // SQSHRNv16i8_shift = 4201
+    CEFBS_HasNEON, // SQSHRNv2i32_shift = 4202
+    CEFBS_HasNEON, // SQSHRNv4i16_shift = 4203
+    CEFBS_HasNEON, // SQSHRNv4i32_shift = 4204
+    CEFBS_HasNEON, // SQSHRNv8i16_shift = 4205
+    CEFBS_HasNEON, // SQSHRNv8i8_shift = 4206
+    CEFBS_HasSVE2, // SQSHRUNB_ZZI_B = 4207
+    CEFBS_HasSVE2, // SQSHRUNB_ZZI_H = 4208
+    CEFBS_HasSVE2, // SQSHRUNB_ZZI_S = 4209
+    CEFBS_HasSVE2, // SQSHRUNT_ZZI_B = 4210
+    CEFBS_HasSVE2, // SQSHRUNT_ZZI_H = 4211
+    CEFBS_HasSVE2, // SQSHRUNT_ZZI_S = 4212
+    CEFBS_HasNEON, // SQSHRUNb = 4213
+    CEFBS_HasNEON, // SQSHRUNh = 4214
+    CEFBS_HasNEON, // SQSHRUNs = 4215
+    CEFBS_HasNEON, // SQSHRUNv16i8_shift = 4216
+    CEFBS_HasNEON, // SQSHRUNv2i32_shift = 4217
+    CEFBS_HasNEON, // SQSHRUNv4i16_shift = 4218
+    CEFBS_HasNEON, // SQSHRUNv4i32_shift = 4219
+    CEFBS_HasNEON, // SQSHRUNv8i16_shift = 4220
+    CEFBS_HasNEON, // SQSHRUNv8i8_shift = 4221
+    CEFBS_HasSVE2, // SQSUBR_ZPmZ_B = 4222
+    CEFBS_HasSVE2, // SQSUBR_ZPmZ_D = 4223
+    CEFBS_HasSVE2, // SQSUBR_ZPmZ_H = 4224
+    CEFBS_HasSVE2, // SQSUBR_ZPmZ_S = 4225
+    CEFBS_HasSVE, // SQSUB_ZI_B = 4226
+    CEFBS_HasSVE, // SQSUB_ZI_D = 4227
+    CEFBS_HasSVE, // SQSUB_ZI_H = 4228
+    CEFBS_HasSVE, // SQSUB_ZI_S = 4229
+    CEFBS_HasSVE2, // SQSUB_ZPmZ_B = 4230
+    CEFBS_HasSVE2, // SQSUB_ZPmZ_D = 4231
+    CEFBS_HasSVE2, // SQSUB_ZPmZ_H = 4232
+    CEFBS_HasSVE2, // SQSUB_ZPmZ_S = 4233
+    CEFBS_HasSVE, // SQSUB_ZZZ_B = 4234
+    CEFBS_HasSVE, // SQSUB_ZZZ_D = 4235
+    CEFBS_HasSVE, // SQSUB_ZZZ_H = 4236
+    CEFBS_HasSVE, // SQSUB_ZZZ_S = 4237
+    CEFBS_HasNEON, // SQSUBv16i8 = 4238
+    CEFBS_HasNEON, // SQSUBv1i16 = 4239
+    CEFBS_HasNEON, // SQSUBv1i32 = 4240
+    CEFBS_HasNEON, // SQSUBv1i64 = 4241
+    CEFBS_HasNEON, // SQSUBv1i8 = 4242
+    CEFBS_HasNEON, // SQSUBv2i32 = 4243
+    CEFBS_HasNEON, // SQSUBv2i64 = 4244
+    CEFBS_HasNEON, // SQSUBv4i16 = 4245
+    CEFBS_HasNEON, // SQSUBv4i32 = 4246
+    CEFBS_HasNEON, // SQSUBv8i16 = 4247
+    CEFBS_HasNEON, // SQSUBv8i8 = 4248
+    CEFBS_HasSVE2, // SQXTNB_ZZ_B = 4249
+    CEFBS_HasSVE2, // SQXTNB_ZZ_H = 4250
+    CEFBS_HasSVE2, // SQXTNB_ZZ_S = 4251
+    CEFBS_HasSVE2, // SQXTNT_ZZ_B = 4252
+    CEFBS_HasSVE2, // SQXTNT_ZZ_H = 4253
+    CEFBS_HasSVE2, // SQXTNT_ZZ_S = 4254
+    CEFBS_HasNEON, // SQXTNv16i8 = 4255
+    CEFBS_HasNEON, // SQXTNv1i16 = 4256
+    CEFBS_HasNEON, // SQXTNv1i32 = 4257
+    CEFBS_HasNEON, // SQXTNv1i8 = 4258
+    CEFBS_HasNEON, // SQXTNv2i32 = 4259
+    CEFBS_HasNEON, // SQXTNv4i16 = 4260
+    CEFBS_HasNEON, // SQXTNv4i32 = 4261
+    CEFBS_HasNEON, // SQXTNv8i16 = 4262
+    CEFBS_HasNEON, // SQXTNv8i8 = 4263
+    CEFBS_HasSVE2, // SQXTUNB_ZZ_B = 4264
+    CEFBS_HasSVE2, // SQXTUNB_ZZ_H = 4265
+    CEFBS_HasSVE2, // SQXTUNB_ZZ_S = 4266
+    CEFBS_HasSVE2, // SQXTUNT_ZZ_B = 4267
+    CEFBS_HasSVE2, // SQXTUNT_ZZ_H = 4268
+    CEFBS_HasSVE2, // SQXTUNT_ZZ_S = 4269
+    CEFBS_HasNEON, // SQXTUNv16i8 = 4270
+    CEFBS_HasNEON, // SQXTUNv1i16 = 4271
+    CEFBS_HasNEON, // SQXTUNv1i32 = 4272
+    CEFBS_HasNEON, // SQXTUNv1i8 = 4273
+    CEFBS_HasNEON, // SQXTUNv2i32 = 4274
+    CEFBS_HasNEON, // SQXTUNv4i16 = 4275
+    CEFBS_HasNEON, // SQXTUNv4i32 = 4276
+    CEFBS_HasNEON, // SQXTUNv8i16 = 4277
+    CEFBS_HasNEON, // SQXTUNv8i8 = 4278
+    CEFBS_HasSVE2, // SRHADD_ZPmZ_B = 4279
+    CEFBS_HasSVE2, // SRHADD_ZPmZ_D = 4280
+    CEFBS_HasSVE2, // SRHADD_ZPmZ_H = 4281
+    CEFBS_HasSVE2, // SRHADD_ZPmZ_S = 4282
+    CEFBS_HasNEON, // SRHADDv16i8 = 4283
+    CEFBS_HasNEON, // SRHADDv2i32 = 4284
+    CEFBS_HasNEON, // SRHADDv4i16 = 4285
+    CEFBS_HasNEON, // SRHADDv4i32 = 4286
+    CEFBS_HasNEON, // SRHADDv8i16 = 4287
+    CEFBS_HasNEON, // SRHADDv8i8 = 4288
+    CEFBS_HasSVE2, // SRI_ZZI_B = 4289
+    CEFBS_HasSVE2, // SRI_ZZI_D = 4290
+    CEFBS_HasSVE2, // SRI_ZZI_H = 4291
+    CEFBS_HasSVE2, // SRI_ZZI_S = 4292
+    CEFBS_HasNEON, // SRId = 4293
+    CEFBS_HasNEON, // SRIv16i8_shift = 4294
+    CEFBS_HasNEON, // SRIv2i32_shift = 4295
+    CEFBS_HasNEON, // SRIv2i64_shift = 4296
+    CEFBS_HasNEON, // SRIv4i16_shift = 4297
+    CEFBS_HasNEON, // SRIv4i32_shift = 4298
+    CEFBS_HasNEON, // SRIv8i16_shift = 4299
+    CEFBS_HasNEON, // SRIv8i8_shift = 4300
+    CEFBS_HasSVE2, // SRSHLR_ZPmZ_B = 4301
+    CEFBS_HasSVE2, // SRSHLR_ZPmZ_D = 4302
+    CEFBS_HasSVE2, // SRSHLR_ZPmZ_H = 4303
+    CEFBS_HasSVE2, // SRSHLR_ZPmZ_S = 4304
+    CEFBS_HasSVE2, // SRSHL_ZPmZ_B = 4305
+    CEFBS_HasSVE2, // SRSHL_ZPmZ_D = 4306
+    CEFBS_HasSVE2, // SRSHL_ZPmZ_H = 4307
+    CEFBS_HasSVE2, // SRSHL_ZPmZ_S = 4308
+    CEFBS_HasNEON, // SRSHLv16i8 = 4309
+    CEFBS_HasNEON, // SRSHLv1i64 = 4310
+    CEFBS_HasNEON, // SRSHLv2i32 = 4311
+    CEFBS_HasNEON, // SRSHLv2i64 = 4312
+    CEFBS_HasNEON, // SRSHLv4i16 = 4313
+    CEFBS_HasNEON, // SRSHLv4i32 = 4314
+    CEFBS_HasNEON, // SRSHLv8i16 = 4315
+    CEFBS_HasNEON, // SRSHLv8i8 = 4316
+    CEFBS_HasSVE2, // SRSHR_ZPmI_B = 4317
+    CEFBS_HasSVE2, // SRSHR_ZPmI_D = 4318
+    CEFBS_HasSVE2, // SRSHR_ZPmI_H = 4319
+    CEFBS_HasSVE2, // SRSHR_ZPmI_S = 4320
+    CEFBS_HasNEON, // SRSHRd = 4321
+    CEFBS_HasNEON, // SRSHRv16i8_shift = 4322
+    CEFBS_HasNEON, // SRSHRv2i32_shift = 4323
+    CEFBS_HasNEON, // SRSHRv2i64_shift = 4324
+    CEFBS_HasNEON, // SRSHRv4i16_shift = 4325
+    CEFBS_HasNEON, // SRSHRv4i32_shift = 4326
+    CEFBS_HasNEON, // SRSHRv8i16_shift = 4327
+    CEFBS_HasNEON, // SRSHRv8i8_shift = 4328
+    CEFBS_HasSVE2, // SRSRA_ZZI_B = 4329
+    CEFBS_HasSVE2, // SRSRA_ZZI_D = 4330
+    CEFBS_HasSVE2, // SRSRA_ZZI_H = 4331
+    CEFBS_HasSVE2, // SRSRA_ZZI_S = 4332
+    CEFBS_HasNEON, // SRSRAd = 4333
+    CEFBS_HasNEON, // SRSRAv16i8_shift = 4334
+    CEFBS_HasNEON, // SRSRAv2i32_shift = 4335
+    CEFBS_HasNEON, // SRSRAv2i64_shift = 4336
+    CEFBS_HasNEON, // SRSRAv4i16_shift = 4337
+    CEFBS_HasNEON, // SRSRAv4i32_shift = 4338
+    CEFBS_HasNEON, // SRSRAv8i16_shift = 4339
+    CEFBS_HasNEON, // SRSRAv8i8_shift = 4340
+    CEFBS_HasSVE2, // SSHLLB_ZZI_D = 4341
+    CEFBS_HasSVE2, // SSHLLB_ZZI_H = 4342
+    CEFBS_HasSVE2, // SSHLLB_ZZI_S = 4343
+    CEFBS_HasSVE2, // SSHLLT_ZZI_D = 4344
+    CEFBS_HasSVE2, // SSHLLT_ZZI_H = 4345
+    CEFBS_HasSVE2, // SSHLLT_ZZI_S = 4346
+    CEFBS_HasNEON, // SSHLLv16i8_shift = 4347
+    CEFBS_HasNEON, // SSHLLv2i32_shift = 4348
+    CEFBS_HasNEON, // SSHLLv4i16_shift = 4349
+    CEFBS_HasNEON, // SSHLLv4i32_shift = 4350
+    CEFBS_HasNEON, // SSHLLv8i16_shift = 4351
+    CEFBS_HasNEON, // SSHLLv8i8_shift = 4352
+    CEFBS_HasNEON, // SSHLv16i8 = 4353
+    CEFBS_HasNEON, // SSHLv1i64 = 4354
+    CEFBS_HasNEON, // SSHLv2i32 = 4355
+    CEFBS_HasNEON, // SSHLv2i64 = 4356
+    CEFBS_HasNEON, // SSHLv4i16 = 4357
+    CEFBS_HasNEON, // SSHLv4i32 = 4358
+    CEFBS_HasNEON, // SSHLv8i16 = 4359
+    CEFBS_HasNEON, // SSHLv8i8 = 4360
+    CEFBS_HasNEON, // SSHRd = 4361
+    CEFBS_HasNEON, // SSHRv16i8_shift = 4362
+    CEFBS_HasNEON, // SSHRv2i32_shift = 4363
+    CEFBS_HasNEON, // SSHRv2i64_shift = 4364
+    CEFBS_HasNEON, // SSHRv4i16_shift = 4365
+    CEFBS_HasNEON, // SSHRv4i32_shift = 4366
+    CEFBS_HasNEON, // SSHRv8i16_shift = 4367
+    CEFBS_HasNEON, // SSHRv8i8_shift = 4368
+    CEFBS_HasSVE2, // SSRA_ZZI_B = 4369
+    CEFBS_HasSVE2, // SSRA_ZZI_D = 4370
+    CEFBS_HasSVE2, // SSRA_ZZI_H = 4371
+    CEFBS_HasSVE2, // SSRA_ZZI_S = 4372
+    CEFBS_HasNEON, // SSRAd = 4373
+    CEFBS_HasNEON, // SSRAv16i8_shift = 4374
+    CEFBS_HasNEON, // SSRAv2i32_shift = 4375
+    CEFBS_HasNEON, // SSRAv2i64_shift = 4376
+    CEFBS_HasNEON, // SSRAv4i16_shift = 4377
+    CEFBS_HasNEON, // SSRAv4i32_shift = 4378
+    CEFBS_HasNEON, // SSRAv8i16_shift = 4379
+    CEFBS_HasNEON, // SSRAv8i8_shift = 4380
+    CEFBS_HasSVE, // SST1B_D_IMM = 4381
+    CEFBS_HasSVE, // SST1B_D_REAL = 4382
+    CEFBS_HasSVE, // SST1B_D_SXTW = 4383
+    CEFBS_HasSVE, // SST1B_D_UXTW = 4384
+    CEFBS_HasSVE, // SST1B_S_IMM = 4385
+    CEFBS_HasSVE, // SST1B_S_SXTW = 4386
+    CEFBS_HasSVE, // SST1B_S_UXTW = 4387
+    CEFBS_HasSVE, // SST1D_IMM = 4388
+    CEFBS_HasSVE, // SST1D_REAL = 4389
+    CEFBS_HasSVE, // SST1D_SCALED_SCALED_REAL = 4390
+    CEFBS_HasSVE, // SST1D_SXTW = 4391
+    CEFBS_HasSVE, // SST1D_SXTW_SCALED = 4392
+    CEFBS_HasSVE, // SST1D_UXTW = 4393
+    CEFBS_HasSVE, // SST1D_UXTW_SCALED = 4394
+    CEFBS_HasSVE, // SST1H_D_IMM = 4395
+    CEFBS_HasSVE, // SST1H_D_REAL = 4396
+    CEFBS_HasSVE, // SST1H_D_SCALED_SCALED_REAL = 4397
+    CEFBS_HasSVE, // SST1H_D_SXTW = 4398
+    CEFBS_HasSVE, // SST1H_D_SXTW_SCALED = 4399
+    CEFBS_HasSVE, // SST1H_D_UXTW = 4400
+    CEFBS_HasSVE, // SST1H_D_UXTW_SCALED = 4401
+    CEFBS_HasSVE, // SST1H_S_IMM = 4402
+    CEFBS_HasSVE, // SST1H_S_SXTW = 4403
+    CEFBS_HasSVE, // SST1H_S_SXTW_SCALED = 4404
+    CEFBS_HasSVE, // SST1H_S_UXTW = 4405
+    CEFBS_HasSVE, // SST1H_S_UXTW_SCALED = 4406
+    CEFBS_HasSVE, // SST1W_D_IMM = 4407
+    CEFBS_HasSVE, // SST1W_D_REAL = 4408
+    CEFBS_HasSVE, // SST1W_D_SCALED_SCALED_REAL = 4409
+    CEFBS_HasSVE, // SST1W_D_SXTW = 4410
+    CEFBS_HasSVE, // SST1W_D_SXTW_SCALED = 4411
+    CEFBS_HasSVE, // SST1W_D_UXTW = 4412
+    CEFBS_HasSVE, // SST1W_D_UXTW_SCALED = 4413
+    CEFBS_HasSVE, // SST1W_IMM = 4414
+    CEFBS_HasSVE, // SST1W_SXTW = 4415
+    CEFBS_HasSVE, // SST1W_SXTW_SCALED = 4416
+    CEFBS_HasSVE, // SST1W_UXTW = 4417
+    CEFBS_HasSVE, // SST1W_UXTW_SCALED = 4418
+    CEFBS_HasSVE2, // SSUBLBT_ZZZ_D = 4419
+    CEFBS_HasSVE2, // SSUBLBT_ZZZ_H = 4420
+    CEFBS_HasSVE2, // SSUBLBT_ZZZ_S = 4421
+    CEFBS_HasSVE2, // SSUBLB_ZZZ_D = 4422
+    CEFBS_HasSVE2, // SSUBLB_ZZZ_H = 4423
+    CEFBS_HasSVE2, // SSUBLB_ZZZ_S = 4424
+    CEFBS_HasSVE2, // SSUBLTB_ZZZ_D = 4425
+    CEFBS_HasSVE2, // SSUBLTB_ZZZ_H = 4426
+    CEFBS_HasSVE2, // SSUBLTB_ZZZ_S = 4427
+    CEFBS_HasSVE2, // SSUBLT_ZZZ_D = 4428
+    CEFBS_HasSVE2, // SSUBLT_ZZZ_H = 4429
+    CEFBS_HasSVE2, // SSUBLT_ZZZ_S = 4430
+    CEFBS_HasNEON, // SSUBLv16i8_v8i16 = 4431
+    CEFBS_HasNEON, // SSUBLv2i32_v2i64 = 4432
+    CEFBS_HasNEON, // SSUBLv4i16_v4i32 = 4433
+    CEFBS_HasNEON, // SSUBLv4i32_v2i64 = 4434
+    CEFBS_HasNEON, // SSUBLv8i16_v4i32 = 4435
+    CEFBS_HasNEON, // SSUBLv8i8_v8i16 = 4436
+    CEFBS_HasSVE2, // SSUBWB_ZZZ_D = 4437
+    CEFBS_HasSVE2, // SSUBWB_ZZZ_H = 4438
+    CEFBS_HasSVE2, // SSUBWB_ZZZ_S = 4439
+    CEFBS_HasSVE2, // SSUBWT_ZZZ_D = 4440
+    CEFBS_HasSVE2, // SSUBWT_ZZZ_H = 4441
+    CEFBS_HasSVE2, // SSUBWT_ZZZ_S = 4442
+    CEFBS_HasNEON, // SSUBWv16i8_v8i16 = 4443
+    CEFBS_HasNEON, // SSUBWv2i32_v2i64 = 4444
+    CEFBS_HasNEON, // SSUBWv4i16_v4i32 = 4445
+    CEFBS_HasNEON, // SSUBWv4i32_v2i64 = 4446
+    CEFBS_HasNEON, // SSUBWv8i16_v4i32 = 4447
+    CEFBS_HasNEON, // SSUBWv8i8_v8i16 = 4448
+    CEFBS_HasSVE, // ST1B = 4449
+    CEFBS_HasSVE, // ST1B_D = 4450
+    CEFBS_HasSVE, // ST1B_D_IMM = 4451
+    CEFBS_HasSVE, // ST1B_H = 4452
+    CEFBS_HasSVE, // ST1B_H_IMM = 4453
+    CEFBS_HasSVE, // ST1B_IMM = 4454
+    CEFBS_HasSVE, // ST1B_S = 4455
+    CEFBS_HasSVE, // ST1B_S_IMM = 4456
+    CEFBS_HasSVE, // ST1D = 4457
+    CEFBS_HasSVE, // ST1D_IMM = 4458
+    CEFBS_HasNEON, // ST1Fourv16b = 4459
+    CEFBS_HasNEON, // ST1Fourv16b_POST = 4460
+    CEFBS_HasNEON, // ST1Fourv1d = 4461
+    CEFBS_HasNEON, // ST1Fourv1d_POST = 4462
+    CEFBS_HasNEON, // ST1Fourv2d = 4463
+    CEFBS_HasNEON, // ST1Fourv2d_POST = 4464
+    CEFBS_HasNEON, // ST1Fourv2s = 4465
+    CEFBS_HasNEON, // ST1Fourv2s_POST = 4466
+    CEFBS_HasNEON, // ST1Fourv4h = 4467
+    CEFBS_HasNEON, // ST1Fourv4h_POST = 4468
+    CEFBS_HasNEON, // ST1Fourv4s = 4469
+    CEFBS_HasNEON, // ST1Fourv4s_POST = 4470
+    CEFBS_HasNEON, // ST1Fourv8b = 4471
+    CEFBS_HasNEON, // ST1Fourv8b_POST = 4472
+    CEFBS_HasNEON, // ST1Fourv8h = 4473
+    CEFBS_HasNEON, // ST1Fourv8h_POST = 4474
+    CEFBS_HasSVE, // ST1H = 4475
+    CEFBS_HasSVE, // ST1H_D = 4476
+    CEFBS_HasSVE, // ST1H_D_IMM = 4477
+    CEFBS_HasSVE, // ST1H_IMM = 4478
+    CEFBS_HasSVE, // ST1H_S = 4479
+    CEFBS_HasSVE, // ST1H_S_IMM = 4480
+    CEFBS_HasNEON, // ST1Onev16b = 4481
+    CEFBS_HasNEON, // ST1Onev16b_POST = 4482
+    CEFBS_HasNEON, // ST1Onev1d = 4483
+    CEFBS_HasNEON, // ST1Onev1d_POST = 4484
+    CEFBS_HasNEON, // ST1Onev2d = 4485
+    CEFBS_HasNEON, // ST1Onev2d_POST = 4486
+    CEFBS_HasNEON, // ST1Onev2s = 4487
+    CEFBS_HasNEON, // ST1Onev2s_POST = 4488
+    CEFBS_HasNEON, // ST1Onev4h = 4489
+    CEFBS_HasNEON, // ST1Onev4h_POST = 4490
+    CEFBS_HasNEON, // ST1Onev4s = 4491
+    CEFBS_HasNEON, // ST1Onev4s_POST = 4492
+    CEFBS_HasNEON, // ST1Onev8b = 4493
+    CEFBS_HasNEON, // ST1Onev8b_POST = 4494
+    CEFBS_HasNEON, // ST1Onev8h = 4495
+    CEFBS_HasNEON, // ST1Onev8h_POST = 4496
+    CEFBS_HasNEON, // ST1Threev16b = 4497
+    CEFBS_HasNEON, // ST1Threev16b_POST = 4498
+    CEFBS_HasNEON, // ST1Threev1d = 4499
+    CEFBS_HasNEON, // ST1Threev1d_POST = 4500
+    CEFBS_HasNEON, // ST1Threev2d = 4501
+    CEFBS_HasNEON, // ST1Threev2d_POST = 4502
+    CEFBS_HasNEON, // ST1Threev2s = 4503
+    CEFBS_HasNEON, // ST1Threev2s_POST = 4504
+    CEFBS_HasNEON, // ST1Threev4h = 4505
+    CEFBS_HasNEON, // ST1Threev4h_POST = 4506
+    CEFBS_HasNEON, // ST1Threev4s = 4507
+    CEFBS_HasNEON, // ST1Threev4s_POST = 4508
+    CEFBS_HasNEON, // ST1Threev8b = 4509
+    CEFBS_HasNEON, // ST1Threev8b_POST = 4510
+    CEFBS_HasNEON, // ST1Threev8h = 4511
+    CEFBS_HasNEON, // ST1Threev8h_POST = 4512
+    CEFBS_HasNEON, // ST1Twov16b = 4513
+    CEFBS_HasNEON, // ST1Twov16b_POST = 4514
+    CEFBS_HasNEON, // ST1Twov1d = 4515
+    CEFBS_HasNEON, // ST1Twov1d_POST = 4516
+    CEFBS_HasNEON, // ST1Twov2d = 4517
+    CEFBS_HasNEON, // ST1Twov2d_POST = 4518
+    CEFBS_HasNEON, // ST1Twov2s = 4519
+    CEFBS_HasNEON, // ST1Twov2s_POST = 4520
+    CEFBS_HasNEON, // ST1Twov4h = 4521
+    CEFBS_HasNEON, // ST1Twov4h_POST = 4522
+    CEFBS_HasNEON, // ST1Twov4s = 4523
+    CEFBS_HasNEON, // ST1Twov4s_POST = 4524
+    CEFBS_HasNEON, // ST1Twov8b = 4525
+    CEFBS_HasNEON, // ST1Twov8b_POST = 4526
+    CEFBS_HasNEON, // ST1Twov8h = 4527
+    CEFBS_HasNEON, // ST1Twov8h_POST = 4528
+    CEFBS_HasSVE, // ST1W = 4529
+    CEFBS_HasSVE, // ST1W_D = 4530
+    CEFBS_HasSVE, // ST1W_D_IMM = 4531
+    CEFBS_HasSVE, // ST1W_IMM = 4532
+    CEFBS_HasNEON, // ST1i16 = 4533
+    CEFBS_HasNEON, // ST1i16_POST = 4534
+    CEFBS_HasNEON, // ST1i32 = 4535
+    CEFBS_HasNEON, // ST1i32_POST = 4536
+    CEFBS_HasNEON, // ST1i64 = 4537
+    CEFBS_HasNEON, // ST1i64_POST = 4538
+    CEFBS_HasNEON, // ST1i8 = 4539
+    CEFBS_HasNEON, // ST1i8_POST = 4540
+    CEFBS_HasSVE, // ST2B = 4541
+    CEFBS_HasSVE, // ST2B_IMM = 4542
+    CEFBS_HasSVE, // ST2D = 4543
+    CEFBS_HasSVE, // ST2D_IMM = 4544
+    CEFBS_HasMTE, // ST2GOffset = 4545
+    CEFBS_HasMTE, // ST2GPostIndex = 4546
+    CEFBS_HasMTE, // ST2GPreIndex = 4547
+    CEFBS_HasSVE, // ST2H = 4548
+    CEFBS_HasSVE, // ST2H_IMM = 4549
+    CEFBS_HasNEON, // ST2Twov16b = 4550
+    CEFBS_HasNEON, // ST2Twov16b_POST = 4551
+    CEFBS_HasNEON, // ST2Twov2d = 4552
+    CEFBS_HasNEON, // ST2Twov2d_POST = 4553
+    CEFBS_HasNEON, // ST2Twov2s = 4554
+    CEFBS_HasNEON, // ST2Twov2s_POST = 4555
+    CEFBS_HasNEON, // ST2Twov4h = 4556
+    CEFBS_HasNEON, // ST2Twov4h_POST = 4557
+    CEFBS_HasNEON, // ST2Twov4s = 4558
+    CEFBS_HasNEON, // ST2Twov4s_POST = 4559
+    CEFBS_HasNEON, // ST2Twov8b = 4560
+    CEFBS_HasNEON, // ST2Twov8b_POST = 4561
+    CEFBS_HasNEON, // ST2Twov8h = 4562
+    CEFBS_HasNEON, // ST2Twov8h_POST = 4563
+    CEFBS_HasSVE, // ST2W = 4564
+    CEFBS_HasSVE, // ST2W_IMM = 4565
+    CEFBS_HasNEON, // ST2i16 = 4566
+    CEFBS_HasNEON, // ST2i16_POST = 4567
+    CEFBS_HasNEON, // ST2i32 = 4568
+    CEFBS_HasNEON, // ST2i32_POST = 4569
+    CEFBS_HasNEON, // ST2i64 = 4570
+    CEFBS_HasNEON, // ST2i64_POST = 4571
+    CEFBS_HasNEON, // ST2i8 = 4572
+    CEFBS_HasNEON, // ST2i8_POST = 4573
+    CEFBS_HasSVE, // ST3B = 4574
+    CEFBS_HasSVE, // ST3B_IMM = 4575
+    CEFBS_HasSVE, // ST3D = 4576
+    CEFBS_HasSVE, // ST3D_IMM = 4577
+    CEFBS_HasSVE, // ST3H = 4578
+    CEFBS_HasSVE, // ST3H_IMM = 4579
+    CEFBS_HasNEON, // ST3Threev16b = 4580
+    CEFBS_HasNEON, // ST3Threev16b_POST = 4581
+    CEFBS_HasNEON, // ST3Threev2d = 4582
+    CEFBS_HasNEON, // ST3Threev2d_POST = 4583
+    CEFBS_HasNEON, // ST3Threev2s = 4584
+    CEFBS_HasNEON, // ST3Threev2s_POST = 4585
+    CEFBS_HasNEON, // ST3Threev4h = 4586
+    CEFBS_HasNEON, // ST3Threev4h_POST = 4587
+    CEFBS_HasNEON, // ST3Threev4s = 4588
+    CEFBS_HasNEON, // ST3Threev4s_POST = 4589
+    CEFBS_HasNEON, // ST3Threev8b = 4590
+    CEFBS_HasNEON, // ST3Threev8b_POST = 4591
+    CEFBS_HasNEON, // ST3Threev8h = 4592
+    CEFBS_HasNEON, // ST3Threev8h_POST = 4593
+    CEFBS_HasSVE, // ST3W = 4594
+    CEFBS_HasSVE, // ST3W_IMM = 4595
+    CEFBS_HasNEON, // ST3i16 = 4596
+    CEFBS_HasNEON, // ST3i16_POST = 4597
+    CEFBS_HasNEON, // ST3i32 = 4598
+    CEFBS_HasNEON, // ST3i32_POST = 4599
+    CEFBS_HasNEON, // ST3i64 = 4600
+    CEFBS_HasNEON, // ST3i64_POST = 4601
+    CEFBS_HasNEON, // ST3i8 = 4602
+    CEFBS_HasNEON, // ST3i8_POST = 4603
+    CEFBS_HasSVE, // ST4B = 4604
+    CEFBS_HasSVE, // ST4B_IMM = 4605
+    CEFBS_HasSVE, // ST4D = 4606
+    CEFBS_HasSVE, // ST4D_IMM = 4607
+    CEFBS_HasNEON, // ST4Fourv16b = 4608
+    CEFBS_HasNEON, // ST4Fourv16b_POST = 4609
+    CEFBS_HasNEON, // ST4Fourv2d = 4610
+    CEFBS_HasNEON, // ST4Fourv2d_POST = 4611
+    CEFBS_HasNEON, // ST4Fourv2s = 4612
+    CEFBS_HasNEON, // ST4Fourv2s_POST = 4613
+    CEFBS_HasNEON, // ST4Fourv4h = 4614
+    CEFBS_HasNEON, // ST4Fourv4h_POST = 4615
+    CEFBS_HasNEON, // ST4Fourv4s = 4616
+    CEFBS_HasNEON, // ST4Fourv4s_POST = 4617
+    CEFBS_HasNEON, // ST4Fourv8b = 4618
+    CEFBS_HasNEON, // ST4Fourv8b_POST = 4619
+    CEFBS_HasNEON, // ST4Fourv8h = 4620
+    CEFBS_HasNEON, // ST4Fourv8h_POST = 4621
+    CEFBS_HasSVE, // ST4H = 4622
+    CEFBS_HasSVE, // ST4H_IMM = 4623
+    CEFBS_HasSVE, // ST4W = 4624
+    CEFBS_HasSVE, // ST4W_IMM = 4625
+    CEFBS_HasNEON, // ST4i16 = 4626
+    CEFBS_HasNEON, // ST4i16_POST = 4627
+    CEFBS_HasNEON, // ST4i32 = 4628
+    CEFBS_HasNEON, // ST4i32_POST = 4629
+    CEFBS_HasNEON, // ST4i64 = 4630
+    CEFBS_HasNEON, // ST4i64_POST = 4631
+    CEFBS_HasNEON, // ST4i8 = 4632
+    CEFBS_HasNEON, // ST4i8_POST = 4633
+    CEFBS_HasMTE, // STGM = 4634
+    CEFBS_HasMTE, // STGOffset = 4635
+    CEFBS_HasMTE, // STGPi = 4636
+    CEFBS_HasMTE, // STGPostIndex = 4637
+    CEFBS_HasMTE, // STGPpost = 4638
+    CEFBS_HasMTE, // STGPpre = 4639
+    CEFBS_HasMTE, // STGPreIndex = 4640
+    CEFBS_HasLOR, // STLLRB = 4641
+    CEFBS_HasLOR, // STLLRH = 4642
+    CEFBS_HasLOR, // STLLRW = 4643
+    CEFBS_HasLOR, // STLLRX = 4644
+    CEFBS_None, // STLRB = 4645
+    CEFBS_None, // STLRH = 4646
+    CEFBS_None, // STLRW = 4647
+    CEFBS_None, // STLRX = 4648
+    CEFBS_HasRCPC_IMMO, // STLURBi = 4649
+    CEFBS_HasRCPC_IMMO, // STLURHi = 4650
+    CEFBS_HasRCPC_IMMO, // STLURWi = 4651
+    CEFBS_HasRCPC_IMMO, // STLURXi = 4652
+    CEFBS_None, // STLXPW = 4653
+    CEFBS_None, // STLXPX = 4654
+    CEFBS_None, // STLXRB = 4655
+    CEFBS_None, // STLXRH = 4656
+    CEFBS_None, // STLXRW = 4657
+    CEFBS_None, // STLXRX = 4658
+    CEFBS_None, // STNPDi = 4659
+    CEFBS_None, // STNPQi = 4660
+    CEFBS_None, // STNPSi = 4661
+    CEFBS_None, // STNPWi = 4662
+    CEFBS_None, // STNPXi = 4663
+    CEFBS_HasSVE, // STNT1B_ZRI = 4664
+    CEFBS_HasSVE, // STNT1B_ZRR = 4665
+    CEFBS_HasSVE2, // STNT1B_ZZR_D_REAL = 4666
+    CEFBS_HasSVE2, // STNT1B_ZZR_S_REAL = 4667
+    CEFBS_HasSVE, // STNT1D_ZRI = 4668
+    CEFBS_HasSVE, // STNT1D_ZRR = 4669
+    CEFBS_HasSVE2, // STNT1D_ZZR_D_REAL = 4670
+    CEFBS_HasSVE, // STNT1H_ZRI = 4671
+    CEFBS_HasSVE, // STNT1H_ZRR = 4672
+    CEFBS_HasSVE2, // STNT1H_ZZR_D_REAL = 4673
+    CEFBS_HasSVE2, // STNT1H_ZZR_S_REAL = 4674
+    CEFBS_HasSVE, // STNT1W_ZRI = 4675
+    CEFBS_HasSVE, // STNT1W_ZRR = 4676
+    CEFBS_HasSVE2, // STNT1W_ZZR_D_REAL = 4677
+    CEFBS_HasSVE2, // STNT1W_ZZR_S_REAL = 4678
+    CEFBS_None, // STPDi = 4679
+    CEFBS_None, // STPDpost = 4680
+    CEFBS_None, // STPDpre = 4681
+    CEFBS_None, // STPQi = 4682
+    CEFBS_None, // STPQpost = 4683
+    CEFBS_None, // STPQpre = 4684
+    CEFBS_None, // STPSi = 4685
+    CEFBS_None, // STPSpost = 4686
+    CEFBS_None, // STPSpre = 4687
+    CEFBS_None, // STPWi = 4688
+    CEFBS_None, // STPWpost = 4689
+    CEFBS_None, // STPWpre = 4690
+    CEFBS_None, // STPXi = 4691
+    CEFBS_None, // STPXpost = 4692
+    CEFBS_None, // STPXpre = 4693
+    CEFBS_None, // STRBBpost = 4694
+    CEFBS_None, // STRBBpre = 4695
+    CEFBS_None, // STRBBroW = 4696
+    CEFBS_None, // STRBBroX = 4697
+    CEFBS_None, // STRBBui = 4698
+    CEFBS_None, // STRBpost = 4699
+    CEFBS_None, // STRBpre = 4700
+    CEFBS_None, // STRBroW = 4701
+    CEFBS_None, // STRBroX = 4702
+    CEFBS_None, // STRBui = 4703
+    CEFBS_None, // STRDpost = 4704
+    CEFBS_None, // STRDpre = 4705
+    CEFBS_None, // STRDroW = 4706
+    CEFBS_None, // STRDroX = 4707
+    CEFBS_None, // STRDui = 4708
+    CEFBS_None, // STRHHpost = 4709
+    CEFBS_None, // STRHHpre = 4710
+    CEFBS_None, // STRHHroW = 4711
+    CEFBS_None, // STRHHroX = 4712
+    CEFBS_None, // STRHHui = 4713
+    CEFBS_None, // STRHpost = 4714
+    CEFBS_None, // STRHpre = 4715
+    CEFBS_None, // STRHroW = 4716
+    CEFBS_None, // STRHroX = 4717
+    CEFBS_None, // STRHui = 4718
+    CEFBS_None, // STRQpost = 4719
+    CEFBS_None, // STRQpre = 4720
+    CEFBS_None, // STRQroW = 4721
+    CEFBS_None, // STRQroX = 4722
+    CEFBS_None, // STRQui = 4723
+    CEFBS_None, // STRSpost = 4724
+    CEFBS_None, // STRSpre = 4725
+    CEFBS_None, // STRSroW = 4726
+    CEFBS_None, // STRSroX = 4727
+    CEFBS_None, // STRSui = 4728
+    CEFBS_None, // STRWpost = 4729
+    CEFBS_None, // STRWpre = 4730
+    CEFBS_None, // STRWroW = 4731
+    CEFBS_None, // STRWroX = 4732
+    CEFBS_None, // STRWui = 4733
+    CEFBS_None, // STRXpost = 4734
+    CEFBS_None, // STRXpre = 4735
+    CEFBS_None, // STRXroW = 4736
+    CEFBS_None, // STRXroX = 4737
+    CEFBS_None, // STRXui = 4738
+    CEFBS_HasSVE, // STR_PXI = 4739
+    CEFBS_HasSVE, // STR_ZXI = 4740
+    CEFBS_None, // STTRBi = 4741
+    CEFBS_None, // STTRHi = 4742
+    CEFBS_None, // STTRWi = 4743
+    CEFBS_None, // STTRXi = 4744
+    CEFBS_None, // STURBBi = 4745
+    CEFBS_None, // STURBi = 4746
+    CEFBS_None, // STURDi = 4747
+    CEFBS_None, // STURHHi = 4748
+    CEFBS_None, // STURHi = 4749
+    CEFBS_None, // STURQi = 4750
+    CEFBS_None, // STURSi = 4751
+    CEFBS_None, // STURWi = 4752
+    CEFBS_None, // STURXi = 4753
+    CEFBS_None, // STXPW = 4754
+    CEFBS_None, // STXPX = 4755
+    CEFBS_None, // STXRB = 4756
+    CEFBS_None, // STXRH = 4757
+    CEFBS_None, // STXRW = 4758
+    CEFBS_None, // STXRX = 4759
+    CEFBS_HasMTE, // STZ2GOffset = 4760
+    CEFBS_HasMTE, // STZ2GPostIndex = 4761
+    CEFBS_HasMTE, // STZ2GPreIndex = 4762
+    CEFBS_HasMTE, // STZGM = 4763
+    CEFBS_HasMTE, // STZGOffset = 4764
+    CEFBS_HasMTE, // STZGPostIndex = 4765
+    CEFBS_HasMTE, // STZGPreIndex = 4766
+    CEFBS_HasMTE, // SUBG = 4767
+    CEFBS_HasSVE2, // SUBHNB_ZZZ_B = 4768
+    CEFBS_HasSVE2, // SUBHNB_ZZZ_H = 4769
+    CEFBS_HasSVE2, // SUBHNB_ZZZ_S = 4770
+    CEFBS_HasSVE2, // SUBHNT_ZZZ_B = 4771
+    CEFBS_HasSVE2, // SUBHNT_ZZZ_H = 4772
+    CEFBS_HasSVE2, // SUBHNT_ZZZ_S = 4773
+    CEFBS_HasNEON, // SUBHNv2i64_v2i32 = 4774
+    CEFBS_HasNEON, // SUBHNv2i64_v4i32 = 4775
+    CEFBS_HasNEON, // SUBHNv4i32_v4i16 = 4776
+    CEFBS_HasNEON, // SUBHNv4i32_v8i16 = 4777
+    CEFBS_HasNEON, // SUBHNv8i16_v16i8 = 4778
+    CEFBS_HasNEON, // SUBHNv8i16_v8i8 = 4779
+    CEFBS_HasMTE, // SUBP = 4780
+    CEFBS_HasMTE, // SUBPS = 4781
+    CEFBS_HasSVE, // SUBR_ZI_B = 4782
+    CEFBS_HasSVE, // SUBR_ZI_D = 4783
+    CEFBS_HasSVE, // SUBR_ZI_H = 4784
+    CEFBS_HasSVE, // SUBR_ZI_S = 4785
+    CEFBS_HasSVE, // SUBR_ZPmZ_B = 4786
+    CEFBS_HasSVE, // SUBR_ZPmZ_D = 4787
+    CEFBS_HasSVE, // SUBR_ZPmZ_H = 4788
+    CEFBS_HasSVE, // SUBR_ZPmZ_S = 4789
+    CEFBS_None, // SUBSWri = 4790
+    CEFBS_None, // SUBSWrs = 4791
+    CEFBS_None, // SUBSWrx = 4792
+    CEFBS_None, // SUBSXri = 4793
+    CEFBS_None, // SUBSXrs = 4794
+    CEFBS_None, // SUBSXrx = 4795
+    CEFBS_None, // SUBSXrx64 = 4796
+    CEFBS_None, // SUBWri = 4797
+    CEFBS_None, // SUBWrs = 4798
+    CEFBS_None, // SUBWrx = 4799
+    CEFBS_None, // SUBXri = 4800
+    CEFBS_None, // SUBXrs = 4801
+    CEFBS_None, // SUBXrx = 4802
+    CEFBS_None, // SUBXrx64 = 4803
+    CEFBS_HasSVE, // SUB_ZI_B = 4804
+    CEFBS_HasSVE, // SUB_ZI_D = 4805
+    CEFBS_HasSVE, // SUB_ZI_H = 4806
+    CEFBS_HasSVE, // SUB_ZI_S = 4807
+    CEFBS_HasSVE, // SUB_ZPmZ_B = 4808
+    CEFBS_HasSVE, // SUB_ZPmZ_D = 4809
+    CEFBS_HasSVE, // SUB_ZPmZ_H = 4810
+    CEFBS_HasSVE, // SUB_ZPmZ_S = 4811
+    CEFBS_HasSVE, // SUB_ZZZ_B = 4812
+    CEFBS_HasSVE, // SUB_ZZZ_D = 4813
+    CEFBS_HasSVE, // SUB_ZZZ_H = 4814
+    CEFBS_HasSVE, // SUB_ZZZ_S = 4815
+    CEFBS_HasNEON, // SUBv16i8 = 4816
+    CEFBS_HasNEON, // SUBv1i64 = 4817
+    CEFBS_HasNEON, // SUBv2i32 = 4818
+    CEFBS_HasNEON, // SUBv2i64 = 4819
+    CEFBS_HasNEON, // SUBv4i16 = 4820
+    CEFBS_HasNEON, // SUBv4i32 = 4821
+    CEFBS_HasNEON, // SUBv8i16 = 4822
+    CEFBS_HasNEON, // SUBv8i8 = 4823
+    CEFBS_HasSVE_HasMatMulInt8, // SUDOT_ZZZI = 4824
+    CEFBS_HasMatMulInt8, // SUDOTlanev16i8 = 4825
+    CEFBS_HasMatMulInt8, // SUDOTlanev8i8 = 4826
+    CEFBS_HasSVE, // SUNPKHI_ZZ_D = 4827
+    CEFBS_HasSVE, // SUNPKHI_ZZ_H = 4828
+    CEFBS_HasSVE, // SUNPKHI_ZZ_S = 4829
+    CEFBS_HasSVE, // SUNPKLO_ZZ_D = 4830
+    CEFBS_HasSVE, // SUNPKLO_ZZ_H = 4831
+    CEFBS_HasSVE, // SUNPKLO_ZZ_S = 4832
+    CEFBS_HasSVE2, // SUQADD_ZPmZ_B = 4833
+    CEFBS_HasSVE2, // SUQADD_ZPmZ_D = 4834
+    CEFBS_HasSVE2, // SUQADD_ZPmZ_H = 4835
+    CEFBS_HasSVE2, // SUQADD_ZPmZ_S = 4836
+    CEFBS_HasNEON, // SUQADDv16i8 = 4837
+    CEFBS_HasNEON, // SUQADDv1i16 = 4838
+    CEFBS_HasNEON, // SUQADDv1i32 = 4839
+    CEFBS_HasNEON, // SUQADDv1i64 = 4840
+    CEFBS_HasNEON, // SUQADDv1i8 = 4841
+    CEFBS_HasNEON, // SUQADDv2i32 = 4842
+    CEFBS_HasNEON, // SUQADDv2i64 = 4843
+    CEFBS_HasNEON, // SUQADDv4i16 = 4844
+    CEFBS_HasNEON, // SUQADDv4i32 = 4845
+    CEFBS_HasNEON, // SUQADDv8i16 = 4846
+    CEFBS_HasNEON, // SUQADDv8i8 = 4847
+    CEFBS_None, // SVC = 4848
+    CEFBS_HasLSE, // SWPAB = 4849
+    CEFBS_HasLSE, // SWPAH = 4850
+    CEFBS_HasLSE, // SWPALB = 4851
+    CEFBS_HasLSE, // SWPALH = 4852
+    CEFBS_HasLSE, // SWPALW = 4853
+    CEFBS_HasLSE, // SWPALX = 4854
+    CEFBS_HasLSE, // SWPAW = 4855
+    CEFBS_HasLSE, // SWPAX = 4856
+    CEFBS_HasLSE, // SWPB = 4857
+    CEFBS_HasLSE, // SWPH = 4858
+    CEFBS_HasLSE, // SWPLB = 4859
+    CEFBS_HasLSE, // SWPLH = 4860
+    CEFBS_HasLSE, // SWPLW = 4861
+    CEFBS_HasLSE, // SWPLX = 4862
+    CEFBS_HasLSE, // SWPW = 4863
+    CEFBS_HasLSE, // SWPX = 4864
+    CEFBS_HasSVE, // SXTB_ZPmZ_D = 4865
+    CEFBS_HasSVE, // SXTB_ZPmZ_H = 4866
+    CEFBS_HasSVE, // SXTB_ZPmZ_S = 4867
+    CEFBS_HasSVE, // SXTH_ZPmZ_D = 4868
+    CEFBS_HasSVE, // SXTH_ZPmZ_S = 4869
+    CEFBS_HasSVE, // SXTW_ZPmZ_D = 4870
+    CEFBS_None, // SYSLxt = 4871
+    CEFBS_None, // SYSxt = 4872
+    CEFBS_HasSVE2, // TBL_ZZZZ_B = 4873
+    CEFBS_HasSVE2, // TBL_ZZZZ_D = 4874
+    CEFBS_HasSVE2, // TBL_ZZZZ_H = 4875
+    CEFBS_HasSVE2, // TBL_ZZZZ_S = 4876
+    CEFBS_HasSVE, // TBL_ZZZ_B = 4877
+    CEFBS_HasSVE, // TBL_ZZZ_D = 4878
+    CEFBS_HasSVE, // TBL_ZZZ_H = 4879
+    CEFBS_HasSVE, // TBL_ZZZ_S = 4880
+    CEFBS_HasNEON, // TBLv16i8Four = 4881
+    CEFBS_HasNEON, // TBLv16i8One = 4882
+    CEFBS_HasNEON, // TBLv16i8Three = 4883
+    CEFBS_HasNEON, // TBLv16i8Two = 4884
+    CEFBS_HasNEON, // TBLv8i8Four = 4885
+    CEFBS_HasNEON, // TBLv8i8One = 4886
+    CEFBS_HasNEON, // TBLv8i8Three = 4887
+    CEFBS_HasNEON, // TBLv8i8Two = 4888
+    CEFBS_None, // TBNZW = 4889
+    CEFBS_None, // TBNZX = 4890
+    CEFBS_HasSVE2, // TBX_ZZZ_B = 4891
+    CEFBS_HasSVE2, // TBX_ZZZ_D = 4892
+    CEFBS_HasSVE2, // TBX_ZZZ_H = 4893
+    CEFBS_HasSVE2, // TBX_ZZZ_S = 4894
+    CEFBS_HasNEON, // TBXv16i8Four = 4895
+    CEFBS_HasNEON, // TBXv16i8One = 4896
+    CEFBS_HasNEON, // TBXv16i8Three = 4897
+    CEFBS_HasNEON, // TBXv16i8Two = 4898
+    CEFBS_HasNEON, // TBXv8i8Four = 4899
+    CEFBS_HasNEON, // TBXv8i8One = 4900
+    CEFBS_HasNEON, // TBXv8i8Three = 4901
+    CEFBS_HasNEON, // TBXv8i8Two = 4902
+    CEFBS_None, // TBZW = 4903
+    CEFBS_None, // TBZX = 4904
+    CEFBS_HasTME, // TCANCEL = 4905
+    CEFBS_HasTME, // TCOMMIT = 4906
+    CEFBS_HasSVE, // TRN1_PPP_B = 4907
+    CEFBS_HasSVE, // TRN1_PPP_D = 4908
+    CEFBS_HasSVE, // TRN1_PPP_H = 4909
+    CEFBS_HasSVE, // TRN1_PPP_S = 4910
+    CEFBS_HasSVE, // TRN1_ZZZ_B = 4911
+    CEFBS_HasSVE, // TRN1_ZZZ_D = 4912
+    CEFBS_HasSVE, // TRN1_ZZZ_H = 4913
+    CEFBS_HasSVE_HasMatMulFP64, // TRN1_ZZZ_Q = 4914
+    CEFBS_HasSVE, // TRN1_ZZZ_S = 4915
+    CEFBS_HasNEON, // TRN1v16i8 = 4916
+    CEFBS_HasNEON, // TRN1v2i32 = 4917
+    CEFBS_HasNEON, // TRN1v2i64 = 4918
+    CEFBS_HasNEON, // TRN1v4i16 = 4919
+    CEFBS_HasNEON, // TRN1v4i32 = 4920
+    CEFBS_HasNEON, // TRN1v8i16 = 4921
+    CEFBS_HasNEON, // TRN1v8i8 = 4922
+    CEFBS_HasSVE, // TRN2_PPP_B = 4923
+    CEFBS_HasSVE, // TRN2_PPP_D = 4924
+    CEFBS_HasSVE, // TRN2_PPP_H = 4925
+    CEFBS_HasSVE, // TRN2_PPP_S = 4926
+    CEFBS_HasSVE, // TRN2_ZZZ_B = 4927
+    CEFBS_HasSVE, // TRN2_ZZZ_D = 4928
+    CEFBS_HasSVE, // TRN2_ZZZ_H = 4929
+    CEFBS_HasSVE_HasMatMulFP64, // TRN2_ZZZ_Q = 4930
+    CEFBS_HasSVE, // TRN2_ZZZ_S = 4931
+    CEFBS_HasNEON, // TRN2v16i8 = 4932
+    CEFBS_HasNEON, // TRN2v2i32 = 4933
+    CEFBS_HasNEON, // TRN2v2i64 = 4934
+    CEFBS_HasNEON, // TRN2v4i16 = 4935
+    CEFBS_HasNEON, // TRN2v4i32 = 4936
+    CEFBS_HasNEON, // TRN2v8i16 = 4937
+    CEFBS_HasNEON, // TRN2v8i8 = 4938
+    CEFBS_HasTRACEV8_4, // TSB = 4939
+    CEFBS_HasTME, // TSTART = 4940
+    CEFBS_HasTME, // TTEST = 4941
+    CEFBS_HasSVE2, // UABALB_ZZZ_D = 4942
+    CEFBS_HasSVE2, // UABALB_ZZZ_H = 4943
+    CEFBS_HasSVE2, // UABALB_ZZZ_S = 4944
+    CEFBS_HasSVE2, // UABALT_ZZZ_D = 4945
+    CEFBS_HasSVE2, // UABALT_ZZZ_H = 4946
+    CEFBS_HasSVE2, // UABALT_ZZZ_S = 4947
+    CEFBS_HasNEON, // UABALv16i8_v8i16 = 4948
+    CEFBS_HasNEON, // UABALv2i32_v2i64 = 4949
+    CEFBS_HasNEON, // UABALv4i16_v4i32 = 4950
+    CEFBS_HasNEON, // UABALv4i32_v2i64 = 4951
+    CEFBS_HasNEON, // UABALv8i16_v4i32 = 4952
+    CEFBS_HasNEON, // UABALv8i8_v8i16 = 4953
+    CEFBS_HasSVE2, // UABA_ZZZ_B = 4954
+    CEFBS_HasSVE2, // UABA_ZZZ_D = 4955
+    CEFBS_HasSVE2, // UABA_ZZZ_H = 4956
+    CEFBS_HasSVE2, // UABA_ZZZ_S = 4957
+    CEFBS_HasNEON, // UABAv16i8 = 4958
+    CEFBS_HasNEON, // UABAv2i32 = 4959
+    CEFBS_HasNEON, // UABAv4i16 = 4960
+    CEFBS_HasNEON, // UABAv4i32 = 4961
+    CEFBS_HasNEON, // UABAv8i16 = 4962
+    CEFBS_HasNEON, // UABAv8i8 = 4963
+    CEFBS_HasSVE2, // UABDLB_ZZZ_D = 4964
+    CEFBS_HasSVE2, // UABDLB_ZZZ_H = 4965
+    CEFBS_HasSVE2, // UABDLB_ZZZ_S = 4966
+    CEFBS_HasSVE2, // UABDLT_ZZZ_D = 4967
+    CEFBS_HasSVE2, // UABDLT_ZZZ_H = 4968
+    CEFBS_HasSVE2, // UABDLT_ZZZ_S = 4969
+    CEFBS_HasNEON, // UABDLv16i8_v8i16 = 4970
+    CEFBS_HasNEON, // UABDLv2i32_v2i64 = 4971
+    CEFBS_HasNEON, // UABDLv4i16_v4i32 = 4972
+    CEFBS_HasNEON, // UABDLv4i32_v2i64 = 4973
+    CEFBS_HasNEON, // UABDLv8i16_v4i32 = 4974
+    CEFBS_HasNEON, // UABDLv8i8_v8i16 = 4975
+    CEFBS_HasSVE, // UABD_ZPmZ_B = 4976
+    CEFBS_HasSVE, // UABD_ZPmZ_D = 4977
+    CEFBS_HasSVE, // UABD_ZPmZ_H = 4978
+    CEFBS_HasSVE, // UABD_ZPmZ_S = 4979
+    CEFBS_HasNEON, // UABDv16i8 = 4980
+    CEFBS_HasNEON, // UABDv2i32 = 4981
+    CEFBS_HasNEON, // UABDv4i16 = 4982
+    CEFBS_HasNEON, // UABDv4i32 = 4983
+    CEFBS_HasNEON, // UABDv8i16 = 4984
+    CEFBS_HasNEON, // UABDv8i8 = 4985
+    CEFBS_HasSVE2, // UADALP_ZPmZ_D = 4986
+    CEFBS_HasSVE2, // UADALP_ZPmZ_H = 4987
+    CEFBS_HasSVE2, // UADALP_ZPmZ_S = 4988
+    CEFBS_HasNEON, // UADALPv16i8_v8i16 = 4989
+    CEFBS_HasNEON, // UADALPv2i32_v1i64 = 4990
+    CEFBS_HasNEON, // UADALPv4i16_v2i32 = 4991
+    CEFBS_HasNEON, // UADALPv4i32_v2i64 = 4992
+    CEFBS_HasNEON, // UADALPv8i16_v4i32 = 4993
+    CEFBS_HasNEON, // UADALPv8i8_v4i16 = 4994
+    CEFBS_HasSVE2, // UADDLB_ZZZ_D = 4995
+    CEFBS_HasSVE2, // UADDLB_ZZZ_H = 4996
+    CEFBS_HasSVE2, // UADDLB_ZZZ_S = 4997
+    CEFBS_HasNEON, // UADDLPv16i8_v8i16 = 4998
+    CEFBS_HasNEON, // UADDLPv2i32_v1i64 = 4999
+    CEFBS_HasNEON, // UADDLPv4i16_v2i32 = 5000
+    CEFBS_HasNEON, // UADDLPv4i32_v2i64 = 5001
+    CEFBS_HasNEON, // UADDLPv8i16_v4i32 = 5002
+    CEFBS_HasNEON, // UADDLPv8i8_v4i16 = 5003
+    CEFBS_HasSVE2, // UADDLT_ZZZ_D = 5004
+    CEFBS_HasSVE2, // UADDLT_ZZZ_H = 5005
+    CEFBS_HasSVE2, // UADDLT_ZZZ_S = 5006
+    CEFBS_HasNEON, // UADDLVv16i8v = 5007
+    CEFBS_HasNEON, // UADDLVv4i16v = 5008
+    CEFBS_HasNEON, // UADDLVv4i32v = 5009
+    CEFBS_HasNEON, // UADDLVv8i16v = 5010
+    CEFBS_HasNEON, // UADDLVv8i8v = 5011
+    CEFBS_HasNEON, // UADDLv16i8_v8i16 = 5012
+    CEFBS_HasNEON, // UADDLv2i32_v2i64 = 5013
+    CEFBS_HasNEON, // UADDLv4i16_v4i32 = 5014
+    CEFBS_HasNEON, // UADDLv4i32_v2i64 = 5015
+    CEFBS_HasNEON, // UADDLv8i16_v4i32 = 5016
+    CEFBS_HasNEON, // UADDLv8i8_v8i16 = 5017
+    CEFBS_HasSVE, // UADDV_VPZ_B = 5018
+    CEFBS_HasSVE, // UADDV_VPZ_D = 5019
+    CEFBS_HasSVE, // UADDV_VPZ_H = 5020
+    CEFBS_HasSVE, // UADDV_VPZ_S = 5021
+    CEFBS_HasSVE2, // UADDWB_ZZZ_D = 5022
+    CEFBS_HasSVE2, // UADDWB_ZZZ_H = 5023
+    CEFBS_HasSVE2, // UADDWB_ZZZ_S = 5024
+    CEFBS_HasSVE2, // UADDWT_ZZZ_D = 5025
+    CEFBS_HasSVE2, // UADDWT_ZZZ_H = 5026
+    CEFBS_HasSVE2, // UADDWT_ZZZ_S = 5027
+    CEFBS_HasNEON, // UADDWv16i8_v8i16 = 5028
+    CEFBS_HasNEON, // UADDWv2i32_v2i64 = 5029
+    CEFBS_HasNEON, // UADDWv4i16_v4i32 = 5030
+    CEFBS_HasNEON, // UADDWv4i32_v2i64 = 5031
+    CEFBS_HasNEON, // UADDWv8i16_v4i32 = 5032
+    CEFBS_HasNEON, // UADDWv8i8_v8i16 = 5033
+    CEFBS_None, // UBFMWri = 5034
+    CEFBS_None, // UBFMXri = 5035
+    CEFBS_HasFPARMv8, // UCVTFSWDri = 5036
+    CEFBS_HasFullFP16, // UCVTFSWHri = 5037
+    CEFBS_HasFPARMv8, // UCVTFSWSri = 5038
+    CEFBS_HasFPARMv8, // UCVTFSXDri = 5039
+    CEFBS_HasFullFP16, // UCVTFSXHri = 5040
+    CEFBS_HasFPARMv8, // UCVTFSXSri = 5041
+    CEFBS_HasFPARMv8, // UCVTFUWDri = 5042
+    CEFBS_HasFullFP16, // UCVTFUWHri = 5043
+    CEFBS_HasFPARMv8, // UCVTFUWSri = 5044
+    CEFBS_HasFPARMv8, // UCVTFUXDri = 5045
+    CEFBS_HasFullFP16, // UCVTFUXHri = 5046
+    CEFBS_HasFPARMv8, // UCVTFUXSri = 5047
+    CEFBS_HasSVE, // UCVTF_ZPmZ_DtoD = 5048
+    CEFBS_HasSVE, // UCVTF_ZPmZ_DtoH = 5049
+    CEFBS_HasSVE, // UCVTF_ZPmZ_DtoS = 5050
+    CEFBS_HasSVE, // UCVTF_ZPmZ_HtoH = 5051
+    CEFBS_HasSVE, // UCVTF_ZPmZ_StoD = 5052
+    CEFBS_HasSVE, // UCVTF_ZPmZ_StoH = 5053
+    CEFBS_HasSVE, // UCVTF_ZPmZ_StoS = 5054
+    CEFBS_HasNEON, // UCVTFd = 5055
+    CEFBS_HasNEON_HasFullFP16, // UCVTFh = 5056
+    CEFBS_HasNEON, // UCVTFs = 5057
+    CEFBS_HasNEON_HasFullFP16, // UCVTFv1i16 = 5058
+    CEFBS_HasNEON, // UCVTFv1i32 = 5059
+    CEFBS_HasNEON, // UCVTFv1i64 = 5060
+    CEFBS_HasNEON, // UCVTFv2f32 = 5061
+    CEFBS_HasNEON, // UCVTFv2f64 = 5062
+    CEFBS_HasNEON, // UCVTFv2i32_shift = 5063
+    CEFBS_HasNEON, // UCVTFv2i64_shift = 5064
+    CEFBS_HasNEON_HasFullFP16, // UCVTFv4f16 = 5065
+    CEFBS_HasNEON, // UCVTFv4f32 = 5066
+    CEFBS_HasNEON_HasFullFP16, // UCVTFv4i16_shift = 5067
+    CEFBS_HasNEON, // UCVTFv4i32_shift = 5068
+    CEFBS_HasNEON_HasFullFP16, // UCVTFv8f16 = 5069
+    CEFBS_HasNEON_HasFullFP16, // UCVTFv8i16_shift = 5070
+    CEFBS_None, // UDF = 5071
+    CEFBS_HasSVE, // UDIVR_ZPmZ_D = 5072
+    CEFBS_HasSVE, // UDIVR_ZPmZ_S = 5073
+    CEFBS_None, // UDIVWr = 5074
+    CEFBS_None, // UDIVXr = 5075
+    CEFBS_HasSVE, // UDIV_ZPmZ_D = 5076
+    CEFBS_HasSVE, // UDIV_ZPmZ_S = 5077
+    CEFBS_HasSVE, // UDOT_ZZZI_D = 5078
+    CEFBS_HasSVE, // UDOT_ZZZI_S = 5079
+    CEFBS_HasSVE, // UDOT_ZZZ_D = 5080
+    CEFBS_HasSVE, // UDOT_ZZZ_S = 5081
+    CEFBS_HasDotProd, // UDOTlanev16i8 = 5082
+    CEFBS_HasDotProd, // UDOTlanev8i8 = 5083
+    CEFBS_HasDotProd, // UDOTv16i8 = 5084
+    CEFBS_HasDotProd, // UDOTv8i8 = 5085
+    CEFBS_HasSVE2, // UHADD_ZPmZ_B = 5086
+    CEFBS_HasSVE2, // UHADD_ZPmZ_D = 5087
+    CEFBS_HasSVE2, // UHADD_ZPmZ_H = 5088
+    CEFBS_HasSVE2, // UHADD_ZPmZ_S = 5089
+    CEFBS_HasNEON, // UHADDv16i8 = 5090
+    CEFBS_HasNEON, // UHADDv2i32 = 5091
+    CEFBS_HasNEON, // UHADDv4i16 = 5092
+    CEFBS_HasNEON, // UHADDv4i32 = 5093
+    CEFBS_HasNEON, // UHADDv8i16 = 5094
+    CEFBS_HasNEON, // UHADDv8i8 = 5095
+    CEFBS_HasSVE2, // UHSUBR_ZPmZ_B = 5096
+    CEFBS_HasSVE2, // UHSUBR_ZPmZ_D = 5097
+    CEFBS_HasSVE2, // UHSUBR_ZPmZ_H = 5098
+    CEFBS_HasSVE2, // UHSUBR_ZPmZ_S = 5099
+    CEFBS_HasSVE2, // UHSUB_ZPmZ_B = 5100
+    CEFBS_HasSVE2, // UHSUB_ZPmZ_D = 5101
+    CEFBS_HasSVE2, // UHSUB_ZPmZ_H = 5102
+    CEFBS_HasSVE2, // UHSUB_ZPmZ_S = 5103
+    CEFBS_HasNEON, // UHSUBv16i8 = 5104
+    CEFBS_HasNEON, // UHSUBv2i32 = 5105
+    CEFBS_HasNEON, // UHSUBv4i16 = 5106
+    CEFBS_HasNEON, // UHSUBv4i32 = 5107
+    CEFBS_HasNEON, // UHSUBv8i16 = 5108
+    CEFBS_HasNEON, // UHSUBv8i8 = 5109
+    CEFBS_None, // UMADDLrrr = 5110
+    CEFBS_HasSVE2, // UMAXP_ZPmZ_B = 5111
+    CEFBS_HasSVE2, // UMAXP_ZPmZ_D = 5112
+    CEFBS_HasSVE2, // UMAXP_ZPmZ_H = 5113
+    CEFBS_HasSVE2, // UMAXP_ZPmZ_S = 5114
+    CEFBS_HasNEON, // UMAXPv16i8 = 5115
+    CEFBS_HasNEON, // UMAXPv2i32 = 5116
+    CEFBS_HasNEON, // UMAXPv4i16 = 5117
+    CEFBS_HasNEON, // UMAXPv4i32 = 5118
+    CEFBS_HasNEON, // UMAXPv8i16 = 5119
+    CEFBS_HasNEON, // UMAXPv8i8 = 5120
+    CEFBS_HasSVE, // UMAXV_VPZ_B = 5121
+    CEFBS_HasSVE, // UMAXV_VPZ_D = 5122
+    CEFBS_HasSVE, // UMAXV_VPZ_H = 5123
+    CEFBS_HasSVE, // UMAXV_VPZ_S = 5124
+    CEFBS_HasNEON, // UMAXVv16i8v = 5125
+    CEFBS_HasNEON, // UMAXVv4i16v = 5126
+    CEFBS_HasNEON, // UMAXVv4i32v = 5127
+    CEFBS_HasNEON, // UMAXVv8i16v = 5128
+    CEFBS_HasNEON, // UMAXVv8i8v = 5129
+    CEFBS_HasSVE, // UMAX_ZI_B = 5130
+    CEFBS_HasSVE, // UMAX_ZI_D = 5131
+    CEFBS_HasSVE, // UMAX_ZI_H = 5132
+    CEFBS_HasSVE, // UMAX_ZI_S = 5133
+    CEFBS_HasSVE, // UMAX_ZPmZ_B = 5134
+    CEFBS_HasSVE, // UMAX_ZPmZ_D = 5135
+    CEFBS_HasSVE, // UMAX_ZPmZ_H = 5136
+    CEFBS_HasSVE, // UMAX_ZPmZ_S = 5137
+    CEFBS_HasNEON, // UMAXv16i8 = 5138
+    CEFBS_HasNEON, // UMAXv2i32 = 5139
+    CEFBS_HasNEON, // UMAXv4i16 = 5140
+    CEFBS_HasNEON, // UMAXv4i32 = 5141
+    CEFBS_HasNEON, // UMAXv8i16 = 5142
+    CEFBS_HasNEON, // UMAXv8i8 = 5143
+    CEFBS_HasSVE2, // UMINP_ZPmZ_B = 5144
+    CEFBS_HasSVE2, // UMINP_ZPmZ_D = 5145
+    CEFBS_HasSVE2, // UMINP_ZPmZ_H = 5146
+    CEFBS_HasSVE2, // UMINP_ZPmZ_S = 5147
+    CEFBS_HasNEON, // UMINPv16i8 = 5148
+    CEFBS_HasNEON, // UMINPv2i32 = 5149
+    CEFBS_HasNEON, // UMINPv4i16 = 5150
+    CEFBS_HasNEON, // UMINPv4i32 = 5151
+    CEFBS_HasNEON, // UMINPv8i16 = 5152
+    CEFBS_HasNEON, // UMINPv8i8 = 5153
+    CEFBS_HasSVE, // UMINV_VPZ_B = 5154
+    CEFBS_HasSVE, // UMINV_VPZ_D = 5155
+    CEFBS_HasSVE, // UMINV_VPZ_H = 5156
+    CEFBS_HasSVE, // UMINV_VPZ_S = 5157
+    CEFBS_HasNEON, // UMINVv16i8v = 5158
+    CEFBS_HasNEON, // UMINVv4i16v = 5159
+    CEFBS_HasNEON, // UMINVv4i32v = 5160
+    CEFBS_HasNEON, // UMINVv8i16v = 5161
+    CEFBS_HasNEON, // UMINVv8i8v = 5162
+    CEFBS_HasSVE, // UMIN_ZI_B = 5163
+    CEFBS_HasSVE, // UMIN_ZI_D = 5164
+    CEFBS_HasSVE, // UMIN_ZI_H = 5165
+    CEFBS_HasSVE, // UMIN_ZI_S = 5166
+    CEFBS_HasSVE, // UMIN_ZPmZ_B = 5167
+    CEFBS_HasSVE, // UMIN_ZPmZ_D = 5168
+    CEFBS_HasSVE, // UMIN_ZPmZ_H = 5169
+    CEFBS_HasSVE, // UMIN_ZPmZ_S = 5170
+    CEFBS_HasNEON, // UMINv16i8 = 5171
+    CEFBS_HasNEON, // UMINv2i32 = 5172
+    CEFBS_HasNEON, // UMINv4i16 = 5173
+    CEFBS_HasNEON, // UMINv4i32 = 5174
+    CEFBS_HasNEON, // UMINv8i16 = 5175
+    CEFBS_HasNEON, // UMINv8i8 = 5176
+    CEFBS_HasSVE2, // UMLALB_ZZZI_D = 5177
+    CEFBS_HasSVE2, // UMLALB_ZZZI_S = 5178
+    CEFBS_HasSVE2, // UMLALB_ZZZ_D = 5179
+    CEFBS_HasSVE2, // UMLALB_ZZZ_H = 5180
+    CEFBS_HasSVE2, // UMLALB_ZZZ_S = 5181
+    CEFBS_HasSVE2, // UMLALT_ZZZI_D = 5182
+    CEFBS_HasSVE2, // UMLALT_ZZZI_S = 5183
+    CEFBS_HasSVE2, // UMLALT_ZZZ_D = 5184
+    CEFBS_HasSVE2, // UMLALT_ZZZ_H = 5185
+    CEFBS_HasSVE2, // UMLALT_ZZZ_S = 5186
+    CEFBS_HasNEON, // UMLALv16i8_v8i16 = 5187
+    CEFBS_HasNEON, // UMLALv2i32_indexed = 5188
+    CEFBS_HasNEON, // UMLALv2i32_v2i64 = 5189
+    CEFBS_HasNEON, // UMLALv4i16_indexed = 5190
+    CEFBS_HasNEON, // UMLALv4i16_v4i32 = 5191
+    CEFBS_HasNEON, // UMLALv4i32_indexed = 5192
+    CEFBS_HasNEON, // UMLALv4i32_v2i64 = 5193
+    CEFBS_HasNEON, // UMLALv8i16_indexed = 5194
+    CEFBS_HasNEON, // UMLALv8i16_v4i32 = 5195
+    CEFBS_HasNEON, // UMLALv8i8_v8i16 = 5196
+    CEFBS_HasSVE2, // UMLSLB_ZZZI_D = 5197
+    CEFBS_HasSVE2, // UMLSLB_ZZZI_S = 5198
+    CEFBS_HasSVE2, // UMLSLB_ZZZ_D = 5199
+    CEFBS_HasSVE2, // UMLSLB_ZZZ_H = 5200
+    CEFBS_HasSVE2, // UMLSLB_ZZZ_S = 5201
+    CEFBS_HasSVE2, // UMLSLT_ZZZI_D = 5202
+    CEFBS_HasSVE2, // UMLSLT_ZZZI_S = 5203
+    CEFBS_HasSVE2, // UMLSLT_ZZZ_D = 5204
+    CEFBS_HasSVE2, // UMLSLT_ZZZ_H = 5205
+    CEFBS_HasSVE2, // UMLSLT_ZZZ_S = 5206
+    CEFBS_HasNEON, // UMLSLv16i8_v8i16 = 5207
+    CEFBS_HasNEON, // UMLSLv2i32_indexed = 5208
+    CEFBS_HasNEON, // UMLSLv2i32_v2i64 = 5209
+    CEFBS_HasNEON, // UMLSLv4i16_indexed = 5210
+    CEFBS_HasNEON, // UMLSLv4i16_v4i32 = 5211
+    CEFBS_HasNEON, // UMLSLv4i32_indexed = 5212
+    CEFBS_HasNEON, // UMLSLv4i32_v2i64 = 5213
+    CEFBS_HasNEON, // UMLSLv8i16_indexed = 5214
+    CEFBS_HasNEON, // UMLSLv8i16_v4i32 = 5215
+    CEFBS_HasNEON, // UMLSLv8i8_v8i16 = 5216
+    CEFBS_HasMatMulInt8, // UMMLA = 5217
+    CEFBS_HasSVE_HasMatMulInt8, // UMMLA_ZZZ = 5218
+    CEFBS_HasNEON, // UMOVvi16 = 5219
+    CEFBS_HasNEON, // UMOVvi32 = 5220
+    CEFBS_HasNEON, // UMOVvi64 = 5221
+    CEFBS_HasNEON, // UMOVvi8 = 5222
+    CEFBS_None, // UMSUBLrrr = 5223
+    CEFBS_HasSVE, // UMULH_ZPmZ_B = 5224
+    CEFBS_HasSVE, // UMULH_ZPmZ_D = 5225
+    CEFBS_HasSVE, // UMULH_ZPmZ_H = 5226
+    CEFBS_HasSVE, // UMULH_ZPmZ_S = 5227
+    CEFBS_HasSVE2, // UMULH_ZZZ_B = 5228
+    CEFBS_HasSVE2, // UMULH_ZZZ_D = 5229
+    CEFBS_HasSVE2, // UMULH_ZZZ_H = 5230
+    CEFBS_HasSVE2, // UMULH_ZZZ_S = 5231
+    CEFBS_None, // UMULHrr = 5232
+    CEFBS_HasSVE2, // UMULLB_ZZZI_D = 5233
+    CEFBS_HasSVE2, // UMULLB_ZZZI_S = 5234
+    CEFBS_HasSVE2, // UMULLB_ZZZ_D = 5235
+    CEFBS_HasSVE2, // UMULLB_ZZZ_H = 5236
+    CEFBS_HasSVE2, // UMULLB_ZZZ_S = 5237
+    CEFBS_HasSVE2, // UMULLT_ZZZI_D = 5238
+    CEFBS_HasSVE2, // UMULLT_ZZZI_S = 5239
+    CEFBS_HasSVE2, // UMULLT_ZZZ_D = 5240
+    CEFBS_HasSVE2, // UMULLT_ZZZ_H = 5241
+    CEFBS_HasSVE2, // UMULLT_ZZZ_S = 5242
+    CEFBS_HasNEON, // UMULLv16i8_v8i16 = 5243
+    CEFBS_HasNEON, // UMULLv2i32_indexed = 5244
+    CEFBS_HasNEON, // UMULLv2i32_v2i64 = 5245
+    CEFBS_HasNEON, // UMULLv4i16_indexed = 5246
+    CEFBS_HasNEON, // UMULLv4i16_v4i32 = 5247
+    CEFBS_HasNEON, // UMULLv4i32_indexed = 5248
+    CEFBS_HasNEON, // UMULLv4i32_v2i64 = 5249
+    CEFBS_HasNEON, // UMULLv8i16_indexed = 5250
+    CEFBS_HasNEON, // UMULLv8i16_v4i32 = 5251
+    CEFBS_HasNEON, // UMULLv8i8_v8i16 = 5252
+    CEFBS_HasSVE, // UQADD_ZI_B = 5253
+    CEFBS_HasSVE, // UQADD_ZI_D = 5254
+    CEFBS_HasSVE, // UQADD_ZI_H = 5255
+    CEFBS_HasSVE, // UQADD_ZI_S = 5256
+    CEFBS_HasSVE2, // UQADD_ZPmZ_B = 5257
+    CEFBS_HasSVE2, // UQADD_ZPmZ_D = 5258
+    CEFBS_HasSVE2, // UQADD_ZPmZ_H = 5259
+    CEFBS_HasSVE2, // UQADD_ZPmZ_S = 5260
+    CEFBS_HasSVE, // UQADD_ZZZ_B = 5261
+    CEFBS_HasSVE, // UQADD_ZZZ_D = 5262
+    CEFBS_HasSVE, // UQADD_ZZZ_H = 5263
+    CEFBS_HasSVE, // UQADD_ZZZ_S = 5264
+    CEFBS_HasNEON, // UQADDv16i8 = 5265
+    CEFBS_HasNEON, // UQADDv1i16 = 5266
+    CEFBS_HasNEON, // UQADDv1i32 = 5267
+    CEFBS_HasNEON, // UQADDv1i64 = 5268
+    CEFBS_HasNEON, // UQADDv1i8 = 5269
+    CEFBS_HasNEON, // UQADDv2i32 = 5270
+    CEFBS_HasNEON, // UQADDv2i64 = 5271
+    CEFBS_HasNEON, // UQADDv4i16 = 5272
+    CEFBS_HasNEON, // UQADDv4i32 = 5273
+    CEFBS_HasNEON, // UQADDv8i16 = 5274
+    CEFBS_HasNEON, // UQADDv8i8 = 5275
+    CEFBS_HasSVE, // UQDECB_WPiI = 5276
+    CEFBS_HasSVE, // UQDECB_XPiI = 5277
+    CEFBS_HasSVE, // UQDECD_WPiI = 5278
+    CEFBS_HasSVE, // UQDECD_XPiI = 5279
+    CEFBS_HasSVE, // UQDECD_ZPiI = 5280
+    CEFBS_HasSVE, // UQDECH_WPiI = 5281
+    CEFBS_HasSVE, // UQDECH_XPiI = 5282
+    CEFBS_HasSVE, // UQDECH_ZPiI = 5283
+    CEFBS_HasSVE, // UQDECP_WP_B = 5284
+    CEFBS_HasSVE, // UQDECP_WP_D = 5285
+    CEFBS_HasSVE, // UQDECP_WP_H = 5286
+    CEFBS_HasSVE, // UQDECP_WP_S = 5287
+    CEFBS_HasSVE, // UQDECP_XP_B = 5288
+    CEFBS_HasSVE, // UQDECP_XP_D = 5289
+    CEFBS_HasSVE, // UQDECP_XP_H = 5290
+    CEFBS_HasSVE, // UQDECP_XP_S = 5291
+    CEFBS_HasSVE, // UQDECP_ZP_D = 5292
+    CEFBS_HasSVE, // UQDECP_ZP_H = 5293
+    CEFBS_HasSVE, // UQDECP_ZP_S = 5294
+    CEFBS_HasSVE, // UQDECW_WPiI = 5295
+    CEFBS_HasSVE, // UQDECW_XPiI = 5296
+    CEFBS_HasSVE, // UQDECW_ZPiI = 5297
+    CEFBS_HasSVE, // UQINCB_WPiI = 5298
+    CEFBS_HasSVE, // UQINCB_XPiI = 5299
+    CEFBS_HasSVE, // UQINCD_WPiI = 5300
+    CEFBS_HasSVE, // UQINCD_XPiI = 5301
+    CEFBS_HasSVE, // UQINCD_ZPiI = 5302
+    CEFBS_HasSVE, // UQINCH_WPiI = 5303
+    CEFBS_HasSVE, // UQINCH_XPiI = 5304
+    CEFBS_HasSVE, // UQINCH_ZPiI = 5305
+    CEFBS_HasSVE, // UQINCP_WP_B = 5306
+    CEFBS_HasSVE, // UQINCP_WP_D = 5307
+    CEFBS_HasSVE, // UQINCP_WP_H = 5308
+    CEFBS_HasSVE, // UQINCP_WP_S = 5309
+    CEFBS_HasSVE, // UQINCP_XP_B = 5310
+    CEFBS_HasSVE, // UQINCP_XP_D = 5311
+    CEFBS_HasSVE, // UQINCP_XP_H = 5312
+    CEFBS_HasSVE, // UQINCP_XP_S = 5313
+    CEFBS_HasSVE, // UQINCP_ZP_D = 5314
+    CEFBS_HasSVE, // UQINCP_ZP_H = 5315
+    CEFBS_HasSVE, // UQINCP_ZP_S = 5316
+    CEFBS_HasSVE, // UQINCW_WPiI = 5317
+    CEFBS_HasSVE, // UQINCW_XPiI = 5318
+    CEFBS_HasSVE, // UQINCW_ZPiI = 5319
+    CEFBS_HasSVE2, // UQRSHLR_ZPmZ_B = 5320
+    CEFBS_HasSVE2, // UQRSHLR_ZPmZ_D = 5321
+    CEFBS_HasSVE2, // UQRSHLR_ZPmZ_H = 5322
+    CEFBS_HasSVE2, // UQRSHLR_ZPmZ_S = 5323
+    CEFBS_HasSVE2, // UQRSHL_ZPmZ_B = 5324
+    CEFBS_HasSVE2, // UQRSHL_ZPmZ_D = 5325
+    CEFBS_HasSVE2, // UQRSHL_ZPmZ_H = 5326
+    CEFBS_HasSVE2, // UQRSHL_ZPmZ_S = 5327
+    CEFBS_HasNEON, // UQRSHLv16i8 = 5328
+    CEFBS_HasNEON, // UQRSHLv1i16 = 5329
+    CEFBS_HasNEON, // UQRSHLv1i32 = 5330
+    CEFBS_HasNEON, // UQRSHLv1i64 = 5331
+    CEFBS_HasNEON, // UQRSHLv1i8 = 5332
+    CEFBS_HasNEON, // UQRSHLv2i32 = 5333
+    CEFBS_HasNEON, // UQRSHLv2i64 = 5334
+    CEFBS_HasNEON, // UQRSHLv4i16 = 5335
+    CEFBS_HasNEON, // UQRSHLv4i32 = 5336
+    CEFBS_HasNEON, // UQRSHLv8i16 = 5337
+    CEFBS_HasNEON, // UQRSHLv8i8 = 5338
+    CEFBS_HasSVE2, // UQRSHRNB_ZZI_B = 5339
+    CEFBS_HasSVE2, // UQRSHRNB_ZZI_H = 5340
+    CEFBS_HasSVE2, // UQRSHRNB_ZZI_S = 5341
+    CEFBS_HasSVE2, // UQRSHRNT_ZZI_B = 5342
+    CEFBS_HasSVE2, // UQRSHRNT_ZZI_H = 5343
+    CEFBS_HasSVE2, // UQRSHRNT_ZZI_S = 5344
+    CEFBS_HasNEON, // UQRSHRNb = 5345
+    CEFBS_HasNEON, // UQRSHRNh = 5346
+    CEFBS_HasNEON, // UQRSHRNs = 5347
+    CEFBS_HasNEON, // UQRSHRNv16i8_shift = 5348
+    CEFBS_HasNEON, // UQRSHRNv2i32_shift = 5349
+    CEFBS_HasNEON, // UQRSHRNv4i16_shift = 5350
+    CEFBS_HasNEON, // UQRSHRNv4i32_shift = 5351
+    CEFBS_HasNEON, // UQRSHRNv8i16_shift = 5352
+    CEFBS_HasNEON, // UQRSHRNv8i8_shift = 5353
+    CEFBS_HasSVE2, // UQSHLR_ZPmZ_B = 5354
+    CEFBS_HasSVE2, // UQSHLR_ZPmZ_D = 5355
+    CEFBS_HasSVE2, // UQSHLR_ZPmZ_H = 5356
+    CEFBS_HasSVE2, // UQSHLR_ZPmZ_S = 5357
+    CEFBS_HasSVE2, // UQSHL_ZPmI_B = 5358
+    CEFBS_HasSVE2, // UQSHL_ZPmI_D = 5359
+    CEFBS_HasSVE2, // UQSHL_ZPmI_H = 5360
+    CEFBS_HasSVE2, // UQSHL_ZPmI_S = 5361
+    CEFBS_HasSVE2, // UQSHL_ZPmZ_B = 5362
+    CEFBS_HasSVE2, // UQSHL_ZPmZ_D = 5363
+    CEFBS_HasSVE2, // UQSHL_ZPmZ_H = 5364
+    CEFBS_HasSVE2, // UQSHL_ZPmZ_S = 5365
+    CEFBS_HasNEON, // UQSHLb = 5366
+    CEFBS_HasNEON, // UQSHLd = 5367
+    CEFBS_HasNEON, // UQSHLh = 5368
+    CEFBS_HasNEON, // UQSHLs = 5369
+    CEFBS_HasNEON, // UQSHLv16i8 = 5370
+    CEFBS_HasNEON, // UQSHLv16i8_shift = 5371
+    CEFBS_HasNEON, // UQSHLv1i16 = 5372
+    CEFBS_HasNEON, // UQSHLv1i32 = 5373
+    CEFBS_HasNEON, // UQSHLv1i64 = 5374
+    CEFBS_HasNEON, // UQSHLv1i8 = 5375
+    CEFBS_HasNEON, // UQSHLv2i32 = 5376
+    CEFBS_HasNEON, // UQSHLv2i32_shift = 5377
+    CEFBS_HasNEON, // UQSHLv2i64 = 5378
+    CEFBS_HasNEON, // UQSHLv2i64_shift = 5379
+    CEFBS_HasNEON, // UQSHLv4i16 = 5380
+    CEFBS_HasNEON, // UQSHLv4i16_shift = 5381
+    CEFBS_HasNEON, // UQSHLv4i32 = 5382
+    CEFBS_HasNEON, // UQSHLv4i32_shift = 5383
+    CEFBS_HasNEON, // UQSHLv8i16 = 5384
+    CEFBS_HasNEON, // UQSHLv8i16_shift = 5385
+    CEFBS_HasNEON, // UQSHLv8i8 = 5386
+    CEFBS_HasNEON, // UQSHLv8i8_shift = 5387
+    CEFBS_HasSVE2, // UQSHRNB_ZZI_B = 5388
+    CEFBS_HasSVE2, // UQSHRNB_ZZI_H = 5389
+    CEFBS_HasSVE2, // UQSHRNB_ZZI_S = 5390
+    CEFBS_HasSVE2, // UQSHRNT_ZZI_B = 5391
+    CEFBS_HasSVE2, // UQSHRNT_ZZI_H = 5392
+    CEFBS_HasSVE2, // UQSHRNT_ZZI_S = 5393
+    CEFBS_HasNEON, // UQSHRNb = 5394
+    CEFBS_HasNEON, // UQSHRNh = 5395
+    CEFBS_HasNEON, // UQSHRNs = 5396
+    CEFBS_HasNEON, // UQSHRNv16i8_shift = 5397
+    CEFBS_HasNEON, // UQSHRNv2i32_shift = 5398
+    CEFBS_HasNEON, // UQSHRNv4i16_shift = 5399
+    CEFBS_HasNEON, // UQSHRNv4i32_shift = 5400
+    CEFBS_HasNEON, // UQSHRNv8i16_shift = 5401
+    CEFBS_HasNEON, // UQSHRNv8i8_shift = 5402
+    CEFBS_HasSVE2, // UQSUBR_ZPmZ_B = 5403
+    CEFBS_HasSVE2, // UQSUBR_ZPmZ_D = 5404
+    CEFBS_HasSVE2, // UQSUBR_ZPmZ_H = 5405
+    CEFBS_HasSVE2, // UQSUBR_ZPmZ_S = 5406
+    CEFBS_HasSVE, // UQSUB_ZI_B = 5407
+    CEFBS_HasSVE, // UQSUB_ZI_D = 5408
+    CEFBS_HasSVE, // UQSUB_ZI_H = 5409
+    CEFBS_HasSVE, // UQSUB_ZI_S = 5410
+    CEFBS_HasSVE2, // UQSUB_ZPmZ_B = 5411
+    CEFBS_HasSVE2, // UQSUB_ZPmZ_D = 5412
+    CEFBS_HasSVE2, // UQSUB_ZPmZ_H = 5413
+    CEFBS_HasSVE2, // UQSUB_ZPmZ_S = 5414
+    CEFBS_HasSVE, // UQSUB_ZZZ_B = 5415
+    CEFBS_HasSVE, // UQSUB_ZZZ_D = 5416
+    CEFBS_HasSVE, // UQSUB_ZZZ_H = 5417
+    CEFBS_HasSVE, // UQSUB_ZZZ_S = 5418
+    CEFBS_HasNEON, // UQSUBv16i8 = 5419
+    CEFBS_HasNEON, // UQSUBv1i16 = 5420
+    CEFBS_HasNEON, // UQSUBv1i32 = 5421
+    CEFBS_HasNEON, // UQSUBv1i64 = 5422
+    CEFBS_HasNEON, // UQSUBv1i8 = 5423
+    CEFBS_HasNEON, // UQSUBv2i32 = 5424
+    CEFBS_HasNEON, // UQSUBv2i64 = 5425
+    CEFBS_HasNEON, // UQSUBv4i16 = 5426
+    CEFBS_HasNEON, // UQSUBv4i32 = 5427
+    CEFBS_HasNEON, // UQSUBv8i16 = 5428
+    CEFBS_HasNEON, // UQSUBv8i8 = 5429
+    CEFBS_HasSVE2, // UQXTNB_ZZ_B = 5430
+    CEFBS_HasSVE2, // UQXTNB_ZZ_H = 5431
+    CEFBS_HasSVE2, // UQXTNB_ZZ_S = 5432
+    CEFBS_HasSVE2, // UQXTNT_ZZ_B = 5433
+    CEFBS_HasSVE2, // UQXTNT_ZZ_H = 5434
+    CEFBS_HasSVE2, // UQXTNT_ZZ_S = 5435
+    CEFBS_HasNEON, // UQXTNv16i8 = 5436
+    CEFBS_HasNEON, // UQXTNv1i16 = 5437
+    CEFBS_HasNEON, // UQXTNv1i32 = 5438
+    CEFBS_HasNEON, // UQXTNv1i8 = 5439
+    CEFBS_HasNEON, // UQXTNv2i32 = 5440
+    CEFBS_HasNEON, // UQXTNv4i16 = 5441
+    CEFBS_HasNEON, // UQXTNv4i32 = 5442
+    CEFBS_HasNEON, // UQXTNv8i16 = 5443
+    CEFBS_HasNEON, // UQXTNv8i8 = 5444
+    CEFBS_HasSVE2, // URECPE_ZPmZ_S = 5445
+    CEFBS_HasNEON, // URECPEv2i32 = 5446
+    CEFBS_HasNEON, // URECPEv4i32 = 5447
+    CEFBS_HasSVE2, // URHADD_ZPmZ_B = 5448
+    CEFBS_HasSVE2, // URHADD_ZPmZ_D = 5449
+    CEFBS_HasSVE2, // URHADD_ZPmZ_H = 5450
+    CEFBS_HasSVE2, // URHADD_ZPmZ_S = 5451
+    CEFBS_HasNEON, // URHADDv16i8 = 5452
+    CEFBS_HasNEON, // URHADDv2i32 = 5453
+    CEFBS_HasNEON, // URHADDv4i16 = 5454
+    CEFBS_HasNEON, // URHADDv4i32 = 5455
+    CEFBS_HasNEON, // URHADDv8i16 = 5456
+    CEFBS_HasNEON, // URHADDv8i8 = 5457
+    CEFBS_HasSVE2, // URSHLR_ZPmZ_B = 5458
+    CEFBS_HasSVE2, // URSHLR_ZPmZ_D = 5459
+    CEFBS_HasSVE2, // URSHLR_ZPmZ_H = 5460
+    CEFBS_HasSVE2, // URSHLR_ZPmZ_S = 5461
+    CEFBS_HasSVE2, // URSHL_ZPmZ_B = 5462
+    CEFBS_HasSVE2, // URSHL_ZPmZ_D = 5463
+    CEFBS_HasSVE2, // URSHL_ZPmZ_H = 5464
+    CEFBS_HasSVE2, // URSHL_ZPmZ_S = 5465
+    CEFBS_HasNEON, // URSHLv16i8 = 5466
+    CEFBS_HasNEON, // URSHLv1i64 = 5467
+    CEFBS_HasNEON, // URSHLv2i32 = 5468
+    CEFBS_HasNEON, // URSHLv2i64 = 5469
+    CEFBS_HasNEON, // URSHLv4i16 = 5470
+    CEFBS_HasNEON, // URSHLv4i32 = 5471
+    CEFBS_HasNEON, // URSHLv8i16 = 5472
+    CEFBS_HasNEON, // URSHLv8i8 = 5473
+    CEFBS_HasSVE2, // URSHR_ZPmI_B = 5474
+    CEFBS_HasSVE2, // URSHR_ZPmI_D = 5475
+    CEFBS_HasSVE2, // URSHR_ZPmI_H = 5476
+    CEFBS_HasSVE2, // URSHR_ZPmI_S = 5477
+    CEFBS_HasNEON, // URSHRd = 5478
+    CEFBS_HasNEON, // URSHRv16i8_shift = 5479
+    CEFBS_HasNEON, // URSHRv2i32_shift = 5480
+    CEFBS_HasNEON, // URSHRv2i64_shift = 5481
+    CEFBS_HasNEON, // URSHRv4i16_shift = 5482
+    CEFBS_HasNEON, // URSHRv4i32_shift = 5483
+    CEFBS_HasNEON, // URSHRv8i16_shift = 5484
+    CEFBS_HasNEON, // URSHRv8i8_shift = 5485
+    CEFBS_HasSVE2, // URSQRTE_ZPmZ_S = 5486
+    CEFBS_HasNEON, // URSQRTEv2i32 = 5487
+    CEFBS_HasNEON, // URSQRTEv4i32 = 5488
+    CEFBS_HasSVE2, // URSRA_ZZI_B = 5489
+    CEFBS_HasSVE2, // URSRA_ZZI_D = 5490
+    CEFBS_HasSVE2, // URSRA_ZZI_H = 5491
+    CEFBS_HasSVE2, // URSRA_ZZI_S = 5492
+    CEFBS_HasNEON, // URSRAd = 5493
+    CEFBS_HasNEON, // URSRAv16i8_shift = 5494
+    CEFBS_HasNEON, // URSRAv2i32_shift = 5495
+    CEFBS_HasNEON, // URSRAv2i64_shift = 5496
+    CEFBS_HasNEON, // URSRAv4i16_shift = 5497
+    CEFBS_HasNEON, // URSRAv4i32_shift = 5498
+    CEFBS_HasNEON, // URSRAv8i16_shift = 5499
+    CEFBS_HasNEON, // URSRAv8i8_shift = 5500
+    CEFBS_HasSVE_HasMatMulInt8, // USDOT_ZZZ = 5501
+    CEFBS_HasSVE_HasMatMulInt8, // USDOT_ZZZI = 5502
+    CEFBS_HasMatMulInt8, // USDOTlanev16i8 = 5503
+    CEFBS_HasMatMulInt8, // USDOTlanev8i8 = 5504
+    CEFBS_HasMatMulInt8, // USDOTv16i8 = 5505
+    CEFBS_HasMatMulInt8, // USDOTv8i8 = 5506
+    CEFBS_HasSVE2, // USHLLB_ZZI_D = 5507
+    CEFBS_HasSVE2, // USHLLB_ZZI_H = 5508
+    CEFBS_HasSVE2, // USHLLB_ZZI_S = 5509
+    CEFBS_HasSVE2, // USHLLT_ZZI_D = 5510
+    CEFBS_HasSVE2, // USHLLT_ZZI_H = 5511
+    CEFBS_HasSVE2, // USHLLT_ZZI_S = 5512
+    CEFBS_HasNEON, // USHLLv16i8_shift = 5513
+    CEFBS_HasNEON, // USHLLv2i32_shift = 5514
+    CEFBS_HasNEON, // USHLLv4i16_shift = 5515
+    CEFBS_HasNEON, // USHLLv4i32_shift = 5516
+    CEFBS_HasNEON, // USHLLv8i16_shift = 5517
+    CEFBS_HasNEON, // USHLLv8i8_shift = 5518
+    CEFBS_HasNEON, // USHLv16i8 = 5519
+    CEFBS_HasNEON, // USHLv1i64 = 5520
+    CEFBS_HasNEON, // USHLv2i32 = 5521
+    CEFBS_HasNEON, // USHLv2i64 = 5522
+    CEFBS_HasNEON, // USHLv4i16 = 5523
+    CEFBS_HasNEON, // USHLv4i32 = 5524
+    CEFBS_HasNEON, // USHLv8i16 = 5525
+    CEFBS_HasNEON, // USHLv8i8 = 5526
+    CEFBS_HasNEON, // USHRd = 5527
+    CEFBS_HasNEON, // USHRv16i8_shift = 5528
+    CEFBS_HasNEON, // USHRv2i32_shift = 5529
+    CEFBS_HasNEON, // USHRv2i64_shift = 5530
+    CEFBS_HasNEON, // USHRv4i16_shift = 5531
+    CEFBS_HasNEON, // USHRv4i32_shift = 5532
+    CEFBS_HasNEON, // USHRv8i16_shift = 5533
+    CEFBS_HasNEON, // USHRv8i8_shift = 5534
+    CEFBS_HasMatMulInt8, // USMMLA = 5535
+    CEFBS_HasSVE_HasMatMulInt8, // USMMLA_ZZZ = 5536
+    CEFBS_HasSVE2, // USQADD_ZPmZ_B = 5537
+    CEFBS_HasSVE2, // USQADD_ZPmZ_D = 5538
+    CEFBS_HasSVE2, // USQADD_ZPmZ_H = 5539
+    CEFBS_HasSVE2, // USQADD_ZPmZ_S = 5540
+    CEFBS_HasNEON, // USQADDv16i8 = 5541
+    CEFBS_HasNEON, // USQADDv1i16 = 5542
+    CEFBS_HasNEON, // USQADDv1i32 = 5543
+    CEFBS_HasNEON, // USQADDv1i64 = 5544
+    CEFBS_HasNEON, // USQADDv1i8 = 5545
+    CEFBS_HasNEON, // USQADDv2i32 = 5546
+    CEFBS_HasNEON, // USQADDv2i64 = 5547
+    CEFBS_HasNEON, // USQADDv4i16 = 5548
+    CEFBS_HasNEON, // USQADDv4i32 = 5549
+    CEFBS_HasNEON, // USQADDv8i16 = 5550
+    CEFBS_HasNEON, // USQADDv8i8 = 5551
+    CEFBS_HasSVE2, // USRA_ZZI_B = 5552
+    CEFBS_HasSVE2, // USRA_ZZI_D = 5553
+    CEFBS_HasSVE2, // USRA_ZZI_H = 5554
+    CEFBS_HasSVE2, // USRA_ZZI_S = 5555
+    CEFBS_HasNEON, // USRAd = 5556
+    CEFBS_HasNEON, // USRAv16i8_shift = 5557
+    CEFBS_HasNEON, // USRAv2i32_shift = 5558
+    CEFBS_HasNEON, // USRAv2i64_shift = 5559
+    CEFBS_HasNEON, // USRAv4i16_shift = 5560
+    CEFBS_HasNEON, // USRAv4i32_shift = 5561
+    CEFBS_HasNEON, // USRAv8i16_shift = 5562
+    CEFBS_HasNEON, // USRAv8i8_shift = 5563
+    CEFBS_HasSVE2, // USUBLB_ZZZ_D = 5564
+    CEFBS_HasSVE2, // USUBLB_ZZZ_H = 5565
+    CEFBS_HasSVE2, // USUBLB_ZZZ_S = 5566
+    CEFBS_HasSVE2, // USUBLT_ZZZ_D = 5567
+    CEFBS_HasSVE2, // USUBLT_ZZZ_H = 5568
+    CEFBS_HasSVE2, // USUBLT_ZZZ_S = 5569
+    CEFBS_HasNEON, // USUBLv16i8_v8i16 = 5570
+    CEFBS_HasNEON, // USUBLv2i32_v2i64 = 5571
+    CEFBS_HasNEON, // USUBLv4i16_v4i32 = 5572
+    CEFBS_HasNEON, // USUBLv4i32_v2i64 = 5573
+    CEFBS_HasNEON, // USUBLv8i16_v4i32 = 5574
+    CEFBS_HasNEON, // USUBLv8i8_v8i16 = 5575
+    CEFBS_HasSVE2, // USUBWB_ZZZ_D = 5576
+    CEFBS_HasSVE2, // USUBWB_ZZZ_H = 5577
+    CEFBS_HasSVE2, // USUBWB_ZZZ_S = 5578
+    CEFBS_HasSVE2, // USUBWT_ZZZ_D = 5579
+    CEFBS_HasSVE2, // USUBWT_ZZZ_H = 5580
+    CEFBS_HasSVE2, // USUBWT_ZZZ_S = 5581
+    CEFBS_HasNEON, // USUBWv16i8_v8i16 = 5582
+    CEFBS_HasNEON, // USUBWv2i32_v2i64 = 5583
+    CEFBS_HasNEON, // USUBWv4i16_v4i32 = 5584
+    CEFBS_HasNEON, // USUBWv4i32_v2i64 = 5585
+    CEFBS_HasNEON, // USUBWv8i16_v4i32 = 5586
+    CEFBS_HasNEON, // USUBWv8i8_v8i16 = 5587
+    CEFBS_HasSVE, // UUNPKHI_ZZ_D = 5588
+    CEFBS_HasSVE, // UUNPKHI_ZZ_H = 5589
+    CEFBS_HasSVE, // UUNPKHI_ZZ_S = 5590
+    CEFBS_HasSVE, // UUNPKLO_ZZ_D = 5591
+    CEFBS_HasSVE, // UUNPKLO_ZZ_H = 5592
+    CEFBS_HasSVE, // UUNPKLO_ZZ_S = 5593
+    CEFBS_HasSVE, // UXTB_ZPmZ_D = 5594
+    CEFBS_HasSVE, // UXTB_ZPmZ_H = 5595
+    CEFBS_HasSVE, // UXTB_ZPmZ_S = 5596
+    CEFBS_HasSVE, // UXTH_ZPmZ_D = 5597
+    CEFBS_HasSVE, // UXTH_ZPmZ_S = 5598
+    CEFBS_HasSVE, // UXTW_ZPmZ_D = 5599
+    CEFBS_HasSVE, // UZP1_PPP_B = 5600
+    CEFBS_HasSVE, // UZP1_PPP_D = 5601
+    CEFBS_HasSVE, // UZP1_PPP_H = 5602
+    CEFBS_HasSVE, // UZP1_PPP_S = 5603
+    CEFBS_HasSVE, // UZP1_ZZZ_B = 5604
+    CEFBS_HasSVE, // UZP1_ZZZ_D = 5605
+    CEFBS_HasSVE, // UZP1_ZZZ_H = 5606
+    CEFBS_HasSVE_HasMatMulFP64, // UZP1_ZZZ_Q = 5607
+    CEFBS_HasSVE, // UZP1_ZZZ_S = 5608
+    CEFBS_HasNEON, // UZP1v16i8 = 5609
+    CEFBS_HasNEON, // UZP1v2i32 = 5610
+    CEFBS_HasNEON, // UZP1v2i64 = 5611
+    CEFBS_HasNEON, // UZP1v4i16 = 5612
+    CEFBS_HasNEON, // UZP1v4i32 = 5613
+    CEFBS_HasNEON, // UZP1v8i16 = 5614
+    CEFBS_HasNEON, // UZP1v8i8 = 5615
+    CEFBS_HasSVE, // UZP2_PPP_B = 5616
+    CEFBS_HasSVE, // UZP2_PPP_D = 5617
+    CEFBS_HasSVE, // UZP2_PPP_H = 5618
+    CEFBS_HasSVE, // UZP2_PPP_S = 5619
+    CEFBS_HasSVE, // UZP2_ZZZ_B = 5620
+    CEFBS_HasSVE, // UZP2_ZZZ_D = 5621
+    CEFBS_HasSVE, // UZP2_ZZZ_H = 5622
+    CEFBS_HasSVE_HasMatMulFP64, // UZP2_ZZZ_Q = 5623
+    CEFBS_HasSVE, // UZP2_ZZZ_S = 5624
+    CEFBS_HasNEON, // UZP2v16i8 = 5625
+    CEFBS_HasNEON, // UZP2v2i32 = 5626
+    CEFBS_HasNEON, // UZP2v2i64 = 5627
+    CEFBS_HasNEON, // UZP2v4i16 = 5628
+    CEFBS_HasNEON, // UZP2v4i32 = 5629
+    CEFBS_HasNEON, // UZP2v8i16 = 5630
+    CEFBS_HasNEON, // UZP2v8i8 = 5631
+    CEFBS_HasSVE2, // WHILEGE_PWW_B = 5632
+    CEFBS_HasSVE2, // WHILEGE_PWW_D = 5633
+    CEFBS_HasSVE2, // WHILEGE_PWW_H = 5634
+    CEFBS_HasSVE2, // WHILEGE_PWW_S = 5635
+    CEFBS_HasSVE2, // WHILEGE_PXX_B = 5636
+    CEFBS_HasSVE2, // WHILEGE_PXX_D = 5637
+    CEFBS_HasSVE2, // WHILEGE_PXX_H = 5638
+    CEFBS_HasSVE2, // WHILEGE_PXX_S = 5639
+    CEFBS_HasSVE2, // WHILEGT_PWW_B = 5640
+    CEFBS_HasSVE2, // WHILEGT_PWW_D = 5641
+    CEFBS_HasSVE2, // WHILEGT_PWW_H = 5642
+    CEFBS_HasSVE2, // WHILEGT_PWW_S = 5643
+    CEFBS_HasSVE2, // WHILEGT_PXX_B = 5644
+    CEFBS_HasSVE2, // WHILEGT_PXX_D = 5645
+    CEFBS_HasSVE2, // WHILEGT_PXX_H = 5646
+    CEFBS_HasSVE2, // WHILEGT_PXX_S = 5647
+    CEFBS_HasSVE2, // WHILEHI_PWW_B = 5648
+    CEFBS_HasSVE2, // WHILEHI_PWW_D = 5649
+    CEFBS_HasSVE2, // WHILEHI_PWW_H = 5650
+    CEFBS_HasSVE2, // WHILEHI_PWW_S = 5651
+    CEFBS_HasSVE2, // WHILEHI_PXX_B = 5652
+    CEFBS_HasSVE2, // WHILEHI_PXX_D = 5653
+    CEFBS_HasSVE2, // WHILEHI_PXX_H = 5654
+    CEFBS_HasSVE2, // WHILEHI_PXX_S = 5655
+    CEFBS_HasSVE2, // WHILEHS_PWW_B = 5656
+    CEFBS_HasSVE2, // WHILEHS_PWW_D = 5657
+    CEFBS_HasSVE2, // WHILEHS_PWW_H = 5658
+    CEFBS_HasSVE2, // WHILEHS_PWW_S = 5659
+    CEFBS_HasSVE2, // WHILEHS_PXX_B = 5660
+    CEFBS_HasSVE2, // WHILEHS_PXX_D = 5661
+    CEFBS_HasSVE2, // WHILEHS_PXX_H = 5662
+    CEFBS_HasSVE2, // WHILEHS_PXX_S = 5663
+    CEFBS_HasSVE, // WHILELE_PWW_B = 5664
+    CEFBS_HasSVE, // WHILELE_PWW_D = 5665
+    CEFBS_HasSVE, // WHILELE_PWW_H = 5666
+    CEFBS_HasSVE, // WHILELE_PWW_S = 5667
+    CEFBS_HasSVE, // WHILELE_PXX_B = 5668
+    CEFBS_HasSVE, // WHILELE_PXX_D = 5669
+    CEFBS_HasSVE, // WHILELE_PXX_H = 5670
+    CEFBS_HasSVE, // WHILELE_PXX_S = 5671
+    CEFBS_HasSVE, // WHILELO_PWW_B = 5672
+    CEFBS_HasSVE, // WHILELO_PWW_D = 5673
+    CEFBS_HasSVE, // WHILELO_PWW_H = 5674
+    CEFBS_HasSVE, // WHILELO_PWW_S = 5675
+    CEFBS_HasSVE, // WHILELO_PXX_B = 5676
+    CEFBS_HasSVE, // WHILELO_PXX_D = 5677
+    CEFBS_HasSVE, // WHILELO_PXX_H = 5678
+    CEFBS_HasSVE, // WHILELO_PXX_S = 5679
+    CEFBS_HasSVE, // WHILELS_PWW_B = 5680
+    CEFBS_HasSVE, // WHILELS_PWW_D = 5681
+    CEFBS_HasSVE, // WHILELS_PWW_H = 5682
+    CEFBS_HasSVE, // WHILELS_PWW_S = 5683
+    CEFBS_HasSVE, // WHILELS_PXX_B = 5684
+    CEFBS_HasSVE, // WHILELS_PXX_D = 5685
+    CEFBS_HasSVE, // WHILELS_PXX_H = 5686
+    CEFBS_HasSVE, // WHILELS_PXX_S = 5687
+    CEFBS_HasSVE, // WHILELT_PWW_B = 5688
+    CEFBS_HasSVE, // WHILELT_PWW_D = 5689
+    CEFBS_HasSVE, // WHILELT_PWW_H = 5690
+    CEFBS_HasSVE, // WHILELT_PWW_S = 5691
+    CEFBS_HasSVE, // WHILELT_PXX_B = 5692
+    CEFBS_HasSVE, // WHILELT_PXX_D = 5693
+    CEFBS_HasSVE, // WHILELT_PXX_H = 5694
+    CEFBS_HasSVE, // WHILELT_PXX_S = 5695
+    CEFBS_HasSVE2, // WHILERW_PXX_B = 5696
+    CEFBS_HasSVE2, // WHILERW_PXX_D = 5697
+    CEFBS_HasSVE2, // WHILERW_PXX_H = 5698
+    CEFBS_HasSVE2, // WHILERW_PXX_S = 5699
+    CEFBS_HasSVE2, // WHILEWR_PXX_B = 5700
+    CEFBS_HasSVE2, // WHILEWR_PXX_D = 5701
+    CEFBS_HasSVE2, // WHILEWR_PXX_H = 5702
+    CEFBS_HasSVE2, // WHILEWR_PXX_S = 5703
+    CEFBS_HasSVE, // WRFFR = 5704
+    CEFBS_HasAltNZCV, // XAFLAG = 5705
+    CEFBS_HasSHA3, // XAR = 5706
+    CEFBS_HasSVE2, // XAR_ZZZI_B = 5707
+    CEFBS_HasSVE2, // XAR_ZZZI_D = 5708
+    CEFBS_HasSVE2, // XAR_ZZZI_H = 5709
+    CEFBS_HasSVE2, // XAR_ZZZI_S = 5710
+    CEFBS_HasPA, // XPACD = 5711
+    CEFBS_HasPA, // XPACI = 5712
+    CEFBS_None, // XPACLRI = 5713
+    CEFBS_HasNEON, // XTNv16i8 = 5714
+    CEFBS_HasNEON, // XTNv2i32 = 5715
+    CEFBS_HasNEON, // XTNv4i16 = 5716
+    CEFBS_HasNEON, // XTNv4i32 = 5717
+    CEFBS_HasNEON, // XTNv8i16 = 5718
+    CEFBS_HasNEON, // XTNv8i8 = 5719
+    CEFBS_HasSVE, // ZIP1_PPP_B = 5720
+    CEFBS_HasSVE, // ZIP1_PPP_D = 5721
+    CEFBS_HasSVE, // ZIP1_PPP_H = 5722
+    CEFBS_HasSVE, // ZIP1_PPP_S = 5723
+    CEFBS_HasSVE, // ZIP1_ZZZ_B = 5724
+    CEFBS_HasSVE, // ZIP1_ZZZ_D = 5725
+    CEFBS_HasSVE, // ZIP1_ZZZ_H = 5726
+    CEFBS_HasSVE_HasMatMulFP64, // ZIP1_ZZZ_Q = 5727
+    CEFBS_HasSVE, // ZIP1_ZZZ_S = 5728
+    CEFBS_HasNEON, // ZIP1v16i8 = 5729
+    CEFBS_HasNEON, // ZIP1v2i32 = 5730
+    CEFBS_HasNEON, // ZIP1v2i64 = 5731
+    CEFBS_HasNEON, // ZIP1v4i16 = 5732
+    CEFBS_HasNEON, // ZIP1v4i32 = 5733
+    CEFBS_HasNEON, // ZIP1v8i16 = 5734
+    CEFBS_HasNEON, // ZIP1v8i8 = 5735
+    CEFBS_HasSVE, // ZIP2_PPP_B = 5736
+    CEFBS_HasSVE, // ZIP2_PPP_D = 5737
+    CEFBS_HasSVE, // ZIP2_PPP_H = 5738
+    CEFBS_HasSVE, // ZIP2_PPP_S = 5739
+    CEFBS_HasSVE, // ZIP2_ZZZ_B = 5740
+    CEFBS_HasSVE, // ZIP2_ZZZ_D = 5741
+    CEFBS_HasSVE, // ZIP2_ZZZ_H = 5742
+    CEFBS_HasSVE_HasMatMulFP64, // ZIP2_ZZZ_Q = 5743
+    CEFBS_HasSVE, // ZIP2_ZZZ_S = 5744
+    CEFBS_HasNEON, // ZIP2v16i8 = 5745
+    CEFBS_HasNEON, // ZIP2v2i32 = 5746
+    CEFBS_HasNEON, // ZIP2v2i64 = 5747
+    CEFBS_HasNEON, // ZIP2v4i16 = 5748
+    CEFBS_HasNEON, // ZIP2v4i32 = 5749
+    CEFBS_HasNEON, // ZIP2v8i16 = 5750
+    CEFBS_HasNEON, // ZIP2v8i8 = 5751
   };
 
-  assert(Inst.getOpcode() < 5438);
+  assert(Inst.getOpcode() < 5752);
   const FeatureBitset &RequiredFeatures = FeatureBitsets[RequiredFeaturesRefs[Inst.getOpcode()]];
   FeatureBitset MissingFeatures =
       (AvailableFeatures & RequiredFeatures) ^

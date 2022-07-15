@@ -49,7 +49,7 @@ bool llvm::CC_ARM_AAPCS(unsigned ValNo, MVT ValVT,
                         ISD::ArgFlagsTy ArgFlags, CCState &State) {
 
   if (ArgFlags.isByVal()) {
-    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, 4, ArgFlags);
+    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, Align(4), ArgFlags);
     return false;
   }
 
@@ -64,6 +64,7 @@ bool llvm::CC_ARM_AAPCS(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v2i32 ||
       LocVT == MVT::v4i16 ||
       LocVT == MVT::v4f16 ||
+      LocVT == MVT::v4bf16 ||
       LocVT == MVT::v8i8 ||
       LocVT == MVT::v2f32) {
     LocVT = MVT::f64;
@@ -74,6 +75,7 @@ bool llvm::CC_ARM_AAPCS(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v4i32 ||
       LocVT == MVT::v8i16 ||
       LocVT == MVT::v8f16 ||
+      LocVT == MVT::v8bf16 ||
       LocVT == MVT::v16i8 ||
       LocVT == MVT::v4f32) {
     LocVT = MVT::v2f64;
@@ -109,6 +111,12 @@ bool llvm::CC_ARM_AAPCS(unsigned ValNo, MVT ValVT,
     LocInfo = CCValAssign::BCvt;
   }
 
+  if (LocVT == MVT::f16 ||
+      LocVT == MVT::bf16) {
+    if (CC_ARM_AAPCS_Custom_f16(ValNo, ValVT, LocVT, LocInfo, ArgFlags, State))
+        return false;
+  }
+
   if (!CC_ARM_AAPCS_Common(ValNo, ValVT, LocVT, LocInfo, ArgFlags, State))
     return false;
 
@@ -133,7 +141,7 @@ static bool CC_ARM_AAPCS_Common(unsigned ValNo, MVT ValVT,
   }
 
   if (LocVT == MVT::i32) {
-    if (ArgFlags.getOrigAlign() == 8) {
+    if (ArgFlags.getNonZeroOrigAlign() == 8) {
       static const MCPhysReg RegList1[] = {
         ARM::R0, ARM::R2
       };
@@ -148,7 +156,7 @@ static bool CC_ARM_AAPCS_Common(unsigned ValNo, MVT ValVT,
   }
 
   if (LocVT == MVT::i32) {
-    if (ArgFlags.getOrigAlign() != 8) {
+    if (ArgFlags.getNonZeroOrigAlign() != Align(8)) {
       static const MCPhysReg RegList3[] = {
         ARM::R0, ARM::R1, ARM::R2, ARM::R3
       };
@@ -160,11 +168,11 @@ static bool CC_ARM_AAPCS_Common(unsigned ValNo, MVT ValVT,
   }
 
   if (LocVT == MVT::i32) {
-    if (ArgFlags.getOrigAlign() == 8) {
+    if (ArgFlags.getNonZeroOrigAlign() == 8) {
       static const MCPhysReg ShadowRegList4[] = {
         ARM::R0, ARM::R1, ARM::R2, ARM::R3
       };
-      unsigned Offset5 = State.AllocateStack(4, 8, ShadowRegList4);
+      unsigned Offset5 = State.AllocateStack(4, Align(8), ShadowRegList4);
       State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset5, LocVT, LocInfo));
       return false;
     }
@@ -174,16 +182,18 @@ static bool CC_ARM_AAPCS_Common(unsigned ValNo, MVT ValVT,
     static const MCPhysReg ShadowRegList6[] = {
       ARM::R0, ARM::R1, ARM::R2, ARM::R3
     };
-    unsigned Offset7 = State.AllocateStack(4, 4, ShadowRegList6);
+    unsigned Offset7 = State.AllocateStack(4, Align(4), ShadowRegList6);
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset7, LocVT, LocInfo));
     return false;
   }
 
-  if (LocVT == MVT::f32) {
+  if (LocVT == MVT::f16 ||
+      LocVT == MVT::bf16 ||
+      LocVT == MVT::f32) {
     static const MCPhysReg ShadowRegList8[] = {
       ARM::Q0, ARM::Q1, ARM::Q2, ARM::Q3
     };
-    unsigned Offset9 = State.AllocateStack(4, 4, ShadowRegList8);
+    unsigned Offset9 = State.AllocateStack(4, Align(4), ShadowRegList8);
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset9, LocVT, LocInfo));
     return false;
   }
@@ -192,17 +202,17 @@ static bool CC_ARM_AAPCS_Common(unsigned ValNo, MVT ValVT,
     static const MCPhysReg ShadowRegList10[] = {
       ARM::Q0, ARM::Q1, ARM::Q2, ARM::Q3
     };
-    unsigned Offset11 = State.AllocateStack(8, 8, ShadowRegList10);
+    unsigned Offset11 = State.AllocateStack(8, Align(8), ShadowRegList10);
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset11, LocVT, LocInfo));
     return false;
   }
 
   if (LocVT == MVT::v2f64) {
-    if (ArgFlags.getOrigAlign() == 16) {
+    if (ArgFlags.getNonZeroOrigAlign() == 16) {
       static const MCPhysReg ShadowRegList12[] = {
         ARM::Q0, ARM::Q1, ARM::Q2, ARM::Q3
       };
-      unsigned Offset13 = State.AllocateStack(16, 16, ShadowRegList12);
+      unsigned Offset13 = State.AllocateStack(16, Align(16), ShadowRegList12);
       State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset13, LocVT, LocInfo));
       return false;
     }
@@ -212,7 +222,7 @@ static bool CC_ARM_AAPCS_Common(unsigned ValNo, MVT ValVT,
     static const MCPhysReg ShadowRegList14[] = {
       ARM::Q0, ARM::Q1, ARM::Q2, ARM::Q3
     };
-    unsigned Offset15 = State.AllocateStack(16, 8, ShadowRegList14);
+    unsigned Offset15 = State.AllocateStack(16, Align(8), ShadowRegList14);
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset15, LocVT, LocInfo));
     return false;
   }
@@ -226,7 +236,7 @@ bool llvm::CC_ARM_AAPCS_VFP(unsigned ValNo, MVT ValVT,
                             ISD::ArgFlagsTy ArgFlags, CCState &State) {
 
   if (ArgFlags.isByVal()) {
-    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, 4, ArgFlags);
+    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, Align(4), ArgFlags);
     return false;
   }
 
@@ -234,6 +244,7 @@ bool llvm::CC_ARM_AAPCS_VFP(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v2i32 ||
       LocVT == MVT::v4i16 ||
       LocVT == MVT::v4f16 ||
+      LocVT == MVT::v4bf16 ||
       LocVT == MVT::v8i8 ||
       LocVT == MVT::v2f32) {
     LocVT = MVT::f64;
@@ -244,6 +255,7 @@ bool llvm::CC_ARM_AAPCS_VFP(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v4i32 ||
       LocVT == MVT::v8i16 ||
       LocVT == MVT::v8f16 ||
+      LocVT == MVT::v8bf16 ||
       LocVT == MVT::v16i8 ||
       LocVT == MVT::v4f32) {
     LocVT = MVT::v2f64;
@@ -303,6 +315,12 @@ bool llvm::CC_ARM_AAPCS_VFP(unsigned ValNo, MVT ValVT,
     }
   }
 
+  if (LocVT == MVT::f16 ||
+      LocVT == MVT::bf16) {
+    if (CC_ARM_AAPCS_VFP_Custom_f16(ValNo, ValVT, LocVT, LocInfo, ArgFlags, State))
+        return false;
+  }
+
   if (!CC_ARM_AAPCS_Common(ValNo, ValVT, LocVT, LocInfo, ArgFlags, State))
     return false;
 
@@ -315,7 +333,7 @@ bool llvm::CC_ARM_APCS(unsigned ValNo, MVT ValVT,
                        ISD::ArgFlagsTy ArgFlags, CCState &State) {
 
   if (ArgFlags.isByVal()) {
-    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, 4, ArgFlags);
+    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, Align(4), ArgFlags);
     return false;
   }
 
@@ -353,6 +371,7 @@ bool llvm::CC_ARM_APCS(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v2i32 ||
       LocVT == MVT::v4i16 ||
       LocVT == MVT::v4f16 ||
+      LocVT == MVT::v4bf16 ||
       LocVT == MVT::v8i8 ||
       LocVT == MVT::v2f32) {
     LocVT = MVT::f64;
@@ -363,6 +382,7 @@ bool llvm::CC_ARM_APCS(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v4i32 ||
       LocVT == MVT::v8i16 ||
       LocVT == MVT::v8f16 ||
+      LocVT == MVT::v8bf16 ||
       LocVT == MVT::v16i8 ||
       LocVT == MVT::v4f32) {
     LocVT = MVT::v2f64;
@@ -391,19 +411,19 @@ bool llvm::CC_ARM_APCS(unsigned ValNo, MVT ValVT,
   }
 
   if (LocVT == MVT::i32) {
-    unsigned Offset2 = State.AllocateStack(4, 4);
+    unsigned Offset2 = State.AllocateStack(4, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset2, LocVT, LocInfo));
     return false;
   }
 
   if (LocVT == MVT::f64) {
-    unsigned Offset3 = State.AllocateStack(8, 4);
+    unsigned Offset3 = State.AllocateStack(8, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset3, LocVT, LocInfo));
     return false;
   }
 
   if (LocVT == MVT::v2f64) {
-    unsigned Offset4 = State.AllocateStack(16, 4);
+    unsigned Offset4 = State.AllocateStack(16, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset4, LocVT, LocInfo));
     return false;
   }
@@ -420,6 +440,7 @@ bool llvm::CC_ARM_APCS_GHC(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v2i32 ||
       LocVT == MVT::v4i16 ||
       LocVT == MVT::v4f16 ||
+      LocVT == MVT::v4bf16 ||
       LocVT == MVT::v8i8 ||
       LocVT == MVT::v2f32) {
     LocVT = MVT::f64;
@@ -430,6 +451,7 @@ bool llvm::CC_ARM_APCS_GHC(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v4i32 ||
       LocVT == MVT::v8i16 ||
       LocVT == MVT::v8f16 ||
+      LocVT == MVT::v8bf16 ||
       LocVT == MVT::v16i8 ||
       LocVT == MVT::v4f32) {
     LocVT = MVT::v2f64;
@@ -514,6 +536,7 @@ bool llvm::FastCC_ARM_APCS(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v2i32 ||
       LocVT == MVT::v4i16 ||
       LocVT == MVT::v4f16 ||
+      LocVT == MVT::v4bf16 ||
       LocVT == MVT::v8i8 ||
       LocVT == MVT::v2f32) {
     LocVT = MVT::f64;
@@ -524,6 +547,7 @@ bool llvm::FastCC_ARM_APCS(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v4i32 ||
       LocVT == MVT::v8i16 ||
       LocVT == MVT::v8f16 ||
+      LocVT == MVT::v8bf16 ||
       LocVT == MVT::v16i8 ||
       LocVT == MVT::v4f32) {
     LocVT = MVT::v2f64;
@@ -564,7 +588,7 @@ bool llvm::FastCC_ARM_APCS(unsigned ValNo, MVT ValVT,
     static const MCPhysReg ShadowRegList4[] = {
       ARM::Q0, ARM::Q1, ARM::Q2, ARM::Q3
     };
-    unsigned Offset5 = State.AllocateStack(4, 4, ShadowRegList4);
+    unsigned Offset5 = State.AllocateStack(4, Align(4), ShadowRegList4);
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset5, LocVT, LocInfo));
     return false;
   }
@@ -573,7 +597,7 @@ bool llvm::FastCC_ARM_APCS(unsigned ValNo, MVT ValVT,
     static const MCPhysReg ShadowRegList6[] = {
       ARM::Q0, ARM::Q1, ARM::Q2, ARM::Q3
     };
-    unsigned Offset7 = State.AllocateStack(8, 4, ShadowRegList6);
+    unsigned Offset7 = State.AllocateStack(8, Align(4), ShadowRegList6);
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset7, LocVT, LocInfo));
     return false;
   }
@@ -582,7 +606,7 @@ bool llvm::FastCC_ARM_APCS(unsigned ValNo, MVT ValVT,
     static const MCPhysReg ShadowRegList8[] = {
       ARM::Q0, ARM::Q1, ARM::Q2, ARM::Q3
     };
-    unsigned Offset9 = State.AllocateStack(16, 4, ShadowRegList8);
+    unsigned Offset9 = State.AllocateStack(16, Align(4), ShadowRegList8);
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset9, LocVT, LocInfo));
     return false;
   }
@@ -602,6 +626,7 @@ bool llvm::RetCC_ARM_AAPCS(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v2i32 ||
       LocVT == MVT::v4i16 ||
       LocVT == MVT::v4f16 ||
+      LocVT == MVT::v4bf16 ||
       LocVT == MVT::v8i8 ||
       LocVT == MVT::v2f32) {
     LocVT = MVT::f64;
@@ -612,6 +637,7 @@ bool llvm::RetCC_ARM_AAPCS(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v4i32 ||
       LocVT == MVT::v8i16 ||
       LocVT == MVT::v8f16 ||
+      LocVT == MVT::v8bf16 ||
       LocVT == MVT::v16i8 ||
       LocVT == MVT::v4f32) {
     LocVT = MVT::v2f64;
@@ -645,6 +671,12 @@ bool llvm::RetCC_ARM_AAPCS(unsigned ValNo, MVT ValVT,
   if (LocVT == MVT::f32) {
     LocVT = MVT::i32;
     LocInfo = CCValAssign::BCvt;
+  }
+
+  if (LocVT == MVT::f16 ||
+      LocVT == MVT::bf16) {
+    if (CC_ARM_AAPCS_Custom_f16(ValNo, ValVT, LocVT, LocInfo, ArgFlags, State))
+        return false;
   }
 
   if (!RetCC_ARM_AAPCS_Common(ValNo, ValVT, LocVT, LocInfo, ArgFlags, State))
@@ -705,6 +737,7 @@ bool llvm::RetCC_ARM_AAPCS_VFP(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v2i32 ||
       LocVT == MVT::v4i16 ||
       LocVT == MVT::v4f16 ||
+      LocVT == MVT::v4bf16 ||
       LocVT == MVT::v8i8 ||
       LocVT == MVT::v2f32) {
     LocVT = MVT::f64;
@@ -715,6 +748,7 @@ bool llvm::RetCC_ARM_AAPCS_VFP(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v4i32 ||
       LocVT == MVT::v8i16 ||
       LocVT == MVT::v8f16 ||
+      LocVT == MVT::v8bf16 ||
       LocVT == MVT::v16i8 ||
       LocVT == MVT::v4f32) {
     LocVT = MVT::v2f64;
@@ -769,6 +803,12 @@ bool llvm::RetCC_ARM_AAPCS_VFP(unsigned ValNo, MVT ValVT,
     }
   }
 
+  if (LocVT == MVT::f16 ||
+      LocVT == MVT::bf16) {
+    if (CC_ARM_AAPCS_VFP_Custom_f16(ValNo, ValVT, LocVT, LocInfo, ArgFlags, State))
+        return false;
+  }
+
   if (!RetCC_ARM_AAPCS_Common(ValNo, ValVT, LocVT, LocInfo, ArgFlags, State))
     return false;
 
@@ -819,6 +859,7 @@ bool llvm::RetCC_ARM_APCS(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v2i32 ||
       LocVT == MVT::v4i16 ||
       LocVT == MVT::v4f16 ||
+      LocVT == MVT::v4bf16 ||
       LocVT == MVT::v8i8 ||
       LocVT == MVT::v2f32) {
     LocVT = MVT::f64;
@@ -829,6 +870,7 @@ bool llvm::RetCC_ARM_APCS(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v4i32 ||
       LocVT == MVT::v8i16 ||
       LocVT == MVT::v8f16 ||
+      LocVT == MVT::v8bf16 ||
       LocVT == MVT::v16i8 ||
       LocVT == MVT::v4f32) {
     LocVT = MVT::v2f64;
@@ -876,6 +918,7 @@ bool llvm::RetFastCC_ARM_APCS(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v2i32 ||
       LocVT == MVT::v4i16 ||
       LocVT == MVT::v4f16 ||
+      LocVT == MVT::v4bf16 ||
       LocVT == MVT::v8i8 ||
       LocVT == MVT::v2f32) {
     LocVT = MVT::f64;
@@ -886,6 +929,7 @@ bool llvm::RetFastCC_ARM_APCS(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v4i32 ||
       LocVT == MVT::v8i16 ||
       LocVT == MVT::v8f16 ||
+      LocVT == MVT::v8bf16 ||
       LocVT == MVT::v16i8 ||
       LocVT == MVT::v4f32) {
     LocVT = MVT::v2f64;

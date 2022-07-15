@@ -15,694 +15,721 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
 #pragma GCC diagnostic ignored "-Woverlength-strings"
 #endif
   static const char AsmStrs[] = {
-  /* 0 */ "vld20.32\t\0"
-  /* 10 */ "vst20.32\t\0"
-  /* 20 */ "vld40.32\t\0"
-  /* 30 */ "vst40.32\t\0"
-  /* 40 */ "sha1su0.32\t\0"
-  /* 52 */ "sha256su0.32\t\0"
-  /* 66 */ "vld21.32\t\0"
-  /* 76 */ "vst21.32\t\0"
-  /* 86 */ "vld41.32\t\0"
-  /* 96 */ "vst41.32\t\0"
-  /* 106 */ "sha1su1.32\t\0"
-  /* 118 */ "sha256su1.32\t\0"
-  /* 132 */ "vld42.32\t\0"
-  /* 142 */ "vst42.32\t\0"
-  /* 152 */ "sha256h2.32\t\0"
-  /* 165 */ "vld43.32\t\0"
-  /* 175 */ "vst43.32\t\0"
-  /* 185 */ "sha1c.32\t\0"
-  /* 195 */ "sha1h.32\t\0"
-  /* 205 */ "sha256h.32\t\0"
-  /* 217 */ "sha1m.32\t\0"
-  /* 227 */ "sha1p.32\t\0"
-  /* 237 */ "dlstp.32\t\0"
-  /* 247 */ "wlstp.32\t\0"
-  /* 257 */ "vcvta.s32.f32\t\0"
-  /* 272 */ "vcvtm.s32.f32\t\0"
-  /* 287 */ "vcvtn.s32.f32\t\0"
-  /* 302 */ "vcvtp.s32.f32\t\0"
-  /* 317 */ "vcvta.u32.f32\t\0"
-  /* 332 */ "vcvtm.u32.f32\t\0"
-  /* 347 */ "vcvtn.u32.f32\t\0"
-  /* 362 */ "vcvtp.u32.f32\t\0"
-  /* 377 */ "vcmla.f32\t\0"
-  /* 388 */ "vrinta.f32\t\0"
-  /* 400 */ "vcadd.f32\t\0"
-  /* 411 */ "vselge.f32\t\0"
-  /* 423 */ "vminnm.f32\t\0"
-  /* 435 */ "vmaxnm.f32\t\0"
-  /* 447 */ "vrintm.f32\t\0"
-  /* 459 */ "vrintn.f32\t\0"
-  /* 471 */ "vrintp.f32\t\0"
-  /* 483 */ "vseleq.f32\t\0"
-  /* 495 */ "vselvs.f32\t\0"
-  /* 507 */ "vselgt.f32\t\0"
-  /* 519 */ "vrintx.f32\t\0"
-  /* 531 */ "vrintz.f32\t\0"
-  /* 543 */ "ldc2\t\0"
-  /* 549 */ "mrc2\t\0"
-  /* 555 */ "mrrc2\t\0"
-  /* 562 */ "stc2\t\0"
-  /* 568 */ "cdp2\t\0"
-  /* 574 */ "mcr2\t\0"
-  /* 580 */ "mcrr2\t\0"
-  /* 587 */ "dlstp.64\t\0"
-  /* 597 */ "wlstp.64\t\0"
-  /* 607 */ "vcvta.s32.f64\t\0"
-  /* 622 */ "vcvtm.s32.f64\t\0"
-  /* 637 */ "vcvtn.s32.f64\t\0"
-  /* 652 */ "vcvtp.s32.f64\t\0"
-  /* 667 */ "vcvta.u32.f64\t\0"
-  /* 682 */ "vcvtm.u32.f64\t\0"
-  /* 697 */ "vcvtn.u32.f64\t\0"
-  /* 712 */ "vcvtp.u32.f64\t\0"
-  /* 727 */ "vrinta.f64\t\0"
-  /* 739 */ "vselge.f64\t\0"
-  /* 751 */ "vminnm.f64\t\0"
-  /* 763 */ "vmaxnm.f64\t\0"
-  /* 775 */ "vrintm.f64\t\0"
-  /* 787 */ "vrintn.f64\t\0"
-  /* 799 */ "vrintp.f64\t\0"
-  /* 811 */ "vseleq.f64\t\0"
-  /* 823 */ "vselvs.f64\t\0"
-  /* 835 */ "vselgt.f64\t\0"
-  /* 847 */ "vmull.p64\t\0"
-  /* 858 */ "vld20.16\t\0"
-  /* 868 */ "vst20.16\t\0"
-  /* 878 */ "vld40.16\t\0"
-  /* 888 */ "vst40.16\t\0"
-  /* 898 */ "vld21.16\t\0"
-  /* 908 */ "vst21.16\t\0"
-  /* 918 */ "vld41.16\t\0"
-  /* 928 */ "vst41.16\t\0"
-  /* 938 */ "vld42.16\t\0"
-  /* 948 */ "vst42.16\t\0"
-  /* 958 */ "vld43.16\t\0"
-  /* 968 */ "vst43.16\t\0"
-  /* 978 */ "dlstp.16\t\0"
-  /* 988 */ "wlstp.16\t\0"
-  /* 998 */ "vcvta.s32.f16\t\0"
-  /* 1013 */ "vcvtm.s32.f16\t\0"
-  /* 1028 */ "vcvtn.s32.f16\t\0"
-  /* 1043 */ "vcvtp.s32.f16\t\0"
-  /* 1058 */ "vcvta.u32.f16\t\0"
-  /* 1073 */ "vcvtm.u32.f16\t\0"
-  /* 1088 */ "vcvtn.u32.f16\t\0"
-  /* 1103 */ "vcvtp.u32.f16\t\0"
-  /* 1118 */ "vcvta.s16.f16\t\0"
-  /* 1133 */ "vcvtm.s16.f16\t\0"
-  /* 1148 */ "vcvtn.s16.f16\t\0"
-  /* 1163 */ "vcvtp.s16.f16\t\0"
-  /* 1178 */ "vcvta.u16.f16\t\0"
-  /* 1193 */ "vcvtm.u16.f16\t\0"
-  /* 1208 */ "vcvtn.u16.f16\t\0"
-  /* 1223 */ "vcvtp.u16.f16\t\0"
-  /* 1238 */ "vcmla.f16\t\0"
-  /* 1249 */ "vrinta.f16\t\0"
-  /* 1261 */ "vcadd.f16\t\0"
-  /* 1272 */ "vselge.f16\t\0"
-  /* 1284 */ "vfmal.f16\t\0"
-  /* 1295 */ "vfmsl.f16\t\0"
-  /* 1306 */ "vminnm.f16\t\0"
-  /* 1318 */ "vmaxnm.f16\t\0"
-  /* 1330 */ "vrintm.f16\t\0"
-  /* 1342 */ "vrintn.f16\t\0"
-  /* 1354 */ "vrintp.f16\t\0"
-  /* 1366 */ "vseleq.f16\t\0"
-  /* 1378 */ "vins.f16\t\0"
-  /* 1388 */ "vselvs.f16\t\0"
-  /* 1400 */ "vselgt.f16\t\0"
-  /* 1412 */ "vrintx.f16\t\0"
-  /* 1424 */ "vmovx.f16\t\0"
-  /* 1435 */ "vrintz.f16\t\0"
-  /* 1447 */ "vld20.8\t\0"
-  /* 1456 */ "vst20.8\t\0"
-  /* 1465 */ "vld40.8\t\0"
-  /* 1474 */ "vst40.8\t\0"
-  /* 1483 */ "vld21.8\t\0"
-  /* 1492 */ "vst21.8\t\0"
-  /* 1501 */ "vld41.8\t\0"
-  /* 1510 */ "vst41.8\t\0"
-  /* 1519 */ "vld42.8\t\0"
-  /* 1528 */ "vst42.8\t\0"
-  /* 1537 */ "vld43.8\t\0"
-  /* 1546 */ "vst43.8\t\0"
-  /* 1555 */ "aesimc.8\t\0"
-  /* 1565 */ "aesmc.8\t\0"
-  /* 1574 */ "aesd.8\t\0"
-  /* 1582 */ "aese.8\t\0"
-  /* 1590 */ "dlstp.8\t\0"
-  /* 1599 */ "wlstp.8\t\0"
-  /* 1608 */ "vsdot.s8\t\0"
-  /* 1618 */ "vudot.u8\t\0"
-  /* 1628 */ "rfeda\t\0"
-  /* 1635 */ "rfeia\t\0"
-  /* 1642 */ "crc32b\t\0"
-  /* 1650 */ "crc32cb\t\0"
-  /* 1659 */ "rfedb\t\0"
-  /* 1666 */ "rfeib\t\0"
-  /* 1673 */ "dmb\t\0"
-  /* 1678 */ "dsb\t\0"
-  /* 1683 */ "isb\t\0"
-  /* 1688 */ "tsb\t\0"
-  /* 1693 */ "csinc\t\0"
-  /* 1700 */ "hvc\t\0"
-  /* 1705 */ "pld\t\0"
-  /* 1710 */ "setend\t\0"
-  /* 1718 */ "le\t\0"
-  /* 1722 */ "udf\t\0"
-  /* 1727 */ "csneg\t\0"
-  /* 1734 */ "crc32h\t\0"
-  /* 1742 */ "crc32ch\t\0"
-  /* 1751 */ "pli\t\0"
-  /* 1756 */ "ldc2l\t\0"
-  /* 1763 */ "stc2l\t\0"
-  /* 1770 */ "bl\t\0"
-  /* 1774 */ "bfcsel\t\0"
-  /* 1782 */ "setpan\t\0"
-  /* 1790 */ "letp\t\0"
-  /* 1796 */ "dls\t\0"
-  /* 1801 */ "wls\t\0"
-  /* 1806 */ "cps\t\0"
-  /* 1811 */ "movs\t\0"
-  /* 1817 */ "hlt\t\0"
-  /* 1822 */ "bkpt\t\0"
-  /* 1828 */ "csinv\t\0"
-  /* 1835 */ "hvc.w\t\0"
-  /* 1842 */ "udf.w\t\0"
-  /* 1849 */ "crc32w\t\0"
-  /* 1857 */ "crc32cw\t\0"
-  /* 1866 */ "pldw\t\0"
-  /* 1872 */ "bx\t\0"
-  /* 1876 */ "blx\t\0"
-  /* 1881 */ "cbz\t\0"
-  /* 1886 */ "cbnz\t\0"
-  /* 1892 */ "srsda\tsp!, \0"
-  /* 1904 */ "srsia\tsp!, \0"
-  /* 1916 */ "srsdb\tsp!, \0"
-  /* 1928 */ "srsib\tsp!, \0"
-  /* 1940 */ "srsda\tsp, \0"
-  /* 1951 */ "srsia\tsp, \0"
-  /* 1962 */ "srsdb\tsp, \0"
-  /* 1973 */ "srsib\tsp, \0"
-  /* 1984 */ "# XRay Function Patchable RET.\0"
-  /* 2015 */ "# XRay Typed Event Log.\0"
-  /* 2039 */ "# XRay Custom Event Log.\0"
-  /* 2064 */ "# XRay Function Enter.\0"
-  /* 2087 */ "# XRay Tail Call Exit.\0"
-  /* 2110 */ "# XRay Function Exit.\0"
-  /* 2132 */ "__brkdiv0\0"
-  /* 2142 */ "vld1\0"
-  /* 2147 */ "dcps1\0"
-  /* 2153 */ "vst1\0"
-  /* 2158 */ "vrev32\0"
-  /* 2165 */ "ldc2\0"
-  /* 2170 */ "mrc2\0"
-  /* 2175 */ "mrrc2\0"
-  /* 2181 */ "stc2\0"
-  /* 2186 */ "vld2\0"
-  /* 2191 */ "cdp2\0"
-  /* 2196 */ "mcr2\0"
-  /* 2201 */ "mcrr2\0"
-  /* 2207 */ "dcps2\0"
-  /* 2213 */ "vst2\0"
-  /* 2218 */ "vld3\0"
-  /* 2223 */ "dcps3\0"
-  /* 2229 */ "vst3\0"
-  /* 2234 */ "vrev64\0"
-  /* 2241 */ "vld4\0"
-  /* 2246 */ "vst4\0"
-  /* 2251 */ "sxtab16\0"
-  /* 2259 */ "uxtab16\0"
-  /* 2267 */ "sxtb16\0"
-  /* 2274 */ "uxtb16\0"
-  /* 2281 */ "shsub16\0"
-  /* 2289 */ "uhsub16\0"
-  /* 2297 */ "uqsub16\0"
-  /* 2305 */ "ssub16\0"
-  /* 2312 */ "usub16\0"
-  /* 2319 */ "shadd16\0"
-  /* 2327 */ "uhadd16\0"
-  /* 2335 */ "uqadd16\0"
-  /* 2343 */ "sadd16\0"
-  /* 2350 */ "uadd16\0"
-  /* 2357 */ "ssat16\0"
-  /* 2364 */ "usat16\0"
-  /* 2371 */ "vrev16\0"
-  /* 2378 */ "usada8\0"
-  /* 2385 */ "shsub8\0"
-  /* 2392 */ "uhsub8\0"
-  /* 2399 */ "uqsub8\0"
-  /* 2406 */ "ssub8\0"
-  /* 2412 */ "usub8\0"
-  /* 2418 */ "usad8\0"
-  /* 2424 */ "shadd8\0"
-  /* 2431 */ "uhadd8\0"
-  /* 2438 */ "uqadd8\0"
-  /* 2445 */ "sadd8\0"
-  /* 2451 */ "uadd8\0"
-  /* 2457 */ "LIFETIME_END\0"
-  /* 2470 */ "BUNDLE\0"
-  /* 2477 */ "DBG_VALUE\0"
-  /* 2487 */ "DBG_LABEL\0"
-  /* 2497 */ "@ COMPILER BARRIER\0"
-  /* 2516 */ "LIFETIME_START\0"
-  /* 2531 */ "vaba\0"
-  /* 2536 */ "lda\0"
-  /* 2540 */ "ldmda\0"
-  /* 2546 */ "stmda\0"
-  /* 2552 */ "vrmlaldavha\0"
-  /* 2564 */ "vrmlsldavha\0"
-  /* 2576 */ "rfeia\0"
-  /* 2582 */ "vldmia\0"
-  /* 2589 */ "vstmia\0"
-  /* 2596 */ "srsia\0"
-  /* 2602 */ "vcmla\0"
-  /* 2608 */ "smmla\0"
-  /* 2614 */ "vnmla\0"
-  /* 2620 */ "vmla\0"
-  /* 2625 */ "vfma\0"
-  /* 2630 */ "vfnma\0"
-  /* 2636 */ "vminnma\0"
-  /* 2644 */ "vmaxnma\0"
-  /* 2652 */ "vmina\0"
-  /* 2658 */ "vrsra\0"
-  /* 2664 */ "vsra\0"
-  /* 2669 */ "vrinta\0"
-  /* 2676 */ "tta\0"
-  /* 2680 */ "vcvta\0"
-  /* 2686 */ "vmladava\0"
-  /* 2695 */ "vmlaldava\0"
-  /* 2705 */ "vmlsldava\0"
-  /* 2715 */ "vmlsdava\0"
-  /* 2724 */ "vaddva\0"
-  /* 2731 */ "vaddlva\0"
-  /* 2739 */ "vmaxa\0"
-  /* 2745 */ "ldab\0"
-  /* 2750 */ "sxtab\0"
-  /* 2756 */ "uxtab\0"
-  /* 2762 */ "smlabb\0"
-  /* 2769 */ "smlalbb\0"
-  /* 2777 */ "smulbb\0"
-  /* 2784 */ "tbb\0"
-  /* 2788 */ "rfedb\0"
-  /* 2794 */ "vldmdb\0"
-  /* 2801 */ "vstmdb\0"
-  /* 2808 */ "srsdb\0"
-  /* 2814 */ "ldmib\0"
-  /* 2820 */ "stmib\0"
-  /* 2826 */ "vshllb\0"
-  /* 2833 */ "vqdmullb\0"
-  /* 2842 */ "vmullb\0"
-  /* 2849 */ "stlb\0"
-  /* 2854 */ "vmovlb\0"
-  /* 2861 */ "dmb\0"
-  /* 2865 */ "vqshrnb\0"
-  /* 2873 */ "vqrshrnb\0"
-  /* 2882 */ "vrshrnb\0"
-  /* 2890 */ "vshrnb\0"
-  /* 2897 */ "vqshrunb\0"
-  /* 2906 */ "vqrshrunb\0"
-  /* 2916 */ "vqmovunb\0"
-  /* 2925 */ "vqmovnb\0"
-  /* 2933 */ "vmovnb\0"
-  /* 2940 */ "swpb\0"
-  /* 2945 */ "vldrb\0"
-  /* 2951 */ "vstrb\0"
-  /* 2957 */ "dsb\0"
-  /* 2961 */ "isb\0"
-  /* 2965 */ "ldrsb\0"
-  /* 2971 */ "tsb\0"
-  /* 2975 */ "smlatb\0"
-  /* 2982 */ "pkhtb\0"
-  /* 2988 */ "smlaltb\0"
-  /* 2996 */ "smultb\0"
-  /* 3003 */ "vcvtb\0"
-  /* 3009 */ "sxtb\0"
-  /* 3014 */ "uxtb\0"
-  /* 3019 */ "qdsub\0"
-  /* 3025 */ "vhsub\0"
-  /* 3031 */ "vqsub\0"
-  /* 3037 */ "vsub\0"
-  /* 3042 */ "smlawb\0"
-  /* 3049 */ "smulwb\0"
-  /* 3056 */ "ldaexb\0"
-  /* 3063 */ "stlexb\0"
-  /* 3070 */ "ldrexb\0"
-  /* 3077 */ "strexb\0"
-  /* 3084 */ "vsbc\0"
-  /* 3089 */ "vadc\0"
-  /* 3094 */ "ldc\0"
-  /* 3098 */ "bfc\0"
-  /* 3102 */ "vbic\0"
-  /* 3107 */ "vshlc\0"
-  /* 3113 */ "smc\0"
-  /* 3117 */ "mrc\0"
-  /* 3121 */ "mrrc\0"
-  /* 3126 */ "rsc\0"
-  /* 3130 */ "stc\0"
-  /* 3134 */ "svc\0"
-  /* 3138 */ "smlad\0"
-  /* 3144 */ "smuad\0"
-  /* 3150 */ "vabd\0"
-  /* 3155 */ "vhcadd\0"
-  /* 3162 */ "vcadd\0"
-  /* 3168 */ "qdadd\0"
-  /* 3174 */ "vrhadd\0"
-  /* 3181 */ "vhadd\0"
-  /* 3187 */ "vpadd\0"
-  /* 3193 */ "vqadd\0"
-  /* 3199 */ "vadd\0"
-  /* 3204 */ "smlald\0"
-  /* 3211 */ "pld\0"
-  /* 3215 */ "smlsld\0"
-  /* 3222 */ "vand\0"
-  /* 3227 */ "vldrd\0"
-  /* 3233 */ "vstrd\0"
-  /* 3239 */ "smlsd\0"
-  /* 3245 */ "smusd\0"
-  /* 3251 */ "ldaexd\0"
-  /* 3258 */ "stlexd\0"
-  /* 3265 */ "ldrexd\0"
-  /* 3272 */ "strexd\0"
-  /* 3279 */ "vacge\0"
-  /* 3285 */ "vcge\0"
-  /* 3290 */ "vcle\0"
-  /* 3295 */ "vrecpe\0"
-  /* 3302 */ "vcmpe\0"
-  /* 3308 */ "vrsqrte\0"
-  /* 3316 */ "bf\0"
-  /* 3319 */ "vbif\0"
-  /* 3324 */ "dbg\0"
-  /* 3328 */ "vqneg\0"
-  /* 3334 */ "vneg\0"
-  /* 3339 */ "sg\0"
-  /* 3342 */ "ldah\0"
-  /* 3347 */ "vqdmlah\0"
-  /* 3355 */ "vqrdmlah\0"
-  /* 3364 */ "sxtah\0"
-  /* 3370 */ "uxtah\0"
-  /* 3376 */ "tbh\0"
-  /* 3380 */ "vqdmladh\0"
-  /* 3389 */ "vqrdmladh\0"
-  /* 3399 */ "vqdmlsdh\0"
-  /* 3408 */ "vqrdmlsdh\0"
-  /* 3418 */ "stlh\0"
-  /* 3423 */ "vqdmulh\0"
-  /* 3431 */ "vqrdmulh\0"
-  /* 3440 */ "vrmulh\0"
-  /* 3447 */ "vmulh\0"
-  /* 3453 */ "vldrh\0"
-  /* 3459 */ "vstrh\0"
-  /* 3465 */ "vqdmlash\0"
-  /* 3474 */ "vqrdmlash\0"
-  /* 3484 */ "vqrdmlsh\0"
-  /* 3493 */ "ldrsh\0"
-  /* 3499 */ "push\0"
-  /* 3504 */ "revsh\0"
-  /* 3510 */ "sxth\0"
-  /* 3515 */ "uxth\0"
-  /* 3520 */ "vrmlaldavh\0"
-  /* 3531 */ "vrmlsldavh\0"
-  /* 3542 */ "ldaexh\0"
-  /* 3549 */ "stlexh\0"
-  /* 3556 */ "ldrexh\0"
-  /* 3563 */ "strexh\0"
-  /* 3570 */ "vsbci\0"
-  /* 3576 */ "vadci\0"
-  /* 3582 */ "bfi\0"
-  /* 3586 */ "pli\0"
-  /* 3590 */ "vsli\0"
-  /* 3595 */ "vsri\0"
-  /* 3600 */ "bxj\0"
-  /* 3604 */ "ldc2l\0"
-  /* 3610 */ "stc2l\0"
-  /* 3616 */ "umaal\0"
-  /* 3622 */ "vabal\0"
-  /* 3628 */ "vpadal\0"
-  /* 3635 */ "vqdmlal\0"
-  /* 3643 */ "smlal\0"
-  /* 3649 */ "umlal\0"
-  /* 3655 */ "vmlal\0"
-  /* 3661 */ "vtbl\0"
-  /* 3666 */ "vsubl\0"
-  /* 3672 */ "ldcl\0"
-  /* 3677 */ "stcl\0"
-  /* 3682 */ "vabdl\0"
-  /* 3688 */ "vpaddl\0"
-  /* 3695 */ "vaddl\0"
-  /* 3701 */ "vpsel\0"
-  /* 3707 */ "bfl\0"
-  /* 3711 */ "sqshl\0"
-  /* 3717 */ "uqshl\0"
-  /* 3723 */ "vqshl\0"
-  /* 3729 */ "uqrshl\0"
-  /* 3736 */ "vqrshl\0"
-  /* 3743 */ "vrshl\0"
-  /* 3749 */ "vshl\0"
-  /* 3754 */ "# FEntry call\0"
-  /* 3768 */ "sqshll\0"
-  /* 3775 */ "uqshll\0"
-  /* 3782 */ "uqrshll\0"
-  /* 3790 */ "vshll\0"
-  /* 3796 */ "lsll\0"
-  /* 3801 */ "vqdmull\0"
-  /* 3809 */ "smull\0"
-  /* 3815 */ "umull\0"
-  /* 3821 */ "vmull\0"
-  /* 3827 */ "sqrshrl\0"
-  /* 3835 */ "srshrl\0"
-  /* 3842 */ "urshrl\0"
-  /* 3849 */ "asrl\0"
-  /* 3854 */ "lsrl\0"
-  /* 3859 */ "vbsl\0"
-  /* 3864 */ "vqdmlsl\0"
-  /* 3872 */ "vmlsl\0"
-  /* 3878 */ "stl\0"
-  /* 3882 */ "vcmul\0"
-  /* 3888 */ "smmul\0"
-  /* 3894 */ "vnmul\0"
-  /* 3900 */ "vmul\0"
-  /* 3905 */ "vmovl\0"
-  /* 3911 */ "vlldm\0"
-  /* 3917 */ "vminnm\0"
-  /* 3924 */ "vmaxnm\0"
-  /* 3931 */ "vscclrm\0"
-  /* 3939 */ "vrintm\0"
-  /* 3946 */ "vlstm\0"
-  /* 3952 */ "vcvtm\0"
-  /* 3958 */ "vrsubhn\0"
-  /* 3966 */ "vsubhn\0"
-  /* 3973 */ "vraddhn\0"
-  /* 3981 */ "vaddhn\0"
-  /* 3988 */ "vpmin\0"
-  /* 3994 */ "vmin\0"
-  /* 3999 */ "cmn\0"
-  /* 4003 */ "vqshrn\0"
-  /* 4010 */ "vqrshrn\0"
-  /* 4018 */ "vrshrn\0"
-  /* 4025 */ "vshrn\0"
-  /* 4031 */ "vorn\0"
-  /* 4036 */ "vtrn\0"
-  /* 4041 */ "vrintn\0"
-  /* 4048 */ "vcvtn\0"
-  /* 4054 */ "vqshrun\0"
-  /* 4062 */ "vqrshrun\0"
-  /* 4071 */ "vqmovun\0"
-  /* 4079 */ "vmvn\0"
-  /* 4084 */ "vqmovn\0"
-  /* 4091 */ "vmovn\0"
-  /* 4097 */ "trap\0"
-  /* 4102 */ "cdp\0"
-  /* 4106 */ "vzip\0"
-  /* 4111 */ "vcmp\0"
-  /* 4116 */ "pop\0"
-  /* 4120 */ "lctp\0"
-  /* 4125 */ "vctp\0"
-  /* 4130 */ "vrintp\0"
-  /* 4137 */ "vcvtp\0"
-  /* 4143 */ "vddup\0"
-  /* 4149 */ "vidup\0"
-  /* 4155 */ "vdup\0"
-  /* 4160 */ "vdwdup\0"
-  /* 4167 */ "viwdup\0"
-  /* 4174 */ "vswp\0"
-  /* 4179 */ "vuzp\0"
-  /* 4184 */ "vceq\0"
-  /* 4189 */ "teq\0"
-  /* 4193 */ "smmlar\0"
-  /* 4200 */ "mcr\0"
-  /* 4204 */ "adr\0"
-  /* 4208 */ "vldr\0"
-  /* 4213 */ "sqrshr\0"
-  /* 4220 */ "srshr\0"
-  /* 4226 */ "urshr\0"
-  /* 4232 */ "vrshr\0"
-  /* 4238 */ "vshr\0"
-  /* 4243 */ "smmulr\0"
-  /* 4250 */ "veor\0"
-  /* 4255 */ "ror\0"
-  /* 4259 */ "mcrr\0"
-  /* 4264 */ "vorr\0"
-  /* 4269 */ "asr\0"
-  /* 4273 */ "smmlsr\0"
-  /* 4280 */ "vmsr\0"
-  /* 4285 */ "vbrsr\0"
-  /* 4291 */ "vrintr\0"
-  /* 4298 */ "vstr\0"
-  /* 4303 */ "vcvtr\0"
-  /* 4309 */ "vmlas\0"
-  /* 4315 */ "vfmas\0"
-  /* 4321 */ "vqabs\0"
-  /* 4327 */ "vabs\0"
-  /* 4332 */ "subs\0"
-  /* 4337 */ "vcls\0"
-  /* 4342 */ "smmls\0"
-  /* 4348 */ "vnmls\0"
-  /* 4354 */ "vmls\0"
-  /* 4359 */ "vfms\0"
-  /* 4364 */ "vfnms\0"
-  /* 4370 */ "bxns\0"
-  /* 4375 */ "blxns\0"
-  /* 4381 */ "vrecps\0"
-  /* 4388 */ "vmrs\0"
-  /* 4393 */ "asrs\0"
-  /* 4398 */ "lsrs\0"
-  /* 4403 */ "vrsqrts\0"
-  /* 4411 */ "movs\0"
-  /* 4416 */ "ssat\0"
-  /* 4421 */ "usat\0"
-  /* 4426 */ "ttat\0"
-  /* 4431 */ "smlabt\0"
-  /* 4438 */ "pkhbt\0"
-  /* 4444 */ "smlalbt\0"
-  /* 4452 */ "smulbt\0"
-  /* 4459 */ "ldrbt\0"
-  /* 4465 */ "strbt\0"
-  /* 4471 */ "ldrsbt\0"
-  /* 4478 */ "eret\0"
-  /* 4483 */ "vacgt\0"
-  /* 4489 */ "vcgt\0"
-  /* 4494 */ "ldrht\0"
-  /* 4500 */ "strht\0"
-  /* 4506 */ "ldrsht\0"
-  /* 4513 */ "rbit\0"
-  /* 4518 */ "vbit\0"
-  /* 4523 */ "vclt\0"
-  /* 4528 */ "vshllt\0"
-  /* 4535 */ "vqdmullt\0"
-  /* 4544 */ "vmullt\0"
-  /* 4551 */ "vmovlt\0"
-  /* 4558 */ "vcnt\0"
-  /* 4563 */ "hint\0"
-  /* 4568 */ "vqshrnt\0"
-  /* 4576 */ "vqrshrnt\0"
-  /* 4585 */ "vrshrnt\0"
-  /* 4593 */ "vshrnt\0"
-  /* 4600 */ "vqshrunt\0"
-  /* 4609 */ "vqrshrunt\0"
-  /* 4619 */ "vqmovunt\0"
-  /* 4628 */ "vqmovnt\0"
-  /* 4636 */ "vmovnt\0"
-  /* 4643 */ "vpnot\0"
-  /* 4649 */ "vpt\0"
-  /* 4653 */ "ldrt\0"
-  /* 4658 */ "vsqrt\0"
-  /* 4664 */ "strt\0"
-  /* 4669 */ "vpst\0"
-  /* 4674 */ "vtst\0"
-  /* 4679 */ "smlatt\0"
-  /* 4686 */ "smlaltt\0"
-  /* 4694 */ "smultt\0"
-  /* 4701 */ "ttt\0"
-  /* 4705 */ "vcvtt\0"
-  /* 4711 */ "vjcvt\0"
-  /* 4717 */ "vcvt\0"
-  /* 4722 */ "movt\0"
-  /* 4727 */ "smlawt\0"
-  /* 4734 */ "smulwt\0"
-  /* 4741 */ "vext\0"
-  /* 4746 */ "vqshlu\0"
-  /* 4753 */ "vabav\0"
-  /* 4759 */ "vmladav\0"
-  /* 4767 */ "vmlaldav\0"
-  /* 4776 */ "vmlsldav\0"
-  /* 4785 */ "vmlsdav\0"
-  /* 4793 */ "vminnmav\0"
-  /* 4802 */ "vmaxnmav\0"
-  /* 4811 */ "vminav\0"
-  /* 4818 */ "vmaxav\0"
-  /* 4825 */ "vaddv\0"
-  /* 4831 */ "rev\0"
-  /* 4835 */ "sdiv\0"
-  /* 4840 */ "udiv\0"
-  /* 4845 */ "vdiv\0"
-  /* 4850 */ "vaddlv\0"
-  /* 4857 */ "vminnmv\0"
-  /* 4865 */ "vmaxnmv\0"
-  /* 4873 */ "vminv\0"
-  /* 4879 */ "vmov\0"
-  /* 4884 */ "vmaxv\0"
-  /* 4890 */ "vsubw\0"
-  /* 4896 */ "vaddw\0"
-  /* 4902 */ "pldw\0"
-  /* 4907 */ "vldrw\0"
-  /* 4913 */ "vstrw\0"
-  /* 4919 */ "movw\0"
-  /* 4924 */ "vrmlaldavhax\0"
-  /* 4937 */ "vrmlsldavhax\0"
-  /* 4950 */ "fldmiax\0"
-  /* 4958 */ "fstmiax\0"
-  /* 4966 */ "vpmax\0"
-  /* 4972 */ "vmax\0"
-  /* 4977 */ "shsax\0"
-  /* 4983 */ "uhsax\0"
-  /* 4989 */ "uqsax\0"
-  /* 4995 */ "ssax\0"
-  /* 5000 */ "usax\0"
-  /* 5005 */ "vmladavax\0"
-  /* 5015 */ "vmlaldavax\0"
-  /* 5026 */ "vmlsldavax\0"
-  /* 5037 */ "vmlsdavax\0"
-  /* 5047 */ "fldmdbx\0"
-  /* 5055 */ "fstmdbx\0"
-  /* 5063 */ "vtbx\0"
-  /* 5068 */ "smladx\0"
-  /* 5075 */ "smuadx\0"
-  /* 5082 */ "smlaldx\0"
-  /* 5090 */ "smlsldx\0"
-  /* 5098 */ "smlsdx\0"
-  /* 5105 */ "smusdx\0"
-  /* 5112 */ "ldaex\0"
-  /* 5118 */ "stlex\0"
-  /* 5124 */ "ldrex\0"
-  /* 5130 */ "clrex\0"
-  /* 5136 */ "strex\0"
-  /* 5142 */ "sbfx\0"
-  /* 5147 */ "ubfx\0"
-  /* 5152 */ "vqdmladhx\0"
-  /* 5162 */ "vqrdmladhx\0"
-  /* 5173 */ "vqdmlsdhx\0"
-  /* 5183 */ "vqrdmlsdhx\0"
-  /* 5194 */ "vrmlaldavhx\0"
-  /* 5206 */ "vrmlsldavhx\0"
-  /* 5218 */ "blx\0"
-  /* 5222 */ "bflx\0"
-  /* 5227 */ "rrx\0"
-  /* 5231 */ "shasx\0"
-  /* 5237 */ "uhasx\0"
-  /* 5243 */ "uqasx\0"
-  /* 5249 */ "sasx\0"
-  /* 5254 */ "uasx\0"
-  /* 5259 */ "vrintx\0"
-  /* 5266 */ "vmladavx\0"
-  /* 5275 */ "vmlaldavx\0"
-  /* 5285 */ "vmlsldavx\0"
-  /* 5295 */ "vmlsdavx\0"
-  /* 5304 */ "vclz\0"
-  /* 5309 */ "vrintz\0"
+  /* 0 */ "vcx1\t\0"
+  /* 6 */ "vld20.32\t\0"
+  /* 16 */ "vst20.32\t\0"
+  /* 26 */ "vld40.32\t\0"
+  /* 36 */ "vst40.32\t\0"
+  /* 46 */ "sha1su0.32\t\0"
+  /* 58 */ "sha256su0.32\t\0"
+  /* 72 */ "vld21.32\t\0"
+  /* 82 */ "vst21.32\t\0"
+  /* 92 */ "vld41.32\t\0"
+  /* 102 */ "vst41.32\t\0"
+  /* 112 */ "sha1su1.32\t\0"
+  /* 124 */ "sha256su1.32\t\0"
+  /* 138 */ "vld42.32\t\0"
+  /* 148 */ "vst42.32\t\0"
+  /* 158 */ "sha256h2.32\t\0"
+  /* 171 */ "vld43.32\t\0"
+  /* 181 */ "vst43.32\t\0"
+  /* 191 */ "sha1c.32\t\0"
+  /* 201 */ "sha1h.32\t\0"
+  /* 211 */ "sha256h.32\t\0"
+  /* 223 */ "sha1m.32\t\0"
+  /* 233 */ "sha1p.32\t\0"
+  /* 243 */ "dlstp.32\t\0"
+  /* 253 */ "wlstp.32\t\0"
+  /* 263 */ "vcvta.s32.f32\t\0"
+  /* 278 */ "vcvtm.s32.f32\t\0"
+  /* 293 */ "vcvtn.s32.f32\t\0"
+  /* 308 */ "vcvtp.s32.f32\t\0"
+  /* 323 */ "vcvta.u32.f32\t\0"
+  /* 338 */ "vcvtm.u32.f32\t\0"
+  /* 353 */ "vcvtn.u32.f32\t\0"
+  /* 368 */ "vcvtp.u32.f32\t\0"
+  /* 383 */ "vcmla.f32\t\0"
+  /* 394 */ "vrinta.f32\t\0"
+  /* 406 */ "vcadd.f32\t\0"
+  /* 417 */ "vselge.f32\t\0"
+  /* 429 */ "vminnm.f32\t\0"
+  /* 441 */ "vmaxnm.f32\t\0"
+  /* 453 */ "vrintm.f32\t\0"
+  /* 465 */ "vrintn.f32\t\0"
+  /* 477 */ "vrintp.f32\t\0"
+  /* 489 */ "vseleq.f32\t\0"
+  /* 501 */ "vselvs.f32\t\0"
+  /* 513 */ "vselgt.f32\t\0"
+  /* 525 */ "vrintx.f32\t\0"
+  /* 537 */ "vrintz.f32\t\0"
+  /* 549 */ "ldc2\t\0"
+  /* 555 */ "mrc2\t\0"
+  /* 561 */ "mrrc2\t\0"
+  /* 568 */ "stc2\t\0"
+  /* 574 */ "cdp2\t\0"
+  /* 580 */ "mcr2\t\0"
+  /* 586 */ "mcrr2\t\0"
+  /* 593 */ "vcx2\t\0"
+  /* 599 */ "vcx3\t\0"
+  /* 605 */ "dlstp.64\t\0"
+  /* 615 */ "wlstp.64\t\0"
+  /* 625 */ "vcvta.s32.f64\t\0"
+  /* 640 */ "vcvtm.s32.f64\t\0"
+  /* 655 */ "vcvtn.s32.f64\t\0"
+  /* 670 */ "vcvtp.s32.f64\t\0"
+  /* 685 */ "vcvta.u32.f64\t\0"
+  /* 700 */ "vcvtm.u32.f64\t\0"
+  /* 715 */ "vcvtn.u32.f64\t\0"
+  /* 730 */ "vcvtp.u32.f64\t\0"
+  /* 745 */ "vrinta.f64\t\0"
+  /* 757 */ "vselge.f64\t\0"
+  /* 769 */ "vminnm.f64\t\0"
+  /* 781 */ "vmaxnm.f64\t\0"
+  /* 793 */ "vrintm.f64\t\0"
+  /* 805 */ "vrintn.f64\t\0"
+  /* 817 */ "vrintp.f64\t\0"
+  /* 829 */ "vseleq.f64\t\0"
+  /* 841 */ "vselvs.f64\t\0"
+  /* 853 */ "vselgt.f64\t\0"
+  /* 865 */ "vmull.p64\t\0"
+  /* 876 */ "vld20.16\t\0"
+  /* 886 */ "vst20.16\t\0"
+  /* 896 */ "vld40.16\t\0"
+  /* 906 */ "vst40.16\t\0"
+  /* 916 */ "vld21.16\t\0"
+  /* 926 */ "vst21.16\t\0"
+  /* 936 */ "vld41.16\t\0"
+  /* 946 */ "vst41.16\t\0"
+  /* 956 */ "vld42.16\t\0"
+  /* 966 */ "vst42.16\t\0"
+  /* 976 */ "vld43.16\t\0"
+  /* 986 */ "vst43.16\t\0"
+  /* 996 */ "dlstp.16\t\0"
+  /* 1006 */ "wlstp.16\t\0"
+  /* 1016 */ "vcvta.s32.f16\t\0"
+  /* 1031 */ "vcvtm.s32.f16\t\0"
+  /* 1046 */ "vcvtn.s32.f16\t\0"
+  /* 1061 */ "vcvtp.s32.f16\t\0"
+  /* 1076 */ "vcvta.u32.f16\t\0"
+  /* 1091 */ "vcvtm.u32.f16\t\0"
+  /* 1106 */ "vcvtn.u32.f16\t\0"
+  /* 1121 */ "vcvtp.u32.f16\t\0"
+  /* 1136 */ "vcvta.s16.f16\t\0"
+  /* 1151 */ "vcvtm.s16.f16\t\0"
+  /* 1166 */ "vcvtn.s16.f16\t\0"
+  /* 1181 */ "vcvtp.s16.f16\t\0"
+  /* 1196 */ "vcvta.u16.f16\t\0"
+  /* 1211 */ "vcvtm.u16.f16\t\0"
+  /* 1226 */ "vcvtn.u16.f16\t\0"
+  /* 1241 */ "vcvtp.u16.f16\t\0"
+  /* 1256 */ "vcmla.f16\t\0"
+  /* 1267 */ "vrinta.f16\t\0"
+  /* 1279 */ "vcadd.f16\t\0"
+  /* 1290 */ "vselge.f16\t\0"
+  /* 1302 */ "vfmal.f16\t\0"
+  /* 1313 */ "vfmsl.f16\t\0"
+  /* 1324 */ "vminnm.f16\t\0"
+  /* 1336 */ "vmaxnm.f16\t\0"
+  /* 1348 */ "vrintm.f16\t\0"
+  /* 1360 */ "vrintn.f16\t\0"
+  /* 1372 */ "vrintp.f16\t\0"
+  /* 1384 */ "vseleq.f16\t\0"
+  /* 1396 */ "vins.f16\t\0"
+  /* 1406 */ "vselvs.f16\t\0"
+  /* 1418 */ "vselgt.f16\t\0"
+  /* 1430 */ "vrintx.f16\t\0"
+  /* 1442 */ "vmovx.f16\t\0"
+  /* 1453 */ "vrintz.f16\t\0"
+  /* 1465 */ "vmmla.bf16\t\0"
+  /* 1477 */ "vfmab.bf16\t\0"
+  /* 1489 */ "vfmat.bf16\t\0"
+  /* 1501 */ "vdot.bf16\t\0"
+  /* 1512 */ "vld20.8\t\0"
+  /* 1521 */ "vst20.8\t\0"
+  /* 1530 */ "vld40.8\t\0"
+  /* 1539 */ "vst40.8\t\0"
+  /* 1548 */ "vld21.8\t\0"
+  /* 1557 */ "vst21.8\t\0"
+  /* 1566 */ "vld41.8\t\0"
+  /* 1575 */ "vst41.8\t\0"
+  /* 1584 */ "vld42.8\t\0"
+  /* 1593 */ "vst42.8\t\0"
+  /* 1602 */ "vld43.8\t\0"
+  /* 1611 */ "vst43.8\t\0"
+  /* 1620 */ "aesimc.8\t\0"
+  /* 1630 */ "aesmc.8\t\0"
+  /* 1639 */ "aesd.8\t\0"
+  /* 1647 */ "aese.8\t\0"
+  /* 1655 */ "dlstp.8\t\0"
+  /* 1664 */ "wlstp.8\t\0"
+  /* 1673 */ "vusmmla.s8\t\0"
+  /* 1685 */ "vsmmla.s8\t\0"
+  /* 1696 */ "vusdot.s8\t\0"
+  /* 1707 */ "vsdot.s8\t\0"
+  /* 1717 */ "vummla.u8\t\0"
+  /* 1728 */ "vsudot.u8\t\0"
+  /* 1739 */ "vudot.u8\t\0"
+  /* 1749 */ "vcx1a\t\0"
+  /* 1756 */ "vcx2a\t\0"
+  /* 1763 */ "vcx3a\t\0"
+  /* 1770 */ "rfeda\t\0"
+  /* 1777 */ "rfeia\t\0"
+  /* 1784 */ "crc32b\t\0"
+  /* 1792 */ "crc32cb\t\0"
+  /* 1801 */ "rfedb\t\0"
+  /* 1808 */ "rfeib\t\0"
+  /* 1815 */ "dmb\t\0"
+  /* 1820 */ "dsb\t\0"
+  /* 1825 */ "isb\t\0"
+  /* 1830 */ "tsb\t\0"
+  /* 1835 */ "csinc\t\0"
+  /* 1842 */ "hvc\t\0"
+  /* 1847 */ "cx1d\t\0"
+  /* 1853 */ "cx2d\t\0"
+  /* 1859 */ "cx3d\t\0"
+  /* 1865 */ "pld\t\0"
+  /* 1870 */ "setend\t\0"
+  /* 1878 */ "le\t\0"
+  /* 1882 */ "udf\t\0"
+  /* 1887 */ "csneg\t\0"
+  /* 1894 */ "crc32h\t\0"
+  /* 1902 */ "crc32ch\t\0"
+  /* 1911 */ "pli\t\0"
+  /* 1916 */ "ldc2l\t\0"
+  /* 1923 */ "stc2l\t\0"
+  /* 1930 */ "bl\t\0"
+  /* 1934 */ "bfcsel\t\0"
+  /* 1942 */ "setpan\t\0"
+  /* 1950 */ "letp\t\0"
+  /* 1956 */ "dls\t\0"
+  /* 1961 */ "wls\t\0"
+  /* 1966 */ "cps\t\0"
+  /* 1971 */ "movs\t\0"
+  /* 1977 */ "hlt\t\0"
+  /* 1982 */ "bkpt\t\0"
+  /* 1988 */ "csinv\t\0"
+  /* 1995 */ "hvc.w\t\0"
+  /* 2002 */ "udf.w\t\0"
+  /* 2009 */ "crc32w\t\0"
+  /* 2017 */ "crc32cw\t\0"
+  /* 2026 */ "pldw\t\0"
+  /* 2032 */ "bx\t\0"
+  /* 2036 */ "blx\t\0"
+  /* 2041 */ "cbz\t\0"
+  /* 2046 */ "cbnz\t\0"
+  /* 2052 */ "srsda\tsp!, \0"
+  /* 2064 */ "srsia\tsp!, \0"
+  /* 2076 */ "srsdb\tsp!, \0"
+  /* 2088 */ "srsib\tsp!, \0"
+  /* 2100 */ "srsda\tsp, \0"
+  /* 2111 */ "srsia\tsp, \0"
+  /* 2122 */ "srsdb\tsp, \0"
+  /* 2133 */ "srsib\tsp, \0"
+  /* 2144 */ "# XRay Function Patchable RET.\0"
+  /* 2175 */ "# XRay Typed Event Log.\0"
+  /* 2199 */ "# XRay Custom Event Log.\0"
+  /* 2224 */ "# XRay Function Enter.\0"
+  /* 2247 */ "# XRay Tail Call Exit.\0"
+  /* 2270 */ "# XRay Function Exit.\0"
+  /* 2292 */ "__brkdiv0\0"
+  /* 2302 */ "vld1\0"
+  /* 2307 */ "dcps1\0"
+  /* 2313 */ "vst1\0"
+  /* 2318 */ "vcx1\0"
+  /* 2323 */ "vrev32\0"
+  /* 2330 */ "ldc2\0"
+  /* 2335 */ "mrc2\0"
+  /* 2340 */ "mrrc2\0"
+  /* 2346 */ "stc2\0"
+  /* 2351 */ "vld2\0"
+  /* 2356 */ "cdp2\0"
+  /* 2361 */ "mcr2\0"
+  /* 2366 */ "mcrr2\0"
+  /* 2372 */ "dcps2\0"
+  /* 2378 */ "vst2\0"
+  /* 2383 */ "vcx2\0"
+  /* 2388 */ "vld3\0"
+  /* 2393 */ "dcps3\0"
+  /* 2399 */ "vst3\0"
+  /* 2404 */ "vcx3\0"
+  /* 2409 */ "vrev64\0"
+  /* 2416 */ "vld4\0"
+  /* 2421 */ "vst4\0"
+  /* 2426 */ "sxtab16\0"
+  /* 2434 */ "uxtab16\0"
+  /* 2442 */ "sxtb16\0"
+  /* 2449 */ "uxtb16\0"
+  /* 2456 */ "shsub16\0"
+  /* 2464 */ "uhsub16\0"
+  /* 2472 */ "uqsub16\0"
+  /* 2480 */ "ssub16\0"
+  /* 2487 */ "usub16\0"
+  /* 2494 */ "shadd16\0"
+  /* 2502 */ "uhadd16\0"
+  /* 2510 */ "uqadd16\0"
+  /* 2518 */ "sadd16\0"
+  /* 2525 */ "uadd16\0"
+  /* 2532 */ "ssat16\0"
+  /* 2539 */ "usat16\0"
+  /* 2546 */ "vrev16\0"
+  /* 2553 */ "usada8\0"
+  /* 2560 */ "shsub8\0"
+  /* 2567 */ "uhsub8\0"
+  /* 2574 */ "uqsub8\0"
+  /* 2581 */ "ssub8\0"
+  /* 2587 */ "usub8\0"
+  /* 2593 */ "usad8\0"
+  /* 2599 */ "shadd8\0"
+  /* 2606 */ "uhadd8\0"
+  /* 2613 */ "uqadd8\0"
+  /* 2620 */ "sadd8\0"
+  /* 2626 */ "uadd8\0"
+  /* 2632 */ "LIFETIME_END\0"
+  /* 2645 */ "BUNDLE\0"
+  /* 2652 */ "DBG_VALUE\0"
+  /* 2662 */ "DBG_LABEL\0"
+  /* 2672 */ "@ COMPILER BARRIER\0"
+  /* 2691 */ "LIFETIME_START\0"
+  /* 2706 */ "vcx1a\0"
+  /* 2712 */ "vcx2a\0"
+  /* 2718 */ "vcx3a\0"
+  /* 2724 */ "vaba\0"
+  /* 2729 */ "cx1da\0"
+  /* 2735 */ "cx2da\0"
+  /* 2741 */ "cx3da\0"
+  /* 2747 */ "lda\0"
+  /* 2751 */ "ldmda\0"
+  /* 2757 */ "stmda\0"
+  /* 2763 */ "vrmlaldavha\0"
+  /* 2775 */ "vrmlsldavha\0"
+  /* 2787 */ "rfeia\0"
+  /* 2793 */ "vldmia\0"
+  /* 2800 */ "vstmia\0"
+  /* 2807 */ "srsia\0"
+  /* 2813 */ "vcmla\0"
+  /* 2819 */ "smmla\0"
+  /* 2825 */ "vnmla\0"
+  /* 2831 */ "vmla\0"
+  /* 2836 */ "vfma\0"
+  /* 2841 */ "vfnma\0"
+  /* 2847 */ "vminnma\0"
+  /* 2855 */ "vmaxnma\0"
+  /* 2863 */ "vmina\0"
+  /* 2869 */ "vrsra\0"
+  /* 2875 */ "vsra\0"
+  /* 2880 */ "vrinta\0"
+  /* 2887 */ "tta\0"
+  /* 2891 */ "vcvta\0"
+  /* 2897 */ "vmladava\0"
+  /* 2906 */ "vmlaldava\0"
+  /* 2916 */ "vmlsldava\0"
+  /* 2926 */ "vmlsdava\0"
+  /* 2935 */ "vaddva\0"
+  /* 2942 */ "vaddlva\0"
+  /* 2950 */ "vmaxa\0"
+  /* 2956 */ "ldab\0"
+  /* 2961 */ "sxtab\0"
+  /* 2967 */ "uxtab\0"
+  /* 2973 */ "smlabb\0"
+  /* 2980 */ "smlalbb\0"
+  /* 2988 */ "smulbb\0"
+  /* 2995 */ "tbb\0"
+  /* 2999 */ "rfedb\0"
+  /* 3005 */ "vldmdb\0"
+  /* 3012 */ "vstmdb\0"
+  /* 3019 */ "srsdb\0"
+  /* 3025 */ "ldmib\0"
+  /* 3031 */ "stmib\0"
+  /* 3037 */ "vshllb\0"
+  /* 3044 */ "vqdmullb\0"
+  /* 3053 */ "vmullb\0"
+  /* 3060 */ "stlb\0"
+  /* 3065 */ "vmovlb\0"
+  /* 3072 */ "dmb\0"
+  /* 3076 */ "vqshrnb\0"
+  /* 3084 */ "vqrshrnb\0"
+  /* 3093 */ "vrshrnb\0"
+  /* 3101 */ "vshrnb\0"
+  /* 3108 */ "vqshrunb\0"
+  /* 3117 */ "vqrshrunb\0"
+  /* 3127 */ "vqmovunb\0"
+  /* 3136 */ "vqmovnb\0"
+  /* 3144 */ "vmovnb\0"
+  /* 3151 */ "swpb\0"
+  /* 3156 */ "vldrb\0"
+  /* 3162 */ "vstrb\0"
+  /* 3168 */ "dsb\0"
+  /* 3172 */ "isb\0"
+  /* 3176 */ "ldrsb\0"
+  /* 3182 */ "tsb\0"
+  /* 3186 */ "smlatb\0"
+  /* 3193 */ "pkhtb\0"
+  /* 3199 */ "smlaltb\0"
+  /* 3207 */ "smultb\0"
+  /* 3214 */ "vcvtb\0"
+  /* 3220 */ "sxtb\0"
+  /* 3225 */ "uxtb\0"
+  /* 3230 */ "qdsub\0"
+  /* 3236 */ "vhsub\0"
+  /* 3242 */ "vqsub\0"
+  /* 3248 */ "vsub\0"
+  /* 3253 */ "smlawb\0"
+  /* 3260 */ "smulwb\0"
+  /* 3267 */ "ldaexb\0"
+  /* 3274 */ "stlexb\0"
+  /* 3281 */ "ldrexb\0"
+  /* 3288 */ "strexb\0"
+  /* 3295 */ "vsbc\0"
+  /* 3300 */ "vadc\0"
+  /* 3305 */ "ldc\0"
+  /* 3309 */ "bfc\0"
+  /* 3313 */ "vbic\0"
+  /* 3318 */ "vshlc\0"
+  /* 3324 */ "smc\0"
+  /* 3328 */ "mrc\0"
+  /* 3332 */ "mrrc\0"
+  /* 3337 */ "rsc\0"
+  /* 3341 */ "stc\0"
+  /* 3345 */ "svc\0"
+  /* 3349 */ "smlad\0"
+  /* 3355 */ "smuad\0"
+  /* 3361 */ "vabd\0"
+  /* 3366 */ "vhcadd\0"
+  /* 3373 */ "vcadd\0"
+  /* 3379 */ "qdadd\0"
+  /* 3385 */ "vrhadd\0"
+  /* 3392 */ "vhadd\0"
+  /* 3398 */ "vpadd\0"
+  /* 3404 */ "vqadd\0"
+  /* 3410 */ "vadd\0"
+  /* 3415 */ "smlald\0"
+  /* 3422 */ "pld\0"
+  /* 3426 */ "smlsld\0"
+  /* 3433 */ "vand\0"
+  /* 3438 */ "vldrd\0"
+  /* 3444 */ "vstrd\0"
+  /* 3450 */ "smlsd\0"
+  /* 3456 */ "smusd\0"
+  /* 3462 */ "ldaexd\0"
+  /* 3469 */ "stlexd\0"
+  /* 3476 */ "ldrexd\0"
+  /* 3483 */ "strexd\0"
+  /* 3490 */ "vacge\0"
+  /* 3496 */ "vcge\0"
+  /* 3501 */ "vcle\0"
+  /* 3506 */ "vrecpe\0"
+  /* 3513 */ "vcmpe\0"
+  /* 3519 */ "vrsqrte\0"
+  /* 3527 */ "bf\0"
+  /* 3530 */ "vbif\0"
+  /* 3535 */ "dbg\0"
+  /* 3539 */ "vqneg\0"
+  /* 3545 */ "vneg\0"
+  /* 3550 */ "sg\0"
+  /* 3553 */ "ldah\0"
+  /* 3558 */ "vqdmlah\0"
+  /* 3566 */ "vqrdmlah\0"
+  /* 3575 */ "sxtah\0"
+  /* 3581 */ "uxtah\0"
+  /* 3587 */ "tbh\0"
+  /* 3591 */ "vqdmladh\0"
+  /* 3600 */ "vqrdmladh\0"
+  /* 3610 */ "vqdmlsdh\0"
+  /* 3619 */ "vqrdmlsdh\0"
+  /* 3629 */ "stlh\0"
+  /* 3634 */ "vqdmulh\0"
+  /* 3642 */ "vqrdmulh\0"
+  /* 3651 */ "vrmulh\0"
+  /* 3658 */ "vmulh\0"
+  /* 3664 */ "vldrh\0"
+  /* 3670 */ "vstrh\0"
+  /* 3676 */ "vqdmlash\0"
+  /* 3685 */ "vqrdmlash\0"
+  /* 3695 */ "vqrdmlsh\0"
+  /* 3704 */ "ldrsh\0"
+  /* 3710 */ "push\0"
+  /* 3715 */ "revsh\0"
+  /* 3721 */ "sxth\0"
+  /* 3726 */ "uxth\0"
+  /* 3731 */ "vrmlaldavh\0"
+  /* 3742 */ "vrmlsldavh\0"
+  /* 3753 */ "ldaexh\0"
+  /* 3760 */ "stlexh\0"
+  /* 3767 */ "ldrexh\0"
+  /* 3774 */ "strexh\0"
+  /* 3781 */ "vsbci\0"
+  /* 3787 */ "vadci\0"
+  /* 3793 */ "bfi\0"
+  /* 3797 */ "pli\0"
+  /* 3801 */ "vsli\0"
+  /* 3806 */ "vsri\0"
+  /* 3811 */ "bxj\0"
+  /* 3815 */ "ldc2l\0"
+  /* 3821 */ "stc2l\0"
+  /* 3827 */ "umaal\0"
+  /* 3833 */ "vabal\0"
+  /* 3839 */ "vpadal\0"
+  /* 3846 */ "vqdmlal\0"
+  /* 3854 */ "smlal\0"
+  /* 3860 */ "umlal\0"
+  /* 3866 */ "vmlal\0"
+  /* 3872 */ "vtbl\0"
+  /* 3877 */ "vsubl\0"
+  /* 3883 */ "ldcl\0"
+  /* 3888 */ "stcl\0"
+  /* 3893 */ "vabdl\0"
+  /* 3899 */ "vpaddl\0"
+  /* 3906 */ "vaddl\0"
+  /* 3912 */ "vpsel\0"
+  /* 3918 */ "bfl\0"
+  /* 3922 */ "sqshl\0"
+  /* 3928 */ "uqshl\0"
+  /* 3934 */ "vqshl\0"
+  /* 3940 */ "uqrshl\0"
+  /* 3947 */ "vqrshl\0"
+  /* 3954 */ "vrshl\0"
+  /* 3960 */ "vshl\0"
+  /* 3965 */ "# FEntry call\0"
+  /* 3979 */ "sqshll\0"
+  /* 3986 */ "uqshll\0"
+  /* 3993 */ "uqrshll\0"
+  /* 4001 */ "vshll\0"
+  /* 4007 */ "lsll\0"
+  /* 4012 */ "vqdmull\0"
+  /* 4020 */ "smull\0"
+  /* 4026 */ "umull\0"
+  /* 4032 */ "vmull\0"
+  /* 4038 */ "sqrshrl\0"
+  /* 4046 */ "srshrl\0"
+  /* 4053 */ "urshrl\0"
+  /* 4060 */ "asrl\0"
+  /* 4065 */ "lsrl\0"
+  /* 4070 */ "vbsl\0"
+  /* 4075 */ "vqdmlsl\0"
+  /* 4083 */ "vmlsl\0"
+  /* 4089 */ "stl\0"
+  /* 4093 */ "vcmul\0"
+  /* 4099 */ "smmul\0"
+  /* 4105 */ "vnmul\0"
+  /* 4111 */ "vmul\0"
+  /* 4116 */ "vmovl\0"
+  /* 4122 */ "vlldm\0"
+  /* 4128 */ "vminnm\0"
+  /* 4135 */ "vmaxnm\0"
+  /* 4142 */ "vscclrm\0"
+  /* 4150 */ "vrintm\0"
+  /* 4157 */ "vlstm\0"
+  /* 4163 */ "vcvtm\0"
+  /* 4169 */ "vrsubhn\0"
+  /* 4177 */ "vsubhn\0"
+  /* 4184 */ "vraddhn\0"
+  /* 4192 */ "vaddhn\0"
+  /* 4199 */ "vpmin\0"
+  /* 4205 */ "vmin\0"
+  /* 4210 */ "cmn\0"
+  /* 4214 */ "vqshrn\0"
+  /* 4221 */ "vqrshrn\0"
+  /* 4229 */ "vrshrn\0"
+  /* 4236 */ "vshrn\0"
+  /* 4242 */ "vorn\0"
+  /* 4247 */ "vtrn\0"
+  /* 4252 */ "vrintn\0"
+  /* 4259 */ "vcvtn\0"
+  /* 4265 */ "vqshrun\0"
+  /* 4273 */ "vqrshrun\0"
+  /* 4282 */ "vqmovun\0"
+  /* 4290 */ "vmvn\0"
+  /* 4295 */ "vqmovn\0"
+  /* 4302 */ "vmovn\0"
+  /* 4308 */ "trap\0"
+  /* 4313 */ "cdp\0"
+  /* 4317 */ "vzip\0"
+  /* 4322 */ "vcmp\0"
+  /* 4327 */ "pop\0"
+  /* 4331 */ "lctp\0"
+  /* 4336 */ "vctp\0"
+  /* 4341 */ "vrintp\0"
+  /* 4348 */ "vcvtp\0"
+  /* 4354 */ "vddup\0"
+  /* 4360 */ "vidup\0"
+  /* 4366 */ "vdup\0"
+  /* 4371 */ "vdwdup\0"
+  /* 4378 */ "viwdup\0"
+  /* 4385 */ "vswp\0"
+  /* 4390 */ "vuzp\0"
+  /* 4395 */ "vceq\0"
+  /* 4400 */ "teq\0"
+  /* 4404 */ "smmlar\0"
+  /* 4411 */ "mcr\0"
+  /* 4415 */ "adr\0"
+  /* 4419 */ "vldr\0"
+  /* 4424 */ "sqrshr\0"
+  /* 4431 */ "srshr\0"
+  /* 4437 */ "urshr\0"
+  /* 4443 */ "vrshr\0"
+  /* 4449 */ "vshr\0"
+  /* 4454 */ "smmulr\0"
+  /* 4461 */ "veor\0"
+  /* 4466 */ "ror\0"
+  /* 4470 */ "mcrr\0"
+  /* 4475 */ "vorr\0"
+  /* 4480 */ "asr\0"
+  /* 4484 */ "smmlsr\0"
+  /* 4491 */ "vmsr\0"
+  /* 4496 */ "vbrsr\0"
+  /* 4502 */ "vrintr\0"
+  /* 4509 */ "vstr\0"
+  /* 4514 */ "vcvtr\0"
+  /* 4520 */ "vmlas\0"
+  /* 4526 */ "vfmas\0"
+  /* 4532 */ "vqabs\0"
+  /* 4538 */ "vabs\0"
+  /* 4543 */ "subs\0"
+  /* 4548 */ "vcls\0"
+  /* 4553 */ "smmls\0"
+  /* 4559 */ "vnmls\0"
+  /* 4565 */ "vmls\0"
+  /* 4570 */ "vfms\0"
+  /* 4575 */ "vfnms\0"
+  /* 4581 */ "bxns\0"
+  /* 4586 */ "blxns\0"
+  /* 4592 */ "vrecps\0"
+  /* 4599 */ "vmrs\0"
+  /* 4604 */ "asrs\0"
+  /* 4609 */ "lsrs\0"
+  /* 4614 */ "vrsqrts\0"
+  /* 4622 */ "movs\0"
+  /* 4627 */ "ssat\0"
+  /* 4632 */ "usat\0"
+  /* 4637 */ "ttat\0"
+  /* 4642 */ "smlabt\0"
+  /* 4649 */ "pkhbt\0"
+  /* 4655 */ "smlalbt\0"
+  /* 4663 */ "smulbt\0"
+  /* 4670 */ "ldrbt\0"
+  /* 4676 */ "strbt\0"
+  /* 4682 */ "ldrsbt\0"
+  /* 4689 */ "eret\0"
+  /* 4694 */ "vacgt\0"
+  /* 4700 */ "vcgt\0"
+  /* 4705 */ "ldrht\0"
+  /* 4711 */ "strht\0"
+  /* 4717 */ "ldrsht\0"
+  /* 4724 */ "rbit\0"
+  /* 4729 */ "vbit\0"
+  /* 4734 */ "vclt\0"
+  /* 4739 */ "vshllt\0"
+  /* 4746 */ "vqdmullt\0"
+  /* 4755 */ "vmullt\0"
+  /* 4762 */ "vmovlt\0"
+  /* 4769 */ "vcnt\0"
+  /* 4774 */ "hint\0"
+  /* 4779 */ "vqshrnt\0"
+  /* 4787 */ "vqrshrnt\0"
+  /* 4796 */ "vrshrnt\0"
+  /* 4804 */ "vshrnt\0"
+  /* 4811 */ "vqshrunt\0"
+  /* 4820 */ "vqrshrunt\0"
+  /* 4830 */ "vqmovunt\0"
+  /* 4839 */ "vqmovnt\0"
+  /* 4847 */ "vmovnt\0"
+  /* 4854 */ "vpnot\0"
+  /* 4860 */ "vpt\0"
+  /* 4864 */ "ldrt\0"
+  /* 4869 */ "vsqrt\0"
+  /* 4875 */ "strt\0"
+  /* 4880 */ "vpst\0"
+  /* 4885 */ "vtst\0"
+  /* 4890 */ "smlatt\0"
+  /* 4897 */ "smlaltt\0"
+  /* 4905 */ "smultt\0"
+  /* 4912 */ "ttt\0"
+  /* 4916 */ "vcvtt\0"
+  /* 4922 */ "vjcvt\0"
+  /* 4928 */ "vcvt\0"
+  /* 4933 */ "movt\0"
+  /* 4938 */ "smlawt\0"
+  /* 4945 */ "smulwt\0"
+  /* 4952 */ "vext\0"
+  /* 4957 */ "vqshlu\0"
+  /* 4964 */ "vabav\0"
+  /* 4970 */ "vmladav\0"
+  /* 4978 */ "vmlaldav\0"
+  /* 4987 */ "vmlsldav\0"
+  /* 4996 */ "vmlsdav\0"
+  /* 5004 */ "vminnmav\0"
+  /* 5013 */ "vmaxnmav\0"
+  /* 5022 */ "vminav\0"
+  /* 5029 */ "vmaxav\0"
+  /* 5036 */ "vaddv\0"
+  /* 5042 */ "rev\0"
+  /* 5046 */ "sdiv\0"
+  /* 5051 */ "udiv\0"
+  /* 5056 */ "vdiv\0"
+  /* 5061 */ "vaddlv\0"
+  /* 5068 */ "vminnmv\0"
+  /* 5076 */ "vmaxnmv\0"
+  /* 5084 */ "vminv\0"
+  /* 5090 */ "vmov\0"
+  /* 5095 */ "vmaxv\0"
+  /* 5101 */ "vsubw\0"
+  /* 5107 */ "vaddw\0"
+  /* 5113 */ "pldw\0"
+  /* 5118 */ "vldrw\0"
+  /* 5124 */ "vstrw\0"
+  /* 5130 */ "movw\0"
+  /* 5135 */ "vrmlaldavhax\0"
+  /* 5148 */ "vrmlsldavhax\0"
+  /* 5161 */ "fldmiax\0"
+  /* 5169 */ "fstmiax\0"
+  /* 5177 */ "vpmax\0"
+  /* 5183 */ "vmax\0"
+  /* 5188 */ "shsax\0"
+  /* 5194 */ "uhsax\0"
+  /* 5200 */ "uqsax\0"
+  /* 5206 */ "ssax\0"
+  /* 5211 */ "usax\0"
+  /* 5216 */ "vmladavax\0"
+  /* 5226 */ "vmlaldavax\0"
+  /* 5237 */ "vmlsldavax\0"
+  /* 5248 */ "vmlsdavax\0"
+  /* 5258 */ "fldmdbx\0"
+  /* 5266 */ "fstmdbx\0"
+  /* 5274 */ "vtbx\0"
+  /* 5279 */ "smladx\0"
+  /* 5286 */ "smuadx\0"
+  /* 5293 */ "smlaldx\0"
+  /* 5301 */ "smlsldx\0"
+  /* 5309 */ "smlsdx\0"
+  /* 5316 */ "smusdx\0"
+  /* 5323 */ "ldaex\0"
+  /* 5329 */ "stlex\0"
+  /* 5335 */ "ldrex\0"
+  /* 5341 */ "clrex\0"
+  /* 5347 */ "strex\0"
+  /* 5353 */ "sbfx\0"
+  /* 5358 */ "ubfx\0"
+  /* 5363 */ "vqdmladhx\0"
+  /* 5373 */ "vqrdmladhx\0"
+  /* 5384 */ "vqdmlsdhx\0"
+  /* 5394 */ "vqrdmlsdhx\0"
+  /* 5405 */ "vrmlaldavhx\0"
+  /* 5417 */ "vrmlsldavhx\0"
+  /* 5429 */ "blx\0"
+  /* 5433 */ "bflx\0"
+  /* 5438 */ "rrx\0"
+  /* 5442 */ "shasx\0"
+  /* 5448 */ "uhasx\0"
+  /* 5454 */ "uqasx\0"
+  /* 5460 */ "sasx\0"
+  /* 5465 */ "uasx\0"
+  /* 5470 */ "vrintx\0"
+  /* 5477 */ "vmladavx\0"
+  /* 5486 */ "vmlaldavx\0"
+  /* 5496 */ "vmlsldavx\0"
+  /* 5506 */ "vmlsdavx\0"
+  /* 5515 */ "vclz\0"
+  /* 5520 */ "vrintz\0"
 };
 #ifdef __GNUC__
 #pragma GCC diagnostic pop
@@ -722,27 +749,29 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// IMPLICIT_DEF
     0U,	// SUBREG_TO_REG
     0U,	// COPY_TO_REGCLASS
-    2478U,	// DBG_VALUE
-    2488U,	// DBG_LABEL
+    2653U,	// DBG_VALUE
+    2663U,	// DBG_LABEL
     0U,	// REG_SEQUENCE
     0U,	// COPY
-    2471U,	// BUNDLE
-    2517U,	// LIFETIME_START
-    2458U,	// LIFETIME_END
+    2646U,	// BUNDLE
+    2692U,	// LIFETIME_START
+    2633U,	// LIFETIME_END
     0U,	// STACKMAP
-    3755U,	// FENTRY_CALL
+    3966U,	// FENTRY_CALL
     0U,	// PATCHPOINT
     0U,	// LOAD_STACK_GUARD
+    0U,	// PREALLOCATED_SETUP
+    0U,	// PREALLOCATED_ARG
     0U,	// STATEPOINT
     0U,	// LOCAL_ESCAPE
     0U,	// FAULTING_OP
     0U,	// PATCHABLE_OP
-    2065U,	// PATCHABLE_FUNCTION_ENTER
-    1985U,	// PATCHABLE_RET
-    2111U,	// PATCHABLE_FUNCTION_EXIT
-    2088U,	// PATCHABLE_TAIL_CALL
-    2040U,	// PATCHABLE_EVENT_CALL
-    2016U,	// PATCHABLE_TYPED_EVENT_CALL
+    2225U,	// PATCHABLE_FUNCTION_ENTER
+    2145U,	// PATCHABLE_RET
+    2271U,	// PATCHABLE_FUNCTION_EXIT
+    2248U,	// PATCHABLE_TAIL_CALL
+    2200U,	// PATCHABLE_EVENT_CALL
+    2176U,	// PATCHABLE_TYPED_EVENT_CALL
     0U,	// ICALL_BRANCH_FUNNEL
     0U,	// G_ADD
     0U,	// G_SUB
@@ -768,6 +797,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// G_PTRTOINT
     0U,	// G_INTTOPTR
     0U,	// G_BITCAST
+    0U,	// G_FREEZE
     0U,	// G_INTRINSIC_TRUNC
     0U,	// G_INTRINSIC_ROUND
     0U,	// G_READCYCLECOUNTER
@@ -811,6 +841,8 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// G_SHL
     0U,	// G_LSHR
     0U,	// G_ASHR
+    0U,	// G_FSHL
+    0U,	// G_FSHR
     0U,	// G_ICMP
     0U,	// G_FCMP
     0U,	// G_SELECT
@@ -826,6 +858,10 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// G_SMULO
     0U,	// G_UMULH
     0U,	// G_SMULH
+    0U,	// G_UADDSAT
+    0U,	// G_SADDSAT
+    0U,	// G_USUBSAT
+    0U,	// G_SSUBSAT
     0U,	// G_FADD
     0U,	// G_FSUB
     0U,	// G_FMUL
@@ -856,7 +892,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// G_FMINIMUM
     0U,	// G_FMAXIMUM
     0U,	// G_PTR_ADD
-    0U,	// G_PTR_MASK
+    0U,	// G_PTRMASK
     0U,	// G_SMIN
     0U,	// G_SMAX
     0U,	// G_UMIN
@@ -884,6 +920,13 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// G_BLOCK_ADDR
     0U,	// G_JUMP_TABLE
     0U,	// G_DYN_STACKALLOC
+    0U,	// G_STRICT_FADD
+    0U,	// G_STRICT_FSUB
+    0U,	// G_STRICT_FMUL
+    0U,	// G_STRICT_FDIV
+    0U,	// G_STRICT_FREM
+    0U,	// G_STRICT_FMA
+    0U,	// G_STRICT_FSQRT
     0U,	// G_READ_REGISTER
     0U,	// G_WRITE_REGISTER
     0U,	// ABS
@@ -893,8 +936,8 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// ADDSrsr
     0U,	// ADJCALLSTACKDOWN
     0U,	// ADJCALLSTACKUP
-    12462U,	// ASRi
-    12462U,	// ASRr
+    12673U,	// ASRi
+    12673U,	// ASRr
     0U,	// B
     0U,	// BCCZi64
     0U,	// BCCi64
@@ -912,8 +955,8 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// CMP_SWAP_8
     0U,	// CONSTPOOL_ENTRY
     0U,	// COPY_STRUCT_BYVAL_I32
-    2498U,	// CompilerBarrier
-    67129764U,	// ITasm
+    2673U,	// CompilerBarrier
+    67129975U,	// ITasm
     0U,	// Int_eh_sjlj_dispatchsetup
     0U,	// Int_eh_sjlj_longjmp
     0U,	// Int_eh_sjlj_setjmp
@@ -924,18 +967,22 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// JUMPTABLE_TBB
     0U,	// JUMPTABLE_TBH
     0U,	// LDMIA_RET
-    29036U,	// LDRBT_POST
-    28786U,	// LDRConstPool
+    29247U,	// LDRBT_POST
+    28997U,	// LDRConstPool
+    29282U,	// LDRHTii
     0U,	// LDRLIT_ga_abs
     0U,	// LDRLIT_ga_pcrel
     0U,	// LDRLIT_ga_pcrel_ldr
-    29230U,	// LDRT_POST
+    29259U,	// LDRSBTii
+    29294U,	// LDRSHTii
+    29441U,	// LDRT_POST
     0U,	// LEApcrel
     0U,	// LEApcrelJT
-    12061U,	// LSLi
-    12061U,	// LSLr
-    12469U,	// LSRi
-    12469U,	// LSRr
+    0U,	// LOADDUAL
+    12272U,	// LSLi
+    12272U,	// LSLr
+    12680U,	// LSRi
+    12680U,	// LSRr
     0U,	// MEMCPY
     0U,	// MLAv5
     0U,	// MOVCCi
@@ -963,21 +1010,22 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// PICSTR
     0U,	// PICSTRB
     0U,	// PICSTRH
-    12448U,	// RORi
-    12448U,	// RORr
+    12659U,	// RORi
+    12659U,	// RORr
     0U,	// RRX
-    37996U,	// RRXi
+    38207U,	// RRXi
     0U,	// RSBSri
     0U,	// RSBSrsi
     0U,	// RSBSrsr
     0U,	// SMLALv5
     0U,	// SMULLv5
     0U,	// SPACE
-    29042U,	// STRBT_POST
+    0U,	// STOREDUAL
+    29253U,	// STRBT_POST
     0U,	// STRBi_preidx
     0U,	// STRBr_preidx
     0U,	// STRH_preidx
-    29241U,	// STRT_POST
+    29452U,	// STRT_POST
     0U,	// STRi_preidx
     0U,	// STRr_preidx
     0U,	// SUBS_PC_LR
@@ -993,227 +1041,227 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// TPsoft
     0U,	// UMLALv5
     0U,	// UMULLv5
-    567391U,	// VLD1LNdAsm_16
-    1091679U,	// VLD1LNdAsm_32
-    1615967U,	// VLD1LNdAsm_8
-    567391U,	// VLD1LNdWB_fixed_Asm_16
-    1091679U,	// VLD1LNdWB_fixed_Asm_32
-    1615967U,	// VLD1LNdWB_fixed_Asm_8
-    575583U,	// VLD1LNdWB_register_Asm_16
-    1099871U,	// VLD1LNdWB_register_Asm_32
-    1624159U,	// VLD1LNdWB_register_Asm_8
-    567435U,	// VLD2LNdAsm_16
-    1091723U,	// VLD2LNdAsm_32
-    1616011U,	// VLD2LNdAsm_8
-    567435U,	// VLD2LNdWB_fixed_Asm_16
-    1091723U,	// VLD2LNdWB_fixed_Asm_32
-    1616011U,	// VLD2LNdWB_fixed_Asm_8
-    575627U,	// VLD2LNdWB_register_Asm_16
-    1099915U,	// VLD2LNdWB_register_Asm_32
-    1624203U,	// VLD2LNdWB_register_Asm_8
-    567435U,	// VLD2LNqAsm_16
-    1091723U,	// VLD2LNqAsm_32
-    567435U,	// VLD2LNqWB_fixed_Asm_16
-    1091723U,	// VLD2LNqWB_fixed_Asm_32
-    575627U,	// VLD2LNqWB_register_Asm_16
-    1099915U,	// VLD2LNqWB_register_Asm_32
-    134801579U,	// VLD3DUPdAsm_16
-    135325867U,	// VLD3DUPdAsm_32
-    135850155U,	// VLD3DUPdAsm_8
-    134801579U,	// VLD3DUPdWB_fixed_Asm_16
-    135325867U,	// VLD3DUPdWB_fixed_Asm_32
-    135850155U,	// VLD3DUPdWB_fixed_Asm_8
-    134785195U,	// VLD3DUPdWB_register_Asm_16
-    135309483U,	// VLD3DUPdWB_register_Asm_32
-    135833771U,	// VLD3DUPdWB_register_Asm_8
-    201910443U,	// VLD3DUPqAsm_16
-    202434731U,	// VLD3DUPqAsm_32
-    202959019U,	// VLD3DUPqAsm_8
-    201910443U,	// VLD3DUPqWB_fixed_Asm_16
-    202434731U,	// VLD3DUPqWB_fixed_Asm_32
-    202959019U,	// VLD3DUPqWB_fixed_Asm_8
-    201894059U,	// VLD3DUPqWB_register_Asm_16
-    202418347U,	// VLD3DUPqWB_register_Asm_32
-    202942635U,	// VLD3DUPqWB_register_Asm_8
-    567467U,	// VLD3LNdAsm_16
-    1091755U,	// VLD3LNdAsm_32
-    1616043U,	// VLD3LNdAsm_8
-    567467U,	// VLD3LNdWB_fixed_Asm_16
-    1091755U,	// VLD3LNdWB_fixed_Asm_32
-    1616043U,	// VLD3LNdWB_fixed_Asm_8
-    575659U,	// VLD3LNdWB_register_Asm_16
-    1099947U,	// VLD3LNdWB_register_Asm_32
-    1624235U,	// VLD3LNdWB_register_Asm_8
-    567467U,	// VLD3LNqAsm_16
-    1091755U,	// VLD3LNqAsm_32
-    567467U,	// VLD3LNqWB_fixed_Asm_16
-    1091755U,	// VLD3LNqWB_fixed_Asm_32
-    575659U,	// VLD3LNqWB_register_Asm_16
-    1099947U,	// VLD3LNqWB_register_Asm_32
-    269019307U,	// VLD3dAsm_16
-    269543595U,	// VLD3dAsm_32
-    270067883U,	// VLD3dAsm_8
-    269019307U,	// VLD3dWB_fixed_Asm_16
-    269543595U,	// VLD3dWB_fixed_Asm_32
-    270067883U,	// VLD3dWB_fixed_Asm_8
-    269002923U,	// VLD3dWB_register_Asm_16
-    269527211U,	// VLD3dWB_register_Asm_32
-    270051499U,	// VLD3dWB_register_Asm_8
-    336128171U,	// VLD3qAsm_16
-    336652459U,	// VLD3qAsm_32
-    337176747U,	// VLD3qAsm_8
-    336128171U,	// VLD3qWB_fixed_Asm_16
-    336652459U,	// VLD3qWB_fixed_Asm_32
-    337176747U,	// VLD3qWB_fixed_Asm_8
-    336111787U,	// VLD3qWB_register_Asm_16
-    336636075U,	// VLD3qWB_register_Asm_32
-    337160363U,	// VLD3qWB_register_Asm_8
-    403237058U,	// VLD4DUPdAsm_16
-    403761346U,	// VLD4DUPdAsm_32
-    404285634U,	// VLD4DUPdAsm_8
-    403237058U,	// VLD4DUPdWB_fixed_Asm_16
-    403761346U,	// VLD4DUPdWB_fixed_Asm_32
-    404285634U,	// VLD4DUPdWB_fixed_Asm_8
-    403220674U,	// VLD4DUPdWB_register_Asm_16
-    403744962U,	// VLD4DUPdWB_register_Asm_32
-    404269250U,	// VLD4DUPdWB_register_Asm_8
-    470345922U,	// VLD4DUPqAsm_16
-    470870210U,	// VLD4DUPqAsm_32
-    471394498U,	// VLD4DUPqAsm_8
-    470345922U,	// VLD4DUPqWB_fixed_Asm_16
-    470870210U,	// VLD4DUPqWB_fixed_Asm_32
-    471394498U,	// VLD4DUPqWB_fixed_Asm_8
-    470329538U,	// VLD4DUPqWB_register_Asm_16
-    470853826U,	// VLD4DUPqWB_register_Asm_32
-    471378114U,	// VLD4DUPqWB_register_Asm_8
-    567490U,	// VLD4LNdAsm_16
-    1091778U,	// VLD4LNdAsm_32
-    1616066U,	// VLD4LNdAsm_8
-    567490U,	// VLD4LNdWB_fixed_Asm_16
-    1091778U,	// VLD4LNdWB_fixed_Asm_32
-    1616066U,	// VLD4LNdWB_fixed_Asm_8
-    575682U,	// VLD4LNdWB_register_Asm_16
-    1099970U,	// VLD4LNdWB_register_Asm_32
-    1624258U,	// VLD4LNdWB_register_Asm_8
-    567490U,	// VLD4LNqAsm_16
-    1091778U,	// VLD4LNqAsm_32
-    567490U,	// VLD4LNqWB_fixed_Asm_16
-    1091778U,	// VLD4LNqWB_fixed_Asm_32
-    575682U,	// VLD4LNqWB_register_Asm_16
-    1099970U,	// VLD4LNqWB_register_Asm_32
-    537454786U,	// VLD4dAsm_16
-    537979074U,	// VLD4dAsm_32
-    538503362U,	// VLD4dAsm_8
-    537454786U,	// VLD4dWB_fixed_Asm_16
-    537979074U,	// VLD4dWB_fixed_Asm_32
-    538503362U,	// VLD4dWB_fixed_Asm_8
-    537438402U,	// VLD4dWB_register_Asm_16
-    537962690U,	// VLD4dWB_register_Asm_32
-    538486978U,	// VLD4dWB_register_Asm_8
-    604563650U,	// VLD4qAsm_16
-    605087938U,	// VLD4qAsm_32
-    605612226U,	// VLD4qAsm_8
-    604563650U,	// VLD4qWB_fixed_Asm_16
-    605087938U,	// VLD4qWB_fixed_Asm_32
-    605612226U,	// VLD4qWB_fixed_Asm_8
-    604547266U,	// VLD4qWB_register_Asm_16
-    605071554U,	// VLD4qWB_register_Asm_32
-    605595842U,	// VLD4qWB_register_Asm_8
+    567551U,	// VLD1LNdAsm_16
+    1091839U,	// VLD1LNdAsm_32
+    1616127U,	// VLD1LNdAsm_8
+    567551U,	// VLD1LNdWB_fixed_Asm_16
+    1091839U,	// VLD1LNdWB_fixed_Asm_32
+    1616127U,	// VLD1LNdWB_fixed_Asm_8
+    575743U,	// VLD1LNdWB_register_Asm_16
+    1100031U,	// VLD1LNdWB_register_Asm_32
+    1624319U,	// VLD1LNdWB_register_Asm_8
+    567600U,	// VLD2LNdAsm_16
+    1091888U,	// VLD2LNdAsm_32
+    1616176U,	// VLD2LNdAsm_8
+    567600U,	// VLD2LNdWB_fixed_Asm_16
+    1091888U,	// VLD2LNdWB_fixed_Asm_32
+    1616176U,	// VLD2LNdWB_fixed_Asm_8
+    575792U,	// VLD2LNdWB_register_Asm_16
+    1100080U,	// VLD2LNdWB_register_Asm_32
+    1624368U,	// VLD2LNdWB_register_Asm_8
+    567600U,	// VLD2LNqAsm_16
+    1091888U,	// VLD2LNqAsm_32
+    567600U,	// VLD2LNqWB_fixed_Asm_16
+    1091888U,	// VLD2LNqWB_fixed_Asm_32
+    575792U,	// VLD2LNqWB_register_Asm_16
+    1100080U,	// VLD2LNqWB_register_Asm_32
+    134801749U,	// VLD3DUPdAsm_16
+    135326037U,	// VLD3DUPdAsm_32
+    135850325U,	// VLD3DUPdAsm_8
+    134801749U,	// VLD3DUPdWB_fixed_Asm_16
+    135326037U,	// VLD3DUPdWB_fixed_Asm_32
+    135850325U,	// VLD3DUPdWB_fixed_Asm_8
+    134785365U,	// VLD3DUPdWB_register_Asm_16
+    135309653U,	// VLD3DUPdWB_register_Asm_32
+    135833941U,	// VLD3DUPdWB_register_Asm_8
+    201910613U,	// VLD3DUPqAsm_16
+    202434901U,	// VLD3DUPqAsm_32
+    202959189U,	// VLD3DUPqAsm_8
+    201910613U,	// VLD3DUPqWB_fixed_Asm_16
+    202434901U,	// VLD3DUPqWB_fixed_Asm_32
+    202959189U,	// VLD3DUPqWB_fixed_Asm_8
+    201894229U,	// VLD3DUPqWB_register_Asm_16
+    202418517U,	// VLD3DUPqWB_register_Asm_32
+    202942805U,	// VLD3DUPqWB_register_Asm_8
+    567637U,	// VLD3LNdAsm_16
+    1091925U,	// VLD3LNdAsm_32
+    1616213U,	// VLD3LNdAsm_8
+    567637U,	// VLD3LNdWB_fixed_Asm_16
+    1091925U,	// VLD3LNdWB_fixed_Asm_32
+    1616213U,	// VLD3LNdWB_fixed_Asm_8
+    575829U,	// VLD3LNdWB_register_Asm_16
+    1100117U,	// VLD3LNdWB_register_Asm_32
+    1624405U,	// VLD3LNdWB_register_Asm_8
+    567637U,	// VLD3LNqAsm_16
+    1091925U,	// VLD3LNqAsm_32
+    567637U,	// VLD3LNqWB_fixed_Asm_16
+    1091925U,	// VLD3LNqWB_fixed_Asm_32
+    575829U,	// VLD3LNqWB_register_Asm_16
+    1100117U,	// VLD3LNqWB_register_Asm_32
+    269019477U,	// VLD3dAsm_16
+    269543765U,	// VLD3dAsm_32
+    270068053U,	// VLD3dAsm_8
+    269019477U,	// VLD3dWB_fixed_Asm_16
+    269543765U,	// VLD3dWB_fixed_Asm_32
+    270068053U,	// VLD3dWB_fixed_Asm_8
+    269003093U,	// VLD3dWB_register_Asm_16
+    269527381U,	// VLD3dWB_register_Asm_32
+    270051669U,	// VLD3dWB_register_Asm_8
+    336128341U,	// VLD3qAsm_16
+    336652629U,	// VLD3qAsm_32
+    337176917U,	// VLD3qAsm_8
+    336128341U,	// VLD3qWB_fixed_Asm_16
+    336652629U,	// VLD3qWB_fixed_Asm_32
+    337176917U,	// VLD3qWB_fixed_Asm_8
+    336111957U,	// VLD3qWB_register_Asm_16
+    336636245U,	// VLD3qWB_register_Asm_32
+    337160533U,	// VLD3qWB_register_Asm_8
+    403237233U,	// VLD4DUPdAsm_16
+    403761521U,	// VLD4DUPdAsm_32
+    404285809U,	// VLD4DUPdAsm_8
+    403237233U,	// VLD4DUPdWB_fixed_Asm_16
+    403761521U,	// VLD4DUPdWB_fixed_Asm_32
+    404285809U,	// VLD4DUPdWB_fixed_Asm_8
+    403220849U,	// VLD4DUPdWB_register_Asm_16
+    403745137U,	// VLD4DUPdWB_register_Asm_32
+    404269425U,	// VLD4DUPdWB_register_Asm_8
+    470346097U,	// VLD4DUPqAsm_16
+    470870385U,	// VLD4DUPqAsm_32
+    471394673U,	// VLD4DUPqAsm_8
+    470346097U,	// VLD4DUPqWB_fixed_Asm_16
+    470870385U,	// VLD4DUPqWB_fixed_Asm_32
+    471394673U,	// VLD4DUPqWB_fixed_Asm_8
+    470329713U,	// VLD4DUPqWB_register_Asm_16
+    470854001U,	// VLD4DUPqWB_register_Asm_32
+    471378289U,	// VLD4DUPqWB_register_Asm_8
+    567665U,	// VLD4LNdAsm_16
+    1091953U,	// VLD4LNdAsm_32
+    1616241U,	// VLD4LNdAsm_8
+    567665U,	// VLD4LNdWB_fixed_Asm_16
+    1091953U,	// VLD4LNdWB_fixed_Asm_32
+    1616241U,	// VLD4LNdWB_fixed_Asm_8
+    575857U,	// VLD4LNdWB_register_Asm_16
+    1100145U,	// VLD4LNdWB_register_Asm_32
+    1624433U,	// VLD4LNdWB_register_Asm_8
+    567665U,	// VLD4LNqAsm_16
+    1091953U,	// VLD4LNqAsm_32
+    567665U,	// VLD4LNqWB_fixed_Asm_16
+    1091953U,	// VLD4LNqWB_fixed_Asm_32
+    575857U,	// VLD4LNqWB_register_Asm_16
+    1100145U,	// VLD4LNqWB_register_Asm_32
+    537454961U,	// VLD4dAsm_16
+    537979249U,	// VLD4dAsm_32
+    538503537U,	// VLD4dAsm_8
+    537454961U,	// VLD4dWB_fixed_Asm_16
+    537979249U,	// VLD4dWB_fixed_Asm_32
+    538503537U,	// VLD4dWB_fixed_Asm_8
+    537438577U,	// VLD4dWB_register_Asm_16
+    537962865U,	// VLD4dWB_register_Asm_32
+    538487153U,	// VLD4dWB_register_Asm_8
+    604563825U,	// VLD4qAsm_16
+    605088113U,	// VLD4qAsm_32
+    605612401U,	// VLD4qAsm_8
+    604563825U,	// VLD4qWB_fixed_Asm_16
+    605088113U,	// VLD4qWB_fixed_Asm_32
+    605612401U,	// VLD4qWB_fixed_Asm_8
+    604547441U,	// VLD4qWB_register_Asm_16
+    605071729U,	// VLD4qWB_register_Asm_32
+    605596017U,	// VLD4qWB_register_Asm_8
     0U,	// VMOVD0
     0U,	// VMOVDcc
     0U,	// VMOVHcc
     0U,	// VMOVQ0
     0U,	// VMOVScc
-    567402U,	// VST1LNdAsm_16
-    1091690U,	// VST1LNdAsm_32
-    1615978U,	// VST1LNdAsm_8
-    567402U,	// VST1LNdWB_fixed_Asm_16
-    1091690U,	// VST1LNdWB_fixed_Asm_32
-    1615978U,	// VST1LNdWB_fixed_Asm_8
-    575594U,	// VST1LNdWB_register_Asm_16
-    1099882U,	// VST1LNdWB_register_Asm_32
-    1624170U,	// VST1LNdWB_register_Asm_8
-    567462U,	// VST2LNdAsm_16
-    1091750U,	// VST2LNdAsm_32
-    1616038U,	// VST2LNdAsm_8
-    567462U,	// VST2LNdWB_fixed_Asm_16
-    1091750U,	// VST2LNdWB_fixed_Asm_32
-    1616038U,	// VST2LNdWB_fixed_Asm_8
-    575654U,	// VST2LNdWB_register_Asm_16
-    1099942U,	// VST2LNdWB_register_Asm_32
-    1624230U,	// VST2LNdWB_register_Asm_8
-    567462U,	// VST2LNqAsm_16
-    1091750U,	// VST2LNqAsm_32
-    567462U,	// VST2LNqWB_fixed_Asm_16
-    1091750U,	// VST2LNqWB_fixed_Asm_32
-    575654U,	// VST2LNqWB_register_Asm_16
-    1099942U,	// VST2LNqWB_register_Asm_32
-    567478U,	// VST3LNdAsm_16
-    1091766U,	// VST3LNdAsm_32
-    1616054U,	// VST3LNdAsm_8
-    567478U,	// VST3LNdWB_fixed_Asm_16
-    1091766U,	// VST3LNdWB_fixed_Asm_32
-    1616054U,	// VST3LNdWB_fixed_Asm_8
-    575670U,	// VST3LNdWB_register_Asm_16
-    1099958U,	// VST3LNdWB_register_Asm_32
-    1624246U,	// VST3LNdWB_register_Asm_8
-    567478U,	// VST3LNqAsm_16
-    1091766U,	// VST3LNqAsm_32
-    567478U,	// VST3LNqWB_fixed_Asm_16
-    1091766U,	// VST3LNqWB_fixed_Asm_32
-    575670U,	// VST3LNqWB_register_Asm_16
-    1099958U,	// VST3LNqWB_register_Asm_32
-    269019318U,	// VST3dAsm_16
-    269543606U,	// VST3dAsm_32
-    270067894U,	// VST3dAsm_8
-    269019318U,	// VST3dWB_fixed_Asm_16
-    269543606U,	// VST3dWB_fixed_Asm_32
-    270067894U,	// VST3dWB_fixed_Asm_8
-    269002934U,	// VST3dWB_register_Asm_16
-    269527222U,	// VST3dWB_register_Asm_32
-    270051510U,	// VST3dWB_register_Asm_8
-    336128182U,	// VST3qAsm_16
-    336652470U,	// VST3qAsm_32
-    337176758U,	// VST3qAsm_8
-    336128182U,	// VST3qWB_fixed_Asm_16
-    336652470U,	// VST3qWB_fixed_Asm_32
-    337176758U,	// VST3qWB_fixed_Asm_8
-    336111798U,	// VST3qWB_register_Asm_16
-    336636086U,	// VST3qWB_register_Asm_32
-    337160374U,	// VST3qWB_register_Asm_8
-    567495U,	// VST4LNdAsm_16
-    1091783U,	// VST4LNdAsm_32
-    1616071U,	// VST4LNdAsm_8
-    567495U,	// VST4LNdWB_fixed_Asm_16
-    1091783U,	// VST4LNdWB_fixed_Asm_32
-    1616071U,	// VST4LNdWB_fixed_Asm_8
-    575687U,	// VST4LNdWB_register_Asm_16
-    1099975U,	// VST4LNdWB_register_Asm_32
-    1624263U,	// VST4LNdWB_register_Asm_8
-    567495U,	// VST4LNqAsm_16
-    1091783U,	// VST4LNqAsm_32
-    567495U,	// VST4LNqWB_fixed_Asm_16
-    1091783U,	// VST4LNqWB_fixed_Asm_32
-    575687U,	// VST4LNqWB_register_Asm_16
-    1099975U,	// VST4LNqWB_register_Asm_32
-    537454791U,	// VST4dAsm_16
-    537979079U,	// VST4dAsm_32
-    538503367U,	// VST4dAsm_8
-    537454791U,	// VST4dWB_fixed_Asm_16
-    537979079U,	// VST4dWB_fixed_Asm_32
-    538503367U,	// VST4dWB_fixed_Asm_8
-    537438407U,	// VST4dWB_register_Asm_16
-    537962695U,	// VST4dWB_register_Asm_32
-    538486983U,	// VST4dWB_register_Asm_8
-    604563655U,	// VST4qAsm_16
-    605087943U,	// VST4qAsm_32
-    605612231U,	// VST4qAsm_8
-    604563655U,	// VST4qWB_fixed_Asm_16
-    605087943U,	// VST4qWB_fixed_Asm_32
-    605612231U,	// VST4qWB_fixed_Asm_8
-    604547271U,	// VST4qWB_register_Asm_16
-    605071559U,	// VST4qWB_register_Asm_32
-    605595847U,	// VST4qWB_register_Asm_8
+    567562U,	// VST1LNdAsm_16
+    1091850U,	// VST1LNdAsm_32
+    1616138U,	// VST1LNdAsm_8
+    567562U,	// VST1LNdWB_fixed_Asm_16
+    1091850U,	// VST1LNdWB_fixed_Asm_32
+    1616138U,	// VST1LNdWB_fixed_Asm_8
+    575754U,	// VST1LNdWB_register_Asm_16
+    1100042U,	// VST1LNdWB_register_Asm_32
+    1624330U,	// VST1LNdWB_register_Asm_8
+    567627U,	// VST2LNdAsm_16
+    1091915U,	// VST2LNdAsm_32
+    1616203U,	// VST2LNdAsm_8
+    567627U,	// VST2LNdWB_fixed_Asm_16
+    1091915U,	// VST2LNdWB_fixed_Asm_32
+    1616203U,	// VST2LNdWB_fixed_Asm_8
+    575819U,	// VST2LNdWB_register_Asm_16
+    1100107U,	// VST2LNdWB_register_Asm_32
+    1624395U,	// VST2LNdWB_register_Asm_8
+    567627U,	// VST2LNqAsm_16
+    1091915U,	// VST2LNqAsm_32
+    567627U,	// VST2LNqWB_fixed_Asm_16
+    1091915U,	// VST2LNqWB_fixed_Asm_32
+    575819U,	// VST2LNqWB_register_Asm_16
+    1100107U,	// VST2LNqWB_register_Asm_32
+    567648U,	// VST3LNdAsm_16
+    1091936U,	// VST3LNdAsm_32
+    1616224U,	// VST3LNdAsm_8
+    567648U,	// VST3LNdWB_fixed_Asm_16
+    1091936U,	// VST3LNdWB_fixed_Asm_32
+    1616224U,	// VST3LNdWB_fixed_Asm_8
+    575840U,	// VST3LNdWB_register_Asm_16
+    1100128U,	// VST3LNdWB_register_Asm_32
+    1624416U,	// VST3LNdWB_register_Asm_8
+    567648U,	// VST3LNqAsm_16
+    1091936U,	// VST3LNqAsm_32
+    567648U,	// VST3LNqWB_fixed_Asm_16
+    1091936U,	// VST3LNqWB_fixed_Asm_32
+    575840U,	// VST3LNqWB_register_Asm_16
+    1100128U,	// VST3LNqWB_register_Asm_32
+    269019488U,	// VST3dAsm_16
+    269543776U,	// VST3dAsm_32
+    270068064U,	// VST3dAsm_8
+    269019488U,	// VST3dWB_fixed_Asm_16
+    269543776U,	// VST3dWB_fixed_Asm_32
+    270068064U,	// VST3dWB_fixed_Asm_8
+    269003104U,	// VST3dWB_register_Asm_16
+    269527392U,	// VST3dWB_register_Asm_32
+    270051680U,	// VST3dWB_register_Asm_8
+    336128352U,	// VST3qAsm_16
+    336652640U,	// VST3qAsm_32
+    337176928U,	// VST3qAsm_8
+    336128352U,	// VST3qWB_fixed_Asm_16
+    336652640U,	// VST3qWB_fixed_Asm_32
+    337176928U,	// VST3qWB_fixed_Asm_8
+    336111968U,	// VST3qWB_register_Asm_16
+    336636256U,	// VST3qWB_register_Asm_32
+    337160544U,	// VST3qWB_register_Asm_8
+    567670U,	// VST4LNdAsm_16
+    1091958U,	// VST4LNdAsm_32
+    1616246U,	// VST4LNdAsm_8
+    567670U,	// VST4LNdWB_fixed_Asm_16
+    1091958U,	// VST4LNdWB_fixed_Asm_32
+    1616246U,	// VST4LNdWB_fixed_Asm_8
+    575862U,	// VST4LNdWB_register_Asm_16
+    1100150U,	// VST4LNdWB_register_Asm_32
+    1624438U,	// VST4LNdWB_register_Asm_8
+    567670U,	// VST4LNqAsm_16
+    1091958U,	// VST4LNqAsm_32
+    567670U,	// VST4LNqWB_fixed_Asm_16
+    1091958U,	// VST4LNqWB_fixed_Asm_32
+    575862U,	// VST4LNqWB_register_Asm_16
+    1100150U,	// VST4LNqWB_register_Asm_32
+    537454966U,	// VST4dAsm_16
+    537979254U,	// VST4dAsm_32
+    538503542U,	// VST4dAsm_8
+    537454966U,	// VST4dWB_fixed_Asm_16
+    537979254U,	// VST4dWB_fixed_Asm_32
+    538503542U,	// VST4dWB_fixed_Asm_8
+    537438582U,	// VST4dWB_register_Asm_16
+    537962870U,	// VST4dWB_register_Asm_32
+    538487158U,	// VST4dWB_register_Asm_8
+    604563830U,	// VST4qAsm_16
+    605088118U,	// VST4qAsm_32
+    605612406U,	// VST4qAsm_8
+    604563830U,	// VST4qWB_fixed_Asm_16
+    605088118U,	// VST4qWB_fixed_Asm_32
+    605612406U,	// VST4qWB_fixed_Asm_8
+    604547446U,	// VST4qWB_register_Asm_16
+    605071734U,	// VST4qWB_register_Asm_32
+    605596022U,	// VST4qWB_register_Asm_8
     0U,	// WIN__CHKSTK
     0U,	// WIN__DBZCHK
     0U,	// t2ABS
@@ -1224,13 +1272,13 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// t2BR_JT
     0U,	// t2DoLoopStart
     0U,	// t2LDMIA_RET
-    27523U,	// t2LDRBpcrel
-    28786U,	// t2LDRConstPool
-    28031U,	// t2LDRHpcrel
-    27542U,	// t2LDRSBpcrel
-    28070U,	// t2LDRSHpcrel
+    27734U,	// t2LDRBpcrel
+    28997U,	// t2LDRConstPool
+    28242U,	// t2LDRHpcrel
+    27753U,	// t2LDRSBpcrel
+    28281U,	// t2LDRSHpcrel
     0U,	// t2LDRpci_pic
-    28786U,	// t2LDRpcrel
+    28997U,	// t2LDRpcrel
     0U,	// t2LEApcrel
     0U,	// t2LEApcrelJT
     0U,	// t2LoopDec
@@ -1243,14 +1291,14 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// t2MOVCClsr
     0U,	// t2MOVCCr
     0U,	// t2MOVCCror
-    61756U,	// t2MOVSsi
-    45372U,	// t2MOVSsr
+    61967U,	// t2MOVSsi
+    45583U,	// t2MOVSsr
     0U,	// t2MOVTi16_ga_pcrel
     0U,	// t2MOV_ga_pcrel
     0U,	// t2MOVi16_ga_pcrel
     0U,	// t2MOVi32imm
-    62225U,	// t2MOVsi
-    45841U,	// t2MOVsr
+    62436U,	// t2MOVsi
+    46052U,	// t2MOVsr
     0U,	// t2MVNCCi
     0U,	// t2RSBSri
     0U,	// t2RSBSrs
@@ -1270,15 +1318,17 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// tADDframe
     0U,	// tADJCALLSTACKDOWN
     0U,	// tADJCALLSTACKUP
+    0U,	// tBLXNS_CALL
     0U,	// tBL_PUSHLR
     0U,	// tBRIND
     0U,	// tBR_JTr
+    0U,	// tBXNS_RET
     0U,	// tBX_CALL
     0U,	// tBX_RET
     0U,	// tBX_RET_vararg
     0U,	// tBfar
     0U,	// tLDMIA_UPD
-    28786U,	// tLDRConstPool
+    28997U,	// tLDRConstPool
     0U,	// tLDRLIT_ga_abs
     0U,	// tLDRLIT_ga_pcrel
     0U,	// tLDR_postidx
@@ -1299,3617 +1349,3668 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// tTBB_JT
     0U,	// tTBH_JT
     0U,	// tTPsoft
-    2108435U,	// ADCri
-    2108435U,	// ADCrr
-    2165779U,	// ADCrsi
-    76819U,	// ADCrsr
-    2108503U,	// ADDri
-    2108503U,	// ADDrr
-    2165847U,	// ADDrsi
-    76887U,	// ADDrsr
-    2125933U,	// ADR
-    673793575U,	// AESD
-    673793583U,	// AESE
-    740902420U,	// AESIMC
-    740902430U,	// AESMC
-    2108568U,	// ANDri
-    2108568U,	// ANDrr
-    2165912U,	// ANDrsi
-    76952U,	// ANDrsr
-    2157595U,	// BFC
-    2141695U,	// BFI
-    2108448U,	// BICri
-    2108448U,	// BICrr
-    2165792U,	// BICrsi
-    76832U,	// BICrsr
-    3229471U,	// BKPT
-    3229419U,	// BL
-    3229525U,	// BLX
-    2192483U,	// BLX_pred
-    3229525U,	// BLXi
-    2190928U,	// BL_pred
-    3229521U,	// BX
-    2190865U,	// BXJ
-    3773373U,	// BX_RET
-    2192317U,	// BX_pred
-    2190013U,	// Bcc
-    807514119U,	// CDP
-    876724793U,	// CDP2
-    5131U,	// CLREX
-    2127034U,	// CLZ
-    2125728U,	// CMNri
-    2125728U,	// CMNzrr
-    2158496U,	// CMNzrsi
-    2142112U,	// CMNzrsr
-    2125841U,	// CMPri
-    2125841U,	// CMPrr
-    2158609U,	// CMPrsi
-    2142225U,	// CMPrsr
-    3229455U,	// CPS1p
-    941748513U,	// CPS2p
-    941748513U,	// CPS3p
-    740902507U,	// CRC32B
-    740902515U,	// CRC32CB
-    740902607U,	// CRC32CH
-    740902722U,	// CRC32CW
-    740902599U,	// CRC32H
-    740902714U,	// CRC32W
-    2190589U,	// DBG
-    132746U,	// DMB
-    132751U,	// DSB
-    2109596U,	// EORri
-    2109596U,	// EORrr
-    2166940U,	// EORrsi
-    77980U,	// EORrsr
-    3248511U,	// ERET
-    1011381008U,	// FCONSTD
-    5272336U,	// FCONSTH
-    5796624U,	// FCONSTS
-    740324280U,	// FLDMXDB_UPD
-    2192215U,	// FLDMXIA
-    740324183U,	// FLDMXIA_UPD
-    6394149U,	// FMSTAT
-    740324288U,	// FSTMXDB_UPD
-    2192223U,	// FSTMXIA
-    740324191U,	// FSTMXIA_UPD
-    2191828U,	// HINT
-    3229466U,	// HLT
-    3229349U,	// HVC
-    140948U,	// ISB
-    2124265U,	// LDA
-    2124474U,	// LDAB
-    2126841U,	// LDAEX
-    2124785U,	// LDAEXB
-    1075866804U,	// LDAEXD
-    2125271U,	// LDAEXH
-    2125071U,	// LDAH
-    1147782877U,	// LDC2L_OFFSET
-    1214891741U,	// LDC2L_OPTION
-    1214891741U,	// LDC2L_POST
-    1282000605U,	// LDC2L_PRE
-    1147781664U,	// LDC2_OFFSET
-    1214890528U,	// LDC2_OPTION
-    1214890528U,	// LDC2_POST
-    1281999392U,	// LDC2_PRE
-    807448153U,	// LDCL_OFFSET
-    807448153U,	// LDCL_OPTION
-    807448153U,	// LDCL_POST
-    807448153U,	// LDCL_PRE
-    807447575U,	// LDC_OFFSET
-    807447575U,	// LDC_OPTION
-    807447575U,	// LDC_POST
-    807447575U,	// LDC_PRE
-    2189805U,	// LDMDA
-    740321773U,	// LDMDA_UPD
-    2190060U,	// LDMDB
-    740322028U,	// LDMDB_UPD
-    2191178U,	// LDMIA
-    740323146U,	// LDMIA_UPD
-    2190079U,	// LDMIB
-    740322047U,	// LDMIB_UPD
-    2150764U,	// LDRBT_POST_IMM
-    2150764U,	// LDRBT_POST_REG
-    2149251U,	// LDRB_POST_IMM
-    2149251U,	// LDRB_POST_REG
-    2141059U,	// LDRB_PRE_IMM
-    2149251U,	// LDRB_PRE_REG
-    2157443U,	// LDRBi12
-    2141059U,	// LDRBrs
-    2149533U,	// LDRD
-    2206877U,	// LDRD_POST
-    2206877U,	// LDRD_PRE
-    2126853U,	// LDREX
-    2124799U,	// LDREXB
-    1075866818U,	// LDREXD
-    2125285U,	// LDREXH
-    2141567U,	// LDRH
-    2142607U,	// LDRHTi
-    2150799U,	// LDRHTr
-    2149759U,	// LDRH_POST
-    2149759U,	// LDRH_PRE
-    2141078U,	// LDRSB
-    2142584U,	// LDRSBTi
-    2150776U,	// LDRSBTr
-    2149270U,	// LDRSB_POST
-    2149270U,	// LDRSB_PRE
-    2141606U,	// LDRSH
-    2142619U,	// LDRSHTi
-    2150811U,	// LDRSHTr
-    2149798U,	// LDRSH_POST
-    2149798U,	// LDRSH_PRE
-    2150958U,	// LDRT_POST_IMM
-    2150958U,	// LDRT_POST_REG
-    2150514U,	// LDR_POST_IMM
-    2150514U,	// LDR_POST_REG
-    2142322U,	// LDR_PRE_IMM
-    2150514U,	// LDR_PRE_REG
-    2158706U,	// LDRcp
-    2158706U,	// LDRi12
-    2142322U,	// LDRrs
-    807514217U,	// MCR
-    675398207U,	// MCR2
-    807456932U,	// MCRR
-    675398213U,	// MCRR2
-    2165293U,	// MLA
-    2142457U,	// MLS
-    7443217U,	// MOVPCLR
-    2159219U,	// MOVTi16
-    2134801U,	// MOVi
-    2126648U,	// MOVi16
-    2134801U,	// MOVr
-    2134801U,	// MOVr_TC
-    2110225U,	// MOVsi
-    2167569U,	// MOVsr
-    1344384046U,	// MRC
-    148006U,	// MRC2
-    1411435570U,	// MRRC
-    156204U,	// MRRC2
-    2191654U,	// MRS
-    2126118U,	// MRSbanked
-    2191654U,	// MRSsys
-    1478521018U,	// MSR
-    1545629882U,	// MSRbanked
-    1478521018U,	// MSRi
-    2109229U,	// MUL
-    2150154U,	// MVE_ASRLi
-    2150154U,	// MVE_ASRLr
-    740901843U,	// MVE_DLSTP_16
-    740901102U,	// MVE_DLSTP_32
-    740901452U,	// MVE_DLSTP_64
-    740902455U,	// MVE_DLSTP_8
-    1612812313U,	// MVE_LCTP
-    3311359U,	// MVE_LETP
-    2150101U,	// MVE_LSLLi
-    2150101U,	// MVE_LSLLr
-    2150159U,	// MVE_LSRL
-    740356214U,	// MVE_SQRSHR
-    2207476U,	// MVE_SQRSHRL
-    740355712U,	// MVE_SQSHL
-    2150073U,	// MVE_SQSHLL
-    740356221U,	// MVE_SRSHR
-    2150140U,	// MVE_SRSHRL
-    740355730U,	// MVE_UQRSHL
-    2207431U,	// MVE_UQRSHLL
-    740355718U,	// MVE_UQSHL
-    2150080U,	// MVE_UQSHLL
-    740356227U,	// MVE_URSHR
-    2150147U,	// MVE_URSHRL
-    8041106U,	// MVE_VABAVs16
-    8565394U,	// MVE_VABAVs32
-    9089682U,	// MVE_VABAVs8
-    9613970U,	// MVE_VABAVu16
-    10138258U,	// MVE_VABAVu32
-    10662546U,	// MVE_VABAVu8
-    5426255U,	// MVE_VABDf16
-    5950543U,	// MVE_VABDf32
-    8047695U,	// MVE_VABDs16
-    8571983U,	// MVE_VABDs32
-    9096271U,	// MVE_VABDs8
-    9620559U,	// MVE_VABDu16
-    10144847U,	// MVE_VABDu32
-    10669135U,	// MVE_VABDu8
-    5435624U,	// MVE_VABSf16
-    5959912U,	// MVE_VABSf32
-    8057064U,	// MVE_VABSs16
-    8581352U,	// MVE_VABSs32
-    9105640U,	// MVE_VABSs8
-    11209746U,	// MVE_VADC
-    11185657U,	// MVE_VADCI
-    8587948U,	// MVE_VADDLVs32acc
-    8573683U,	// MVE_VADDLVs32no_acc
-    10160812U,	// MVE_VADDLVu32acc
-    10146547U,	// MVE_VADDLVu32no_acc
-    8047269U,	// MVE_VADDVs16acc
-    8057562U,	// MVE_VADDVs16no_acc
-    8571557U,	// MVE_VADDVs32acc
-    8581850U,	// MVE_VADDVs32no_acc
-    9095845U,	// MVE_VADDVs8acc
-    9106138U,	// MVE_VADDVs8no_acc
-    9620133U,	// MVE_VADDVu16acc
-    9630426U,	// MVE_VADDVu16no_acc
-    10144421U,	// MVE_VADDVu32acc
-    10154714U,	// MVE_VADDVu32no_acc
-    10668709U,	// MVE_VADDVu8acc
-    10679002U,	// MVE_VADDVu8no_acc
-    5426304U,	// MVE_VADD_qr_f16
-    5950592U,	// MVE_VADD_qr_f32
-    11717760U,	// MVE_VADD_qr_i16
-    11193472U,	// MVE_VADD_qr_i32
-    12242048U,	// MVE_VADD_qr_i8
-    5426304U,	// MVE_VADDf16
-    5950592U,	// MVE_VADDf32
-    11717760U,	// MVE_VADDi16
-    11193472U,	// MVE_VADDi32
-    12242048U,	// MVE_VADDi8
-    2280599U,	// MVE_VAND
-    2280479U,	// MVE_VBIC
-    11717663U,	// MVE_VBICimmi16
-    11193375U,	// MVE_VBICimmi32
-    708798U,	// MVE_VBRSR16
-    1233086U,	// MVE_VBRSR32
-    1757374U,	// MVE_VBRSR8
-    5418075U,	// MVE_VCADDf16
-    5942363U,	// MVE_VCADDf32
-    11709531U,	// MVE_VCADDi16
-    11185243U,	// MVE_VCADDi32
-    12233819U,	// MVE_VCADDi8
-    8057074U,	// MVE_VCLSs16
-    8581362U,	// MVE_VCLSs32
-    9105650U,	// MVE_VCLSs8
-    11728057U,	// MVE_VCLZs16
-    11203769U,	// MVE_VCLZs32
-    12252345U,	// MVE_VCLZs8
-    5442091U,	// MVE_VCMLAf16
-    5966379U,	// MVE_VCMLAf32
-    1683140624U,	// MVE_VCMPf16
-    1683140624U,	// MVE_VCMPf16r
-    1683664912U,	// MVE_VCMPf32
-    1683664912U,	// MVE_VCMPf32r
-    1689432080U,	// MVE_VCMPi16
-    1689432080U,	// MVE_VCMPi16r
-    1688907792U,	// MVE_VCMPi32
-    1688907792U,	// MVE_VCMPi32r
-    1689956368U,	// MVE_VCMPi8
-    1689956368U,	// MVE_VCMPi8r
-    1685762064U,	// MVE_VCMPs16
-    1685762064U,	// MVE_VCMPs16r
-    1686286352U,	// MVE_VCMPs32
-    1686286352U,	// MVE_VCMPs32r
-    1686810640U,	// MVE_VCMPs8
-    1686810640U,	// MVE_VCMPs8r
-    1687334928U,	// MVE_VCMPu16
-    1687334928U,	// MVE_VCMPu16r
-    1687859216U,	// MVE_VCMPu32
-    1687859216U,	// MVE_VCMPu32r
-    1688383504U,	// MVE_VCMPu8
-    1688383504U,	// MVE_VCMPu8r
-    5418795U,	// MVE_VCMULf16
-    5943083U,	// MVE_VCMULf32
-    738914334U,	// MVE_VCTP16
-    739438622U,	// MVE_VCTP32
-    750972958U,	// MVE_VCTP64
-    739962910U,	// MVE_VCTP8
-    684379068U,	// MVE_VCVTf16f32bh
-    684380770U,	// MVE_VCVTf16f32th
-    1020449390U,	// MVE_VCVTf16s16_fix
-    1624437358U,	// MVE_VCVTf16s16n
-    1020973678U,	// MVE_VCVTf16u16_fix
-    1624961646U,	// MVE_VCVTf16u16n
-    685951932U,	// MVE_VCVTf32f16bh
-    685953634U,	// MVE_VCVTf32f16th
-    1022022254U,	// MVE_VCVTf32s32_fix
-    1626010222U,	// MVE_VCVTf32s32n
-    1022546542U,	// MVE_VCVTf32u32_fix
-    1626534510U,	// MVE_VCVTf32u32n
-    1023070830U,	// MVE_VCVTs16f16_fix
-    1627056761U,	// MVE_VCVTs16f16a
-    1627058033U,	// MVE_VCVTs16f16m
-    1627058129U,	// MVE_VCVTs16f16n
-    1627058218U,	// MVE_VCVTs16f16p
-    1627058798U,	// MVE_VCVTs16f16z
-    1023595118U,	// MVE_VCVTs32f32_fix
-    1627581049U,	// MVE_VCVTs32f32a
-    1627582321U,	// MVE_VCVTs32f32m
-    1627582417U,	// MVE_VCVTs32f32n
-    1627582506U,	// MVE_VCVTs32f32p
-    1627583086U,	// MVE_VCVTs32f32z
-    1024119406U,	// MVE_VCVTu16f16_fix
-    1628105337U,	// MVE_VCVTu16f16a
-    1628106609U,	// MVE_VCVTu16f16m
-    1628106705U,	// MVE_VCVTu16f16n
-    1628106794U,	// MVE_VCVTu16f16p
-    1628107374U,	// MVE_VCVTu16f16z
-    1024643694U,	// MVE_VCVTu32f32_fix
-    1628629625U,	// MVE_VCVTu32f32a
-    1628630897U,	// MVE_VCVTu32f32m
-    1628630993U,	// MVE_VCVTu32f32n
-    1628631082U,	// MVE_VCVTu32f32p
-    1628631662U,	// MVE_VCVTu32f32z
-    9613360U,	// MVE_VDDUPu16
-    10137648U,	// MVE_VDDUPu32
-    10661936U,	// MVE_VDDUPu8
-    716860U,	// MVE_VDUP16
-    1241148U,	// MVE_VDUP32
-    1765436U,	// MVE_VDUP8
-    9637953U,	// MVE_VDWDUPu16
-    10162241U,	// MVE_VDWDUPu32
-    10686529U,	// MVE_VDWDUPu8
-    2281627U,	// MVE_VEOR
-    5419228U,	// MVE_VFMA_qr_Sf16
-    5943516U,	// MVE_VFMA_qr_Sf32
-    5417538U,	// MVE_VFMA_qr_f16
-    5941826U,	// MVE_VFMA_qr_f32
-    5417538U,	// MVE_VFMAf16
-    5941826U,	// MVE_VFMAf32
-    5419272U,	// MVE_VFMSf16
-    5943560U,	// MVE_VFMSf32
-    8047726U,	// MVE_VHADD_qr_s16
-    8572014U,	// MVE_VHADD_qr_s32
-    9096302U,	// MVE_VHADD_qr_s8
-    9620590U,	// MVE_VHADD_qr_u16
-    10144878U,	// MVE_VHADD_qr_u32
-    10669166U,	// MVE_VHADD_qr_u8
-    8047726U,	// MVE_VHADDs16
-    8572014U,	// MVE_VHADDs32
-    9096302U,	// MVE_VHADDs8
-    9620590U,	// MVE_VHADDu16
-    10144878U,	// MVE_VHADDu32
-    10669166U,	// MVE_VHADDu8
-    8039508U,	// MVE_VHCADDs16
-    8563796U,	// MVE_VHCADDs32
-    9088084U,	// MVE_VHCADDs8
-    8047570U,	// MVE_VHSUB_qr_s16
-    8571858U,	// MVE_VHSUB_qr_s32
-    9096146U,	// MVE_VHSUB_qr_s8
-    9620434U,	// MVE_VHSUB_qr_u16
-    10144722U,	// MVE_VHSUB_qr_u32
-    10669010U,	// MVE_VHSUB_qr_u8
-    8047570U,	// MVE_VHSUBs16
-    8571858U,	// MVE_VHSUBs32
-    9096146U,	// MVE_VHSUBs8
-    9620434U,	// MVE_VHSUBu16
-    10144722U,	// MVE_VHSUBu32
-    10669010U,	// MVE_VHSUBu8
-    9613366U,	// MVE_VIDUPu16
-    10137654U,	// MVE_VIDUPu32
-    10661942U,	// MVE_VIDUPu8
-    9637960U,	// MVE_VIWDUPu16
-    10162248U,	// MVE_VIWDUPu32
-    10686536U,	// MVE_VIWDUPu8
-    18555739U,	// MVE_VLD20_16
-    19080027U,	// MVE_VLD20_16_wb
-    18554881U,	// MVE_VLD20_32
-    19079169U,	// MVE_VLD20_32_wb
-    18556328U,	// MVE_VLD20_8
-    19080616U,	// MVE_VLD20_8_wb
-    18555779U,	// MVE_VLD21_16
-    19080067U,	// MVE_VLD21_16_wb
-    18554947U,	// MVE_VLD21_32
-    19079235U,	// MVE_VLD21_32_wb
-    18556364U,	// MVE_VLD21_8
-    19080652U,	// MVE_VLD21_8_wb
-    18563951U,	// MVE_VLD40_16
-    19088239U,	// MVE_VLD40_16_wb
-    18563093U,	// MVE_VLD40_32
-    19087381U,	// MVE_VLD40_32_wb
-    18564538U,	// MVE_VLD40_8
-    19088826U,	// MVE_VLD40_8_wb
-    18563991U,	// MVE_VLD41_16
-    19088279U,	// MVE_VLD41_16_wb
-    18563159U,	// MVE_VLD41_32
-    19087447U,	// MVE_VLD41_32_wb
-    18564574U,	// MVE_VLD41_8
-    19088862U,	// MVE_VLD41_8_wb
-    18564011U,	// MVE_VLD42_16
-    19088299U,	// MVE_VLD42_16_wb
-    18563205U,	// MVE_VLD42_32
-    19087493U,	// MVE_VLD42_32_wb
-    18564592U,	// MVE_VLD42_8
-    19088880U,	// MVE_VLD42_8_wb
-    18564031U,	// MVE_VLD43_16
-    19088319U,	// MVE_VLD43_16_wb
-    18563238U,	// MVE_VLD43_32
-    19087526U,	// MVE_VLD43_32_wb
-    18564610U,	// MVE_VLD43_8
-    19088898U,	// MVE_VLD43_8_wb
-    8047490U,	// MVE_VLDRBS16
-    746236802U,	// MVE_VLDRBS16_post
-    746236802U,	// MVE_VLDRBS16_pre
-    8047490U,	// MVE_VLDRBS16_rq
-    8571778U,	// MVE_VLDRBS32
-    746761090U,	// MVE_VLDRBS32_post
-    746761090U,	// MVE_VLDRBS32_pre
-    8571778U,	// MVE_VLDRBS32_rq
-    9620354U,	// MVE_VLDRBU16
-    747809666U,	// MVE_VLDRBU16_post
-    747809666U,	// MVE_VLDRBU16_pre
-    9620354U,	// MVE_VLDRBU16_rq
-    10144642U,	// MVE_VLDRBU32
-    748333954U,	// MVE_VLDRBU32_post
-    748333954U,	// MVE_VLDRBU32_pre
-    10144642U,	// MVE_VLDRBU32_rq
-    10668930U,	// MVE_VLDRBU8
-    748858242U,	// MVE_VLDRBU8_post
-    748858242U,	// MVE_VLDRBU8_pre
-    10668930U,	// MVE_VLDRBU8_rq
-    19582108U,	// MVE_VLDRDU64_qi
-    757771420U,	// MVE_VLDRDU64_qi_pre
-    19582108U,	// MVE_VLDRDU64_rq
-    19582108U,	// MVE_VLDRDU64_rq_u
-    8572286U,	// MVE_VLDRHS32
-    746761598U,	// MVE_VLDRHS32_post
-    746761598U,	// MVE_VLDRHS32_pre
-    8572286U,	// MVE_VLDRHS32_rq
-    8572286U,	// MVE_VLDRHS32_rq_u
-    9620862U,	// MVE_VLDRHU16
-    747810174U,	// MVE_VLDRHU16_post
-    747810174U,	// MVE_VLDRHU16_pre
-    9620862U,	// MVE_VLDRHU16_rq
-    9620862U,	// MVE_VLDRHU16_rq_u
-    10145150U,	// MVE_VLDRHU32
-    748334462U,	// MVE_VLDRHU32_post
-    748334462U,	// MVE_VLDRHU32_pre
-    10145150U,	// MVE_VLDRHU32_rq
-    10145150U,	// MVE_VLDRHU32_rq_u
-    10146604U,	// MVE_VLDRWU32
-    748335916U,	// MVE_VLDRWU32_post
-    748335916U,	// MVE_VLDRWU32_pre
-    10146604U,	// MVE_VLDRWU32_qi
-    748335916U,	// MVE_VLDRWU32_qi_pre
-    10146604U,	// MVE_VLDRWU32_rq
-    10146604U,	// MVE_VLDRWU32_rq_u
-    746246867U,	// MVE_VMAXAVs16
-    746771155U,	// MVE_VMAXAVs32
-    747295443U,	// MVE_VMAXAVs8
-    8047284U,	// MVE_VMAXAs16
-    8571572U,	// MVE_VMAXAs32
-    9095860U,	// MVE_VMAXAs8
-    743625411U,	// MVE_VMAXNMAVf16
-    744149699U,	// MVE_VMAXNMAVf32
-    5425749U,	// MVE_VMAXNMAf16
-    5950037U,	// MVE_VMAXNMAf32
-    743625474U,	// MVE_VMAXNMVf16
-    744149762U,	// MVE_VMAXNMVf32
-    5427029U,	// MVE_VMAXNMf16
-    5951317U,	// MVE_VMAXNMf32
-    746246933U,	// MVE_VMAXVs16
-    746771221U,	// MVE_VMAXVs32
-    747295509U,	// MVE_VMAXVs8
-    747819797U,	// MVE_VMAXVu16
-    748344085U,	// MVE_VMAXVu32
-    748868373U,	// MVE_VMAXVu8
-    8049517U,	// MVE_VMAXs16
-    8573805U,	// MVE_VMAXs32
-    9098093U,	// MVE_VMAXs8
-    9622381U,	// MVE_VMAXu16
-    10146669U,	// MVE_VMAXu32
-    10670957U,	// MVE_VMAXu8
-    746246860U,	// MVE_VMINAVs16
-    746771148U,	// MVE_VMINAVs32
-    747295436U,	// MVE_VMINAVs8
-    8047197U,	// MVE_VMINAs16
-    8571485U,	// MVE_VMINAs32
-    9095773U,	// MVE_VMINAs8
-    743625402U,	// MVE_VMINNMAVf16
-    744149690U,	// MVE_VMINNMAVf32
-    5425741U,	// MVE_VMINNMAf16
-    5950029U,	// MVE_VMINNMAf32
-    743625466U,	// MVE_VMINNMVf16
-    744149754U,	// MVE_VMINNMVf32
-    5427022U,	// MVE_VMINNMf16
-    5951310U,	// MVE_VMINNMf32
-    746246922U,	// MVE_VMINVs16
-    746771210U,	// MVE_VMINVs32
-    747295498U,	// MVE_VMINVs8
-    747819786U,	// MVE_VMINVu16
-    748344074U,	// MVE_VMINVu32
-    748868362U,	// MVE_VMINVu8
-    8048539U,	// MVE_VMINs16
-    8572827U,	// MVE_VMINs32
-    9097115U,	// MVE_VMINs8
-    9621403U,	// MVE_VMINu16
-    10145691U,	// MVE_VMINu32
-    10669979U,	// MVE_VMINu8
-    8039039U,	// MVE_VMLADAVas16
-    8563327U,	// MVE_VMLADAVas32
-    9087615U,	// MVE_VMLADAVas8
-    9611903U,	// MVE_VMLADAVau16
-    10136191U,	// MVE_VMLADAVau32
-    10660479U,	// MVE_VMLADAVau8
-    8041358U,	// MVE_VMLADAVaxs16
-    8565646U,	// MVE_VMLADAVaxs32
-    9089934U,	// MVE_VMLADAVaxs8
-    8049304U,	// MVE_VMLADAVs16
-    8573592U,	// MVE_VMLADAVs32
-    9097880U,	// MVE_VMLADAVs8
-    9622168U,	// MVE_VMLADAVu16
-    10146456U,	// MVE_VMLADAVu32
-    10670744U,	// MVE_VMLADAVu8
-    8049811U,	// MVE_VMLADAVxs16
-    8574099U,	// MVE_VMLADAVxs32
-    9098387U,	// MVE_VMLADAVxs8
-    8088200U,	// MVE_VMLALDAVas16
-    8612488U,	// MVE_VMLALDAVas32
-    9661064U,	// MVE_VMLALDAVau16
-    10185352U,	// MVE_VMLALDAVau32
-    8090520U,	// MVE_VMLALDAVaxs16
-    8614808U,	// MVE_VMLALDAVaxs32
-    8041120U,	// MVE_VMLALDAVs16
-    8565408U,	// MVE_VMLALDAVs32
-    9613984U,	// MVE_VMLALDAVu16
-    10138272U,	// MVE_VMLALDAVu32
-    8041628U,	// MVE_VMLALDAVxs16
-    8565916U,	// MVE_VMLALDAVxs32
-    8040662U,	// MVE_VMLAS_qr_s16
-    8564950U,	// MVE_VMLAS_qr_s32
-    9089238U,	// MVE_VMLAS_qr_s8
-    9613526U,	// MVE_VMLAS_qr_u16
-    10137814U,	// MVE_VMLAS_qr_u32
-    10662102U,	// MVE_VMLAS_qr_u8
-    8038973U,	// MVE_VMLA_qr_s16
-    8563261U,	// MVE_VMLA_qr_s32
-    9087549U,	// MVE_VMLA_qr_s8
-    9611837U,	// MVE_VMLA_qr_u16
-    10136125U,	// MVE_VMLA_qr_u32
-    10660413U,	// MVE_VMLA_qr_u8
-    8039068U,	// MVE_VMLSDAVas16
-    8563356U,	// MVE_VMLSDAVas32
-    9087644U,	// MVE_VMLSDAVas8
-    8041390U,	// MVE_VMLSDAVaxs16
-    8565678U,	// MVE_VMLSDAVaxs32
-    9089966U,	// MVE_VMLSDAVaxs8
-    8049330U,	// MVE_VMLSDAVs16
-    8573618U,	// MVE_VMLSDAVs32
-    9097906U,	// MVE_VMLSDAVs8
-    8049840U,	// MVE_VMLSDAVxs16
-    8574128U,	// MVE_VMLSDAVxs32
-    9098416U,	// MVE_VMLSDAVxs8
-    8088210U,	// MVE_VMLSLDAVas16
-    8612498U,	// MVE_VMLSLDAVas32
-    8090531U,	// MVE_VMLSLDAVaxs16
-    8614819U,	// MVE_VMLSLDAVaxs32
-    8041129U,	// MVE_VMLSLDAVs16
-    8565417U,	// MVE_VMLSLDAVs32
-    8041638U,	// MVE_VMLSLDAVxs16
-    8565926U,	// MVE_VMLSLDAVxs32
-    8055591U,	// MVE_VMOVLs16bh
-    8057288U,	// MVE_VMOVLs16th
-    9104167U,	// MVE_VMOVLs8bh
-    9105864U,	// MVE_VMOVLs8th
-    9628455U,	// MVE_VMOVLu16bh
-    9630152U,	// MVE_VMOVLu16th
-    10677031U,	// MVE_VMOVLu8bh
-    10678728U,	// MVE_VMOVLu8th
-    11717494U,	// MVE_VMOVNi16bh
-    11719197U,	// MVE_VMOVNi16th
-    11193206U,	// MVE_VMOVNi32bh
-    11194909U,	// MVE_VMOVNi32th
-    1110800U,	// MVE_VMOV_from_lane_32
-    7926544U,	// MVE_VMOV_from_lane_s16
-    8975120U,	// MVE_VMOV_from_lane_s8
-    9499408U,	// MVE_VMOV_from_lane_u16
-    10547984U,	// MVE_VMOV_from_lane_u8
-    2208528U,	// MVE_VMOV_q_rr
-    2151184U,	// MVE_VMOV_rr_q
-    570128U,	// MVE_VMOV_to_lane_16
-    1094416U,	// MVE_VMOV_to_lane_32
-    1618704U,	// MVE_VMOV_to_lane_8
-    5960464U,	// MVE_VMOVimmf32
-    11727632U,	// MVE_VMOVimmi16
-    11203344U,	// MVE_VMOVimmi32
-    1764946704U,	// MVE_VMOVimmi64
-    12251920U,	// MVE_VMOVimmi8
-    8047992U,	// MVE_VMULHs16
-    8572280U,	// MVE_VMULHs32
-    9096568U,	// MVE_VMULHs8
-    9620856U,	// MVE_VMULHu16
-    10145144U,	// MVE_VMULHu32
-    10669432U,	// MVE_VMULHu8
-    20630299U,	// MVE_VMULLBp16
-    21154587U,	// MVE_VMULLBp8
-    8047387U,	// MVE_VMULLBs16
-    8571675U,	// MVE_VMULLBs32
-    9095963U,	// MVE_VMULLBs8
-    9620251U,	// MVE_VMULLBu16
-    10144539U,	// MVE_VMULLBu32
-    10668827U,	// MVE_VMULLBu8
-    20632001U,	// MVE_VMULLTp16
-    21156289U,	// MVE_VMULLTp8
-    8049089U,	// MVE_VMULLTs16
-    8573377U,	// MVE_VMULLTs32
-    9097665U,	// MVE_VMULLTs8
-    9621953U,	// MVE_VMULLTu16
-    10146241U,	// MVE_VMULLTu32
-    10670529U,	// MVE_VMULLTu8
-    5427005U,	// MVE_VMUL_qr_f16
-    5951293U,	// MVE_VMUL_qr_f32
-    11718461U,	// MVE_VMUL_qr_i16
-    11194173U,	// MVE_VMUL_qr_i32
-    12242749U,	// MVE_VMUL_qr_i8
-    5427005U,	// MVE_VMULf16
-    5951293U,	// MVE_VMULf32
-    11718461U,	// MVE_VMULi16
-    11194173U,	// MVE_VMULi32
-    12242749U,	// MVE_VMULi8
-    2289648U,	// MVE_VMVN
-    11726832U,	// MVE_VMVNimmi16
-    11202544U,	// MVE_VMVNimmi32
-    5434631U,	// MVE_VNEGf16
-    5958919U,	// MVE_VNEGf32
-    8056071U,	// MVE_VNEGs16
-    8580359U,	// MVE_VNEGs32
-    9104647U,	// MVE_VNEGs8
-    2281408U,	// MVE_VORN
-    2281641U,	// MVE_VORR
-    11718825U,	// MVE_VORRimmi16
-    11194537U,	// MVE_VORRimmi32
-    1612902948U,	// MVE_VPNOT
-    2281078U,	// MVE_VPSEL
-    1612943934U,	// MVE_VPST
-    1690014250U,	// MVE_VPTv16i8
-    1690014250U,	// MVE_VPTv16i8r
-    1686868522U,	// MVE_VPTv16s8
-    1686868522U,	// MVE_VPTv16s8r
-    1688441386U,	// MVE_VPTv16u8
-    1688441386U,	// MVE_VPTv16u8r
-    1683722794U,	// MVE_VPTv4f32
-    1683722794U,	// MVE_VPTv4f32r
-    1688965674U,	// MVE_VPTv4i32
-    1688965674U,	// MVE_VPTv4i32r
-    1686344234U,	// MVE_VPTv4s32
-    1686344234U,	// MVE_VPTv4s32r
-    1687917098U,	// MVE_VPTv4u32
-    1687917098U,	// MVE_VPTv4u32r
-    1683198506U,	// MVE_VPTv8f16
-    1683198506U,	// MVE_VPTv8f16r
-    1689489962U,	// MVE_VPTv8i16
-    1689489962U,	// MVE_VPTv8i16r
-    1685819946U,	// MVE_VPTv8s16
-    1685819946U,	// MVE_VPTv8s16r
-    1687392810U,	// MVE_VPTv8u16
-    1687392810U,	// MVE_VPTv8u16r
-    8057058U,	// MVE_VQABSs16
-    8581346U,	// MVE_VQABSs32
-    9105634U,	// MVE_VQABSs8
-    8047738U,	// MVE_VQADD_qr_s16
-    8572026U,	// MVE_VQADD_qr_s32
-    9096314U,	// MVE_VQADD_qr_s8
-    9620602U,	// MVE_VQADD_qr_u16
-    10144890U,	// MVE_VQADD_qr_u32
-    10669178U,	// MVE_VQADD_qr_u8
-    8047738U,	// MVE_VQADDs16
-    8572026U,	// MVE_VQADDs32
-    9096314U,	// MVE_VQADDs8
-    9620602U,	// MVE_VQADDu16
-    10144890U,	// MVE_VQADDu32
-    10669178U,	// MVE_VQADDu8
-    8041505U,	// MVE_VQDMLADHXs16
-    8565793U,	// MVE_VQDMLADHXs32
-    9090081U,	// MVE_VQDMLADHXs8
-    8039733U,	// MVE_VQDMLADHs16
-    8564021U,	// MVE_VQDMLADHs32
-    9088309U,	// MVE_VQDMLADHs8
-    8039700U,	// MVE_VQDMLAH_qrs16
-    8563988U,	// MVE_VQDMLAH_qrs32
-    9088276U,	// MVE_VQDMLAH_qrs8
-    8039818U,	// MVE_VQDMLASH_qrs16
-    8564106U,	// MVE_VQDMLASH_qrs32
-    9088394U,	// MVE_VQDMLASH_qrs8
-    8041526U,	// MVE_VQDMLSDHXs16
-    8565814U,	// MVE_VQDMLSDHXs32
-    9090102U,	// MVE_VQDMLSDHXs8
-    8039752U,	// MVE_VQDMLSDHs16
-    8564040U,	// MVE_VQDMLSDHs32
-    9088328U,	// MVE_VQDMLSDHs8
-    8047968U,	// MVE_VQDMULH_qr_s16
-    8572256U,	// MVE_VQDMULH_qr_s32
-    9096544U,	// MVE_VQDMULH_qr_s8
-    8047968U,	// MVE_VQDMULHi16
-    8572256U,	// MVE_VQDMULHi32
-    9096544U,	// MVE_VQDMULHi8
-    8047378U,	// MVE_VQDMULL_qr_s16bh
-    8049080U,	// MVE_VQDMULL_qr_s16th
-    8571666U,	// MVE_VQDMULL_qr_s32bh
-    8573368U,	// MVE_VQDMULL_qr_s32th
-    8047378U,	// MVE_VQDMULLs16bh
-    8049080U,	// MVE_VQDMULLs16th
-    8571666U,	// MVE_VQDMULLs32bh
-    8573368U,	// MVE_VQDMULLs32th
-    8047470U,	// MVE_VQMOVNs16bh
-    8049173U,	// MVE_VQMOVNs16th
-    8571758U,	// MVE_VQMOVNs32bh
-    8573461U,	// MVE_VQMOVNs32th
-    9620334U,	// MVE_VQMOVNu16bh
-    9622037U,	// MVE_VQMOVNu16th
-    10144622U,	// MVE_VQMOVNu32bh
-    10146325U,	// MVE_VQMOVNu32th
-    8047461U,	// MVE_VQMOVUNs16bh
-    8049164U,	// MVE_VQMOVUNs16th
-    8571749U,	// MVE_VQMOVUNs32bh
-    8573452U,	// MVE_VQMOVUNs32th
-    8056065U,	// MVE_VQNEGs16
-    8580353U,	// MVE_VQNEGs32
-    9104641U,	// MVE_VQNEGs8
-    8041515U,	// MVE_VQRDMLADHXs16
-    8565803U,	// MVE_VQRDMLADHXs32
-    9090091U,	// MVE_VQRDMLADHXs8
-    8039742U,	// MVE_VQRDMLADHs16
-    8564030U,	// MVE_VQRDMLADHs32
-    9088318U,	// MVE_VQRDMLADHs8
-    8039708U,	// MVE_VQRDMLAH_qrs16
-    8563996U,	// MVE_VQRDMLAH_qrs32
-    9088284U,	// MVE_VQRDMLAH_qrs8
-    8039827U,	// MVE_VQRDMLASH_qrs16
-    8564115U,	// MVE_VQRDMLASH_qrs32
-    9088403U,	// MVE_VQRDMLASH_qrs8
-    8041536U,	// MVE_VQRDMLSDHXs16
-    8565824U,	// MVE_VQRDMLSDHXs32
-    9090112U,	// MVE_VQRDMLSDHXs8
-    8039761U,	// MVE_VQRDMLSDHs16
-    8564049U,	// MVE_VQRDMLSDHs32
-    9088337U,	// MVE_VQRDMLSDHs8
-    8047976U,	// MVE_VQRDMULH_qr_s16
-    8572264U,	// MVE_VQRDMULH_qr_s32
-    9096552U,	// MVE_VQRDMULH_qr_s8
-    8047976U,	// MVE_VQRDMULHi16
-    8572264U,	// MVE_VQRDMULHi32
-    9096552U,	// MVE_VQRDMULHi8
-    8048281U,	// MVE_VQRSHL_by_vecs16
-    8572569U,	// MVE_VQRSHL_by_vecs32
-    9096857U,	// MVE_VQRSHL_by_vecs8
-    9621145U,	// MVE_VQRSHL_by_vecu16
-    10145433U,	// MVE_VQRSHL_by_vecu32
-    10669721U,	// MVE_VQRSHL_by_vecu8
-    8048281U,	// MVE_VQRSHL_qrs16
-    8572569U,	// MVE_VQRSHL_qrs32
-    9096857U,	// MVE_VQRSHL_qrs8
-    9621145U,	// MVE_VQRSHL_qru16
-    10145433U,	// MVE_VQRSHL_qru32
-    10669721U,	// MVE_VQRSHL_qru8
-    8039226U,	// MVE_VQRSHRNbhs16
-    8563514U,	// MVE_VQRSHRNbhs32
-    9612090U,	// MVE_VQRSHRNbhu16
-    10136378U,	// MVE_VQRSHRNbhu32
-    8040929U,	// MVE_VQRSHRNths16
-    8565217U,	// MVE_VQRSHRNths32
-    9613793U,	// MVE_VQRSHRNthu16
-    10138081U,	// MVE_VQRSHRNthu32
-    8039259U,	// MVE_VQRSHRUNs16bh
-    8040962U,	// MVE_VQRSHRUNs16th
-    8563547U,	// MVE_VQRSHRUNs32bh
-    8565250U,	// MVE_VQRSHRUNs32th
-    8049291U,	// MVE_VQSHLU_imms16
-    8573579U,	// MVE_VQSHLU_imms32
-    9097867U,	// MVE_VQSHLU_imms8
-    8048268U,	// MVE_VQSHL_by_vecs16
-    8572556U,	// MVE_VQSHL_by_vecs32
-    9096844U,	// MVE_VQSHL_by_vecs8
-    9621132U,	// MVE_VQSHL_by_vecu16
-    10145420U,	// MVE_VQSHL_by_vecu32
-    10669708U,	// MVE_VQSHL_by_vecu8
-    8048268U,	// MVE_VQSHL_qrs16
-    8572556U,	// MVE_VQSHL_qrs32
-    9096844U,	// MVE_VQSHL_qrs8
-    9621132U,	// MVE_VQSHL_qru16
-    10145420U,	// MVE_VQSHL_qru32
-    10669708U,	// MVE_VQSHL_qru8
-    8048268U,	// MVE_VQSHLimms16
-    8572556U,	// MVE_VQSHLimms32
-    9096844U,	// MVE_VQSHLimms8
-    9621132U,	// MVE_VQSHLimmu16
-    10145420U,	// MVE_VQSHLimmu32
-    10669708U,	// MVE_VQSHLimmu8
-    8039218U,	// MVE_VQSHRNbhs16
-    8563506U,	// MVE_VQSHRNbhs32
-    9612082U,	// MVE_VQSHRNbhu16
-    10136370U,	// MVE_VQSHRNbhu32
-    8040921U,	// MVE_VQSHRNths16
-    8565209U,	// MVE_VQSHRNths32
-    9613785U,	// MVE_VQSHRNthu16
-    10138073U,	// MVE_VQSHRNthu32
-    8039250U,	// MVE_VQSHRUNs16bh
-    8040953U,	// MVE_VQSHRUNs16th
-    8563538U,	// MVE_VQSHRUNs32bh
-    8565241U,	// MVE_VQSHRUNs32th
-    8047576U,	// MVE_VQSUB_qr_s16
-    8571864U,	// MVE_VQSUB_qr_s32
-    9096152U,	// MVE_VQSUB_qr_s8
-    9620440U,	// MVE_VQSUB_qr_u16
-    10144728U,	// MVE_VQSUB_qr_u32
-    10669016U,	// MVE_VQSUB_qr_u8
-    8047576U,	// MVE_VQSUBs16
-    8571864U,	// MVE_VQSUBs32
-    9096152U,	// MVE_VQSUBs8
-    9620440U,	// MVE_VQSUBu16
-    10144728U,	// MVE_VQSUBu32
-    10669016U,	// MVE_VQSUBu8
-    1763652U,	// MVE_VREV16_8
-    714863U,	// MVE_VREV32_16
-    1763439U,	// MVE_VREV32_8
-    714939U,	// MVE_VREV64_16
-    1239227U,	// MVE_VREV64_32
-    1763515U,	// MVE_VREV64_8
-    8047719U,	// MVE_VRHADDs16
-    8572007U,	// MVE_VRHADDs32
-    9096295U,	// MVE_VRHADDs8
-    9620583U,	// MVE_VRHADDu16
-    10144871U,	// MVE_VRHADDu32
-    10669159U,	// MVE_VRHADDu8
-    5433966U,	// MVE_VRINTf16A
-    5435236U,	// MVE_VRINTf16M
-    5435338U,	// MVE_VRINTf16N
-    5435427U,	// MVE_VRINTf16P
-    5436556U,	// MVE_VRINTf16X
-    5436606U,	// MVE_VRINTf16Z
-    5958254U,	// MVE_VRINTf32A
-    5959524U,	// MVE_VRINTf32M
-    5959626U,	// MVE_VRINTf32N
-    5959715U,	// MVE_VRINTf32P
-    5960844U,	// MVE_VRINTf32X
-    5960894U,	// MVE_VRINTf32Z
-    8612345U,	// MVE_VRMLALDAVHas32
-    10185209U,	// MVE_VRMLALDAVHau32
-    8614717U,	// MVE_VRMLALDAVHaxs32
-    8564161U,	// MVE_VRMLALDAVHs32
-    10137025U,	// MVE_VRMLALDAVHu32
-    8565835U,	// MVE_VRMLALDAVHxs32
-    8612357U,	// MVE_VRMLSLDAVHas32
-    8614730U,	// MVE_VRMLSLDAVHaxs32
-    8564172U,	// MVE_VRMLSLDAVHs32
-    8565847U,	// MVE_VRMLSLDAVHxs32
-    8047985U,	// MVE_VRMULHs16
-    8572273U,	// MVE_VRMULHs32
-    9096561U,	// MVE_VRMULHs8
-    9620849U,	// MVE_VRMULHu16
-    10145137U,	// MVE_VRMULHu32
-    10669425U,	// MVE_VRMULHu8
-    8048288U,	// MVE_VRSHL_by_vecs16
-    8572576U,	// MVE_VRSHL_by_vecs32
-    9096864U,	// MVE_VRSHL_by_vecs8
-    9621152U,	// MVE_VRSHL_by_vecu16
-    10145440U,	// MVE_VRSHL_by_vecu32
-    10669728U,	// MVE_VRSHL_by_vecu8
-    8048288U,	// MVE_VRSHL_qrs16
-    8572576U,	// MVE_VRSHL_qrs32
-    9096864U,	// MVE_VRSHL_qrs8
-    9621152U,	// MVE_VRSHL_qru16
-    10145440U,	// MVE_VRSHL_qru32
-    10669728U,	// MVE_VRSHL_qru8
-    11709251U,	// MVE_VRSHRNi16bh
-    11710954U,	// MVE_VRSHRNi16th
-    11184963U,	// MVE_VRSHRNi32bh
-    11186666U,	// MVE_VRSHRNi32th
-    8048777U,	// MVE_VRSHR_imms16
-    8573065U,	// MVE_VRSHR_imms32
-    9097353U,	// MVE_VRSHR_imms8
-    9621641U,	// MVE_VRSHR_immu16
-    10145929U,	// MVE_VRSHR_immu32
-    10670217U,	// MVE_VRSHR_immu8
-    11209741U,	// MVE_VSBC
-    11185651U,	// MVE_VSBCI
-    673385508U,	// MVE_VSHLC
-    8047371U,	// MVE_VSHLL_imms16bh
-    8049073U,	// MVE_VSHLL_imms16th
-    9095947U,	// MVE_VSHLL_imms8bh
-    9097649U,	// MVE_VSHLL_imms8th
-    9620235U,	// MVE_VSHLL_immu16bh
-    9621937U,	// MVE_VSHLL_immu16th
-    10668811U,	// MVE_VSHLL_immu8bh
-    10670513U,	// MVE_VSHLL_immu8th
-    8055563U,	// MVE_VSHLL_lws16bh
-    8057265U,	// MVE_VSHLL_lws16th
-    9104139U,	// MVE_VSHLL_lws8bh
-    9105841U,	// MVE_VSHLL_lws8th
-    9628427U,	// MVE_VSHLL_lwu16bh
-    9630129U,	// MVE_VSHLL_lwu16th
-    10677003U,	// MVE_VSHLL_lwu8bh
-    10678705U,	// MVE_VSHLL_lwu8th
-    8048294U,	// MVE_VSHL_by_vecs16
-    8572582U,	// MVE_VSHL_by_vecs32
-    9096870U,	// MVE_VSHL_by_vecs8
-    9621158U,	// MVE_VSHL_by_vecu16
-    10145446U,	// MVE_VSHL_by_vecu32
-    10669734U,	// MVE_VSHL_by_vecu8
-    11718310U,	// MVE_VSHL_immi16
-    11194022U,	// MVE_VSHL_immi32
-    12242598U,	// MVE_VSHL_immi8
-    8048294U,	// MVE_VSHL_qrs16
-    8572582U,	// MVE_VSHL_qrs32
-    9096870U,	// MVE_VSHL_qrs8
-    9621158U,	// MVE_VSHL_qru16
-    10145446U,	// MVE_VSHL_qru32
-    10669734U,	// MVE_VSHL_qru8
-    11709259U,	// MVE_VSHRNi16bh
-    11710962U,	// MVE_VSHRNi16th
-    11184971U,	// MVE_VSHRNi32bh
-    11186674U,	// MVE_VSHRNi32th
-    8048783U,	// MVE_VSHR_imms16
-    8573071U,	// MVE_VSHR_imms32
-    9097359U,	// MVE_VSHR_imms8
-    9621647U,	// MVE_VSHR_immu16
-    10145935U,	// MVE_VSHR_immu32
-    10670223U,	// MVE_VSHR_immu8
-    699911U,	// MVE_VSLIimm16
-    1224199U,	// MVE_VSLIimm32
-    1748487U,	// MVE_VSLIimm8
-    699916U,	// MVE_VSRIimm16
-    1224204U,	// MVE_VSRIimm32
-    1748492U,	// MVE_VSRIimm8
-    21701477U,	// MVE_VST20_16
-    238437U,	// MVE_VST20_16_wb
-    21700619U,	// MVE_VST20_32
-    237579U,	// MVE_VST20_32_wb
-    21702065U,	// MVE_VST20_8
-    239025U,	// MVE_VST20_8_wb
-    21701517U,	// MVE_VST21_16
-    238477U,	// MVE_VST21_16_wb
-    21700685U,	// MVE_VST21_32
-    237645U,	// MVE_VST21_32_wb
-    21702101U,	// MVE_VST21_8
-    239061U,	// MVE_VST21_8_wb
-    21709689U,	// MVE_VST40_16
-    246649U,	// MVE_VST40_16_wb
-    21708831U,	// MVE_VST40_32
-    245791U,	// MVE_VST40_32_wb
-    21710275U,	// MVE_VST40_8
-    247235U,	// MVE_VST40_8_wb
-    21709729U,	// MVE_VST41_16
-    246689U,	// MVE_VST41_16_wb
-    21708897U,	// MVE_VST41_32
-    245857U,	// MVE_VST41_32_wb
-    21710311U,	// MVE_VST41_8
-    247271U,	// MVE_VST41_8_wb
-    21709749U,	// MVE_VST42_16
-    246709U,	// MVE_VST42_16_wb
-    21708943U,	// MVE_VST42_32
-    245903U,	// MVE_VST42_32_wb
-    21710329U,	// MVE_VST42_8
-    247289U,	// MVE_VST42_8_wb
-    21709769U,	// MVE_VST43_16
-    246729U,	// MVE_VST43_16_wb
-    21708976U,	// MVE_VST43_32
-    245936U,	// MVE_VST43_32_wb
-    21710347U,	// MVE_VST43_8
-    247307U,	// MVE_VST43_8_wb
-    707464U,	// MVE_VSTRB16
-    738896776U,	// MVE_VSTRB16_post
-    738896776U,	// MVE_VSTRB16_pre
-    707464U,	// MVE_VSTRB16_rq
-    1231752U,	// MVE_VSTRB32
-    739421064U,	// MVE_VSTRB32_post
-    739421064U,	// MVE_VSTRB32_pre
-    1231752U,	// MVE_VSTRB32_rq
-    1756040U,	// MVE_VSTRB8_rq
-    1756040U,	// MVE_VSTRBU8
-    739945352U,	// MVE_VSTRBU8_post
-    739945352U,	// MVE_VSTRBU8_pre
-    12766370U,	// MVE_VSTRD64_qi
-    750955682U,	// MVE_VSTRD64_qi_pre
-    12766370U,	// MVE_VSTRD64_rq
-    12766370U,	// MVE_VSTRD64_rq_u
-    707972U,	// MVE_VSTRH16_rq
-    707972U,	// MVE_VSTRH16_rq_u
-    1232260U,	// MVE_VSTRH32
-    739421572U,	// MVE_VSTRH32_post
-    739421572U,	// MVE_VSTRH32_pre
-    1232260U,	// MVE_VSTRH32_rq
-    1232260U,	// MVE_VSTRH32_rq_u
-    707972U,	// MVE_VSTRHU16
-    738897284U,	// MVE_VSTRHU16_post
-    738897284U,	// MVE_VSTRHU16_pre
-    1233714U,	// MVE_VSTRW32_qi
-    739423026U,	// MVE_VSTRW32_qi_pre
-    1233714U,	// MVE_VSTRW32_rq
-    1233714U,	// MVE_VSTRW32_rq_u
-    1233714U,	// MVE_VSTRWU32
-    739423026U,	// MVE_VSTRWU32_post
-    739423026U,	// MVE_VSTRWU32_pre
-    5426142U,	// MVE_VSUB_qr_f16
-    5950430U,	// MVE_VSUB_qr_f32
-    11717598U,	// MVE_VSUB_qr_i16
-    11193310U,	// MVE_VSUB_qr_i32
-    12241886U,	// MVE_VSUB_qr_i8
-    5426142U,	// MVE_VSUBf16
-    5950430U,	// MVE_VSUBf32
-    11717598U,	// MVE_VSUBi16
-    11193310U,	// MVE_VSUBi32
-    12241886U,	// MVE_VSUBi8
-    740901853U,	// MVE_WLSTP_16
-    740901112U,	// MVE_WLSTP_32
-    740901462U,	// MVE_WLSTP_64
-    740902464U,	// MVE_WLSTP_8
-    2134001U,	// MVNi
-    2134001U,	// MVNr
-    2109425U,	// MVNsi
-    2166769U,	// MVNsr
-    740901300U,	// NEON_VMAXNMNDf
-    740902183U,	// NEON_VMAXNMNDh
-    740901300U,	// NEON_VMAXNMNQf
-    740902183U,	// NEON_VMAXNMNQh
-    740901288U,	// NEON_VMINNMNDf
-    740902171U,	// NEON_VMINNMNDh
-    740901288U,	// NEON_VMINNMNQf
-    740902171U,	// NEON_VMINNMNQh
-    2109610U,	// ORRri
-    2109610U,	// ORRrr
-    2166954U,	// ORRrsi
-    77994U,	// ORRrsr
-    2142551U,	// PKHBT
-    2141095U,	// PKHTB
-    255819U,	// PLDWi12
-    264011U,	// PLDWrs
-    255658U,	// PLDi12
-    263850U,	// PLDrs
-    255704U,	// PLIi12
-    263896U,	// PLIrs
-    2157691U,	// QADD
-    2156833U,	// QADD16
-    2156936U,	// QADD8
-    2159741U,	// QASX
-    2157665U,	// QDADD
-    2157516U,	// QDSUB
-    2159487U,	// QSAX
-    2157529U,	// QSUB
-    2156795U,	// QSUB16
-    2156897U,	// QSUB8
-    2126242U,	// RBIT
-    2126560U,	// REV
-    2124101U,	// REV16
-    2125233U,	// REVSH
-    3229277U,	// RFEDA
-    22103645U,	// RFEDA_UPD
-    3229308U,	// RFEDB
-    22103676U,	// RFEDB_UPD
-    3229284U,	// RFEIA
-    22103652U,	// RFEIA_UPD
-    3229315U,	// RFEIB
-    22103683U,	// RFEIB_UPD
-    2108312U,	// RSBri
-    2108312U,	// RSBrr
-    2165656U,	// RSBrsi
-    76696U,	// RSBrsr
-    2108471U,	// RSCri
-    2108471U,	// RSCrr
-    2165815U,	// RSCrsi
-    76855U,	// RSCrsr
-    2156840U,	// SADD16
-    2156942U,	// SADD8
-    2159746U,	// SASX
-    2959U,	// SB
-    2108430U,	// SBCri
-    2108430U,	// SBCrr
-    2165774U,	// SBCrsi
-    76814U,	// SBCrsr
-    2143255U,	// SBFX
-    2159332U,	// SDIV
-    2158200U,	// SEL
-    272047U,	// SETEND
-    3229431U,	// SETPAN
-    673792186U,	// SHA1C
-    740901060U,	// SHA1H
-    673792218U,	// SHA1M
-    673792228U,	// SHA1P
-    673792041U,	// SHA1SU0
-    673792107U,	// SHA1SU1
-    673792206U,	// SHA256H
-    673792153U,	// SHA256H2
-    673792053U,	// SHA256SU0
-    673792119U,	// SHA256SU1
-    2156816U,	// SHADD16
-    2156921U,	// SHADD8
-    2159728U,	// SHASX
-    2159474U,	// SHSAX
-    2156778U,	// SHSUB16
-    2156882U,	// SHSUB8
-    2190378U,	// SMC
-    2140875U,	// SMLABB
-    2142544U,	// SMLABT
-    2141251U,	// SMLAD
-    2143181U,	// SMLADX
-    282172U,	// SMLAL
-    2206418U,	// SMLALBB
-    2208093U,	// SMLALBT
-    2206853U,	// SMLALD
-    2208731U,	// SMLALDX
-    2206637U,	// SMLALTB
-    2208335U,	// SMLALTT
-    2141088U,	// SMLATB
-    2142792U,	// SMLATT
-    2141155U,	// SMLAWB
-    2142840U,	// SMLAWT
-    2141352U,	// SMLSD
-    2143211U,	// SMLSDX
-    2206864U,	// SMLSLD
-    2208739U,	// SMLSLDX
-    2140721U,	// SMMLA
-    2142306U,	// SMMLAR
-    2142455U,	// SMMLS
-    2142386U,	// SMMLSR
-    2158385U,	// SMMUL
-    2158740U,	// SMMULR
-    2157641U,	// SMUAD
-    2159572U,	// SMUADX
-    2157274U,	// SMULBB
-    2158949U,	// SMULBT
-    2166498U,	// SMULL
-    2157493U,	// SMULTB
-    2159191U,	// SMULTT
-    2157546U,	// SMULWB
-    2159231U,	// SMULWT
-    2157742U,	// SMUSD
-    2159602U,	// SMUSDX
-    3229589U,	// SRSDA
-    3229541U,	// SRSDA_UPD
-    3229611U,	// SRSDB
-    3229565U,	// SRSDB_UPD
-    3229600U,	// SRSIA
-    3229553U,	// SRSIA_UPD
-    3229622U,	// SRSIB
-    3229577U,	// SRSIB_UPD
-    2142529U,	// SSAT
-    2156854U,	// SSAT16
-    2159492U,	// SSAX
-    2156802U,	// SSUB16
-    2156903U,	// SSUB8
-    1147782884U,	// STC2L_OFFSET
-    1214891748U,	// STC2L_OPTION
-    1214891748U,	// STC2L_POST
-    1282000612U,	// STC2L_PRE
-    1147781683U,	// STC2_OFFSET
-    1214890547U,	// STC2_OPTION
-    1214890547U,	// STC2_POST
-    1281999411U,	// STC2_PRE
-    807448158U,	// STCL_OFFSET
-    807448158U,	// STCL_OPTION
-    807448158U,	// STCL_POST
-    807448158U,	// STCL_PRE
-    807447611U,	// STC_OFFSET
-    807447611U,	// STC_OPTION
-    807447611U,	// STC_POST
-    807447611U,	// STC_PRE
-    2125607U,	// STL
-    2124578U,	// STLB
-    2159615U,	// STLEX
-    2157560U,	// STLEXB
-    2157755U,	// STLEXD
-    2158046U,	// STLEXH
-    2125147U,	// STLH
-    2189811U,	// STMDA
-    740321779U,	// STMDA_UPD
-    2190067U,	// STMDB
-    740322035U,	// STMDB_UPD
-    2191213U,	// STMIA
-    740323181U,	// STMIA_UPD
-    2190085U,	// STMIB
-    740322053U,	// STMIB_UPD
-    740348274U,	// STRBT_POST_IMM
-    740348274U,	// STRBT_POST_REG
-    740346761U,	// STRB_POST_IMM
-    740346761U,	// STRB_POST_REG
-    740338569U,	// STRB_PRE_IMM
-    740346761U,	// STRB_PRE_REG
-    2157449U,	// STRBi12
-    2141065U,	// STRBrs
-    2149539U,	// STRD
-    740404387U,	// STRD_POST
-    740404387U,	// STRD_PRE
-    2159633U,	// STREX
-    2157574U,	// STREXB
-    2157769U,	// STREXD
-    2158060U,	// STREXH
-    2141573U,	// STRH
-    740340117U,	// STRHTi
-    740348309U,	// STRHTr
-    740347269U,	// STRH_POST
-    740347269U,	// STRH_PRE
-    740348473U,	// STRT_POST_IMM
-    740348473U,	// STRT_POST_REG
-    740348108U,	// STR_POST_IMM
-    740348108U,	// STR_POST_REG
-    740339916U,	// STR_PRE_IMM
-    740348108U,	// STR_PRE_REG
-    2158796U,	// STRi12
-    2142412U,	// STRrs
-    2108366U,	// SUBri
-    2108366U,	// SUBrr
-    2165710U,	// SUBrsi
-    76750U,	// SUBrsr
-    2190399U,	// SVC
-    2158672U,	// SWP
-    2157437U,	// SWPB
-    2140863U,	// SXTAB
-    2140364U,	// SXTAB16
-    2141477U,	// SXTAH
-    2157506U,	// SXTB
-    2156764U,	// SXTB16
-    2158007U,	// SXTH
-    2125918U,	// TEQri
-    2125918U,	// TEQrr
-    2158686U,	// TEQrsi
-    2142302U,	// TEQrsr
-    4098U,	// TRAP
-    4098U,	// TRAPNaCl
-    288409U,	// TSB
-    2126404U,	// TSTri
-    2126404U,	// TSTrr
-    2159172U,	// TSTrsi
-    2142788U,	// TSTrsr
-    2156847U,	// UADD16
-    2156948U,	// UADD8
-    2159751U,	// UASX
-    2143260U,	// UBFX
-    3229371U,	// UDF
-    2159337U,	// UDIV
-    2156824U,	// UHADD16
-    2156928U,	// UHADD8
-    2159734U,	// UHASX
-    2159480U,	// UHSAX
-    2156786U,	// UHSUB16
-    2156889U,	// UHSUB8
-    2207265U,	// UMAAL
-    282178U,	// UMLAL
-    2166504U,	// UMULL
-    2156832U,	// UQADD16
-    2156935U,	// UQADD8
-    2159740U,	// UQASX
-    2159486U,	// UQSAX
-    2156794U,	// UQSUB16
-    2156896U,	// UQSUB8
-    2156915U,	// USAD8
-    2140491U,	// USADA8
-    2142534U,	// USAT
-    2156861U,	// USAT16
-    2159497U,	// USAX
-    2156809U,	// USUB16
-    2156909U,	// USUB8
-    2140869U,	// UXTAB
-    2140372U,	// UXTAB16
-    2141483U,	// UXTAH
-    2157511U,	// UXTB
-    2156771U,	// UXTB16
-    2158012U,	// UXTH
-    8433191U,	// VABALsv2i64
-    7908903U,	// VABALsv4i32
-    8957479U,	// VABALsv8i16
-    10006055U,	// VABALuv2i64
-    9481767U,	// VABALuv4i32
-    10530343U,	// VABALuv8i16
-    8956388U,	// VABAsv16i8
-    8432100U,	// VABAsv2i32
-    7907812U,	// VABAsv4i16
-    8432100U,	// VABAsv4i32
-    7907812U,	// VABAsv8i16
-    8956388U,	// VABAsv8i8
-    10529252U,	// VABAuv16i8
-    10004964U,	// VABAuv2i32
-    9480676U,	// VABAuv4i16
-    10004964U,	// VABAuv4i32
-    9480676U,	// VABAuv8i16
-    10529252U,	// VABAuv8i8
-    8449635U,	// VABDLsv2i64
-    7925347U,	// VABDLsv4i32
-    8973923U,	// VABDLsv8i16
-    10022499U,	// VABDLuv2i64
-    9498211U,	// VABDLuv4i32
-    10546787U,	// VABDLuv8i16
-    5827663U,	// VABDfd
-    5827663U,	// VABDfq
-    5303375U,	// VABDhd
-    5303375U,	// VABDhq
-    8973391U,	// VABDsv16i8
-    8449103U,	// VABDsv2i32
-    7924815U,	// VABDsv4i16
-    8449103U,	// VABDsv4i32
-    7924815U,	// VABDsv8i16
-    8973391U,	// VABDsv8i8
-    10546255U,	// VABDuv16i8
-    10021967U,	// VABDuv2i32
-    9497679U,	// VABDuv4i16
-    10021967U,	// VABDuv4i32
-    9497679U,	// VABDuv8i16
-    10546255U,	// VABDuv8i8
-    1011380456U,	// VABSD
-    5271784U,	// VABSH
-    5796072U,	// VABSS
-    5796072U,	// VABSfd
-    5796072U,	// VABSfq
-    5271784U,	// VABShd
-    5271784U,	// VABShq
-    8941800U,	// VABSv16i8
-    8417512U,	// VABSv2i32
-    7893224U,	// VABSv4i16
-    8417512U,	// VABSv4i32
-    7893224U,	// VABSv8i16
-    8941800U,	// VABSv8i8
-    5827792U,	// VACGEfd
-    5827792U,	// VACGEfq
-    5303504U,	// VACGEhd
-    5303504U,	// VACGEhq
-    5828996U,	// VACGTfd
-    5828996U,	// VACGTfq
-    5304708U,	// VACGThd
-    5304708U,	// VACGThq
-    1011412096U,	// VADDD
-    5303424U,	// VADDH
-    758181774U,	// VADDHNv2i32
-    11071374U,	// VADDHNv4i16
-    11595662U,	// VADDHNv8i8
-    8449648U,	// VADDLsv2i64
-    7925360U,	// VADDLsv4i32
-    8973936U,	// VADDLsv8i16
-    10022512U,	// VADDLuv2i64
-    9498224U,	// VADDLuv4i32
-    10546800U,	// VADDLuv8i16
-    5827712U,	// VADDS
-    8450849U,	// VADDWsv2i64
-    7926561U,	// VADDWsv4i32
-    8975137U,	// VADDWsv8i16
-    10023713U,	// VADDWuv2i64
-    9499425U,	// VADDWuv4i32
-    10548001U,	// VADDWuv8i16
-    5827712U,	// VADDfd
-    5827712U,	// VADDfq
-    5303424U,	// VADDhd
-    5303424U,	// VADDhq
-    12119168U,	// VADDv16i8
-    758180992U,	// VADDv1i64
-    11070592U,	// VADDv2i32
-    758180992U,	// VADDv2i64
-    11594880U,	// VADDv4i16
-    11070592U,	// VADDv4i32
-    11594880U,	// VADDv8i16
-    12119168U,	// VADDv8i8
-    2157719U,	// VANDd
-    2157719U,	// VANDq
-    2157599U,	// VBICd
-    11070495U,	// VBICiv2i32
-    11594783U,	// VBICiv4i16
-    11070495U,	// VBICiv4i32
-    11594783U,	// VBICiv8i16
-    2157599U,	// VBICq
-    2141432U,	// VBIFd
-    2141432U,	// VBIFq
-    2142631U,	// VBITd
-    2142631U,	// VBITq
-    2141972U,	// VBSLd
-    2141972U,	// VBSLq
-    740901265U,	// VCADDv2f32
-    740902126U,	// VCADDv4f16
-    740901265U,	// VCADDv4f32
-    740902126U,	// VCADDv8f16
-    5828697U,	// VCEQfd
-    5828697U,	// VCEQfq
-    5304409U,	// VCEQhd
-    5304409U,	// VCEQhq
-    12120153U,	// VCEQv16i8
-    11071577U,	// VCEQv2i32
-    11595865U,	// VCEQv4i16
-    11071577U,	// VCEQv4i32
-    11595865U,	// VCEQv8i16
-    12120153U,	// VCEQv8i8
-    12087385U,	// VCEQzv16i8
-    5795929U,	// VCEQzv2f32
-    11038809U,	// VCEQzv2i32
-    5271641U,	// VCEQzv4f16
-    5795929U,	// VCEQzv4f32
-    11563097U,	// VCEQzv4i16
-    11038809U,	// VCEQzv4i32
-    5271641U,	// VCEQzv8f16
-    11563097U,	// VCEQzv8i16
-    12087385U,	// VCEQzv8i8
-    5827798U,	// VCGEfd
-    5827798U,	// VCGEfq
-    5303510U,	// VCGEhd
-    5303510U,	// VCGEhq
-    8973526U,	// VCGEsv16i8
-    8449238U,	// VCGEsv2i32
-    7924950U,	// VCGEsv4i16
-    8449238U,	// VCGEsv4i32
-    7924950U,	// VCGEsv8i16
-    8973526U,	// VCGEsv8i8
-    10546390U,	// VCGEuv16i8
-    10022102U,	// VCGEuv2i32
-    9497814U,	// VCGEuv4i16
-    10022102U,	// VCGEuv4i32
-    9497814U,	// VCGEuv8i16
-    10546390U,	// VCGEuv8i8
-    8940758U,	// VCGEzv16i8
-    5795030U,	// VCGEzv2f32
-    8416470U,	// VCGEzv2i32
-    5270742U,	// VCGEzv4f16
-    5795030U,	// VCGEzv4f32
-    7892182U,	// VCGEzv4i16
-    8416470U,	// VCGEzv4i32
-    5270742U,	// VCGEzv8f16
-    7892182U,	// VCGEzv8i16
-    8940758U,	// VCGEzv8i8
-    5829002U,	// VCGTfd
-    5829002U,	// VCGTfq
-    5304714U,	// VCGThd
-    5304714U,	// VCGThq
-    8974730U,	// VCGTsv16i8
-    8450442U,	// VCGTsv2i32
-    7926154U,	// VCGTsv4i16
-    8450442U,	// VCGTsv4i32
-    7926154U,	// VCGTsv8i16
-    8974730U,	// VCGTsv8i8
-    10547594U,	// VCGTuv16i8
-    10023306U,	// VCGTuv2i32
-    9499018U,	// VCGTuv4i16
-    10023306U,	// VCGTuv4i32
-    9499018U,	// VCGTuv8i16
-    10547594U,	// VCGTuv8i8
-    8941962U,	// VCGTzv16i8
-    5796234U,	// VCGTzv2f32
-    8417674U,	// VCGTzv2i32
-    5271946U,	// VCGTzv4f16
-    5796234U,	// VCGTzv4f32
-    7893386U,	// VCGTzv4i16
-    8417674U,	// VCGTzv4i32
-    5271946U,	// VCGTzv8f16
-    7893386U,	// VCGTzv8i16
-    8941962U,	// VCGTzv8i8
-    8940763U,	// VCLEzv16i8
-    5795035U,	// VCLEzv2f32
-    8416475U,	// VCLEzv2i32
-    5270747U,	// VCLEzv4f16
-    5795035U,	// VCLEzv4f32
-    7892187U,	// VCLEzv4i16
-    8416475U,	// VCLEzv4i32
-    5270747U,	// VCLEzv8f16
-    7892187U,	// VCLEzv8i16
-    8940763U,	// VCLEzv8i8
-    8941810U,	// VCLSv16i8
-    8417522U,	// VCLSv2i32
-    7893234U,	// VCLSv4i16
-    8417522U,	// VCLSv4i32
-    7893234U,	// VCLSv8i16
-    8941810U,	// VCLSv8i8
-    8941996U,	// VCLTzv16i8
-    5796268U,	// VCLTzv2f32
-    8417708U,	// VCLTzv2i32
-    5271980U,	// VCLTzv4f16
-    5796268U,	// VCLTzv4f32
-    7893420U,	// VCLTzv4i16
-    8417708U,	// VCLTzv4i32
-    5271980U,	// VCLTzv8f16
-    7893420U,	// VCLTzv8i16
-    8941996U,	// VCLTzv8i8
-    12088505U,	// VCLZv16i8
-    11039929U,	// VCLZv2i32
-    11564217U,	// VCLZv4i16
-    11039929U,	// VCLZv4i32
-    11564217U,	// VCLZv8i16
-    12088505U,	// VCLZv8i8
-    673792378U,	// VCMLAv2f32
-    673792378U,	// VCMLAv2f32_indexed
-    673793239U,	// VCMLAv4f16
-    673793239U,	// VCMLAv4f16_indexed
-    673792378U,	// VCMLAv4f32
-    673792378U,	// VCMLAv4f32_indexed
-    673793239U,	// VCMLAv8f16
-    673793239U,	// VCMLAv8f16_indexed
-    1011380240U,	// VCMPD
-    1011379431U,	// VCMPED
-    5270759U,	// VCMPEH
-    5795047U,	// VCMPES
-    1816751335U,	// VCMPEZD
-    5336295U,	// VCMPEZH
-    5860583U,	// VCMPEZS
-    5271568U,	// VCMPH
-    5795856U,	// VCMPS
-    1816752144U,	// VCMPZD
-    5337104U,	// VCMPZH
-    5861392U,	// VCMPZS
-    1601999U,	// VCNTd
-    1601999U,	// VCNTq
-    740901122U,	// VCVTANSDf
-    740901983U,	// VCVTANSDh
-    740901122U,	// VCVTANSQf
-    740901983U,	// VCVTANSQh
-    740901182U,	// VCVTANUDf
-    740902043U,	// VCVTANUDh
-    740901182U,	// VCVTANUQf
-    740902043U,	// VCVTANUQh
-    740901472U,	// VCVTASD
-    740901863U,	// VCVTASH
-    740901122U,	// VCVTASS
-    740901532U,	// VCVTAUD
-    740901923U,	// VCVTAUH
-    740901182U,	// VCVTAUS
-    22571964U,	// VCVTBDH
-    23096252U,	// VCVTBHD
-    752905148U,	// VCVTBHS
-    751332284U,	// VCVTBSH
-    23622254U,	// VCVTDS
-    740901137U,	// VCVTMNSDf
-    740901998U,	// VCVTMNSDh
-    740901137U,	// VCVTMNSQf
-    740901998U,	// VCVTMNSQh
-    740901197U,	// VCVTMNUDf
-    740902058U,	// VCVTMNUDh
-    740901197U,	// VCVTMNUQf
-    740902058U,	// VCVTMNUQh
-    740901487U,	// VCVTMSD
-    740901878U,	// VCVTMSH
-    740901137U,	// VCVTMSS
-    740901547U,	// VCVTMUD
-    740901938U,	// VCVTMUH
-    740901197U,	// VCVTMUS
-    740901152U,	// VCVTNNSDf
-    740902013U,	// VCVTNNSDh
-    740901152U,	// VCVTNNSQf
-    740902013U,	// VCVTNNSQh
-    740901212U,	// VCVTNNUDf
-    740902073U,	// VCVTNNUDh
-    740901212U,	// VCVTNNUQf
-    740902073U,	// VCVTNNUQh
-    740901502U,	// VCVTNSD
-    740901893U,	// VCVTNSH
-    740901152U,	// VCVTNSS
-    740901562U,	// VCVTNUD
-    740901953U,	// VCVTNUH
-    740901212U,	// VCVTNUS
-    740901167U,	// VCVTPNSDf
-    740902028U,	// VCVTPNSDh
-    740901167U,	// VCVTPNSQf
-    740902028U,	// VCVTPNSQh
-    740901227U,	// VCVTPNUDf
-    740902088U,	// VCVTPNUDh
-    740901227U,	// VCVTPNUQf
-    740902088U,	// VCVTPNUQh
-    740901517U,	// VCVTPSD
-    740901908U,	// VCVTPSH
-    740901167U,	// VCVTPSS
-    740901577U,	// VCVTPUD
-    740901968U,	// VCVTPUH
-    740901227U,	// VCVTPUS
-    24146542U,	// VCVTSD
-    22573666U,	// VCVTTDH
-    23097954U,	// VCVTTHD
-    752906850U,	// VCVTTHS
-    751333986U,	// VCVTTSH
-    751333998U,	// VCVTf2h
-    1627419246U,	// VCVTf2sd
-    1627419246U,	// VCVTf2sq
-    1628467822U,	// VCVTf2ud
-    1628467822U,	// VCVTf2uq
-    1023472238U,	// VCVTf2xsd
-    1023472238U,	// VCVTf2xsq
-    1024520814U,	// VCVTf2xud
-    1024520814U,	// VCVTf2xuq
-    752906862U,	// VCVTh2f
-    1626894958U,	// VCVTh2sd
-    1626894958U,	// VCVTh2sq
-    1627943534U,	// VCVTh2ud
-    1627943534U,	// VCVTh2uq
-    1022947950U,	// VCVTh2xsd
-    1022947950U,	// VCVTh2xsq
-    1023996526U,	// VCVTh2xud
-    1023996526U,	// VCVTh2xuq
-    1625846382U,	// VCVTs2fd
-    1625846382U,	// VCVTs2fq
-    1624273518U,	// VCVTs2hd
-    1624273518U,	// VCVTs2hq
-    1626370670U,	// VCVTu2fd
-    1626370670U,	// VCVTu2fq
-    1624797806U,	// VCVTu2hd
-    1624797806U,	// VCVTu2hq
-    1021899374U,	// VCVTxs2fd
-    1021899374U,	// VCVTxs2fq
-    1020326510U,	// VCVTxs2hd
-    1020326510U,	// VCVTxs2hq
-    1022423662U,	// VCVTxu2fd
-    1022423662U,	// VCVTxu2fq
-    1020850798U,	// VCVTxu2hd
-    1020850798U,	// VCVTxu2hq
-    1011413742U,	// VDIVD
-    5305070U,	// VDIVH
-    5829358U,	// VDIVS
-    553020U,	// VDUP16d
-    553020U,	// VDUP16q
-    1077308U,	// VDUP32d
-    1077308U,	// VDUP32q
-    1601596U,	// VDUP8d
-    1601596U,	// VDUP8q
-    585788U,	// VDUPLN16d
-    585788U,	// VDUPLN16q
-    1110076U,	// VDUPLN32d
-    1110076U,	// VDUPLN32q
-    1634364U,	// VDUPLN8d
-    1634364U,	// VDUPLN8q
-    2158747U,	// VEORd
-    2158747U,	// VEORq
-    569990U,	// VEXTd16
-    1094278U,	// VEXTd32
-    1618566U,	// VEXTd8
-    569990U,	// VEXTq16
-    1094278U,	// VEXTq32
-    12628614U,	// VEXTq64
-    1618566U,	// VEXTq8
-    1011395138U,	// VFMAD
-    5286466U,	// VFMAH
-    740902149U,	// VFMALD
-    740902149U,	// VFMALDI
-    740902149U,	// VFMALQ
-    740902149U,	// VFMALQI
-    5810754U,	// VFMAS
-    5810754U,	// VFMAfd
-    5810754U,	// VFMAfq
-    5286466U,	// VFMAhd
-    5286466U,	// VFMAhq
-    1011396872U,	// VFMSD
-    5288200U,	// VFMSH
-    740902160U,	// VFMSLD
-    740902160U,	// VFMSLDI
-    740902160U,	// VFMSLQ
-    740902160U,	// VFMSLQI
-    5812488U,	// VFMSS
-    5812488U,	// VFMSfd
-    5812488U,	// VFMSfq
-    5288200U,	// VFMShd
-    5288200U,	// VFMShq
-    1011395143U,	// VFNMAD
-    5286471U,	// VFNMAH
-    5810759U,	// VFNMAS
-    1011396877U,	// VFNMSD
-    5288205U,	// VFNMSH
-    5812493U,	// VFNMSS
-    740901628U,	// VFP_VMAXNMD
-    740902183U,	// VFP_VMAXNMH
-    740901300U,	// VFP_VMAXNMS
-    740901616U,	// VFP_VMINNMD
-    740902171U,	// VFP_VMINNMH
-    740901288U,	// VFP_VMINNMS
-    1110800U,	// VGETLNi32
-    7926544U,	// VGETLNs16
-    8975120U,	// VGETLNs8
-    9499408U,	// VGETLNu16
-    10547984U,	// VGETLNu8
-    8973422U,	// VHADDsv16i8
-    8449134U,	// VHADDsv2i32
-    7924846U,	// VHADDsv4i16
-    8449134U,	// VHADDsv4i32
-    7924846U,	// VHADDsv8i16
-    8973422U,	// VHADDsv8i8
-    10546286U,	// VHADDuv16i8
-    10021998U,	// VHADDuv2i32
-    9497710U,	// VHADDuv4i16
-    10021998U,	// VHADDuv4i32
-    9497710U,	// VHADDuv8i16
-    10546286U,	// VHADDuv8i8
-    8973266U,	// VHSUBsv16i8
-    8448978U,	// VHSUBsv2i32
-    7924690U,	// VHSUBsv4i16
-    8448978U,	// VHSUBsv4i32
-    7924690U,	// VHSUBsv8i16
-    8973266U,	// VHSUBsv8i8
-    10546130U,	// VHSUBuv16i8
-    10021842U,	// VHSUBuv2i32
-    9497554U,	// VHSUBuv4i16
-    10021842U,	// VHSUBuv4i32
-    9497554U,	// VHSUBuv8i16
-    10546130U,	// VHSUBuv8i8
-    740902243U,	// VINSH
-    1635283560U,	// VJCVT
-    1879631967U,	// VLD1DUPd16
-    1879615583U,	// VLD1DUPd16wb_fixed
-    1879623775U,	// VLD1DUPd16wb_register
-    1880156255U,	// VLD1DUPd32
-    1880139871U,	// VLD1DUPd32wb_fixed
-    1880148063U,	// VLD1DUPd32wb_register
-    1880680543U,	// VLD1DUPd8
-    1880664159U,	// VLD1DUPd8wb_fixed
-    1880672351U,	// VLD1DUPd8wb_register
-    1946740831U,	// VLD1DUPq16
-    1946724447U,	// VLD1DUPq16wb_fixed
-    1946732639U,	// VLD1DUPq16wb_register
-    1947265119U,	// VLD1DUPq32
-    1947248735U,	// VLD1DUPq32wb_fixed
-    1947256927U,	// VLD1DUPq32wb_register
-    1947789407U,	// VLD1DUPq8
-    1947773023U,	// VLD1DUPq8wb_fixed
-    1947781215U,	// VLD1DUPq8wb_register
-    25217119U,	// VLD1LNd16
-    25462879U,	// VLD1LNd16_UPD
-    25741407U,	// VLD1LNd32
-    25987167U,	// VLD1LNd32_UPD
-    26265695U,	// VLD1LNd8
-    26511455U,	// VLD1LNd8_UPD
+    2108646U,	// ADCri
+    2108646U,	// ADCrr
+    2165990U,	// ADCrsi
+    77030U,	// ADCrsr
+    2108714U,	// ADDri
+    2108714U,	// ADDrr
+    2166058U,	// ADDrsi
+    77098U,	// ADDrsr
+    2126144U,	// ADR
+    673793640U,	// AESD
+    673793648U,	// AESE
+    740902485U,	// AESIMC
+    740902495U,	// AESMC
+    2108779U,	// ANDri
+    2108779U,	// ANDrr
+    2166123U,	// ANDrsi
+    77163U,	// ANDrsr
+    808019422U,	// BF16VDOTI_VDOTD
+    808019422U,	// BF16VDOTI_VDOTQ
+    808019422U,	// BF16VDOTS_VDOTD
+    808019422U,	// BF16VDOTS_VDOTQ
+    741372737U,	// BF16_VCVT
+    674294927U,	// BF16_VCVTB
+    674296629U,	// BF16_VCVTT
+    2157806U,	// BFC
+    2141906U,	// BFI
+    2108659U,	// BICri
+    2108659U,	// BICrr
+    2166003U,	// BICrsi
+    77043U,	// BICrsr
+    3753919U,	// BKPT
+    3770251U,	// BL
+    3753973U,	// BLX
+    2209078U,	// BLX_pred
+    3770357U,	// BLXi
+    874622755U,	// BL_pred
+    3753969U,	// BX
+    2207460U,	// BXJ
+    4314256U,	// BX_RET
+    2208912U,	// BX_pred
+    874621840U,	// Bcc
+    675930114U,	// CDE_CX1
+    941664916U,	// CDE_CX1A
+    1012000568U,	// CDE_CX1D
+    941664938U,	// CDE_CX1DA
+    675930707U,	// CDE_CX2
+    941673114U,	// CDE_CX2A
+    1079109438U,	// CDE_CX2D
+    941673136U,	// CDE_CX2DA
+    675930713U,	// CDE_CX3
+    941755040U,	// CDE_CX3A
+    1079109444U,	// CDE_CX3D
+    941755062U,	// CDE_CX3DA
+    810149590U,	// CDE_VCX1A_fpdp
+    810149590U,	// CDE_VCX1A_fpsp
+    941763219U,	// CDE_VCX1A_vec
+    675930113U,	// CDE_VCX1_fpdp
+    675930113U,	// CDE_VCX1_fpsp
+    941771023U,	// CDE_VCX1_vec
+    810149597U,	// CDE_VCX2A_fpdp
+    810149597U,	// CDE_VCX2A_fpsp
+    941779609U,	// CDE_VCX2A_vec
+    675930706U,	// CDE_VCX2_fpdp
+    675930706U,	// CDE_VCX2_fpsp
+    941762896U,	// CDE_VCX2_vec
+    810149604U,	// CDE_VCX3A_fpdp
+    810149604U,	// CDE_VCX3A_fpsp
+    941787807U,	// CDE_VCX3A_vec
+    675930712U,	// CDE_VCX3_fpdp
+    675930712U,	// CDE_VCX3_fpsp
+    941779301U,	// CDE_VCX3_vec
+    1143083226U,	// CDP
+    1213899327U,	// CDP2
+    5342U,	// CLREX
+    2127245U,	// CLZ
+    2125939U,	// CMNri
+    2125939U,	// CMNzrr
+    2158707U,	// CMNzrsi
+    2142323U,	// CMNzrsr
+    2126052U,	// CMPri
+    2126052U,	// CMPrr
+    2158820U,	// CMPrsi
+    2142436U,	// CMPrsr
+    3753903U,	// CPS1p
+    1277350388U,	// CPS2p
+    1277350388U,	// CPS3p
+    740902649U,	// CRC32B
+    740902657U,	// CRC32CB
+    740902767U,	// CRC32CH
+    740902882U,	// CRC32CW
+    740902759U,	// CRC32H
+    740902874U,	// CRC32W
+    2207184U,	// DBG
+    190232U,	// DMB
+    190237U,	// DSB
+    2109807U,	// EORri
+    2109807U,	// EORrr
+    2167151U,	// EORrsi
+    78191U,	// EORrsr
+    3789394U,	// ERET
+    1080062947U,	// FCONSTD
+    6845411U,	// FCONSTH
+    7369699U,	// FCONSTS
+    740324491U,	// FLDMXDB_UPD
+    2208810U,	// FLDMXIA
+    740324394U,	// FLDMXIA_UPD
+    7983608U,	// FMSTAT
+    740324499U,	// FSTMXDB_UPD
+    2208818U,	// FSTMXIA
+    740324402U,	// FSTMXIA_UPD
+    2208423U,	// HINT
+    3753914U,	// HLT
+    3753779U,	// HVC
+    198434U,	// ISB
+    2124476U,	// LDA
+    2124685U,	// LDAB
+    2127052U,	// LDAEX
+    2124996U,	// LDAEXB
+    1344302471U,	// LDAEXD
+    2125482U,	// LDAEXH
+    2125282U,	// LDAH
+    1417848701U,	// LDC2L_OFFSET
+    1484957565U,	// LDC2L_OPTION
+    1484957565U,	// LDC2L_POST
+    1552066429U,	// LDC2L_PRE
+    1417847334U,	// LDC2_OFFSET
+    1484956198U,	// LDC2_OPTION
+    1484956198U,	// LDC2_POST
+    1552065062U,	// LDC2_PRE
+    1142992684U,	// LDCL_OFFSET
+    1142992684U,	// LDCL_OPTION
+    1142992684U,	// LDCL_POST
+    1142992684U,	// LDCL_PRE
+    1142992106U,	// LDC_OFFSET
+    1142992106U,	// LDC_OPTION
+    1142992106U,	// LDC_POST
+    1142992106U,	// LDC_PRE
+    2206400U,	// LDMDA
+    740321984U,	// LDMDA_UPD
+    2206655U,	// LDMDB
+    740322239U,	// LDMDB_UPD
+    2207773U,	// LDMIA
+    740323357U,	// LDMIA_UPD
+    2206674U,	// LDMIB
+    740322258U,	// LDMIB_UPD
+    2150975U,	// LDRBT_POST_IMM
+    2150975U,	// LDRBT_POST_REG
+    2149462U,	// LDRB_POST_IMM
+    2149462U,	// LDRB_POST_REG
+    2141270U,	// LDRB_PRE_IMM
+    2149462U,	// LDRB_PRE_REG
+    2157654U,	// LDRBi12
+    2141270U,	// LDRBrs
+    2149744U,	// LDRD
+    2231664U,	// LDRD_POST
+    2231664U,	// LDRD_PRE
+    2127064U,	// LDREX
+    2125010U,	// LDREXB
+    1344302485U,	// LDREXD
+    2125496U,	// LDREXH
+    2141778U,	// LDRH
+    2142818U,	// LDRHTi
+    2151010U,	// LDRHTr
+    2149970U,	// LDRH_POST
+    2149970U,	// LDRH_PRE
+    2141289U,	// LDRSB
+    2142795U,	// LDRSBTi
+    2150987U,	// LDRSBTr
+    2149481U,	// LDRSB_POST
+    2149481U,	// LDRSB_PRE
+    2141817U,	// LDRSH
+    2142830U,	// LDRSHTi
+    2151022U,	// LDRSHTr
+    2150009U,	// LDRSH_POST
+    2150009U,	// LDRSH_PRE
+    2151169U,	// LDRT_POST_IMM
+    2151169U,	// LDRT_POST_REG
+    2150725U,	// LDR_POST_IMM
+    2150725U,	// LDR_POST_REG
+    2142533U,	// LDR_PRE_IMM
+    2150725U,	// LDR_PRE_REG
+    2158917U,	// LDRcp
+    2158917U,	// LDRi12
+    2142533U,	// LDRrs
+    1143083324U,	// MCR
+    677028421U,	// MCR2
+    1143001463U,	// MCRR
+    677028427U,	// MCRR2
+    2165504U,	// MLA
+    2142668U,	// MLS
+    9032676U,	// MOVPCLR
+    2159430U,	// MOVTi16
+    2135012U,	// MOVi
+    2126859U,	// MOVi16
+    2135012U,	// MOVr
+    2135012U,	// MOVr_TC
+    2110436U,	// MOVsi
+    2167780U,	// MOVsr
+    941755649U,	// MRC
+    9560620U,	// MRC2
+    1612762373U,	// MRRC
+    205362U,	// MRRC2
+    2208249U,	// MRS
+    2126329U,	// MRSbanked
+    2208249U,	// MRSsys
+    1679847821U,	// MSR
+    1746956685U,	// MSRbanked
+    1679847821U,	// MSRi
+    2109440U,	// MUL
+    2150365U,	// MVE_ASRLi
+    2150365U,	// MVE_ASRLr
+    740901861U,	// MVE_DLSTP_16
+    740901108U,	// MVE_DLSTP_32
+    740901470U,	// MVE_DLSTP_64
+    740902520U,	// MVE_DLSTP_8
+    1008849132U,	// MVE_LCTP
+    3762079U,	// MVE_LETP
+    2150312U,	// MVE_LSLLi
+    2150312U,	// MVE_LSLLr
+    2150370U,	// MVE_LSRL
+    740356425U,	// MVE_SQRSHR
+    2232263U,	// MVE_SQRSHRL
+    740355923U,	// MVE_SQSHL
+    2150284U,	// MVE_SQSHLL
+    740356432U,	// MVE_SRSHR
+    2150351U,	// MVE_SRSHRL
+    740355941U,	// MVE_UQRSHL
+    2232218U,	// MVE_UQRSHLL
+    740355929U,	// MVE_UQSHL
+    2150291U,	// MVE_UQSHLL
+    740356438U,	// MVE_URSHR
+    2150358U,	// MVE_URSHRL
+    10105701U,	// MVE_VABAVs16
+    10629989U,	// MVE_VABAVs32
+    11154277U,	// MVE_VABAVs8
+    11678565U,	// MVE_VABAVu16
+    12202853U,	// MVE_VABAVu32
+    12727141U,	// MVE_VABAVu8
+    6966562U,	// MVE_VABDf16
+    7490850U,	// MVE_VABDf32
+    10112290U,	// MVE_VABDs16
+    10636578U,	// MVE_VABDs32
+    11160866U,	// MVE_VABDs8
+    11685154U,	// MVE_VABDu16
+    12209442U,	// MVE_VABDu32
+    12733730U,	// MVE_VABDu8
+    7033275U,	// MVE_VABSf16
+    7557563U,	// MVE_VABSf32
+    10179003U,	// MVE_VABSs16
+    10703291U,	// MVE_VABSs32
+    11227579U,	// MVE_VABSs8
+    13266149U,	// MVE_VADC
+    13250252U,	// MVE_VADCI
+    10644351U,	// MVE_VADDLVs32acc
+    10638278U,	// MVE_VADDLVs32no_acc
+    12217215U,	// MVE_VADDLVu32acc
+    12211142U,	// MVE_VADDLVu32no_acc
+    10111864U,	// MVE_VADDVs16acc
+    10179501U,	// MVE_VADDVs16no_acc
+    10636152U,	// MVE_VADDVs32acc
+    10703789U,	// MVE_VADDVs32no_acc
+    11160440U,	// MVE_VADDVs8acc
+    11228077U,	// MVE_VADDVs8no_acc
+    11684728U,	// MVE_VADDVu16acc
+    11752365U,	// MVE_VADDVu16no_acc
+    12209016U,	// MVE_VADDVu32acc
+    12276653U,	// MVE_VADDVu32no_acc
+    12733304U,	// MVE_VADDVu8acc
+    12800941U,	// MVE_VADDVu8no_acc
+    6966611U,	// MVE_VADD_qr_f16
+    7490899U,	// MVE_VADD_qr_f32
+    13782355U,	// MVE_VADD_qr_i16
+    13258067U,	// MVE_VADD_qr_i32
+    14306643U,	// MVE_VADD_qr_i8
+    6966611U,	// MVE_VADDf16
+    7490899U,	// MVE_VADDf32
+    13782355U,	// MVE_VADDi16
+    13258067U,	// MVE_VADDi32
+    14306643U,	// MVE_VADDi8
+    2248042U,	// MVE_VAND
+    2247922U,	// MVE_VBIC
+    13782258U,	// MVE_VBICimmi16
+    13257970U,	// MVE_VBICimmi32
+    676241U,	// MVE_VBRSR16
+    1200529U,	// MVE_VBRSR32
+    1724817U,	// MVE_VBRSR8
+    6958382U,	// MVE_VCADDf16
+    7482670U,	// MVE_VCADDf32
+    13774126U,	// MVE_VCADDi16
+    13249838U,	// MVE_VCADDi32
+    14298414U,	// MVE_VCADDi8
+    10179013U,	// MVE_VCLSs16
+    10703301U,	// MVE_VCLSs32
+    11227589U,	// MVE_VCLSs8
+    13849996U,	// MVE_VCLZs16
+    13325708U,	// MVE_VCLZs32
+    14374284U,	// MVE_VCLZs8
+    6974206U,	// MVE_VCMLAf16
+    7498494U,	// MVE_VCMLAf32
+    1818898659U,	// MVE_VCMPf16
+    1818898659U,	// MVE_VCMPf16r
+    1819422947U,	// MVE_VCMPf32
+    1819422947U,	// MVE_VCMPf32r
+    1825714403U,	// MVE_VCMPi16
+    1825714403U,	// MVE_VCMPi16r
+    1825190115U,	// MVE_VCMPi32
+    1825190115U,	// MVE_VCMPi32r
+    1826238691U,	// MVE_VCMPi8
+    1826238691U,	// MVE_VCMPi8r
+    1822044387U,	// MVE_VCMPs16
+    1822044387U,	// MVE_VCMPs16r
+    1822568675U,	// MVE_VCMPs32
+    1822568675U,	// MVE_VCMPs32r
+    1823092963U,	// MVE_VCMPs8
+    1823092963U,	// MVE_VCMPs8r
+    1823617251U,	// MVE_VCMPu16
+    1823617251U,	// MVE_VCMPu16r
+    1824141539U,	// MVE_VCMPu32
+    1824141539U,	// MVE_VCMPu32r
+    1824665827U,	// MVE_VCMPu8
+    1824665827U,	// MVE_VCMPu8r
+    6959102U,	// MVE_VCMULf16
+    7483390U,	// MVE_VCMULf32
+    738939121U,	// MVE_VCTP16
+    739463409U,	// MVE_VCTP32
+    753094897U,	// MVE_VCTP64
+    739987697U,	// MVE_VCTP8
+    686443663U,	// MVE_VCVTf16f32bh
+    686445365U,	// MVE_VCVTf16f32th
+    1089622849U,	// MVE_VCVTf16s16_fix
+    1022579521U,	// MVE_VCVTf16s16n
+    1090147137U,	// MVE_VCVTf16u16_fix
+    1023103809U,	// MVE_VCVTf16u16n
+    16993423U,	// MVE_VCVTf32f16bh
+    16995125U,	// MVE_VCVTf32f16th
+    1091195713U,	// MVE_VCVTf32s32_fix
+    1024152385U,	// MVE_VCVTf32s32n
+    1091720001U,	// MVE_VCVTf32u32_fix
+    1024676673U,	// MVE_VCVTf32u32n
+    1092244289U,	// MVE_VCVTs16f16_fix
+    1025198924U,	// MVE_VCVTs16f16a
+    1025200196U,	// MVE_VCVTs16f16m
+    1025200292U,	// MVE_VCVTs16f16n
+    1025200381U,	// MVE_VCVTs16f16p
+    1025200961U,	// MVE_VCVTs16f16z
+    1092768577U,	// MVE_VCVTs32f32_fix
+    1025723212U,	// MVE_VCVTs32f32a
+    1025724484U,	// MVE_VCVTs32f32m
+    1025724580U,	// MVE_VCVTs32f32n
+    1025724669U,	// MVE_VCVTs32f32p
+    1025725249U,	// MVE_VCVTs32f32z
+    1093292865U,	// MVE_VCVTu16f16_fix
+    1026247500U,	// MVE_VCVTu16f16a
+    1026248772U,	// MVE_VCVTu16f16m
+    1026248868U,	// MVE_VCVTu16f16n
+    1026248957U,	// MVE_VCVTu16f16p
+    1026249537U,	// MVE_VCVTu16f16z
+    1093817153U,	// MVE_VCVTu32f32_fix
+    1026771788U,	// MVE_VCVTu32f32a
+    1026773060U,	// MVE_VCVTu32f32m
+    1026773156U,	// MVE_VCVTu32f32n
+    1026773245U,	// MVE_VCVTu32f32p
+    1026773825U,	// MVE_VCVTu32f32z
+    11677955U,	// MVE_VDDUPu16
+    12202243U,	// MVE_VDDUPu32
+    12726531U,	// MVE_VDDUPu8
+    741647U,	// MVE_VDUP16
+    1265935U,	// MVE_VDUP32
+    1790223U,	// MVE_VDUP8
+    11694356U,	// MVE_VDWDUPu16
+    12218644U,	// MVE_VDWDUPu32
+    12742932U,	// MVE_VDWDUPu8
+    2249070U,	// MVE_VEOR
+    6959535U,	// MVE_VFMA_qr_Sf16
+    7483823U,	// MVE_VFMA_qr_Sf32
+    6957845U,	// MVE_VFMA_qr_f16
+    7482133U,	// MVE_VFMA_qr_f32
+    6957845U,	// MVE_VFMAf16
+    7482133U,	// MVE_VFMAf32
+    6959579U,	// MVE_VFMSf16
+    7483867U,	// MVE_VFMSf32
+    10112321U,	// MVE_VHADD_qr_s16
+    10636609U,	// MVE_VHADD_qr_s32
+    11160897U,	// MVE_VHADD_qr_s8
+    11685185U,	// MVE_VHADD_qr_u16
+    12209473U,	// MVE_VHADD_qr_u32
+    12733761U,	// MVE_VHADD_qr_u8
+    10112321U,	// MVE_VHADDs16
+    10636609U,	// MVE_VHADDs32
+    11160897U,	// MVE_VHADDs8
+    11685185U,	// MVE_VHADDu16
+    12209473U,	// MVE_VHADDu32
+    12733761U,	// MVE_VHADDu8
+    10104103U,	// MVE_VHCADDs16
+    10628391U,	// MVE_VHCADDs32
+    11152679U,	// MVE_VHCADDs8
+    10112165U,	// MVE_VHSUB_qr_s16
+    10636453U,	// MVE_VHSUB_qr_s32
+    11160741U,	// MVE_VHSUB_qr_s8
+    11685029U,	// MVE_VHSUB_qr_u16
+    12209317U,	// MVE_VHSUB_qr_u32
+    12733605U,	// MVE_VHSUB_qr_u8
+    10112165U,	// MVE_VHSUBs16
+    10636453U,	// MVE_VHSUBs32
+    11160741U,	// MVE_VHSUBs8
+    11685029U,	// MVE_VHSUBu16
+    12209317U,	// MVE_VHSUBu32
+    12733605U,	// MVE_VHSUBu8
+    11677961U,	// MVE_VIDUPu16
+    12202249U,	// MVE_VIDUPu32
+    12726537U,	// MVE_VIDUPu8
+    11694363U,	// MVE_VIWDUPu16
+    12218651U,	// MVE_VIWDUPu32
+    12742939U,	// MVE_VIWDUPu8
+    20669293U,	// MVE_VLD20_16
+    21193581U,	// MVE_VLD20_16_wb
+    20668423U,	// MVE_VLD20_32
+    21192711U,	// MVE_VLD20_32_wb
+    20669929U,	// MVE_VLD20_8
+    21194217U,	// MVE_VLD20_8_wb
+    20669333U,	// MVE_VLD21_16
+    21193621U,	// MVE_VLD21_16_wb
+    20668489U,	// MVE_VLD21_32
+    21192777U,	// MVE_VLD21_32_wb
+    20669965U,	// MVE_VLD21_8
+    21194253U,	// MVE_VLD21_8_wb
+    20677505U,	// MVE_VLD40_16
+    21201793U,	// MVE_VLD40_16_wb
+    20676635U,	// MVE_VLD40_32
+    21200923U,	// MVE_VLD40_32_wb
+    20678139U,	// MVE_VLD40_8
+    21202427U,	// MVE_VLD40_8_wb
+    20677545U,	// MVE_VLD41_16
+    21201833U,	// MVE_VLD41_16_wb
+    20676701U,	// MVE_VLD41_32
+    21200989U,	// MVE_VLD41_32_wb
+    20678175U,	// MVE_VLD41_8
+    21202463U,	// MVE_VLD41_8_wb
+    20677565U,	// MVE_VLD42_16
+    21201853U,	// MVE_VLD42_16_wb
+    20676747U,	// MVE_VLD42_32
+    21201035U,	// MVE_VLD42_32_wb
+    20678193U,	// MVE_VLD42_8
+    21202481U,	// MVE_VLD42_8_wb
+    20677585U,	// MVE_VLD43_16
+    21201873U,	// MVE_VLD43_16_wb
+    20676780U,	// MVE_VLD43_32
+    21201068U,	// MVE_VLD43_32_wb
+    20678211U,	// MVE_VLD43_8
+    21202499U,	// MVE_VLD43_8_wb
+    10112085U,	// MVE_VLDRBS16
+    748301397U,	// MVE_VLDRBS16_post
+    748301397U,	// MVE_VLDRBS16_pre
+    10112085U,	// MVE_VLDRBS16_rq
+    10636373U,	// MVE_VLDRBS32
+    748825685U,	// MVE_VLDRBS32_post
+    748825685U,	// MVE_VLDRBS32_pre
+    10636373U,	// MVE_VLDRBS32_rq
+    11684949U,	// MVE_VLDRBU16
+    749874261U,	// MVE_VLDRBU16_post
+    749874261U,	// MVE_VLDRBU16_pre
+    11684949U,	// MVE_VLDRBU16_rq
+    12209237U,	// MVE_VLDRBU32
+    750398549U,	// MVE_VLDRBU32_post
+    750398549U,	// MVE_VLDRBU32_pre
+    12209237U,	// MVE_VLDRBU32_rq
+    12733525U,	// MVE_VLDRBU8
+    750922837U,	// MVE_VLDRBU8_post
+    750922837U,	// MVE_VLDRBU8_pre
+    12733525U,	// MVE_VLDRBU8_rq
+    21646703U,	// MVE_VLDRDU64_qi
+    759836015U,	// MVE_VLDRDU64_qi_pre
+    21646703U,	// MVE_VLDRDU64_rq
+    21646703U,	// MVE_VLDRDU64_rq_u
+    10636881U,	// MVE_VLDRHS32
+    748826193U,	// MVE_VLDRHS32_post
+    748826193U,	// MVE_VLDRHS32_pre
+    10636881U,	// MVE_VLDRHS32_rq
+    10636881U,	// MVE_VLDRHS32_rq_u
+    11685457U,	// MVE_VLDRHU16
+    749874769U,	// MVE_VLDRHU16_post
+    749874769U,	// MVE_VLDRHU16_pre
+    11685457U,	// MVE_VLDRHU16_rq
+    11685457U,	// MVE_VLDRHU16_rq_u
+    12209745U,	// MVE_VLDRHU32
+    750399057U,	// MVE_VLDRHU32_post
+    750399057U,	// MVE_VLDRHU32_pre
+    12209745U,	// MVE_VLDRHU32_rq
+    12209745U,	// MVE_VLDRHU32_rq_u
+    12211199U,	// MVE_VLDRWU32
+    750400511U,	// MVE_VLDRWU32_post
+    750400511U,	// MVE_VLDRWU32_pre
+    12211199U,	// MVE_VLDRWU32_qi
+    750400511U,	// MVE_VLDRWU32_qi_pre
+    12211199U,	// MVE_VLDRWU32_rq
+    12211199U,	// MVE_VLDRWU32_rq_u
+    748311462U,	// MVE_VMAXAVs16
+    748835750U,	// MVE_VMAXAVs32
+    749360038U,	// MVE_VMAXAVs8
+    10111879U,	// MVE_VMAXAs16
+    10636167U,	// MVE_VMAXAs32
+    11160455U,	// MVE_VMAXAs8
+    745165718U,	// MVE_VMAXNMAVf16
+    745690006U,	// MVE_VMAXNMAVf32
+    6966056U,	// MVE_VMAXNMAf16
+    7490344U,	// MVE_VMAXNMAf32
+    745165781U,	// MVE_VMAXNMVf16
+    745690069U,	// MVE_VMAXNMVf32
+    6967336U,	// MVE_VMAXNMf16
+    7491624U,	// MVE_VMAXNMf32
+    748311528U,	// MVE_VMAXVs16
+    748835816U,	// MVE_VMAXVs32
+    749360104U,	// MVE_VMAXVs8
+    749884392U,	// MVE_VMAXVu16
+    750408680U,	// MVE_VMAXVu32
+    750932968U,	// MVE_VMAXVu8
+    10114112U,	// MVE_VMAXs16
+    10638400U,	// MVE_VMAXs32
+    11162688U,	// MVE_VMAXs8
+    11686976U,	// MVE_VMAXu16
+    12211264U,	// MVE_VMAXu32
+    12735552U,	// MVE_VMAXu8
+    748311455U,	// MVE_VMINAVs16
+    748835743U,	// MVE_VMINAVs32
+    749360031U,	// MVE_VMINAVs8
+    10111792U,	// MVE_VMINAs16
+    10636080U,	// MVE_VMINAs32
+    11160368U,	// MVE_VMINAs8
+    745165709U,	// MVE_VMINNMAVf16
+    745689997U,	// MVE_VMINNMAVf32
+    6966048U,	// MVE_VMINNMAf16
+    7490336U,	// MVE_VMINNMAf32
+    745165773U,	// MVE_VMINNMVf16
+    745690061U,	// MVE_VMINNMVf32
+    6967329U,	// MVE_VMINNMf16
+    7491617U,	// MVE_VMINNMf32
+    748311517U,	// MVE_VMINVs16
+    748835805U,	// MVE_VMINVs32
+    749360093U,	// MVE_VMINVs8
+    749884381U,	// MVE_VMINVu16
+    750408669U,	// MVE_VMINVu32
+    750932957U,	// MVE_VMINVu8
+    10113134U,	// MVE_VMINs16
+    10637422U,	// MVE_VMINs32
+    11161710U,	// MVE_VMINs8
+    11685998U,	// MVE_VMINu16
+    12210286U,	// MVE_VMINu32
+    12734574U,	// MVE_VMINu8
+    10103634U,	// MVE_VMLADAVas16
+    10627922U,	// MVE_VMLADAVas32
+    11152210U,	// MVE_VMLADAVas8
+    11676498U,	// MVE_VMLADAVau16
+    12200786U,	// MVE_VMLADAVau32
+    12725074U,	// MVE_VMLADAVau8
+    10105953U,	// MVE_VMLADAVaxs16
+    10630241U,	// MVE_VMLADAVaxs32
+    11154529U,	// MVE_VMLADAVaxs8
+    10113899U,	// MVE_VMLADAVs16
+    10638187U,	// MVE_VMLADAVs32
+    11162475U,	// MVE_VMLADAVs8
+    11686763U,	// MVE_VMLADAVu16
+    12211051U,	// MVE_VMLADAVu32
+    12735339U,	// MVE_VMLADAVu8
+    10114406U,	// MVE_VMLADAVxs16
+    10638694U,	// MVE_VMLADAVxs32
+    11162982U,	// MVE_VMLADAVxs8
+    10128219U,	// MVE_VMLALDAVas16
+    10652507U,	// MVE_VMLALDAVas32
+    11701083U,	// MVE_VMLALDAVau16
+    12225371U,	// MVE_VMLALDAVau32
+    10130539U,	// MVE_VMLALDAVaxs16
+    10654827U,	// MVE_VMLALDAVaxs32
+    10105715U,	// MVE_VMLALDAVs16
+    10630003U,	// MVE_VMLALDAVs32
+    11678579U,	// MVE_VMLALDAVu16
+    12202867U,	// MVE_VMLALDAVu32
+    10106223U,	// MVE_VMLALDAVxs16
+    10630511U,	// MVE_VMLALDAVxs32
+    10105257U,	// MVE_VMLAS_qr_s16
+    10629545U,	// MVE_VMLAS_qr_s32
+    11153833U,	// MVE_VMLAS_qr_s8
+    11678121U,	// MVE_VMLAS_qr_u16
+    12202409U,	// MVE_VMLAS_qr_u32
+    12726697U,	// MVE_VMLAS_qr_u8
+    10103568U,	// MVE_VMLA_qr_s16
+    10627856U,	// MVE_VMLA_qr_s32
+    11152144U,	// MVE_VMLA_qr_s8
+    11676432U,	// MVE_VMLA_qr_u16
+    12200720U,	// MVE_VMLA_qr_u32
+    12725008U,	// MVE_VMLA_qr_u8
+    10103663U,	// MVE_VMLSDAVas16
+    10627951U,	// MVE_VMLSDAVas32
+    11152239U,	// MVE_VMLSDAVas8
+    10105985U,	// MVE_VMLSDAVaxs16
+    10630273U,	// MVE_VMLSDAVaxs32
+    11154561U,	// MVE_VMLSDAVaxs8
+    10113925U,	// MVE_VMLSDAVs16
+    10638213U,	// MVE_VMLSDAVs32
+    11162501U,	// MVE_VMLSDAVs8
+    10114435U,	// MVE_VMLSDAVxs16
+    10638723U,	// MVE_VMLSDAVxs32
+    11163011U,	// MVE_VMLSDAVxs8
+    10128229U,	// MVE_VMLSLDAVas16
+    10652517U,	// MVE_VMLSLDAVas32
+    10130550U,	// MVE_VMLSLDAVaxs16
+    10654838U,	// MVE_VMLSLDAVaxs32
+    10105724U,	// MVE_VMLSLDAVs16
+    10630012U,	// MVE_VMLSLDAVs32
+    10106233U,	// MVE_VMLSLDAVxs16
+    10630521U,	// MVE_VMLSLDAVxs32
+    10177530U,	// MVE_VMOVLs16bh
+    10179227U,	// MVE_VMOVLs16th
+    11226106U,	// MVE_VMOVLs8bh
+    11227803U,	// MVE_VMOVLs8th
+    11750394U,	// MVE_VMOVLu16bh
+    11752091U,	// MVE_VMOVLu16th
+    12798970U,	// MVE_VMOVLu8bh
+    12800667U,	// MVE_VMOVLu8th
+    13782089U,	// MVE_VMOVNi16bh
+    13783792U,	// MVE_VMOVNi16th
+    13257801U,	// MVE_VMOVNi32bh
+    13259504U,	// MVE_VMOVNi32th
+    1111011U,	// MVE_VMOV_from_lane_32
+    10023907U,	// MVE_VMOV_from_lane_s16
+    11072483U,	// MVE_VMOV_from_lane_s8
+    11596771U,	// MVE_VMOV_from_lane_u16
+    12645347U,	// MVE_VMOV_from_lane_u8
+    2233315U,	// MVE_VMOV_q_rr
+    2151395U,	// MVE_VMOV_rr_q
+    570339U,	// MVE_VMOV_to_lane_16
+    1094627U,	// MVE_VMOV_to_lane_32
+    1618915U,	// MVE_VMOV_to_lane_8
+    7558115U,	// MVE_VMOVimmf32
+    13849571U,	// MVE_VMOVimmi16
+    13325283U,	// MVE_VMOVimmi32
+    1901286371U,	// MVE_VMOVimmi64
+    14373859U,	// MVE_VMOVimmi8
+    10112587U,	// MVE_VMULHs16
+    10636875U,	// MVE_VMULHs32
+    11161163U,	// MVE_VMULHs8
+    11685451U,	// MVE_VMULHu16
+    12209739U,	// MVE_VMULHu32
+    12734027U,	// MVE_VMULHu8
+    22694894U,	// MVE_VMULLBp16
+    23219182U,	// MVE_VMULLBp8
+    10111982U,	// MVE_VMULLBs16
+    10636270U,	// MVE_VMULLBs32
+    11160558U,	// MVE_VMULLBs8
+    11684846U,	// MVE_VMULLBu16
+    12209134U,	// MVE_VMULLBu32
+    12733422U,	// MVE_VMULLBu8
+    22696596U,	// MVE_VMULLTp16
+    23220884U,	// MVE_VMULLTp8
+    10113684U,	// MVE_VMULLTs16
+    10637972U,	// MVE_VMULLTs32
+    11162260U,	// MVE_VMULLTs8
+    11686548U,	// MVE_VMULLTu16
+    12210836U,	// MVE_VMULLTu32
+    12735124U,	// MVE_VMULLTu8
+    6967312U,	// MVE_VMUL_qr_f16
+    7491600U,	// MVE_VMUL_qr_f32
+    13783056U,	// MVE_VMUL_qr_i16
+    13258768U,	// MVE_VMUL_qr_i32
+    14307344U,	// MVE_VMUL_qr_i8
+    6967312U,	// MVE_VMULf16
+    7491600U,	// MVE_VMULf32
+    13783056U,	// MVE_VMULi16
+    13258768U,	// MVE_VMULi32
+    14307344U,	// MVE_VMULi8
+    2314435U,	// MVE_VMVN
+    13848771U,	// MVE_VMVNimmi16
+    13324483U,	// MVE_VMVNimmi32
+    7032282U,	// MVE_VNEGf16
+    7556570U,	// MVE_VNEGf32
+    10178010U,	// MVE_VNEGs16
+    10702298U,	// MVE_VNEGs32
+    11226586U,	// MVE_VNEGs8
+    2248851U,	// MVE_VORN
+    2249084U,	// MVE_VORR
+    13783420U,	// MVE_VORRimmi16
+    13259132U,	// MVE_VORRimmi32
+    1008947959U,	// MVE_VPNOT
+    2248521U,	// MVE_VPSEL
+    1008972561U,	// MVE_VPST
+    1826337533U,	// MVE_VPTv16i8
+    1826337533U,	// MVE_VPTv16i8r
+    1823191805U,	// MVE_VPTv16s8
+    1823191805U,	// MVE_VPTv16s8r
+    1824764669U,	// MVE_VPTv16u8
+    1824764669U,	// MVE_VPTv16u8r
+    1819521789U,	// MVE_VPTv4f32
+    1819521789U,	// MVE_VPTv4f32r
+    1825288957U,	// MVE_VPTv4i32
+    1825288957U,	// MVE_VPTv4i32r
+    1822667517U,	// MVE_VPTv4s32
+    1822667517U,	// MVE_VPTv4s32r
+    1824240381U,	// MVE_VPTv4u32
+    1824240381U,	// MVE_VPTv4u32r
+    1818997501U,	// MVE_VPTv8f16
+    1818997501U,	// MVE_VPTv8f16r
+    1825813245U,	// MVE_VPTv8i16
+    1825813245U,	// MVE_VPTv8i16r
+    1822143229U,	// MVE_VPTv8s16
+    1822143229U,	// MVE_VPTv8s16r
+    1823716093U,	// MVE_VPTv8u16
+    1823716093U,	// MVE_VPTv8u16r
+    10178997U,	// MVE_VQABSs16
+    10703285U,	// MVE_VQABSs32
+    11227573U,	// MVE_VQABSs8
+    10112333U,	// MVE_VQADD_qr_s16
+    10636621U,	// MVE_VQADD_qr_s32
+    11160909U,	// MVE_VQADD_qr_s8
+    11685197U,	// MVE_VQADD_qr_u16
+    12209485U,	// MVE_VQADD_qr_u32
+    12733773U,	// MVE_VQADD_qr_u8
+    10112333U,	// MVE_VQADDs16
+    10636621U,	// MVE_VQADDs32
+    11160909U,	// MVE_VQADDs8
+    11685197U,	// MVE_VQADDu16
+    12209485U,	// MVE_VQADDu32
+    12733773U,	// MVE_VQADDu8
+    10106100U,	// MVE_VQDMLADHXs16
+    10630388U,	// MVE_VQDMLADHXs32
+    11154676U,	// MVE_VQDMLADHXs8
+    10104328U,	// MVE_VQDMLADHs16
+    10628616U,	// MVE_VQDMLADHs32
+    11152904U,	// MVE_VQDMLADHs8
+    10104295U,	// MVE_VQDMLAH_qrs16
+    10628583U,	// MVE_VQDMLAH_qrs32
+    11152871U,	// MVE_VQDMLAH_qrs8
+    10104413U,	// MVE_VQDMLASH_qrs16
+    10628701U,	// MVE_VQDMLASH_qrs32
+    11152989U,	// MVE_VQDMLASH_qrs8
+    10106121U,	// MVE_VQDMLSDHXs16
+    10630409U,	// MVE_VQDMLSDHXs32
+    11154697U,	// MVE_VQDMLSDHXs8
+    10104347U,	// MVE_VQDMLSDHs16
+    10628635U,	// MVE_VQDMLSDHs32
+    11152923U,	// MVE_VQDMLSDHs8
+    10112563U,	// MVE_VQDMULH_qr_s16
+    10636851U,	// MVE_VQDMULH_qr_s32
+    11161139U,	// MVE_VQDMULH_qr_s8
+    10112563U,	// MVE_VQDMULHi16
+    10636851U,	// MVE_VQDMULHi32
+    11161139U,	// MVE_VQDMULHi8
+    10111973U,	// MVE_VQDMULL_qr_s16bh
+    10113675U,	// MVE_VQDMULL_qr_s16th
+    10636261U,	// MVE_VQDMULL_qr_s32bh
+    10637963U,	// MVE_VQDMULL_qr_s32th
+    10111973U,	// MVE_VQDMULLs16bh
+    10113675U,	// MVE_VQDMULLs16th
+    10636261U,	// MVE_VQDMULLs32bh
+    10637963U,	// MVE_VQDMULLs32th
+    10112065U,	// MVE_VQMOVNs16bh
+    10113768U,	// MVE_VQMOVNs16th
+    10636353U,	// MVE_VQMOVNs32bh
+    10638056U,	// MVE_VQMOVNs32th
+    11684929U,	// MVE_VQMOVNu16bh
+    11686632U,	// MVE_VQMOVNu16th
+    12209217U,	// MVE_VQMOVNu32bh
+    12210920U,	// MVE_VQMOVNu32th
+    10112056U,	// MVE_VQMOVUNs16bh
+    10113759U,	// MVE_VQMOVUNs16th
+    10636344U,	// MVE_VQMOVUNs32bh
+    10638047U,	// MVE_VQMOVUNs32th
+    10178004U,	// MVE_VQNEGs16
+    10702292U,	// MVE_VQNEGs32
+    11226580U,	// MVE_VQNEGs8
+    10106110U,	// MVE_VQRDMLADHXs16
+    10630398U,	// MVE_VQRDMLADHXs32
+    11154686U,	// MVE_VQRDMLADHXs8
+    10104337U,	// MVE_VQRDMLADHs16
+    10628625U,	// MVE_VQRDMLADHs32
+    11152913U,	// MVE_VQRDMLADHs8
+    10104303U,	// MVE_VQRDMLAH_qrs16
+    10628591U,	// MVE_VQRDMLAH_qrs32
+    11152879U,	// MVE_VQRDMLAH_qrs8
+    10104422U,	// MVE_VQRDMLASH_qrs16
+    10628710U,	// MVE_VQRDMLASH_qrs32
+    11152998U,	// MVE_VQRDMLASH_qrs8
+    10106131U,	// MVE_VQRDMLSDHXs16
+    10630419U,	// MVE_VQRDMLSDHXs32
+    11154707U,	// MVE_VQRDMLSDHXs8
+    10104356U,	// MVE_VQRDMLSDHs16
+    10628644U,	// MVE_VQRDMLSDHs32
+    11152932U,	// MVE_VQRDMLSDHs8
+    10112571U,	// MVE_VQRDMULH_qr_s16
+    10636859U,	// MVE_VQRDMULH_qr_s32
+    11161147U,	// MVE_VQRDMULH_qr_s8
+    10112571U,	// MVE_VQRDMULHi16
+    10636859U,	// MVE_VQRDMULHi32
+    11161147U,	// MVE_VQRDMULHi8
+    10112876U,	// MVE_VQRSHL_by_vecs16
+    10637164U,	// MVE_VQRSHL_by_vecs32
+    11161452U,	// MVE_VQRSHL_by_vecs8
+    11685740U,	// MVE_VQRSHL_by_vecu16
+    12210028U,	// MVE_VQRSHL_by_vecu32
+    12734316U,	// MVE_VQRSHL_by_vecu8
+    10112876U,	// MVE_VQRSHL_qrs16
+    10637164U,	// MVE_VQRSHL_qrs32
+    11161452U,	// MVE_VQRSHL_qrs8
+    11685740U,	// MVE_VQRSHL_qru16
+    12210028U,	// MVE_VQRSHL_qru32
+    12734316U,	// MVE_VQRSHL_qru8
+    10103821U,	// MVE_VQRSHRNbhs16
+    10628109U,	// MVE_VQRSHRNbhs32
+    11676685U,	// MVE_VQRSHRNbhu16
+    12200973U,	// MVE_VQRSHRNbhu32
+    10105524U,	// MVE_VQRSHRNths16
+    10629812U,	// MVE_VQRSHRNths32
+    11678388U,	// MVE_VQRSHRNthu16
+    12202676U,	// MVE_VQRSHRNthu32
+    10103854U,	// MVE_VQRSHRUNs16bh
+    10105557U,	// MVE_VQRSHRUNs16th
+    10628142U,	// MVE_VQRSHRUNs32bh
+    10629845U,	// MVE_VQRSHRUNs32th
+    10113886U,	// MVE_VQSHLU_imms16
+    10638174U,	// MVE_VQSHLU_imms32
+    11162462U,	// MVE_VQSHLU_imms8
+    10112863U,	// MVE_VQSHL_by_vecs16
+    10637151U,	// MVE_VQSHL_by_vecs32
+    11161439U,	// MVE_VQSHL_by_vecs8
+    11685727U,	// MVE_VQSHL_by_vecu16
+    12210015U,	// MVE_VQSHL_by_vecu32
+    12734303U,	// MVE_VQSHL_by_vecu8
+    10112863U,	// MVE_VQSHL_qrs16
+    10637151U,	// MVE_VQSHL_qrs32
+    11161439U,	// MVE_VQSHL_qrs8
+    11685727U,	// MVE_VQSHL_qru16
+    12210015U,	// MVE_VQSHL_qru32
+    12734303U,	// MVE_VQSHL_qru8
+    10112863U,	// MVE_VQSHLimms16
+    10637151U,	// MVE_VQSHLimms32
+    11161439U,	// MVE_VQSHLimms8
+    11685727U,	// MVE_VQSHLimmu16
+    12210015U,	// MVE_VQSHLimmu32
+    12734303U,	// MVE_VQSHLimmu8
+    10103813U,	// MVE_VQSHRNbhs16
+    10628101U,	// MVE_VQSHRNbhs32
+    11676677U,	// MVE_VQSHRNbhu16
+    12200965U,	// MVE_VQSHRNbhu32
+    10105516U,	// MVE_VQSHRNths16
+    10629804U,	// MVE_VQSHRNths32
+    11678380U,	// MVE_VQSHRNthu16
+    12202668U,	// MVE_VQSHRNthu32
+    10103845U,	// MVE_VQSHRUNs16bh
+    10105548U,	// MVE_VQSHRUNs16th
+    10628133U,	// MVE_VQSHRUNs32bh
+    10629836U,	// MVE_VQSHRUNs32th
+    10112171U,	// MVE_VQSUB_qr_s16
+    10636459U,	// MVE_VQSUB_qr_s32
+    11160747U,	// MVE_VQSUB_qr_s8
+    11685035U,	// MVE_VQSUB_qr_u16
+    12209323U,	// MVE_VQSUB_qr_u32
+    12733611U,	// MVE_VQSUB_qr_u8
+    10112171U,	// MVE_VQSUBs16
+    10636459U,	// MVE_VQSUBs32
+    11160747U,	// MVE_VQSUBs8
+    11685035U,	// MVE_VQSUBu16
+    12209323U,	// MVE_VQSUBu32
+    12733611U,	// MVE_VQSUBu8
+    1788403U,	// MVE_VREV16_8
+    739604U,	// MVE_VREV32_16
+    1788180U,	// MVE_VREV32_8
+    739690U,	// MVE_VREV64_16
+    1263978U,	// MVE_VREV64_32
+    1788266U,	// MVE_VREV64_8
+    10112314U,	// MVE_VRHADDs16
+    10636602U,	// MVE_VRHADDs32
+    11160890U,	// MVE_VRHADDs8
+    11685178U,	// MVE_VRHADDu16
+    12209466U,	// MVE_VRHADDu32
+    12733754U,	// MVE_VRHADDu8
+    7031617U,	// MVE_VRINTf16A
+    7032887U,	// MVE_VRINTf16M
+    7032989U,	// MVE_VRINTf16N
+    7033078U,	// MVE_VRINTf16P
+    7034207U,	// MVE_VRINTf16X
+    7034257U,	// MVE_VRINTf16Z
+    7555905U,	// MVE_VRINTf32A
+    7557175U,	// MVE_VRINTf32M
+    7557277U,	// MVE_VRINTf32N
+    7557366U,	// MVE_VRINTf32P
+    7558495U,	// MVE_VRINTf32X
+    7558545U,	// MVE_VRINTf32Z
+    10652364U,	// MVE_VRMLALDAVHas32
+    12225228U,	// MVE_VRMLALDAVHau32
+    10654736U,	// MVE_VRMLALDAVHaxs32
+    10628756U,	// MVE_VRMLALDAVHs32
+    12201620U,	// MVE_VRMLALDAVHu32
+    10630430U,	// MVE_VRMLALDAVHxs32
+    10652376U,	// MVE_VRMLSLDAVHas32
+    10654749U,	// MVE_VRMLSLDAVHaxs32
+    10628767U,	// MVE_VRMLSLDAVHs32
+    10630442U,	// MVE_VRMLSLDAVHxs32
+    10112580U,	// MVE_VRMULHs16
+    10636868U,	// MVE_VRMULHs32
+    11161156U,	// MVE_VRMULHs8
+    11685444U,	// MVE_VRMULHu16
+    12209732U,	// MVE_VRMULHu32
+    12734020U,	// MVE_VRMULHu8
+    10112883U,	// MVE_VRSHL_by_vecs16
+    10637171U,	// MVE_VRSHL_by_vecs32
+    11161459U,	// MVE_VRSHL_by_vecs8
+    11685747U,	// MVE_VRSHL_by_vecu16
+    12210035U,	// MVE_VRSHL_by_vecu32
+    12734323U,	// MVE_VRSHL_by_vecu8
+    10112883U,	// MVE_VRSHL_qrs16
+    10637171U,	// MVE_VRSHL_qrs32
+    11161459U,	// MVE_VRSHL_qrs8
+    11685747U,	// MVE_VRSHL_qru16
+    12210035U,	// MVE_VRSHL_qru32
+    12734323U,	// MVE_VRSHL_qru8
+    13773846U,	// MVE_VRSHRNi16bh
+    13775549U,	// MVE_VRSHRNi16th
+    13249558U,	// MVE_VRSHRNi32bh
+    13251261U,	// MVE_VRSHRNi32th
+    10113372U,	// MVE_VRSHR_imms16
+    10637660U,	// MVE_VRSHR_imms32
+    11161948U,	// MVE_VRSHR_imms8
+    11686236U,	// MVE_VRSHR_immu16
+    12210524U,	// MVE_VRSHR_immu32
+    12734812U,	// MVE_VRSHR_immu8
+    13266144U,	// MVE_VSBC
+    13250246U,	// MVE_VSBCI
+    673344759U,	// MVE_VSHLC
+    10111966U,	// MVE_VSHLL_imms16bh
+    10113668U,	// MVE_VSHLL_imms16th
+    11160542U,	// MVE_VSHLL_imms8bh
+    11162244U,	// MVE_VSHLL_imms8th
+    11684830U,	// MVE_VSHLL_immu16bh
+    11686532U,	// MVE_VSHLL_immu16th
+    12733406U,	// MVE_VSHLL_immu8bh
+    12735108U,	// MVE_VSHLL_immu8th
+    10177502U,	// MVE_VSHLL_lws16bh
+    10179204U,	// MVE_VSHLL_lws16th
+    11226078U,	// MVE_VSHLL_lws8bh
+    11227780U,	// MVE_VSHLL_lws8th
+    11750366U,	// MVE_VSHLL_lwu16bh
+    11752068U,	// MVE_VSHLL_lwu16th
+    12798942U,	// MVE_VSHLL_lwu8bh
+    12800644U,	// MVE_VSHLL_lwu8th
+    10112889U,	// MVE_VSHL_by_vecs16
+    10637177U,	// MVE_VSHL_by_vecs32
+    11161465U,	// MVE_VSHL_by_vecs8
+    11685753U,	// MVE_VSHL_by_vecu16
+    12210041U,	// MVE_VSHL_by_vecu32
+    12734329U,	// MVE_VSHL_by_vecu8
+    13782905U,	// MVE_VSHL_immi16
+    13258617U,	// MVE_VSHL_immi32
+    14307193U,	// MVE_VSHL_immi8
+    10112889U,	// MVE_VSHL_qrs16
+    10637177U,	// MVE_VSHL_qrs32
+    11161465U,	// MVE_VSHL_qrs8
+    11685753U,	// MVE_VSHL_qru16
+    12210041U,	// MVE_VSHL_qru32
+    12734329U,	// MVE_VSHL_qru8
+    13773854U,	// MVE_VSHRNi16bh
+    13775557U,	// MVE_VSHRNi16th
+    13249566U,	// MVE_VSHRNi32bh
+    13251269U,	// MVE_VSHRNi32th
+    10113378U,	// MVE_VSHR_imms16
+    10637666U,	// MVE_VSHR_imms32
+    11161954U,	// MVE_VSHR_imms8
+    11686242U,	// MVE_VSHR_immu16
+    12210530U,	// MVE_VSHR_immu32
+    12734818U,	// MVE_VSHR_immu8
+    667354U,	// MVE_VSLIimm16
+    1191642U,	// MVE_VSLIimm32
+    1715930U,	// MVE_VSLIimm8
+    667359U,	// MVE_VSRIimm16
+    1191647U,	// MVE_VSRIimm32
+    1715935U,	// MVE_VSRIimm8
+    23815031U,	// MVE_VST20_16
+    246647U,	// MVE_VST20_16_wb
+    23814161U,	// MVE_VST20_32
+    245777U,	// MVE_VST20_32_wb
+    23815666U,	// MVE_VST20_8
+    247282U,	// MVE_VST20_8_wb
+    23815071U,	// MVE_VST21_16
+    246687U,	// MVE_VST21_16_wb
+    23814227U,	// MVE_VST21_32
+    245843U,	// MVE_VST21_32_wb
+    23815702U,	// MVE_VST21_8
+    247318U,	// MVE_VST21_8_wb
+    23823243U,	// MVE_VST40_16
+    254859U,	// MVE_VST40_16_wb
+    23822373U,	// MVE_VST40_32
+    253989U,	// MVE_VST40_32_wb
+    23823876U,	// MVE_VST40_8
+    255492U,	// MVE_VST40_8_wb
+    23823283U,	// MVE_VST41_16
+    254899U,	// MVE_VST41_16_wb
+    23822439U,	// MVE_VST41_32
+    254055U,	// MVE_VST41_32_wb
+    23823912U,	// MVE_VST41_8
+    255528U,	// MVE_VST41_8_wb
+    23823303U,	// MVE_VST42_16
+    254919U,	// MVE_VST42_16_wb
+    23822485U,	// MVE_VST42_32
+    254101U,	// MVE_VST42_32_wb
+    23823930U,	// MVE_VST42_8
+    255546U,	// MVE_VST42_8_wb
+    23823323U,	// MVE_VST43_16
+    254939U,	// MVE_VST43_16_wb
+    23822518U,	// MVE_VST43_32
+    254134U,	// MVE_VST43_32_wb
+    23823948U,	// MVE_VST43_8
+    255564U,	// MVE_VST43_8_wb
+    674907U,	// MVE_VSTRB16
+    738864219U,	// MVE_VSTRB16_post
+    738864219U,	// MVE_VSTRB16_pre
+    674907U,	// MVE_VSTRB16_rq
+    1199195U,	// MVE_VSTRB32
+    739388507U,	// MVE_VSTRB32_post
+    739388507U,	// MVE_VSTRB32_pre
+    1199195U,	// MVE_VSTRB32_rq
+    1723483U,	// MVE_VSTRB8_rq
+    1723483U,	// MVE_VSTRBU8
+    739912795U,	// MVE_VSTRBU8_post
+    739912795U,	// MVE_VSTRBU8_pre
+    14830965U,	// MVE_VSTRD64_qi
+    753020277U,	// MVE_VSTRD64_qi_pre
+    14830965U,	// MVE_VSTRD64_rq
+    14830965U,	// MVE_VSTRD64_rq_u
+    675415U,	// MVE_VSTRH16_rq
+    675415U,	// MVE_VSTRH16_rq_u
+    1199703U,	// MVE_VSTRH32
+    739389015U,	// MVE_VSTRH32_post
+    739389015U,	// MVE_VSTRH32_pre
+    1199703U,	// MVE_VSTRH32_rq
+    1199703U,	// MVE_VSTRH32_rq_u
+    675415U,	// MVE_VSTRHU16
+    738864727U,	// MVE_VSTRHU16_post
+    738864727U,	// MVE_VSTRHU16_pre
+    1201157U,	// MVE_VSTRW32_qi
+    739390469U,	// MVE_VSTRW32_qi_pre
+    1201157U,	// MVE_VSTRW32_rq
+    1201157U,	// MVE_VSTRW32_rq_u
+    1201157U,	// MVE_VSTRWU32
+    739390469U,	// MVE_VSTRWU32_post
+    739390469U,	// MVE_VSTRWU32_pre
+    6966449U,	// MVE_VSUB_qr_f16
+    7490737U,	// MVE_VSUB_qr_f32
+    13782193U,	// MVE_VSUB_qr_i16
+    13257905U,	// MVE_VSUB_qr_i32
+    14306481U,	// MVE_VSUB_qr_i8
+    6966449U,	// MVE_VSUBf16
+    7490737U,	// MVE_VSUBf32
+    13782193U,	// MVE_VSUBi16
+    13257905U,	// MVE_VSUBi32
+    14306481U,	// MVE_VSUBi8
+    740901871U,	// MVE_WLSTP_16
+    740901118U,	// MVE_WLSTP_32
+    740901480U,	// MVE_WLSTP_64
+    740902529U,	// MVE_WLSTP_8
+    2134212U,	// MVNi
+    2134212U,	// MVNr
+    2109636U,	// MVNsi
+    2166980U,	// MVNsr
+    740901306U,	// NEON_VMAXNMNDf
+    740902201U,	// NEON_VMAXNMNDh
+    740901306U,	// NEON_VMAXNMNQf
+    740902201U,	// NEON_VMAXNMNQh
+    740901294U,	// NEON_VMINNMNDf
+    740902189U,	// NEON_VMINNMNDh
+    740901294U,	// NEON_VMINNMNQf
+    740902189U,	// NEON_VMINNMNQh
+    2109821U,	// ORRri
+    2109821U,	// ORRrr
+    2167165U,	// ORRrsi
+    78205U,	// ORRrsr
+    2142762U,	// PKHBT
+    2141306U,	// PKHTB
+    264171U,	// PLDWi12
+    272363U,	// PLDWrs
+    264010U,	// PLDi12
+    272202U,	// PLDrs
+    264056U,	// PLIi12
+    272248U,	// PLIrs
+    2157902U,	// QADD
+    2157008U,	// QADD16
+    2157111U,	// QADD8
+    2159952U,	// QASX
+    2157876U,	// QDADD
+    2157727U,	// QDSUB
+    2159698U,	// QSAX
+    2157740U,	// QSUB
+    2156970U,	// QSUB16
+    2157072U,	// QSUB8
+    2126453U,	// RBIT
+    2126771U,	// REV
+    2124276U,	// REV16
+    2125444U,	// REVSH
+    3753707U,	// RFEDA
+    24200939U,	// RFEDA_UPD
+    3753738U,	// RFEDB
+    24200970U,	// RFEDB_UPD
+    3753714U,	// RFEIA
+    24200946U,	// RFEIA_UPD
+    3753745U,	// RFEIB
+    24200977U,	// RFEIB_UPD
+    2108523U,	// RSBri
+    2108523U,	// RSBrr
+    2165867U,	// RSBrsi
+    76907U,	// RSBrsr
+    2108682U,	// RSCri
+    2108682U,	// RSCrr
+    2166026U,	// RSCrsi
+    77066U,	// RSCrsr
+    2157015U,	// SADD16
+    2157117U,	// SADD8
+    2159957U,	// SASX
+    3170U,	// SB
+    2108641U,	// SBCri
+    2108641U,	// SBCrr
+    2165985U,	// SBCrsi
+    77025U,	// SBCrsr
+    2143466U,	// SBFX
+    2159543U,	// SDIV
+    2158411U,	// SEL
+    280399U,	// SETEND
+    3753879U,	// SETPAN
+    673792192U,	// SHA1C
+    740901066U,	// SHA1H
+    673792224U,	// SHA1M
+    673792234U,	// SHA1P
+    673792047U,	// SHA1SU0
+    673792113U,	// SHA1SU1
+    673792212U,	// SHA256H
+    673792159U,	// SHA256H2
+    673792059U,	// SHA256SU0
+    673792125U,	// SHA256SU1
+    2156991U,	// SHADD16
+    2157096U,	// SHADD8
+    2159939U,	// SHASX
+    2159685U,	// SHSAX
+    2156953U,	// SHSUB16
+    2157057U,	// SHSUB8
+    2206973U,	// SMC
+    2141086U,	// SMLABB
+    2142755U,	// SMLABT
+    2141462U,	// SMLAD
+    2143392U,	// SMLADX
+    290575U,	// SMLAL
+    2231205U,	// SMLALBB
+    2232880U,	// SMLALBT
+    2231640U,	// SMLALD
+    2233518U,	// SMLALDX
+    2231424U,	// SMLALTB
+    2233122U,	// SMLALTT
+    2141299U,	// SMLATB
+    2143003U,	// SMLATT
+    2141366U,	// SMLAWB
+    2143051U,	// SMLAWT
+    2141563U,	// SMLSD
+    2143422U,	// SMLSDX
+    2231651U,	// SMLSLD
+    2233526U,	// SMLSLDX
+    2140932U,	// SMMLA
+    2142517U,	// SMMLAR
+    2142666U,	// SMMLS
+    2142597U,	// SMMLSR
+    2158596U,	// SMMUL
+    2158951U,	// SMMULR
+    2157852U,	// SMUAD
+    2159783U,	// SMUADX
+    2157485U,	// SMULBB
+    2159160U,	// SMULBT
+    2166709U,	// SMULL
+    2157704U,	// SMULTB
+    2159402U,	// SMULTT
+    2157757U,	// SMULWB
+    2159442U,	// SMULWT
+    2157953U,	// SMUSD
+    2159813U,	// SMUSDX
+    3754037U,	// SRSDA
+    3753989U,	// SRSDA_UPD
+    3754059U,	// SRSDB
+    3754013U,	// SRSDB_UPD
+    3754048U,	// SRSIA
+    3754001U,	// SRSIA_UPD
+    3754070U,	// SRSIB
+    3754025U,	// SRSIB_UPD
+    2142740U,	// SSAT
+    2157029U,	// SSAT16
+    2159703U,	// SSAX
+    2156977U,	// SSUB16
+    2157078U,	// SSUB8
+    1417848708U,	// STC2L_OFFSET
+    1484957572U,	// STC2L_OPTION
+    1484957572U,	// STC2L_POST
+    1552066436U,	// STC2L_PRE
+    1417847353U,	// STC2_OFFSET
+    1484956217U,	// STC2_OPTION
+    1484956217U,	// STC2_POST
+    1552065081U,	// STC2_PRE
+    1142992689U,	// STCL_OFFSET
+    1142992689U,	// STCL_OPTION
+    1142992689U,	// STCL_POST
+    1142992689U,	// STCL_PRE
+    1142992142U,	// STC_OFFSET
+    1142992142U,	// STC_OPTION
+    1142992142U,	// STC_POST
+    1142992142U,	// STC_PRE
+    2125818U,	// STL
+    2124789U,	// STLB
+    2159826U,	// STLEX
+    2157771U,	// STLEXB
+    2157966U,	// STLEXD
+    2158257U,	// STLEXH
+    2125358U,	// STLH
+    2206406U,	// STMDA
+    740321990U,	// STMDA_UPD
+    2206662U,	// STMDB
+    740322246U,	// STMDB_UPD
+    2207808U,	// STMIA
+    740323392U,	// STMIA_UPD
+    2206680U,	// STMIB
+    740322264U,	// STMIB_UPD
+    740348485U,	// STRBT_POST_IMM
+    740348485U,	// STRBT_POST_REG
+    740346972U,	// STRB_POST_IMM
+    740346972U,	// STRB_POST_REG
+    740338780U,	// STRB_PRE_IMM
+    740346972U,	// STRB_PRE_REG
+    2157660U,	// STRBi12
+    2141276U,	// STRBrs
+    2149750U,	// STRD
+    740429174U,	// STRD_POST
+    740429174U,	// STRD_PRE
+    2159844U,	// STREX
+    2157785U,	// STREXB
+    2157980U,	// STREXD
+    2158271U,	// STREXH
+    2141784U,	// STRH
+    740340328U,	// STRHTi
+    740348520U,	// STRHTr
+    740347480U,	// STRH_POST
+    740347480U,	// STRH_PRE
+    740348684U,	// STRT_POST_IMM
+    740348684U,	// STRT_POST_REG
+    740348319U,	// STR_POST_IMM
+    740348319U,	// STR_POST_REG
+    740340127U,	// STR_PRE_IMM
+    740348319U,	// STR_PRE_REG
+    2159007U,	// STRi12
+    2142623U,	// STRrs
+    2108577U,	// SUBri
+    2108577U,	// SUBrr
+    2165921U,	// SUBrsi
+    76961U,	// SUBrsr
+    2206994U,	// SVC
+    2158883U,	// SWP
+    2157648U,	// SWPB
+    2141074U,	// SXTAB
+    2140539U,	// SXTAB16
+    2141688U,	// SXTAH
+    2157717U,	// SXTB
+    2156939U,	// SXTB16
+    2158218U,	// SXTH
+    2126129U,	// TEQri
+    2126129U,	// TEQrr
+    2158897U,	// TEQrsi
+    2142513U,	// TEQrsr
+    4309U,	// TRAP
+    4309U,	// TRAPNaCl
+    296743U,	// TSB
+    2126615U,	// TSTri
+    2126615U,	// TSTrr
+    2159383U,	// TSTrsi
+    2142999U,	// TSTrsr
+    2157022U,	// UADD16
+    2157123U,	// UADD8
+    2159962U,	// UASX
+    2143471U,	// UBFX
+    3753819U,	// UDF
+    2159548U,	// UDIV
+    2156999U,	// UHADD16
+    2157103U,	// UHADD8
+    2159945U,	// UHASX
+    2159691U,	// UHSAX
+    2156961U,	// UHSUB16
+    2157064U,	// UHSUB8
+    2232052U,	// UMAAL
+    290581U,	// UMLAL
+    2166715U,	// UMULL
+    2157007U,	// UQADD16
+    2157110U,	// UQADD8
+    2159951U,	// UQASX
+    2159697U,	// UQSAX
+    2156969U,	// UQSUB16
+    2157071U,	// UQSUB8
+    2157090U,	// USAD8
+    2140666U,	// USADA8
+    2142745U,	// USAT
+    2157036U,	// USAT16
+    2159708U,	// USAX
+    2156984U,	// USUB16
+    2157084U,	// USUB8
+    2141080U,	// UXTAB
+    2140547U,	// UXTAB16
+    2141694U,	// UXTAH
+    2157722U,	// UXTB
+    2156946U,	// UXTB16
+    2158223U,	// UXTH
+    10530554U,	// VABALsv2i64
+    10006266U,	// VABALsv4i32
+    11054842U,	// VABALsv8i16
+    12103418U,	// VABALuv2i64
+    11579130U,	// VABALuv4i32
+    12627706U,	// VABALuv8i16
+    11053733U,	// VABAsv16i8
+    10529445U,	// VABAsv2i32
+    10005157U,	// VABAsv4i16
+    10529445U,	// VABAsv4i32
+    10005157U,	// VABAsv8i16
+    11053733U,	// VABAsv8i8
+    12626597U,	// VABAuv16i8
+    12102309U,	// VABAuv2i32
+    11578021U,	// VABAuv4i16
+    12102309U,	// VABAuv4i32
+    11578021U,	// VABAuv8i16
+    12626597U,	// VABAuv8i8
+    10546998U,	// VABDLsv2i64
+    10022710U,	// VABDLsv4i32
+    11071286U,	// VABDLsv8i16
+    12119862U,	// VABDLuv2i64
+    11595574U,	// VABDLuv4i32
+    12644150U,	// VABDLuv8i16
+    7400738U,	// VABDfd
+    7400738U,	// VABDfq
+    6876450U,	// VABDhd
+    6876450U,	// VABDhq
+    11070754U,	// VABDsv16i8
+    10546466U,	// VABDsv2i32
+    10022178U,	// VABDsv4i16
+    10546466U,	// VABDsv4i32
+    10022178U,	// VABDsv8i16
+    11070754U,	// VABDsv8i8
+    12643618U,	// VABDuv16i8
+    12119330U,	// VABDuv2i32
+    11595042U,	// VABDuv4i16
+    12119330U,	// VABDuv4i32
+    11595042U,	// VABDuv8i16
+    12643618U,	// VABDuv8i8
+    1080062395U,	// VABSD
+    6844859U,	// VABSH
+    7369147U,	// VABSS
+    7369147U,	// VABSfd
+    7369147U,	// VABSfq
+    6844859U,	// VABShd
+    6844859U,	// VABShq
+    11039163U,	// VABSv16i8
+    10514875U,	// VABSv2i32
+    9990587U,	// VABSv4i16
+    10514875U,	// VABSv4i32
+    9990587U,	// VABSv8i16
+    11039163U,	// VABSv8i8
+    7400867U,	// VACGEfd
+    7400867U,	// VACGEfq
+    6876579U,	// VACGEhd
+    6876579U,	// VACGEhq
+    7402071U,	// VACGTfd
+    7402071U,	// VACGTfq
+    6877783U,	// VACGThd
+    6877783U,	// VACGThq
+    1080094035U,	// VADDD
+    6876499U,	// VADDH
+    760279137U,	// VADDHNv2i32
+    13168737U,	// VADDHNv4i16
+    13693025U,	// VADDHNv8i8
+    10547011U,	// VADDLsv2i64
+    10022723U,	// VADDLsv4i32
+    11071299U,	// VADDLsv8i16
+    12119875U,	// VADDLuv2i64
+    11595587U,	// VADDLuv4i32
+    12644163U,	// VADDLuv8i16
+    7400787U,	// VADDS
+    10548212U,	// VADDWsv2i64
+    10023924U,	// VADDWsv4i32
+    11072500U,	// VADDWsv8i16
+    12121076U,	// VADDWuv2i64
+    11596788U,	// VADDWuv4i32
+    12645364U,	// VADDWuv8i16
+    7400787U,	// VADDfd
+    7400787U,	// VADDfq
+    6876499U,	// VADDhd
+    6876499U,	// VADDhq
+    14216531U,	// VADDv16i8
+    760278355U,	// VADDv1i64
+    13167955U,	// VADDv2i32
+    760278355U,	// VADDv2i64
+    13692243U,	// VADDv4i16
+    13167955U,	// VADDv4i32
+    13692243U,	// VADDv8i16
+    14216531U,	// VADDv8i8
+    2157930U,	// VANDd
+    2157930U,	// VANDq
+    808019398U,	// VBF16MALBQ
+    808019398U,	// VBF16MALBQI
+    808019410U,	// VBF16MALTQ
+    808019410U,	// VBF16MALTQI
+    2157810U,	// VBICd
+    13167858U,	// VBICiv2i32
+    13692146U,	// VBICiv4i16
+    13167858U,	// VBICiv4i32
+    13692146U,	// VBICiv8i16
+    2157810U,	// VBICq
+    2141643U,	// VBIFd
+    2141643U,	// VBIFq
+    2142842U,	// VBITd
+    2142842U,	// VBITq
+    2142183U,	// VBSLd
+    2142183U,	// VBSLq
+    740901271U,	// VCADDv2f32
+    740902144U,	// VCADDv4f16
+    740901271U,	// VCADDv4f32
+    740902144U,	// VCADDv8f16
+    7401772U,	// VCEQfd
+    7401772U,	// VCEQfq
+    6877484U,	// VCEQhd
+    6877484U,	// VCEQhq
+    14217516U,	// VCEQv16i8
+    13168940U,	// VCEQv2i32
+    13693228U,	// VCEQv4i16
+    13168940U,	// VCEQv4i32
+    13693228U,	// VCEQv8i16
+    14217516U,	// VCEQv8i8
+    14184748U,	// VCEQzv16i8
+    7369004U,	// VCEQzv2f32
+    13136172U,	// VCEQzv2i32
+    6844716U,	// VCEQzv4f16
+    7369004U,	// VCEQzv4f32
+    13660460U,	// VCEQzv4i16
+    13136172U,	// VCEQzv4i32
+    6844716U,	// VCEQzv8f16
+    13660460U,	// VCEQzv8i16
+    14184748U,	// VCEQzv8i8
+    7400873U,	// VCGEfd
+    7400873U,	// VCGEfq
+    6876585U,	// VCGEhd
+    6876585U,	// VCGEhq
+    11070889U,	// VCGEsv16i8
+    10546601U,	// VCGEsv2i32
+    10022313U,	// VCGEsv4i16
+    10546601U,	// VCGEsv4i32
+    10022313U,	// VCGEsv8i16
+    11070889U,	// VCGEsv8i8
+    12643753U,	// VCGEuv16i8
+    12119465U,	// VCGEuv2i32
+    11595177U,	// VCGEuv4i16
+    12119465U,	// VCGEuv4i32
+    11595177U,	// VCGEuv8i16
+    12643753U,	// VCGEuv8i8
+    11038121U,	// VCGEzv16i8
+    7368105U,	// VCGEzv2f32
+    10513833U,	// VCGEzv2i32
+    6843817U,	// VCGEzv4f16
+    7368105U,	// VCGEzv4f32
+    9989545U,	// VCGEzv4i16
+    10513833U,	// VCGEzv4i32
+    6843817U,	// VCGEzv8f16
+    9989545U,	// VCGEzv8i16
+    11038121U,	// VCGEzv8i8
+    7402077U,	// VCGTfd
+    7402077U,	// VCGTfq
+    6877789U,	// VCGThd
+    6877789U,	// VCGThq
+    11072093U,	// VCGTsv16i8
+    10547805U,	// VCGTsv2i32
+    10023517U,	// VCGTsv4i16
+    10547805U,	// VCGTsv4i32
+    10023517U,	// VCGTsv8i16
+    11072093U,	// VCGTsv8i8
+    12644957U,	// VCGTuv16i8
+    12120669U,	// VCGTuv2i32
+    11596381U,	// VCGTuv4i16
+    12120669U,	// VCGTuv4i32
+    11596381U,	// VCGTuv8i16
+    12644957U,	// VCGTuv8i8
+    11039325U,	// VCGTzv16i8
+    7369309U,	// VCGTzv2f32
+    10515037U,	// VCGTzv2i32
+    6845021U,	// VCGTzv4f16
+    7369309U,	// VCGTzv4f32
+    9990749U,	// VCGTzv4i16
+    10515037U,	// VCGTzv4i32
+    6845021U,	// VCGTzv8f16
+    9990749U,	// VCGTzv8i16
+    11039325U,	// VCGTzv8i8
+    11038126U,	// VCLEzv16i8
+    7368110U,	// VCLEzv2f32
+    10513838U,	// VCLEzv2i32
+    6843822U,	// VCLEzv4f16
+    7368110U,	// VCLEzv4f32
+    9989550U,	// VCLEzv4i16
+    10513838U,	// VCLEzv4i32
+    6843822U,	// VCLEzv8f16
+    9989550U,	// VCLEzv8i16
+    11038126U,	// VCLEzv8i8
+    11039173U,	// VCLSv16i8
+    10514885U,	// VCLSv2i32
+    9990597U,	// VCLSv4i16
+    10514885U,	// VCLSv4i32
+    9990597U,	// VCLSv8i16
+    11039173U,	// VCLSv8i8
+    11039359U,	// VCLTzv16i8
+    7369343U,	// VCLTzv2f32
+    10515071U,	// VCLTzv2i32
+    6845055U,	// VCLTzv4f16
+    7369343U,	// VCLTzv4f32
+    9990783U,	// VCLTzv4i16
+    10515071U,	// VCLTzv4i32
+    6845055U,	// VCLTzv8f16
+    9990783U,	// VCLTzv8i16
+    11039359U,	// VCLTzv8i8
+    14185868U,	// VCLZv16i8
+    13137292U,	// VCLZv2i32
+    13661580U,	// VCLZv4i16
+    13137292U,	// VCLZv4i32
+    13661580U,	// VCLZv8i16
+    14185868U,	// VCLZv8i8
+    673792384U,	// VCMLAv2f32
+    673792384U,	// VCMLAv2f32_indexed
+    673793257U,	// VCMLAv4f16
+    673793257U,	// VCMLAv4f16_indexed
+    673792384U,	// VCMLAv4f32
+    673792384U,	// VCMLAv4f32_indexed
+    673793257U,	// VCMLAv8f16
+    673793257U,	// VCMLAv8f16_indexed
+    1080062179U,	// VCMPD
+    1080061370U,	// VCMPED
+    6843834U,	// VCMPEH
+    7368122U,	// VCMPES
+    1952558522U,	// VCMPEZD
+    6925754U,	// VCMPEZH
+    7450042U,	// VCMPEZS
+    6844643U,	// VCMPH
+    7368931U,	// VCMPS
+    1952559331U,	// VCMPZD
+    6926563U,	// VCMPZH
+    7450851U,	// VCMPZS
+    1602210U,	// VCNTd
+    1602210U,	// VCNTq
+    740901128U,	// VCVTANSDf
+    740902001U,	// VCVTANSDh
+    740901128U,	// VCVTANSQf
+    740902001U,	// VCVTANSQh
+    740901188U,	// VCVTANUDf
+    740902061U,	// VCVTANUDh
+    740901188U,	// VCVTANUQf
+    740902061U,	// VCVTANUQh
+    740901490U,	// VCVTASD
+    740901881U,	// VCVTASH
+    740901128U,	// VCVTASS
+    740901550U,	// VCVTAUD
+    740901941U,	// VCVTAUH
+    740901188U,	// VCVTAUS
+    24669327U,	// VCVTBDH
+    25193615U,	// VCVTBHD
+    16805007U,	// VCVTBHS
+    753429647U,	// VCVTBSH
+    25719617U,	// VCVTDS
+    740901143U,	// VCVTMNSDf
+    740902016U,	// VCVTMNSDh
+    740901143U,	// VCVTMNSQf
+    740902016U,	// VCVTMNSQh
+    740901203U,	// VCVTMNUDf
+    740902076U,	// VCVTMNUDh
+    740901203U,	// VCVTMNUQf
+    740902076U,	// VCVTMNUQh
+    740901505U,	// VCVTMSD
+    740901896U,	// VCVTMSH
+    740901143U,	// VCVTMSS
+    740901565U,	// VCVTMUD
+    740901956U,	// VCVTMUH
+    740901203U,	// VCVTMUS
+    740901158U,	// VCVTNNSDf
+    740902031U,	// VCVTNNSDh
+    740901158U,	// VCVTNNSQf
+    740902031U,	// VCVTNNSQh
+    740901218U,	// VCVTNNUDf
+    740902091U,	// VCVTNNUDh
+    740901218U,	// VCVTNNUQf
+    740902091U,	// VCVTNNUQh
+    740901520U,	// VCVTNSD
+    740901911U,	// VCVTNSH
+    740901158U,	// VCVTNSS
+    740901580U,	// VCVTNUD
+    740901971U,	// VCVTNUH
+    740901218U,	// VCVTNUS
+    740901173U,	// VCVTPNSDf
+    740902046U,	// VCVTPNSDh
+    740901173U,	// VCVTPNSQf
+    740902046U,	// VCVTPNSQh
+    740901233U,	// VCVTPNUDf
+    740902106U,	// VCVTPNUDh
+    740901233U,	// VCVTPNUQf
+    740902106U,	// VCVTPNUQh
+    740901535U,	// VCVTPSD
+    740901926U,	// VCVTPSH
+    740901173U,	// VCVTPSS
+    740901595U,	// VCVTPUD
+    740901986U,	// VCVTPUH
+    740901233U,	// VCVTPUS
+    26243905U,	// VCVTSD
+    24671029U,	// VCVTTDH
+    25195317U,	// VCVTTHD
+    16806709U,	// VCVTTHS
+    753431349U,	// VCVTTSH
+    753431361U,	// VCVTf2h
+    1025536833U,	// VCVTf2sd
+    1025536833U,	// VCVTf2sq
+    1026585409U,	// VCVTf2ud
+    1026585409U,	// VCVTf2uq
+    1092678465U,	// VCVTf2xsd
+    1092678465U,	// VCVTf2xsq
+    1093727041U,	// VCVTf2xud
+    1093727041U,	// VCVTf2xuq
+    16806721U,	// VCVTh2f
+    1025012545U,	// VCVTh2sd
+    1025012545U,	// VCVTh2sq
+    1026061121U,	// VCVTh2ud
+    1026061121U,	// VCVTh2uq
+    1092154177U,	// VCVTh2xsd
+    1092154177U,	// VCVTh2xsq
+    1093202753U,	// VCVTh2xud
+    1093202753U,	// VCVTh2xuq
+    1023963969U,	// VCVTs2fd
+    1023963969U,	// VCVTs2fq
+    1022391105U,	// VCVTs2hd
+    1022391105U,	// VCVTs2hq
+    1024488257U,	// VCVTu2fd
+    1024488257U,	// VCVTu2fq
+    1022915393U,	// VCVTu2hd
+    1022915393U,	// VCVTu2hq
+    1091105601U,	// VCVTxs2fd
+    1091105601U,	// VCVTxs2fq
+    1089532737U,	// VCVTxs2hd
+    1089532737U,	// VCVTxs2hq
+    1091629889U,	// VCVTxu2fd
+    1091629889U,	// VCVTxu2fq
+    1090057025U,	// VCVTxu2hd
+    1090057025U,	// VCVTxu2hq
+    1080095681U,	// VDIVD
+    6878145U,	// VDIVH
+    7402433U,	// VDIVS
+    553231U,	// VDUP16d
+    553231U,	// VDUP16q
+    1077519U,	// VDUP32d
+    1077519U,	// VDUP32q
+    1601807U,	// VDUP8d
+    1601807U,	// VDUP8q
+    585999U,	// VDUPLN16d
+    585999U,	// VDUPLN16q
+    1110287U,	// VDUPLN32d
+    1110287U,	// VDUPLN32q
+    1634575U,	// VDUPLN8d
+    1634575U,	// VDUPLN8q
+    2158958U,	// VEORd
+    2158958U,	// VEORq
+    570201U,	// VEXTd16
+    1094489U,	// VEXTd32
+    1618777U,	// VEXTd8
+    570201U,	// VEXTq16
+    1094489U,	// VEXTq32
+    14725977U,	// VEXTq64
+    1618777U,	// VEXTq8
+    1080077077U,	// VFMAD
+    6859541U,	// VFMAH
+    740902167U,	// VFMALD
+    740902167U,	// VFMALDI
+    740902167U,	// VFMALQ
+    740902167U,	// VFMALQI
+    7383829U,	// VFMAS
+    7383829U,	// VFMAfd
+    7383829U,	// VFMAfq
+    6859541U,	// VFMAhd
+    6859541U,	// VFMAhq
+    1080078811U,	// VFMSD
+    6861275U,	// VFMSH
+    740902178U,	// VFMSLD
+    740902178U,	// VFMSLDI
+    740902178U,	// VFMSLQ
+    740902178U,	// VFMSLQI
+    7385563U,	// VFMSS
+    7385563U,	// VFMSfd
+    7385563U,	// VFMSfq
+    6861275U,	// VFMShd
+    6861275U,	// VFMShq
+    1080077082U,	// VFNMAD
+    6859546U,	// VFNMAH
+    7383834U,	// VFNMAS
+    1080078816U,	// VFNMSD
+    6861280U,	// VFNMSH
+    7385568U,	// VFNMSS
+    740901646U,	// VFP_VMAXNMD
+    740902201U,	// VFP_VMAXNMH
+    740901306U,	// VFP_VMAXNMS
+    740901634U,	// VFP_VMINNMD
+    740902189U,	// VFP_VMINNMH
+    740901294U,	// VFP_VMINNMS
+    1111011U,	// VGETLNi32
+    10023907U,	// VGETLNs16
+    11072483U,	// VGETLNs8
+    11596771U,	// VGETLNu16
+    12645347U,	// VGETLNu8
+    11070785U,	// VHADDsv16i8
+    10546497U,	// VHADDsv2i32
+    10022209U,	// VHADDsv4i16
+    10546497U,	// VHADDsv4i32
+    10022209U,	// VHADDsv8i16
+    11070785U,	// VHADDsv8i8
+    12643649U,	// VHADDuv16i8
+    12119361U,	// VHADDuv2i32
+    11595073U,	// VHADDuv4i16
+    12119361U,	// VHADDuv4i32
+    11595073U,	// VHADDuv8i16
+    12643649U,	// VHADDuv8i8
+    11070629U,	// VHSUBsv16i8
+    10546341U,	// VHSUBsv2i32
+    10022053U,	// VHSUBsv4i16
+    10546341U,	// VHSUBsv4i32
+    10022053U,	// VHSUBsv8i16
+    11070629U,	// VHSUBsv8i8
+    12643493U,	// VHSUBuv16i8
+    12119205U,	// VHSUBuv2i32
+    11594917U,	// VHSUBuv4i16
+    12119205U,	// VHSUBuv4i32
+    11594917U,	// VHSUBuv8i16
+    12643493U,	// VHSUBuv8i8
+    740902261U,	// VINSH
+    1033401147U,	// VJCVT
+    2013849855U,	// VLD1DUPd16
+    2013833471U,	// VLD1DUPd16wb_fixed
+    2013841663U,	// VLD1DUPd16wb_register
+    2014374143U,	// VLD1DUPd32
+    2014357759U,	// VLD1DUPd32wb_fixed
+    2014365951U,	// VLD1DUPd32wb_register
+    2014898431U,	// VLD1DUPd8
+    2014882047U,	// VLD1DUPd8wb_fixed
+    2014890239U,	// VLD1DUPd8wb_register
+    2080958719U,	// VLD1DUPq16
+    2080942335U,	// VLD1DUPq16wb_fixed
+    2080950527U,	// VLD1DUPq16wb_register
+    2081483007U,	// VLD1DUPq32
+    2081466623U,	// VLD1DUPq32wb_fixed
+    2081474815U,	// VLD1DUPq32wb_register
+    2082007295U,	// VLD1DUPq8
+    2081990911U,	// VLD1DUPq8wb_fixed
+    2081999103U,	// VLD1DUPq8wb_register
+    27314431U,	// VLD1LNd16
+    27568383U,	// VLD1LNd16_UPD
+    27838719U,	// VLD1LNd32
+    28092671U,	// VLD1LNd32_UPD
+    28363007U,	// VLD1LNd8
+    28616959U,	// VLD1LNd8_UPD
     0U,	// VLD1LNq16Pseudo
     0U,	// VLD1LNq16Pseudo_UPD
     0U,	// VLD1LNq32Pseudo
     0U,	// VLD1LNq32Pseudo_UPD
     0U,	// VLD1LNq8Pseudo
     0U,	// VLD1LNq8Pseudo_UPD
-    2013849695U,	// VLD1d16
-    537454687U,	// VLD1d16Q
+    2148067583U,	// VLD1d16
+    537454847U,	// VLD1d16Q
     0U,	// VLD1d16QPseudo
-    537438303U,	// VLD1d16Qwb_fixed
-    537446495U,	// VLD1d16Qwb_register
-    269019231U,	// VLD1d16T
+    537438463U,	// VLD1d16Qwb_fixed
+    537446655U,	// VLD1d16Qwb_register
+    269019391U,	// VLD1d16T
     0U,	// VLD1d16TPseudo
-    269002847U,	// VLD1d16Twb_fixed
-    269011039U,	// VLD1d16Twb_register
-    2013833311U,	// VLD1d16wb_fixed
-    2013841503U,	// VLD1d16wb_register
-    2014373983U,	// VLD1d32
-    537978975U,	// VLD1d32Q
+    269003007U,	// VLD1d16Twb_fixed
+    269011199U,	// VLD1d16Twb_register
+    2148051199U,	// VLD1d16wb_fixed
+    2148059391U,	// VLD1d16wb_register
+    2148591871U,	// VLD1d32
+    537979135U,	// VLD1d32Q
     0U,	// VLD1d32QPseudo
-    537962591U,	// VLD1d32Qwb_fixed
-    537970783U,	// VLD1d32Qwb_register
-    269543519U,	// VLD1d32T
+    537962751U,	// VLD1d32Qwb_fixed
+    537970943U,	// VLD1d32Qwb_register
+    269543679U,	// VLD1d32T
     0U,	// VLD1d32TPseudo
-    269527135U,	// VLD1d32Twb_fixed
-    269535327U,	// VLD1d32Twb_register
-    2014357599U,	// VLD1d32wb_fixed
-    2014365791U,	// VLD1d32wb_register
-    2025908319U,	// VLD1d64
-    549513311U,	// VLD1d64Q
+    269527295U,	// VLD1d32Twb_fixed
+    269535487U,	// VLD1d32Twb_register
+    2148575487U,	// VLD1d32wb_fixed
+    2148583679U,	// VLD1d32wb_register
+    2162223359U,	// VLD1d64
+    551610623U,	// VLD1d64Q
     0U,	// VLD1d64QPseudo
     0U,	// VLD1d64QPseudoWB_fixed
     0U,	// VLD1d64QPseudoWB_register
-    549496927U,	// VLD1d64Qwb_fixed
-    549505119U,	// VLD1d64Qwb_register
-    281077855U,	// VLD1d64T
+    551594239U,	// VLD1d64Qwb_fixed
+    551602431U,	// VLD1d64Qwb_register
+    283175167U,	// VLD1d64T
     0U,	// VLD1d64TPseudo
     0U,	// VLD1d64TPseudoWB_fixed
     0U,	// VLD1d64TPseudoWB_register
-    281061471U,	// VLD1d64Twb_fixed
-    281069663U,	// VLD1d64Twb_register
-    2025891935U,	// VLD1d64wb_fixed
-    2025900127U,	// VLD1d64wb_register
-    2014898271U,	// VLD1d8
-    538503263U,	// VLD1d8Q
+    283158783U,	// VLD1d64Twb_fixed
+    283166975U,	// VLD1d64Twb_register
+    2162206975U,	// VLD1d64wb_fixed
+    2162215167U,	// VLD1d64wb_register
+    2149116159U,	// VLD1d8
+    538503423U,	// VLD1d8Q
     0U,	// VLD1d8QPseudo
-    538486879U,	// VLD1d8Qwb_fixed
-    538495071U,	// VLD1d8Qwb_register
-    270067807U,	// VLD1d8T
+    538487039U,	// VLD1d8Qwb_fixed
+    538495231U,	// VLD1d8Qwb_register
+    270067967U,	// VLD1d8T
     0U,	// VLD1d8TPseudo
-    270051423U,	// VLD1d8Twb_fixed
-    270059615U,	// VLD1d8Twb_register
-    2014881887U,	// VLD1d8wb_fixed
-    2014890079U,	// VLD1d8wb_register
-    2080958559U,	// VLD1q16
+    270051583U,	// VLD1d8Twb_fixed
+    270059775U,	// VLD1d8Twb_register
+    2149099775U,	// VLD1d8wb_fixed
+    2149107967U,	// VLD1d8wb_register
+    2215176447U,	// VLD1q16
     0U,	// VLD1q16HighQPseudo
     0U,	// VLD1q16HighTPseudo
     0U,	// VLD1q16LowQPseudo_UPD
     0U,	// VLD1q16LowTPseudo_UPD
-    2080942175U,	// VLD1q16wb_fixed
-    2080950367U,	// VLD1q16wb_register
-    2081482847U,	// VLD1q32
+    2215160063U,	// VLD1q16wb_fixed
+    2215168255U,	// VLD1q16wb_register
+    2215700735U,	// VLD1q32
     0U,	// VLD1q32HighQPseudo
     0U,	// VLD1q32HighTPseudo
     0U,	// VLD1q32LowQPseudo_UPD
     0U,	// VLD1q32LowTPseudo_UPD
-    2081466463U,	// VLD1q32wb_fixed
-    2081474655U,	// VLD1q32wb_register
-    2093017183U,	// VLD1q64
+    2215684351U,	// VLD1q32wb_fixed
+    2215692543U,	// VLD1q32wb_register
+    2229332223U,	// VLD1q64
     0U,	// VLD1q64HighQPseudo
     0U,	// VLD1q64HighTPseudo
     0U,	// VLD1q64LowQPseudo_UPD
     0U,	// VLD1q64LowTPseudo_UPD
-    2093000799U,	// VLD1q64wb_fixed
-    2093008991U,	// VLD1q64wb_register
-    2082007135U,	// VLD1q8
+    2229315839U,	// VLD1q64wb_fixed
+    2229324031U,	// VLD1q64wb_register
+    2216225023U,	// VLD1q8
     0U,	// VLD1q8HighQPseudo
     0U,	// VLD1q8HighTPseudo
     0U,	// VLD1q8LowQPseudo_UPD
     0U,	// VLD1q8LowTPseudo_UPD
-    2081990751U,	// VLD1q8wb_fixed
-    2081998943U,	// VLD1q8wb_register
-    1946740875U,	// VLD2DUPd16
-    1946724491U,	// VLD2DUPd16wb_fixed
-    1946732683U,	// VLD2DUPd16wb_register
-    2148067467U,	// VLD2DUPd16x2
-    2148051083U,	// VLD2DUPd16x2wb_fixed
-    2148059275U,	// VLD2DUPd16x2wb_register
-    1947265163U,	// VLD2DUPd32
-    1947248779U,	// VLD2DUPd32wb_fixed
-    1947256971U,	// VLD2DUPd32wb_register
-    2148591755U,	// VLD2DUPd32x2
-    2148575371U,	// VLD2DUPd32x2wb_fixed
-    2148583563U,	// VLD2DUPd32x2wb_register
-    1947789451U,	// VLD2DUPd8
-    1947773067U,	// VLD2DUPd8wb_fixed
-    1947781259U,	// VLD2DUPd8wb_register
-    2149116043U,	// VLD2DUPd8x2
-    2149099659U,	// VLD2DUPd8x2wb_fixed
-    2149107851U,	// VLD2DUPd8x2wb_register
+    2216208639U,	// VLD1q8wb_fixed
+    2216216831U,	// VLD1q8wb_register
+    2080958768U,	// VLD2DUPd16
+    2080942384U,	// VLD2DUPd16wb_fixed
+    2080950576U,	// VLD2DUPd16wb_register
+    2282285360U,	// VLD2DUPd16x2
+    2282268976U,	// VLD2DUPd16x2wb_fixed
+    2282277168U,	// VLD2DUPd16x2wb_register
+    2081483056U,	// VLD2DUPd32
+    2081466672U,	// VLD2DUPd32wb_fixed
+    2081474864U,	// VLD2DUPd32wb_register
+    2282809648U,	// VLD2DUPd32x2
+    2282793264U,	// VLD2DUPd32x2wb_fixed
+    2282801456U,	// VLD2DUPd32x2wb_register
+    2082007344U,	// VLD2DUPd8
+    2081990960U,	// VLD2DUPd8wb_fixed
+    2081999152U,	// VLD2DUPd8wb_register
+    2283333936U,	// VLD2DUPd8x2
+    2283317552U,	// VLD2DUPd8x2wb_fixed
+    2283325744U,	// VLD2DUPd8x2wb_register
     0U,	// VLD2DUPq16EvenPseudo
     0U,	// VLD2DUPq16OddPseudo
     0U,	// VLD2DUPq32EvenPseudo
     0U,	// VLD2DUPq32OddPseudo
     0U,	// VLD2DUPq8EvenPseudo
     0U,	// VLD2DUPq8OddPseudo
-    25462923U,	// VLD2LNd16
+    27568432U,	// VLD2LNd16
     0U,	// VLD2LNd16Pseudo
     0U,	// VLD2LNd16Pseudo_UPD
-    25471115U,	// VLD2LNd16_UPD
-    25987211U,	// VLD2LNd32
+    27576624U,	// VLD2LNd16_UPD
+    28092720U,	// VLD2LNd32
     0U,	// VLD2LNd32Pseudo
     0U,	// VLD2LNd32Pseudo_UPD
-    25995403U,	// VLD2LNd32_UPD
-    26511499U,	// VLD2LNd8
+    28100912U,	// VLD2LNd32_UPD
+    28617008U,	// VLD2LNd8
     0U,	// VLD2LNd8Pseudo
     0U,	// VLD2LNd8Pseudo_UPD
-    26519691U,	// VLD2LNd8_UPD
-    25462923U,	// VLD2LNq16
+    28625200U,	// VLD2LNd8_UPD
+    27568432U,	// VLD2LNq16
     0U,	// VLD2LNq16Pseudo
     0U,	// VLD2LNq16Pseudo_UPD
-    25471115U,	// VLD2LNq16_UPD
-    25987211U,	// VLD2LNq32
+    27576624U,	// VLD2LNq16_UPD
+    28092720U,	// VLD2LNq32
     0U,	// VLD2LNq32Pseudo
     0U,	// VLD2LNq32Pseudo_UPD
-    25995403U,	// VLD2LNq32_UPD
-    2215176331U,	// VLD2b16
-    2215159947U,	// VLD2b16wb_fixed
-    2215168139U,	// VLD2b16wb_register
-    2215700619U,	// VLD2b32
-    2215684235U,	// VLD2b32wb_fixed
-    2215692427U,	// VLD2b32wb_register
-    2216224907U,	// VLD2b8
-    2216208523U,	// VLD2b8wb_fixed
-    2216216715U,	// VLD2b8wb_register
-    2080958603U,	// VLD2d16
-    2080942219U,	// VLD2d16wb_fixed
-    2080950411U,	// VLD2d16wb_register
-    2081482891U,	// VLD2d32
-    2081466507U,	// VLD2d32wb_fixed
-    2081474699U,	// VLD2d32wb_register
-    2082007179U,	// VLD2d8
-    2081990795U,	// VLD2d8wb_fixed
-    2081998987U,	// VLD2d8wb_register
-    537454731U,	// VLD2q16
+    28100912U,	// VLD2LNq32_UPD
+    2349394224U,	// VLD2b16
+    2349377840U,	// VLD2b16wb_fixed
+    2349386032U,	// VLD2b16wb_register
+    2349918512U,	// VLD2b32
+    2349902128U,	// VLD2b32wb_fixed
+    2349910320U,	// VLD2b32wb_register
+    2350442800U,	// VLD2b8
+    2350426416U,	// VLD2b8wb_fixed
+    2350434608U,	// VLD2b8wb_register
+    2215176496U,	// VLD2d16
+    2215160112U,	// VLD2d16wb_fixed
+    2215168304U,	// VLD2d16wb_register
+    2215700784U,	// VLD2d32
+    2215684400U,	// VLD2d32wb_fixed
+    2215692592U,	// VLD2d32wb_register
+    2216225072U,	// VLD2d8
+    2216208688U,	// VLD2d8wb_fixed
+    2216216880U,	// VLD2d8wb_register
+    537454896U,	// VLD2q16
     0U,	// VLD2q16Pseudo
     0U,	// VLD2q16PseudoWB_fixed
     0U,	// VLD2q16PseudoWB_register
-    537438347U,	// VLD2q16wb_fixed
-    537446539U,	// VLD2q16wb_register
-    537979019U,	// VLD2q32
+    537438512U,	// VLD2q16wb_fixed
+    537446704U,	// VLD2q16wb_register
+    537979184U,	// VLD2q32
     0U,	// VLD2q32Pseudo
     0U,	// VLD2q32PseudoWB_fixed
     0U,	// VLD2q32PseudoWB_register
-    537962635U,	// VLD2q32wb_fixed
-    537970827U,	// VLD2q32wb_register
-    538503307U,	// VLD2q8
+    537962800U,	// VLD2q32wb_fixed
+    537970992U,	// VLD2q32wb_register
+    538503472U,	// VLD2q8
     0U,	// VLD2q8Pseudo
     0U,	// VLD2q8PseudoWB_fixed
     0U,	// VLD2q8PseudoWB_register
-    538486923U,	// VLD2q8wb_fixed
-    538495115U,	// VLD2q8wb_register
-    25217195U,	// VLD3DUPd16
+    538487088U,	// VLD2q8wb_fixed
+    538495280U,	// VLD2q8wb_register
+    27314517U,	// VLD3DUPd16
     0U,	// VLD3DUPd16Pseudo
     0U,	// VLD3DUPd16Pseudo_UPD
-    25462955U,	// VLD3DUPd16_UPD
-    25741483U,	// VLD3DUPd32
+    27568469U,	// VLD3DUPd16_UPD
+    27838805U,	// VLD3DUPd32
     0U,	// VLD3DUPd32Pseudo
     0U,	// VLD3DUPd32Pseudo_UPD
-    25987243U,	// VLD3DUPd32_UPD
-    26265771U,	// VLD3DUPd8
+    28092757U,	// VLD3DUPd32_UPD
+    28363093U,	// VLD3DUPd8
     0U,	// VLD3DUPd8Pseudo
     0U,	// VLD3DUPd8Pseudo_UPD
-    26511531U,	// VLD3DUPd8_UPD
-    25217195U,	// VLD3DUPq16
+    28617045U,	// VLD3DUPd8_UPD
+    27314517U,	// VLD3DUPq16
     0U,	// VLD3DUPq16EvenPseudo
     0U,	// VLD3DUPq16OddPseudo
-    25462955U,	// VLD3DUPq16_UPD
-    25741483U,	// VLD3DUPq32
+    27568469U,	// VLD3DUPq16_UPD
+    27838805U,	// VLD3DUPq32
     0U,	// VLD3DUPq32EvenPseudo
     0U,	// VLD3DUPq32OddPseudo
-    25987243U,	// VLD3DUPq32_UPD
-    26265771U,	// VLD3DUPq8
+    28092757U,	// VLD3DUPq32_UPD
+    28363093U,	// VLD3DUPq8
     0U,	// VLD3DUPq8EvenPseudo
     0U,	// VLD3DUPq8OddPseudo
-    26511531U,	// VLD3DUPq8_UPD
-    25471147U,	// VLD3LNd16
+    28617045U,	// VLD3DUPq8_UPD
+    27576661U,	// VLD3LNd16
     0U,	// VLD3LNd16Pseudo
     0U,	// VLD3LNd16Pseudo_UPD
-    25479339U,	// VLD3LNd16_UPD
-    25995435U,	// VLD3LNd32
+    27584853U,	// VLD3LNd16_UPD
+    28100949U,	// VLD3LNd32
     0U,	// VLD3LNd32Pseudo
     0U,	// VLD3LNd32Pseudo_UPD
-    26003627U,	// VLD3LNd32_UPD
-    26519723U,	// VLD3LNd8
+    28109141U,	// VLD3LNd32_UPD
+    28625237U,	// VLD3LNd8
     0U,	// VLD3LNd8Pseudo
     0U,	// VLD3LNd8Pseudo_UPD
-    26527915U,	// VLD3LNd8_UPD
-    25471147U,	// VLD3LNq16
+    28633429U,	// VLD3LNd8_UPD
+    27576661U,	// VLD3LNq16
     0U,	// VLD3LNq16Pseudo
     0U,	// VLD3LNq16Pseudo_UPD
-    25479339U,	// VLD3LNq16_UPD
-    25995435U,	// VLD3LNq32
+    27584853U,	// VLD3LNq16_UPD
+    28100949U,	// VLD3LNq32
     0U,	// VLD3LNq32Pseudo
     0U,	// VLD3LNq32Pseudo_UPD
-    26003627U,	// VLD3LNq32_UPD
-    25217195U,	// VLD3d16
+    28109141U,	// VLD3LNq32_UPD
+    27314517U,	// VLD3d16
     0U,	// VLD3d16Pseudo
     0U,	// VLD3d16Pseudo_UPD
-    25462955U,	// VLD3d16_UPD
-    25741483U,	// VLD3d32
+    27568469U,	// VLD3d16_UPD
+    27838805U,	// VLD3d32
     0U,	// VLD3d32Pseudo
     0U,	// VLD3d32Pseudo_UPD
-    25987243U,	// VLD3d32_UPD
-    26265771U,	// VLD3d8
+    28092757U,	// VLD3d32_UPD
+    28363093U,	// VLD3d8
     0U,	// VLD3d8Pseudo
     0U,	// VLD3d8Pseudo_UPD
-    26511531U,	// VLD3d8_UPD
-    25217195U,	// VLD3q16
+    28617045U,	// VLD3d8_UPD
+    27314517U,	// VLD3q16
     0U,	// VLD3q16Pseudo_UPD
-    25462955U,	// VLD3q16_UPD
+    27568469U,	// VLD3q16_UPD
     0U,	// VLD3q16oddPseudo
     0U,	// VLD3q16oddPseudo_UPD
-    25741483U,	// VLD3q32
+    27838805U,	// VLD3q32
     0U,	// VLD3q32Pseudo_UPD
-    25987243U,	// VLD3q32_UPD
+    28092757U,	// VLD3q32_UPD
     0U,	// VLD3q32oddPseudo
     0U,	// VLD3q32oddPseudo_UPD
-    26265771U,	// VLD3q8
+    28363093U,	// VLD3q8
     0U,	// VLD3q8Pseudo_UPD
-    26511531U,	// VLD3q8_UPD
+    28617045U,	// VLD3q8_UPD
     0U,	// VLD3q8oddPseudo
     0U,	// VLD3q8oddPseudo_UPD
-    25274562U,	// VLD4DUPd16
+    27396465U,	// VLD4DUPd16
     0U,	// VLD4DUPd16Pseudo
     0U,	// VLD4DUPd16Pseudo_UPD
-    25487554U,	// VLD4DUPd16_UPD
-    25798850U,	// VLD4DUPd32
+    27593073U,	// VLD4DUPd16_UPD
+    27920753U,	// VLD4DUPd32
     0U,	// VLD4DUPd32Pseudo
     0U,	// VLD4DUPd32Pseudo_UPD
-    26011842U,	// VLD4DUPd32_UPD
-    26323138U,	// VLD4DUPd8
+    28117361U,	// VLD4DUPd32_UPD
+    28445041U,	// VLD4DUPd8
     0U,	// VLD4DUPd8Pseudo
     0U,	// VLD4DUPd8Pseudo_UPD
-    26536130U,	// VLD4DUPd8_UPD
-    25274562U,	// VLD4DUPq16
+    28641649U,	// VLD4DUPd8_UPD
+    27396465U,	// VLD4DUPq16
     0U,	// VLD4DUPq16EvenPseudo
     0U,	// VLD4DUPq16OddPseudo
-    25487554U,	// VLD4DUPq16_UPD
-    25798850U,	// VLD4DUPq32
+    27593073U,	// VLD4DUPq16_UPD
+    27920753U,	// VLD4DUPq32
     0U,	// VLD4DUPq32EvenPseudo
     0U,	// VLD4DUPq32OddPseudo
-    26011842U,	// VLD4DUPq32_UPD
-    26323138U,	// VLD4DUPq8
+    28117361U,	// VLD4DUPq32_UPD
+    28445041U,	// VLD4DUPq8
     0U,	// VLD4DUPq8EvenPseudo
     0U,	// VLD4DUPq8OddPseudo
-    26536130U,	// VLD4DUPq8_UPD
-    25479362U,	// VLD4LNd16
+    28641649U,	// VLD4DUPq8_UPD
+    27584881U,	// VLD4LNd16
     0U,	// VLD4LNd16Pseudo
     0U,	// VLD4LNd16Pseudo_UPD
-    25495746U,	// VLD4LNd16_UPD
-    26003650U,	// VLD4LNd32
+    27601265U,	// VLD4LNd16_UPD
+    28109169U,	// VLD4LNd32
     0U,	// VLD4LNd32Pseudo
     0U,	// VLD4LNd32Pseudo_UPD
-    26020034U,	// VLD4LNd32_UPD
-    26527938U,	// VLD4LNd8
+    28125553U,	// VLD4LNd32_UPD
+    28633457U,	// VLD4LNd8
     0U,	// VLD4LNd8Pseudo
     0U,	// VLD4LNd8Pseudo_UPD
-    26544322U,	// VLD4LNd8_UPD
-    25479362U,	// VLD4LNq16
+    28649841U,	// VLD4LNd8_UPD
+    27584881U,	// VLD4LNq16
     0U,	// VLD4LNq16Pseudo
     0U,	// VLD4LNq16Pseudo_UPD
-    25495746U,	// VLD4LNq16_UPD
-    26003650U,	// VLD4LNq32
+    27601265U,	// VLD4LNq16_UPD
+    28109169U,	// VLD4LNq32
     0U,	// VLD4LNq32Pseudo
     0U,	// VLD4LNq32Pseudo_UPD
-    26020034U,	// VLD4LNq32_UPD
-    25274562U,	// VLD4d16
+    28125553U,	// VLD4LNq32_UPD
+    27396465U,	// VLD4d16
     0U,	// VLD4d16Pseudo
     0U,	// VLD4d16Pseudo_UPD
-    25487554U,	// VLD4d16_UPD
-    25798850U,	// VLD4d32
+    27593073U,	// VLD4d16_UPD
+    27920753U,	// VLD4d32
     0U,	// VLD4d32Pseudo
     0U,	// VLD4d32Pseudo_UPD
-    26011842U,	// VLD4d32_UPD
-    26323138U,	// VLD4d8
+    28117361U,	// VLD4d32_UPD
+    28445041U,	// VLD4d8
     0U,	// VLD4d8Pseudo
     0U,	// VLD4d8Pseudo_UPD
-    26536130U,	// VLD4d8_UPD
-    25274562U,	// VLD4q16
+    28641649U,	// VLD4d8_UPD
+    27396465U,	// VLD4q16
     0U,	// VLD4q16Pseudo_UPD
-    25487554U,	// VLD4q16_UPD
+    27593073U,	// VLD4q16_UPD
     0U,	// VLD4q16oddPseudo
     0U,	// VLD4q16oddPseudo_UPD
-    25798850U,	// VLD4q32
+    27920753U,	// VLD4q32
     0U,	// VLD4q32Pseudo_UPD
-    26011842U,	// VLD4q32_UPD
+    28117361U,	// VLD4q32_UPD
     0U,	// VLD4q32oddPseudo
     0U,	// VLD4q32oddPseudo_UPD
-    26323138U,	// VLD4q8
+    28445041U,	// VLD4q8
     0U,	// VLD4q8Pseudo_UPD
-    26536130U,	// VLD4q8_UPD
+    28641649U,	// VLD4q8_UPD
     0U,	// VLD4q8oddPseudo
     0U,	// VLD4q8oddPseudo_UPD
-    740322027U,	// VLDMDDB_UPD
-    2189847U,	// VLDMDIA
-    740321815U,	// VLDMDIA_UPD
+    740322238U,	// VLDMDDB_UPD
+    2206442U,	// VLDMDIA
+    740322026U,	// VLDMDIA_UPD
     0U,	// VLDMQIA
-    740322027U,	// VLDMSDB_UPD
-    2189847U,	// VLDMSIA
-    740321815U,	// VLDMSIA_UPD
-    2158705U,	// VLDRD
-    585841U,	// VLDRH
-    2158705U,	// VLDRS
-    2308468849U,	// VLDR_FPCXTNS_off
-    2375610481U,	// VLDR_FPCXTNS_post
-    2442719345U,	// VLDR_FPCXTNS_pre
-    2308993137U,	// VLDR_FPCXTS_off
-    2376134769U,	// VLDR_FPCXTS_post
-    2443243633U,	// VLDR_FPCXTS_pre
-    2309517425U,	// VLDR_FPSCR_NZCVQC_off
-    2376659057U,	// VLDR_FPSCR_NZCVQC_post
-    2443767921U,	// VLDR_FPSCR_NZCVQC_pre
-    2310041713U,	// VLDR_FPSCR_off
-    2377183345U,	// VLDR_FPSCR_post
-    2444292209U,	// VLDR_FPSCR_pre
-    2511925361U,	// VLDR_P0_off
-    1236840561U,	// VLDR_P0_post
-    2579017841U,	// VLDR_P0_pre
-    2311090289U,	// VLDR_VPR_off
-    2378231921U,	// VLDR_VPR_post
-    2445340785U,	// VLDR_VPR_pre
-    2191176U,	// VLLDM
-    2191211U,	// VLSTM
-    5829485U,	// VMAXfd
-    5829485U,	// VMAXfq
-    5305197U,	// VMAXhd
-    5305197U,	// VMAXhq
-    8975213U,	// VMAXsv16i8
-    8450925U,	// VMAXsv2i32
-    7926637U,	// VMAXsv4i16
-    8450925U,	// VMAXsv4i32
-    7926637U,	// VMAXsv8i16
-    8975213U,	// VMAXsv8i8
-    10548077U,	// VMAXuv16i8
-    10023789U,	// VMAXuv2i32
-    9499501U,	// VMAXuv4i16
-    10023789U,	// VMAXuv4i32
-    9499501U,	// VMAXuv8i16
-    10548077U,	// VMAXuv8i8
-    5828507U,	// VMINfd
-    5828507U,	// VMINfq
-    5304219U,	// VMINhd
-    5304219U,	// VMINhq
-    8974235U,	// VMINsv16i8
-    8449947U,	// VMINsv2i32
-    7925659U,	// VMINsv4i16
-    8449947U,	// VMINsv4i32
-    7925659U,	// VMINsv8i16
-    8974235U,	// VMINsv8i8
-    10547099U,	// VMINuv16i8
-    10022811U,	// VMINuv2i32
-    9498523U,	// VMINuv4i16
-    10022811U,	// VMINuv4i32
-    9498523U,	// VMINuv8i16
-    10547099U,	// VMINuv8i8
-    1011395133U,	// VMLAD
-    5286461U,	// VMLAH
-    8441416U,	// VMLALslsv2i32
-    7917128U,	// VMLALslsv4i16
-    10014280U,	// VMLALsluv2i32
-    9489992U,	// VMLALsluv4i16
-    8433224U,	// VMLALsv2i64
-    7908936U,	// VMLALsv4i32
-    8957512U,	// VMLALsv8i16
-    10006088U,	// VMLALuv2i64
-    9481800U,	// VMLALuv4i32
-    10530376U,	// VMLALuv8i16
-    5810749U,	// VMLAS
-    5810749U,	// VMLAfd
-    5810749U,	// VMLAfq
-    5286461U,	// VMLAhd
-    5286461U,	// VMLAhq
-    5818941U,	// VMLAslfd
-    5818941U,	// VMLAslfq
-    5294653U,	// VMLAslhd
-    5294653U,	// VMLAslhq
-    11061821U,	// VMLAslv2i32
-    11586109U,	// VMLAslv4i16
-    11061821U,	// VMLAslv4i32
-    11586109U,	// VMLAslv8i16
-    12102205U,	// VMLAv16i8
-    11053629U,	// VMLAv2i32
-    11577917U,	// VMLAv4i16
-    11053629U,	// VMLAv4i32
-    11577917U,	// VMLAv8i16
-    12102205U,	// VMLAv8i8
-    1011396867U,	// VMLSD
-    5288195U,	// VMLSH
-    8441633U,	// VMLSLslsv2i32
-    7917345U,	// VMLSLslsv4i16
-    10014497U,	// VMLSLsluv2i32
-    9490209U,	// VMLSLsluv4i16
-    8433441U,	// VMLSLsv2i64
-    7909153U,	// VMLSLsv4i32
-    8957729U,	// VMLSLsv8i16
-    10006305U,	// VMLSLuv2i64
-    9482017U,	// VMLSLuv4i32
-    10530593U,	// VMLSLuv8i16
-    5812483U,	// VMLSS
-    5812483U,	// VMLSfd
-    5812483U,	// VMLSfq
-    5288195U,	// VMLShd
-    5288195U,	// VMLShq
-    5820675U,	// VMLSslfd
-    5820675U,	// VMLSslfq
-    5296387U,	// VMLSslhd
-    5296387U,	// VMLSslhq
-    11063555U,	// VMLSslv2i32
-    11587843U,	// VMLSslv4i16
-    11063555U,	// VMLSslv4i32
-    11587843U,	// VMLSslv8i16
-    12103939U,	// VMLSv16i8
-    11055363U,	// VMLSv2i32
-    11579651U,	// VMLSv4i16
-    11055363U,	// VMLSv4i32
-    11579651U,	// VMLSv8i16
-    12103939U,	// VMLSv8i8
-    1011381008U,	// VMOVD
-    2159376U,	// VMOVDRR
-    740902289U,	// VMOVH
-    5272336U,	// VMOVHR
-    8417090U,	// VMOVLsv2i64
-    7892802U,	// VMOVLsv4i32
-    8941378U,	// VMOVLsv8i16
-    9989954U,	// VMOVLuv2i64
-    9465666U,	// VMOVLuv4i32
-    10514242U,	// VMOVLuv8i16
-    758149116U,	// VMOVNv2i32
-    11038716U,	// VMOVNv4i16
-    11563004U,	// VMOVNv8i8
-    5272336U,	// VMOVRH
-    2159376U,	// VMOVRRD
-    2142992U,	// VMOVRRS
-    2126608U,	// VMOVRS
-    5796624U,	// VMOVS
-    2126608U,	// VMOVSR
-    2142992U,	// VMOVSRR
-    12088080U,	// VMOVv16i8
-    1764782864U,	// VMOVv1i64
-    5796624U,	// VMOVv2f32
-    11039504U,	// VMOVv2i32
-    1764782864U,	// VMOVv2i64
-    5796624U,	// VMOVv4f32
-    11563792U,	// VMOVv4i16
-    11039504U,	// VMOVv4i32
-    11563792U,	// VMOVv8i16
-    12088080U,	// VMOVv8i8
-    2191653U,	// VMRS
-    2191653U,	// VMRS_FPCXTNS
-    2191653U,	// VMRS_FPCXTS
-    2191653U,	// VMRS_FPEXC
-    2191653U,	// VMRS_FPINST
-    2191653U,	// VMRS_FPINST2
-    2126117U,	// VMRS_FPSCR_NZCVQC
-    2191653U,	// VMRS_FPSID
-    2191653U,	// VMRS_MVFR0
-    2191653U,	// VMRS_MVFR1
-    2191653U,	// VMRS_MVFR2
-    2126117U,	// VMRS_P0
-    2191653U,	// VMRS_VPR
-    28405945U,	// VMSR
-    26833081U,	// VMSR_FPCXTNS
-    27357369U,	// VMSR_FPCXTS
-    29978809U,	// VMSR_FPEXC
-    30503097U,	// VMSR_FPINST
-    31027385U,	// VMSR_FPINST2
-    766013625U,	// VMSR_FPSCR_NZCVQC
-    31551673U,	// VMSR_FPSID
-    767062201U,	// VMSR_P0
-    29454521U,	// VMSR_VPR
-    1011412797U,	// VMULD
-    5304125U,	// VMULH
-    740901712U,	// VMULLp64
-    21032686U,	// VMULLp8
-    8433390U,	// VMULLslsv2i32
-    7909102U,	// VMULLslsv4i16
-    10006254U,	// VMULLsluv2i32
-    9481966U,	// VMULLsluv4i16
-    8449774U,	// VMULLsv2i64
-    7925486U,	// VMULLsv4i32
-    8974062U,	// VMULLsv8i16
-    10022638U,	// VMULLuv2i64
-    9498350U,	// VMULLuv4i32
-    10546926U,	// VMULLuv8i16
-    5828413U,	// VMULS
-    5828413U,	// VMULfd
-    5828413U,	// VMULfq
-    5304125U,	// VMULhd
-    5304125U,	// VMULhq
-    21032765U,	// VMULpd
-    21032765U,	// VMULpq
-    5812029U,	// VMULslfd
-    5812029U,	// VMULslfq
-    5287741U,	// VMULslhd
-    5287741U,	// VMULslhq
-    11054909U,	// VMULslv2i32
-    11579197U,	// VMULslv4i16
-    11054909U,	// VMULslv4i32
-    11579197U,	// VMULslv8i16
-    12119869U,	// VMULv16i8
-    11071293U,	// VMULv2i32
-    11595581U,	// VMULv4i16
-    11071293U,	// VMULv4i32
-    11595581U,	// VMULv8i16
-    12119869U,	// VMULv8i8
-    2125808U,	// VMVNd
-    2125808U,	// VMVNq
-    11038704U,	// VMVNv2i32
-    11562992U,	// VMVNv4i16
-    11038704U,	// VMVNv4i32
-    11562992U,	// VMVNv8i16
-    1011379463U,	// VNEGD
-    5270791U,	// VNEGH
-    5795079U,	// VNEGS
-    5795079U,	// VNEGf32q
-    5795079U,	// VNEGfd
-    5270791U,	// VNEGhd
-    5270791U,	// VNEGhq
-    7892231U,	// VNEGs16d
-    7892231U,	// VNEGs16q
-    8416519U,	// VNEGs32d
-    8416519U,	// VNEGs32q
-    8940807U,	// VNEGs8d
-    8940807U,	// VNEGs8q
-    1011395127U,	// VNMLAD
-    5286455U,	// VNMLAH
-    5810743U,	// VNMLAS
-    1011396861U,	// VNMLSD
-    5288189U,	// VNMLSH
-    5812477U,	// VNMLSS
-    1011412791U,	// VNMULD
-    5304119U,	// VNMULH
-    5828407U,	// VNMULS
-    2158528U,	// VORNd
-    2158528U,	// VORNq
-    2158761U,	// VORRd
-    11071657U,	// VORRiv2i32
-    11595945U,	// VORRiv4i16
-    11071657U,	// VORRiv4i32
-    11595945U,	// VORRiv8i16
-    2158761U,	// VORRq
-    8973869U,	// VPADALsv16i8
-    8449581U,	// VPADALsv2i32
-    7925293U,	// VPADALsv4i16
-    8449581U,	// VPADALsv4i32
-    7925293U,	// VPADALsv8i16
-    8973869U,	// VPADALsv8i8
-    10546733U,	// VPADALuv16i8
-    10022445U,	// VPADALuv2i32
-    9498157U,	// VPADALuv4i16
-    10022445U,	// VPADALuv4i32
-    9498157U,	// VPADALuv8i16
-    10546733U,	// VPADALuv8i8
-    8941161U,	// VPADDLsv16i8
-    8416873U,	// VPADDLsv2i32
-    7892585U,	// VPADDLsv4i16
-    8416873U,	// VPADDLsv4i32
-    7892585U,	// VPADDLsv8i16
-    8941161U,	// VPADDLsv8i8
-    10514025U,	// VPADDLuv16i8
-    9989737U,	// VPADDLuv2i32
-    9465449U,	// VPADDLuv4i16
-    9989737U,	// VPADDLuv4i32
-    9465449U,	// VPADDLuv8i16
-    10514025U,	// VPADDLuv8i8
-    5827700U,	// VPADDf
-    5303412U,	// VPADDh
-    11594868U,	// VPADDi16
-    11070580U,	// VPADDi32
-    12119156U,	// VPADDi8
-    5829479U,	// VPMAXf
-    5305191U,	// VPMAXh
-    7926631U,	// VPMAXs16
-    8450919U,	// VPMAXs32
-    8975207U,	// VPMAXs8
-    9499495U,	// VPMAXu16
-    10023783U,	// VPMAXu32
-    10548071U,	// VPMAXu8
-    5828501U,	// VPMINf
-    5304213U,	// VPMINh
-    7925653U,	// VPMINs16
-    8449941U,	// VPMINs32
-    8974229U,	// VPMINs8
-    9498517U,	// VPMINu16
-    10022805U,	// VPMINu32
-    10547093U,	// VPMINu8
-    8941794U,	// VQABSv16i8
-    8417506U,	// VQABSv2i32
-    7893218U,	// VQABSv4i16
-    8417506U,	// VQABSv4i32
-    7893218U,	// VQABSv8i16
-    8941794U,	// VQABSv8i8
-    8973434U,	// VQADDsv16i8
-    770239610U,	// VQADDsv1i64
-    8449146U,	// VQADDsv2i32
-    770239610U,	// VQADDsv2i64
-    7924858U,	// VQADDsv4i16
-    8449146U,	// VQADDsv4i32
-    7924858U,	// VQADDsv8i16
-    8973434U,	// VQADDsv8i8
-    10546298U,	// VQADDuv16i8
-    19459194U,	// VQADDuv1i64
-    10022010U,	// VQADDuv2i32
-    19459194U,	// VQADDuv2i64
-    9497722U,	// VQADDuv4i16
-    10022010U,	// VQADDuv4i32
-    9497722U,	// VQADDuv8i16
-    10546298U,	// VQADDuv8i8
-    8441396U,	// VQDMLALslv2i32
-    7917108U,	// VQDMLALslv4i16
-    8433204U,	// VQDMLALv2i64
-    7908916U,	// VQDMLALv4i32
-    8441625U,	// VQDMLSLslv2i32
-    7917337U,	// VQDMLSLslv4i16
-    8433433U,	// VQDMLSLv2i64
-    7909145U,	// VQDMLSLv4i32
-    8432992U,	// VQDMULHslv2i32
-    7908704U,	// VQDMULHslv4i16
-    8432992U,	// VQDMULHslv4i32
-    7908704U,	// VQDMULHslv8i16
-    8449376U,	// VQDMULHv2i32
-    7925088U,	// VQDMULHv4i16
-    8449376U,	// VQDMULHv4i32
-    7925088U,	// VQDMULHv8i16
-    8433370U,	// VQDMULLslv2i32
-    7909082U,	// VQDMULLslv4i16
-    8449754U,	// VQDMULLv2i64
-    7925466U,	// VQDMULLv4i32
-    770207720U,	// VQMOVNsuv2i32
-    8417256U,	// VQMOVNsuv4i16
-    7892968U,	// VQMOVNsuv8i8
-    770207733U,	// VQMOVNsv2i32
-    8417269U,	// VQMOVNsv4i16
-    7892981U,	// VQMOVNsv8i8
-    19427317U,	// VQMOVNuv2i32
-    9990133U,	// VQMOVNuv4i16
-    9465845U,	// VQMOVNuv8i8
-    8940801U,	// VQNEGv16i8
-    8416513U,	// VQNEGv2i32
-    7892225U,	// VQNEGv4i16
-    8416513U,	// VQNEGv4i32
-    7892225U,	// VQNEGv8i16
-    8940801U,	// VQNEGv8i8
-    8441116U,	// VQRDMLAHslv2i32
-    7916828U,	// VQRDMLAHslv4i16
-    8441116U,	// VQRDMLAHslv4i32
-    7916828U,	// VQRDMLAHslv8i16
-    8432924U,	// VQRDMLAHv2i32
-    7908636U,	// VQRDMLAHv4i16
-    8432924U,	// VQRDMLAHv4i32
-    7908636U,	// VQRDMLAHv8i16
-    8441245U,	// VQRDMLSHslv2i32
-    7916957U,	// VQRDMLSHslv4i16
-    8441245U,	// VQRDMLSHslv4i32
-    7916957U,	// VQRDMLSHslv8i16
-    8433053U,	// VQRDMLSHv2i32
-    7908765U,	// VQRDMLSHv4i16
-    8433053U,	// VQRDMLSHv4i32
-    7908765U,	// VQRDMLSHv8i16
-    8433000U,	// VQRDMULHslv2i32
-    7908712U,	// VQRDMULHslv4i16
-    8433000U,	// VQRDMULHslv4i32
-    7908712U,	// VQRDMULHslv8i16
-    8449384U,	// VQRDMULHv2i32
-    7925096U,	// VQRDMULHv4i16
-    8449384U,	// VQRDMULHv4i32
-    7925096U,	// VQRDMULHv8i16
-    8973977U,	// VQRSHLsv16i8
-    770240153U,	// VQRSHLsv1i64
-    8449689U,	// VQRSHLsv2i32
-    770240153U,	// VQRSHLsv2i64
-    7925401U,	// VQRSHLsv4i16
-    8449689U,	// VQRSHLsv4i32
-    7925401U,	// VQRSHLsv8i16
-    8973977U,	// VQRSHLsv8i8
-    10546841U,	// VQRSHLuv16i8
-    19459737U,	// VQRSHLuv1i64
-    10022553U,	// VQRSHLuv2i32
-    19459737U,	// VQRSHLuv2i64
-    9498265U,	// VQRSHLuv4i16
-    10022553U,	// VQRSHLuv4i32
-    9498265U,	// VQRSHLuv8i16
-    10546841U,	// VQRSHLuv8i8
-    770240427U,	// VQRSHRNsv2i32
-    8449963U,	// VQRSHRNsv4i16
-    7925675U,	// VQRSHRNsv8i8
-    19460011U,	// VQRSHRNuv2i32
-    10022827U,	// VQRSHRNuv4i16
-    9498539U,	// VQRSHRNuv8i8
-    770240479U,	// VQRSHRUNv2i32
-    8450015U,	// VQRSHRUNv4i16
-    7925727U,	// VQRSHRUNv8i8
-    8973964U,	// VQSHLsiv16i8
-    770240140U,	// VQSHLsiv1i64
-    8449676U,	// VQSHLsiv2i32
-    770240140U,	// VQSHLsiv2i64
-    7925388U,	// VQSHLsiv4i16
-    8449676U,	// VQSHLsiv4i32
-    7925388U,	// VQSHLsiv8i16
-    8973964U,	// VQSHLsiv8i8
-    8974987U,	// VQSHLsuv16i8
-    770241163U,	// VQSHLsuv1i64
-    8450699U,	// VQSHLsuv2i32
-    770241163U,	// VQSHLsuv2i64
-    7926411U,	// VQSHLsuv4i16
-    8450699U,	// VQSHLsuv4i32
-    7926411U,	// VQSHLsuv8i16
-    8974987U,	// VQSHLsuv8i8
-    8973964U,	// VQSHLsv16i8
-    770240140U,	// VQSHLsv1i64
-    8449676U,	// VQSHLsv2i32
-    770240140U,	// VQSHLsv2i64
-    7925388U,	// VQSHLsv4i16
-    8449676U,	// VQSHLsv4i32
-    7925388U,	// VQSHLsv8i16
-    8973964U,	// VQSHLsv8i8
-    10546828U,	// VQSHLuiv16i8
-    19459724U,	// VQSHLuiv1i64
-    10022540U,	// VQSHLuiv2i32
-    19459724U,	// VQSHLuiv2i64
-    9498252U,	// VQSHLuiv4i16
-    10022540U,	// VQSHLuiv4i32
-    9498252U,	// VQSHLuiv8i16
-    10546828U,	// VQSHLuiv8i8
-    10546828U,	// VQSHLuv16i8
-    19459724U,	// VQSHLuv1i64
-    10022540U,	// VQSHLuv2i32
-    19459724U,	// VQSHLuv2i64
-    9498252U,	// VQSHLuv4i16
-    10022540U,	// VQSHLuv4i32
-    9498252U,	// VQSHLuv8i16
-    10546828U,	// VQSHLuv8i8
-    770240420U,	// VQSHRNsv2i32
-    8449956U,	// VQSHRNsv4i16
-    7925668U,	// VQSHRNsv8i8
-    19460004U,	// VQSHRNuv2i32
-    10022820U,	// VQSHRNuv4i16
-    9498532U,	// VQSHRNuv8i8
-    770240471U,	// VQSHRUNv2i32
-    8450007U,	// VQSHRUNv4i16
-    7925719U,	// VQSHRUNv8i8
-    8973272U,	// VQSUBsv16i8
-    770239448U,	// VQSUBsv1i64
-    8448984U,	// VQSUBsv2i32
-    770239448U,	// VQSUBsv2i64
-    7924696U,	// VQSUBsv4i16
-    8448984U,	// VQSUBsv4i32
-    7924696U,	// VQSUBsv8i16
-    8973272U,	// VQSUBsv8i8
-    10546136U,	// VQSUBuv16i8
-    19459032U,	// VQSUBuv1i64
-    10021848U,	// VQSUBuv2i32
-    19459032U,	// VQSUBuv2i64
-    9497560U,	// VQSUBuv4i16
-    10021848U,	// VQSUBuv4i32
-    9497560U,	// VQSUBuv8i16
-    10546136U,	// VQSUBuv8i8
-    758181766U,	// VRADDHNv2i32
-    11071366U,	// VRADDHNv4i16
-    11595654U,	// VRADDHNv8i8
-    9989344U,	// VRECPEd
-    5795040U,	// VRECPEfd
-    5795040U,	// VRECPEfq
-    5270752U,	// VRECPEhd
-    5270752U,	// VRECPEhq
-    9989344U,	// VRECPEq
-    5828894U,	// VRECPSfd
-    5828894U,	// VRECPSfq
-    5304606U,	// VRECPShd
-    5304606U,	// VRECPShq
-    1599812U,	// VREV16d8
-    1599812U,	// VREV16q8
-    551023U,	// VREV32d16
-    1599599U,	// VREV32d8
-    551023U,	// VREV32q16
-    1599599U,	// VREV32q8
-    551099U,	// VREV64d16
-    1075387U,	// VREV64d32
-    1599675U,	// VREV64d8
-    551099U,	// VREV64q16
-    1075387U,	// VREV64q32
-    1599675U,	// VREV64q8
-    8973415U,	// VRHADDsv16i8
-    8449127U,	// VRHADDsv2i32
-    7924839U,	// VRHADDsv4i16
-    8449127U,	// VRHADDsv4i32
-    7924839U,	// VRHADDsv8i16
-    8973415U,	// VRHADDsv8i8
-    10546279U,	// VRHADDuv16i8
-    10021991U,	// VRHADDuv2i32
-    9497703U,	// VRHADDuv4i16
-    10021991U,	// VRHADDuv4i32
-    9497703U,	// VRHADDuv8i16
-    10546279U,	// VRHADDuv8i8
-    740901592U,	// VRINTAD
-    740902114U,	// VRINTAH
-    740901253U,	// VRINTANDf
-    740902114U,	// VRINTANDh
-    740901253U,	// VRINTANQf
-    740902114U,	// VRINTANQh
-    740901253U,	// VRINTAS
-    740901640U,	// VRINTMD
-    740902195U,	// VRINTMH
-    740901312U,	// VRINTMNDf
-    740902195U,	// VRINTMNDh
-    740901312U,	// VRINTMNQf
-    740902195U,	// VRINTMNQh
-    740901312U,	// VRINTMS
-    740901652U,	// VRINTND
-    740902207U,	// VRINTNH
-    740901324U,	// VRINTNNDf
-    740902207U,	// VRINTNNDh
-    740901324U,	// VRINTNNQf
-    740902207U,	// VRINTNNQh
-    740901324U,	// VRINTNS
-    740901664U,	// VRINTPD
-    740902219U,	// VRINTPH
-    740901336U,	// VRINTPNDf
-    740902219U,	// VRINTPNDh
-    740901336U,	// VRINTPNQf
-    740902219U,	// VRINTPNQh
-    740901336U,	// VRINTPS
-    1011380420U,	// VRINTRD
-    5271748U,	// VRINTRH
-    5796036U,	// VRINTRS
-    1011381388U,	// VRINTXD
-    5272716U,	// VRINTXH
-    740901384U,	// VRINTXNDf
-    740902277U,	// VRINTXNDh
-    740901384U,	// VRINTXNQf
-    740902277U,	// VRINTXNQh
-    5797004U,	// VRINTXS
-    1011381438U,	// VRINTZD
-    5272766U,	// VRINTZH
-    740901396U,	// VRINTZNDf
-    740902300U,	// VRINTZNDh
-    740901396U,	// VRINTZNQf
-    740902300U,	// VRINTZNQh
-    5797054U,	// VRINTZS
-    8973984U,	// VRSHLsv16i8
-    770240160U,	// VRSHLsv1i64
-    8449696U,	// VRSHLsv2i32
-    770240160U,	// VRSHLsv2i64
-    7925408U,	// VRSHLsv4i16
-    8449696U,	// VRSHLsv4i32
-    7925408U,	// VRSHLsv8i16
-    8973984U,	// VRSHLsv8i8
-    10546848U,	// VRSHLuv16i8
-    19459744U,	// VRSHLuv1i64
-    10022560U,	// VRSHLuv2i32
-    19459744U,	// VRSHLuv2i64
-    9498272U,	// VRSHLuv4i16
-    10022560U,	// VRSHLuv4i32
-    9498272U,	// VRSHLuv8i16
-    10546848U,	// VRSHLuv8i8
-    758181811U,	// VRSHRNv2i32
-    11071411U,	// VRSHRNv4i16
-    11595699U,	// VRSHRNv8i8
-    8974473U,	// VRSHRsv16i8
-    770240649U,	// VRSHRsv1i64
-    8450185U,	// VRSHRsv2i32
-    770240649U,	// VRSHRsv2i64
-    7925897U,	// VRSHRsv4i16
-    8450185U,	// VRSHRsv4i32
-    7925897U,	// VRSHRsv8i16
-    8974473U,	// VRSHRsv8i8
-    10547337U,	// VRSHRuv16i8
-    19460233U,	// VRSHRuv1i64
-    10023049U,	// VRSHRuv2i32
-    19460233U,	// VRSHRuv2i64
-    9498761U,	// VRSHRuv4i16
-    10023049U,	// VRSHRuv4i32
-    9498761U,	// VRSHRuv8i16
-    10547337U,	// VRSHRuv8i8
-    9989357U,	// VRSQRTEd
-    5795053U,	// VRSQRTEfd
-    5795053U,	// VRSQRTEfq
-    5270765U,	// VRSQRTEhd
-    5270765U,	// VRSQRTEhq
-    9989357U,	// VRSQRTEq
-    5828916U,	// VRSQRTSfd
-    5828916U,	// VRSQRTSfq
-    5304628U,	// VRSQRTShd
-    5304628U,	// VRSQRTShq
-    8956515U,	// VRSRAsv16i8
-    703113827U,	// VRSRAsv1i64
-    8432227U,	// VRSRAsv2i32
-    703113827U,	// VRSRAsv2i64
-    7907939U,	// VRSRAsv4i16
-    8432227U,	// VRSRAsv4i32
-    7907939U,	// VRSRAsv8i16
-    8956515U,	// VRSRAsv8i8
-    10529379U,	// VRSRAuv16i8
-    19442275U,	// VRSRAuv1i64
-    10005091U,	// VRSRAuv2i32
-    19442275U,	// VRSRAuv2i64
-    9480803U,	// VRSRAuv4i16
-    10005091U,	// VRSRAuv4i32
-    9480803U,	// VRSRAuv8i16
-    10529379U,	// VRSRAuv8i8
-    758181751U,	// VRSUBHNv2i32
-    11071351U,	// VRSUBHNv4i16
-    11595639U,	// VRSUBHNv8i8
-    2619445084U,	// VSCCLRMD
-    2619445084U,	// VSCCLRMS
-    2687141449U,	// VSDOTD
-    2687141449U,	// VSDOTDI
-    2687141449U,	// VSDOTQ
-    2687141449U,	// VSDOTQI
-    740901676U,	// VSELEQD
-    740902231U,	// VSELEQH
-    740901348U,	// VSELEQS
-    740901604U,	// VSELGED
-    740902137U,	// VSELGEH
-    740901276U,	// VSELGES
-    740901700U,	// VSELGTD
-    740902265U,	// VSELGTH
-    740901372U,	// VSELGTS
-    740901688U,	// VSELVSD
-    740902253U,	// VSELVSH
-    740901360U,	// VSELVSS
-    570128U,	// VSETLNi16
-    1094416U,	// VSETLNi32
-    1618704U,	// VSETLNi8
-    11595471U,	// VSHLLi16
-    11071183U,	// VSHLLi32
-    12119759U,	// VSHLLi8
-    8449743U,	// VSHLLsv2i64
-    7925455U,	// VSHLLsv4i32
-    8974031U,	// VSHLLsv8i16
-    10022607U,	// VSHLLuv2i64
-    9498319U,	// VSHLLuv4i32
-    10546895U,	// VSHLLuv8i16
-    12119718U,	// VSHLiv16i8
-    758181542U,	// VSHLiv1i64
-    11071142U,	// VSHLiv2i32
-    758181542U,	// VSHLiv2i64
-    11595430U,	// VSHLiv4i16
-    11071142U,	// VSHLiv4i32
-    11595430U,	// VSHLiv8i16
-    12119718U,	// VSHLiv8i8
-    8973990U,	// VSHLsv16i8
-    770240166U,	// VSHLsv1i64
-    8449702U,	// VSHLsv2i32
-    770240166U,	// VSHLsv2i64
-    7925414U,	// VSHLsv4i16
-    8449702U,	// VSHLsv4i32
-    7925414U,	// VSHLsv8i16
-    8973990U,	// VSHLsv8i8
-    10546854U,	// VSHLuv16i8
-    19459750U,	// VSHLuv1i64
-    10022566U,	// VSHLuv2i32
-    19459750U,	// VSHLuv2i64
-    9498278U,	// VSHLuv4i16
-    10022566U,	// VSHLuv4i32
-    9498278U,	// VSHLuv8i16
-    10546854U,	// VSHLuv8i8
-    758181818U,	// VSHRNv2i32
-    11071418U,	// VSHRNv4i16
-    11595706U,	// VSHRNv8i8
-    8974479U,	// VSHRsv16i8
-    770240655U,	// VSHRsv1i64
-    8450191U,	// VSHRsv2i32
-    770240655U,	// VSHRsv2i64
-    7925903U,	// VSHRsv4i16
-    8450191U,	// VSHRsv4i32
-    7925903U,	// VSHRsv8i16
-    8974479U,	// VSHRsv8i8
-    10547343U,	// VSHRuv16i8
-    19460239U,	// VSHRuv1i64
-    10023055U,	// VSHRuv2i32
-    19460239U,	// VSHRuv2i64
-    9498767U,	// VSHRuv4i16
-    10023055U,	// VSHRuv4i32
-    9498767U,	// VSHRuv8i16
-    10547343U,	// VSHRuv8i8
-    32567918U,	// VSHTOD
-    1020326510U,	// VSHTOH
-    33092206U,	// VSHTOS
-    1644196462U,	// VSITOD
-    1644720750U,	// VSITOH
-    1625846382U,	// VSITOS
-    1617415U,	// VSLIv16i8
-    12627463U,	// VSLIv1i64
-    1093127U,	// VSLIv2i32
-    12627463U,	// VSLIv2i64
-    568839U,	// VSLIv4i16
-    1093127U,	// VSLIv4i32
-    568839U,	// VSLIv8i16
-    1617415U,	// VSLIv8i8
-    1040249454U,	// VSLTOD
-    1040773742U,	// VSLTOH
-    1021899374U,	// VSLTOS
-    1011380787U,	// VSQRTD
-    5272115U,	// VSQRTH
-    5796403U,	// VSQRTS
-    8956521U,	// VSRAsv16i8
-    703113833U,	// VSRAsv1i64
-    8432233U,	// VSRAsv2i32
-    703113833U,	// VSRAsv2i64
-    7907945U,	// VSRAsv4i16
-    8432233U,	// VSRAsv4i32
-    7907945U,	// VSRAsv8i16
-    8956521U,	// VSRAsv8i8
-    10529385U,	// VSRAuv16i8
-    19442281U,	// VSRAuv1i64
-    10005097U,	// VSRAuv2i32
-    19442281U,	// VSRAuv2i64
-    9480809U,	// VSRAuv4i16
-    10005097U,	// VSRAuv4i32
-    9480809U,	// VSRAuv8i16
-    10529385U,	// VSRAuv8i8
-    1617420U,	// VSRIv16i8
-    12627468U,	// VSRIv1i64
-    1093132U,	// VSRIv2i32
-    12627468U,	// VSRIv2i64
-    568844U,	// VSRIv4i16
-    1093132U,	// VSRIv4i32
-    568844U,	// VSRIv8i16
-    1617420U,	// VSRIv8i8
-    696297578U,	// VST1LNd16
-    2776737898U,	// VST1LNd16_UPD
-    696821866U,	// VST1LNd32
-    2777262186U,	// VST1LNd32_UPD
-    697346154U,	// VST1LNd8
-    2777786474U,	// VST1LNd8_UPD
+    740322238U,	// VLDMSDB_UPD
+    2206442U,	// VLDMSIA
+    740322026U,	// VLDMSIA_UPD
+    2158916U,	// VLDRD
+    586052U,	// VLDRH
+    2158916U,	// VLDRS
+    2444783940U,	// VLDR_FPCXTNS_off
+    2511925572U,	// VLDR_FPCXTNS_post
+    2579034436U,	// VLDR_FPCXTNS_pre
+    2445308228U,	// VLDR_FPCXTS_off
+    2512449860U,	// VLDR_FPCXTS_post
+    2579558724U,	// VLDR_FPCXTS_pre
+    2445832516U,	// VLDR_FPSCR_NZCVQC_off
+    2512974148U,	// VLDR_FPSCR_NZCVQC_post
+    2580083012U,	// VLDR_FPSCR_NZCVQC_pre
+    2446356804U,	// VLDR_FPSCR_off
+    2513498436U,	// VLDR_FPSCR_post
+    2580607300U,	// VLDR_FPSCR_pre
+    2648240452U,	// VLDR_P0_off
+    1507373380U,	// VLDR_P0_post
+    2715332932U,	// VLDR_P0_pre
+    2447405380U,	// VLDR_VPR_off
+    2514547012U,	// VLDR_VPR_post
+    2581655876U,	// VLDR_VPR_pre
+    2207771U,	// VLLDM
+    2207806U,	// VLSTM
+    7402560U,	// VMAXfd
+    7402560U,	// VMAXfq
+    6878272U,	// VMAXhd
+    6878272U,	// VMAXhq
+    11072576U,	// VMAXsv16i8
+    10548288U,	// VMAXsv2i32
+    10024000U,	// VMAXsv4i16
+    10548288U,	// VMAXsv4i32
+    10024000U,	// VMAXsv8i16
+    11072576U,	// VMAXsv8i8
+    12645440U,	// VMAXuv16i8
+    12121152U,	// VMAXuv2i32
+    11596864U,	// VMAXuv4i16
+    12121152U,	// VMAXuv4i32
+    11596864U,	// VMAXuv8i16
+    12645440U,	// VMAXuv8i8
+    7401582U,	// VMINfd
+    7401582U,	// VMINfq
+    6877294U,	// VMINhd
+    6877294U,	// VMINhq
+    11071598U,	// VMINsv16i8
+    10547310U,	// VMINsv2i32
+    10023022U,	// VMINsv4i16
+    10547310U,	// VMINsv4i32
+    10023022U,	// VMINsv8i16
+    11071598U,	// VMINsv8i8
+    12644462U,	// VMINuv16i8
+    12120174U,	// VMINuv2i32
+    11595886U,	// VMINuv4i16
+    12120174U,	// VMINuv4i32
+    11595886U,	// VMINuv8i16
+    12644462U,	// VMINuv8i8
+    1080077072U,	// VMLAD
+    6859536U,	// VMLAH
+    10538779U,	// VMLALslsv2i32
+    10014491U,	// VMLALslsv4i16
+    12111643U,	// VMLALsluv2i32
+    11587355U,	// VMLALsluv4i16
+    10530587U,	// VMLALsv2i64
+    10006299U,	// VMLALsv4i32
+    11054875U,	// VMLALsv8i16
+    12103451U,	// VMLALuv2i64
+    11579163U,	// VMLALuv4i32
+    12627739U,	// VMLALuv8i16
+    7383824U,	// VMLAS
+    7383824U,	// VMLAfd
+    7383824U,	// VMLAfq
+    6859536U,	// VMLAhd
+    6859536U,	// VMLAhq
+    7392016U,	// VMLAslfd
+    7392016U,	// VMLAslfq
+    6867728U,	// VMLAslhd
+    6867728U,	// VMLAslhq
+    13159184U,	// VMLAslv2i32
+    13683472U,	// VMLAslv4i16
+    13159184U,	// VMLAslv4i32
+    13683472U,	// VMLAslv8i16
+    14199568U,	// VMLAv16i8
+    13150992U,	// VMLAv2i32
+    13675280U,	// VMLAv4i16
+    13150992U,	// VMLAv4i32
+    13675280U,	// VMLAv8i16
+    14199568U,	// VMLAv8i8
+    1080078806U,	// VMLSD
+    6861270U,	// VMLSH
+    10538996U,	// VMLSLslsv2i32
+    10014708U,	// VMLSLslsv4i16
+    12111860U,	// VMLSLsluv2i32
+    11587572U,	// VMLSLsluv4i16
+    10530804U,	// VMLSLsv2i64
+    10006516U,	// VMLSLsv4i32
+    11055092U,	// VMLSLsv8i16
+    12103668U,	// VMLSLuv2i64
+    11579380U,	// VMLSLuv4i32
+    12627956U,	// VMLSLuv8i16
+    7385558U,	// VMLSS
+    7385558U,	// VMLSfd
+    7385558U,	// VMLSfq
+    6861270U,	// VMLShd
+    6861270U,	// VMLShq
+    7393750U,	// VMLSslfd
+    7393750U,	// VMLSslfq
+    6869462U,	// VMLSslhd
+    6869462U,	// VMLSslhq
+    13160918U,	// VMLSslv2i32
+    13685206U,	// VMLSslv4i16
+    13160918U,	// VMLSslv4i32
+    13685206U,	// VMLSslv8i16
+    14201302U,	// VMLSv16i8
+    13152726U,	// VMLSv2i32
+    13677014U,	// VMLSv4i16
+    13152726U,	// VMLSv4i32
+    13677014U,	// VMLSv8i16
+    14201302U,	// VMLSv8i8
+    808019386U,	// VMMLA
+    1080062947U,	// VMOVD
+    2159587U,	// VMOVDRR
+    740902307U,	// VMOVH
+    6845411U,	// VMOVHR
+    10514453U,	// VMOVLsv2i64
+    9990165U,	// VMOVLsv4i32
+    11038741U,	// VMOVLsv8i16
+    12087317U,	// VMOVLuv2i64
+    11563029U,	// VMOVLuv4i32
+    12611605U,	// VMOVLuv8i16
+    760246479U,	// VMOVNv2i32
+    13136079U,	// VMOVNv4i16
+    13660367U,	// VMOVNv8i8
+    6845411U,	// VMOVRH
+    2159587U,	// VMOVRRD
+    2143203U,	// VMOVRRS
+    2126819U,	// VMOVRS
+    7369699U,	// VMOVS
+    2126819U,	// VMOVSR
+    2143203U,	// VMOVSRR
+    14185443U,	// VMOVv16i8
+    1901097955U,	// VMOVv1i64
+    7369699U,	// VMOVv2f32
+    13136867U,	// VMOVv2i32
+    1901097955U,	// VMOVv2i64
+    7369699U,	// VMOVv4f32
+    13661155U,	// VMOVv4i16
+    13136867U,	// VMOVv4i32
+    13661155U,	// VMOVv8i16
+    14185443U,	// VMOVv8i8
+    2208248U,	// VMRS
+    2208248U,	// VMRS_FPCXTNS
+    2208248U,	// VMRS_FPCXTS
+    2208248U,	// VMRS_FPEXC
+    2208248U,	// VMRS_FPINST
+    2208248U,	// VMRS_FPINST2
+    2126328U,	// VMRS_FPSCR_NZCVQC
+    2208248U,	// VMRS_FPSID
+    2208248U,	// VMRS_MVFR0
+    2208248U,	// VMRS_MVFR1
+    2208248U,	// VMRS_MVFR2
+    2126328U,	// VMRS_P0
+    2208248U,	// VMRS_VPR
+    30519692U,	// VMSR
+    28946828U,	// VMSR_FPCXTNS
+    29471116U,	// VMSR_FPCXTS
+    32092556U,	// VMSR_FPEXC
+    32616844U,	// VMSR_FPINST
+    33141132U,	// VMSR_FPINST2
+    768110988U,	// VMSR_FPSCR_NZCVQC
+    33665420U,	// VMSR_FPSID
+    769159564U,	// VMSR_P0
+    31568268U,	// VMSR_VPR
+    1080094736U,	// VMULD
+    6877200U,	// VMULH
+    740901730U,	// VMULLp64
+    23130049U,	// VMULLp8
+    10530753U,	// VMULLslsv2i32
+    10006465U,	// VMULLslsv4i16
+    12103617U,	// VMULLsluv2i32
+    11579329U,	// VMULLsluv4i16
+    10547137U,	// VMULLsv2i64
+    10022849U,	// VMULLsv4i32
+    11071425U,	// VMULLsv8i16
+    12120001U,	// VMULLuv2i64
+    11595713U,	// VMULLuv4i32
+    12644289U,	// VMULLuv8i16
+    7401488U,	// VMULS
+    7401488U,	// VMULfd
+    7401488U,	// VMULfq
+    6877200U,	// VMULhd
+    6877200U,	// VMULhq
+    23130128U,	// VMULpd
+    23130128U,	// VMULpq
+    7385104U,	// VMULslfd
+    7385104U,	// VMULslfq
+    6860816U,	// VMULslhd
+    6860816U,	// VMULslhq
+    13152272U,	// VMULslv2i32
+    13676560U,	// VMULslv4i16
+    13152272U,	// VMULslv4i32
+    13676560U,	// VMULslv8i16
+    14217232U,	// VMULv16i8
+    13168656U,	// VMULv2i32
+    13692944U,	// VMULv4i16
+    13168656U,	// VMULv4i32
+    13692944U,	// VMULv8i16
+    14217232U,	// VMULv8i8
+    2126019U,	// VMVNd
+    2126019U,	// VMVNq
+    13136067U,	// VMVNv2i32
+    13660355U,	// VMVNv4i16
+    13136067U,	// VMVNv4i32
+    13660355U,	// VMVNv8i16
+    1080061402U,	// VNEGD
+    6843866U,	// VNEGH
+    7368154U,	// VNEGS
+    7368154U,	// VNEGf32q
+    7368154U,	// VNEGfd
+    6843866U,	// VNEGhd
+    6843866U,	// VNEGhq
+    9989594U,	// VNEGs16d
+    9989594U,	// VNEGs16q
+    10513882U,	// VNEGs32d
+    10513882U,	// VNEGs32q
+    11038170U,	// VNEGs8d
+    11038170U,	// VNEGs8q
+    1080077066U,	// VNMLAD
+    6859530U,	// VNMLAH
+    7383818U,	// VNMLAS
+    1080078800U,	// VNMLSD
+    6861264U,	// VNMLSH
+    7385552U,	// VNMLSS
+    1080094730U,	// VNMULD
+    6877194U,	// VNMULH
+    7401482U,	// VNMULS
+    2158739U,	// VORNd
+    2158739U,	// VORNq
+    2158972U,	// VORRd
+    13169020U,	// VORRiv2i32
+    13693308U,	// VORRiv4i16
+    13169020U,	// VORRiv4i32
+    13693308U,	// VORRiv8i16
+    2158972U,	// VORRq
+    11071232U,	// VPADALsv16i8
+    10546944U,	// VPADALsv2i32
+    10022656U,	// VPADALsv4i16
+    10546944U,	// VPADALsv4i32
+    10022656U,	// VPADALsv8i16
+    11071232U,	// VPADALsv8i8
+    12644096U,	// VPADALuv16i8
+    12119808U,	// VPADALuv2i32
+    11595520U,	// VPADALuv4i16
+    12119808U,	// VPADALuv4i32
+    11595520U,	// VPADALuv8i16
+    12644096U,	// VPADALuv8i8
+    11038524U,	// VPADDLsv16i8
+    10514236U,	// VPADDLsv2i32
+    9989948U,	// VPADDLsv4i16
+    10514236U,	// VPADDLsv4i32
+    9989948U,	// VPADDLsv8i16
+    11038524U,	// VPADDLsv8i8
+    12611388U,	// VPADDLuv16i8
+    12087100U,	// VPADDLuv2i32
+    11562812U,	// VPADDLuv4i16
+    12087100U,	// VPADDLuv4i32
+    11562812U,	// VPADDLuv8i16
+    12611388U,	// VPADDLuv8i8
+    7400775U,	// VPADDf
+    6876487U,	// VPADDh
+    13692231U,	// VPADDi16
+    13167943U,	// VPADDi32
+    14216519U,	// VPADDi8
+    7402554U,	// VPMAXf
+    6878266U,	// VPMAXh
+    10023994U,	// VPMAXs16
+    10548282U,	// VPMAXs32
+    11072570U,	// VPMAXs8
+    11596858U,	// VPMAXu16
+    12121146U,	// VPMAXu32
+    12645434U,	// VPMAXu8
+    7401576U,	// VPMINf
+    6877288U,	// VPMINh
+    10023016U,	// VPMINs16
+    10547304U,	// VPMINs32
+    11071592U,	// VPMINs8
+    11595880U,	// VPMINu16
+    12120168U,	// VPMINu32
+    12644456U,	// VPMINu8
+    11039157U,	// VQABSv16i8
+    10514869U,	// VQABSv2i32
+    9990581U,	// VQABSv4i16
+    10514869U,	// VQABSv4i32
+    9990581U,	// VQABSv8i16
+    11039157U,	// VQABSv8i8
+    11070797U,	// VQADDsv16i8
+    772336973U,	// VQADDsv1i64
+    10546509U,	// VQADDsv2i32
+    772336973U,	// VQADDsv2i64
+    10022221U,	// VQADDsv4i16
+    10546509U,	// VQADDsv4i32
+    10022221U,	// VQADDsv8i16
+    11070797U,	// VQADDsv8i8
+    12643661U,	// VQADDuv16i8
+    21556557U,	// VQADDuv1i64
+    12119373U,	// VQADDuv2i32
+    21556557U,	// VQADDuv2i64
+    11595085U,	// VQADDuv4i16
+    12119373U,	// VQADDuv4i32
+    11595085U,	// VQADDuv8i16
+    12643661U,	// VQADDuv8i8
+    10538759U,	// VQDMLALslv2i32
+    10014471U,	// VQDMLALslv4i16
+    10530567U,	// VQDMLALv2i64
+    10006279U,	// VQDMLALv4i32
+    10538988U,	// VQDMLSLslv2i32
+    10014700U,	// VQDMLSLslv4i16
+    10530796U,	// VQDMLSLv2i64
+    10006508U,	// VQDMLSLv4i32
+    10530355U,	// VQDMULHslv2i32
+    10006067U,	// VQDMULHslv4i16
+    10530355U,	// VQDMULHslv4i32
+    10006067U,	// VQDMULHslv8i16
+    10546739U,	// VQDMULHv2i32
+    10022451U,	// VQDMULHv4i16
+    10546739U,	// VQDMULHv4i32
+    10022451U,	// VQDMULHv8i16
+    10530733U,	// VQDMULLslv2i32
+    10006445U,	// VQDMULLslv4i16
+    10547117U,	// VQDMULLv2i64
+    10022829U,	// VQDMULLv4i32
+    772305083U,	// VQMOVNsuv2i32
+    10514619U,	// VQMOVNsuv4i16
+    9990331U,	// VQMOVNsuv8i8
+    772305096U,	// VQMOVNsv2i32
+    10514632U,	// VQMOVNsv4i16
+    9990344U,	// VQMOVNsv8i8
+    21524680U,	// VQMOVNuv2i32
+    12087496U,	// VQMOVNuv4i16
+    11563208U,	// VQMOVNuv8i8
+    11038164U,	// VQNEGv16i8
+    10513876U,	// VQNEGv2i32
+    9989588U,	// VQNEGv4i16
+    10513876U,	// VQNEGv4i32
+    9989588U,	// VQNEGv8i16
+    11038164U,	// VQNEGv8i8
+    10538479U,	// VQRDMLAHslv2i32
+    10014191U,	// VQRDMLAHslv4i16
+    10538479U,	// VQRDMLAHslv4i32
+    10014191U,	// VQRDMLAHslv8i16
+    10530287U,	// VQRDMLAHv2i32
+    10005999U,	// VQRDMLAHv4i16
+    10530287U,	// VQRDMLAHv4i32
+    10005999U,	// VQRDMLAHv8i16
+    10538608U,	// VQRDMLSHslv2i32
+    10014320U,	// VQRDMLSHslv4i16
+    10538608U,	// VQRDMLSHslv4i32
+    10014320U,	// VQRDMLSHslv8i16
+    10530416U,	// VQRDMLSHv2i32
+    10006128U,	// VQRDMLSHv4i16
+    10530416U,	// VQRDMLSHv4i32
+    10006128U,	// VQRDMLSHv8i16
+    10530363U,	// VQRDMULHslv2i32
+    10006075U,	// VQRDMULHslv4i16
+    10530363U,	// VQRDMULHslv4i32
+    10006075U,	// VQRDMULHslv8i16
+    10546747U,	// VQRDMULHv2i32
+    10022459U,	// VQRDMULHv4i16
+    10546747U,	// VQRDMULHv4i32
+    10022459U,	// VQRDMULHv8i16
+    11071340U,	// VQRSHLsv16i8
+    772337516U,	// VQRSHLsv1i64
+    10547052U,	// VQRSHLsv2i32
+    772337516U,	// VQRSHLsv2i64
+    10022764U,	// VQRSHLsv4i16
+    10547052U,	// VQRSHLsv4i32
+    10022764U,	// VQRSHLsv8i16
+    11071340U,	// VQRSHLsv8i8
+    12644204U,	// VQRSHLuv16i8
+    21557100U,	// VQRSHLuv1i64
+    12119916U,	// VQRSHLuv2i32
+    21557100U,	// VQRSHLuv2i64
+    11595628U,	// VQRSHLuv4i16
+    12119916U,	// VQRSHLuv4i32
+    11595628U,	// VQRSHLuv8i16
+    12644204U,	// VQRSHLuv8i8
+    772337790U,	// VQRSHRNsv2i32
+    10547326U,	// VQRSHRNsv4i16
+    10023038U,	// VQRSHRNsv8i8
+    21557374U,	// VQRSHRNuv2i32
+    12120190U,	// VQRSHRNuv4i16
+    11595902U,	// VQRSHRNuv8i8
+    772337842U,	// VQRSHRUNv2i32
+    10547378U,	// VQRSHRUNv4i16
+    10023090U,	// VQRSHRUNv8i8
+    11071327U,	// VQSHLsiv16i8
+    772337503U,	// VQSHLsiv1i64
+    10547039U,	// VQSHLsiv2i32
+    772337503U,	// VQSHLsiv2i64
+    10022751U,	// VQSHLsiv4i16
+    10547039U,	// VQSHLsiv4i32
+    10022751U,	// VQSHLsiv8i16
+    11071327U,	// VQSHLsiv8i8
+    11072350U,	// VQSHLsuv16i8
+    772338526U,	// VQSHLsuv1i64
+    10548062U,	// VQSHLsuv2i32
+    772338526U,	// VQSHLsuv2i64
+    10023774U,	// VQSHLsuv4i16
+    10548062U,	// VQSHLsuv4i32
+    10023774U,	// VQSHLsuv8i16
+    11072350U,	// VQSHLsuv8i8
+    11071327U,	// VQSHLsv16i8
+    772337503U,	// VQSHLsv1i64
+    10547039U,	// VQSHLsv2i32
+    772337503U,	// VQSHLsv2i64
+    10022751U,	// VQSHLsv4i16
+    10547039U,	// VQSHLsv4i32
+    10022751U,	// VQSHLsv8i16
+    11071327U,	// VQSHLsv8i8
+    12644191U,	// VQSHLuiv16i8
+    21557087U,	// VQSHLuiv1i64
+    12119903U,	// VQSHLuiv2i32
+    21557087U,	// VQSHLuiv2i64
+    11595615U,	// VQSHLuiv4i16
+    12119903U,	// VQSHLuiv4i32
+    11595615U,	// VQSHLuiv8i16
+    12644191U,	// VQSHLuiv8i8
+    12644191U,	// VQSHLuv16i8
+    21557087U,	// VQSHLuv1i64
+    12119903U,	// VQSHLuv2i32
+    21557087U,	// VQSHLuv2i64
+    11595615U,	// VQSHLuv4i16
+    12119903U,	// VQSHLuv4i32
+    11595615U,	// VQSHLuv8i16
+    12644191U,	// VQSHLuv8i8
+    772337783U,	// VQSHRNsv2i32
+    10547319U,	// VQSHRNsv4i16
+    10023031U,	// VQSHRNsv8i8
+    21557367U,	// VQSHRNuv2i32
+    12120183U,	// VQSHRNuv4i16
+    11595895U,	// VQSHRNuv8i8
+    772337834U,	// VQSHRUNv2i32
+    10547370U,	// VQSHRUNv4i16
+    10023082U,	// VQSHRUNv8i8
+    11070635U,	// VQSUBsv16i8
+    772336811U,	// VQSUBsv1i64
+    10546347U,	// VQSUBsv2i32
+    772336811U,	// VQSUBsv2i64
+    10022059U,	// VQSUBsv4i16
+    10546347U,	// VQSUBsv4i32
+    10022059U,	// VQSUBsv8i16
+    11070635U,	// VQSUBsv8i8
+    12643499U,	// VQSUBuv16i8
+    21556395U,	// VQSUBuv1i64
+    12119211U,	// VQSUBuv2i32
+    21556395U,	// VQSUBuv2i64
+    11594923U,	// VQSUBuv4i16
+    12119211U,	// VQSUBuv4i32
+    11594923U,	// VQSUBuv8i16
+    12643499U,	// VQSUBuv8i8
+    760279129U,	// VRADDHNv2i32
+    13168729U,	// VRADDHNv4i16
+    13693017U,	// VRADDHNv8i8
+    12086707U,	// VRECPEd
+    7368115U,	// VRECPEfd
+    7368115U,	// VRECPEfq
+    6843827U,	// VRECPEhd
+    6843827U,	// VRECPEhq
+    12086707U,	// VRECPEq
+    7401969U,	// VRECPSfd
+    7401969U,	// VRECPSfq
+    6877681U,	// VRECPShd
+    6877681U,	// VRECPShq
+    1599987U,	// VREV16d8
+    1599987U,	// VREV16q8
+    551188U,	// VREV32d16
+    1599764U,	// VREV32d8
+    551188U,	// VREV32q16
+    1599764U,	// VREV32q8
+    551274U,	// VREV64d16
+    1075562U,	// VREV64d32
+    1599850U,	// VREV64d8
+    551274U,	// VREV64q16
+    1075562U,	// VREV64q32
+    1599850U,	// VREV64q8
+    11070778U,	// VRHADDsv16i8
+    10546490U,	// VRHADDsv2i32
+    10022202U,	// VRHADDsv4i16
+    10546490U,	// VRHADDsv4i32
+    10022202U,	// VRHADDsv8i16
+    11070778U,	// VRHADDsv8i8
+    12643642U,	// VRHADDuv16i8
+    12119354U,	// VRHADDuv2i32
+    11595066U,	// VRHADDuv4i16
+    12119354U,	// VRHADDuv4i32
+    11595066U,	// VRHADDuv8i16
+    12643642U,	// VRHADDuv8i8
+    740901610U,	// VRINTAD
+    740902132U,	// VRINTAH
+    740901259U,	// VRINTANDf
+    740902132U,	// VRINTANDh
+    740901259U,	// VRINTANQf
+    740902132U,	// VRINTANQh
+    740901259U,	// VRINTAS
+    740901658U,	// VRINTMD
+    740902213U,	// VRINTMH
+    740901318U,	// VRINTMNDf
+    740902213U,	// VRINTMNDh
+    740901318U,	// VRINTMNQf
+    740902213U,	// VRINTMNQh
+    740901318U,	// VRINTMS
+    740901670U,	// VRINTND
+    740902225U,	// VRINTNH
+    740901330U,	// VRINTNNDf
+    740902225U,	// VRINTNNDh
+    740901330U,	// VRINTNNQf
+    740902225U,	// VRINTNNQh
+    740901330U,	// VRINTNS
+    740901682U,	// VRINTPD
+    740902237U,	// VRINTPH
+    740901342U,	// VRINTPNDf
+    740902237U,	// VRINTPNDh
+    740901342U,	// VRINTPNQf
+    740902237U,	// VRINTPNQh
+    740901342U,	// VRINTPS
+    1080062359U,	// VRINTRD
+    6844823U,	// VRINTRH
+    7369111U,	// VRINTRS
+    1080063327U,	// VRINTXD
+    6845791U,	// VRINTXH
+    740901390U,	// VRINTXNDf
+    740902295U,	// VRINTXNDh
+    740901390U,	// VRINTXNQf
+    740902295U,	// VRINTXNQh
+    7370079U,	// VRINTXS
+    1080063377U,	// VRINTZD
+    6845841U,	// VRINTZH
+    740901402U,	// VRINTZNDf
+    740902318U,	// VRINTZNDh
+    740901402U,	// VRINTZNQf
+    740902318U,	// VRINTZNQh
+    7370129U,	// VRINTZS
+    11071347U,	// VRSHLsv16i8
+    772337523U,	// VRSHLsv1i64
+    10547059U,	// VRSHLsv2i32
+    772337523U,	// VRSHLsv2i64
+    10022771U,	// VRSHLsv4i16
+    10547059U,	// VRSHLsv4i32
+    10022771U,	// VRSHLsv8i16
+    11071347U,	// VRSHLsv8i8
+    12644211U,	// VRSHLuv16i8
+    21557107U,	// VRSHLuv1i64
+    12119923U,	// VRSHLuv2i32
+    21557107U,	// VRSHLuv2i64
+    11595635U,	// VRSHLuv4i16
+    12119923U,	// VRSHLuv4i32
+    11595635U,	// VRSHLuv8i16
+    12644211U,	// VRSHLuv8i8
+    760279174U,	// VRSHRNv2i32
+    13168774U,	// VRSHRNv4i16
+    13693062U,	// VRSHRNv8i8
+    11071836U,	// VRSHRsv16i8
+    772338012U,	// VRSHRsv1i64
+    10547548U,	// VRSHRsv2i32
+    772338012U,	// VRSHRsv2i64
+    10023260U,	// VRSHRsv4i16
+    10547548U,	// VRSHRsv4i32
+    10023260U,	// VRSHRsv8i16
+    11071836U,	// VRSHRsv8i8
+    12644700U,	// VRSHRuv16i8
+    21557596U,	// VRSHRuv1i64
+    12120412U,	// VRSHRuv2i32
+    21557596U,	// VRSHRuv2i64
+    11596124U,	// VRSHRuv4i16
+    12120412U,	// VRSHRuv4i32
+    11596124U,	// VRSHRuv8i16
+    12644700U,	// VRSHRuv8i8
+    12086720U,	// VRSQRTEd
+    7368128U,	// VRSQRTEfd
+    7368128U,	// VRSQRTEfq
+    6843840U,	// VRSQRTEhd
+    6843840U,	// VRSQRTEhq
+    12086720U,	// VRSQRTEq
+    7401991U,	// VRSQRTSfd
+    7401991U,	// VRSQRTSfq
+    6877703U,	// VRSQRTShd
+    6877703U,	// VRSQRTShq
+    11053878U,	// VRSRAsv16i8
+    705211190U,	// VRSRAsv1i64
+    10529590U,	// VRSRAsv2i32
+    705211190U,	// VRSRAsv2i64
+    10005302U,	// VRSRAsv4i16
+    10529590U,	// VRSRAsv4i32
+    10005302U,	// VRSRAsv8i16
+    11053878U,	// VRSRAsv8i8
+    12626742U,	// VRSRAuv16i8
+    21539638U,	// VRSRAuv1i64
+    12102454U,	// VRSRAuv2i32
+    21539638U,	// VRSRAuv2i64
+    11578166U,	// VRSRAuv4i16
+    12102454U,	// VRSRAuv4i32
+    11578166U,	// VRSRAuv8i16
+    12626742U,	// VRSRAuv8i8
+    760279114U,	// VRSUBHNv2i32
+    13168714U,	// VRSUBHNv4i16
+    13693002U,	// VRSUBHNv8i8
+    2753679407U,	// VSCCLRMD
+    2753679407U,	// VSCCLRMS
+    808019628U,	// VSDOTD
+    808019628U,	// VSDOTDI
+    808019628U,	// VSDOTQ
+    808019628U,	// VSDOTQI
+    740901694U,	// VSELEQD
+    740902249U,	// VSELEQH
+    740901354U,	// VSELEQS
+    740901622U,	// VSELGED
+    740902155U,	// VSELGEH
+    740901282U,	// VSELGES
+    740901718U,	// VSELGTD
+    740902283U,	// VSELGTH
+    740901378U,	// VSELGTS
+    740901706U,	// VSELVSD
+    740902271U,	// VSELVSH
+    740901366U,	// VSELVSS
+    570339U,	// VSETLNi16
+    1094627U,	// VSETLNi32
+    1618915U,	// VSETLNi8
+    13692834U,	// VSHLLi16
+    13168546U,	// VSHLLi32
+    14217122U,	// VSHLLi8
+    10547106U,	// VSHLLsv2i64
+    10022818U,	// VSHLLsv4i32
+    11071394U,	// VSHLLsv8i16
+    12119970U,	// VSHLLuv2i64
+    11595682U,	// VSHLLuv4i32
+    12644258U,	// VSHLLuv8i16
+    14217081U,	// VSHLiv16i8
+    760278905U,	// VSHLiv1i64
+    13168505U,	// VSHLiv2i32
+    760278905U,	// VSHLiv2i64
+    13692793U,	// VSHLiv4i16
+    13168505U,	// VSHLiv4i32
+    13692793U,	// VSHLiv8i16
+    14217081U,	// VSHLiv8i8
+    11071353U,	// VSHLsv16i8
+    772337529U,	// VSHLsv1i64
+    10547065U,	// VSHLsv2i32
+    772337529U,	// VSHLsv2i64
+    10022777U,	// VSHLsv4i16
+    10547065U,	// VSHLsv4i32
+    10022777U,	// VSHLsv8i16
+    11071353U,	// VSHLsv8i8
+    12644217U,	// VSHLuv16i8
+    21557113U,	// VSHLuv1i64
+    12119929U,	// VSHLuv2i32
+    21557113U,	// VSHLuv2i64
+    11595641U,	// VSHLuv4i16
+    12119929U,	// VSHLuv4i32
+    11595641U,	// VSHLuv8i16
+    12644217U,	// VSHLuv8i8
+    760279181U,	// VSHRNv2i32
+    13168781U,	// VSHRNv4i16
+    13693069U,	// VSHRNv8i8
+    11071842U,	// VSHRsv16i8
+    772338018U,	// VSHRsv1i64
+    10547554U,	// VSHRsv2i32
+    772338018U,	// VSHRsv2i64
+    10023266U,	// VSHRsv4i16
+    10547554U,	// VSHRsv4i32
+    10023266U,	// VSHRsv8i16
+    11071842U,	// VSHRsv8i8
+    12644706U,	// VSHRuv16i8
+    21557602U,	// VSHRuv1i64
+    12120418U,	// VSHRuv2i32
+    21557602U,	// VSHRuv2i64
+    11596130U,	// VSHRuv4i16
+    12120418U,	// VSHRuv4i32
+    11596130U,	// VSHRuv8i16
+    12644706U,	// VSHRuv8i8
+    34665281U,	// VSHTOD
+    1089532737U,	// VSHTOH
+    35189569U,	// VSHTOS
+    1042314049U,	// VSITOD
+    1042838337U,	// VSITOH
+    1023963969U,	// VSITOS
+    1617626U,	// VSLIv16i8
+    14724826U,	// VSLIv1i64
+    1093338U,	// VSLIv2i32
+    14724826U,	// VSLIv2i64
+    569050U,	// VSLIv4i16
+    1093338U,	// VSLIv4i32
+    569050U,	// VSLIv8i16
+    1617626U,	// VSLIv8i8
+    1109455681U,	// VSLTOD
+    1109979969U,	// VSLTOH
+    1091105601U,	// VSLTOS
+    808019606U,	// VSMMLA
+    1080062726U,	// VSQRTD
+    6845190U,	// VSQRTH
+    7369478U,	// VSQRTS
+    11053884U,	// VSRAsv16i8
+    705211196U,	// VSRAsv1i64
+    10529596U,	// VSRAsv2i32
+    705211196U,	// VSRAsv2i64
+    10005308U,	// VSRAsv4i16
+    10529596U,	// VSRAsv4i32
+    10005308U,	// VSRAsv8i16
+    11053884U,	// VSRAsv8i8
+    12626748U,	// VSRAuv16i8
+    21539644U,	// VSRAuv1i64
+    12102460U,	// VSRAuv2i32
+    21539644U,	// VSRAuv2i64
+    11578172U,	// VSRAuv4i16
+    12102460U,	// VSRAuv4i32
+    11578172U,	// VSRAuv8i16
+    12626748U,	// VSRAuv8i8
+    1617631U,	// VSRIv16i8
+    14724831U,	// VSRIv1i64
+    1093343U,	// VSRIv2i32
+    14724831U,	// VSRIv2i64
+    569055U,	// VSRIv4i16
+    1093343U,	// VSRIv4i32
+    569055U,	// VSRIv8i16
+    1617631U,	// VSRIv8i8
+    698394890U,	// VST1LNd16
+    2845968650U,	// VST1LNd16_UPD
+    698919178U,	// VST1LNd32
+    2846492938U,	// VST1LNd32_UPD
+    699443466U,	// VST1LNd8
+    2847017226U,	// VST1LNd8_UPD
     0U,	// VST1LNq16Pseudo
     0U,	// VST1LNq16Pseudo_UPD
     0U,	// VST1LNq32Pseudo
     0U,	// VST1LNq32Pseudo_UPD
     0U,	// VST1LNq8Pseudo
     0U,	// VST1LNq8Pseudo_UPD
-    2819156074U,	// VST1d16
-    2886264938U,	// VST1d16Q
+    2886265098U,	// VST1d16
+    2953373962U,	// VST1d16Q
     0U,	// VST1d16QPseudo
-    2953357418U,	// VST1d16Qwb_fixed
-    3020474474U,	// VST1d16Qwb_register
-    3087591530U,	// VST1d16T
+    3020466442U,	// VST1d16Qwb_fixed
+    3087583498U,	// VST1d16Qwb_register
+    3154700554U,	// VST1d16T
     0U,	// VST1d16TPseudo
-    3154684010U,	// VST1d16Twb_fixed
-    3221801066U,	// VST1d16Twb_register
-    3288901738U,	// VST1d16wb_fixed
-    3356018794U,	// VST1d16wb_register
-    2819680362U,	// VST1d32
-    2886789226U,	// VST1d32Q
+    3221793034U,	// VST1d16Twb_fixed
+    3288910090U,	// VST1d16Twb_register
+    3356010762U,	// VST1d16wb_fixed
+    3423127818U,	// VST1d16wb_register
+    2886789386U,	// VST1d32
+    2953898250U,	// VST1d32Q
     0U,	// VST1d32QPseudo
-    2953881706U,	// VST1d32Qwb_fixed
-    3020998762U,	// VST1d32Qwb_register
-    3088115818U,	// VST1d32T
+    3020990730U,	// VST1d32Qwb_fixed
+    3088107786U,	// VST1d32Qwb_register
+    3155224842U,	// VST1d32T
     0U,	// VST1d32TPseudo
-    3155208298U,	// VST1d32Twb_fixed
-    3222325354U,	// VST1d32Twb_register
-    3289426026U,	// VST1d32wb_fixed
-    3356543082U,	// VST1d32wb_register
-    2831214698U,	// VST1d64
-    2898323562U,	// VST1d64Q
+    3222317322U,	// VST1d32Twb_fixed
+    3289434378U,	// VST1d32Twb_register
+    3356535050U,	// VST1d32wb_fixed
+    3423652106U,	// VST1d32wb_register
+    2900420874U,	// VST1d64
+    2967529738U,	// VST1d64Q
     0U,	// VST1d64QPseudo
     0U,	// VST1d64QPseudoWB_fixed
     0U,	// VST1d64QPseudoWB_register
-    2965416042U,	// VST1d64Qwb_fixed
-    3032533098U,	// VST1d64Qwb_register
-    3099650154U,	// VST1d64T
+    3034622218U,	// VST1d64Qwb_fixed
+    3101739274U,	// VST1d64Qwb_register
+    3168856330U,	// VST1d64T
     0U,	// VST1d64TPseudo
     0U,	// VST1d64TPseudoWB_fixed
     0U,	// VST1d64TPseudoWB_register
-    3166742634U,	// VST1d64Twb_fixed
-    3233859690U,	// VST1d64Twb_register
-    3300960362U,	// VST1d64wb_fixed
-    3368077418U,	// VST1d64wb_register
-    2820204650U,	// VST1d8
-    2887313514U,	// VST1d8Q
+    3235948810U,	// VST1d64Twb_fixed
+    3303065866U,	// VST1d64Twb_register
+    3370166538U,	// VST1d64wb_fixed
+    3437283594U,	// VST1d64wb_register
+    2887313674U,	// VST1d8
+    2954422538U,	// VST1d8Q
     0U,	// VST1d8QPseudo
-    2954405994U,	// VST1d8Qwb_fixed
-    3021523050U,	// VST1d8Qwb_register
-    3088640106U,	// VST1d8T
+    3021515018U,	// VST1d8Qwb_fixed
+    3088632074U,	// VST1d8Qwb_register
+    3155749130U,	// VST1d8T
     0U,	// VST1d8TPseudo
-    3155732586U,	// VST1d8Twb_fixed
-    3222849642U,	// VST1d8Twb_register
-    3289950314U,	// VST1d8wb_fixed
-    3357067370U,	// VST1d8wb_register
-    3423135850U,	// VST1q16
+    3222841610U,	// VST1d8Twb_fixed
+    3289958666U,	// VST1d8Twb_register
+    3357059338U,	// VST1d8wb_fixed
+    3424176394U,	// VST1d8wb_register
+    3490244874U,	// VST1q16
     0U,	// VST1q16HighQPseudo
     0U,	// VST1q16HighTPseudo
     0U,	// VST1q16LowQPseudo_UPD
     0U,	// VST1q16LowTPseudo_UPD
-    3490228330U,	// VST1q16wb_fixed
-    3557345386U,	// VST1q16wb_register
-    3423660138U,	// VST1q32
+    3557337354U,	// VST1q16wb_fixed
+    3624454410U,	// VST1q16wb_register
+    3490769162U,	// VST1q32
     0U,	// VST1q32HighQPseudo
     0U,	// VST1q32HighTPseudo
     0U,	// VST1q32LowQPseudo_UPD
     0U,	// VST1q32LowTPseudo_UPD
-    3490752618U,	// VST1q32wb_fixed
-    3557869674U,	// VST1q32wb_register
-    3435194474U,	// VST1q64
+    3557861642U,	// VST1q32wb_fixed
+    3624978698U,	// VST1q32wb_register
+    3504400650U,	// VST1q64
     0U,	// VST1q64HighQPseudo
     0U,	// VST1q64HighTPseudo
     0U,	// VST1q64LowQPseudo_UPD
     0U,	// VST1q64LowTPseudo_UPD
-    3502286954U,	// VST1q64wb_fixed
-    3569404010U,	// VST1q64wb_register
-    3424184426U,	// VST1q8
+    3571493130U,	// VST1q64wb_fixed
+    3638610186U,	// VST1q64wb_register
+    3491293450U,	// VST1q8
     0U,	// VST1q8HighQPseudo
     0U,	// VST1q8HighTPseudo
     0U,	// VST1q8LowQPseudo_UPD
     0U,	// VST1q8LowTPseudo_UPD
-    3491276906U,	// VST1q8wb_fixed
-    3558393962U,	// VST1q8wb_register
-    696305830U,	// VST2LNd16
+    3558385930U,	// VST1q8wb_fixed
+    3625502986U,	// VST1q8wb_register
+    698403147U,	// VST2LNd16
     0U,	// VST2LNd16Pseudo
     0U,	// VST2LNd16Pseudo_UPD
-    2776926374U,	// VST2LNd16_UPD
-    696830118U,	// VST2LNd32
+    2846140747U,	// VST2LNd16_UPD
+    698927435U,	// VST2LNd32
     0U,	// VST2LNd32Pseudo
     0U,	// VST2LNd32Pseudo_UPD
-    2777450662U,	// VST2LNd32_UPD
-    697354406U,	// VST2LNd8
+    2846665035U,	// VST2LNd32_UPD
+    699451723U,	// VST2LNd8
     0U,	// VST2LNd8Pseudo
     0U,	// VST2LNd8Pseudo_UPD
-    2777974950U,	// VST2LNd8_UPD
-    696305830U,	// VST2LNq16
+    2847189323U,	// VST2LNd8_UPD
+    698403147U,	// VST2LNq16
     0U,	// VST2LNq16Pseudo
     0U,	// VST2LNq16Pseudo_UPD
-    2776926374U,	// VST2LNq16_UPD
-    696830118U,	// VST2LNq32
+    2846140747U,	// VST2LNq16_UPD
+    698927435U,	// VST2LNq32
     0U,	// VST2LNq32Pseudo
     0U,	// VST2LNq32Pseudo_UPD
-    2777450662U,	// VST2LNq32_UPD
-    3624462502U,	// VST2b16
-    3691554982U,	// VST2b16wb_fixed
-    3758672038U,	// VST2b16wb_register
-    3624986790U,	// VST2b32
-    3692079270U,	// VST2b32wb_fixed
-    3759196326U,	// VST2b32wb_register
-    3625511078U,	// VST2b8
-    3692603558U,	// VST2b8wb_fixed
-    3759720614U,	// VST2b8wb_register
-    3423135910U,	// VST2d16
-    3490228390U,	// VST2d16wb_fixed
-    3557345446U,	// VST2d16wb_register
-    3423660198U,	// VST2d32
-    3490752678U,	// VST2d32wb_fixed
-    3557869734U,	// VST2d32wb_register
-    3424184486U,	// VST2d8
-    3491276966U,	// VST2d8wb_fixed
-    3558394022U,	// VST2d8wb_register
-    2886264998U,	// VST2q16
+    2846665035U,	// VST2LNq32_UPD
+    3691571531U,	// VST2b16
+    3758664011U,	// VST2b16wb_fixed
+    3825781067U,	// VST2b16wb_register
+    3692095819U,	// VST2b32
+    3759188299U,	// VST2b32wb_fixed
+    3826305355U,	// VST2b32wb_register
+    3692620107U,	// VST2b8
+    3759712587U,	// VST2b8wb_fixed
+    3826829643U,	// VST2b8wb_register
+    3490244939U,	// VST2d16
+    3557337419U,	// VST2d16wb_fixed
+    3624454475U,	// VST2d16wb_register
+    3490769227U,	// VST2d32
+    3557861707U,	// VST2d32wb_fixed
+    3624978763U,	// VST2d32wb_register
+    3491293515U,	// VST2d8
+    3558385995U,	// VST2d8wb_fixed
+    3625503051U,	// VST2d8wb_register
+    2953374027U,	// VST2q16
     0U,	// VST2q16Pseudo
     0U,	// VST2q16PseudoWB_fixed
     0U,	// VST2q16PseudoWB_register
-    2953357478U,	// VST2q16wb_fixed
-    3020474534U,	// VST2q16wb_register
-    2886789286U,	// VST2q32
+    3020466507U,	// VST2q16wb_fixed
+    3087583563U,	// VST2q16wb_register
+    2953898315U,	// VST2q32
     0U,	// VST2q32Pseudo
     0U,	// VST2q32PseudoWB_fixed
     0U,	// VST2q32PseudoWB_register
-    2953881766U,	// VST2q32wb_fixed
-    3020998822U,	// VST2q32wb_register
-    2887313574U,	// VST2q8
+    3020990795U,	// VST2q32wb_fixed
+    3088107851U,	// VST2q32wb_register
+    2954422603U,	// VST2q8
     0U,	// VST2q8Pseudo
     0U,	// VST2q8PseudoWB_fixed
     0U,	// VST2q8PseudoWB_register
-    2954406054U,	// VST2q8wb_fixed
-    3021523110U,	// VST2q8wb_register
-    696363190U,	// VST3LNd16
+    3021515083U,	// VST2q8wb_fixed
+    3088632139U,	// VST2q8wb_register
+    698485088U,	// VST3LNd16
     0U,	// VST3LNd16Pseudo
     0U,	// VST3LNd16Pseudo_UPD
-    2776950966U,	// VST3LNd16_UPD
-    696887478U,	// VST3LNd32
+    2846165344U,	// VST3LNd16_UPD
+    699009376U,	// VST3LNd32
     0U,	// VST3LNd32Pseudo
     0U,	// VST3LNd32Pseudo_UPD
-    2777475254U,	// VST3LNd32_UPD
-    697411766U,	// VST3LNd8
+    2846689632U,	// VST3LNd32_UPD
+    699533664U,	// VST3LNd8
     0U,	// VST3LNd8Pseudo
     0U,	// VST3LNd8Pseudo_UPD
-    2777999542U,	// VST3LNd8_UPD
-    696363190U,	// VST3LNq16
+    2847213920U,	// VST3LNd8_UPD
+    698485088U,	// VST3LNq16
     0U,	// VST3LNq16Pseudo
     0U,	// VST3LNq16Pseudo_UPD
-    2776950966U,	// VST3LNq16_UPD
-    696887478U,	// VST3LNq32
+    2846165344U,	// VST3LNq16_UPD
+    699009376U,	// VST3LNq32
     0U,	// VST3LNq32Pseudo
     0U,	// VST3LNq32Pseudo_UPD
-    2777475254U,	// VST3LNq32_UPD
-    696305846U,	// VST3d16
+    2846689632U,	// VST3LNq32_UPD
+    698403168U,	// VST3d16
     0U,	// VST3d16Pseudo
     0U,	// VST3d16Pseudo_UPD
-    2776926390U,	// VST3d16_UPD
-    696830134U,	// VST3d32
+    2846140768U,	// VST3d16_UPD
+    698927456U,	// VST3d32
     0U,	// VST3d32Pseudo
     0U,	// VST3d32Pseudo_UPD
-    2777450678U,	// VST3d32_UPD
-    697354422U,	// VST3d8
+    2846665056U,	// VST3d32_UPD
+    699451744U,	// VST3d8
     0U,	// VST3d8Pseudo
     0U,	// VST3d8Pseudo_UPD
-    2777974966U,	// VST3d8_UPD
-    696305846U,	// VST3q16
+    2847189344U,	// VST3d8_UPD
+    698403168U,	// VST3q16
     0U,	// VST3q16Pseudo_UPD
-    2776926390U,	// VST3q16_UPD
+    2846140768U,	// VST3q16_UPD
     0U,	// VST3q16oddPseudo
     0U,	// VST3q16oddPseudo_UPD
-    696830134U,	// VST3q32
+    698927456U,	// VST3q32
     0U,	// VST3q32Pseudo_UPD
-    2777450678U,	// VST3q32_UPD
+    2846665056U,	// VST3q32_UPD
     0U,	// VST3q32oddPseudo
     0U,	// VST3q32oddPseudo_UPD
-    697354422U,	// VST3q8
+    699451744U,	// VST3q8
     0U,	// VST3q8Pseudo_UPD
-    2777974966U,	// VST3q8_UPD
+    2847189344U,	// VST3q8_UPD
     0U,	// VST3q8oddPseudo
     0U,	// VST3q8oddPseudo_UPD
-    696551623U,	// VST4LNd16
+    698657142U,	// VST4LNd16
     0U,	// VST4LNd16Pseudo
     0U,	// VST4LNd16Pseudo_UPD
-    2776934599U,	// VST4LNd16_UPD
-    697075911U,	// VST4LNd32
+    2846148982U,	// VST4LNd16_UPD
+    699181430U,	// VST4LNd32
     0U,	// VST4LNd32Pseudo
     0U,	// VST4LNd32Pseudo_UPD
-    2777458887U,	// VST4LNd32_UPD
-    697600199U,	// VST4LNd8
+    2846673270U,	// VST4LNd32_UPD
+    699705718U,	// VST4LNd8
     0U,	// VST4LNd8Pseudo
     0U,	// VST4LNd8Pseudo_UPD
-    2777983175U,	// VST4LNd8_UPD
-    696551623U,	// VST4LNq16
+    2847197558U,	// VST4LNd8_UPD
+    698657142U,	// VST4LNq16
     0U,	// VST4LNq16Pseudo
     0U,	// VST4LNq16Pseudo_UPD
-    2776934599U,	// VST4LNq16_UPD
-    697075911U,	// VST4LNq32
+    2846148982U,	// VST4LNq16_UPD
+    699181430U,	// VST4LNq32
     0U,	// VST4LNq32Pseudo
     0U,	// VST4LNq32Pseudo_UPD
-    2777458887U,	// VST4LNq32_UPD
-    696363207U,	// VST4d16
+    2846673270U,	// VST4LNq32_UPD
+    698485110U,	// VST4d16
     0U,	// VST4d16Pseudo
     0U,	// VST4d16Pseudo_UPD
-    2776950983U,	// VST4d16_UPD
-    696887495U,	// VST4d32
+    2846165366U,	// VST4d16_UPD
+    699009398U,	// VST4d32
     0U,	// VST4d32Pseudo
     0U,	// VST4d32Pseudo_UPD
-    2777475271U,	// VST4d32_UPD
-    697411783U,	// VST4d8
+    2846689654U,	// VST4d32_UPD
+    699533686U,	// VST4d8
     0U,	// VST4d8Pseudo
     0U,	// VST4d8Pseudo_UPD
-    2777999559U,	// VST4d8_UPD
-    696363207U,	// VST4q16
+    2847213942U,	// VST4d8_UPD
+    698485110U,	// VST4q16
     0U,	// VST4q16Pseudo_UPD
-    2776950983U,	// VST4q16_UPD
+    2846165366U,	// VST4q16_UPD
     0U,	// VST4q16oddPseudo
     0U,	// VST4q16oddPseudo_UPD
-    696887495U,	// VST4q32
+    699009398U,	// VST4q32
     0U,	// VST4q32Pseudo_UPD
-    2777475271U,	// VST4q32_UPD
+    2846689654U,	// VST4q32_UPD
     0U,	// VST4q32oddPseudo
     0U,	// VST4q32oddPseudo_UPD
-    697411783U,	// VST4q8
+    699533686U,	// VST4q8
     0U,	// VST4q8Pseudo_UPD
-    2777999559U,	// VST4q8_UPD
+    2847213942U,	// VST4q8_UPD
     0U,	// VST4q8oddPseudo
     0U,	// VST4q8oddPseudo_UPD
-    740322034U,	// VSTMDDB_UPD
-    2189854U,	// VSTMDIA
-    740321822U,	// VSTMDIA_UPD
+    740322245U,	// VSTMDDB_UPD
+    2206449U,	// VSTMDIA
+    740322033U,	// VSTMDIA_UPD
     0U,	// VSTMQIA
-    740322034U,	// VSTMSDB_UPD
-    2189854U,	// VSTMSIA
-    740321822U,	// VSTMSIA_UPD
-    2158795U,	// VSTRD
-    585931U,	// VSTRH
-    2158795U,	// VSTRS
-    2308468939U,	// VSTR_FPCXTNS_off
-    2375610571U,	// VSTR_FPCXTNS_post
-    2442719435U,	// VSTR_FPCXTNS_pre
-    2308993227U,	// VSTR_FPCXTS_off
-    2376134859U,	// VSTR_FPCXTS_post
-    2443243723U,	// VSTR_FPCXTS_pre
-    2309517515U,	// VSTR_FPSCR_NZCVQC_off
-    2376659147U,	// VSTR_FPSCR_NZCVQC_post
-    2443768011U,	// VSTR_FPSCR_NZCVQC_pre
-    2310041803U,	// VSTR_FPSCR_off
-    2377183435U,	// VSTR_FPSCR_post
-    2444292299U,	// VSTR_FPSCR_pre
-    2511925451U,	// VSTR_P0_off
-    1236840651U,	// VSTR_P0_post
-    2579017931U,	// VSTR_P0_pre
-    2311090379U,	// VSTR_VPR_off
-    2378232011U,	// VSTR_VPR_post
-    2445340875U,	// VSTR_VPR_pre
-    1011411934U,	// VSUBD
-    5303262U,	// VSUBH
-    758181759U,	// VSUBHNv2i32
-    11071359U,	// VSUBHNv4i16
-    11595647U,	// VSUBHNv8i8
-    8449619U,	// VSUBLsv2i64
-    7925331U,	// VSUBLsv4i32
-    8973907U,	// VSUBLsv8i16
-    10022483U,	// VSUBLuv2i64
-    9498195U,	// VSUBLuv4i32
-    10546771U,	// VSUBLuv8i16
-    5827550U,	// VSUBS
-    8450843U,	// VSUBWsv2i64
-    7926555U,	// VSUBWsv4i32
-    8975131U,	// VSUBWsv8i16
-    10023707U,	// VSUBWuv2i64
-    9499419U,	// VSUBWuv4i32
-    10547995U,	// VSUBWuv8i16
-    5827550U,	// VSUBfd
-    5827550U,	// VSUBfq
-    5303262U,	// VSUBhd
-    5303262U,	// VSUBhq
-    12119006U,	// VSUBv16i8
-    758180830U,	// VSUBv1i64
-    11070430U,	// VSUBv2i32
-    758180830U,	// VSUBv2i64
-    11594718U,	// VSUBv4i16
-    11070430U,	// VSUBv4i32
-    11594718U,	// VSUBv8i16
-    12119006U,	// VSUBv8i8
-    2142287U,	// VSWPd
-    2142287U,	// VSWPq
-    1633870U,	// VTBL1
-    1633870U,	// VTBL2
-    1633870U,	// VTBL3
+    740322245U,	// VSTMSDB_UPD
+    2206449U,	// VSTMSIA
+    740322033U,	// VSTMSIA_UPD
+    2159006U,	// VSTRD
+    586142U,	// VSTRH
+    2159006U,	// VSTRS
+    2444784030U,	// VSTR_FPCXTNS_off
+    2511925662U,	// VSTR_FPCXTNS_post
+    2579034526U,	// VSTR_FPCXTNS_pre
+    2445308318U,	// VSTR_FPCXTS_off
+    2512449950U,	// VSTR_FPCXTS_post
+    2579558814U,	// VSTR_FPCXTS_pre
+    2445832606U,	// VSTR_FPSCR_NZCVQC_off
+    2512974238U,	// VSTR_FPSCR_NZCVQC_post
+    2580083102U,	// VSTR_FPSCR_NZCVQC_pre
+    2446356894U,	// VSTR_FPSCR_off
+    2513498526U,	// VSTR_FPSCR_post
+    2580607390U,	// VSTR_FPSCR_pre
+    2648240542U,	// VSTR_P0_off
+    1507373470U,	// VSTR_P0_post
+    2715333022U,	// VSTR_P0_pre
+    2447405470U,	// VSTR_VPR_off
+    2514547102U,	// VSTR_VPR_post
+    2581655966U,	// VSTR_VPR_pre
+    1080093873U,	// VSUBD
+    6876337U,	// VSUBH
+    760279122U,	// VSUBHNv2i32
+    13168722U,	// VSUBHNv4i16
+    13693010U,	// VSUBHNv8i8
+    10546982U,	// VSUBLsv2i64
+    10022694U,	// VSUBLsv4i32
+    11071270U,	// VSUBLsv8i16
+    12119846U,	// VSUBLuv2i64
+    11595558U,	// VSUBLuv4i32
+    12644134U,	// VSUBLuv8i16
+    7400625U,	// VSUBS
+    10548206U,	// VSUBWsv2i64
+    10023918U,	// VSUBWsv4i32
+    11072494U,	// VSUBWsv8i16
+    12121070U,	// VSUBWuv2i64
+    11596782U,	// VSUBWuv4i32
+    12645358U,	// VSUBWuv8i16
+    7400625U,	// VSUBfd
+    7400625U,	// VSUBfq
+    6876337U,	// VSUBhd
+    6876337U,	// VSUBhq
+    14216369U,	// VSUBv16i8
+    760278193U,	// VSUBv1i64
+    13167793U,	// VSUBv2i32
+    760278193U,	// VSUBv2i64
+    13692081U,	// VSUBv4i16
+    13167793U,	// VSUBv4i32
+    13692081U,	// VSUBv8i16
+    14216369U,	// VSUBv8i8
+    808019649U,	// VSUDOTDI
+    808019649U,	// VSUDOTQI
+    2142498U,	// VSWPd
+    2142498U,	// VSWPq
+    1634081U,	// VTBL1
+    1634081U,	// VTBL2
+    1634081U,	// VTBL3
     0U,	// VTBL3Pseudo
-    1633870U,	// VTBL4
+    1634081U,	// VTBL4
     0U,	// VTBL4Pseudo
-    1618888U,	// VTBX1
-    1618888U,	// VTBX2
-    1618888U,	// VTBX3
+    1619099U,	// VTBX1
+    1619099U,	// VTBX2
+    1619099U,	// VTBX3
     0U,	// VTBX3Pseudo
-    1618888U,	// VTBX4
+    1619099U,	// VTBX4
     0U,	// VTBX4Pseudo
-    34665070U,	// VTOSHD
-    1022947950U,	// VTOSHH
-    35189358U,	// VTOSHS
-    1635283152U,	// VTOSIRD
-    1646293200U,	// VTOSIRH
-    1627418832U,	// VTOSIRS
-    1635283566U,	// VTOSIZD
-    1646293614U,	// VTOSIZH
-    1627419246U,	// VTOSIZS
-    1031336558U,	// VTOSLD
-    1042346606U,	// VTOSLH
-    1023472238U,	// VTOSLS
-    36237934U,	// VTOUHD
-    1023996526U,	// VTOUHH
-    36762222U,	// VTOUHS
-    1647866064U,	// VTOUIRD
-    1648390352U,	// VTOUIRH
-    1628467408U,	// VTOUIRS
-    1647866478U,	// VTOUIZD
-    1648390766U,	// VTOUIZH
-    1628467822U,	// VTOUIZS
-    1043919470U,	// VTOULD
-    1044443758U,	// VTOULH
-    1024520814U,	// VTOULS
-    569285U,	// VTRNd16
-    1093573U,	// VTRNd32
-    1617861U,	// VTRNd8
-    569285U,	// VTRNq16
-    1093573U,	// VTRNq32
-    1617861U,	// VTRNq8
-    1634883U,	// VTSTv16i8
-    1110595U,	// VTSTv2i32
-    586307U,	// VTSTv4i16
-    1110595U,	// VTSTv4i32
-    586307U,	// VTSTv8i16
-    1634883U,	// VTSTv8i8
-    2687141459U,	// VUDOTD
-    2687141459U,	// VUDOTDI
-    2687141459U,	// VUDOTQ
-    2687141459U,	// VUDOTQI
-    38335086U,	// VUHTOD
-    1020850798U,	// VUHTOH
-    38859374U,	// VUHTOS
-    1649963630U,	// VUITOD
-    1650487918U,	// VUITOH
-    1626370670U,	// VUITOS
-    1046016622U,	// VULTOD
-    1046540910U,	// VULTOH
-    1022423662U,	// VULTOS
-    569428U,	// VUZPd16
-    1618004U,	// VUZPd8
-    569428U,	// VUZPq16
-    1093716U,	// VUZPq32
-    1618004U,	// VUZPq8
-    569355U,	// VZIPd16
-    1617931U,	// VZIPd8
-    569355U,	// VZIPq16
-    1093643U,	// VZIPq32
-    1617931U,	// VZIPq8
-    2189805U,	// sysLDMDA
-    740321773U,	// sysLDMDA_UPD
-    2190060U,	// sysLDMDB
-    740322028U,	// sysLDMDB_UPD
-    2191178U,	// sysLDMIA
-    740323146U,	// sysLDMIA_UPD
-    2190079U,	// sysLDMIB
-    740322047U,	// sysLDMIB_UPD
-    2189811U,	// sysSTMDA
-    740321779U,	// sysSTMDA_UPD
-    2190067U,	// sysSTMDB
-    740322035U,	// sysSTMDB_UPD
-    2191213U,	// sysSTMIA
-    740323181U,	// sysSTMIA_UPD
-    2190085U,	// sysSTMIB
-    740322053U,	// sysSTMIB_UPD
-    2108435U,	// t2ADCri
-    40381459U,	// t2ADCrr
-    40438803U,	// t2ADCrs
-    40381527U,	// t2ADDri
-    2159394U,	// t2ADDri12
-    40381527U,	// t2ADDrr
-    40438871U,	// t2ADDrs
-    40381527U,	// t2ADDspImm
-    2159394U,	// t2ADDspImm12
-    40398957U,	// t2ADR
-    2108568U,	// t2ANDri
-    40381592U,	// t2ANDrr
-    40438936U,	// t2ANDrs
-    40382638U,	// t2ASRri
-    40382638U,	// t2ASRrr
-    40463037U,	// t2B
-    2157595U,	// t2BFC
-    2141695U,	// t2BFI
-    2125436U,	// t2BFLi
-    2126951U,	// t2BFLr
-    2125045U,	// t2BFi
-    740902639U,	// t2BFic
-    2126872U,	// t2BFr
-    2108448U,	// t2BICri
-    40381472U,	// t2BICrr
-    40438816U,	// t2BICrs
-    2190865U,	// t2BXJ
-    40463037U,	// t2Bcc
-    807514119U,	// t2CDP
-    807512208U,	// t2CDP2
-    3249163U,	// t2CLREX
-    2619445087U,	// t2CLRM
-    2127034U,	// t2CLZ
-    40398752U,	// t2CMNri
-    40398752U,	// t2CMNzrr
-    40431520U,	// t2CMNzrs
-    40398865U,	// t2CMPri
-    40398865U,	// t2CMPrr
-    40431633U,	// t2CMPrs
-    3229455U,	// t2CPS1p
-    980021537U,	// t2CPS2p
-    941748513U,	// t2CPS3p
-    740902507U,	// t2CRC32B
-    740902515U,	// t2CRC32CB
-    740902607U,	// t2CRC32CH
-    740902722U,	// t2CRC32CW
-    740902599U,	// t2CRC32H
-    740902714U,	// t2CRC32W
-    740902641U,	// t2CSEL
-    740902558U,	// t2CSINC
-    740902693U,	// t2CSINV
-    740902592U,	// t2CSNEG
-    2190589U,	// t2DBG
-    3246180U,	// t2DCPS1
-    3246240U,	// t2DCPS2
-    3246256U,	// t2DCPS3
-    740902661U,	// t2DLS
-    3827395374U,	// t2DMB
-    3827395470U,	// t2DSB
-    2109596U,	// t2EORri
-    40382620U,	// t2EORrr
-    40439964U,	// t2EORrs
-    40464852U,	// t2HINT
-    3229484U,	// t2HVC
-    3894504338U,	// t2ISB
-    69226916U,	// t2IT
+    36762433U,	// VTOSHD
+    1092154177U,	// VTOSHH
+    37286721U,	// VTOSHS
+    1033400739U,	// VTOSIRD
+    1044410787U,	// VTOSIRH
+    1025536419U,	// VTOSIRS
+    1033401153U,	// VTOSIZD
+    1044411201U,	// VTOSIZH
+    1025536833U,	// VTOSIZS
+    1100542785U,	// VTOSLD
+    1111552833U,	// VTOSLH
+    1092678465U,	// VTOSLS
+    38335297U,	// VTOUHD
+    1093202753U,	// VTOUHH
+    38859585U,	// VTOUHS
+    1045983651U,	// VTOUIRD
+    1046507939U,	// VTOUIRH
+    1026584995U,	// VTOUIRS
+    1045984065U,	// VTOUIZD
+    1046508353U,	// VTOUIZH
+    1026585409U,	// VTOUIZS
+    1113125697U,	// VTOULD
+    1113649985U,	// VTOULH
+    1093727041U,	// VTOULS
+    569496U,	// VTRNd16
+    1093784U,	// VTRNd32
+    1618072U,	// VTRNd8
+    569496U,	// VTRNq16
+    1093784U,	// VTRNq32
+    1618072U,	// VTRNq8
+    1635094U,	// VTSTv16i8
+    1110806U,	// VTSTv2i32
+    586518U,	// VTSTv4i16
+    1110806U,	// VTSTv4i32
+    586518U,	// VTSTv8i16
+    1635094U,	// VTSTv8i8
+    808019660U,	// VUDOTD
+    808019660U,	// VUDOTDI
+    808019660U,	// VUDOTQ
+    808019660U,	// VUDOTQI
+    40432449U,	// VUHTOD
+    1090057025U,	// VUHTOH
+    40956737U,	// VUHTOS
+    1048081217U,	// VUITOD
+    1048605505U,	// VUITOH
+    1024488257U,	// VUITOS
+    1115222849U,	// VULTOD
+    1115747137U,	// VULTOH
+    1091629889U,	// VULTOS
+    808019638U,	// VUMMLA
+    808019617U,	// VUSDOTD
+    808019617U,	// VUSDOTDI
+    808019617U,	// VUSDOTQ
+    808019617U,	// VUSDOTQI
+    808019594U,	// VUSMMLA
+    569639U,	// VUZPd16
+    1618215U,	// VUZPd8
+    569639U,	// VUZPq16
+    1093927U,	// VUZPq32
+    1618215U,	// VUZPq8
+    569566U,	// VZIPd16
+    1618142U,	// VZIPd8
+    569566U,	// VZIPq16
+    1093854U,	// VZIPq32
+    1618142U,	// VZIPq8
+    2206400U,	// sysLDMDA
+    740321984U,	// sysLDMDA_UPD
+    2206655U,	// sysLDMDB
+    740322239U,	// sysLDMDB_UPD
+    2207773U,	// sysLDMIA
+    740323357U,	// sysLDMIA_UPD
+    2206674U,	// sysLDMIB
+    740322258U,	// sysLDMIB_UPD
+    2206406U,	// sysSTMDA
+    740321990U,	// sysSTMDA_UPD
+    2206662U,	// sysSTMDB
+    740322246U,	// sysSTMDB_UPD
+    2207808U,	// sysSTMIA
+    740323392U,	// sysSTMIA_UPD
+    2206680U,	// sysSTMIB
+    740322264U,	// sysSTMIB_UPD
+    2108646U,	// t2ADCri
+    42478822U,	// t2ADCrr
+    42536166U,	// t2ADCrs
+    42478890U,	// t2ADDri
+    2159605U,	// t2ADDri12
+    42478890U,	// t2ADDrr
+    42536234U,	// t2ADDrs
+    42478890U,	// t2ADDspImm
+    2159605U,	// t2ADDspImm12
+    42496320U,	// t2ADR
+    2108779U,	// t2ANDri
+    42478955U,	// t2ANDrr
+    42536299U,	// t2ANDrs
+    42480001U,	// t2ASRri
+    42480001U,	// t2ASRrr
+    914992016U,	// t2B
+    2157806U,	// t2BFC
+    2141906U,	// t2BFI
+    874540879U,	// t2BFLi
+    874542394U,	// t2BFLr
+    874540488U,	// t2BFi
+    3895035791U,	// t2BFic
+    874542315U,	// t2BFr
+    2108659U,	// t2BICri
+    42478835U,	// t2BICrr
+    42536179U,	// t2BICrs
+    2207460U,	// t2BXJ
+    914992016U,	// t2Bcc
+    1143083226U,	// t2CDP
+    1143081269U,	// t2CDP2
+    3790046U,	// t2CLREX
+    2753679410U,	// t2CLRM
+    2127245U,	// t2CLZ
+    42496115U,	// t2CMNri
+    42496115U,	// t2CMNzrr
+    42528883U,	// t2CMNzrs
+    42496228U,	// t2CMPri
+    42496228U,	// t2CMPrr
+    42528996U,	// t2CMPrs
+    3753903U,	// t2CPS1p
+    1317720564U,	// t2CPS2p
+    1277350388U,	// t2CPS3p
+    740902649U,	// t2CRC32B
+    740902657U,	// t2CRC32CB
+    740902767U,	// t2CRC32CH
+    740902882U,	// t2CRC32CW
+    740902759U,	// t2CRC32H
+    740902874U,	// t2CRC32W
+    740902801U,	// t2CSEL
+    740902700U,	// t2CSINC
+    740902853U,	// t2CSINV
+    740902752U,	// t2CSNEG
+    2207184U,	// t2DBG
+    3787012U,	// t2DCPS1
+    3787077U,	// t2DCPS2
+    3787098U,	// t2DCPS3
+    740902821U,	// t2DLS
+    3961629697U,	// t2DMB
+    3961629793U,	// t2DSB
+    2109807U,	// t2EORri
+    42479983U,	// t2EORrr
+    42537327U,	// t2EORrs
+    42578599U,	// t2HINT
+    3753932U,	// t2HVC
+    4028738661U,	// t2ISB
+    69227127U,	// t2IT
     0U,	// t2Int_eh_sjlj_setjmp
     0U,	// t2Int_eh_sjlj_setjmp_nofp
-    2124265U,	// t2LDA
-    2124474U,	// t2LDAB
-    2126841U,	// t2LDAEX
-    2124785U,	// t2LDAEXB
-    2157748U,	// t2LDAEXD
-    2125271U,	// t2LDAEXH
-    2125071U,	// t2LDAH
-    807448085U,	// t2LDC2L_OFFSET
-    807448085U,	// t2LDC2L_OPTION
-    807448085U,	// t2LDC2L_POST
-    807448085U,	// t2LDC2L_PRE
-    807446646U,	// t2LDC2_OFFSET
-    807446646U,	// t2LDC2_OPTION
-    807446646U,	// t2LDC2_POST
-    807446646U,	// t2LDC2_PRE
-    807448153U,	// t2LDCL_OFFSET
-    807448153U,	// t2LDCL_OPTION
-    807448153U,	// t2LDCL_POST
-    807448153U,	// t2LDCL_PRE
-    807447575U,	// t2LDC_OFFSET
-    807447575U,	// t2LDC_OPTION
-    807447575U,	// t2LDC_POST
-    807447575U,	// t2LDC_PRE
-    2190060U,	// t2LDMDB
-    740322028U,	// t2LDMDB_UPD
-    40464202U,	// t2LDMIA
-    778596170U,	// t2LDMIA_UPD
-    2158956U,	// t2LDRBT
-    2141059U,	// t2LDRB_POST
-    2141059U,	// t2LDRB_PRE
-    40430467U,	// t2LDRBi12
-    2157443U,	// t2LDRBi8
-    40397699U,	// t2LDRBpci
-    40414083U,	// t2LDRBs
-    2149533U,	// t2LDRD_POST
-    2149533U,	// t2LDRD_PRE
-    2141341U,	// t2LDRDi8
-    2159621U,	// t2LDREX
-    2124799U,	// t2LDREXB
-    2157762U,	// t2LDREXD
-    2125285U,	// t2LDREXH
-    2158991U,	// t2LDRHT
-    2141567U,	// t2LDRH_POST
-    2141567U,	// t2LDRH_PRE
-    40430975U,	// t2LDRHi12
-    2157951U,	// t2LDRHi8
-    40398207U,	// t2LDRHpci
-    40414591U,	// t2LDRHs
-    2158968U,	// t2LDRSBT
-    2141078U,	// t2LDRSB_POST
-    2141078U,	// t2LDRSB_PRE
-    40430486U,	// t2LDRSBi12
-    2157462U,	// t2LDRSBi8
-    40397718U,	// t2LDRSBpci
-    40414102U,	// t2LDRSBs
-    2159003U,	// t2LDRSHT
-    2141606U,	// t2LDRSH_POST
-    2141606U,	// t2LDRSH_PRE
-    40431014U,	// t2LDRSHi12
-    2157990U,	// t2LDRSHi8
-    40398246U,	// t2LDRSHpci
-    40414630U,	// t2LDRSHs
-    2159150U,	// t2LDRT
-    2142322U,	// t2LDR_POST
-    2142322U,	// t2LDR_PRE
-    40431730U,	// t2LDRi12
-    2158706U,	// t2LDRi8
-    40398962U,	// t2LDRpci
-    40415346U,	// t2LDRs
-    3229367U,	// t2LE
-    3311287U,	// t2LEUpdate
-    40382237U,	// t2LSLri
-    40382237U,	// t2LSLrr
-    40382645U,	// t2LSRri
-    40382645U,	// t2LSRrr
-    807514217U,	// t2MCR
-    807512213U,	// t2MCR2
-    807456932U,	// t2MCRR
-    807454874U,	// t2MCRR2
-    2140717U,	// t2MLA
-    2142457U,	// t2MLS
-    2159219U,	// t2MOVTi16
-    40407825U,	// t2MOVi
-    2126648U,	// t2MOVi16
-    40407825U,	// t2MOVr
-    40399146U,	// t2MOVsra_flag
-    40399151U,	// t2MOVsrl_flag
-    1344384046U,	// t2MRC
-    1344383099U,	// t2MRC2
-    1411435570U,	// t2MRRC
-    1411434624U,	// t2MRRC2
-    2191654U,	// t2MRS_AR
-    2126118U,	// t2MRS_M
-    2126118U,	// t2MRSbanked
-    2191654U,	// t2MRSsys_AR
-    1478521018U,	// t2MSR_AR
-    1478521018U,	// t2MSR_M
-    1545629882U,	// t2MSRbanked
-    2158381U,	// t2MUL
-    2134001U,	// t2MVNi
-    40407025U,	// t2MVNr
-    40382449U,	// t2MVNs
-    2109377U,	// t2ORNri
-    2109377U,	// t2ORNrr
-    2166721U,	// t2ORNrs
-    2109610U,	// t2ORRri
-    40382634U,	// t2ORRrr
-    40439978U,	// t2ORRrs
-    2142551U,	// t2PKHBT
-    2141095U,	// t2PKHTB
-    3961549607U,	// t2PLDWi12
-    4028658471U,	// t2PLDWi8
-    4095800103U,	// t2PLDWs
-    3961547916U,	// t2PLDi12
-    4028656780U,	// t2PLDi8
-    4162940044U,	// t2PLDpci
-    4095798412U,	// t2PLDs
-    3961548291U,	// t2PLIi12
-    4028657155U,	// t2PLIi8
-    4162940419U,	// t2PLIpci
-    4095798787U,	// t2PLIs
-    2157691U,	// t2QADD
-    2156833U,	// t2QADD16
-    2156936U,	// t2QADD8
-    2159741U,	// t2QASX
-    2157665U,	// t2QDADD
-    2157516U,	// t2QDSUB
-    2159487U,	// t2QSAX
-    2157529U,	// t2QSUB
-    2156795U,	// t2QSUB16
-    2156897U,	// t2QSUB8
-    2126242U,	// t2RBIT
-    40399584U,	// t2REV
-    40397125U,	// t2REV16
-    40398257U,	// t2REVSH
-    2190053U,	// t2RFEDB
-    2190053U,	// t2RFEDBW
-    2189841U,	// t2RFEIA
-    2189841U,	// t2RFEIAW
-    40382624U,	// t2RORri
-    40382624U,	// t2RORrr
-    2135148U,	// t2RRX
-    40381336U,	// t2RSBri
-    2108312U,	// t2RSBrr
-    2165656U,	// t2RSBrs
-    2156840U,	// t2SADD16
-    2156942U,	// t2SADD8
-    2159746U,	// t2SASX
-    2959U,	// t2SB
-    2108430U,	// t2SBCri
-    40381454U,	// t2SBCrr
-    40438798U,	// t2SBCrs
-    2143255U,	// t2SBFX
-    2159332U,	// t2SDIV
-    2158200U,	// t2SEL
-    3229431U,	// t2SETPAN
-    3247372U,	// t2SG
-    2156816U,	// t2SHADD16
-    2156921U,	// t2SHADD8
-    2159728U,	// t2SHASX
-    2159474U,	// t2SHSAX
-    2156778U,	// t2SHSUB16
-    2156882U,	// t2SHSUB8
-    2190378U,	// t2SMC
-    2140875U,	// t2SMLABB
-    2142544U,	// t2SMLABT
-    2141251U,	// t2SMLAD
-    2143181U,	// t2SMLADX
-    2207292U,	// t2SMLAL
-    2206418U,	// t2SMLALBB
-    2208093U,	// t2SMLALBT
-    2206853U,	// t2SMLALD
-    2208731U,	// t2SMLALDX
-    2206637U,	// t2SMLALTB
-    2208335U,	// t2SMLALTT
-    2141088U,	// t2SMLATB
-    2142792U,	// t2SMLATT
-    2141155U,	// t2SMLAWB
-    2142840U,	// t2SMLAWT
-    2141352U,	// t2SMLSD
-    2143211U,	// t2SMLSDX
-    2206864U,	// t2SMLSLD
-    2208739U,	// t2SMLSLDX
-    2140721U,	// t2SMMLA
-    2142306U,	// t2SMMLAR
-    2142455U,	// t2SMMLS
-    2142386U,	// t2SMMLSR
-    2158385U,	// t2SMMUL
-    2158740U,	// t2SMMULR
-    2157641U,	// t2SMUAD
-    2159572U,	// t2SMUADX
-    2157274U,	// t2SMULBB
-    2158949U,	// t2SMULBT
-    2141922U,	// t2SMULL
-    2157493U,	// t2SMULTB
-    2159191U,	// t2SMULTT
-    2157546U,	// t2SMULWB
-    2159231U,	// t2SMULWT
-    2157742U,	// t2SMUSD
-    2159602U,	// t2SMUSDX
-    40987385U,	// t2SRSDB
-    41511673U,	// t2SRSDB_UPD
-    40987173U,	// t2SRSIA
-    41511461U,	// t2SRSIA_UPD
-    2142529U,	// t2SSAT
-    2156854U,	// t2SSAT16
-    2159492U,	// t2SSAX
-    2156802U,	// t2SSUB16
-    2156903U,	// t2SSUB8
-    807448091U,	// t2STC2L_OFFSET
-    807448091U,	// t2STC2L_OPTION
-    807448091U,	// t2STC2L_POST
-    807448091U,	// t2STC2L_PRE
-    807446662U,	// t2STC2_OFFSET
-    807446662U,	// t2STC2_OPTION
-    807446662U,	// t2STC2_POST
-    807446662U,	// t2STC2_PRE
-    807448158U,	// t2STCL_OFFSET
-    807448158U,	// t2STCL_OPTION
-    807448158U,	// t2STCL_POST
-    807448158U,	// t2STCL_PRE
-    807447611U,	// t2STC_OFFSET
-    807447611U,	// t2STC_OPTION
-    807447611U,	// t2STC_POST
-    807447611U,	// t2STC_PRE
-    2125607U,	// t2STL
-    2124578U,	// t2STLB
-    2159615U,	// t2STLEX
-    2157560U,	// t2STLEXB
-    2141371U,	// t2STLEXD
-    2158046U,	// t2STLEXH
-    2125147U,	// t2STLH
-    2190067U,	// t2STMDB
-    740322035U,	// t2STMDB_UPD
-    40464237U,	// t2STMIA
-    778596205U,	// t2STMIA_UPD
-    2158962U,	// t2STRBT
-    740338569U,	// t2STRB_POST
-    740338569U,	// t2STRB_PRE
-    40430473U,	// t2STRBi12
-    2157449U,	// t2STRBi8
-    40414089U,	// t2STRBs
-    740347043U,	// t2STRD_POST
-    740347043U,	// t2STRD_PRE
-    2141347U,	// t2STRDi8
-    2143249U,	// t2STREX
-    2157574U,	// t2STREXB
-    2141385U,	// t2STREXD
-    2158060U,	// t2STREXH
-    2158997U,	// t2STRHT
-    740339077U,	// t2STRH_POST
-    740339077U,	// t2STRH_PRE
-    40430981U,	// t2STRHi12
-    2157957U,	// t2STRHi8
-    40414597U,	// t2STRHs
-    2159161U,	// t2STRT
-    740339916U,	// t2STR_POST
-    740339916U,	// t2STR_PRE
-    40431820U,	// t2STRi12
-    2158796U,	// t2STRi8
-    40415436U,	// t2STRs
-    42037485U,	// t2SUBS_PC_LR
-    40381390U,	// t2SUBri
-    2159388U,	// t2SUBri12
-    40381390U,	// t2SUBrr
-    40438734U,	// t2SUBrs
-    40381390U,	// t2SUBspImm
-    2159388U,	// t2SUBspImm12
-    2140863U,	// t2SXTAB
-    2140364U,	// t2SXTAB16
-    2141477U,	// t2SXTAH
-    40430530U,	// t2SXTB
-    2156764U,	// t2SXTB16
-    40431031U,	// t2SXTH
-    4229982945U,	// t2TBB
-    2125105U,	// t2TBH
-    40398942U,	// t2TEQri
-    40398942U,	// t2TEQrr
-    40431710U,	// t2TEQrs
-    69299100U,	// t2TSB
-    40399428U,	// t2TSTri
-    40399428U,	// t2TSTrr
-    40432196U,	// t2TSTrs
-    2126412U,	// t2TT
-    2124405U,	// t2TTA
-    2126155U,	// t2TTAT
-    2126430U,	// t2TTT
-    2156847U,	// t2UADD16
-    2156948U,	// t2UADD8
-    2159751U,	// t2UASX
-    2143260U,	// t2UBFX
-    3229491U,	// t2UDF
-    2159337U,	// t2UDIV
-    2156824U,	// t2UHADD16
-    2156928U,	// t2UHADD8
-    2159734U,	// t2UHASX
-    2159480U,	// t2UHSAX
-    2156786U,	// t2UHSUB16
-    2156889U,	// t2UHSUB8
-    2207265U,	// t2UMAAL
-    2207298U,	// t2UMLAL
-    2141928U,	// t2UMULL
-    2156832U,	// t2UQADD16
-    2156935U,	// t2UQADD8
-    2159740U,	// t2UQASX
-    2159486U,	// t2UQSAX
-    2156794U,	// t2UQSUB16
-    2156896U,	// t2UQSUB8
-    2156915U,	// t2USAD8
-    2140491U,	// t2USADA8
-    2142534U,	// t2USAT
-    2156861U,	// t2USAT16
-    2159497U,	// t2USAX
-    2156809U,	// t2USUB16
-    2156909U,	// t2USUB8
-    2140869U,	// t2UXTAB
-    2140372U,	// t2UXTAB16
-    2141483U,	// t2UXTAH
-    40430535U,	// t2UXTB
-    2156771U,	// t2UXTB16
-    40431036U,	// t2UXTH
-    740902666U,	// t2WLS
-    2727160851U,	// tADC
-    2157655U,	// tADDhirr
-    713894999U,	// tADDi3
-    2727160919U,	// tADDi8
-    2157655U,	// tADDrSP
-    2157655U,	// tADDrSPi
-    713894999U,	// tADDrr
-    2157655U,	// tADDspi
-    2157655U,	// tADDspr
-    2125933U,	// tADR
-    2727160984U,	// tAND
-    713896110U,	// tASRri
-    2727162030U,	// tASRrr
-    2190013U,	// tB
-    2727160864U,	// tBIC
-    3229471U,	// tBKPT
-    673287760U,	// tBL
-    673288472U,	// tBLXNSr
-    673289315U,	// tBLXi
-    673289315U,	// tBLXr
-    2192317U,	// tBX
-    2191635U,	// tBXNS
-    2190013U,	// tBcc
-    740902751U,	// tCBNZ
-    740902746U,	// tCBZ
-    2125728U,	// tCMNz
-    2125841U,	// tCMPhir
-    2125841U,	// tCMPi8
-    2125841U,	// tCMPr
-    939651361U,	// tCPS
-    2727162012U,	// tEOR
-    2191828U,	// tHINT
-    3229466U,	// tHLT
+    2124476U,	// t2LDA
+    2124685U,	// t2LDAB
+    2127052U,	// t2LDAEX
+    2124996U,	// t2LDAEXB
+    2157959U,	// t2LDAEXD
+    2125482U,	// t2LDAEXH
+    2125282U,	// t2LDAH
+    1142992616U,	// t2LDC2L_OFFSET
+    1142992616U,	// t2LDC2L_OPTION
+    1142992616U,	// t2LDC2L_POST
+    1142992616U,	// t2LDC2L_PRE
+    1142991131U,	// t2LDC2_OFFSET
+    1142991131U,	// t2LDC2_OPTION
+    1142991131U,	// t2LDC2_POST
+    1142991131U,	// t2LDC2_PRE
+    1142992684U,	// t2LDCL_OFFSET
+    1142992684U,	// t2LDCL_OPTION
+    1142992684U,	// t2LDCL_POST
+    1142992684U,	// t2LDCL_PRE
+    1142992106U,	// t2LDC_OFFSET
+    1142992106U,	// t2LDC_OPTION
+    1142992106U,	// t2LDC_POST
+    1142992106U,	// t2LDC_PRE
+    2206655U,	// t2LDMDB
+    740322239U,	// t2LDMDB_UPD
+    42577949U,	// t2LDMIA
+    780693533U,	// t2LDMIA_UPD
+    2159167U,	// t2LDRBT
+    2141270U,	// t2LDRB_POST
+    2141270U,	// t2LDRB_PRE
+    42527830U,	// t2LDRBi12
+    2157654U,	// t2LDRBi8
+    42495062U,	// t2LDRBpci
+    42511446U,	// t2LDRBs
+    2149744U,	// t2LDRD_POST
+    2149744U,	// t2LDRD_PRE
+    2141552U,	// t2LDRDi8
+    2159832U,	// t2LDREX
+    2125010U,	// t2LDREXB
+    2157973U,	// t2LDREXD
+    2125496U,	// t2LDREXH
+    2159202U,	// t2LDRHT
+    2141778U,	// t2LDRH_POST
+    2141778U,	// t2LDRH_PRE
+    42528338U,	// t2LDRHi12
+    2158162U,	// t2LDRHi8
+    42495570U,	// t2LDRHpci
+    42511954U,	// t2LDRHs
+    2159179U,	// t2LDRSBT
+    2141289U,	// t2LDRSB_POST
+    2141289U,	// t2LDRSB_PRE
+    42527849U,	// t2LDRSBi12
+    2157673U,	// t2LDRSBi8
+    42495081U,	// t2LDRSBpci
+    42511465U,	// t2LDRSBs
+    2159214U,	// t2LDRSHT
+    2141817U,	// t2LDRSH_POST
+    2141817U,	// t2LDRSH_PRE
+    42528377U,	// t2LDRSHi12
+    2158201U,	// t2LDRSHi8
+    42495609U,	// t2LDRSHpci
+    42511993U,	// t2LDRSHs
+    2159361U,	// t2LDRT
+    2142533U,	// t2LDR_POST
+    2142533U,	// t2LDR_PRE
+    42529093U,	// t2LDRi12
+    2158917U,	// t2LDRi8
+    42496325U,	// t2LDRpci
+    42512709U,	// t2LDRs
+    3770199U,	// t2LE
+    3762007U,	// t2LEUpdate
+    42479600U,	// t2LSLri
+    42479600U,	// t2LSLrr
+    42480008U,	// t2LSRri
+    42480008U,	// t2LSRrr
+    1143083324U,	// t2MCR
+    1143081274U,	// t2MCR2
+    1143001463U,	// t2MCRR
+    1142999359U,	// t2MCRR2
+    2140928U,	// t2MLA
+    2142668U,	// t2MLS
+    2159430U,	// t2MOVTi16
+    42505188U,	// t2MOVi
+    2126859U,	// t2MOVi16
+    42505188U,	// t2MOVr
+    42496509U,	// t2MOVsra_flag
+    42496514U,	// t2MOVsrl_flag
+    941755649U,	// t2MRC
+    941754656U,	// t2MRC2
+    1612762373U,	// t2MRRC
+    1612761381U,	// t2MRRC2
+    2208249U,	// t2MRS_AR
+    2126329U,	// t2MRS_M
+    2126329U,	// t2MRSbanked
+    2208249U,	// t2MRSsys_AR
+    1679847821U,	// t2MSR_AR
+    1679847821U,	// t2MSR_M
+    1746956685U,	// t2MSRbanked
+    2158592U,	// t2MUL
+    2134212U,	// t2MVNi
+    42504388U,	// t2MVNr
+    42479812U,	// t2MVNs
+    2109588U,	// t2ORNri
+    2109588U,	// t2ORNrr
+    2166932U,	// t2ORNrs
+    2109821U,	// t2ORRri
+    42479997U,	// t2ORRrr
+    42537341U,	// t2ORRrs
+    2142762U,	// t2PKHBT
+    2141306U,	// t2PKHTB
+    4095767546U,	// t2PLDWi12
+    4162876410U,	// t2PLDWi8
+    4230018042U,	// t2PLDWs
+    4095765855U,	// t2PLDi12
+    4162874719U,	// t2PLDi8
+    2207071U,	// t2PLDpci
+    4230016351U,	// t2PLDs
+    4095766230U,	// t2PLIi12
+    4162875094U,	// t2PLIi8
+    2207446U,	// t2PLIpci
+    4230016726U,	// t2PLIs
+    2157902U,	// t2QADD
+    2157008U,	// t2QADD16
+    2157111U,	// t2QADD8
+    2159952U,	// t2QASX
+    2157876U,	// t2QDADD
+    2157727U,	// t2QDSUB
+    2159698U,	// t2QSAX
+    2157740U,	// t2QSUB
+    2156970U,	// t2QSUB16
+    2157072U,	// t2QSUB8
+    2126453U,	// t2RBIT
+    42496947U,	// t2REV
+    42494452U,	// t2REV16
+    42495620U,	// t2REVSH
+    2206648U,	// t2RFEDB
+    2206648U,	// t2RFEDBW
+    2206436U,	// t2RFEIA
+    2206436U,	// t2RFEIAW
+    42479987U,	// t2RORri
+    42479987U,	// t2RORrr
+    2135359U,	// t2RRX
+    42478699U,	// t2RSBri
+    2108523U,	// t2RSBrr
+    2165867U,	// t2RSBrs
+    2157015U,	// t2SADD16
+    2157117U,	// t2SADD8
+    2159957U,	// t2SASX
+    3170U,	// t2SB
+    2108641U,	// t2SBCri
+    42478817U,	// t2SBCrr
+    42536161U,	// t2SBCrs
+    2143466U,	// t2SBFX
+    2159543U,	// t2SDIV
+    2158411U,	// t2SEL
+    3753879U,	// t2SETPAN
+    3788255U,	// t2SG
+    2156991U,	// t2SHADD16
+    2157096U,	// t2SHADD8
+    2159939U,	// t2SHASX
+    2159685U,	// t2SHSAX
+    2156953U,	// t2SHSUB16
+    2157057U,	// t2SHSUB8
+    2206973U,	// t2SMC
+    2141086U,	// t2SMLABB
+    2142755U,	// t2SMLABT
+    2141462U,	// t2SMLAD
+    2143392U,	// t2SMLADX
+    2232079U,	// t2SMLAL
+    2231205U,	// t2SMLALBB
+    2232880U,	// t2SMLALBT
+    2231640U,	// t2SMLALD
+    2233518U,	// t2SMLALDX
+    2231424U,	// t2SMLALTB
+    2233122U,	// t2SMLALTT
+    2141299U,	// t2SMLATB
+    2143003U,	// t2SMLATT
+    2141366U,	// t2SMLAWB
+    2143051U,	// t2SMLAWT
+    2141563U,	// t2SMLSD
+    2143422U,	// t2SMLSDX
+    2231651U,	// t2SMLSLD
+    2233526U,	// t2SMLSLDX
+    2140932U,	// t2SMMLA
+    2142517U,	// t2SMMLAR
+    2142666U,	// t2SMMLS
+    2142597U,	// t2SMMLSR
+    2158596U,	// t2SMMUL
+    2158951U,	// t2SMMULR
+    2157852U,	// t2SMUAD
+    2159783U,	// t2SMUADX
+    2157485U,	// t2SMULBB
+    2159160U,	// t2SMULBT
+    2142133U,	// t2SMULL
+    2157704U,	// t2SMULTB
+    2159402U,	// t2SMULTT
+    2157757U,	// t2SMULWB
+    2159442U,	// t2SMULWT
+    2157953U,	// t2SMUSD
+    2159813U,	// t2SMUSDX
+    43101132U,	// t2SRSDB
+    43625420U,	// t2SRSDB_UPD
+    43100920U,	// t2SRSIA
+    43625208U,	// t2SRSIA_UPD
+    2142740U,	// t2SSAT
+    2157029U,	// t2SSAT16
+    2159703U,	// t2SSAX
+    2156977U,	// t2SSUB16
+    2157078U,	// t2SSUB8
+    1142992622U,	// t2STC2L_OFFSET
+    1142992622U,	// t2STC2L_OPTION
+    1142992622U,	// t2STC2L_POST
+    1142992622U,	// t2STC2L_PRE
+    1142991147U,	// t2STC2_OFFSET
+    1142991147U,	// t2STC2_OPTION
+    1142991147U,	// t2STC2_POST
+    1142991147U,	// t2STC2_PRE
+    1142992689U,	// t2STCL_OFFSET
+    1142992689U,	// t2STCL_OPTION
+    1142992689U,	// t2STCL_POST
+    1142992689U,	// t2STCL_PRE
+    1142992142U,	// t2STC_OFFSET
+    1142992142U,	// t2STC_OPTION
+    1142992142U,	// t2STC_POST
+    1142992142U,	// t2STC_PRE
+    2125818U,	// t2STL
+    2124789U,	// t2STLB
+    2159826U,	// t2STLEX
+    2157771U,	// t2STLEXB
+    2141582U,	// t2STLEXD
+    2158257U,	// t2STLEXH
+    2125358U,	// t2STLH
+    2206662U,	// t2STMDB
+    740322246U,	// t2STMDB_UPD
+    42577984U,	// t2STMIA
+    780693568U,	// t2STMIA_UPD
+    2159173U,	// t2STRBT
+    740338780U,	// t2STRB_POST
+    740338780U,	// t2STRB_PRE
+    42527836U,	// t2STRBi12
+    2157660U,	// t2STRBi8
+    42511452U,	// t2STRBs
+    740347254U,	// t2STRD_POST
+    740347254U,	// t2STRD_PRE
+    2141558U,	// t2STRDi8
+    2143460U,	// t2STREX
+    2157785U,	// t2STREXB
+    2141596U,	// t2STREXD
+    2158271U,	// t2STREXH
+    2159208U,	// t2STRHT
+    740339288U,	// t2STRH_POST
+    740339288U,	// t2STRH_PRE
+    42528344U,	// t2STRHi12
+    2158168U,	// t2STRHi8
+    42511960U,	// t2STRHs
+    2159372U,	// t2STRT
+    740340127U,	// t2STR_POST
+    740340127U,	// t2STR_PRE
+    42529183U,	// t2STRi12
+    2159007U,	// t2STRi8
+    42512799U,	// t2STRs
+    44151232U,	// t2SUBS_PC_LR
+    42478753U,	// t2SUBri
+    2159599U,	// t2SUBri12
+    42478753U,	// t2SUBrr
+    42536097U,	// t2SUBrs
+    42478753U,	// t2SUBspImm
+    2159599U,	// t2SUBspImm12
+    2141074U,	// t2SXTAB
+    2140539U,	// t2SXTAB16
+    2141688U,	// t2SXTAH
+    42527893U,	// t2SXTB
+    2156939U,	// t2SXTB16
+    42528394U,	// t2SXTH
+    69233588U,	// t2TBB
+    136343044U,	// t2TBH
+    42496305U,	// t2TEQri
+    42496305U,	// t2TEQrr
+    42529073U,	// t2TEQrs
+    203533423U,	// t2TSB
+    42496791U,	// t2TSTri
+    42496791U,	// t2TSTrr
+    42529559U,	// t2TSTrs
+    2126623U,	// t2TT
+    2124616U,	// t2TTA
+    2126366U,	// t2TTAT
+    2126641U,	// t2TTT
+    2157022U,	// t2UADD16
+    2157123U,	// t2UADD8
+    2159962U,	// t2UASX
+    2143471U,	// t2UBFX
+    3753939U,	// t2UDF
+    2159548U,	// t2UDIV
+    2156999U,	// t2UHADD16
+    2157103U,	// t2UHADD8
+    2159945U,	// t2UHASX
+    2159691U,	// t2UHSAX
+    2156961U,	// t2UHSUB16
+    2157064U,	// t2UHSUB8
+    2232052U,	// t2UMAAL
+    2232085U,	// t2UMLAL
+    2142139U,	// t2UMULL
+    2157007U,	// t2UQADD16
+    2157110U,	// t2UQADD8
+    2159951U,	// t2UQASX
+    2159697U,	// t2UQSAX
+    2156969U,	// t2UQSUB16
+    2157071U,	// t2UQSUB8
+    2157090U,	// t2USAD8
+    2140666U,	// t2USADA8
+    2142745U,	// t2USAT
+    2157036U,	// t2USAT16
+    2159708U,	// t2USAX
+    2156984U,	// t2USUB16
+    2157084U,	// t2USUB8
+    2141080U,	// t2UXTAB
+    2140547U,	// t2UXTAB16
+    2141694U,	// t2UXTAH
+    42527898U,	// t2UXTB
+    2156946U,	// t2UXTB16
+    42528399U,	// t2UXTH
+    740902826U,	// t2WLS
+    850218214U,	// tADC
+    2157866U,	// tADDhirr
+    716000554U,	// tADDi3
+    850218282U,	// tADDi8
+    2157866U,	// tADDrSP
+    2157866U,	// tADDrSPi
+    716000554U,	// tADDrr
+    2157866U,	// tADDspi
+    2157866U,	// tADDspr
+    2126144U,	// tADR
+    850218347U,	// tAND
+    716001665U,	// tASRri
+    850219393U,	// tASRrr
+    874621840U,	// tB
+    850218227U,	// tBIC
+    3753919U,	// tBKPT
+    270651171U,	// tBL
+    673305067U,	// tBLXNSr
+    270652726U,	// tBLXi
+    673305910U,	// tBLXr
+    2208912U,	// tBX
+    2208230U,	// tBXNS
+    874621840U,	// tBcc
+    3895019519U,	// tCBNZ
+    3895019514U,	// tCBZ
+    2125939U,	// tCMNz
+    2126052U,	// tCMPhir
+    2126052U,	// tCMPi8
+    2126052U,	// tCMPr
+    1275253236U,	// tCPS
+    850219375U,	// tEOR
+    2208423U,	// tHINT
+    3753914U,	// tHLT
     0U,	// tInt_WIN_eh_sjlj_longjmp
     0U,	// tInt_eh_sjlj_longjmp
     0U,	// tInt_eh_sjlj_setjmp
-    2191178U,	// tLDMIA
-    2157443U,	// tLDRBi
-    2157443U,	// tLDRBr
-    2157951U,	// tLDRHi
-    2157951U,	// tLDRHr
-    2157462U,	// tLDRSB
-    2157990U,	// tLDRSH
-    2158706U,	// tLDRi
-    2125938U,	// tLDRpci
-    2158706U,	// tLDRr
-    2158706U,	// tLDRspi
-    713895709U,	// tLSLri
-    2727161629U,	// tLSLrr
-    713896117U,	// tLSRri
-    2727162037U,	// tLSRrr
-    740902676U,	// tMOVSr
-    1653945105U,	// tMOVi8
-    2126609U,	// tMOVr
-    713895725U,	// tMUL
-    1653944305U,	// tMVN
-    2727162026U,	// tORR
+    2207773U,	// tLDMIA
+    2157654U,	// tLDRBi
+    2157654U,	// tLDRBr
+    2158162U,	// tLDRHi
+    2158162U,	// tLDRHr
+    2157673U,	// tLDRSB
+    2158201U,	// tLDRSH
+    2158917U,	// tLDRi
+    2126149U,	// tLDRpci
+    2158917U,	// tLDRr
+    2158917U,	// tLDRspi
+    716001264U,	// tLSLri
+    850218992U,	// tLSLrr
+    716001672U,	// tLSRri
+    850219400U,	// tLSRrr
+    740902836U,	// tMOVSr
+    1052070884U,	// tMOVi8
+    2126820U,	// tMOVr
+    716001280U,	// tMUL
+    1052070084U,	// tMVN
+    850219389U,	// tORR
     0U,	// tPICADD
-    2619445269U,	// tPOP
-    2619444652U,	// tPUSH
-    2126560U,	// tREV
-    2124101U,	// tREV16
-    2125233U,	// tREVSH
-    2727162016U,	// tROR
-    1855269784U,	// tRSB
-    2727160846U,	// tSBC
-    272047U,	// tSETEND
-    740323181U,	// tSTMIA_UPD
-    2157449U,	// tSTRBi
-    2157449U,	// tSTRBr
-    2157957U,	// tSTRHi
-    2157957U,	// tSTRHr
-    2158796U,	// tSTRi
-    2158796U,	// tSTRr
-    2158796U,	// tSTRspi
-    713894862U,	// tSUBi3
-    2727160782U,	// tSUBi8
-    713894862U,	// tSUBrr
-    2157518U,	// tSUBspi
-    2190399U,	// tSVC
-    2124738U,	// tSXTB
-    2125239U,	// tSXTH
-    4098U,	// tTRAP
-    2126404U,	// tTST
-    3229371U,	// tUDF
-    2124743U,	// tUXTB
-    2125244U,	// tUXTH
-    2133U,	// t__brkdiv0
+    2753679592U,	// tPOP
+    2753678975U,	// tPUSH
+    2126771U,	// tREV
+    2124276U,	// tREV16
+    2125444U,	// tREVSH
+    850219379U,	// tROR
+    1991593067U,	// tRSB
+    850218209U,	// tSBC
+    280399U,	// tSETEND
+    740323392U,	// tSTMIA_UPD
+    2157660U,	// tSTRBi
+    2157660U,	// tSTRBr
+    2158168U,	// tSTRHi
+    2158168U,	// tSTRHr
+    2159007U,	// tSTRi
+    2159007U,	// tSTRr
+    2159007U,	// tSTRspi
+    716000417U,	// tSUBi3
+    850218145U,	// tSUBi8
+    716000417U,	// tSUBrr
+    2157729U,	// tSUBspi
+    2206994U,	// tSVC
+    2124949U,	// tSXTB
+    2125450U,	// tSXTH
+    4309U,	// tTRAP
+    2126615U,	// tTST
+    3753819U,	// tUDF
+    2124954U,	// tUXTB
+    2125455U,	// tUXTH
+    2293U,	// t__brkdiv0
   };
 
   static const uint32_t OpInfo1[] = {
@@ -4937,6 +5038,8 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// FENTRY_CALL
     0U,	// PATCHPOINT
     0U,	// LOAD_STACK_GUARD
+    0U,	// PREALLOCATED_SETUP
+    0U,	// PREALLOCATED_ARG
     0U,	// STATEPOINT
     0U,	// LOCAL_ESCAPE
     0U,	// FAULTING_OP
@@ -4972,6 +5075,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// G_PTRTOINT
     0U,	// G_INTTOPTR
     0U,	// G_BITCAST
+    0U,	// G_FREEZE
     0U,	// G_INTRINSIC_TRUNC
     0U,	// G_INTRINSIC_ROUND
     0U,	// G_READCYCLECOUNTER
@@ -5015,6 +5119,8 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// G_SHL
     0U,	// G_LSHR
     0U,	// G_ASHR
+    0U,	// G_FSHL
+    0U,	// G_FSHR
     0U,	// G_ICMP
     0U,	// G_FCMP
     0U,	// G_SELECT
@@ -5030,6 +5136,10 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// G_SMULO
     0U,	// G_UMULH
     0U,	// G_SMULH
+    0U,	// G_UADDSAT
+    0U,	// G_SADDSAT
+    0U,	// G_USUBSAT
+    0U,	// G_SSUBSAT
     0U,	// G_FADD
     0U,	// G_FSUB
     0U,	// G_FMUL
@@ -5060,7 +5170,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// G_FMINIMUM
     0U,	// G_FMAXIMUM
     0U,	// G_PTR_ADD
-    0U,	// G_PTR_MASK
+    0U,	// G_PTRMASK
     0U,	// G_SMIN
     0U,	// G_SMAX
     0U,	// G_UMIN
@@ -5088,6 +5198,13 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// G_BLOCK_ADDR
     0U,	// G_JUMP_TABLE
     0U,	// G_DYN_STACKALLOC
+    0U,	// G_STRICT_FADD
+    0U,	// G_STRICT_FSUB
+    0U,	// G_STRICT_FMUL
+    0U,	// G_STRICT_FDIV
+    0U,	// G_STRICT_FREM
+    0U,	// G_STRICT_FMA
+    0U,	// G_STRICT_FSQRT
     0U,	// G_READ_REGISTER
     0U,	// G_WRITE_REGISTER
     0U,	// ABS
@@ -5130,12 +5247,16 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// LDMIA_RET
     128U,	// LDRBT_POST
     16384U,	// LDRConstPool
+    128U,	// LDRHTii
     0U,	// LDRLIT_ga_abs
     0U,	// LDRLIT_ga_pcrel
     0U,	// LDRLIT_ga_pcrel_ldr
+    128U,	// LDRSBTii
+    128U,	// LDRSHTii
     128U,	// LDRT_POST
     0U,	// LEApcrel
     0U,	// LEApcrelJT
+    0U,	// LOADDUAL
     0U,	// LSLi
     0U,	// LSLr
     0U,	// LSRi
@@ -5177,6 +5298,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// SMLALv5
     0U,	// SMULLv5
     0U,	// SPACE
+    0U,	// STOREDUAL
     128U,	// STRBT_POST
     0U,	// STRBi_preidx
     0U,	// STRBr_preidx
@@ -5474,9 +5596,11 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// tADDframe
     0U,	// tADJCALLSTACKDOWN
     0U,	// tADJCALLSTACKUP
+    0U,	// tBLXNS_CALL
     0U,	// tBL_PUSHLR
     0U,	// tBRIND
     0U,	// tBR_JTr
+    0U,	// tBXNS_RET
     0U,	// tBX_CALL
     0U,	// tBX_RET
     0U,	// tBX_RET_vararg
@@ -5520,6 +5644,13 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// ANDrr
     1572864U,	// ANDrsi
     0U,	// ANDrsr
+    520U,	// BF16VDOTI_VDOTD
+    520U,	// BF16VDOTI_VDOTQ
+    2U,	// BF16VDOTS_VDOTD
+    2U,	// BF16VDOTS_VDOTQ
+    2U,	// BF16_VCVT
+    2U,	// BF16_VCVTB
+    2U,	// BF16_VCVTT
     1280U,	// BFC
     2098560U,	// BFI
     1048576U,	// BICri
@@ -5537,17 +5668,47 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// BX_RET
     2U,	// BX_pred
     2U,	// Bcc
-    66312U,	// CDP
+    2U,	// CDE_CX1
+    16778U,	// CDE_CX1A
+    0U,	// CDE_CX1D
+    524U,	// CDE_CX1DA
+    16768U,	// CDE_CX2
+    524682U,	// CDE_CX2A
+    526U,	// CDE_CX2D
+    2687756U,	// CDE_CX2DA
+    524672U,	// CDE_CX3
+    34079114U,	// CDE_CX3A
+    2687758U,	// CDE_CX3D
+    70320908U,	// CDE_CX3DA
+    2U,	// CDE_VCX1A_fpdp
+    2U,	// CDE_VCX1A_fpsp
+    16778U,	// CDE_VCX1A_vec
+    2U,	// CDE_VCX1_fpdp
+    2U,	// CDE_VCX1_fpsp
+    17802U,	// CDE_VCX1_vec
+    17920U,	// CDE_VCX2A_fpdp
+    17920U,	// CDE_VCX2A_fpsp
+    524682U,	// CDE_VCX2A_vec
+    16768U,	// CDE_VCX2_fpdp
+    16768U,	// CDE_VCX2_fpsp
+    3671434U,	// CDE_VCX2_vec
+    4195840U,	// CDE_VCX3A_fpdp
+    4195840U,	// CDE_VCX3A_fpsp
+    34079114U,	// CDE_VCX3A_vec
+    524672U,	// CDE_VCX3_fpdp
+    524672U,	// CDE_VCX3_fpsp
+    37225866U,	// CDE_VCX3_vec
+    82704U,	// CDP
     0U,	// CDP2
     0U,	// CLREX
     16384U,	// CLZ
-    1536U,	// CMNri
+    1664U,	// CMNri
     16384U,	// CMNzrr
-    1664U,	// CMNzrsi
+    1792U,	// CMNzrsi
     1024U,	// CMNzrsr
-    1536U,	// CMPri
+    1664U,	// CMPri
     16384U,	// CMPrr
-    1664U,	// CMPrsi
+    1792U,	// CMPrsi
     1024U,	// CMPrsr
     0U,	// CPS1p
     2U,	// CPS2p
@@ -5566,16 +5727,16 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     1572864U,	// EORrsi
     0U,	// EORrsr
     0U,	// ERET
-    10U,	// FCONSTD
-    1792U,	// FCONSTH
-    1792U,	// FCONSTS
-    524U,	// FLDMXDB_UPD
-    18304U,	// FLDMXIA
-    524U,	// FLDMXIA_UPD
+    18U,	// FCONSTD
+    1920U,	// FCONSTH
+    1920U,	// FCONSTS
+    532U,	// FLDMXDB_UPD
+    18432U,	// FLDMXIA
+    532U,	// FLDMXIA_UPD
     0U,	// FMSTAT
-    524U,	// FSTMXDB_UPD
-    18304U,	// FSTMXIA
-    524U,	// FSTMXIA_UPD
+    532U,	// FSTMXDB_UPD
+    18432U,	// FSTMXIA
+    532U,	// FSTMXIA_UPD
     2U,	// HINT
     0U,	// HLT
     0U,	// HVC
@@ -5588,92 +5749,92 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     128U,	// LDAEXH
     128U,	// LDAH
     0U,	// LDC2L_OFFSET
-    2048U,	// LDC2L_OPTION
-    2176U,	// LDC2L_POST
+    2176U,	// LDC2L_OPTION
+    2304U,	// LDC2L_POST
     0U,	// LDC2L_PRE
     0U,	// LDC2_OFFSET
-    2048U,	// LDC2_OPTION
-    2176U,	// LDC2_POST
+    2176U,	// LDC2_OPTION
+    2304U,	// LDC2_POST
     0U,	// LDC2_PRE
-    2318U,	// LDCL_OFFSET
-    2623886U,	// LDCL_OPTION
-    3148174U,	// LDCL_POST
-    2574U,	// LDCL_PRE
-    2318U,	// LDC_OFFSET
-    2623886U,	// LDC_OPTION
-    3148174U,	// LDC_POST
-    2574U,	// LDC_PRE
-    18304U,	// LDMDA
-    524U,	// LDMDA_UPD
-    18304U,	// LDMDB
-    524U,	// LDMDB_UPD
-    18304U,	// LDMIA
-    524U,	// LDMIA_UPD
-    18304U,	// LDMIB
-    524U,	// LDMIB_UPD
-    3672448U,	// LDRBT_POST_IMM
-    3672448U,	// LDRBT_POST_REG
-    3672448U,	// LDRB_POST_IMM
-    3672448U,	// LDRB_POST_REG
-    2688U,	// LDRB_PRE_IMM
-    2816U,	// LDRB_PRE_REG
-    2944U,	// LDRBi12
-    3072U,	// LDRBrs
-    4194304U,	// LDRD
-    38273024U,	// LDRD_POST
-    5242880U,	// LDRD_PRE
+    2454U,	// LDCL_OFFSET
+    4721174U,	// LDCL_OPTION
+    5245462U,	// LDCL_POST
+    2710U,	// LDCL_PRE
+    2454U,	// LDC_OFFSET
+    4721174U,	// LDC_OPTION
+    5245462U,	// LDC_POST
+    2710U,	// LDC_PRE
+    18432U,	// LDMDA
+    532U,	// LDMDA_UPD
+    18432U,	// LDMDB
+    532U,	// LDMDB_UPD
+    18432U,	// LDMIA
+    532U,	// LDMIA_UPD
+    18432U,	// LDMIB
+    532U,	// LDMIB_UPD
+    5769728U,	// LDRBT_POST_IMM
+    5769728U,	// LDRBT_POST_REG
+    5769728U,	// LDRB_POST_IMM
+    5769728U,	// LDRB_POST_REG
+    2816U,	// LDRB_PRE_IMM
+    2944U,	// LDRB_PRE_REG
+    3072U,	// LDRBi12
+    3200U,	// LDRBrs
+    6291456U,	// LDRD
+    40370176U,	// LDRD_POST
+    7340032U,	// LDRD_PRE
     128U,	// LDREX
     128U,	// LDREXB
     0U,	// LDREXD
     128U,	// LDREXH
-    3200U,	// LDRH
-    5769600U,	// LDRHTi
-    6293888U,	// LDRHTr
-    6818176U,	// LDRH_POST
-    3328U,	// LDRH_PRE
-    3200U,	// LDRSB
-    5769600U,	// LDRSBTi
-    6293888U,	// LDRSBTr
-    6818176U,	// LDRSB_POST
-    3328U,	// LDRSB_PRE
-    3200U,	// LDRSH
-    5769600U,	// LDRSHTi
-    6293888U,	// LDRSHTr
-    6818176U,	// LDRSH_POST
-    3328U,	// LDRSH_PRE
-    3672448U,	// LDRT_POST_IMM
-    3672448U,	// LDRT_POST_REG
-    3672448U,	// LDR_POST_IMM
-    3672448U,	// LDR_POST_REG
-    2688U,	// LDR_PRE_IMM
-    2816U,	// LDR_PRE_REG
-    2944U,	// LDRcp
-    2944U,	// LDRi12
-    3072U,	// LDRrs
-    74531592U,	// MCR
-    3456U,	// MCR2
-    108086024U,	// MCRR
-    7864704U,	// MCRR2
+    3328U,	// LDRH
+    7866880U,	// LDRHTi
+    8391168U,	// LDRHTr
+    8915456U,	// LDRH_POST
+    3456U,	// LDRH_PRE
+    3328U,	// LDRSB
+    7866880U,	// LDRSBTi
+    8391168U,	// LDRSBTr
+    8915456U,	// LDRSB_POST
+    3456U,	// LDRSB_PRE
+    3328U,	// LDRSH
+    7866880U,	// LDRSHTi
+    8391168U,	// LDRSHTr
+    8915456U,	// LDRSH_POST
+    3456U,	// LDRSH_PRE
+    5769728U,	// LDRT_POST_IMM
+    5769728U,	// LDRT_POST_REG
+    5769728U,	// LDR_POST_IMM
+    5769728U,	// LDR_POST_REG
+    2816U,	// LDR_PRE_IMM
+    2944U,	// LDR_PRE_REG
+    3072U,	// LDRcp
+    3072U,	// LDRi12
+    3200U,	// LDRrs
+    103908112U,	// MCR
+    3584U,	// MCR2
+    137462544U,	// MCRR
+    9437568U,	// MCRR2
     33554432U,	// MLA
     33554432U,	// MLS
     0U,	// MOVPCLR
     17792U,	// MOVTi16
-    1536U,	// MOVi
+    1664U,	// MOVi
     16384U,	// MOVi16
     16384U,	// MOVr
     16384U,	// MOVr_TC
-    1664U,	// MOVsi
+    1792U,	// MOVsi
     1024U,	// MOVsr
-    0U,	// MRC
+    115480U,	// MRC
     0U,	// MRC2
     0U,	// MRRC
     0U,	// MRRC2
-    16U,	// MRS
-    3584U,	// MRSbanked
-    18U,	// MRSsys
-    520U,	// MSR
+    26U,	// MRS
+    3712U,	// MRSbanked
+    28U,	// MRSsys
+    528U,	// MSR
     0U,	// MSRbanked
-    20U,	// MSRi
+    30U,	// MSRi
     0U,	// MUL
     524288U,	// MVE_ASRLi
     524288U,	// MVE_ASRLr
@@ -5687,23 +5848,23 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     524288U,	// MVE_LSLLr
     524288U,	// MVE_LSRL
     17792U,	// MVE_SQRSHR
-    8388608U,	// MVE_SQRSHRL
+    9961472U,	// MVE_SQRSHRL
     17792U,	// MVE_SQSHL
     524288U,	// MVE_SQSHLL
     17792U,	// MVE_SRSHR
     524288U,	// MVE_SRSHRL
     17792U,	// MVE_UQRSHL
-    8388608U,	// MVE_UQRSHLL
+    9961472U,	// MVE_UQRSHLL
     17792U,	// MVE_UQSHL
     524288U,	// MVE_UQSHLL
     17792U,	// MVE_URSHR
     524288U,	// MVE_URSHRL
-    8914304U,	// MVE_VABAVs16
-    8914304U,	// MVE_VABAVs32
-    8914304U,	// MVE_VABAVs8
-    8914304U,	// MVE_VABAVu16
-    8914304U,	// MVE_VABAVu32
-    8914304U,	// MVE_VABAVu8
+    3671424U,	// MVE_VABAVs16
+    3671424U,	// MVE_VABAVs32
+    3671424U,	// MVE_VABAVs8
+    3671424U,	// MVE_VABAVu16
+    3671424U,	// MVE_VABAVu32
+    3671424U,	// MVE_VABAVu8
     0U,	// MVE_VABDf16
     0U,	// MVE_VABDf32
     0U,	// MVE_VABDs16
@@ -5717,8 +5878,8 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     16384U,	// MVE_VABSs16
     16384U,	// MVE_VABSs32
     16384U,	// MVE_VABSs8
-    8914304U,	// MVE_VADC
-    8914304U,	// MVE_VADCI
+    3671424U,	// MVE_VADC
+    3671424U,	// MVE_VADCI
     524288U,	// MVE_VADDLVs32acc
     0U,	// MVE_VADDLVs32no_acc
     524288U,	// MVE_VADDLVu32acc
@@ -5747,8 +5908,8 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// MVE_VADDi8
     0U,	// MVE_VAND
     0U,	// MVE_VBIC
-    3712U,	// MVE_VBICimmi16
-    3712U,	// MVE_VBICimmi32
+    3840U,	// MVE_VBICimmi16
+    3840U,	// MVE_VBICimmi32
     0U,	// MVE_VBRSR16
     0U,	// MVE_VBRSR32
     0U,	// MVE_VBRSR8
@@ -5763,8 +5924,8 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     16384U,	// MVE_VCLZs16
     16384U,	// MVE_VCLZs32
     16384U,	// MVE_VCLZs8
-    42468736U,	// MVE_VCMLAf16
-    42468736U,	// MVE_VCMLAf32
+    37225856U,	// MVE_VCMLAf16
+    37225856U,	// MVE_VCMLAf32
     0U,	// MVE_VCMPf16
     0U,	// MVE_VCMPf16r
     0U,	// MVE_VCMPf32
@@ -5795,58 +5956,58 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     2U,	// MVE_VCTP8
     2U,	// MVE_VCVTf16f32bh
     2U,	// MVE_VCVTf16f32th
-    534U,	// MVE_VCVTf16s16_fix
+    536U,	// MVE_VCVTf16s16_fix
     0U,	// MVE_VCVTf16s16n
-    534U,	// MVE_VCVTf16u16_fix
+    536U,	// MVE_VCVTf16u16_fix
     0U,	// MVE_VCVTf16u16n
-    2U,	// MVE_VCVTf32f16bh
-    2U,	// MVE_VCVTf32f16th
-    534U,	// MVE_VCVTf32s32_fix
+    0U,	// MVE_VCVTf32f16bh
+    0U,	// MVE_VCVTf32f16th
+    536U,	// MVE_VCVTf32s32_fix
     0U,	// MVE_VCVTf32s32n
-    534U,	// MVE_VCVTf32u32_fix
+    536U,	// MVE_VCVTf32u32_fix
     0U,	// MVE_VCVTf32u32n
-    534U,	// MVE_VCVTs16f16_fix
+    536U,	// MVE_VCVTs16f16_fix
     0U,	// MVE_VCVTs16f16a
     0U,	// MVE_VCVTs16f16m
     0U,	// MVE_VCVTs16f16n
     0U,	// MVE_VCVTs16f16p
     0U,	// MVE_VCVTs16f16z
-    534U,	// MVE_VCVTs32f32_fix
+    536U,	// MVE_VCVTs32f32_fix
     0U,	// MVE_VCVTs32f32a
     0U,	// MVE_VCVTs32f32m
     0U,	// MVE_VCVTs32f32n
     0U,	// MVE_VCVTs32f32p
     0U,	// MVE_VCVTs32f32z
-    534U,	// MVE_VCVTu16f16_fix
+    536U,	// MVE_VCVTu16f16_fix
     0U,	// MVE_VCVTu16f16a
     0U,	// MVE_VCVTu16f16m
     0U,	// MVE_VCVTu16f16n
     0U,	// MVE_VCVTu16f16p
     0U,	// MVE_VCVTu16f16z
-    534U,	// MVE_VCVTu32f32_fix
+    536U,	// MVE_VCVTu32f32_fix
     0U,	// MVE_VCVTu32f32a
     0U,	// MVE_VCVTu32f32m
     0U,	// MVE_VCVTu32f32n
     0U,	// MVE_VCVTu32f32p
     0U,	// MVE_VCVTu32f32z
-    8912896U,	// MVE_VDDUPu16
-    8912896U,	// MVE_VDDUPu32
-    8912896U,	// MVE_VDDUPu8
+    3670016U,	// MVE_VDDUPu16
+    3670016U,	// MVE_VDDUPu32
+    3670016U,	// MVE_VDDUPu8
     16384U,	// MVE_VDUP16
     16384U,	// MVE_VDUP32
     16384U,	// MVE_VDUP8
-    42467328U,	// MVE_VDWDUPu16
-    42467328U,	// MVE_VDWDUPu32
-    42467328U,	// MVE_VDWDUPu8
+    37224448U,	// MVE_VDWDUPu16
+    37224448U,	// MVE_VDWDUPu32
+    37224448U,	// MVE_VDWDUPu8
     0U,	// MVE_VEOR
-    8914304U,	// MVE_VFMA_qr_Sf16
-    8914304U,	// MVE_VFMA_qr_Sf32
-    8914304U,	// MVE_VFMA_qr_f16
-    8914304U,	// MVE_VFMA_qr_f32
-    8914304U,	// MVE_VFMAf16
-    8914304U,	// MVE_VFMAf32
-    8914304U,	// MVE_VFMSf16
-    8914304U,	// MVE_VFMSf32
+    3671424U,	// MVE_VFMA_qr_Sf16
+    3671424U,	// MVE_VFMA_qr_Sf32
+    3671424U,	// MVE_VFMA_qr_f16
+    3671424U,	// MVE_VFMA_qr_f32
+    3671424U,	// MVE_VFMAf16
+    3671424U,	// MVE_VFMAf32
+    3671424U,	// MVE_VFMSf16
+    3671424U,	// MVE_VFMSf32
     0U,	// MVE_VHADD_qr_s16
     0U,	// MVE_VHADD_qr_s32
     0U,	// MVE_VHADD_qr_s8
@@ -5874,12 +6035,12 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// MVE_VHSUBu16
     0U,	// MVE_VHSUBu32
     0U,	// MVE_VHSUBu8
-    8912896U,	// MVE_VIDUPu16
-    8912896U,	// MVE_VIDUPu32
-    8912896U,	// MVE_VIDUPu8
-    42467328U,	// MVE_VIWDUPu16
-    42467328U,	// MVE_VIWDUPu32
-    42467328U,	// MVE_VIWDUPu8
+    3670016U,	// MVE_VIDUPu16
+    3670016U,	// MVE_VIDUPu32
+    3670016U,	// MVE_VIDUPu8
+    37224448U,	// MVE_VIWDUPu16
+    37224448U,	// MVE_VIWDUPu32
+    37224448U,	// MVE_VIWDUPu8
     0U,	// MVE_VLD20_16
     0U,	// MVE_VLD20_16_wb
     0U,	// MVE_VLD20_32
@@ -5916,52 +6077,52 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// MVE_VLD43_32_wb
     0U,	// MVE_VLD43_8
     0U,	// MVE_VLD43_8_wb
-    3840U,	// MVE_VLDRBS16
-    100736U,	// MVE_VLDRBS16_post
-    3968U,	// MVE_VLDRBS16_pre
-    4096U,	// MVE_VLDRBS16_rq
-    3840U,	// MVE_VLDRBS32
-    100736U,	// MVE_VLDRBS32_post
-    3968U,	// MVE_VLDRBS32_pre
-    4096U,	// MVE_VLDRBS32_rq
-    3840U,	// MVE_VLDRBU16
-    100736U,	// MVE_VLDRBU16_post
-    3968U,	// MVE_VLDRBU16_pre
-    4096U,	// MVE_VLDRBU16_rq
-    3840U,	// MVE_VLDRBU32
-    100736U,	// MVE_VLDRBU32_post
-    3968U,	// MVE_VLDRBU32_pre
-    4096U,	// MVE_VLDRBU32_rq
-    3840U,	// MVE_VLDRBU8
-    100736U,	// MVE_VLDRBU8_post
-    4224U,	// MVE_VLDRBU8_pre
-    4096U,	// MVE_VLDRBU8_rq
-    3840U,	// MVE_VLDRDU64_qi
-    3968U,	// MVE_VLDRDU64_qi_pre
-    4352U,	// MVE_VLDRDU64_rq
-    4096U,	// MVE_VLDRDU64_rq_u
-    3840U,	// MVE_VLDRHS32
-    100736U,	// MVE_VLDRHS32_post
-    3968U,	// MVE_VLDRHS32_pre
-    4480U,	// MVE_VLDRHS32_rq
-    4096U,	// MVE_VLDRHS32_rq_u
-    3840U,	// MVE_VLDRHU16
-    100736U,	// MVE_VLDRHU16_post
-    4224U,	// MVE_VLDRHU16_pre
-    4480U,	// MVE_VLDRHU16_rq
-    4096U,	// MVE_VLDRHU16_rq_u
-    3840U,	// MVE_VLDRHU32
-    100736U,	// MVE_VLDRHU32_post
-    3968U,	// MVE_VLDRHU32_pre
-    4480U,	// MVE_VLDRHU32_rq
-    4096U,	// MVE_VLDRHU32_rq_u
-    3840U,	// MVE_VLDRWU32
-    100736U,	// MVE_VLDRWU32_post
-    4224U,	// MVE_VLDRWU32_pre
-    3840U,	// MVE_VLDRWU32_qi
-    3968U,	// MVE_VLDRWU32_qi_pre
-    4608U,	// MVE_VLDRWU32_rq
-    4096U,	// MVE_VLDRWU32_rq_u
+    3968U,	// MVE_VLDRBS16
+    133632U,	// MVE_VLDRBS16_post
+    4096U,	// MVE_VLDRBS16_pre
+    4224U,	// MVE_VLDRBS16_rq
+    3968U,	// MVE_VLDRBS32
+    133632U,	// MVE_VLDRBS32_post
+    4096U,	// MVE_VLDRBS32_pre
+    4224U,	// MVE_VLDRBS32_rq
+    3968U,	// MVE_VLDRBU16
+    133632U,	// MVE_VLDRBU16_post
+    4096U,	// MVE_VLDRBU16_pre
+    4224U,	// MVE_VLDRBU16_rq
+    3968U,	// MVE_VLDRBU32
+    133632U,	// MVE_VLDRBU32_post
+    4096U,	// MVE_VLDRBU32_pre
+    4224U,	// MVE_VLDRBU32_rq
+    3968U,	// MVE_VLDRBU8
+    133632U,	// MVE_VLDRBU8_post
+    4352U,	// MVE_VLDRBU8_pre
+    4224U,	// MVE_VLDRBU8_rq
+    3968U,	// MVE_VLDRDU64_qi
+    4096U,	// MVE_VLDRDU64_qi_pre
+    4480U,	// MVE_VLDRDU64_rq
+    4224U,	// MVE_VLDRDU64_rq_u
+    3968U,	// MVE_VLDRHS32
+    133632U,	// MVE_VLDRHS32_post
+    4096U,	// MVE_VLDRHS32_pre
+    4608U,	// MVE_VLDRHS32_rq
+    4224U,	// MVE_VLDRHS32_rq_u
+    3968U,	// MVE_VLDRHU16
+    133632U,	// MVE_VLDRHU16_post
+    4352U,	// MVE_VLDRHU16_pre
+    4608U,	// MVE_VLDRHU16_rq
+    4224U,	// MVE_VLDRHU16_rq_u
+    3968U,	// MVE_VLDRHU32
+    133632U,	// MVE_VLDRHU32_post
+    4096U,	// MVE_VLDRHU32_pre
+    4608U,	// MVE_VLDRHU32_rq
+    4224U,	// MVE_VLDRHU32_rq_u
+    3968U,	// MVE_VLDRWU32
+    133632U,	// MVE_VLDRWU32_post
+    4352U,	// MVE_VLDRWU32_pre
+    3968U,	// MVE_VLDRWU32_qi
+    4096U,	// MVE_VLDRWU32_qi_pre
+    4736U,	// MVE_VLDRWU32_rq
+    4224U,	// MVE_VLDRWU32_rq_u
     17792U,	// MVE_VMAXAVs16
     17792U,	// MVE_VMAXAVs32
     17792U,	// MVE_VMAXAVs8
@@ -6014,15 +6175,15 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// MVE_VMINu16
     0U,	// MVE_VMINu32
     0U,	// MVE_VMINu8
-    8914304U,	// MVE_VMLADAVas16
-    8914304U,	// MVE_VMLADAVas32
-    8914304U,	// MVE_VMLADAVas8
-    8914304U,	// MVE_VMLADAVau16
-    8914304U,	// MVE_VMLADAVau32
-    8914304U,	// MVE_VMLADAVau8
-    8914304U,	// MVE_VMLADAVaxs16
-    8914304U,	// MVE_VMLADAVaxs32
-    8914304U,	// MVE_VMLADAVaxs8
+    3671424U,	// MVE_VMLADAVas16
+    3671424U,	// MVE_VMLADAVas32
+    3671424U,	// MVE_VMLADAVas8
+    3671424U,	// MVE_VMLADAVau16
+    3671424U,	// MVE_VMLADAVau32
+    3671424U,	// MVE_VMLADAVau8
+    3671424U,	// MVE_VMLADAVaxs16
+    3671424U,	// MVE_VMLADAVaxs32
+    3671424U,	// MVE_VMLADAVaxs8
     0U,	// MVE_VMLADAVs16
     0U,	// MVE_VMLADAVs32
     0U,	// MVE_VMLADAVs8
@@ -6044,24 +6205,24 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     33554432U,	// MVE_VMLALDAVu32
     33554432U,	// MVE_VMLALDAVxs16
     33554432U,	// MVE_VMLALDAVxs32
-    8914304U,	// MVE_VMLAS_qr_s16
-    8914304U,	// MVE_VMLAS_qr_s32
-    8914304U,	// MVE_VMLAS_qr_s8
-    8914304U,	// MVE_VMLAS_qr_u16
-    8914304U,	// MVE_VMLAS_qr_u32
-    8914304U,	// MVE_VMLAS_qr_u8
-    8914304U,	// MVE_VMLA_qr_s16
-    8914304U,	// MVE_VMLA_qr_s32
-    8914304U,	// MVE_VMLA_qr_s8
-    8914304U,	// MVE_VMLA_qr_u16
-    8914304U,	// MVE_VMLA_qr_u32
-    8914304U,	// MVE_VMLA_qr_u8
-    8914304U,	// MVE_VMLSDAVas16
-    8914304U,	// MVE_VMLSDAVas32
-    8914304U,	// MVE_VMLSDAVas8
-    8914304U,	// MVE_VMLSDAVaxs16
-    8914304U,	// MVE_VMLSDAVaxs32
-    8914304U,	// MVE_VMLSDAVaxs8
+    3671424U,	// MVE_VMLAS_qr_s16
+    3671424U,	// MVE_VMLAS_qr_s32
+    3671424U,	// MVE_VMLAS_qr_s8
+    3671424U,	// MVE_VMLAS_qr_u16
+    3671424U,	// MVE_VMLAS_qr_u32
+    3671424U,	// MVE_VMLAS_qr_u8
+    3671424U,	// MVE_VMLA_qr_s16
+    3671424U,	// MVE_VMLA_qr_s32
+    3671424U,	// MVE_VMLA_qr_s8
+    3671424U,	// MVE_VMLA_qr_u16
+    3671424U,	// MVE_VMLA_qr_u32
+    3671424U,	// MVE_VMLA_qr_u8
+    3671424U,	// MVE_VMLSDAVas16
+    3671424U,	// MVE_VMLSDAVas32
+    3671424U,	// MVE_VMLSDAVas8
+    3671424U,	// MVE_VMLSDAVaxs16
+    3671424U,	// MVE_VMLSDAVaxs32
+    3671424U,	// MVE_VMLSDAVaxs8
     0U,	// MVE_VMLSDAVs16
     0U,	// MVE_VMLSDAVs32
     0U,	// MVE_VMLSDAVs8
@@ -6088,21 +6249,21 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     17792U,	// MVE_VMOVNi16th
     17792U,	// MVE_VMOVNi32bh
     17792U,	// MVE_VMOVNi32th
-    114688U,	// MVE_VMOV_from_lane_32
-    114688U,	// MVE_VMOV_from_lane_s16
-    114688U,	// MVE_VMOV_from_lane_s8
-    114688U,	// MVE_VMOV_from_lane_u16
-    114688U,	// MVE_VMOV_from_lane_u8
-    9569048U,	// MVE_VMOV_q_rr
-    134217728U,	// MVE_VMOV_rr_q
-    26U,	// MVE_VMOV_to_lane_16
-    26U,	// MVE_VMOV_to_lane_32
-    26U,	// MVE_VMOV_to_lane_8
-    1792U,	// MVE_VMOVimmf32
-    4736U,	// MVE_VMOVimmi16
-    4736U,	// MVE_VMOVimmi32
+    147456U,	// MVE_VMOV_from_lane_32
+    147456U,	// MVE_VMOV_from_lane_s16
+    147456U,	// MVE_VMOV_from_lane_s8
+    147456U,	// MVE_VMOV_from_lane_u16
+    147456U,	// MVE_VMOV_from_lane_u8
+    10650376U,	// MVE_VMOV_q_rr
+    167772160U,	// MVE_VMOV_rr_q
+    32U,	// MVE_VMOV_to_lane_16
+    32U,	// MVE_VMOV_to_lane_32
+    32U,	// MVE_VMOV_to_lane_8
+    1920U,	// MVE_VMOVimmf32
+    4864U,	// MVE_VMOVimmi16
+    4864U,	// MVE_VMOVimmi32
     0U,	// MVE_VMOVimmi64
-    4736U,	// MVE_VMOVimmi8
+    4864U,	// MVE_VMOVimmi8
     0U,	// MVE_VMULHs16
     0U,	// MVE_VMULHs32
     0U,	// MVE_VMULHs8
@@ -6136,8 +6297,8 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// MVE_VMULi32
     0U,	// MVE_VMULi8
     16384U,	// MVE_VMVN
-    4736U,	// MVE_VMVNimmi16
-    4736U,	// MVE_VMVNimmi32
+    4864U,	// MVE_VMVNimmi16
+    4864U,	// MVE_VMVNimmi32
     16384U,	// MVE_VNEGf16
     16384U,	// MVE_VNEGf32
     16384U,	// MVE_VNEGs16
@@ -6145,8 +6306,8 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     16384U,	// MVE_VNEGs8
     0U,	// MVE_VORN
     0U,	// MVE_VORR
-    3712U,	// MVE_VORRimmi16
-    3712U,	// MVE_VORRimmi32
+    3840U,	// MVE_VORRimmi16
+    3840U,	// MVE_VORRimmi32
     0U,	// MVE_VPNOT
     0U,	// MVE_VPSEL
     0U,	// MVE_VPST
@@ -6187,24 +6348,24 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// MVE_VQADDu16
     0U,	// MVE_VQADDu32
     0U,	// MVE_VQADDu8
-    8914304U,	// MVE_VQDMLADHXs16
-    8914304U,	// MVE_VQDMLADHXs32
-    8914304U,	// MVE_VQDMLADHXs8
-    8914304U,	// MVE_VQDMLADHs16
-    8914304U,	// MVE_VQDMLADHs32
-    8914304U,	// MVE_VQDMLADHs8
-    8914304U,	// MVE_VQDMLAH_qrs16
-    8914304U,	// MVE_VQDMLAH_qrs32
-    8914304U,	// MVE_VQDMLAH_qrs8
-    8914304U,	// MVE_VQDMLASH_qrs16
-    8914304U,	// MVE_VQDMLASH_qrs32
-    8914304U,	// MVE_VQDMLASH_qrs8
-    8914304U,	// MVE_VQDMLSDHXs16
-    8914304U,	// MVE_VQDMLSDHXs32
-    8914304U,	// MVE_VQDMLSDHXs8
-    8914304U,	// MVE_VQDMLSDHs16
-    8914304U,	// MVE_VQDMLSDHs32
-    8914304U,	// MVE_VQDMLSDHs8
+    3671424U,	// MVE_VQDMLADHXs16
+    3671424U,	// MVE_VQDMLADHXs32
+    3671424U,	// MVE_VQDMLADHXs8
+    3671424U,	// MVE_VQDMLADHs16
+    3671424U,	// MVE_VQDMLADHs32
+    3671424U,	// MVE_VQDMLADHs8
+    3671424U,	// MVE_VQDMLAH_qrs16
+    3671424U,	// MVE_VQDMLAH_qrs32
+    3671424U,	// MVE_VQDMLAH_qrs8
+    3671424U,	// MVE_VQDMLASH_qrs16
+    3671424U,	// MVE_VQDMLASH_qrs32
+    3671424U,	// MVE_VQDMLASH_qrs8
+    3671424U,	// MVE_VQDMLSDHXs16
+    3671424U,	// MVE_VQDMLSDHXs32
+    3671424U,	// MVE_VQDMLSDHXs8
+    3671424U,	// MVE_VQDMLSDHs16
+    3671424U,	// MVE_VQDMLSDHs32
+    3671424U,	// MVE_VQDMLSDHs8
     0U,	// MVE_VQDMULH_qr_s16
     0U,	// MVE_VQDMULH_qr_s32
     0U,	// MVE_VQDMULH_qr_s8
@@ -6234,24 +6395,24 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     16384U,	// MVE_VQNEGs16
     16384U,	// MVE_VQNEGs32
     16384U,	// MVE_VQNEGs8
-    8914304U,	// MVE_VQRDMLADHXs16
-    8914304U,	// MVE_VQRDMLADHXs32
-    8914304U,	// MVE_VQRDMLADHXs8
-    8914304U,	// MVE_VQRDMLADHs16
-    8914304U,	// MVE_VQRDMLADHs32
-    8914304U,	// MVE_VQRDMLADHs8
-    8914304U,	// MVE_VQRDMLAH_qrs16
-    8914304U,	// MVE_VQRDMLAH_qrs32
-    8914304U,	// MVE_VQRDMLAH_qrs8
-    8914304U,	// MVE_VQRDMLASH_qrs16
-    8914304U,	// MVE_VQRDMLASH_qrs32
-    8914304U,	// MVE_VQRDMLASH_qrs8
-    8914304U,	// MVE_VQRDMLSDHXs16
-    8914304U,	// MVE_VQRDMLSDHXs32
-    8914304U,	// MVE_VQRDMLSDHXs8
-    8914304U,	// MVE_VQRDMLSDHs16
-    8914304U,	// MVE_VQRDMLSDHs32
-    8914304U,	// MVE_VQRDMLSDHs8
+    3671424U,	// MVE_VQRDMLADHXs16
+    3671424U,	// MVE_VQRDMLADHXs32
+    3671424U,	// MVE_VQRDMLADHXs8
+    3671424U,	// MVE_VQRDMLADHs16
+    3671424U,	// MVE_VQRDMLADHs32
+    3671424U,	// MVE_VQRDMLADHs8
+    3671424U,	// MVE_VQRDMLAH_qrs16
+    3671424U,	// MVE_VQRDMLAH_qrs32
+    3671424U,	// MVE_VQRDMLAH_qrs8
+    3671424U,	// MVE_VQRDMLASH_qrs16
+    3671424U,	// MVE_VQRDMLASH_qrs32
+    3671424U,	// MVE_VQRDMLASH_qrs8
+    3671424U,	// MVE_VQRDMLSDHXs16
+    3671424U,	// MVE_VQRDMLSDHXs32
+    3671424U,	// MVE_VQRDMLSDHXs8
+    3671424U,	// MVE_VQRDMLSDHs16
+    3671424U,	// MVE_VQRDMLSDHs32
+    3671424U,	// MVE_VQRDMLSDHs8
     0U,	// MVE_VQRDMULH_qr_s16
     0U,	// MVE_VQRDMULH_qr_s32
     0U,	// MVE_VQRDMULH_qr_s8
@@ -6270,18 +6431,18 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     17792U,	// MVE_VQRSHL_qru16
     17792U,	// MVE_VQRSHL_qru32
     17792U,	// MVE_VQRSHL_qru8
-    8914304U,	// MVE_VQRSHRNbhs16
-    8914304U,	// MVE_VQRSHRNbhs32
-    8914304U,	// MVE_VQRSHRNbhu16
-    8914304U,	// MVE_VQRSHRNbhu32
-    8914304U,	// MVE_VQRSHRNths16
-    8914304U,	// MVE_VQRSHRNths32
-    8914304U,	// MVE_VQRSHRNthu16
-    8914304U,	// MVE_VQRSHRNthu32
-    8914304U,	// MVE_VQRSHRUNs16bh
-    8914304U,	// MVE_VQRSHRUNs16th
-    8914304U,	// MVE_VQRSHRUNs32bh
-    8914304U,	// MVE_VQRSHRUNs32th
+    3671424U,	// MVE_VQRSHRNbhs16
+    3671424U,	// MVE_VQRSHRNbhs32
+    3671424U,	// MVE_VQRSHRNbhu16
+    3671424U,	// MVE_VQRSHRNbhu32
+    3671424U,	// MVE_VQRSHRNths16
+    3671424U,	// MVE_VQRSHRNths32
+    3671424U,	// MVE_VQRSHRNthu16
+    3671424U,	// MVE_VQRSHRNthu32
+    3671424U,	// MVE_VQRSHRUNs16bh
+    3671424U,	// MVE_VQRSHRUNs16th
+    3671424U,	// MVE_VQRSHRUNs32bh
+    3671424U,	// MVE_VQRSHRUNs32th
     0U,	// MVE_VQSHLU_imms16
     0U,	// MVE_VQSHLU_imms32
     0U,	// MVE_VQSHLU_imms8
@@ -6303,18 +6464,18 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// MVE_VQSHLimmu16
     0U,	// MVE_VQSHLimmu32
     0U,	// MVE_VQSHLimmu8
-    8914304U,	// MVE_VQSHRNbhs16
-    8914304U,	// MVE_VQSHRNbhs32
-    8914304U,	// MVE_VQSHRNbhu16
-    8914304U,	// MVE_VQSHRNbhu32
-    8914304U,	// MVE_VQSHRNths16
-    8914304U,	// MVE_VQSHRNths32
-    8914304U,	// MVE_VQSHRNthu16
-    8914304U,	// MVE_VQSHRNthu32
-    8914304U,	// MVE_VQSHRUNs16bh
-    8914304U,	// MVE_VQSHRUNs16th
-    8914304U,	// MVE_VQSHRUNs32bh
-    8914304U,	// MVE_VQSHRUNs32th
+    3671424U,	// MVE_VQSHRNbhs16
+    3671424U,	// MVE_VQSHRNbhs32
+    3671424U,	// MVE_VQSHRNbhu16
+    3671424U,	// MVE_VQSHRNbhu32
+    3671424U,	// MVE_VQSHRNths16
+    3671424U,	// MVE_VQSHRNths32
+    3671424U,	// MVE_VQSHRNthu16
+    3671424U,	// MVE_VQSHRNthu32
+    3671424U,	// MVE_VQSHRUNs16bh
+    3671424U,	// MVE_VQSHRUNs16th
+    3671424U,	// MVE_VQSHRUNs32bh
+    3671424U,	// MVE_VQSHRUNs32th
     0U,	// MVE_VQSUB_qr_s16
     0U,	// MVE_VQSUB_qr_s32
     0U,	// MVE_VQSUB_qr_s8
@@ -6379,18 +6540,18 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     17792U,	// MVE_VRSHL_qru16
     17792U,	// MVE_VRSHL_qru32
     17792U,	// MVE_VRSHL_qru8
-    8914304U,	// MVE_VRSHRNi16bh
-    8914304U,	// MVE_VRSHRNi16th
-    8914304U,	// MVE_VRSHRNi32bh
-    8914304U,	// MVE_VRSHRNi32th
+    3671424U,	// MVE_VRSHRNi16bh
+    3671424U,	// MVE_VRSHRNi16th
+    3671424U,	// MVE_VRSHRNi32bh
+    3671424U,	// MVE_VRSHRNi32th
     0U,	// MVE_VRSHR_imms16
     0U,	// MVE_VRSHR_imms32
     0U,	// MVE_VRSHR_imms8
     0U,	// MVE_VRSHR_immu16
     0U,	// MVE_VRSHR_immu32
     0U,	// MVE_VRSHR_immu8
-    8914304U,	// MVE_VSBC
-    8914304U,	// MVE_VSBCI
+    3671424U,	// MVE_VSBC
+    3671424U,	// MVE_VSBCI
     524672U,	// MVE_VSHLC
     0U,	// MVE_VSHLL_imms16bh
     0U,	// MVE_VSHLL_imms16th
@@ -6400,14 +6561,14 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// MVE_VSHLL_immu16th
     0U,	// MVE_VSHLL_immu8bh
     0U,	// MVE_VSHLL_immu8th
-    147456U,	// MVE_VSHLL_lws16bh
-    147456U,	// MVE_VSHLL_lws16th
-    163840U,	// MVE_VSHLL_lws8bh
-    163840U,	// MVE_VSHLL_lws8th
-    147456U,	// MVE_VSHLL_lwu16bh
-    147456U,	// MVE_VSHLL_lwu16th
-    163840U,	// MVE_VSHLL_lwu8bh
-    163840U,	// MVE_VSHLL_lwu8th
+    180224U,	// MVE_VSHLL_lws16bh
+    180224U,	// MVE_VSHLL_lws16th
+    196608U,	// MVE_VSHLL_lws8bh
+    196608U,	// MVE_VSHLL_lws8th
+    180224U,	// MVE_VSHLL_lwu16bh
+    180224U,	// MVE_VSHLL_lwu16th
+    196608U,	// MVE_VSHLL_lwu8bh
+    196608U,	// MVE_VSHLL_lwu8th
     0U,	// MVE_VSHL_by_vecs16
     0U,	// MVE_VSHL_by_vecs32
     0U,	// MVE_VSHL_by_vecs8
@@ -6423,22 +6584,22 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     17792U,	// MVE_VSHL_qru16
     17792U,	// MVE_VSHL_qru32
     17792U,	// MVE_VSHL_qru8
-    8914304U,	// MVE_VSHRNi16bh
-    8914304U,	// MVE_VSHRNi16th
-    8914304U,	// MVE_VSHRNi32bh
-    8914304U,	// MVE_VSHRNi32th
+    3671424U,	// MVE_VSHRNi16bh
+    3671424U,	// MVE_VSHRNi16th
+    3671424U,	// MVE_VSHRNi32bh
+    3671424U,	// MVE_VSHRNi32th
     0U,	// MVE_VSHR_imms16
     0U,	// MVE_VSHR_imms32
     0U,	// MVE_VSHR_imms8
     0U,	// MVE_VSHR_immu16
     0U,	// MVE_VSHR_immu32
     0U,	// MVE_VSHR_immu8
-    8914304U,	// MVE_VSLIimm16
-    8914304U,	// MVE_VSLIimm32
-    8914304U,	// MVE_VSLIimm8
-    8914304U,	// MVE_VSRIimm16
-    8914304U,	// MVE_VSRIimm32
-    8914304U,	// MVE_VSRIimm8
+    3671424U,	// MVE_VSLIimm16
+    3671424U,	// MVE_VSLIimm32
+    3671424U,	// MVE_VSLIimm8
+    3671424U,	// MVE_VSRIimm16
+    3671424U,	// MVE_VSRIimm32
+    3671424U,	// MVE_VSRIimm8
     0U,	// MVE_VST20_16
     0U,	// MVE_VST20_16_wb
     0U,	// MVE_VST20_32
@@ -6475,39 +6636,39 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// MVE_VST43_32_wb
     0U,	// MVE_VST43_8
     0U,	// MVE_VST43_8_wb
-    3840U,	// MVE_VSTRB16
-    100736U,	// MVE_VSTRB16_post
-    3968U,	// MVE_VSTRB16_pre
-    4096U,	// MVE_VSTRB16_rq
-    3840U,	// MVE_VSTRB32
-    100736U,	// MVE_VSTRB32_post
-    3968U,	// MVE_VSTRB32_pre
-    4096U,	// MVE_VSTRB32_rq
-    4096U,	// MVE_VSTRB8_rq
-    3840U,	// MVE_VSTRBU8
-    100736U,	// MVE_VSTRBU8_post
-    4224U,	// MVE_VSTRBU8_pre
-    3840U,	// MVE_VSTRD64_qi
-    3968U,	// MVE_VSTRD64_qi_pre
-    4352U,	// MVE_VSTRD64_rq
-    4096U,	// MVE_VSTRD64_rq_u
-    4480U,	// MVE_VSTRH16_rq
-    4096U,	// MVE_VSTRH16_rq_u
-    3840U,	// MVE_VSTRH32
-    100736U,	// MVE_VSTRH32_post
-    3968U,	// MVE_VSTRH32_pre
-    4480U,	// MVE_VSTRH32_rq
-    4096U,	// MVE_VSTRH32_rq_u
-    3840U,	// MVE_VSTRHU16
-    100736U,	// MVE_VSTRHU16_post
-    4224U,	// MVE_VSTRHU16_pre
-    3840U,	// MVE_VSTRW32_qi
-    3968U,	// MVE_VSTRW32_qi_pre
-    4608U,	// MVE_VSTRW32_rq
-    4096U,	// MVE_VSTRW32_rq_u
-    3840U,	// MVE_VSTRWU32
-    100736U,	// MVE_VSTRWU32_post
-    4224U,	// MVE_VSTRWU32_pre
+    3968U,	// MVE_VSTRB16
+    133632U,	// MVE_VSTRB16_post
+    4096U,	// MVE_VSTRB16_pre
+    4224U,	// MVE_VSTRB16_rq
+    3968U,	// MVE_VSTRB32
+    133632U,	// MVE_VSTRB32_post
+    4096U,	// MVE_VSTRB32_pre
+    4224U,	// MVE_VSTRB32_rq
+    4224U,	// MVE_VSTRB8_rq
+    3968U,	// MVE_VSTRBU8
+    133632U,	// MVE_VSTRBU8_post
+    4352U,	// MVE_VSTRBU8_pre
+    3968U,	// MVE_VSTRD64_qi
+    4096U,	// MVE_VSTRD64_qi_pre
+    4480U,	// MVE_VSTRD64_rq
+    4224U,	// MVE_VSTRD64_rq_u
+    4608U,	// MVE_VSTRH16_rq
+    4224U,	// MVE_VSTRH16_rq_u
+    3968U,	// MVE_VSTRH32
+    133632U,	// MVE_VSTRH32_post
+    4096U,	// MVE_VSTRH32_pre
+    4608U,	// MVE_VSTRH32_rq
+    4224U,	// MVE_VSTRH32_rq_u
+    3968U,	// MVE_VSTRHU16
+    133632U,	// MVE_VSTRHU16_post
+    4352U,	// MVE_VSTRHU16_pre
+    3968U,	// MVE_VSTRW32_qi
+    4096U,	// MVE_VSTRW32_qi_pre
+    4736U,	// MVE_VSTRW32_rq
+    4224U,	// MVE_VSTRW32_rq_u
+    3968U,	// MVE_VSTRWU32
+    133632U,	// MVE_VSTRWU32_post
+    4352U,	// MVE_VSTRWU32_pre
     0U,	// MVE_VSUB_qr_f16
     0U,	// MVE_VSUB_qr_f32
     0U,	// MVE_VSUB_qr_i16
@@ -6518,13 +6679,13 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// MVE_VSUBi16
     0U,	// MVE_VSUBi32
     0U,	// MVE_VSUBi8
-    17792U,	// MVE_WLSTP_16
-    17792U,	// MVE_WLSTP_32
-    17792U,	// MVE_WLSTP_64
-    17792U,	// MVE_WLSTP_8
-    1536U,	// MVNi
+    21376U,	// MVE_WLSTP_16
+    21376U,	// MVE_WLSTP_32
+    21376U,	// MVE_WLSTP_64
+    21376U,	// MVE_WLSTP_8
+    1664U,	// MVNi
     16384U,	// MVNr
-    1664U,	// MVNsi
+    1792U,	// MVNsi
     1024U,	// MVNsr
     17792U,	// NEON_VMAXNMNDf
     17792U,	// NEON_VMAXNMNDh
@@ -6538,8 +6699,8 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// ORRrr
     1572864U,	// ORRrsi
     0U,	// ORRrsr
-    167772160U,	// PKHBT
-    201326592U,	// PKHTB
+    201326592U,	// PKHBT
+    234881024U,	// PKHTB
     0U,	// PLDWi12
     0U,	// PLDWrs
     0U,	// PLDi12
@@ -6650,93 +6811,93 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// SRSIA_UPD
     0U,	// SRSIB
     0U,	// SRSIB_UPD
-    185088U,	// SSAT
-    21248U,	// SSAT16
+    218112U,	// SSAT
+    21504U,	// SSAT16
     0U,	// SSAX
     0U,	// SSUB16
     0U,	// SSUB8
     0U,	// STC2L_OFFSET
-    2048U,	// STC2L_OPTION
-    2176U,	// STC2L_POST
+    2176U,	// STC2L_OPTION
+    2304U,	// STC2L_POST
     0U,	// STC2L_PRE
     0U,	// STC2_OFFSET
-    2048U,	// STC2_OPTION
-    2176U,	// STC2_POST
+    2176U,	// STC2_OPTION
+    2304U,	// STC2_POST
     0U,	// STC2_PRE
-    2318U,	// STCL_OFFSET
-    2623886U,	// STCL_OPTION
-    3148174U,	// STCL_POST
-    2574U,	// STCL_PRE
-    2318U,	// STC_OFFSET
-    2623886U,	// STC_OPTION
-    3148174U,	// STC_POST
-    2574U,	// STC_PRE
+    2454U,	// STCL_OFFSET
+    4721174U,	// STCL_OPTION
+    5245462U,	// STCL_POST
+    2710U,	// STCL_PRE
+    2454U,	// STC_OFFSET
+    4721174U,	// STC_OPTION
+    5245462U,	// STC_POST
+    2710U,	// STC_PRE
     128U,	// STL
     128U,	// STLB
-    9961472U,	// STLEX
-    9961472U,	// STLEXB
-    4992U,	// STLEXD
-    9961472U,	// STLEXH
+    11010048U,	// STLEX
+    11010048U,	// STLEXB
+    5248U,	// STLEXD
+    11010048U,	// STLEXH
     128U,	// STLH
-    18304U,	// STMDA
-    524U,	// STMDA_UPD
-    18304U,	// STMDB
-    524U,	// STMDB_UPD
-    18304U,	// STMIA
-    524U,	// STMIA_UPD
-    18304U,	// STMIB
-    524U,	// STMIB_UPD
-    3672448U,	// STRBT_POST_IMM
-    3672448U,	// STRBT_POST_REG
-    3672448U,	// STRB_POST_IMM
-    3672448U,	// STRB_POST_REG
-    2688U,	// STRB_PRE_IMM
-    2816U,	// STRB_PRE_REG
-    2944U,	// STRBi12
-    3072U,	// STRBrs
-    4194304U,	// STRD
-    38274432U,	// STRD_POST
-    5244288U,	// STRD_PRE
-    9961472U,	// STREX
-    9961472U,	// STREXB
-    4992U,	// STREXD
-    9961472U,	// STREXH
-    3200U,	// STRH
-    5769600U,	// STRHTi
-    6293888U,	// STRHTr
-    6818176U,	// STRH_POST
-    3328U,	// STRH_PRE
-    3672448U,	// STRT_POST_IMM
-    3672448U,	// STRT_POST_REG
-    3672448U,	// STR_POST_IMM
-    3672448U,	// STR_POST_REG
-    2688U,	// STR_PRE_IMM
-    2816U,	// STR_PRE_REG
-    2944U,	// STRi12
-    3072U,	// STRrs
+    18432U,	// STMDA
+    532U,	// STMDA_UPD
+    18432U,	// STMDB
+    532U,	// STMDB_UPD
+    18432U,	// STMIA
+    532U,	// STMIA_UPD
+    18432U,	// STMIB
+    532U,	// STMIB_UPD
+    5769728U,	// STRBT_POST_IMM
+    5769728U,	// STRBT_POST_REG
+    5769728U,	// STRB_POST_IMM
+    5769728U,	// STRB_POST_REG
+    2816U,	// STRB_PRE_IMM
+    2944U,	// STRB_PRE_REG
+    3072U,	// STRBi12
+    3200U,	// STRBrs
+    6291456U,	// STRD
+    40371584U,	// STRD_POST
+    7341440U,	// STRD_PRE
+    11010048U,	// STREX
+    11010048U,	// STREXB
+    5248U,	// STREXD
+    11010048U,	// STREXH
+    3328U,	// STRH
+    7866880U,	// STRHTi
+    8391168U,	// STRHTr
+    8915456U,	// STRH_POST
+    3456U,	// STRH_PRE
+    5769728U,	// STRT_POST_IMM
+    5769728U,	// STRT_POST_REG
+    5769728U,	// STR_POST_IMM
+    5769728U,	// STR_POST_REG
+    2816U,	// STR_PRE_IMM
+    2944U,	// STR_PRE_REG
+    3072U,	// STRi12
+    3200U,	// STRrs
     1048576U,	// SUBri
     0U,	// SUBrr
     1572864U,	// SUBrsi
     0U,	// SUBrsr
     2U,	// SVC
-    9961472U,	// SWP
-    9961472U,	// SWPB
-    234881024U,	// SXTAB
-    234881024U,	// SXTAB16
-    234881024U,	// SXTAH
-    196608U,	// SXTB
-    196608U,	// SXTB16
-    196608U,	// SXTH
-    1536U,	// TEQri
+    11010048U,	// SWP
+    11010048U,	// SWPB
+    268435456U,	// SXTAB
+    268435456U,	// SXTAB16
+    268435456U,	// SXTAH
+    229376U,	// SXTB
+    229376U,	// SXTB16
+    229376U,	// SXTH
+    1664U,	// TEQri
     16384U,	// TEQrr
-    1664U,	// TEQrsi
+    1792U,	// TEQrsi
     1024U,	// TEQrsr
     0U,	// TRAP
     0U,	// TRAPNaCl
     0U,	// TSB
-    1536U,	// TSTri
+    1664U,	// TSTri
     16384U,	// TSTrr
-    1664U,	// TSTrsi
+    1792U,	// TSTrsi
     1024U,	// TSTrsr
     0U,	// UADD16
     0U,	// UADD8
@@ -6761,35 +6922,35 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// UQSUB8
     0U,	// USAD8
     33554432U,	// USADA8
-    268435456U,	// USAT
+    301989888U,	// USAT
     0U,	// USAT16
     0U,	// USAX
     0U,	// USUB16
     0U,	// USUB8
-    234881024U,	// UXTAB
-    234881024U,	// UXTAB16
-    234881024U,	// UXTAH
-    196608U,	// UXTB
-    196608U,	// UXTB16
-    196608U,	// UXTH
-    8914304U,	// VABALsv2i64
-    8914304U,	// VABALsv4i32
-    8914304U,	// VABALsv8i16
-    8914304U,	// VABALuv2i64
-    8914304U,	// VABALuv4i32
-    8914304U,	// VABALuv8i16
-    8914304U,	// VABAsv16i8
-    8914304U,	// VABAsv2i32
-    8914304U,	// VABAsv4i16
-    8914304U,	// VABAsv4i32
-    8914304U,	// VABAsv8i16
-    8914304U,	// VABAsv8i8
-    8914304U,	// VABAuv16i8
-    8914304U,	// VABAuv2i32
-    8914304U,	// VABAuv4i16
-    8914304U,	// VABAuv4i32
-    8914304U,	// VABAuv8i16
-    8914304U,	// VABAuv8i8
+    268435456U,	// UXTAB
+    268435456U,	// UXTAB16
+    268435456U,	// UXTAH
+    229376U,	// UXTB
+    229376U,	// UXTB16
+    229376U,	// UXTH
+    3671424U,	// VABALsv2i64
+    3671424U,	// VABALsv4i32
+    3671424U,	// VABALsv8i16
+    3671424U,	// VABALuv2i64
+    3671424U,	// VABALuv4i32
+    3671424U,	// VABALuv8i16
+    3671424U,	// VABAsv16i8
+    3671424U,	// VABAsv2i32
+    3671424U,	// VABAsv4i16
+    3671424U,	// VABAsv4i32
+    3671424U,	// VABAsv8i16
+    3671424U,	// VABAsv8i8
+    3671424U,	// VABAuv16i8
+    3671424U,	// VABAuv2i32
+    3671424U,	// VABAuv4i16
+    3671424U,	// VABAuv4i32
+    3671424U,	// VABAuv8i16
+    3671424U,	// VABAuv8i8
     0U,	// VABDLsv2i64
     0U,	// VABDLsv4i32
     0U,	// VABDLsv8i16
@@ -6812,7 +6973,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VABDuv4i32
     0U,	// VABDuv8i16
     0U,	// VABDuv8i8
-    520U,	// VABSD
+    528U,	// VABSD
     16384U,	// VABSH
     16384U,	// VABSS
     16384U,	// VABSfd
@@ -6833,7 +6994,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VACGTfq
     0U,	// VACGThd
     0U,	// VACGThq
-    10568456U,	// VADDD
+    2720528U,	// VADDD
     0U,	// VADDH
     17792U,	// VADDHNv2i32
     0U,	// VADDHNv4i16
@@ -6865,22 +7026,26 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VADDv8i8
     0U,	// VANDd
     0U,	// VANDq
+    2U,	// VBF16MALBQ
+    520U,	// VBF16MALBQI
+    2U,	// VBF16MALTQ
+    520U,	// VBF16MALTQI
     0U,	// VBICd
-    4736U,	// VBICiv2i32
-    4736U,	// VBICiv4i16
-    4736U,	// VBICiv4i32
-    4736U,	// VBICiv8i16
+    4864U,	// VBICiv2i32
+    4864U,	// VBICiv4i16
+    4864U,	// VBICiv4i32
+    4864U,	// VBICiv8i16
     0U,	// VBICq
-    8914304U,	// VBIFd
-    8914304U,	// VBIFq
-    8914304U,	// VBITd
-    8914304U,	// VBITq
-    8914304U,	// VBSLd
-    8914304U,	// VBSLq
-    11011456U,	// VCADDv2f32
-    11011456U,	// VCADDv4f16
-    11011456U,	// VCADDv4f32
-    11011456U,	// VCADDv8f16
+    3671424U,	// VBIFd
+    3671424U,	// VBIFq
+    3671424U,	// VBITd
+    3671424U,	// VBITq
+    3671424U,	// VBSLd
+    3671424U,	// VBSLq
+    11535744U,	// VCADDv2f32
+    11535744U,	// VCADDv4f16
+    11535744U,	// VCADDv4f32
+    11535744U,	// VCADDv8f16
     0U,	// VCEQfd
     0U,	// VCEQfq
     0U,	// VCEQhd
@@ -6891,16 +7056,16 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VCEQv4i32
     0U,	// VCEQv8i16
     0U,	// VCEQv8i8
-    212992U,	// VCEQzv16i8
-    212992U,	// VCEQzv2f32
-    212992U,	// VCEQzv2i32
-    212992U,	// VCEQzv4f16
-    212992U,	// VCEQzv4f32
-    212992U,	// VCEQzv4i16
-    212992U,	// VCEQzv4i32
-    212992U,	// VCEQzv8f16
-    212992U,	// VCEQzv8i16
-    212992U,	// VCEQzv8i8
+    245760U,	// VCEQzv16i8
+    245760U,	// VCEQzv2f32
+    245760U,	// VCEQzv2i32
+    245760U,	// VCEQzv4f16
+    245760U,	// VCEQzv4f32
+    245760U,	// VCEQzv4i16
+    245760U,	// VCEQzv4i32
+    245760U,	// VCEQzv8f16
+    245760U,	// VCEQzv8i16
+    245760U,	// VCEQzv8i8
     0U,	// VCGEfd
     0U,	// VCGEfq
     0U,	// VCGEhd
@@ -6917,16 +7082,16 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VCGEuv4i32
     0U,	// VCGEuv8i16
     0U,	// VCGEuv8i8
-    212992U,	// VCGEzv16i8
-    212992U,	// VCGEzv2f32
-    212992U,	// VCGEzv2i32
-    212992U,	// VCGEzv4f16
-    212992U,	// VCGEzv4f32
-    212992U,	// VCGEzv4i16
-    212992U,	// VCGEzv4i32
-    212992U,	// VCGEzv8f16
-    212992U,	// VCGEzv8i16
-    212992U,	// VCGEzv8i8
+    245760U,	// VCGEzv16i8
+    245760U,	// VCGEzv2f32
+    245760U,	// VCGEzv2i32
+    245760U,	// VCGEzv4f16
+    245760U,	// VCGEzv4f32
+    245760U,	// VCGEzv4i16
+    245760U,	// VCGEzv4i32
+    245760U,	// VCGEzv8f16
+    245760U,	// VCGEzv8i16
+    245760U,	// VCGEzv8i8
     0U,	// VCGTfd
     0U,	// VCGTfq
     0U,	// VCGThd
@@ -6943,68 +7108,68 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VCGTuv4i32
     0U,	// VCGTuv8i16
     0U,	// VCGTuv8i8
-    212992U,	// VCGTzv16i8
-    212992U,	// VCGTzv2f32
-    212992U,	// VCGTzv2i32
-    212992U,	// VCGTzv4f16
-    212992U,	// VCGTzv4f32
-    212992U,	// VCGTzv4i16
-    212992U,	// VCGTzv4i32
-    212992U,	// VCGTzv8f16
-    212992U,	// VCGTzv8i16
-    212992U,	// VCGTzv8i8
-    212992U,	// VCLEzv16i8
-    212992U,	// VCLEzv2f32
-    212992U,	// VCLEzv2i32
-    212992U,	// VCLEzv4f16
-    212992U,	// VCLEzv4f32
-    212992U,	// VCLEzv4i16
-    212992U,	// VCLEzv4i32
-    212992U,	// VCLEzv8f16
-    212992U,	// VCLEzv8i16
-    212992U,	// VCLEzv8i8
+    245760U,	// VCGTzv16i8
+    245760U,	// VCGTzv2f32
+    245760U,	// VCGTzv2i32
+    245760U,	// VCGTzv4f16
+    245760U,	// VCGTzv4f32
+    245760U,	// VCGTzv4i16
+    245760U,	// VCGTzv4i32
+    245760U,	// VCGTzv8f16
+    245760U,	// VCGTzv8i16
+    245760U,	// VCGTzv8i8
+    245760U,	// VCLEzv16i8
+    245760U,	// VCLEzv2f32
+    245760U,	// VCLEzv2i32
+    245760U,	// VCLEzv4f16
+    245760U,	// VCLEzv4f32
+    245760U,	// VCLEzv4i16
+    245760U,	// VCLEzv4i32
+    245760U,	// VCLEzv8f16
+    245760U,	// VCLEzv8i16
+    245760U,	// VCLEzv8i8
     16384U,	// VCLSv16i8
     16384U,	// VCLSv2i32
     16384U,	// VCLSv4i16
     16384U,	// VCLSv4i32
     16384U,	// VCLSv8i16
     16384U,	// VCLSv8i8
-    212992U,	// VCLTzv16i8
-    212992U,	// VCLTzv2f32
-    212992U,	// VCLTzv2i32
-    212992U,	// VCLTzv4f16
-    212992U,	// VCLTzv4f32
-    212992U,	// VCLTzv4i16
-    212992U,	// VCLTzv4i32
-    212992U,	// VCLTzv8f16
-    212992U,	// VCLTzv8i16
-    212992U,	// VCLTzv8i8
+    245760U,	// VCLTzv16i8
+    245760U,	// VCLTzv2f32
+    245760U,	// VCLTzv2i32
+    245760U,	// VCLTzv4f16
+    245760U,	// VCLTzv4f32
+    245760U,	// VCLTzv4i16
+    245760U,	// VCLTzv4i32
+    245760U,	// VCLTzv8f16
+    245760U,	// VCLTzv8i16
+    245760U,	// VCLTzv8i8
     16384U,	// VCLZv16i8
     16384U,	// VCLZv2i32
     16384U,	// VCLZv4i16
     16384U,	// VCLZv4i32
     16384U,	// VCLZv8i16
     16384U,	// VCLZv8i8
-    11534720U,	// VCMLAv2f32
-    229760U,	// VCMLAv2f32_indexed
-    11534720U,	// VCMLAv4f16
-    229760U,	// VCMLAv4f16_indexed
-    11534720U,	// VCMLAv4f32
-    229760U,	// VCMLAv4f32_indexed
-    11534720U,	// VCMLAv8f16
-    229760U,	// VCMLAv8f16_indexed
-    520U,	// VCMPD
-    520U,	// VCMPED
+    12059008U,	// VCMLAv2f32
+    262528U,	// VCMLAv2f32_indexed
+    12059008U,	// VCMLAv4f16
+    262528U,	// VCMLAv4f16_indexed
+    12059008U,	// VCMLAv4f32
+    262528U,	// VCMLAv4f32_indexed
+    12059008U,	// VCMLAv8f16
+    262528U,	// VCMLAv8f16_indexed
+    528U,	// VCMPD
+    528U,	// VCMPED
     16384U,	// VCMPEH
     16384U,	// VCMPES
     0U,	// VCMPEZD
-    28U,	// VCMPEZH
-    28U,	// VCMPEZS
+    34U,	// VCMPEZH
+    34U,	// VCMPEZS
     16384U,	// VCMPH
     16384U,	// VCMPS
     0U,	// VCMPZD
-    28U,	// VCMPZH
-    28U,	// VCMPZS
+    34U,	// VCMPZH
+    34U,	// VCMPZS
     16384U,	// VCNTd
     16384U,	// VCNTq
     2U,	// VCVTANSDf
@@ -7023,7 +7188,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     2U,	// VCVTAUS
     0U,	// VCVTBDH
     0U,	// VCVTBHD
-    2U,	// VCVTBHS
+    0U,	// VCVTBHS
     2U,	// VCVTBSH
     0U,	// VCVTDS
     2U,	// VCVTMNSDf
@@ -7071,26 +7236,26 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VCVTSD
     0U,	// VCVTTDH
     0U,	// VCVTTHD
-    2U,	// VCVTTHS
+    0U,	// VCVTTHS
     2U,	// VCVTTSH
     2U,	// VCVTf2h
     0U,	// VCVTf2sd
     0U,	// VCVTf2sq
     0U,	// VCVTf2ud
     0U,	// VCVTf2uq
-    534U,	// VCVTf2xsd
-    534U,	// VCVTf2xsq
-    534U,	// VCVTf2xud
-    534U,	// VCVTf2xuq
-    2U,	// VCVTh2f
+    536U,	// VCVTf2xsd
+    536U,	// VCVTf2xsq
+    536U,	// VCVTf2xud
+    536U,	// VCVTf2xuq
+    0U,	// VCVTh2f
     0U,	// VCVTh2sd
     0U,	// VCVTh2sq
     0U,	// VCVTh2ud
     0U,	// VCVTh2uq
-    534U,	// VCVTh2xsd
-    534U,	// VCVTh2xsq
-    534U,	// VCVTh2xud
-    534U,	// VCVTh2xuq
+    536U,	// VCVTh2xsd
+    536U,	// VCVTh2xsq
+    536U,	// VCVTh2xud
+    536U,	// VCVTh2xuq
     0U,	// VCVTs2fd
     0U,	// VCVTs2fq
     0U,	// VCVTs2hd
@@ -7099,15 +7264,15 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VCVTu2fq
     0U,	// VCVTu2hd
     0U,	// VCVTu2hq
-    534U,	// VCVTxs2fd
-    534U,	// VCVTxs2fq
-    534U,	// VCVTxs2hd
-    534U,	// VCVTxs2hq
-    534U,	// VCVTxu2fd
-    534U,	// VCVTxu2fq
-    534U,	// VCVTxu2hd
-    534U,	// VCVTxu2hq
-    10568456U,	// VDIVD
+    536U,	// VCVTxs2fd
+    536U,	// VCVTxs2fq
+    536U,	// VCVTxs2hd
+    536U,	// VCVTxs2hq
+    536U,	// VCVTxu2fd
+    536U,	// VCVTxu2fq
+    536U,	// VCVTxu2hd
+    536U,	// VCVTxu2hq
+    2720528U,	// VDIVD
     0U,	// VDIVH
     0U,	// VDIVS
     16384U,	// VDUP16d
@@ -7116,12 +7281,12 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     16384U,	// VDUP32q
     16384U,	// VDUP8d
     16384U,	// VDUP8q
-    114688U,	// VDUPLN16d
-    114688U,	// VDUPLN16q
-    114688U,	// VDUPLN32d
-    114688U,	// VDUPLN32q
-    114688U,	// VDUPLN8d
-    114688U,	// VDUPLN8q
+    147456U,	// VDUPLN16d
+    147456U,	// VDUPLN16q
+    147456U,	// VDUPLN32d
+    147456U,	// VDUPLN32q
+    147456U,	// VDUPLN8d
+    147456U,	// VDUPLN8q
     0U,	// VEORd
     0U,	// VEORq
     33554432U,	// VEXTd16
@@ -7131,45 +7296,45 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     33554432U,	// VEXTq32
     33554432U,	// VEXTq64
     33554432U,	// VEXTq8
-    49942U,	// VFMAD
-    8914304U,	// VFMAH
+    49944U,	// VFMAD
+    3671424U,	// VFMAH
     17792U,	// VFMALD
-    247168U,	// VFMALDI
+    279936U,	// VFMALDI
     17792U,	// VFMALQ
-    247168U,	// VFMALQI
-    8914304U,	// VFMAS
-    8914304U,	// VFMAfd
-    8914304U,	// VFMAfq
-    8914304U,	// VFMAhd
-    8914304U,	// VFMAhq
-    49942U,	// VFMSD
-    8914304U,	// VFMSH
+    279936U,	// VFMALQI
+    3671424U,	// VFMAS
+    3671424U,	// VFMAfd
+    3671424U,	// VFMAfq
+    3671424U,	// VFMAhd
+    3671424U,	// VFMAhq
+    49944U,	// VFMSD
+    3671424U,	// VFMSH
     17792U,	// VFMSLD
-    247168U,	// VFMSLDI
+    279936U,	// VFMSLDI
     17792U,	// VFMSLQ
-    247168U,	// VFMSLQI
-    8914304U,	// VFMSS
-    8914304U,	// VFMSfd
-    8914304U,	// VFMSfq
-    8914304U,	// VFMShd
-    8914304U,	// VFMShq
-    49942U,	// VFNMAD
-    8914304U,	// VFNMAH
-    8914304U,	// VFNMAS
-    49942U,	// VFNMSD
-    8914304U,	// VFNMSH
-    8914304U,	// VFNMSS
+    279936U,	// VFMSLQI
+    3671424U,	// VFMSS
+    3671424U,	// VFMSfd
+    3671424U,	// VFMSfq
+    3671424U,	// VFMShd
+    3671424U,	// VFMShq
+    49944U,	// VFNMAD
+    3671424U,	// VFNMAH
+    3671424U,	// VFNMAS
+    49944U,	// VFNMSD
+    3671424U,	// VFNMSH
+    3671424U,	// VFNMSS
     17792U,	// VFP_VMAXNMD
     17792U,	// VFP_VMAXNMH
     17792U,	// VFP_VMAXNMS
     17792U,	// VFP_VMINNMD
     17792U,	// VFP_VMINNMH
     17792U,	// VFP_VMINNMS
-    114688U,	// VGETLNi32
-    114688U,	// VGETLNs16
-    114688U,	// VGETLNs8
-    114688U,	// VGETLNu16
-    114688U,	// VGETLNu8
+    147456U,	// VGETLNi32
+    147456U,	// VGETLNs16
+    147456U,	// VGETLNs8
+    147456U,	// VGETLNu16
+    147456U,	// VGETLNu8
     0U,	// VHADDsv16i8
     0U,	// VHADDsv2i32
     0U,	// VHADDsv4i16
@@ -7197,29 +7362,29 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     2U,	// VINSH
     0U,	// VJCVT
     518U,	// VLD1DUPd16
-    670U,	// VLD1DUPd16wb_fixed
-    262942U,	// VLD1DUPd16wb_register
+    676U,	// VLD1DUPd16wb_fixed
+    2687780U,	// VLD1DUPd16wb_register
     518U,	// VLD1DUPd32
-    670U,	// VLD1DUPd32wb_fixed
-    262942U,	// VLD1DUPd32wb_register
+    676U,	// VLD1DUPd32wb_fixed
+    2687780U,	// VLD1DUPd32wb_register
     518U,	// VLD1DUPd8
-    670U,	// VLD1DUPd8wb_fixed
-    262942U,	// VLD1DUPd8wb_register
+    676U,	// VLD1DUPd8wb_fixed
+    2687780U,	// VLD1DUPd8wb_register
     518U,	// VLD1DUPq16
-    670U,	// VLD1DUPq16wb_fixed
-    262942U,	// VLD1DUPq16wb_register
+    676U,	// VLD1DUPq16wb_fixed
+    2687780U,	// VLD1DUPq16wb_register
     518U,	// VLD1DUPq32
-    670U,	// VLD1DUPq32wb_fixed
-    262942U,	// VLD1DUPq32wb_register
+    676U,	// VLD1DUPq32wb_fixed
+    2687780U,	// VLD1DUPq32wb_register
     518U,	// VLD1DUPq8
-    670U,	// VLD1DUPq8wb_fixed
-    262942U,	// VLD1DUPq8wb_register
-    12342304U,	// VLD1LNd16
-    12866720U,	// VLD1LNd16_UPD
-    12342304U,	// VLD1LNd32
-    12866720U,	// VLD1LNd32_UPD
-    12342304U,	// VLD1LNd8
-    12866720U,	// VLD1LNd8_UPD
+    676U,	// VLD1DUPq8wb_fixed
+    2687780U,	// VLD1DUPq8wb_register
+    12883238U,	// VLD1LNd16
+    13407654U,	// VLD1LNd16_UPD
+    12883238U,	// VLD1LNd32
+    13407654U,	// VLD1LNd32_UPD
+    12883238U,	// VLD1LNd8
+    13407654U,	// VLD1LNd8_UPD
     0U,	// VLD1LNq16Pseudo
     0U,	// VLD1LNq16Pseudo_UPD
     0U,	// VLD1LNq32Pseudo
@@ -7229,274 +7394,274 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     518U,	// VLD1d16
     518U,	// VLD1d16Q
     0U,	// VLD1d16QPseudo
-    670U,	// VLD1d16Qwb_fixed
-    262942U,	// VLD1d16Qwb_register
+    676U,	// VLD1d16Qwb_fixed
+    2687780U,	// VLD1d16Qwb_register
     518U,	// VLD1d16T
     0U,	// VLD1d16TPseudo
-    670U,	// VLD1d16Twb_fixed
-    262942U,	// VLD1d16Twb_register
-    670U,	// VLD1d16wb_fixed
-    262942U,	// VLD1d16wb_register
+    676U,	// VLD1d16Twb_fixed
+    2687780U,	// VLD1d16Twb_register
+    676U,	// VLD1d16wb_fixed
+    2687780U,	// VLD1d16wb_register
     518U,	// VLD1d32
     518U,	// VLD1d32Q
     0U,	// VLD1d32QPseudo
-    670U,	// VLD1d32Qwb_fixed
-    262942U,	// VLD1d32Qwb_register
+    676U,	// VLD1d32Qwb_fixed
+    2687780U,	// VLD1d32Qwb_register
     518U,	// VLD1d32T
     0U,	// VLD1d32TPseudo
-    670U,	// VLD1d32Twb_fixed
-    262942U,	// VLD1d32Twb_register
-    670U,	// VLD1d32wb_fixed
-    262942U,	// VLD1d32wb_register
+    676U,	// VLD1d32Twb_fixed
+    2687780U,	// VLD1d32Twb_register
+    676U,	// VLD1d32wb_fixed
+    2687780U,	// VLD1d32wb_register
     518U,	// VLD1d64
     518U,	// VLD1d64Q
     0U,	// VLD1d64QPseudo
     0U,	// VLD1d64QPseudoWB_fixed
     0U,	// VLD1d64QPseudoWB_register
-    670U,	// VLD1d64Qwb_fixed
-    262942U,	// VLD1d64Qwb_register
+    676U,	// VLD1d64Qwb_fixed
+    2687780U,	// VLD1d64Qwb_register
     518U,	// VLD1d64T
     0U,	// VLD1d64TPseudo
     0U,	// VLD1d64TPseudoWB_fixed
     0U,	// VLD1d64TPseudoWB_register
-    670U,	// VLD1d64Twb_fixed
-    262942U,	// VLD1d64Twb_register
-    670U,	// VLD1d64wb_fixed
-    262942U,	// VLD1d64wb_register
+    676U,	// VLD1d64Twb_fixed
+    2687780U,	// VLD1d64Twb_register
+    676U,	// VLD1d64wb_fixed
+    2687780U,	// VLD1d64wb_register
     518U,	// VLD1d8
     518U,	// VLD1d8Q
     0U,	// VLD1d8QPseudo
-    670U,	// VLD1d8Qwb_fixed
-    262942U,	// VLD1d8Qwb_register
+    676U,	// VLD1d8Qwb_fixed
+    2687780U,	// VLD1d8Qwb_register
     518U,	// VLD1d8T
     0U,	// VLD1d8TPseudo
-    670U,	// VLD1d8Twb_fixed
-    262942U,	// VLD1d8Twb_register
-    670U,	// VLD1d8wb_fixed
-    262942U,	// VLD1d8wb_register
+    676U,	// VLD1d8Twb_fixed
+    2687780U,	// VLD1d8Twb_register
+    676U,	// VLD1d8wb_fixed
+    2687780U,	// VLD1d8wb_register
     518U,	// VLD1q16
     0U,	// VLD1q16HighQPseudo
     0U,	// VLD1q16HighTPseudo
     0U,	// VLD1q16LowQPseudo_UPD
     0U,	// VLD1q16LowTPseudo_UPD
-    670U,	// VLD1q16wb_fixed
-    262942U,	// VLD1q16wb_register
+    676U,	// VLD1q16wb_fixed
+    2687780U,	// VLD1q16wb_register
     518U,	// VLD1q32
     0U,	// VLD1q32HighQPseudo
     0U,	// VLD1q32HighTPseudo
     0U,	// VLD1q32LowQPseudo_UPD
     0U,	// VLD1q32LowTPseudo_UPD
-    670U,	// VLD1q32wb_fixed
-    262942U,	// VLD1q32wb_register
+    676U,	// VLD1q32wb_fixed
+    2687780U,	// VLD1q32wb_register
     518U,	// VLD1q64
     0U,	// VLD1q64HighQPseudo
     0U,	// VLD1q64HighTPseudo
     0U,	// VLD1q64LowQPseudo_UPD
     0U,	// VLD1q64LowTPseudo_UPD
-    670U,	// VLD1q64wb_fixed
-    262942U,	// VLD1q64wb_register
+    676U,	// VLD1q64wb_fixed
+    2687780U,	// VLD1q64wb_register
     518U,	// VLD1q8
     0U,	// VLD1q8HighQPseudo
     0U,	// VLD1q8HighTPseudo
     0U,	// VLD1q8LowQPseudo_UPD
     0U,	// VLD1q8LowTPseudo_UPD
-    670U,	// VLD1q8wb_fixed
-    262942U,	// VLD1q8wb_register
+    676U,	// VLD1q8wb_fixed
+    2687780U,	// VLD1q8wb_register
     518U,	// VLD2DUPd16
-    670U,	// VLD2DUPd16wb_fixed
-    262942U,	// VLD2DUPd16wb_register
+    676U,	// VLD2DUPd16wb_fixed
+    2687780U,	// VLD2DUPd16wb_register
     518U,	// VLD2DUPd16x2
-    670U,	// VLD2DUPd16x2wb_fixed
-    262942U,	// VLD2DUPd16x2wb_register
+    676U,	// VLD2DUPd16x2wb_fixed
+    2687780U,	// VLD2DUPd16x2wb_register
     518U,	// VLD2DUPd32
-    670U,	// VLD2DUPd32wb_fixed
-    262942U,	// VLD2DUPd32wb_register
+    676U,	// VLD2DUPd32wb_fixed
+    2687780U,	// VLD2DUPd32wb_register
     518U,	// VLD2DUPd32x2
-    670U,	// VLD2DUPd32x2wb_fixed
-    262942U,	// VLD2DUPd32x2wb_register
+    676U,	// VLD2DUPd32x2wb_fixed
+    2687780U,	// VLD2DUPd32x2wb_register
     518U,	// VLD2DUPd8
-    670U,	// VLD2DUPd8wb_fixed
-    262942U,	// VLD2DUPd8wb_register
+    676U,	// VLD2DUPd8wb_fixed
+    2687780U,	// VLD2DUPd8wb_register
     518U,	// VLD2DUPd8x2
-    670U,	// VLD2DUPd8x2wb_fixed
-    262942U,	// VLD2DUPd8x2wb_register
+    676U,	// VLD2DUPd8x2wb_fixed
+    2687780U,	// VLD2DUPd8x2wb_register
     0U,	// VLD2DUPq16EvenPseudo
     0U,	// VLD2DUPq16OddPseudo
     0U,	// VLD2DUPq32EvenPseudo
     0U,	// VLD2DUPq32OddPseudo
     0U,	// VLD2DUPq8EvenPseudo
     0U,	// VLD2DUPq8OddPseudo
-    13407392U,	// VLD2LNd16
+    13948326U,	// VLD2LNd16
     0U,	// VLD2LNd16Pseudo
     0U,	// VLD2LNd16Pseudo_UPD
-    315757856U,	// VLD2LNd16_UPD
-    13407392U,	// VLD2LNd32
+    349869606U,	// VLD2LNd16_UPD
+    13948326U,	// VLD2LNd32
     0U,	// VLD2LNd32Pseudo
     0U,	// VLD2LNd32Pseudo_UPD
-    315757856U,	// VLD2LNd32_UPD
-    13407392U,	// VLD2LNd8
+    349869606U,	// VLD2LNd32_UPD
+    13948326U,	// VLD2LNd8
     0U,	// VLD2LNd8Pseudo
     0U,	// VLD2LNd8Pseudo_UPD
-    315757856U,	// VLD2LNd8_UPD
-    13407392U,	// VLD2LNq16
+    349869606U,	// VLD2LNd8_UPD
+    13948326U,	// VLD2LNq16
     0U,	// VLD2LNq16Pseudo
     0U,	// VLD2LNq16Pseudo_UPD
-    315757856U,	// VLD2LNq16_UPD
-    13407392U,	// VLD2LNq32
+    349869606U,	// VLD2LNq16_UPD
+    13948326U,	// VLD2LNq32
     0U,	// VLD2LNq32Pseudo
     0U,	// VLD2LNq32Pseudo_UPD
-    315757856U,	// VLD2LNq32_UPD
+    349869606U,	// VLD2LNq32_UPD
     518U,	// VLD2b16
-    670U,	// VLD2b16wb_fixed
-    262942U,	// VLD2b16wb_register
+    676U,	// VLD2b16wb_fixed
+    2687780U,	// VLD2b16wb_register
     518U,	// VLD2b32
-    670U,	// VLD2b32wb_fixed
-    262942U,	// VLD2b32wb_register
+    676U,	// VLD2b32wb_fixed
+    2687780U,	// VLD2b32wb_register
     518U,	// VLD2b8
-    670U,	// VLD2b8wb_fixed
-    262942U,	// VLD2b8wb_register
+    676U,	// VLD2b8wb_fixed
+    2687780U,	// VLD2b8wb_register
     518U,	// VLD2d16
-    670U,	// VLD2d16wb_fixed
-    262942U,	// VLD2d16wb_register
+    676U,	// VLD2d16wb_fixed
+    2687780U,	// VLD2d16wb_register
     518U,	// VLD2d32
-    670U,	// VLD2d32wb_fixed
-    262942U,	// VLD2d32wb_register
+    676U,	// VLD2d32wb_fixed
+    2687780U,	// VLD2d32wb_register
     518U,	// VLD2d8
-    670U,	// VLD2d8wb_fixed
-    262942U,	// VLD2d8wb_register
+    676U,	// VLD2d8wb_fixed
+    2687780U,	// VLD2d8wb_register
     518U,	// VLD2q16
     0U,	// VLD2q16Pseudo
     0U,	// VLD2q16PseudoWB_fixed
     0U,	// VLD2q16PseudoWB_register
-    670U,	// VLD2q16wb_fixed
-    262942U,	// VLD2q16wb_register
+    676U,	// VLD2q16wb_fixed
+    2687780U,	// VLD2q16wb_register
     518U,	// VLD2q32
     0U,	// VLD2q32Pseudo
     0U,	// VLD2q32PseudoWB_fixed
     0U,	// VLD2q32PseudoWB_register
-    670U,	// VLD2q32wb_fixed
-    262942U,	// VLD2q32wb_register
+    676U,	// VLD2q32wb_fixed
+    2687780U,	// VLD2q32wb_register
     518U,	// VLD2q8
     0U,	// VLD2q8Pseudo
     0U,	// VLD2q8PseudoWB_fixed
     0U,	// VLD2q8PseudoWB_register
-    670U,	// VLD2q8wb_fixed
-    262942U,	// VLD2q8wb_register
-    316834U,	// VLD3DUPd16
+    676U,	// VLD2q8wb_fixed
+    2687780U,	// VLD2q8wb_register
+    333480U,	// VLD3DUPd16
     0U,	// VLD3DUPd16Pseudo
     0U,	// VLD3DUPd16Pseudo_UPD
-    14488994U,	// VLD3DUPd16_UPD
-    316834U,	// VLD3DUPd32
+    15029928U,	// VLD3DUPd16_UPD
+    333480U,	// VLD3DUPd32
     0U,	// VLD3DUPd32Pseudo
     0U,	// VLD3DUPd32Pseudo_UPD
-    14488994U,	// VLD3DUPd32_UPD
-    316834U,	// VLD3DUPd8
+    15029928U,	// VLD3DUPd32_UPD
+    333480U,	// VLD3DUPd8
     0U,	// VLD3DUPd8Pseudo
     0U,	// VLD3DUPd8Pseudo_UPD
-    14488994U,	// VLD3DUPd8_UPD
-    316834U,	// VLD3DUPq16
+    15029928U,	// VLD3DUPd8_UPD
+    333480U,	// VLD3DUPq16
     0U,	// VLD3DUPq16EvenPseudo
     0U,	// VLD3DUPq16OddPseudo
-    14488994U,	// VLD3DUPq16_UPD
-    316834U,	// VLD3DUPq32
+    15029928U,	// VLD3DUPq16_UPD
+    333480U,	// VLD3DUPq32
     0U,	// VLD3DUPq32EvenPseudo
     0U,	// VLD3DUPq32OddPseudo
-    14488994U,	// VLD3DUPq32_UPD
-    316834U,	// VLD3DUPq8
+    15029928U,	// VLD3DUPq32_UPD
+    333480U,	// VLD3DUPq8
     0U,	// VLD3DUPq8EvenPseudo
     0U,	// VLD3DUPq8OddPseudo
-    14488994U,	// VLD3DUPq8_UPD
-    349312288U,	// VLD3LNd16
+    15029928U,	// VLD3DUPq8_UPD
+    383424038U,	// VLD3LNd16
     0U,	// VLD3LNd16Pseudo
     0U,	// VLD3LNd16Pseudo_UPD
-    14964256U,	// VLD3LNd16_UPD
-    349312288U,	// VLD3LNd32
+    15505190U,	// VLD3LNd16_UPD
+    383424038U,	// VLD3LNd32
     0U,	// VLD3LNd32Pseudo
     0U,	// VLD3LNd32Pseudo_UPD
-    14964256U,	// VLD3LNd32_UPD
-    349312288U,	// VLD3LNd8
+    15505190U,	// VLD3LNd32_UPD
+    383424038U,	// VLD3LNd8
     0U,	// VLD3LNd8Pseudo
     0U,	// VLD3LNd8Pseudo_UPD
-    14964256U,	// VLD3LNd8_UPD
-    349312288U,	// VLD3LNq16
+    15505190U,	// VLD3LNd8_UPD
+    383424038U,	// VLD3LNq16
     0U,	// VLD3LNq16Pseudo
     0U,	// VLD3LNq16Pseudo_UPD
-    14964256U,	// VLD3LNq16_UPD
-    349312288U,	// VLD3LNq32
+    15505190U,	// VLD3LNq16_UPD
+    383424038U,	// VLD3LNq32
     0U,	// VLD3LNq32Pseudo
     0U,	// VLD3LNq32Pseudo_UPD
-    14964256U,	// VLD3LNq32_UPD
-    369098752U,	// VLD3d16
+    15505190U,	// VLD3LNq32_UPD
+    402653184U,	// VLD3d16
     0U,	// VLD3d16Pseudo
     0U,	// VLD3d16Pseudo_UPD
-    369098752U,	// VLD3d16_UPD
-    369098752U,	// VLD3d32
+    402653184U,	// VLD3d16_UPD
+    402653184U,	// VLD3d32
     0U,	// VLD3d32Pseudo
     0U,	// VLD3d32Pseudo_UPD
-    369098752U,	// VLD3d32_UPD
-    369098752U,	// VLD3d8
+    402653184U,	// VLD3d32_UPD
+    402653184U,	// VLD3d8
     0U,	// VLD3d8Pseudo
     0U,	// VLD3d8Pseudo_UPD
-    369098752U,	// VLD3d8_UPD
-    369098752U,	// VLD3q16
+    402653184U,	// VLD3d8_UPD
+    402653184U,	// VLD3q16
     0U,	// VLD3q16Pseudo_UPD
-    369098752U,	// VLD3q16_UPD
+    402653184U,	// VLD3q16_UPD
     0U,	// VLD3q16oddPseudo
     0U,	// VLD3q16oddPseudo_UPD
-    369098752U,	// VLD3q32
+    402653184U,	// VLD3q32
     0U,	// VLD3q32Pseudo_UPD
-    369098752U,	// VLD3q32_UPD
+    402653184U,	// VLD3q32_UPD
     0U,	// VLD3q32oddPseudo
     0U,	// VLD3q32oddPseudo_UPD
-    369098752U,	// VLD3q8
+    402653184U,	// VLD3q8
     0U,	// VLD3q8Pseudo_UPD
-    369098752U,	// VLD3q8_UPD
+    402653184U,	// VLD3q8_UPD
     0U,	// VLD3q8oddPseudo
     0U,	// VLD3q8oddPseudo_UPD
-    10819234U,	// VLD4DUPd16
+    2971560U,	// VLD4DUPd16
     0U,	// VLD4DUPd16Pseudo
     0U,	// VLD4DUPd16Pseudo_UPD
-    349858U,	// VLD4DUPd16_UPD
-    10819234U,	// VLD4DUPd32
+    366504U,	// VLD4DUPd16_UPD
+    2971560U,	// VLD4DUPd32
     0U,	// VLD4DUPd32Pseudo
     0U,	// VLD4DUPd32Pseudo_UPD
-    349858U,	// VLD4DUPd32_UPD
-    10819234U,	// VLD4DUPd8
+    366504U,	// VLD4DUPd32_UPD
+    2971560U,	// VLD4DUPd8
     0U,	// VLD4DUPd8Pseudo
     0U,	// VLD4DUPd8Pseudo_UPD
-    349858U,	// VLD4DUPd8_UPD
-    10819234U,	// VLD4DUPq16
+    366504U,	// VLD4DUPd8_UPD
+    2971560U,	// VLD4DUPq16
     0U,	// VLD4DUPq16EvenPseudo
     0U,	// VLD4DUPq16OddPseudo
-    349858U,	// VLD4DUPq16_UPD
-    10819234U,	// VLD4DUPq32
+    366504U,	// VLD4DUPq16_UPD
+    2971560U,	// VLD4DUPq32
     0U,	// VLD4DUPq32EvenPseudo
     0U,	// VLD4DUPq32OddPseudo
-    349858U,	// VLD4DUPq32_UPD
-    10819234U,	// VLD4DUPq8
+    366504U,	// VLD4DUPq32_UPD
+    2971560U,	// VLD4DUPq8
     0U,	// VLD4DUPq8EvenPseudo
     0U,	// VLD4DUPq8OddPseudo
-    349858U,	// VLD4DUPq8_UPD
-    411866656U,	// VLD4LNd16
+    366504U,	// VLD4DUPq8_UPD
+    440194854U,	// VLD4LNd16
     0U,	// VLD4LNd16Pseudo
     0U,	// VLD4LNd16Pseudo_UPD
-    5920U,	// VLD4LNd16_UPD
-    411866656U,	// VLD4LNd32
+    6182U,	// VLD4LNd16_UPD
+    440194854U,	// VLD4LNd32
     0U,	// VLD4LNd32Pseudo
     0U,	// VLD4LNd32Pseudo_UPD
-    5920U,	// VLD4LNd32_UPD
-    411866656U,	// VLD4LNd8
+    6182U,	// VLD4LNd32_UPD
+    440194854U,	// VLD4LNd8
     0U,	// VLD4LNd8Pseudo
     0U,	// VLD4LNd8Pseudo_UPD
-    5920U,	// VLD4LNd8_UPD
-    411866656U,	// VLD4LNq16
+    6182U,	// VLD4LNd8_UPD
+    440194854U,	// VLD4LNq16
     0U,	// VLD4LNq16Pseudo
     0U,	// VLD4LNq16Pseudo_UPD
-    5920U,	// VLD4LNq16_UPD
-    411866656U,	// VLD4LNq32
+    6182U,	// VLD4LNq16_UPD
+    440194854U,	// VLD4LNq32
     0U,	// VLD4LNq32Pseudo
     0U,	// VLD4LNq32Pseudo_UPD
-    5920U,	// VLD4LNq32_UPD
+    6182U,	// VLD4LNq32_UPD
     33554432U,	// VLD4d16
     0U,	// VLD4d16Pseudo
     0U,	// VLD4d16Pseudo_UPD
@@ -7524,16 +7689,16 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     33554432U,	// VLD4q8_UPD
     0U,	// VLD4q8oddPseudo
     0U,	// VLD4q8oddPseudo_UPD
-    524U,	// VLDMDDB_UPD
-    18304U,	// VLDMDIA
-    524U,	// VLDMDIA_UPD
+    532U,	// VLDMDDB_UPD
+    18432U,	// VLDMDIA
+    532U,	// VLDMDIA_UPD
     0U,	// VLDMQIA
-    524U,	// VLDMSDB_UPD
-    18304U,	// VLDMSIA
-    524U,	// VLDMSIA_UPD
-    6016U,	// VLDRD
-    6144U,	// VLDRH
-    6016U,	// VLDRS
+    532U,	// VLDMSDB_UPD
+    18432U,	// VLDMSIA
+    532U,	// VLDMSIA_UPD
+    6272U,	// VLDRD
+    6400U,	// VLDRH
+    6272U,	// VLDRS
     0U,	// VLDR_FPCXTNS_off
     0U,	// VLDR_FPCXTNS_post
     0U,	// VLDR_FPCXTNS_pre
@@ -7547,7 +7712,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VLDR_FPSCR_post
     0U,	// VLDR_FPSCR_pre
     0U,	// VLDR_P0_off
-    36U,	// VLDR_P0_post
+    42U,	// VLDR_P0_post
     0U,	// VLDR_P0_pre
     0U,	// VLDR_VPR_off
     0U,	// VLDR_VPR_post
@@ -7586,69 +7751,70 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VMINuv4i32
     0U,	// VMINuv8i16
     0U,	// VMINuv8i8
-    49942U,	// VMLAD
-    8914304U,	// VMLAH
-    445121920U,	// VMLALslsv2i32
-    445121920U,	// VMLALslsv4i16
-    445121920U,	// VMLALsluv2i32
-    445121920U,	// VMLALsluv4i16
-    8914304U,	// VMLALsv2i64
-    8914304U,	// VMLALsv4i32
-    8914304U,	// VMLALsv8i16
-    8914304U,	// VMLALuv2i64
-    8914304U,	// VMLALuv4i32
-    8914304U,	// VMLALuv8i16
-    8914304U,	// VMLAS
-    8914304U,	// VMLAfd
-    8914304U,	// VMLAfq
-    8914304U,	// VMLAhd
-    8914304U,	// VMLAhq
-    445121920U,	// VMLAslfd
-    445121920U,	// VMLAslfq
-    445121920U,	// VMLAslhd
-    445121920U,	// VMLAslhq
-    445121920U,	// VMLAslv2i32
-    445121920U,	// VMLAslv4i16
-    445121920U,	// VMLAslv4i32
-    445121920U,	// VMLAslv8i16
-    8914304U,	// VMLAv16i8
-    8914304U,	// VMLAv2i32
-    8914304U,	// VMLAv4i16
-    8914304U,	// VMLAv4i32
-    8914304U,	// VMLAv8i16
-    8914304U,	// VMLAv8i8
-    49942U,	// VMLSD
-    8914304U,	// VMLSH
-    445121920U,	// VMLSLslsv2i32
-    445121920U,	// VMLSLslsv4i16
-    445121920U,	// VMLSLsluv2i32
-    445121920U,	// VMLSLsluv4i16
-    8914304U,	// VMLSLsv2i64
-    8914304U,	// VMLSLsv4i32
-    8914304U,	// VMLSLsv8i16
-    8914304U,	// VMLSLuv2i64
-    8914304U,	// VMLSLuv4i32
-    8914304U,	// VMLSLuv8i16
-    8914304U,	// VMLSS
-    8914304U,	// VMLSfd
-    8914304U,	// VMLSfq
-    8914304U,	// VMLShd
-    8914304U,	// VMLShq
-    445121920U,	// VMLSslfd
-    445121920U,	// VMLSslfq
-    445121920U,	// VMLSslhd
-    445121920U,	// VMLSslhq
-    445121920U,	// VMLSslv2i32
-    445121920U,	// VMLSslv4i16
-    445121920U,	// VMLSslv4i32
-    445121920U,	// VMLSslv8i16
-    8914304U,	// VMLSv16i8
-    8914304U,	// VMLSv2i32
-    8914304U,	// VMLSv4i16
-    8914304U,	// VMLSv4i32
-    8914304U,	// VMLSv8i16
-    8914304U,	// VMLSv8i8
-    520U,	// VMOVD
+    49944U,	// VMLAD
+    3671424U,	// VMLAH
+    473433472U,	// VMLALslsv2i32
+    473433472U,	// VMLALslsv4i16
+    473433472U,	// VMLALsluv2i32
+    473433472U,	// VMLALsluv4i16
+    3671424U,	// VMLALsv2i64
+    3671424U,	// VMLALsv4i32
+    3671424U,	// VMLALsv8i16
+    3671424U,	// VMLALuv2i64
+    3671424U,	// VMLALuv4i32
+    3671424U,	// VMLALuv8i16
+    3671424U,	// VMLAS
+    3671424U,	// VMLAfd
+    3671424U,	// VMLAfq
+    3671424U,	// VMLAhd
+    3671424U,	// VMLAhq
+    473433472U,	// VMLAslfd
+    473433472U,	// VMLAslfq
+    473433472U,	// VMLAslhd
+    473433472U,	// VMLAslhq
+    473433472U,	// VMLAslv2i32
+    473433472U,	// VMLAslv4i16
+    473433472U,	// VMLAslv4i32
+    473433472U,	// VMLAslv8i16
+    3671424U,	// VMLAv16i8
+    3671424U,	// VMLAv2i32
+    3671424U,	// VMLAv4i16
+    3671424U,	// VMLAv4i32
+    3671424U,	// VMLAv8i16
+    3671424U,	// VMLAv8i8
+    49944U,	// VMLSD
+    3671424U,	// VMLSH
+    473433472U,	// VMLSLslsv2i32
+    473433472U,	// VMLSLslsv4i16
+    473433472U,	// VMLSLsluv2i32
+    473433472U,	// VMLSLsluv4i16
+    3671424U,	// VMLSLsv2i64
+    3671424U,	// VMLSLsv4i32
+    3671424U,	// VMLSLsv8i16
+    3671424U,	// VMLSLuv2i64
+    3671424U,	// VMLSLuv4i32
+    3671424U,	// VMLSLuv8i16
+    3671424U,	// VMLSS
+    3671424U,	// VMLSfd
+    3671424U,	// VMLSfq
+    3671424U,	// VMLShd
+    3671424U,	// VMLShq
+    473433472U,	// VMLSslfd
+    473433472U,	// VMLSslfq
+    473433472U,	// VMLSslhd
+    473433472U,	// VMLSslhq
+    473433472U,	// VMLSslv2i32
+    473433472U,	// VMLSslv4i16
+    473433472U,	// VMLSslv4i32
+    473433472U,	// VMLSslv8i16
+    3671424U,	// VMLSv16i8
+    3671424U,	// VMLSv2i32
+    3671424U,	// VMLSv4i16
+    3671424U,	// VMLSv4i32
+    3671424U,	// VMLSv8i16
+    3671424U,	// VMLSv8i8
+    2U,	// VMMLA
+    528U,	// VMOVD
     0U,	// VMOVDRR
     2U,	// VMOVH
     16384U,	// VMOVHR
@@ -7668,29 +7834,29 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     16384U,	// VMOVS
     16384U,	// VMOVSR
     33554432U,	// VMOVSRR
-    4736U,	// VMOVv16i8
+    4864U,	// VMOVv16i8
     0U,	// VMOVv1i64
-    1792U,	// VMOVv2f32
-    4736U,	// VMOVv2i32
+    1920U,	// VMOVv2f32
+    4864U,	// VMOVv2i32
     0U,	// VMOVv2i64
-    1792U,	// VMOVv4f32
-    4736U,	// VMOVv4i16
-    4736U,	// VMOVv4i32
-    4736U,	// VMOVv8i16
-    4736U,	// VMOVv8i8
-    38U,	// VMRS
-    40U,	// VMRS_FPCXTNS
-    42U,	// VMRS_FPCXTS
-    44U,	// VMRS_FPEXC
-    46U,	// VMRS_FPINST
-    48U,	// VMRS_FPINST2
-    50U,	// VMRS_FPSCR_NZCVQC
-    52U,	// VMRS_FPSID
-    54U,	// VMRS_MVFR0
-    56U,	// VMRS_MVFR1
-    58U,	// VMRS_MVFR2
-    60U,	// VMRS_P0
-    62U,	// VMRS_VPR
+    1920U,	// VMOVv4f32
+    4864U,	// VMOVv4i16
+    4864U,	// VMOVv4i32
+    4864U,	// VMOVv8i16
+    4864U,	// VMOVv8i8
+    44U,	// VMRS
+    46U,	// VMRS_FPCXTNS
+    48U,	// VMRS_FPCXTS
+    50U,	// VMRS_FPEXC
+    52U,	// VMRS_FPINST
+    54U,	// VMRS_FPINST2
+    56U,	// VMRS_FPSCR_NZCVQC
+    58U,	// VMRS_FPSID
+    60U,	// VMRS_MVFR0
+    62U,	// VMRS_MVFR1
+    64U,	// VMRS_MVFR2
+    66U,	// VMRS_P0
+    68U,	// VMRS_VPR
     2U,	// VMSR
     2U,	// VMSR_FPCXTNS
     2U,	// VMSR_FPCXTS
@@ -7701,14 +7867,14 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VMSR_FPSID
     2U,	// VMSR_P0
     2U,	// VMSR_VPR
-    10568456U,	// VMULD
+    2720528U,	// VMULD
     0U,	// VMULH
     17792U,	// VMULLp64
     0U,	// VMULLp8
-    134217728U,	// VMULLslsv2i32
-    134217728U,	// VMULLslsv4i16
-    134217728U,	// VMULLsluv2i32
-    134217728U,	// VMULLsluv4i16
+    167772160U,	// VMULLslsv2i32
+    167772160U,	// VMULLslsv4i16
+    167772160U,	// VMULLsluv2i32
+    167772160U,	// VMULLsluv4i16
     0U,	// VMULLsv2i64
     0U,	// VMULLsv4i32
     0U,	// VMULLsv8i16
@@ -7722,14 +7888,14 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VMULhq
     0U,	// VMULpd
     0U,	// VMULpq
-    134217728U,	// VMULslfd
-    134217728U,	// VMULslfq
-    134217728U,	// VMULslhd
-    134217728U,	// VMULslhq
-    134217728U,	// VMULslv2i32
-    134217728U,	// VMULslv4i16
-    134217728U,	// VMULslv4i32
-    134217728U,	// VMULslv8i16
+    167772160U,	// VMULslfd
+    167772160U,	// VMULslfq
+    167772160U,	// VMULslhd
+    167772160U,	// VMULslhq
+    167772160U,	// VMULslv2i32
+    167772160U,	// VMULslv4i16
+    167772160U,	// VMULslv4i32
+    167772160U,	// VMULslv8i16
     0U,	// VMULv16i8
     0U,	// VMULv2i32
     0U,	// VMULv4i16
@@ -7738,11 +7904,11 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VMULv8i8
     16384U,	// VMVNd
     16384U,	// VMVNq
-    4736U,	// VMVNv2i32
-    4736U,	// VMVNv4i16
-    4736U,	// VMVNv4i32
-    4736U,	// VMVNv8i16
-    520U,	// VNEGD
+    4864U,	// VMVNv2i32
+    4864U,	// VMVNv4i16
+    4864U,	// VMVNv4i32
+    4864U,	// VMVNv8i16
+    528U,	// VNEGD
     16384U,	// VNEGH
     16384U,	// VNEGS
     16384U,	// VNEGf32q
@@ -7755,22 +7921,22 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     16384U,	// VNEGs32q
     16384U,	// VNEGs8d
     16384U,	// VNEGs8q
-    49942U,	// VNMLAD
-    8914304U,	// VNMLAH
-    8914304U,	// VNMLAS
-    49942U,	// VNMLSD
-    8914304U,	// VNMLSH
-    8914304U,	// VNMLSS
-    10568456U,	// VNMULD
+    49944U,	// VNMLAD
+    3671424U,	// VNMLAH
+    3671424U,	// VNMLAS
+    49944U,	// VNMLSD
+    3671424U,	// VNMLSH
+    3671424U,	// VNMLSS
+    2720528U,	// VNMULD
     0U,	// VNMULH
     0U,	// VNMULS
     0U,	// VORNd
     0U,	// VORNq
     0U,	// VORRd
-    4736U,	// VORRiv2i32
-    4736U,	// VORRiv4i16
-    4736U,	// VORRiv4i32
-    4736U,	// VORRiv8i16
+    4864U,	// VORRiv2i32
+    4864U,	// VORRiv4i16
+    4864U,	// VORRiv4i32
+    4864U,	// VORRiv8i16
     0U,	// VORRq
     17792U,	// VPADALsv16i8
     17792U,	// VPADALsv2i32
@@ -7839,24 +8005,24 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VQADDuv4i32
     0U,	// VQADDuv8i16
     0U,	// VQADDuv8i8
-    445121920U,	// VQDMLALslv2i32
-    445121920U,	// VQDMLALslv4i16
-    8914304U,	// VQDMLALv2i64
-    8914304U,	// VQDMLALv4i32
-    445121920U,	// VQDMLSLslv2i32
-    445121920U,	// VQDMLSLslv4i16
-    8914304U,	// VQDMLSLv2i64
-    8914304U,	// VQDMLSLv4i32
-    134217728U,	// VQDMULHslv2i32
-    134217728U,	// VQDMULHslv4i16
-    134217728U,	// VQDMULHslv4i32
-    134217728U,	// VQDMULHslv8i16
+    473433472U,	// VQDMLALslv2i32
+    473433472U,	// VQDMLALslv4i16
+    3671424U,	// VQDMLALv2i64
+    3671424U,	// VQDMLALv4i32
+    473433472U,	// VQDMLSLslv2i32
+    473433472U,	// VQDMLSLslv4i16
+    3671424U,	// VQDMLSLv2i64
+    3671424U,	// VQDMLSLv4i32
+    167772160U,	// VQDMULHslv2i32
+    167772160U,	// VQDMULHslv4i16
+    167772160U,	// VQDMULHslv4i32
+    167772160U,	// VQDMULHslv8i16
     0U,	// VQDMULHv2i32
     0U,	// VQDMULHv4i16
     0U,	// VQDMULHv4i32
     0U,	// VQDMULHv8i16
-    134217728U,	// VQDMULLslv2i32
-    134217728U,	// VQDMULLslv4i16
+    167772160U,	// VQDMULLslv2i32
+    167772160U,	// VQDMULLslv4i16
     0U,	// VQDMULLv2i64
     0U,	// VQDMULLv4i32
     2U,	// VQMOVNsuv2i32
@@ -7874,26 +8040,26 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     16384U,	// VQNEGv4i32
     16384U,	// VQNEGv8i16
     16384U,	// VQNEGv8i8
-    445121920U,	// VQRDMLAHslv2i32
-    445121920U,	// VQRDMLAHslv4i16
-    445121920U,	// VQRDMLAHslv4i32
-    445121920U,	// VQRDMLAHslv8i16
-    8914304U,	// VQRDMLAHv2i32
-    8914304U,	// VQRDMLAHv4i16
-    8914304U,	// VQRDMLAHv4i32
-    8914304U,	// VQRDMLAHv8i16
-    445121920U,	// VQRDMLSHslv2i32
-    445121920U,	// VQRDMLSHslv4i16
-    445121920U,	// VQRDMLSHslv4i32
-    445121920U,	// VQRDMLSHslv8i16
-    8914304U,	// VQRDMLSHv2i32
-    8914304U,	// VQRDMLSHv4i16
-    8914304U,	// VQRDMLSHv4i32
-    8914304U,	// VQRDMLSHv8i16
-    134217728U,	// VQRDMULHslv2i32
-    134217728U,	// VQRDMULHslv4i16
-    134217728U,	// VQRDMULHslv4i32
-    134217728U,	// VQRDMULHslv8i16
+    473433472U,	// VQRDMLAHslv2i32
+    473433472U,	// VQRDMLAHslv4i16
+    473433472U,	// VQRDMLAHslv4i32
+    473433472U,	// VQRDMLAHslv8i16
+    3671424U,	// VQRDMLAHv2i32
+    3671424U,	// VQRDMLAHv4i16
+    3671424U,	// VQRDMLAHv4i32
+    3671424U,	// VQRDMLAHv8i16
+    473433472U,	// VQRDMLSHslv2i32
+    473433472U,	// VQRDMLSHslv4i16
+    473433472U,	// VQRDMLSHslv4i32
+    473433472U,	// VQRDMLSHslv8i16
+    3671424U,	// VQRDMLSHv2i32
+    3671424U,	// VQRDMLSHv4i16
+    3671424U,	// VQRDMLSHv4i32
+    3671424U,	// VQRDMLSHv8i16
+    167772160U,	// VQRDMULHslv2i32
+    167772160U,	// VQRDMULHslv4i16
+    167772160U,	// VQRDMULHslv4i32
+    167772160U,	// VQRDMULHslv8i16
     0U,	// VQRDMULHv2i32
     0U,	// VQRDMULHv4i16
     0U,	// VQRDMULHv4i32
@@ -8053,17 +8219,17 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     2U,	// VRINTPNQf
     2U,	// VRINTPNQh
     2U,	// VRINTPS
-    520U,	// VRINTRD
+    528U,	// VRINTRD
     16384U,	// VRINTRH
     16384U,	// VRINTRS
-    520U,	// VRINTXD
+    528U,	// VRINTXD
     16384U,	// VRINTXH
     2U,	// VRINTXNDf
     2U,	// VRINTXNDh
     2U,	// VRINTXNQf
     2U,	// VRINTXNQh
     16384U,	// VRINTXS
-    520U,	// VRINTZD
+    528U,	// VRINTZD
     16384U,	// VRINTZH
     2U,	// VRINTZNDf
     2U,	// VRINTZNDh
@@ -8115,31 +8281,31 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VRSQRTSfq
     0U,	// VRSQRTShd
     0U,	// VRSQRTShq
-    8914304U,	// VRSRAsv16i8
+    3671424U,	// VRSRAsv16i8
     16768U,	// VRSRAsv1i64
-    8914304U,	// VRSRAsv2i32
+    3671424U,	// VRSRAsv2i32
     16768U,	// VRSRAsv2i64
-    8914304U,	// VRSRAsv4i16
-    8914304U,	// VRSRAsv4i32
-    8914304U,	// VRSRAsv8i16
-    8914304U,	// VRSRAsv8i8
-    8914304U,	// VRSRAuv16i8
-    8914304U,	// VRSRAuv1i64
-    8914304U,	// VRSRAuv2i32
-    8914304U,	// VRSRAuv2i64
-    8914304U,	// VRSRAuv4i16
-    8914304U,	// VRSRAuv4i32
-    8914304U,	// VRSRAuv8i16
-    8914304U,	// VRSRAuv8i8
+    3671424U,	// VRSRAsv4i16
+    3671424U,	// VRSRAsv4i32
+    3671424U,	// VRSRAsv8i16
+    3671424U,	// VRSRAsv8i8
+    3671424U,	// VRSRAuv16i8
+    3671424U,	// VRSRAuv1i64
+    3671424U,	// VRSRAuv2i32
+    3671424U,	// VRSRAuv2i64
+    3671424U,	// VRSRAuv4i16
+    3671424U,	// VRSRAuv4i32
+    3671424U,	// VRSRAuv8i16
+    3671424U,	// VRSRAuv8i8
     17792U,	// VRSUBHNv2i32
     0U,	// VRSUBHNv4i16
     0U,	// VRSUBHNv8i8
     0U,	// VSCCLRMD
     0U,	// VSCCLRMS
     2U,	// VSDOTD
-    536U,	// VSDOTDI
+    520U,	// VSDOTDI
     2U,	// VSDOTQ
-    536U,	// VSDOTQI
+    520U,	// VSDOTQI
     17792U,	// VSELEQD
     17792U,	// VSELEQH
     17792U,	// VSELEQS
@@ -8152,9 +8318,9 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     17792U,	// VSELVSD
     17792U,	// VSELVSH
     17792U,	// VSELVSS
-    26U,	// VSETLNi16
-    26U,	// VSETLNi32
-    26U,	// VSETLNi8
+    32U,	// VSETLNi16
+    32U,	// VSETLNi32
+    32U,	// VSETLNi8
     0U,	// VSHLLi16
     0U,	// VSHLLi32
     0U,	// VSHLLi8
@@ -8208,55 +8374,56 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VSHRuv8i16
     0U,	// VSHRuv8i8
     0U,	// VSHTOD
-    64U,	// VSHTOH
+    70U,	// VSHTOH
     0U,	// VSHTOS
     0U,	// VSITOD
     0U,	// VSITOH
     0U,	// VSITOS
-    8914304U,	// VSLIv16i8
-    8914304U,	// VSLIv1i64
-    8914304U,	// VSLIv2i32
-    8914304U,	// VSLIv2i64
-    8914304U,	// VSLIv4i16
-    8914304U,	// VSLIv4i32
-    8914304U,	// VSLIv8i16
-    8914304U,	// VSLIv8i8
-    66U,	// VSLTOD
-    66U,	// VSLTOH
-    66U,	// VSLTOS
-    520U,	// VSQRTD
+    3671424U,	// VSLIv16i8
+    3671424U,	// VSLIv1i64
+    3671424U,	// VSLIv2i32
+    3671424U,	// VSLIv2i64
+    3671424U,	// VSLIv4i16
+    3671424U,	// VSLIv4i32
+    3671424U,	// VSLIv8i16
+    3671424U,	// VSLIv8i8
+    72U,	// VSLTOD
+    72U,	// VSLTOH
+    72U,	// VSLTOS
+    2U,	// VSMMLA
+    528U,	// VSQRTD
     16384U,	// VSQRTH
     16384U,	// VSQRTS
-    8914304U,	// VSRAsv16i8
+    3671424U,	// VSRAsv16i8
     16768U,	// VSRAsv1i64
-    8914304U,	// VSRAsv2i32
+    3671424U,	// VSRAsv2i32
     16768U,	// VSRAsv2i64
-    8914304U,	// VSRAsv4i16
-    8914304U,	// VSRAsv4i32
-    8914304U,	// VSRAsv8i16
-    8914304U,	// VSRAsv8i8
-    8914304U,	// VSRAuv16i8
-    8914304U,	// VSRAuv1i64
-    8914304U,	// VSRAuv2i32
-    8914304U,	// VSRAuv2i64
-    8914304U,	// VSRAuv4i16
-    8914304U,	// VSRAuv4i32
-    8914304U,	// VSRAuv8i16
-    8914304U,	// VSRAuv8i8
-    8914304U,	// VSRIv16i8
-    8914304U,	// VSRIv1i64
-    8914304U,	// VSRIv2i32
-    8914304U,	// VSRIv2i64
-    8914304U,	// VSRIv4i16
-    8914304U,	// VSRIv4i32
-    8914304U,	// VSRIv8i16
-    8914304U,	// VSRIv8i8
-    6304U,	// VST1LNd16
-    482105632U,	// VST1LNd16_UPD
-    6304U,	// VST1LNd32
-    482105632U,	// VST1LNd32_UPD
-    6304U,	// VST1LNd8
-    482105632U,	// VST1LNd8_UPD
+    3671424U,	// VSRAsv4i16
+    3671424U,	// VSRAsv4i32
+    3671424U,	// VSRAsv8i16
+    3671424U,	// VSRAsv8i8
+    3671424U,	// VSRAuv16i8
+    3671424U,	// VSRAuv1i64
+    3671424U,	// VSRAuv2i32
+    3671424U,	// VSRAuv2i64
+    3671424U,	// VSRAuv4i16
+    3671424U,	// VSRAuv4i32
+    3671424U,	// VSRAuv8i16
+    3671424U,	// VSRAuv8i8
+    3671424U,	// VSRIv16i8
+    3671424U,	// VSRIv1i64
+    3671424U,	// VSRIv2i32
+    3671424U,	// VSRIv2i64
+    3671424U,	// VSRIv4i16
+    3671424U,	// VSRIv4i32
+    3671424U,	// VSRIv8i16
+    3671424U,	// VSRIv8i8
+    6566U,	// VST1LNd16
+    516200998U,	// VST1LNd16_UPD
+    6566U,	// VST1LNd32
+    516200998U,	// VST1LNd32_UPD
+    6566U,	// VST1LNd8
+    516200998U,	// VST1LNd8_UPD
     0U,	// VST1LNq16Pseudo
     0U,	// VST1LNq16Pseudo_UPD
     0U,	// VST1LNq32Pseudo
@@ -8339,26 +8506,26 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VST1q8LowTPseudo_UPD
     0U,	// VST1q8wb_fixed
     0U,	// VST1q8wb_register
-    411866144U,	// VST2LNd16
+    440194342U,	// VST2LNd16
     0U,	// VST2LNd16Pseudo
     0U,	// VST2LNd16Pseudo_UPD
-    15504544U,	// VST2LNd16_UPD
-    411866144U,	// VST2LNd32
+    440718758U,	// VST2LNd16_UPD
+    440194342U,	// VST2LNd32
     0U,	// VST2LNd32Pseudo
     0U,	// VST2LNd32Pseudo_UPD
-    15504544U,	// VST2LNd32_UPD
-    411866144U,	// VST2LNd8
+    440718758U,	// VST2LNd32_UPD
+    440194342U,	// VST2LNd8
     0U,	// VST2LNd8Pseudo
     0U,	// VST2LNd8Pseudo_UPD
-    15504544U,	// VST2LNd8_UPD
-    411866144U,	// VST2LNq16
+    440718758U,	// VST2LNd8_UPD
+    440194342U,	// VST2LNq16
     0U,	// VST2LNq16Pseudo
     0U,	// VST2LNq16Pseudo_UPD
-    15504544U,	// VST2LNq16_UPD
-    411866144U,	// VST2LNq32
+    440718758U,	// VST2LNq16_UPD
+    440194342U,	// VST2LNq32
     0U,	// VST2LNq32Pseudo
     0U,	// VST2LNq32Pseudo_UPD
-    15504544U,	// VST2LNq32_UPD
+    440718758U,	// VST2LNq32_UPD
     0U,	// VST2b16
     0U,	// VST2b16wb_fixed
     0U,	// VST2b16wb_register
@@ -8395,110 +8562,110 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VST2q8PseudoWB_register
     0U,	// VST2q8wb_fixed
     0U,	// VST2q8wb_register
-    411867424U,	// VST3LNd16
+    440195622U,	// VST3LNd16
     0U,	// VST3LNd16Pseudo
     0U,	// VST3LNd16Pseudo_UPD
-    6560U,	// VST3LNd16_UPD
-    411867424U,	// VST3LNd32
+    6822U,	// VST3LNd16_UPD
+    440195622U,	// VST3LNd32
     0U,	// VST3LNd32Pseudo
     0U,	// VST3LNd32Pseudo_UPD
-    6560U,	// VST3LNd32_UPD
-    411867424U,	// VST3LNd8
+    6822U,	// VST3LNd32_UPD
+    440195622U,	// VST3LNd8
     0U,	// VST3LNd8Pseudo
     0U,	// VST3LNd8Pseudo_UPD
-    6560U,	// VST3LNd8_UPD
-    411867424U,	// VST3LNq16
+    6822U,	// VST3LNd8_UPD
+    440195622U,	// VST3LNq16
     0U,	// VST3LNq16Pseudo
     0U,	// VST3LNq16Pseudo_UPD
-    6560U,	// VST3LNq16_UPD
-    411867424U,	// VST3LNq32
+    6822U,	// VST3LNq16_UPD
+    440195622U,	// VST3LNq32
     0U,	// VST3LNq32Pseudo
     0U,	// VST3LNq32Pseudo_UPD
-    6560U,	// VST3LNq32_UPD
-    369623424U,	// VST3d16
+    6822U,	// VST3LNq32_UPD
+    403177856U,	// VST3d16
     0U,	// VST3d16Pseudo
     0U,	// VST3d16Pseudo_UPD
-    367104U,	// VST3d16_UPD
-    369623424U,	// VST3d32
+    383744U,	// VST3d16_UPD
+    403177856U,	// VST3d32
     0U,	// VST3d32Pseudo
     0U,	// VST3d32Pseudo_UPD
-    367104U,	// VST3d32_UPD
-    369623424U,	// VST3d8
+    383744U,	// VST3d32_UPD
+    403177856U,	// VST3d8
     0U,	// VST3d8Pseudo
     0U,	// VST3d8Pseudo_UPD
-    367104U,	// VST3d8_UPD
-    369623424U,	// VST3q16
+    383744U,	// VST3d8_UPD
+    403177856U,	// VST3q16
     0U,	// VST3q16Pseudo_UPD
-    367104U,	// VST3q16_UPD
+    383744U,	// VST3q16_UPD
     0U,	// VST3q16oddPseudo
     0U,	// VST3q16oddPseudo_UPD
-    369623424U,	// VST3q32
+    403177856U,	// VST3q32
     0U,	// VST3q32Pseudo_UPD
-    367104U,	// VST3q32_UPD
+    383744U,	// VST3q32_UPD
     0U,	// VST3q32oddPseudo
     0U,	// VST3q32oddPseudo_UPD
-    369623424U,	// VST3q8
+    403177856U,	// VST3q8
     0U,	// VST3q8Pseudo_UPD
-    367104U,	// VST3q8_UPD
+    383744U,	// VST3q8_UPD
     0U,	// VST3q8oddPseudo
     0U,	// VST3q8oddPseudo_UPD
-    411866272U,	// VST4LNd16
+    440194470U,	// VST4LNd16
     0U,	// VST4LNd16Pseudo
     0U,	// VST4LNd16Pseudo_UPD
-    382240U,	// VST4LNd16_UPD
-    411866272U,	// VST4LNd32
+    398886U,	// VST4LNd16_UPD
+    440194470U,	// VST4LNd32
     0U,	// VST4LNd32Pseudo
     0U,	// VST4LNd32Pseudo_UPD
-    382240U,	// VST4LNd32_UPD
-    411866272U,	// VST4LNd8
+    398886U,	// VST4LNd32_UPD
+    440194470U,	// VST4LNd8
     0U,	// VST4LNd8Pseudo
     0U,	// VST4LNd8Pseudo_UPD
-    382240U,	// VST4LNd8_UPD
-    411866272U,	// VST4LNq16
+    398886U,	// VST4LNd8_UPD
+    440194470U,	// VST4LNq16
     0U,	// VST4LNq16Pseudo
     0U,	// VST4LNq16Pseudo_UPD
-    382240U,	// VST4LNq16_UPD
-    411866272U,	// VST4LNq32
+    398886U,	// VST4LNq16_UPD
+    440194470U,	// VST4LNq32
     0U,	// VST4LNq32Pseudo
     0U,	// VST4LNq32Pseudo_UPD
-    382240U,	// VST4LNq32_UPD
+    398886U,	// VST4LNq32_UPD
     34079104U,	// VST4d16
     0U,	// VST4d16Pseudo
     0U,	// VST4d16Pseudo_UPD
-    15735296U,	// VST4d16_UPD
+    15735552U,	// VST4d16_UPD
     34079104U,	// VST4d32
     0U,	// VST4d32Pseudo
     0U,	// VST4d32Pseudo_UPD
-    15735296U,	// VST4d32_UPD
+    15735552U,	// VST4d32_UPD
     34079104U,	// VST4d8
     0U,	// VST4d8Pseudo
     0U,	// VST4d8Pseudo_UPD
-    15735296U,	// VST4d8_UPD
+    15735552U,	// VST4d8_UPD
     34079104U,	// VST4q16
     0U,	// VST4q16Pseudo_UPD
-    15735296U,	// VST4q16_UPD
+    15735552U,	// VST4q16_UPD
     0U,	// VST4q16oddPseudo
     0U,	// VST4q16oddPseudo_UPD
     34079104U,	// VST4q32
     0U,	// VST4q32Pseudo_UPD
-    15735296U,	// VST4q32_UPD
+    15735552U,	// VST4q32_UPD
     0U,	// VST4q32oddPseudo
     0U,	// VST4q32oddPseudo_UPD
     34079104U,	// VST4q8
     0U,	// VST4q8Pseudo_UPD
-    15735296U,	// VST4q8_UPD
+    15735552U,	// VST4q8_UPD
     0U,	// VST4q8oddPseudo
     0U,	// VST4q8oddPseudo_UPD
-    524U,	// VSTMDDB_UPD
-    18304U,	// VSTMDIA
-    524U,	// VSTMDIA_UPD
+    532U,	// VSTMDDB_UPD
+    18432U,	// VSTMDIA
+    532U,	// VSTMDIA_UPD
     0U,	// VSTMQIA
-    524U,	// VSTMSDB_UPD
-    18304U,	// VSTMSIA
-    524U,	// VSTMSIA_UPD
-    6016U,	// VSTRD
-    6144U,	// VSTRH
-    6016U,	// VSTRS
+    532U,	// VSTMSDB_UPD
+    18432U,	// VSTMSIA
+    532U,	// VSTMSIA_UPD
+    6272U,	// VSTRD
+    6400U,	// VSTRH
+    6272U,	// VSTRS
     0U,	// VSTR_FPCXTNS_off
     0U,	// VSTR_FPCXTNS_post
     0U,	// VSTR_FPCXTNS_pre
@@ -8512,12 +8679,12 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VSTR_FPSCR_post
     0U,	// VSTR_FPSCR_pre
     0U,	// VSTR_P0_off
-    36U,	// VSTR_P0_post
+    42U,	// VSTR_P0_post
     0U,	// VSTR_P0_pre
     0U,	// VSTR_VPR_off
     0U,	// VSTR_VPR_post
     0U,	// VSTR_VPR_pre
-    10568456U,	// VSUBD
+    2720528U,	// VSUBD
     0U,	// VSUBH
     17792U,	// VSUBHNv2i32
     0U,	// VSUBHNv4i16
@@ -8547,22 +8714,24 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VSUBv4i32
     0U,	// VSUBv8i16
     0U,	// VSUBv8i8
+    520U,	// VSUDOTDI
+    520U,	// VSUDOTQI
     16384U,	// VSWPd
     16384U,	// VSWPq
-    6784U,	// VTBL1
-    6912U,	// VTBL2
-    7040U,	// VTBL3
+    7040U,	// VTBL1
+    7168U,	// VTBL2
+    7296U,	// VTBL3
     0U,	// VTBL3Pseudo
-    7168U,	// VTBL4
+    7424U,	// VTBL4
     0U,	// VTBL4Pseudo
-    7296U,	// VTBX1
-    7424U,	// VTBX2
-    7552U,	// VTBX3
+    7552U,	// VTBX1
+    7680U,	// VTBX2
+    7808U,	// VTBX3
     0U,	// VTBX3Pseudo
-    7680U,	// VTBX4
+    7936U,	// VTBX4
     0U,	// VTBX4Pseudo
     0U,	// VTOSHD
-    64U,	// VTOSHH
+    70U,	// VTOSHH
     0U,	// VTOSHS
     0U,	// VTOSIRD
     0U,	// VTOSIRH
@@ -8570,11 +8739,11 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VTOSIZD
     0U,	// VTOSIZH
     0U,	// VTOSIZS
-    66U,	// VTOSLD
-    66U,	// VTOSLH
-    66U,	// VTOSLS
+    72U,	// VTOSLD
+    72U,	// VTOSLH
+    72U,	// VTOSLS
     0U,	// VTOUHD
-    64U,	// VTOUHH
+    70U,	// VTOUHH
     0U,	// VTOUHS
     0U,	// VTOUIRD
     0U,	// VTOUIRH
@@ -8582,9 +8751,9 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VTOUIZD
     0U,	// VTOUIZH
     0U,	// VTOUIZS
-    66U,	// VTOULD
-    66U,	// VTOULH
-    66U,	// VTOULS
+    72U,	// VTOULD
+    72U,	// VTOULH
+    72U,	// VTOULS
     16384U,	// VTRNd16
     16384U,	// VTRNd32
     16384U,	// VTRNd8
@@ -8598,18 +8767,24 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// VTSTv8i16
     0U,	// VTSTv8i8
     2U,	// VUDOTD
-    536U,	// VUDOTDI
+    520U,	// VUDOTDI
     2U,	// VUDOTQ
-    536U,	// VUDOTQI
+    520U,	// VUDOTQI
     0U,	// VUHTOD
-    64U,	// VUHTOH
+    70U,	// VUHTOH
     0U,	// VUHTOS
     0U,	// VUITOD
     0U,	// VUITOH
     0U,	// VUITOS
-    66U,	// VULTOD
-    66U,	// VULTOH
-    66U,	// VULTOS
+    72U,	// VULTOD
+    72U,	// VULTOH
+    72U,	// VULTOS
+    2U,	// VUMMLA
+    2U,	// VUSDOTD
+    520U,	// VUSDOTDI
+    2U,	// VUSDOTQ
+    520U,	// VUSDOTQI
+    2U,	// VUSMMLA
     16384U,	// VUZPd16
     16384U,	// VUZPd8
     16384U,	// VUZPq16
@@ -8620,22 +8795,22 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     16384U,	// VZIPq16
     16384U,	// VZIPq32
     16384U,	// VZIPq8
-    395136U,	// sysLDMDA
-    7820U,	// sysLDMDA_UPD
-    395136U,	// sysLDMDB
-    7820U,	// sysLDMDB_UPD
-    395136U,	// sysLDMIA
-    7820U,	// sysLDMIA_UPD
-    395136U,	// sysLDMIB
-    7820U,	// sysLDMIB_UPD
-    395136U,	// sysSTMDA
-    7820U,	// sysSTMDA_UPD
-    395136U,	// sysSTMDB
-    7820U,	// sysSTMDB_UPD
-    395136U,	// sysSTMIA
-    7820U,	// sysSTMIA_UPD
-    395136U,	// sysSTMIB
-    7820U,	// sysSTMIB_UPD
+    411648U,	// sysLDMDA
+    8084U,	// sysLDMDA_UPD
+    411648U,	// sysLDMDB
+    8084U,	// sysLDMDB_UPD
+    411648U,	// sysLDMIA
+    8084U,	// sysLDMIA_UPD
+    411648U,	// sysLDMIB
+    8084U,	// sysLDMIB_UPD
+    411648U,	// sysSTMDA
+    8084U,	// sysSTMDA_UPD
+    411648U,	// sysSTMDB
+    8084U,	// sysSTMDB_UPD
+    411648U,	// sysSTMIA
+    8084U,	// sysSTMIA_UPD
+    411648U,	// sysSTMIB
+    8084U,	// sysSTMIB_UPD
     0U,	// t2ADCri
     0U,	// t2ADCrr
     16252928U,	// t2ADCrs
@@ -8654,18 +8829,18 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     2U,	// t2B
     1280U,	// t2BFC
     2098560U,	// t2BFI
-    16384U,	// t2BFLi
+    8192U,	// t2BFLi
     16384U,	// t2BFLr
-    16384U,	// t2BFi
-    17302912U,	// t2BFic
+    8192U,	// t2BFi
+    17306496U,	// t2BFic
     16384U,	// t2BFr
     0U,	// t2BICri
     0U,	// t2BICrr
     16252928U,	// t2BICrs
     2U,	// t2BXJ
     2U,	// t2Bcc
-    66312U,	// t2CDP
-    66312U,	// t2CDP2
+    82704U,	// t2CDP
+    82704U,	// t2CDP2
     0U,	// t2CLREX
     0U,	// t2CLRM
     16384U,	// t2CLZ
@@ -8708,99 +8883,99 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     128U,	// t2LDAB
     128U,	// t2LDAEX
     128U,	// t2LDAEXB
-    9961472U,	// t2LDAEXD
+    11010048U,	// t2LDAEXD
     128U,	// t2LDAEXH
     128U,	// t2LDAH
-    2318U,	// t2LDC2L_OFFSET
-    2623886U,	// t2LDC2L_OPTION
-    3148174U,	// t2LDC2L_POST
-    2574U,	// t2LDC2L_PRE
-    2318U,	// t2LDC2_OFFSET
-    2623886U,	// t2LDC2_OPTION
-    3148174U,	// t2LDC2_POST
-    2574U,	// t2LDC2_PRE
-    2318U,	// t2LDCL_OFFSET
-    2623886U,	// t2LDCL_OPTION
-    3148174U,	// t2LDCL_POST
-    2574U,	// t2LDCL_PRE
-    2318U,	// t2LDC_OFFSET
-    2623886U,	// t2LDC_OPTION
-    3148174U,	// t2LDC_POST
-    2574U,	// t2LDC_PRE
-    18304U,	// t2LDMDB
-    524U,	// t2LDMDB_UPD
-    18304U,	// t2LDMIA
-    524U,	// t2LDMIA_UPD
-    3840U,	// t2LDRBT
-    100736U,	// t2LDRB_POST
-    4224U,	// t2LDRB_PRE
-    2944U,	// t2LDRBi12
-    3840U,	// t2LDRBi8
-    7936U,	// t2LDRBpci
-    8064U,	// t2LDRBs
-    508035072U,	// t2LDRD_POST
+    2454U,	// t2LDC2L_OFFSET
+    4721174U,	// t2LDC2L_OPTION
+    5245462U,	// t2LDC2L_POST
+    2710U,	// t2LDC2L_PRE
+    2454U,	// t2LDC2_OFFSET
+    4721174U,	// t2LDC2_OPTION
+    5245462U,	// t2LDC2_POST
+    2710U,	// t2LDC2_PRE
+    2454U,	// t2LDCL_OFFSET
+    4721174U,	// t2LDCL_OPTION
+    5245462U,	// t2LDCL_POST
+    2710U,	// t2LDCL_PRE
+    2454U,	// t2LDC_OFFSET
+    4721174U,	// t2LDC_OPTION
+    5245462U,	// t2LDC_POST
+    2710U,	// t2LDC_PRE
+    18432U,	// t2LDMDB
+    532U,	// t2LDMDB_UPD
+    18432U,	// t2LDMIA
+    532U,	// t2LDMIA_UPD
+    3968U,	// t2LDRBT
+    133632U,	// t2LDRB_POST
+    4352U,	// t2LDRB_PRE
+    3072U,	// t2LDRBi12
+    3968U,	// t2LDRBi8
+    8320U,	// t2LDRBpci
+    8448U,	// t2LDRBs
+    543686656U,	// t2LDRD_POST
     17825792U,	// t2LDRD_PRE
     18350080U,	// t2LDRDi8
-    8192U,	// t2LDREX
+    8576U,	// t2LDREX
     128U,	// t2LDREXB
-    9961472U,	// t2LDREXD
+    11010048U,	// t2LDREXD
     128U,	// t2LDREXH
-    3840U,	// t2LDRHT
-    100736U,	// t2LDRH_POST
-    4224U,	// t2LDRH_PRE
-    2944U,	// t2LDRHi12
-    3840U,	// t2LDRHi8
-    7936U,	// t2LDRHpci
-    8064U,	// t2LDRHs
-    3840U,	// t2LDRSBT
-    100736U,	// t2LDRSB_POST
-    4224U,	// t2LDRSB_PRE
-    2944U,	// t2LDRSBi12
-    3840U,	// t2LDRSBi8
-    7936U,	// t2LDRSBpci
-    8064U,	// t2LDRSBs
-    3840U,	// t2LDRSHT
-    100736U,	// t2LDRSH_POST
-    4224U,	// t2LDRSH_PRE
-    2944U,	// t2LDRSHi12
-    3840U,	// t2LDRSHi8
-    7936U,	// t2LDRSHpci
-    8064U,	// t2LDRSHs
-    3840U,	// t2LDRT
-    100736U,	// t2LDR_POST
-    4224U,	// t2LDR_PRE
-    2944U,	// t2LDRi12
-    3840U,	// t2LDRi8
-    7936U,	// t2LDRpci
-    8064U,	// t2LDRs
+    3968U,	// t2LDRHT
+    133632U,	// t2LDRH_POST
+    4352U,	// t2LDRH_PRE
+    3072U,	// t2LDRHi12
+    3968U,	// t2LDRHi8
+    8320U,	// t2LDRHpci
+    8448U,	// t2LDRHs
+    3968U,	// t2LDRSBT
+    133632U,	// t2LDRSB_POST
+    4352U,	// t2LDRSB_PRE
+    3072U,	// t2LDRSBi12
+    3968U,	// t2LDRSBi8
+    8320U,	// t2LDRSBpci
+    8448U,	// t2LDRSBs
+    3968U,	// t2LDRSHT
+    133632U,	// t2LDRSH_POST
+    4352U,	// t2LDRSH_PRE
+    3072U,	// t2LDRSHi12
+    3968U,	// t2LDRSHi8
+    8320U,	// t2LDRSHpci
+    8448U,	// t2LDRSHs
+    3968U,	// t2LDRT
+    133632U,	// t2LDR_POST
+    4352U,	// t2LDR_PRE
+    3072U,	// t2LDRi12
+    3968U,	// t2LDRi8
+    8320U,	// t2LDRpci
+    8448U,	// t2LDRs
     0U,	// t2LE
     0U,	// t2LEUpdate
     0U,	// t2LSLri
     0U,	// t2LSLrr
     16777216U,	// t2LSRri
     0U,	// t2LSRrr
-    74531592U,	// t2MCR
-    74531592U,	// t2MCR2
-    108086024U,	// t2MCRR
-    108086024U,	// t2MCRR2
+    103908112U,	// t2MCR
+    103908112U,	// t2MCR2
+    137462544U,	// t2MCRR
+    137462544U,	// t2MCRR2
     33554432U,	// t2MLA
     33554432U,	// t2MLS
     17792U,	// t2MOVTi16
     16384U,	// t2MOVi
     16384U,	// t2MOVi16
     16384U,	// t2MOVr
-    409600U,	// t2MOVsra_flag
-    409600U,	// t2MOVsrl_flag
-    0U,	// t2MRC
-    0U,	// t2MRC2
+    425984U,	// t2MOVsra_flag
+    425984U,	// t2MOVsrl_flag
+    115480U,	// t2MRC
+    115480U,	// t2MRC2
     0U,	// t2MRRC
     0U,	// t2MRRC2
-    16U,	// t2MRS_AR
-    8320U,	// t2MRS_M
-    3584U,	// t2MRSbanked
-    18U,	// t2MRSsys_AR
-    520U,	// t2MSR_AR
-    520U,	// t2MSR_M
+    26U,	// t2MRS_AR
+    8704U,	// t2MRS_M
+    3712U,	// t2MRSbanked
+    28U,	// t2MRSsys_AR
+    528U,	// t2MSR_AR
+    528U,	// t2MSR_M
     0U,	// t2MSRbanked
     0U,	// t2MUL
     16384U,	// t2MVNi
@@ -8812,18 +8987,18 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// t2ORRri
     0U,	// t2ORRrr
     16252928U,	// t2ORRrs
-    167772160U,	// t2PKHBT
-    201326592U,	// t2PKHTB
+    201326592U,	// t2PKHBT
+    234881024U,	// t2PKHTB
     0U,	// t2PLDWi12
     0U,	// t2PLDWi8
     0U,	// t2PLDWs
     0U,	// t2PLDi12
     0U,	// t2PLDi8
-    0U,	// t2PLDpci
+    1U,	// t2PLDpci
     0U,	// t2PLDs
     0U,	// t2PLIi12
     0U,	// t2PLIi8
-    0U,	// t2PLIpci
+    1U,	// t2PLIpci
     0U,	// t2PLIs
     0U,	// t2QADD
     0U,	// t2QADD16
@@ -8908,63 +9083,63 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// t2SRSDB_UPD
     0U,	// t2SRSIA
     0U,	// t2SRSIA_UPD
-    185088U,	// t2SSAT
-    21248U,	// t2SSAT16
+    218112U,	// t2SSAT
+    21504U,	// t2SSAT16
     0U,	// t2SSAX
     0U,	// t2SSUB16
     0U,	// t2SSUB8
-    2318U,	// t2STC2L_OFFSET
-    2623886U,	// t2STC2L_OPTION
-    3148174U,	// t2STC2L_POST
-    2574U,	// t2STC2L_PRE
-    2318U,	// t2STC2_OFFSET
-    2623886U,	// t2STC2_OPTION
-    3148174U,	// t2STC2_POST
-    2574U,	// t2STC2_PRE
-    2318U,	// t2STCL_OFFSET
-    2623886U,	// t2STCL_OPTION
-    3148174U,	// t2STCL_POST
-    2574U,	// t2STCL_PRE
-    2318U,	// t2STC_OFFSET
-    2623886U,	// t2STC_OPTION
-    3148174U,	// t2STC_POST
-    2574U,	// t2STC_PRE
+    2454U,	// t2STC2L_OFFSET
+    4721174U,	// t2STC2L_OPTION
+    5245462U,	// t2STC2L_POST
+    2710U,	// t2STC2L_PRE
+    2454U,	// t2STC2_OFFSET
+    4721174U,	// t2STC2_OPTION
+    5245462U,	// t2STC2_POST
+    2710U,	// t2STC2_PRE
+    2454U,	// t2STCL_OFFSET
+    4721174U,	// t2STCL_OPTION
+    5245462U,	// t2STCL_POST
+    2710U,	// t2STCL_PRE
+    2454U,	// t2STC_OFFSET
+    4721174U,	// t2STC_OPTION
+    5245462U,	// t2STC_POST
+    2710U,	// t2STC_PRE
     128U,	// t2STL
     128U,	// t2STLB
-    9961472U,	// t2STLEX
-    9961472U,	// t2STLEXB
+    11010048U,	// t2STLEX
+    11010048U,	// t2STLEXB
     33554432U,	// t2STLEXD
-    9961472U,	// t2STLEXH
+    11010048U,	// t2STLEXH
     128U,	// t2STLH
-    18304U,	// t2STMDB
-    524U,	// t2STMDB_UPD
-    18304U,	// t2STMIA
-    524U,	// t2STMIA_UPD
-    3840U,	// t2STRBT
-    100736U,	// t2STRB_POST
-    4224U,	// t2STRB_PRE
-    2944U,	// t2STRBi12
-    3840U,	// t2STRBi8
-    8064U,	// t2STRBs
-    508036480U,	// t2STRD_POST
+    18432U,	// t2STMDB
+    532U,	// t2STMDB_UPD
+    18432U,	// t2STMIA
+    532U,	// t2STMIA_UPD
+    3968U,	// t2STRBT
+    133632U,	// t2STRB_POST
+    4352U,	// t2STRB_PRE
+    3072U,	// t2STRBi12
+    3968U,	// t2STRBi8
+    8448U,	// t2STRBs
+    543688064U,	// t2STRD_POST
     17827200U,	// t2STRD_PRE
     18350080U,	// t2STRDi8
     18874368U,	// t2STREX
-    9961472U,	// t2STREXB
+    11010048U,	// t2STREXB
     33554432U,	// t2STREXD
-    9961472U,	// t2STREXH
-    3840U,	// t2STRHT
-    100736U,	// t2STRH_POST
-    4224U,	// t2STRH_PRE
-    2944U,	// t2STRHi12
-    3840U,	// t2STRHi8
-    8064U,	// t2STRHs
-    3840U,	// t2STRT
-    100736U,	// t2STR_POST
-    4224U,	// t2STR_PRE
-    2944U,	// t2STRi12
-    3840U,	// t2STRi8
-    8064U,	// t2STRs
+    11010048U,	// t2STREXH
+    3968U,	// t2STRHT
+    133632U,	// t2STRH_POST
+    4352U,	// t2STRH_PRE
+    3072U,	// t2STRHi12
+    3968U,	// t2STRHi8
+    8448U,	// t2STRHs
+    3968U,	// t2STRT
+    133632U,	// t2STR_POST
+    4352U,	// t2STR_PRE
+    3072U,	// t2STRi12
+    3968U,	// t2STRi8
+    8448U,	// t2STRs
     0U,	// t2SUBS_PC_LR
     0U,	// t2SUBri
     0U,	// t2SUBri12
@@ -8972,13 +9147,13 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     16252928U,	// t2SUBrs
     0U,	// t2SUBspImm
     0U,	// t2SUBspImm12
-    234881024U,	// t2SXTAB
-    234881024U,	// t2SXTAB16
-    234881024U,	// t2SXTAH
-    196608U,	// t2SXTB
-    196608U,	// t2SXTB16
-    196608U,	// t2SXTH
-    0U,	// t2TBB
+    268435456U,	// t2SXTAB
+    268435456U,	// t2SXTAB16
+    268435456U,	// t2SXTAH
+    229376U,	// t2SXTB
+    229376U,	// t2SXTB16
+    229376U,	// t2SXTH
+    1U,	// t2TBB
     1U,	// t2TBH
     16384U,	// t2TEQri
     16384U,	// t2TEQrr
@@ -9014,18 +9189,18 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// t2UQSUB8
     0U,	// t2USAD8
     33554432U,	// t2USADA8
-    268435456U,	// t2USAT
+    301989888U,	// t2USAT
     0U,	// t2USAT16
     0U,	// t2USAX
     0U,	// t2USUB16
     0U,	// t2USUB8
-    234881024U,	// t2UXTAB
-    234881024U,	// t2UXTAB16
-    234881024U,	// t2UXTAH
-    196608U,	// t2UXTB
-    196608U,	// t2UXTB16
-    196608U,	// t2UXTH
-    17792U,	// t2WLS
+    268435456U,	// t2UXTAB
+    268435456U,	// t2UXTAB16
+    268435456U,	// t2UXTAH
+    229376U,	// t2UXTB
+    229376U,	// t2UXTB16
+    229376U,	// t2UXTH
+    21376U,	// t2WLS
     2U,	// tADC
     17792U,	// tADDhirr
     16768U,	// tADDi3
@@ -9033,18 +9208,18 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// tADDrSP
     19398656U,	// tADDrSPi
     16768U,	// tADDrr
-    8448U,	// tADDspi
+    8832U,	// tADDspi
     17792U,	// tADDspr
-    8576U,	// tADR
+    8960U,	// tADR
     2U,	// tAND
-    8704U,	// tASRri
+    9088U,	// tASRri
     2U,	// tASRrr
     2U,	// tB
     2U,	// tBIC
     0U,	// tBKPT
-    2U,	// tBL
+    1U,	// tBL
     2U,	// tBLXNSr
-    2U,	// tBLXi
+    1U,	// tBLXi
     2U,	// tBLXr
     2U,	// tBX
     2U,	// tBXNS
@@ -9062,20 +9237,20 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// tInt_WIN_eh_sjlj_longjmp
     0U,	// tInt_eh_sjlj_longjmp
     0U,	// tInt_eh_sjlj_setjmp
-    18304U,	// tLDMIA
-    8832U,	// tLDRBi
-    8960U,	// tLDRBr
-    9088U,	// tLDRHi
-    8960U,	// tLDRHr
-    8960U,	// tLDRSB
-    8960U,	// tLDRSH
-    9216U,	// tLDRi
-    7936U,	// tLDRpci
-    8960U,	// tLDRr
-    9344U,	// tLDRspi
+    18432U,	// tLDMIA
+    9216U,	// tLDRBi
+    9344U,	// tLDRBr
+    9472U,	// tLDRHi
+    9344U,	// tLDRHr
+    9344U,	// tLDRSB
+    9344U,	// tLDRSH
+    9600U,	// tLDRi
+    9728U,	// tLDRpci
+    9344U,	// tLDRr
+    9856U,	// tLDRspi
     16768U,	// tLSLri
     2U,	// tLSLrr
-    8704U,	// tLSRri
+    9088U,	// tLSRri
     2U,	// tLSRrr
     2U,	// tMOVSr
     0U,	// tMOVi8
@@ -9093,18 +9268,18 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     0U,	// tRSB
     2U,	// tSBC
     0U,	// tSETEND
-    524U,	// tSTMIA_UPD
-    8832U,	// tSTRBi
-    8960U,	// tSTRBr
-    9088U,	// tSTRHi
-    8960U,	// tSTRHr
-    9216U,	// tSTRi
-    8960U,	// tSTRr
-    9344U,	// tSTRspi
+    532U,	// tSTMIA_UPD
+    9216U,	// tSTRBi
+    9344U,	// tSTRBr
+    9472U,	// tSTRHi
+    9344U,	// tSTRHr
+    9600U,	// tSTRi
+    9344U,	// tSTRr
+    9856U,	// tSTRspi
     16768U,	// tSUBi3
     2U,	// tSUBi8
     16768U,	// tSUBrr
-    8448U,	// tSUBspi
+    8832U,	// tSUBspi
     2U,	// tSVC
     16384U,	// tSXTB
     16384U,	// tSXTH
@@ -9126,7 +9301,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
   O << AsmStrs+(Bits & 8191)-1;
 
 
-  // Fragment 0 encoded into 6 bits for 42 unique commands.
+  // Fragment 0 encoded into 6 bits for 43 unique commands.
   switch ((Bits >> 13) & 63) {
   default: llvm_unreachable("Invalid command number.");
   case 0:
@@ -9143,7 +9318,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printThumbITMask(MI, 1, STI, O);
     break;
   case 3:
-    // LDRBT_POST, LDRConstPool, LDRT_POST, STRBT_POST, STRT_POST, t2LDRBpcre...
+    // LDRBT_POST, LDRConstPool, LDRHTii, LDRSBTii, LDRSHTii, LDRT_POST, STRB...
     printPredicateOperand(MI, 2, STI, O);
     break;
   case 4:
@@ -9181,56 +9356,72 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     return;
     break;
   case 10:
-    // AESD, AESE, AESIMC, AESMC, BKPT, BL, BLX, BLXi, BX, CPS1p, CRC32B, CRC...
+    // AESD, AESE, AESIMC, AESMC, BKPT, BLX, BX, CPS1p, CRC32B, CRC32CB, CRC3...
     printOperand(MI, 0, STI, O);
     break;
   case 11:
+    // BF16VDOTI_VDOTD, BF16VDOTI_VDOTQ, BF16VDOTS_VDOTD, BF16VDOTS_VDOTQ, MV...
+    printOperand(MI, 1, STI, O);
+    O << ", ";
+    printOperand(MI, 2, STI, O);
+    break;
+  case 12:
+    // BL, BLXi, t2BFic, t2LE
+    printOperand(MI, Address, 0, STI, O);
+    break;
+  case 13:
     // BLX_pred, BL_pred, BXJ, BX_pred, Bcc, DBG, FLDMXIA, FSTMXIA, HINT, LDM...
     printPredicateOperand(MI, 1, STI, O);
     break;
-  case 12:
+  case 14:
     // BX_RET, ERET, FMSTAT, MOVPCLR, MVE_LCTP, VSCCLRMD, VSCCLRMS, t2CLREX, ...
     printPredicateOperand(MI, 0, STI, O);
     break;
-  case 13:
-    // CDP, LDRD_POST, LDRD_PRE, MCR, MRC, MVE_SQRSHRL, MVE_UQRSHLL, MVE_VMOV...
+  case 15:
+    // CDE_CX1, CDE_CX1D, CDE_CX2, CDE_CX2D, CDE_CX3, CDE_CX3D, CDE_VCX1A_fpd...
+    printPImmediate(MI, 1, STI, O);
+    O << ", ";
+    break;
+  case 16:
+    // CDE_CX3A, CDE_CX3DA, CDP, LDRD_POST, LDRD_PRE, MCR, MRC, MVE_SQRSHRL, ...
     printPredicateOperand(MI, 6, STI, O);
     break;
-  case 14:
+  case 17:
+    // CDE_VCX1A_vec, CDE_VCX2_vec, MVE_VABAVs16, MVE_VABAVs32, MVE_VABAVs8, ...
+    printVPTPredicateOperand(MI, 4, STI, O);
+    break;
+  case 18:
+    // CDE_VCX1_vec, MVE_VABDf16, MVE_VABDf32, MVE_VABDs16, MVE_VABDs32, MVE_...
+    printVPTPredicateOperand(MI, 3, STI, O);
+    break;
+  case 19:
+    // CDE_VCX2A_vec, CDE_VCX3_vec, MVE_VADC, MVE_VADDLVs32acc, MVE_VADDLVu32...
+    printVPTPredicateOperand(MI, 5, STI, O);
+    break;
+  case 20:
+    // CDE_VCX3A_vec, MVE_VMLALDAVas16, MVE_VMLALDAVas32, MVE_VMLALDAVau16, M...
+    printVPTPredicateOperand(MI, 6, STI, O);
+    break;
+  case 21:
     // CDP2, LDC2L_OFFSET, LDC2L_OPTION, LDC2L_POST, LDC2L_PRE, LDC2_OFFSET, ...
     printPImmediate(MI, 0, STI, O);
     O << ", ";
     break;
-  case 15:
+  case 22:
     // CPS2p, CPS3p, t2CPS2p, t2CPS3p, tCPS
     printCPSIMod(MI, 0, STI, O);
     break;
-  case 16:
+  case 23:
     // DMB, DSB
     printMemBOption(MI, 0, STI, O);
     return;
     break;
-  case 17:
+  case 24:
     // ISB
     printInstSyncBOption(MI, 0, STI, O);
     return;
     break;
-  case 18:
-    // MRC2
-    printPImmediate(MI, 1, STI, O);
-    O << ", ";
-    printOperand(MI, 2, STI, O);
-    O << ", ";
-    printOperand(MI, 0, STI, O);
-    O << ", ";
-    printCImmediate(MI, 3, STI, O);
-    O << ", ";
-    printCImmediate(MI, 4, STI, O);
-    O << ", ";
-    printOperand(MI, 5, STI, O);
-    return;
-    break;
-  case 19:
+  case 25:
     // MRRC2
     printPImmediate(MI, 2, STI, O);
     O << ", ";
@@ -9243,47 +9434,25 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printCImmediate(MI, 4, STI, O);
     return;
     break;
-  case 20:
-    // MVE_LETP, VSDOTD, VSDOTDI, VSDOTQ, VSDOTQI, VUDOTD, VUDOTDI, VUDOTQ, V...
-    printOperand(MI, 1, STI, O);
-    O << ", ";
-    printOperand(MI, 2, STI, O);
-    break;
-  case 21:
-    // MVE_VABAVs16, MVE_VABAVs32, MVE_VABAVs8, MVE_VABAVu16, MVE_VABAVu32, M...
-    printVPTPredicateOperand(MI, 4, STI, O);
-    break;
-  case 22:
-    // MVE_VABDf16, MVE_VABDf32, MVE_VABDs16, MVE_VABDs32, MVE_VABDs8, MVE_VA...
-    printVPTPredicateOperand(MI, 3, STI, O);
-    break;
-  case 23:
+  case 26:
     // MVE_VABSf16, MVE_VABSf32, MVE_VABSs16, MVE_VABSs32, MVE_VABSs8, MVE_VA...
     printVPTPredicateOperand(MI, 2, STI, O);
     break;
-  case 24:
-    // MVE_VADC, MVE_VADDLVs32acc, MVE_VADDLVu32acc, MVE_VCMLAf16, MVE_VCMLAf...
-    printVPTPredicateOperand(MI, 5, STI, O);
-    break;
-  case 25:
+  case 27:
     // MVE_VLD20_16, MVE_VLD20_16_wb, MVE_VLD20_32, MVE_VLD20_32_wb, MVE_VLD2...
     printMVEVectorList<2>(MI, 0, STI, O);
     O << ", ";
     break;
-  case 26:
+  case 28:
     // MVE_VLD40_16, MVE_VLD40_16_wb, MVE_VLD40_32, MVE_VLD40_32_wb, MVE_VLD4...
     printMVEVectorList<4>(MI, 0, STI, O);
     O << ", ";
     break;
-  case 27:
-    // MVE_VMLALDAVas16, MVE_VMLALDAVas32, MVE_VMLALDAVau16, MVE_VMLALDAVau32...
-    printVPTPredicateOperand(MI, 6, STI, O);
-    break;
-  case 28:
+  case 29:
     // MVE_VPST, MVE_VPTv16i8, MVE_VPTv16i8r, MVE_VPTv16s8, MVE_VPTv16s8r, MV...
     printVPTMask(MI, 0, STI, O);
     break;
-  case 29:
+  case 30:
     // MVE_VST20_16_wb, MVE_VST20_32_wb, MVE_VST20_8_wb, MVE_VST21_16_wb, MVE...
     printMVEVectorList<2>(MI, 1, STI, O);
     O << ", ";
@@ -9291,7 +9460,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     O << '!';
     return;
     break;
-  case 30:
+  case 31:
     // MVE_VST40_16_wb, MVE_VST40_32_wb, MVE_VST40_8_wb, MVE_VST41_16_wb, MVE...
     printMVEVectorList<4>(MI, 1, STI, O);
     O << ", ";
@@ -9299,22 +9468,22 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     O << '!';
     return;
     break;
-  case 31:
+  case 32:
     // PLDWi12, PLDi12, PLIi12
     printAddrModeImm12Operand<false>(MI, 0, STI, O);
     return;
     break;
-  case 32:
+  case 33:
     // PLDWrs, PLDrs, PLIrs
     printAddrMode2Operand(MI, 0, STI, O);
     return;
     break;
-  case 33:
+  case 34:
     // SETEND, tSETEND
     printSetendOperand(MI, 0, STI, O);
     return;
     break;
-  case 34:
+  case 35:
     // SMLAL, UMLAL
     printSBitModifierOperand(MI, 8, STI, O);
     printPredicateOperand(MI, 6, STI, O);
@@ -9328,43 +9497,43 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 3, STI, O);
     return;
     break;
-  case 35:
+  case 36:
     // TSB
     printTraceSyncBOption(MI, 0, STI, O);
     return;
     break;
-  case 36:
+  case 37:
     // VLD1LNd16_UPD, VLD1LNd32_UPD, VLD1LNd8_UPD, VLD2LNd16, VLD2LNd32, VLD2...
     printPredicateOperand(MI, 7, STI, O);
     break;
-  case 37:
+  case 38:
     // VLD2LNd16_UPD, VLD2LNd32_UPD, VLD2LNd8_UPD, VLD2LNq16_UPD, VLD2LNq32_U...
     printPredicateOperand(MI, 9, STI, O);
     break;
-  case 38:
+  case 39:
     // VLD3LNd16_UPD, VLD3LNd32_UPD, VLD3LNd8_UPD, VLD3LNq16_UPD, VLD3LNq32_U...
     printPredicateOperand(MI, 11, STI, O);
     break;
-  case 39:
+  case 40:
     // VLD4DUPd16_UPD, VLD4DUPd32_UPD, VLD4DUPd8_UPD, VLD4DUPq16_UPD, VLD4DUP...
     printPredicateOperand(MI, 8, STI, O);
     break;
-  case 40:
+  case 41:
     // VLD4LNd16_UPD, VLD4LNd32_UPD, VLD4LNd8_UPD, VLD4LNq16_UPD, VLD4LNq32_U...
     printPredicateOperand(MI, 13, STI, O);
     break;
-  case 41:
+  case 42:
     // tADC, tADDi3, tADDi8, tADDrr, tAND, tASRri, tASRrr, tBIC, tEOR, tLSLri...
     printSBitModifierOperand(MI, 1, STI, O);
     break;
   }
 
 
-  // Fragment 1 encoded into 7 bits for 83 unique commands.
+  // Fragment 1 encoded into 7 bits for 87 unique commands.
   switch ((Bits >> 19) & 127) {
   default: llvm_unreachable("Invalid command number.");
   case 0:
-    // ASRi, ASRr, ITasm, LDRBT_POST, LDRConstPool, LDRT_POST, LSLi, LSLr, LS...
+    // ASRi, ASRr, ITasm, LDRBT_POST, LDRConstPool, LDRHTii, LDRSBTii, LDRSHT...
     O << ' ';
     break;
   case 1:
@@ -9384,181 +9553,213 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     O << "\t";
     break;
   case 5:
-    // AESD, AESE, AESIMC, AESMC, CRC32B, CRC32CB, CRC32CH, CRC32CW, CRC32H, ...
+    // AESD, AESE, AESIMC, AESMC, BF16VDOTI_VDOTD, BF16VDOTI_VDOTQ, BF16VDOTS...
     O << ", ";
     break;
   case 6:
+    // BF16_VCVT, BF16_VCVTB, BF16_VCVTT
+    O << ".bf16.f32\t";
+    printOperand(MI, 0, STI, O);
+    O << ", ";
+    break;
+  case 7:
     // BKPT, BL, BLX, BLXi, BX, CPS1p, ERET, HLT, HVC, MVE_LETP, RFEDA, RFEDB...
     return;
     break;
-  case 7:
+  case 8:
     // BX_RET
     O << "\tlr";
     return;
     break;
-  case 8:
+  case 9:
+    // CDE_CX1, CDE_CX2, CDE_CX3, CDE_VCX1A_fpdp, CDE_VCX1A_fpsp, CDE_VCX1_fp...
+    printOperand(MI, 0, STI, O);
+    O << ", ";
+    break;
+  case 10:
+    // CDE_CX1D, CDE_CX2D, CDE_CX3D
+    printGPRPairOperand(MI, 0, STI, O);
+    O << ", ";
+    printOperand(MI, 2, STI, O);
+    break;
+  case 11:
     // CDP2, MCR2, MCRR2
     printOperand(MI, 1, STI, O);
     O << ", ";
     break;
-  case 9:
+  case 12:
     // FCONSTD, VABSD, VADDD, VCMPD, VCMPED, VCMPEZD, VCMPZD, VDIVD, VFMAD, V...
     O << ".f64\t";
     printOperand(MI, 0, STI, O);
     break;
-  case 10:
+  case 13:
     // FCONSTH, MVE_VABDf16, MVE_VABSf16, MVE_VADD_qr_f16, MVE_VADDf16, MVE_V...
     O << ".f16\t";
     break;
-  case 11:
+  case 14:
     // FCONSTS, MVE_VABDf32, MVE_VABSf32, MVE_VADD_qr_f32, MVE_VADDf32, MVE_V...
     O << ".f32\t";
     break;
-  case 12:
+  case 15:
     // FMSTAT
     O << "\tAPSR_nzcv, fpscr";
     return;
     break;
-  case 13:
+  case 16:
     // LDC2L_OFFSET, LDC2L_OPTION, LDC2L_POST, LDC2L_PRE, LDC2_OFFSET, LDC2_O...
     printCImmediate(MI, 1, STI, O);
     O << ", ";
     break;
-  case 14:
+  case 17:
     // MOVPCLR
     O << "\tpc, lr";
     return;
     break;
-  case 15:
+  case 18:
+    // MRC2
+    printOperand(MI, 2, STI, O);
+    O << ", ";
+    printOperand(MI, 0, STI, O);
+    O << ", ";
+    printCImmediate(MI, 3, STI, O);
+    O << ", ";
+    printCImmediate(MI, 4, STI, O);
+    O << ", ";
+    printOperand(MI, 5, STI, O);
+    return;
+    break;
+  case 19:
     // MVE_VABAVs16, MVE_VABDs16, MVE_VABSs16, MVE_VADDVs16acc, MVE_VADDVs16n...
     O << ".s16\t";
     break;
-  case 16:
+  case 20:
     // MVE_VABAVs32, MVE_VABDs32, MVE_VABSs32, MVE_VADDLVs32acc, MVE_VADDLVs3...
     O << ".s32\t";
     break;
-  case 17:
+  case 21:
     // MVE_VABAVs8, MVE_VABDs8, MVE_VABSs8, MVE_VADDVs8acc, MVE_VADDVs8no_acc...
     O << ".s8\t";
     break;
-  case 18:
+  case 22:
     // MVE_VABAVu16, MVE_VABDu16, MVE_VADDVu16acc, MVE_VADDVu16no_acc, MVE_VC...
     O << ".u16\t";
     break;
-  case 19:
+  case 23:
     // MVE_VABAVu32, MVE_VABDu32, MVE_VADDLVu32acc, MVE_VADDLVu32no_acc, MVE_...
     O << ".u32\t";
     break;
-  case 20:
+  case 24:
     // MVE_VABAVu8, MVE_VABDu8, MVE_VADDVu8acc, MVE_VADDVu8no_acc, MVE_VCMPu8...
     O << ".u8\t";
     break;
-  case 21:
+  case 25:
     // MVE_VADC, MVE_VADCI, MVE_VADD_qr_i32, MVE_VADDi32, MVE_VBICimmi32, MVE...
     O << ".i32\t";
     break;
-  case 22:
+  case 26:
     // MVE_VADD_qr_i16, MVE_VADDi16, MVE_VBICimmi16, MVE_VCADDi16, MVE_VCLZs1...
     O << ".i16\t";
     break;
-  case 23:
+  case 27:
     // MVE_VADD_qr_i8, MVE_VADDi8, MVE_VCADDi8, MVE_VCLZs8, MVE_VCMPi8, MVE_V...
     O << ".i8\t";
     break;
-  case 24:
+  case 28:
     // MVE_VCTP64, MVE_VSTRD64_qi, MVE_VSTRD64_qi_pre, MVE_VSTRD64_rq, MVE_VS...
     O << ".64\t";
     break;
-  case 25:
+  case 29:
     // MVE_VCVTf16f32bh, MVE_VCVTf16f32th, VCVTBSH, VCVTTSH, VCVTf2h
     O << ".f16.f32\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     break;
-  case 26:
+  case 30:
     // MVE_VCVTf16s16_fix, MVE_VCVTf16s16n, VCVTs2hd, VCVTs2hq, VCVTxs2hd, VC...
     O << ".f16.s16\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     printOperand(MI, 1, STI, O);
     break;
-  case 27:
+  case 31:
     // MVE_VCVTf16u16_fix, MVE_VCVTf16u16n, VCVTu2hd, VCVTu2hq, VCVTxu2hd, VC...
     O << ".f16.u16\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     printOperand(MI, 1, STI, O);
     break;
-  case 28:
+  case 32:
     // MVE_VCVTf32f16bh, MVE_VCVTf32f16th, VCVTBHS, VCVTTHS, VCVTh2f
     O << ".f32.f16\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
+    printOperand(MI, 1, STI, O);
+    return;
     break;
-  case 29:
+  case 33:
     // MVE_VCVTf32s32_fix, MVE_VCVTf32s32n, VCVTs2fd, VCVTs2fq, VCVTxs2fd, VC...
     O << ".f32.s32\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     printOperand(MI, 1, STI, O);
     break;
-  case 30:
+  case 34:
     // MVE_VCVTf32u32_fix, MVE_VCVTf32u32n, VCVTu2fd, VCVTu2fq, VCVTxu2fd, VC...
     O << ".f32.u32\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     printOperand(MI, 1, STI, O);
     break;
-  case 31:
+  case 35:
     // MVE_VCVTs16f16_fix, MVE_VCVTs16f16a, MVE_VCVTs16f16m, MVE_VCVTs16f16n,...
     O << ".s16.f16\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     printOperand(MI, 1, STI, O);
     break;
-  case 32:
+  case 36:
     // MVE_VCVTs32f32_fix, MVE_VCVTs32f32a, MVE_VCVTs32f32m, MVE_VCVTs32f32n,...
     O << ".s32.f32\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     printOperand(MI, 1, STI, O);
     break;
-  case 33:
+  case 37:
     // MVE_VCVTu16f16_fix, MVE_VCVTu16f16a, MVE_VCVTu16f16m, MVE_VCVTu16f16n,...
     O << ".u16.f16\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     printOperand(MI, 1, STI, O);
     break;
-  case 34:
+  case 38:
     // MVE_VCVTu32f32_fix, MVE_VCVTu32f32a, MVE_VCVTu32f32m, MVE_VCVTu32f32n,...
     O << ".u32.f32\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     printOperand(MI, 1, STI, O);
     break;
-  case 35:
+  case 39:
     // MVE_VLD20_16, MVE_VLD20_32, MVE_VLD20_8, MVE_VLD21_16, MVE_VLD21_32, M...
     printAddrMode7Operand(MI, 2, STI, O);
     return;
     break;
-  case 36:
+  case 40:
     // MVE_VLD20_16_wb, MVE_VLD20_32_wb, MVE_VLD20_8_wb, MVE_VLD21_16_wb, MVE...
     printAddrMode7Operand(MI, 3, STI, O);
     O << '!';
     return;
     break;
-  case 37:
+  case 41:
     // MVE_VLDRDU64_qi, MVE_VLDRDU64_qi_pre, MVE_VLDRDU64_rq, MVE_VLDRDU64_rq...
     O << ".u64\t";
     break;
-  case 38:
+  case 42:
     // MVE_VMOVimmi64, VADDHNv2i32, VADDv1i64, VADDv2i64, VMOVNv2i32, VMOVv1i...
     O << ".i64\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     break;
-  case 39:
+  case 43:
     // MVE_VMULLBp16, MVE_VMULLTp16
     O << ".p16\t";
     printOperand(MI, 0, STI, O);
@@ -9568,7 +9769,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 2, STI, O);
     return;
     break;
-  case 40:
+  case 44:
     // MVE_VMULLBp8, MVE_VMULLTp8, VMULLp8, VMULpd, VMULpq
     O << ".p8\t";
     printOperand(MI, 0, STI, O);
@@ -9578,17 +9779,17 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 2, STI, O);
     return;
     break;
-  case 41:
+  case 45:
     // MVE_VST20_16, MVE_VST20_32, MVE_VST20_8, MVE_VST21_16, MVE_VST21_32, M...
     printAddrMode7Operand(MI, 1, STI, O);
     return;
     break;
-  case 42:
+  case 46:
     // RFEDA_UPD, RFEDB_UPD, RFEIA_UPD, RFEIB_UPD
     O << '!';
     return;
     break;
-  case 43:
+  case 47:
     // VCVTBDH, VCVTTDH
     O << ".f16.f64\t";
     printOperand(MI, 0, STI, O);
@@ -9596,7 +9797,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 1, STI, O);
     return;
     break;
-  case 44:
+  case 48:
     // VCVTBHD, VCVTTHD
     O << ".f64.f16\t";
     printOperand(MI, 0, STI, O);
@@ -9604,7 +9805,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 1, STI, O);
     return;
     break;
-  case 45:
+  case 49:
     // VCVTDS
     O << ".f64.f32\t";
     printOperand(MI, 0, STI, O);
@@ -9612,7 +9813,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 1, STI, O);
     return;
     break;
-  case 46:
+  case 50:
     // VCVTSD
     O << ".f32.f64\t";
     printOperand(MI, 0, STI, O);
@@ -9620,80 +9821,80 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 1, STI, O);
     return;
     break;
-  case 47:
+  case 51:
     // VJCVT, VTOSIRD, VTOSIZD, VTOSLD
     O << ".s32.f64\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     printOperand(MI, 1, STI, O);
     break;
-  case 48:
+  case 52:
     // VLD1LNd16, VLD1LNd16_UPD, VLD2LNd16, VLD2LNd16_UPD, VLD2LNq16, VLD2LNq...
     O << ".16\t{";
     break;
-  case 49:
+  case 53:
     // VLD1LNd32, VLD1LNd32_UPD, VLD2LNd32, VLD2LNd32_UPD, VLD2LNq32, VLD2LNq...
     O << ".32\t{";
     break;
-  case 50:
+  case 54:
     // VLD1LNd8, VLD1LNd8_UPD, VLD2LNd8, VLD2LNd8_UPD, VLD3DUPd8, VLD3DUPd8_U...
     O << ".8\t{";
     break;
-  case 51:
+  case 55:
     // VLDR_FPCXTNS_off, VLDR_FPCXTNS_post, VLDR_FPCXTNS_pre, VMSR_FPCXTNS, V...
     O << "\tfpcxtns, ";
     break;
-  case 52:
+  case 56:
     // VLDR_FPCXTS_off, VLDR_FPCXTS_post, VLDR_FPCXTS_pre, VMSR_FPCXTS, VSTR_...
     O << "\tfpcxts, ";
     break;
-  case 53:
+  case 57:
     // VLDR_FPSCR_NZCVQC_off, VLDR_FPSCR_NZCVQC_post, VLDR_FPSCR_NZCVQC_pre, ...
     O << "\tfpscr_nzcvqc, ";
     break;
-  case 54:
+  case 58:
     // VLDR_FPSCR_off, VLDR_FPSCR_post, VLDR_FPSCR_pre, VMSR, VSTR_FPSCR_off,...
     O << "\tfpscr, ";
     break;
-  case 55:
+  case 59:
     // VLDR_P0_off, VLDR_P0_post, VLDR_P0_pre, VMSR_P0, VSTR_P0_off, VSTR_P0_...
     O << "\tp0, ";
     break;
-  case 56:
+  case 60:
     // VLDR_VPR_off, VLDR_VPR_post, VLDR_VPR_pre, VMSR_VPR, VSTR_VPR_off, VST...
     O << "\tvpr, ";
     break;
-  case 57:
+  case 61:
     // VMSR_FPEXC
     O << "\tfpexc, ";
     printOperand(MI, 0, STI, O);
     return;
     break;
-  case 58:
+  case 62:
     // VMSR_FPINST
     O << "\tfpinst, ";
     printOperand(MI, 0, STI, O);
     return;
     break;
-  case 59:
+  case 63:
     // VMSR_FPINST2
     O << "\tfpinst2, ";
     printOperand(MI, 0, STI, O);
     return;
     break;
-  case 60:
+  case 64:
     // VMSR_FPSID
     O << "\tfpsid, ";
     printOperand(MI, 0, STI, O);
     return;
     break;
-  case 61:
+  case 65:
     // VQADDsv1i64, VQADDsv2i64, VQMOVNsuv2i32, VQMOVNsv2i32, VQRSHLsv1i64, V...
     O << ".s64\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     break;
-  case 62:
+  case 66:
     // VSHTOD
     O << ".f64.s16\t";
     printOperand(MI, 0, STI, O);
@@ -9703,7 +9904,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printFBits16(MI, 2, STI, O);
     return;
     break;
-  case 63:
+  case 67:
     // VSHTOS
     O << ".f32.s16\t";
     printOperand(MI, 0, STI, O);
@@ -9713,21 +9914,21 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printFBits16(MI, 2, STI, O);
     return;
     break;
-  case 64:
+  case 68:
     // VSITOD, VSLTOD
     O << ".f64.s32\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     printOperand(MI, 1, STI, O);
     break;
-  case 65:
+  case 69:
     // VSITOH, VSLTOH
     O << ".f16.s32\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     printOperand(MI, 1, STI, O);
     break;
-  case 66:
+  case 70:
     // VTOSHD
     O << ".s16.f64\t";
     printOperand(MI, 0, STI, O);
@@ -9737,7 +9938,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printFBits16(MI, 2, STI, O);
     return;
     break;
-  case 67:
+  case 71:
     // VTOSHS
     O << ".s16.f32\t";
     printOperand(MI, 0, STI, O);
@@ -9747,14 +9948,14 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printFBits16(MI, 2, STI, O);
     return;
     break;
-  case 68:
+  case 72:
     // VTOSIRH, VTOSIZH, VTOSLH
     O << ".s32.f16\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     printOperand(MI, 1, STI, O);
     break;
-  case 69:
+  case 73:
     // VTOUHD
     O << ".u16.f64\t";
     printOperand(MI, 0, STI, O);
@@ -9764,7 +9965,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printFBits16(MI, 2, STI, O);
     return;
     break;
-  case 70:
+  case 74:
     // VTOUHS
     O << ".u16.f32\t";
     printOperand(MI, 0, STI, O);
@@ -9774,21 +9975,21 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printFBits16(MI, 2, STI, O);
     return;
     break;
-  case 71:
+  case 75:
     // VTOUIRD, VTOUIZD, VTOULD
     O << ".u32.f64\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     printOperand(MI, 1, STI, O);
     break;
-  case 72:
+  case 76:
     // VTOUIRH, VTOUIZH, VTOULH
     O << ".u32.f16\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     printOperand(MI, 1, STI, O);
     break;
-  case 73:
+  case 77:
     // VUHTOD
     O << ".f64.u16\t";
     printOperand(MI, 0, STI, O);
@@ -9798,7 +9999,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printFBits16(MI, 2, STI, O);
     return;
     break;
-  case 74:
+  case 78:
     // VUHTOS
     O << ".f32.u16\t";
     printOperand(MI, 0, STI, O);
@@ -9808,50 +10009,50 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printFBits16(MI, 2, STI, O);
     return;
     break;
-  case 75:
+  case 79:
     // VUITOD, VULTOD
     O << ".f64.u32\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     printOperand(MI, 1, STI, O);
     break;
-  case 76:
+  case 80:
     // VUITOH, VULTOH
     O << ".f16.u32\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     printOperand(MI, 1, STI, O);
     break;
-  case 77:
+  case 81:
     // t2ADCrr, t2ADCrs, t2ADDri, t2ADDrr, t2ADDrs, t2ADDspImm, t2ADR, t2ANDr...
     O << ".w\t";
     break;
-  case 78:
+  case 82:
     // t2SRSDB, t2SRSIA
     O << "\tsp, ";
     printOperand(MI, 0, STI, O);
     return;
     break;
-  case 79:
+  case 83:
     // t2SRSDB_UPD, t2SRSIA_UPD
     O << "\tsp!, ";
     printOperand(MI, 0, STI, O);
     return;
     break;
-  case 80:
+  case 84:
     // t2SUBS_PC_LR
     O << "\tpc, lr, ";
     printOperand(MI, 0, STI, O);
     return;
     break;
-  case 81:
+  case 85:
     // tADC, tADDi3, tADDi8, tADDrr, tAND, tASRri, tASRrr, tBIC, tEOR, tLSLri...
     printPredicateOperand(MI, 4, STI, O);
     O << "\t";
     printOperand(MI, 0, STI, O);
     O << ", ";
     break;
-  case 82:
+  case 86:
     // tMOVi8, tMVN, tRSB
     printPredicateOperand(MI, 3, STI, O);
     O << "\t";
@@ -9862,11 +10063,11 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
   }
 
 
-  // Fragment 2 encoded into 7 bits for 66 unique commands.
+  // Fragment 2 encoded into 7 bits for 69 unique commands.
   switch ((Bits >> 26) & 127) {
   default: llvm_unreachable("Invalid command number.");
   case 0:
-    // ASRi, ASRr, LDRBT_POST, LDRConstPool, LDRT_POST, LSLi, LSLr, LSRi, LSR...
+    // ASRi, ASRr, LDRBT_POST, LDRConstPool, LDRHTii, LDRSBTii, LDRSHTii, LDR...
     printOperand(MI, 0, STI, O);
     break;
   case 1:
@@ -9921,19 +10122,40 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printAddrMode6Operand(MI, 1, STI, O);
     break;
   case 10:
-    // AESD, AESE, MCR2, MCRR2, MVE_VCVTf16f32bh, MVE_VCVTf16f32th, MVE_VCVTf...
+    // AESD, AESE, BF16_VCVTB, BF16_VCVTT, CDE_CX1, CDE_CX2, CDE_CX3, CDE_VCX...
     printOperand(MI, 2, STI, O);
     break;
   case 11:
-    // AESIMC, AESMC, CRC32B, CRC32CB, CRC32CH, CRC32CW, CRC32H, CRC32W, FLDM...
+    // AESIMC, AESMC, BF16_VCVT, CRC32B, CRC32CB, CRC32CH, CRC32CW, CRC32H, C...
     printOperand(MI, 1, STI, O);
     break;
   case 12:
+    // BF16VDOTI_VDOTD, BF16VDOTI_VDOTQ, BF16VDOTS_VDOTD, BF16VDOTS_VDOTQ, CD...
+    printOperand(MI, 3, STI, O);
+    break;
+  case 13:
+    // BL_pred, Bcc, t2B, t2BFLi, t2BFLr, t2BFi, t2BFr, t2Bcc, tB, tBcc
+    printOperand(MI, Address, 0, STI, O);
+    break;
+  case 14:
+    // CDE_CX1A, CDE_CX1DA, CDE_CX2A, CDE_CX2DA, CDE_CX3A, CDE_CX3DA, CDE_VCX...
+    printPImmediate(MI, 1, STI, O);
+    O << ", ";
+    break;
+  case 15:
+    // CDE_CX1D, MVE_LCTP, MVE_VCVTf16s16n, MVE_VCVTf16u16n, MVE_VCVTf32s32n,...
+    return;
+    break;
+  case 16:
+    // CDE_CX2D, CDE_CX3D, FCONSTD, MVE_VCVTf16s16_fix, MVE_VCVTf16u16_fix, M...
+    O << ", ";
+    break;
+  case 17:
     // CDP, LDCL_OFFSET, LDCL_OPTION, LDCL_POST, LDCL_PRE, LDC_OFFSET, LDC_OP...
     printPImmediate(MI, 0, STI, O);
     O << ", ";
     break;
-  case 13:
+  case 18:
     // CDP2
     printCImmediate(MI, 2, STI, O);
     O << ", ";
@@ -9944,52 +10166,33 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 5, STI, O);
     return;
     break;
-  case 14:
+  case 19:
     // CPS2p, CPS3p, t2CPS2p, t2CPS3p, tCPS
     printCPSIFlag(MI, 1, STI, O);
     break;
-  case 15:
-    // FCONSTD, MVE_VCVTf16s16_fix, MVE_VCVTf16u16_fix, MVE_VCVTf32s32_fix, M...
-    O << ", ";
-    break;
-  case 16:
+  case 20:
     // LDAEXD, LDREXD
     printGPRPairOperand(MI, 0, STI, O);
     O << ", ";
     printAddrMode7Operand(MI, 1, STI, O);
     return;
     break;
-  case 17:
+  case 21:
     // LDC2L_OFFSET, LDC2_OFFSET, STC2L_OFFSET, STC2_OFFSET
     printAddrMode5Operand<false>(MI, 2, STI, O);
     return;
     break;
-  case 18:
+  case 22:
     // LDC2L_OPTION, LDC2L_POST, LDC2_OPTION, LDC2_POST, STC2L_OPTION, STC2L_...
     printAddrMode7Operand(MI, 2, STI, O);
     break;
-  case 19:
+  case 23:
     // LDC2L_PRE, LDC2_PRE, STC2L_PRE, STC2_PRE
     printAddrMode5Operand<true>(MI, 2, STI, O);
     O << '!';
     return;
     break;
-  case 20:
-    // MRC, t2MRC, t2MRC2
-    printPImmediate(MI, 1, STI, O);
-    O << ", ";
-    printOperand(MI, 2, STI, O);
-    O << ", ";
-    printOperand(MI, 0, STI, O);
-    O << ", ";
-    printCImmediate(MI, 3, STI, O);
-    O << ", ";
-    printCImmediate(MI, 4, STI, O);
-    O << ", ";
-    printOperand(MI, 5, STI, O);
-    return;
-    break;
-  case 21:
+  case 24:
     // MRRC, t2MRRC, t2MRRC2
     printPImmediate(MI, 2, STI, O);
     O << ", ";
@@ -10002,23 +10205,19 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printCImmediate(MI, 4, STI, O);
     return;
     break;
-  case 22:
+  case 25:
     // MSR, MSRi, t2MSR_AR, t2MSR_M
     printMSRMaskOperand(MI, 0, STI, O);
     O << ", ";
     break;
-  case 23:
+  case 26:
     // MSRbanked, t2MSRbanked
     printBankedRegOperand(MI, 0, STI, O);
     O << ", ";
     printOperand(MI, 1, STI, O);
     return;
     break;
-  case 24:
-    // MVE_LCTP, MVE_VCVTf16s16n, MVE_VCVTf16u16n, MVE_VCVTf32s32n, MVE_VCVTf...
-    return;
-    break;
-  case 25:
+  case 27:
     // MVE_VCMPf16, MVE_VCMPf16r, MVE_VCMPf32, MVE_VCMPf32r, MVE_VCMPi16, MVE...
     printMandatoryRestrictedPredicateOperand(MI, 3, STI, O);
     O << ", ";
@@ -10027,102 +10226,98 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 2, STI, O);
     return;
     break;
-  case 26:
+  case 28:
     // MVE_VMOVimmi64, VMOVv1i64, VMOVv2i64
     printVMOVModImmOperand(MI, 1, STI, O);
     return;
     break;
-  case 27:
+  case 29:
     // VCMPEZD, VCMPZD, tRSB
     O << ", #0";
     return;
     break;
-  case 28:
+  case 30:
     // VLD1DUPd16, VLD1DUPd16wb_fixed, VLD1DUPd16wb_register, VLD1DUPd32, VLD...
     printVectorListOneAllLanes(MI, 0, STI, O);
     O << ", ";
     break;
-  case 29:
+  case 31:
     // VLD1DUPq16, VLD1DUPq16wb_fixed, VLD1DUPq16wb_register, VLD1DUPq32, VLD...
     printVectorListTwoAllLanes(MI, 0, STI, O);
     O << ", ";
     break;
-  case 30:
+  case 32:
     // VLD1d16, VLD1d16wb_fixed, VLD1d16wb_register, VLD1d32, VLD1d32wb_fixed...
     printVectorListOne(MI, 0, STI, O);
     O << ", ";
     break;
-  case 31:
+  case 33:
     // VLD1q16, VLD1q16wb_fixed, VLD1q16wb_register, VLD1q32, VLD1q32wb_fixed...
     printVectorListTwo(MI, 0, STI, O);
     O << ", ";
     break;
-  case 32:
+  case 34:
     // VLD2DUPd16x2, VLD2DUPd16x2wb_fixed, VLD2DUPd16x2wb_register, VLD2DUPd3...
     printVectorListTwoSpacedAllLanes(MI, 0, STI, O);
     O << ", ";
     break;
-  case 33:
+  case 35:
     // VLD2b16, VLD2b16wb_fixed, VLD2b16wb_register, VLD2b32, VLD2b32wb_fixed...
     printVectorListTwoSpaced(MI, 0, STI, O);
     O << ", ";
     break;
-  case 34:
+  case 36:
     // VLDR_FPCXTNS_off, VLDR_FPCXTS_off, VLDR_FPSCR_NZCVQC_off, VLDR_FPSCR_o...
     printT2AddrModeImm8s4Operand<false>(MI, 0, STI, O);
     return;
     break;
-  case 35:
+  case 37:
     // VLDR_FPCXTNS_post, VLDR_FPCXTS_post, VLDR_FPSCR_NZCVQC_post, VLDR_FPSC...
     printAddrMode7Operand(MI, 1, STI, O);
     printT2AddrModeImm8s4OffsetOperand(MI, 2, STI, O);
     return;
     break;
-  case 36:
+  case 38:
     // VLDR_FPCXTNS_pre, VLDR_FPCXTS_pre, VLDR_FPSCR_NZCVQC_pre, VLDR_FPSCR_p...
     printT2AddrModeImm8s4Operand<true>(MI, 1, STI, O);
     O << '!';
     return;
     break;
-  case 37:
+  case 39:
     // VLDR_P0_off, VSTR_P0_off
     printT2AddrModeImm8s4Operand<false>(MI, 1, STI, O);
     return;
     break;
-  case 38:
+  case 40:
     // VLDR_P0_pre, VSTR_P0_pre
     printT2AddrModeImm8s4Operand<true>(MI, 2, STI, O);
     O << '!';
     return;
     break;
-  case 39:
+  case 41:
     // VSCCLRMD, VSCCLRMS, t2CLRM, tPOP, tPUSH
     printRegisterList(MI, 2, STI, O);
     return;
     break;
-  case 40:
-    // VSDOTD, VSDOTDI, VSDOTQ, VSDOTQI, VUDOTD, VUDOTDI, VUDOTQ, VUDOTQI, tA...
-    printOperand(MI, 3, STI, O);
-    break;
-  case 41:
+  case 42:
     // VST1LNd16_UPD, VST1LNd32_UPD, VST1LNd8_UPD, VST2LNd16_UPD, VST2LNd32_U...
     printOperand(MI, 4, STI, O);
     break;
-  case 42:
+  case 43:
     // VST1d16, VST1d32, VST1d64, VST1d8
     printVectorListOne(MI, 2, STI, O);
     O << ", ";
     printAddrMode6Operand(MI, 0, STI, O);
     return;
     break;
-  case 43:
+  case 44:
     // VST1d16Q, VST1d32Q, VST1d64Q, VST1d8Q, VST2q16, VST2q32, VST2q8
     printVectorListFour(MI, 2, STI, O);
     O << ", ";
     printAddrMode6Operand(MI, 0, STI, O);
     return;
     break;
-  case 44:
+  case 45:
     // VST1d16Qwb_fixed, VST1d32Qwb_fixed, VST1d64Qwb_fixed, VST1d8Qwb_fixed,...
     printVectorListFour(MI, 3, STI, O);
     O << ", ";
@@ -10130,7 +10325,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     O << '!';
     return;
     break;
-  case 45:
+  case 46:
     // VST1d16Qwb_register, VST1d32Qwb_register, VST1d64Qwb_register, VST1d8Q...
     printVectorListFour(MI, 4, STI, O);
     O << ", ";
@@ -10139,14 +10334,14 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 3, STI, O);
     return;
     break;
-  case 46:
+  case 47:
     // VST1d16T, VST1d32T, VST1d64T, VST1d8T
     printVectorListThree(MI, 2, STI, O);
     O << ", ";
     printAddrMode6Operand(MI, 0, STI, O);
     return;
     break;
-  case 47:
+  case 48:
     // VST1d16Twb_fixed, VST1d32Twb_fixed, VST1d64Twb_fixed, VST1d8Twb_fixed
     printVectorListThree(MI, 3, STI, O);
     O << ", ";
@@ -10154,7 +10349,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     O << '!';
     return;
     break;
-  case 48:
+  case 49:
     // VST1d16Twb_register, VST1d32Twb_register, VST1d64Twb_register, VST1d8T...
     printVectorListThree(MI, 4, STI, O);
     O << ", ";
@@ -10163,7 +10358,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 3, STI, O);
     return;
     break;
-  case 49:
+  case 50:
     // VST1d16wb_fixed, VST1d32wb_fixed, VST1d64wb_fixed, VST1d8wb_fixed
     printVectorListOne(MI, 3, STI, O);
     O << ", ";
@@ -10171,7 +10366,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     O << '!';
     return;
     break;
-  case 50:
+  case 51:
     // VST1d16wb_register, VST1d32wb_register, VST1d64wb_register, VST1d8wb_r...
     printVectorListOne(MI, 4, STI, O);
     O << ", ";
@@ -10180,14 +10375,14 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 3, STI, O);
     return;
     break;
-  case 51:
+  case 52:
     // VST1q16, VST1q32, VST1q64, VST1q8, VST2d16, VST2d32, VST2d8
     printVectorListTwo(MI, 2, STI, O);
     O << ", ";
     printAddrMode6Operand(MI, 0, STI, O);
     return;
     break;
-  case 52:
+  case 53:
     // VST1q16wb_fixed, VST1q32wb_fixed, VST1q64wb_fixed, VST1q8wb_fixed, VST...
     printVectorListTwo(MI, 3, STI, O);
     O << ", ";
@@ -10195,7 +10390,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     O << '!';
     return;
     break;
-  case 53:
+  case 54:
     // VST1q16wb_register, VST1q32wb_register, VST1q64wb_register, VST1q8wb_r...
     printVectorListTwo(MI, 4, STI, O);
     O << ", ";
@@ -10204,14 +10399,14 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 3, STI, O);
     return;
     break;
-  case 54:
+  case 55:
     // VST2b16, VST2b32, VST2b8
     printVectorListTwoSpaced(MI, 2, STI, O);
     O << ", ";
     printAddrMode6Operand(MI, 0, STI, O);
     return;
     break;
-  case 55:
+  case 56:
     // VST2b16wb_fixed, VST2b32wb_fixed, VST2b8wb_fixed
     printVectorListTwoSpaced(MI, 3, STI, O);
     O << ", ";
@@ -10219,7 +10414,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     O << '!';
     return;
     break;
-  case 56:
+  case 57:
     // VST2b16wb_register, VST2b32wb_register, VST2b8wb_register
     printVectorListTwoSpaced(MI, 4, STI, O);
     O << ", ";
@@ -10228,59 +10423,68 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 3, STI, O);
     return;
     break;
-  case 57:
+  case 58:
+    // t2BFic, tCBNZ, tCBZ
+    printOperand(MI, Address, 1, STI, O);
+    break;
+  case 59:
     // t2DMB, t2DSB
     printMemBOption(MI, 0, STI, O);
     return;
     break;
-  case 58:
+  case 60:
     // t2ISB
     printInstSyncBOption(MI, 0, STI, O);
     return;
     break;
-  case 59:
+  case 61:
     // t2PLDWi12, t2PLDi12, t2PLIi12
     printAddrModeImm12Operand<false>(MI, 0, STI, O);
     return;
     break;
-  case 60:
+  case 62:
     // t2PLDWi8, t2PLDi8, t2PLIi8
     printT2AddrModeImm8Operand<false>(MI, 0, STI, O);
     return;
     break;
-  case 61:
+  case 63:
     // t2PLDWs, t2PLDs, t2PLIs
     printT2AddrModeSoRegOperand(MI, 0, STI, O);
     return;
     break;
-  case 62:
+  case 64:
     // t2PLDpci, t2PLIpci
     printThumbLdrLabelOperand(MI, 0, STI, O);
     return;
     break;
-  case 63:
+  case 65:
     // t2TBB
     printAddrModeTBB(MI, 0, STI, O);
     return;
     break;
-  case 64:
+  case 66:
     // t2TBH
     printAddrModeTBH(MI, 0, STI, O);
     return;
     break;
-  case 65:
+  case 67:
     // t2TSB
     printTraceSyncBOption(MI, 0, STI, O);
+    return;
+    break;
+  case 68:
+    // tBL, tBLXi
+    printOperand(MI, Address, 2, STI, O);
     return;
     break;
   }
 
 
-  // Fragment 3 encoded into 6 bits for 34 unique commands.
+  // Fragment 3 encoded into 6 bits for 37 unique commands.
   switch ((Bits >> 33) & 63) {
   default: llvm_unreachable("Invalid command number.");
   case 0:
-    // ASRi, ASRr, LDRBT_POST, LDRConstPool, LDRT_POST, LSLi, LSLr, LSRi, LSR...
+    // ASRi, ASRr, LDRBT_POST, LDRConstPool, LDRHTii, LDRSBTii, LDRSHTii, LDR...
     O << ", ";
     break;
   case 1:
@@ -10297,150 +10501,165 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printAddrMode6Operand(MI, 1, STI, O);
     break;
   case 4:
+    // BF16VDOTI_VDOTD, BF16VDOTI_VDOTQ, MVE_VMOV_q_rr, VBF16MALBQI, VBF16MAL...
+    printVectorIndex(MI, 4, STI, O);
+    break;
+  case 5:
+    // CDE_CX1A, CDE_CX2A, CDE_CX3A, CDE_VCX1A_vec, CDE_VCX1_vec, CDE_VCX2A_v...
+    printOperand(MI, 0, STI, O);
+    O << ", ";
+    break;
+  case 6:
+    // CDE_CX1DA, CDE_CX2DA, CDE_CX3DA
+    printGPRPairOperand(MI, 0, STI, O);
+    O << ", ";
+    printOperand(MI, 3, STI, O);
+    break;
+  case 7:
+    // CDE_CX2D, CDE_CX3D
+    printOperand(MI, 3, STI, O);
+    break;
+  case 8:
     // CDP, MCR, MCRR, MSR, VABSD, VADDD, VCMPD, VCMPED, VDIVD, VMOVD, VMULD,...
     printOperand(MI, 1, STI, O);
     break;
-  case 5:
+  case 9:
     // FCONSTD
     printFPImmOperand(MI, 1, STI, O);
     return;
     break;
-  case 6:
+  case 10:
     // FLDMXDB_UPD, FLDMXIA_UPD, FSTMXDB_UPD, FSTMXIA_UPD, LDMDA_UPD, LDMDB_U...
     O << "!, ";
     printRegisterList(MI, 4, STI, O);
     break;
-  case 7:
+  case 11:
     // LDCL_OFFSET, LDCL_OPTION, LDCL_POST, LDCL_PRE, LDC_OFFSET, LDC_OPTION,...
     printCImmediate(MI, 1, STI, O);
     O << ", ";
     break;
-  case 8:
+  case 12:
+    // MRC, MVE_VCVTf16s16_fix, MVE_VCVTf16u16_fix, MVE_VCVTf32s32_fix, MVE_V...
+    printOperand(MI, 2, STI, O);
+    break;
+  case 13:
     // MRS, t2MRS_AR
     O << ", apsr";
     return;
     break;
-  case 9:
+  case 14:
     // MRSsys, t2MRSsys_AR
     O << ", spsr";
     return;
     break;
-  case 10:
+  case 15:
     // MSRi
     printModImmOperand(MI, 1, STI, O);
     return;
     break;
-  case 11:
-    // MVE_VCVTf16s16_fix, MVE_VCVTf16u16_fix, MVE_VCVTf32s32_fix, MVE_VCVTf3...
-    printOperand(MI, 2, STI, O);
-    break;
-  case 12:
-    // MVE_VMOV_q_rr, VSDOTDI, VSDOTQI, VUDOTDI, VUDOTQI
-    printVectorIndex(MI, 4, STI, O);
-    break;
-  case 13:
+  case 16:
     // MVE_VMOV_to_lane_16, MVE_VMOV_to_lane_32, MVE_VMOV_to_lane_8, VSETLNi1...
     printVectorIndex(MI, 3, STI, O);
     O << ", ";
     printOperand(MI, 2, STI, O);
     return;
     break;
-  case 14:
+  case 17:
     // VCMPEZH, VCMPEZS, VCMPZH, VCMPZS
     O << ", #0";
     return;
     break;
-  case 15:
+  case 18:
     // VLD1DUPd16wb_fixed, VLD1DUPd16wb_register, VLD1DUPd32wb_fixed, VLD1DUP...
     printAddrMode6Operand(MI, 2, STI, O);
     break;
-  case 16:
+  case 19:
     // VLD1LNd16, VLD1LNd16_UPD, VLD1LNd32, VLD1LNd32_UPD, VLD1LNd8, VLD1LNd8...
     O << '[';
     break;
-  case 17:
+  case 20:
     // VLD3DUPd16, VLD3DUPd16_UPD, VLD3DUPd32, VLD3DUPd32_UPD, VLD3DUPd8, VLD...
     O << "[], ";
     printOperand(MI, 1, STI, O);
     O << "[], ";
     printOperand(MI, 2, STI, O);
     break;
-  case 18:
+  case 21:
     // VLDR_P0_post, VSTR_P0_post
     printT2AddrModeImm8s4OffsetOperand(MI, 3, STI, O);
     return;
     break;
-  case 19:
+  case 22:
     // VMRS
     O << ", fpscr";
     return;
     break;
-  case 20:
+  case 23:
     // VMRS_FPCXTNS
     O << ", fpcxtns";
     return;
     break;
-  case 21:
+  case 24:
     // VMRS_FPCXTS
     O << ", fpcxts";
     return;
     break;
-  case 22:
+  case 25:
     // VMRS_FPEXC
     O << ", fpexc";
     return;
     break;
-  case 23:
+  case 26:
     // VMRS_FPINST
     O << ", fpinst";
     return;
     break;
-  case 24:
+  case 27:
     // VMRS_FPINST2
     O << ", fpinst2";
     return;
     break;
-  case 25:
+  case 28:
     // VMRS_FPSCR_NZCVQC
     O << ", fpscr_nzcvqc";
     return;
     break;
-  case 26:
+  case 29:
     // VMRS_FPSID
     O << ", fpsid";
     return;
     break;
-  case 27:
+  case 30:
     // VMRS_MVFR0
     O << ", mvfr0";
     return;
     break;
-  case 28:
+  case 31:
     // VMRS_MVFR1
     O << ", mvfr1";
     return;
     break;
-  case 29:
+  case 32:
     // VMRS_MVFR2
     O << ", mvfr2";
     return;
     break;
-  case 30:
+  case 33:
     // VMRS_P0
     O << ", p0";
     return;
     break;
-  case 31:
+  case 34:
     // VMRS_VPR
     O << ", vpr";
     return;
     break;
-  case 32:
+  case 35:
     // VSHTOH, VTOSHH, VTOUHH, VUHTOH
     printFBits16(MI, 2, STI, O);
     return;
     break;
-  case 33:
+  case 36:
     // VSLTOD, VSLTOH, VSLTOS, VTOSLD, VTOSLH, VTOSLS, VTOULD, VTOULH, VTOULS...
     printFBits32(MI, 2, STI, O);
     return;
@@ -10448,7 +10667,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
   }
 
 
-  // Fragment 4 encoded into 7 bits for 74 unique commands.
+  // Fragment 4 encoded into 7 bits for 78 unique commands.
   switch ((Bits >> 39) & 127) {
   default: llvm_unreachable("Invalid command number.");
   case 0:
@@ -10456,7 +10675,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 1, STI, O);
     break;
   case 1:
-    // LDRBT_POST, LDRT_POST, STRBT_POST, STRT_POST, LDA, LDAB, LDAEX, LDAEXB...
+    // LDRBT_POST, LDRHTii, LDRSBTii, LDRSHTii, LDRT_POST, STRBT_POST, STRT_P...
     printAddrMode7Operand(MI, 1, STI, O);
     return;
     break;
@@ -10502,87 +10721,91 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     return;
     break;
   case 11:
-    // BFI, CPS3p, CRC32B, CRC32CB, CRC32CH, CRC32CW, CRC32H, CRC32W, MOVTi16...
+    // BFI, CDE_VCX1_vec, CDE_VCX2_vec, CDE_VCX3_vec, CPS3p, CRC32B, CRC32CB,...
     printOperand(MI, 2, STI, O);
     break;
   case 12:
+    // CDE_VCX2A_fpdp, CDE_VCX2A_fpsp, CDE_VCX3A_fpdp, CDE_VCX3A_fpsp
+    printOperand(MI, 4, STI, O);
+    break;
+  case 13:
     // CMNri, CMPri, MOVi, MVNi, TEQri, TSTri
     printModImmOperand(MI, 1, STI, O);
     return;
     break;
-  case 13:
+  case 14:
     // CMNzrsi, CMPrsi, MOVsi, MVNsi, TEQrsi, TSTrsi
     printSORegImmOperand(MI, 1, STI, O);
     return;
     break;
-  case 14:
+  case 15:
     // FCONSTH, FCONSTS, MVE_VMOVimmf32, VMOVv2f32, VMOVv4f32
     printFPImmOperand(MI, 1, STI, O);
     return;
     break;
-  case 15:
+  case 16:
     // FLDMXIA, FSTMXIA, LDMDA, LDMDB, LDMIA, LDMIB, STMDA, STMDB, STMIA, STM...
     printRegisterList(MI, 3, STI, O);
     break;
-  case 16:
+  case 17:
     // LDC2L_OPTION, LDC2_OPTION, STC2L_OPTION, STC2_OPTION
     printCoprocOptionImm(MI, 3, STI, O);
     return;
     break;
-  case 17:
+  case 18:
     // LDC2L_POST, LDC2_POST, STC2L_POST, STC2_POST
     printPostIdxImm8s4Operand(MI, 3, STI, O);
     return;
     break;
-  case 18:
+  case 19:
     // LDCL_OFFSET, LDC_OFFSET, STCL_OFFSET, STC_OFFSET, t2LDC2L_OFFSET, t2LD...
     printAddrMode5Operand<false>(MI, 2, STI, O);
     return;
     break;
-  case 19:
+  case 20:
     // LDCL_OPTION, LDCL_POST, LDC_OPTION, LDC_POST, LDRBT_POST_IMM, LDRBT_PO...
     printAddrMode7Operand(MI, 2, STI, O);
     break;
-  case 20:
+  case 21:
     // LDCL_PRE, LDC_PRE, STCL_PRE, STC_PRE, t2LDC2L_PRE, t2LDC2_PRE, t2LDCL_...
     printAddrMode5Operand<true>(MI, 2, STI, O);
     O << '!';
     return;
     break;
-  case 21:
+  case 22:
     // LDRB_PRE_IMM, LDR_PRE_IMM, STRB_PRE_IMM, STR_PRE_IMM
     printAddrModeImm12Operand<true>(MI, 2, STI, O);
     O << '!';
     return;
     break;
-  case 22:
+  case 23:
     // LDRB_PRE_REG, LDR_PRE_REG, STRB_PRE_REG, STR_PRE_REG
     printAddrMode2Operand(MI, 2, STI, O);
     O << '!';
     return;
     break;
-  case 23:
+  case 24:
     // LDRBi12, LDRcp, LDRi12, STRBi12, STRi12, t2LDRBi12, t2LDRHi12, t2LDRSB...
     printAddrModeImm12Operand<false>(MI, 1, STI, O);
     return;
     break;
-  case 24:
+  case 25:
     // LDRBrs, LDRrs, STRBrs, STRrs
     printAddrMode2Operand(MI, 1, STI, O);
     return;
     break;
-  case 25:
+  case 26:
     // LDRH, LDRSB, LDRSH, STRH
     printAddrMode3Operand<false>(MI, 1, STI, O);
     return;
     break;
-  case 26:
+  case 27:
     // LDRH_PRE, LDRSB_PRE, LDRSH_PRE, STRH_PRE
     printAddrMode3Operand<true>(MI, 2, STI, O);
     O << '!';
     return;
     break;
-  case 27:
+  case 28:
     // MCR2
     printCImmediate(MI, 3, STI, O);
     O << ", ";
@@ -10591,89 +10814,93 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 5, STI, O);
     return;
     break;
-  case 28:
+  case 29:
     // MRSbanked, t2MRSbanked
     printBankedRegOperand(MI, 1, STI, O);
     return;
     break;
-  case 29:
+  case 30:
     // MVE_VBICimmi16, MVE_VBICimmi32, MVE_VORRimmi16, MVE_VORRimmi32
     printVMOVModImmOperand(MI, 2, STI, O);
     return;
     break;
-  case 30:
+  case 31:
     // MVE_VLDRBS16, MVE_VLDRBS32, MVE_VLDRBU16, MVE_VLDRBU32, MVE_VLDRBU8, M...
     printT2AddrModeImm8Operand<false>(MI, 1, STI, O);
     return;
     break;
-  case 31:
+  case 32:
     // MVE_VLDRBS16_pre, MVE_VLDRBS32_pre, MVE_VLDRBU16_pre, MVE_VLDRBU32_pre...
     printT2AddrModeImm8Operand<false>(MI, 2, STI, O);
     O << '!';
     return;
     break;
-  case 32:
+  case 33:
     // MVE_VLDRBS16_rq, MVE_VLDRBS32_rq, MVE_VLDRBU16_rq, MVE_VLDRBU32_rq, MV...
     printMveAddrModeRQOperand<0>(MI, 1, STI, O);
     return;
     break;
-  case 33:
+  case 34:
     // MVE_VLDRBU8_pre, MVE_VLDRHU16_pre, MVE_VLDRWU32_pre, MVE_VSTRBU8_pre, ...
     printT2AddrModeImm8Operand<true>(MI, 2, STI, O);
     O << '!';
     return;
     break;
-  case 34:
+  case 35:
     // MVE_VLDRDU64_rq, MVE_VSTRD64_rq
     printMveAddrModeRQOperand<3>(MI, 1, STI, O);
     return;
     break;
-  case 35:
+  case 36:
     // MVE_VLDRHS32_rq, MVE_VLDRHU16_rq, MVE_VLDRHU32_rq, MVE_VSTRH16_rq, MVE...
     printMveAddrModeRQOperand<1>(MI, 1, STI, O);
     return;
     break;
-  case 36:
+  case 37:
     // MVE_VLDRWU32_rq, MVE_VSTRW32_rq
     printMveAddrModeRQOperand<2>(MI, 1, STI, O);
     return;
     break;
-  case 37:
+  case 38:
     // MVE_VMOVimmi16, MVE_VMOVimmi32, MVE_VMOVimmi8, MVE_VMVNimmi16, MVE_VMV...
     printVMOVModImmOperand(MI, 1, STI, O);
     return;
     break;
-  case 38:
+  case 39:
+    // MVE_WLSTP_16, MVE_WLSTP_32, MVE_WLSTP_64, MVE_WLSTP_8, t2BFic, t2WLS
+    printOperand(MI, Address, 2, STI, O);
+    break;
+  case 40:
     // SSAT, SSAT16, t2SSAT, t2SSAT16
     printImmPlusOneOperand(MI, 1, STI, O);
     O << ", ";
     printOperand(MI, 2, STI, O);
     break;
-  case 39:
+  case 41:
     // STLEXD, STREXD
     printGPRPairOperand(MI, 1, STI, O);
     O << ", ";
     printAddrMode7Operand(MI, 2, STI, O);
     return;
     break;
-  case 40:
+  case 42:
     // VLD1LNd16, VLD1LNd32, VLD1LNd8, VST2LNd16, VST2LNd32, VST2LNd8, VST2LN...
     printNoHashImmediate(MI, 4, STI, O);
     break;
-  case 41:
+  case 43:
     // VLD1LNd16_UPD, VLD1LNd32_UPD, VLD1LNd8_UPD, VLD2LNd16, VLD2LNd32, VLD2...
     printNoHashImmediate(MI, 6, STI, O);
     break;
-  case 42:
+  case 44:
     // VLD2LNd16_UPD, VLD2LNd32_UPD, VLD2LNd8_UPD, VLD2LNq16_UPD, VLD2LNq32_U...
     printNoHashImmediate(MI, 8, STI, O);
     O << "], ";
     break;
-  case 43:
+  case 45:
     // VLD3DUPd16, VLD3DUPd16_UPD, VLD3DUPd32, VLD3DUPd32_UPD, VLD3DUPd8, VLD...
     O << "[]}, ";
     break;
-  case 44:
+  case 46:
     // VLD3LNd16_UPD, VLD3LNd32_UPD, VLD3LNd8_UPD, VLD3LNq16_UPD, VLD3LNq32_U...
     printNoHashImmediate(MI, 10, STI, O);
     O << "], ";
@@ -10685,13 +10912,13 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     O << '[';
     printNoHashImmediate(MI, 10, STI, O);
     break;
-  case 45:
+  case 47:
     // VLD4DUPd16, VLD4DUPd16_UPD, VLD4DUPd32, VLD4DUPd32_UPD, VLD4DUPd8, VLD...
     O << "[], ";
     printOperand(MI, 3, STI, O);
     O << "[]}, ";
     break;
-  case 46:
+  case 48:
     // VLD4LNd16_UPD, VLD4LNd32_UPD, VLD4LNd8_UPD, VLD4LNq16_UPD, VLD4LNq32_U...
     printNoHashImmediate(MI, 12, STI, O);
     O << "], ";
@@ -10711,28 +10938,28 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printAddrMode6OffsetOperand(MI, 7, STI, O);
     return;
     break;
-  case 47:
+  case 49:
     // VLDRD, VLDRS, VSTRD, VSTRS
     printAddrMode5Operand<false>(MI, 1, STI, O);
     return;
     break;
-  case 48:
+  case 50:
     // VLDRH, VSTRH
     printAddrMode5FP16Operand<false>(MI, 1, STI, O);
     return;
     break;
-  case 49:
+  case 51:
     // VST1LNd16, VST1LNd32, VST1LNd8
     printNoHashImmediate(MI, 3, STI, O);
     O << "]}, ";
     printAddrMode6Operand(MI, 0, STI, O);
     return;
     break;
-  case 50:
+  case 52:
     // VST1LNd16_UPD, VST1LNd32_UPD, VST1LNd8_UPD, VST3LNd16, VST3LNd32, VST3...
     printNoHashImmediate(MI, 5, STI, O);
     break;
-  case 51:
+  case 53:
     // VST3LNd16_UPD, VST3LNd32_UPD, VST3LNd8_UPD, VST3LNq16_UPD, VST3LNq32_U...
     printNoHashImmediate(MI, 7, STI, O);
     O << "], ";
@@ -10748,129 +10975,139 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printAddrMode6OffsetOperand(MI, 3, STI, O);
     return;
     break;
-  case 52:
+  case 54:
     // VST3d16_UPD, VST3d32_UPD, VST3d8_UPD, VST3q16_UPD, VST3q32_UPD, VST3q8...
     printOperand(MI, 5, STI, O);
     O << ", ";
     printOperand(MI, 6, STI, O);
     break;
-  case 53:
+  case 55:
     // VTBL1
     printVectorListOne(MI, 1, STI, O);
     O << ", ";
     printOperand(MI, 2, STI, O);
     return;
     break;
-  case 54:
+  case 56:
     // VTBL2
     printVectorListTwo(MI, 1, STI, O);
     O << ", ";
     printOperand(MI, 2, STI, O);
     return;
     break;
-  case 55:
+  case 57:
     // VTBL3
     printVectorListThree(MI, 1, STI, O);
     O << ", ";
     printOperand(MI, 2, STI, O);
     return;
     break;
-  case 56:
+  case 58:
     // VTBL4
     printVectorListFour(MI, 1, STI, O);
     O << ", ";
     printOperand(MI, 2, STI, O);
     return;
     break;
-  case 57:
+  case 59:
     // VTBX1
     printVectorListOne(MI, 2, STI, O);
     O << ", ";
     printOperand(MI, 3, STI, O);
     return;
     break;
-  case 58:
+  case 60:
     // VTBX2
     printVectorListTwo(MI, 2, STI, O);
     O << ", ";
     printOperand(MI, 3, STI, O);
     return;
     break;
-  case 59:
+  case 61:
     // VTBX3
     printVectorListThree(MI, 2, STI, O);
     O << ", ";
     printOperand(MI, 3, STI, O);
     return;
     break;
-  case 60:
+  case 62:
     // VTBX4
     printVectorListFour(MI, 2, STI, O);
     O << ", ";
     printOperand(MI, 3, STI, O);
     return;
     break;
-  case 61:
+  case 63:
     // sysLDMDA_UPD, sysLDMDB_UPD, sysLDMIA_UPD, sysLDMIB_UPD, sysSTMDA_UPD, ...
     O << " ^";
     return;
     break;
-  case 62:
-    // t2LDRBpci, t2LDRHpci, t2LDRSBpci, t2LDRSHpci, t2LDRpci, tLDRpci
+  case 64:
+    // t2BFLi, t2BFi
+    printOperand(MI, Address, 1, STI, O);
+    return;
+    break;
+  case 65:
+    // t2LDRBpci, t2LDRHpci, t2LDRSBpci, t2LDRSHpci, t2LDRpci
     printThumbLdrLabelOperand(MI, 1, STI, O);
     return;
     break;
-  case 63:
+  case 66:
     // t2LDRBs, t2LDRHs, t2LDRSBs, t2LDRSHs, t2LDRs, t2STRBs, t2STRHs, t2STRs
     printT2AddrModeSoRegOperand(MI, 1, STI, O);
     return;
     break;
-  case 64:
+  case 67:
     // t2LDREX
     printT2AddrModeImm0_1020s4Operand(MI, 1, STI, O);
     return;
     break;
-  case 65:
+  case 68:
     // t2MRS_M
     printMSRMaskOperand(MI, 1, STI, O);
     return;
     break;
-  case 66:
+  case 69:
     // tADDspi, tSUBspi
     printThumbS4ImmOperand(MI, 2, STI, O);
     return;
     break;
-  case 67:
+  case 70:
     // tADR
-    printAdrLabelOperand<2>(MI, 1, STI, O);
+    printAdrLabelOperand<2>(MI, Address, 1, STI, O);
     return;
     break;
-  case 68:
+  case 71:
     // tASRri, tLSRri
     printThumbSRImm(MI, 3, STI, O);
     return;
     break;
-  case 69:
+  case 72:
     // tLDRBi, tSTRBi
     printThumbAddrModeImm5S1Operand(MI, 1, STI, O);
     return;
     break;
-  case 70:
+  case 73:
     // tLDRBr, tLDRHr, tLDRSB, tLDRSH, tLDRr, tSTRBr, tSTRHr, tSTRr
     printThumbAddrModeRROperand(MI, 1, STI, O);
     return;
     break;
-  case 71:
+  case 74:
     // tLDRHi, tSTRHi
     printThumbAddrModeImm5S2Operand(MI, 1, STI, O);
     return;
     break;
-  case 72:
+  case 75:
     // tLDRi, tSTRi
     printThumbAddrModeImm5S4Operand(MI, 1, STI, O);
     return;
     break;
-  case 73:
+  case 76:
+    // tLDRpci
+    printThumbLdrLabelOperand(MI, Address, 1, STI, O);
+    return;
+    break;
+  case 77:
     // tLDRspi, tSTRspi
     printThumbAddrModeSPOperand(MI, 1, STI, O);
     return;
@@ -10878,7 +11115,7 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
   }
 
 
-  // Fragment 5 encoded into 5 bits for 26 unique commands.
+  // Fragment 5 encoded into 5 bits for 27 unique commands.
   switch ((Bits >> 46) & 31) {
   default: llvm_unreachable("Invalid command number.");
   case 0:
@@ -10900,6 +11137,10 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     return;
     break;
   case 4:
+    // CDE_CX2DA, CDE_CX3D, CDE_CX3DA, VLD1DUPd16wb_register, VLD1DUPd32wb_re...
+    printOperand(MI, 4, STI, O);
+    break;
+  case 5:
     // CDP, t2CDP, t2CDP2
     printCImmediate(MI, 2, STI, O);
     O << ", ";
@@ -10910,97 +11151,103 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 5, STI, O);
     return;
     break;
-  case 5:
+  case 6:
     // MCR, MCRR, VADDD, VDIVD, VMULD, VNMULD, VSUBD, t2MCR, t2MCR2, t2MCRR, ...
     printOperand(MI, 2, STI, O);
     break;
-  case 6:
+  case 7:
+    // MRC, t2MRC, t2MRC2
+    printOperand(MI, 0, STI, O);
+    O << ", ";
+    printCImmediate(MI, 3, STI, O);
+    O << ", ";
+    printCImmediate(MI, 4, STI, O);
+    O << ", ";
+    printOperand(MI, 5, STI, O);
+    return;
+    break;
+  case 8:
     // MVE_VLDRBS16_post, MVE_VLDRBS32_post, MVE_VLDRBU16_post, MVE_VLDRBU32_...
     printT2AddrModeImm8OffsetOperand(MI, 3, STI, O);
     return;
     break;
-  case 7:
+  case 9:
     // MVE_VMOV_from_lane_32, MVE_VMOV_from_lane_s16, MVE_VMOV_from_lane_s8, ...
     printVectorIndex(MI, 2, STI, O);
     return;
     break;
-  case 8:
+  case 10:
     // MVE_VMOV_q_rr, VLD2LNd16_UPD, VLD2LNd32_UPD, VLD2LNd8_UPD, VLD2LNq16_U...
     printOperand(MI, 1, STI, O);
     break;
-  case 9:
+  case 11:
     // MVE_VSHLL_lws16bh, MVE_VSHLL_lws16th, MVE_VSHLL_lwu16bh, MVE_VSHLL_lwu...
     O << ", #16";
     return;
     break;
-  case 10:
+  case 12:
     // MVE_VSHLL_lws8bh, MVE_VSHLL_lws8th, MVE_VSHLL_lwu8bh, MVE_VSHLL_lwu8th
     O << ", #8";
     return;
     break;
-  case 11:
+  case 13:
     // SSAT, t2SSAT
     printShiftImmOperand(MI, 3, STI, O);
     return;
     break;
-  case 12:
+  case 14:
     // SXTB, SXTB16, SXTH, UXTB, UXTB16, UXTH, t2SXTB, t2SXTB16, t2SXTH, t2UX...
     printRotImmOperand(MI, 2, STI, O);
     return;
     break;
-  case 13:
+  case 15:
     // VCEQzv16i8, VCEQzv2f32, VCEQzv2i32, VCEQzv4f16, VCEQzv4f32, VCEQzv4i16...
     O << ", #0";
     return;
     break;
-  case 14:
+  case 16:
     // VCMLAv2f32_indexed, VCMLAv4f16_indexed, VCMLAv4f32_indexed, VCMLAv8f16...
     printVectorIndex(MI, 4, STI, O);
     O << ", ";
     printComplexRotationOp<90, 0>(MI, 5, STI, O);
     return;
     break;
-  case 15:
+  case 17:
     // VFMALDI, VFMALQI, VFMSLDI, VFMSLQI
     printVectorIndex(MI, 3, STI, O);
     return;
     break;
-  case 16:
-    // VLD1DUPd16wb_register, VLD1DUPd32wb_register, VLD1DUPd8wb_register, VL...
-    printOperand(MI, 4, STI, O);
-    return;
-    break;
-  case 17:
+  case 18:
     // VLD1LNd16, VLD1LNd16_UPD, VLD1LNd32, VLD1LNd32_UPD, VLD1LNd8, VLD1LNd8...
     O << "]}, ";
     break;
-  case 18:
+  case 19:
     // VLD2LNd16, VLD2LNd32, VLD2LNd8, VLD2LNq16, VLD2LNq32, VLD4LNd16, VLD4L...
     O << "], ";
     break;
-  case 19:
+  case 20:
     // VLD3DUPd16, VLD3DUPd32, VLD3DUPd8, VLD3DUPq16, VLD3DUPq32, VLD3DUPq8
     printAddrMode6Operand(MI, 3, STI, O);
     return;
     break;
-  case 20:
+  case 21:
     // VLD3DUPd16_UPD, VLD3DUPd32_UPD, VLD3DUPd8_UPD, VLD3DUPq16_UPD, VLD3DUP...
     printAddrMode6Operand(MI, 4, STI, O);
     break;
-  case 21:
+  case 22:
     // VLD4DUPd16_UPD, VLD4DUPd32_UPD, VLD4DUPd8_UPD, VLD4DUPq16_UPD, VLD4DUP...
     printAddrMode6Operand(MI, 5, STI, O);
     printAddrMode6OffsetOperand(MI, 7, STI, O);
     return;
     break;
-  case 22:
+  case 23:
     // VST3d16_UPD, VST3d32_UPD, VST3d8_UPD, VST3q16_UPD, VST3q32_UPD, VST3q8...
     O << "}, ";
     printAddrMode6Operand(MI, 1, STI, O);
     printAddrMode6OffsetOperand(MI, 3, STI, O);
     return;
     break;
-  case 23:
+  case 24:
     // VST4LNd16_UPD, VST4LNd32_UPD, VST4LNd8_UPD, VST4LNq16_UPD, VST4LNq32_U...
     printOperand(MI, 5, STI, O);
     O << '[';
@@ -11018,12 +11265,12 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printAddrMode6OffsetOperand(MI, 3, STI, O);
     return;
     break;
-  case 24:
+  case 25:
     // sysLDMDA, sysLDMDB, sysLDMIA, sysLDMIB, sysSTMDA, sysSTMDB, sysSTMIA, ...
     O << " ^";
     return;
     break;
-  case 25:
+  case 26:
     // t2MOVsra_flag, t2MOVsrl_flag
     O << ", #1";
     return;
@@ -11058,71 +11305,79 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     return;
     break;
   case 5:
+    // CDE_CX2DA, CDE_CX3D, VADDD, VDIVD, VLD1DUPd16wb_register, VLD1DUPd32wb...
+    return;
+    break;
+  case 6:
+    // CDE_CX3DA, MCR, MCRR, t2MCR, t2MCR2, t2MCRR, t2MCRR2
+    O << ", ";
+    break;
+  case 7:
+    // CDE_VCX2_vec, CDE_VCX3_vec, MVE_VABAVs16, MVE_VABAVs32, MVE_VABAVs8, M...
+    printOperand(MI, 3, STI, O);
+    break;
+  case 8:
+    // CDE_VCX3A_fpdp, CDE_VCX3A_fpsp, VST2LNd16_UPD, VST2LNd32_UPD, VST2LNd8...
+    printOperand(MI, 5, STI, O);
+    break;
+  case 9:
     // LDCL_OPTION, LDC_OPTION, STCL_OPTION, STC_OPTION, t2LDC2L_OPTION, t2LD...
     printCoprocOptionImm(MI, 3, STI, O);
     return;
     break;
-  case 6:
+  case 10:
     // LDCL_POST, LDC_POST, STCL_POST, STC_POST, t2LDC2L_POST, t2LDC2_POST, t...
     printPostIdxImm8s4Operand(MI, 3, STI, O);
     return;
     break;
-  case 7:
+  case 11:
     // LDRBT_POST_IMM, LDRBT_POST_REG, LDRB_POST_IMM, LDRB_POST_REG, LDRT_POS...
     printAddrMode2OffsetOperand(MI, 3, STI, O);
     return;
     break;
-  case 8:
+  case 12:
     // LDRD, STRD
     printAddrMode3Operand<false>(MI, 2, STI, O);
     return;
     break;
-  case 9:
+  case 13:
     // LDRD_POST, STRD_POST, t2LDRD_POST, t2STRD_POST
     printAddrMode7Operand(MI, 3, STI, O);
     break;
-  case 10:
+  case 14:
     // LDRD_PRE, STRD_PRE
     printAddrMode3Operand<true>(MI, 3, STI, O);
     O << '!';
     return;
     break;
-  case 11:
+  case 15:
     // LDRHTi, LDRSBTi, LDRSHTi, STRHTi
     printPostIdxImm8Operand(MI, 3, STI, O);
     return;
     break;
-  case 12:
+  case 16:
     // LDRHTr, LDRSBTr, LDRSHTr, STRHTr
     printPostIdxRegOperand(MI, 3, STI, O);
     return;
     break;
-  case 13:
+  case 17:
     // LDRH_POST, LDRSB_POST, LDRSH_POST, STRH_POST
     printAddrMode3OffsetOperand(MI, 3, STI, O);
     return;
     break;
-  case 14:
-    // MCR, MCRR, t2MCR, t2MCR2, t2MCRR, t2MCRR2
-    O << ", ";
-    break;
-  case 15:
+  case 18:
     // MCRR2
     printCImmediate(MI, 4, STI, O);
     return;
     break;
-  case 16:
+  case 19:
     // MVE_SQRSHRL, MVE_UQRSHLL
     printMveSaturateOp(MI, 5, STI, O);
     O << ", ";
     printOperand(MI, 4, STI, O);
     return;
     break;
-  case 17:
-    // MVE_VABAVs16, MVE_VABAVs32, MVE_VABAVs8, MVE_VABAVu16, MVE_VABAVu32, M...
-    printOperand(MI, 3, STI, O);
-    break;
-  case 18:
+  case 20:
     // MVE_VMOV_q_rr
     printVectorIndex(MI, 5, STI, O);
     O << ", ";
@@ -11131,36 +11386,32 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 3, STI, O);
     return;
     break;
-  case 19:
+  case 21:
     // STLEX, STLEXB, STLEXH, STREX, STREXB, STREXH, SWP, SWPB, t2LDAEXD, t2L...
     printAddrMode7Operand(MI, 2, STI, O);
     return;
     break;
-  case 20:
-    // VADDD, VDIVD, VLD4DUPd16, VLD4DUPd32, VLD4DUPd8, VLD4DUPq16, VLD4DUPq3...
-    return;
-    break;
-  case 21:
+  case 22:
     // VCADDv2f32, VCADDv4f16, VCADDv4f32, VCADDv8f16
     printComplexRotationOp<180, 90>(MI, 3, STI, O);
     return;
     break;
-  case 22:
+  case 23:
     // VCMLAv2f32, VCMLAv4f16, VCMLAv4f32, VCMLAv8f16
     printComplexRotationOp<90, 0>(MI, 4, STI, O);
     return;
     break;
-  case 23:
+  case 24:
     // VLD1LNd16, VLD1LNd32, VLD1LNd8, VST1LNd16_UPD, VST1LNd32_UPD, VST1LNd8...
     printAddrMode6Operand(MI, 1, STI, O);
     break;
-  case 24:
+  case 25:
     // VLD1LNd16_UPD, VLD1LNd32_UPD, VLD1LNd8_UPD
     printAddrMode6Operand(MI, 2, STI, O);
     printAddrMode6OffsetOperand(MI, 4, STI, O);
     return;
     break;
-  case 25:
+  case 26:
     // VLD2LNd16, VLD2LNd32, VLD2LNd8, VLD2LNq16, VLD2LNq32
     printOperand(MI, 1, STI, O);
     O << '[';
@@ -11169,30 +11420,20 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printAddrMode6Operand(MI, 2, STI, O);
     return;
     break;
-  case 26:
+  case 27:
     // VLD2LNd16_UPD, VLD2LNd32_UPD, VLD2LNd8_UPD, VLD2LNq16_UPD, VLD2LNq32_U...
     O << '[';
     printNoHashImmediate(MI, 8, STI, O);
     break;
-  case 27:
+  case 28:
     // VLD3DUPd16_UPD, VLD3DUPd32_UPD, VLD3DUPd8_UPD, VLD3DUPq16_UPD, VLD3DUP...
     printAddrMode6OffsetOperand(MI, 6, STI, O);
     return;
     break;
-  case 28:
+  case 29:
     // VLD3LNd16_UPD, VLD3LNd32_UPD, VLD3LNd8_UPD, VLD3LNq16_UPD, VLD3LNq32_U...
     printAddrMode6Operand(MI, 4, STI, O);
     printAddrMode6OffsetOperand(MI, 6, STI, O);
-    return;
-    break;
-  case 29:
-    // VST2LNd16_UPD, VST2LNd32_UPD, VST2LNd8_UPD, VST2LNq16_UPD, VST2LNq32_U...
-    printOperand(MI, 5, STI, O);
-    O << '[';
-    printNoHashImmediate(MI, 6, STI, O);
-    O << "]}, ";
-    printAddrMode6Operand(MI, 1, STI, O);
-    printAddrMode6OffsetOperand(MI, 3, STI, O);
     return;
     break;
   case 30:
@@ -11242,18 +11483,23 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
   }
 
 
-  // Fragment 7 encoded into 4 bits for 16 unique commands.
-  switch ((Bits >> 57) & 15) {
+  // Fragment 7 encoded into 5 bits for 17 unique commands.
+  switch ((Bits >> 57) & 31) {
   default: llvm_unreachable("Invalid command number.");
   case 0:
     // ASRi, ASRr, LSLi, LSLr, LSRi, LSRr, RORi, RORr, VLD1LNdWB_register_Asm...
     return;
     break;
   case 1:
-    // LDRD_POST, MLA, MLS, MVE_VCADDf16, MVE_VCADDf32, MVE_VCADDi16, MVE_VCA...
+    // CDE_CX3A, CDE_VCX3A_vec, CDE_VCX3_vec, LDRD_POST, MLA, MLS, MVE_VCADDf...
     O << ", ";
     break;
   case 2:
+    // CDE_CX3DA
+    printOperand(MI, 5, STI, O);
+    return;
+    break;
+  case 3:
     // MCR, t2MCR, t2MCR2
     printCImmediate(MI, 3, STI, O);
     O << ", ";
@@ -11262,45 +11508,45 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printOperand(MI, 5, STI, O);
     return;
     break;
-  case 3:
+  case 4:
     // MCRR, t2MCRR, t2MCRR2
     printOperand(MI, 3, STI, O);
     O << ", ";
     printCImmediate(MI, 4, STI, O);
     return;
     break;
-  case 4:
+  case 5:
     // MVE_VMOV_rr_q, VMULLslsv2i32, VMULLslsv4i16, VMULLsluv2i32, VMULLsluv4...
     printVectorIndex(MI, 3, STI, O);
     break;
-  case 5:
+  case 6:
     // PKHBT, t2PKHBT
     printPKHLSLShiftImm(MI, 3, STI, O);
     return;
     break;
-  case 6:
+  case 7:
     // PKHTB, t2PKHTB
     printPKHASRShiftImm(MI, 3, STI, O);
     return;
     break;
-  case 7:
+  case 8:
     // SXTAB, SXTAB16, SXTAH, UXTAB, UXTAB16, UXTAH, t2SXTAB, t2SXTAB16, t2SX...
     printRotImmOperand(MI, 3, STI, O);
     return;
     break;
-  case 8:
+  case 9:
     // USAT, t2USAT
     printShiftImmOperand(MI, 3, STI, O);
     return;
     break;
-  case 9:
+  case 10:
     // VLD2LNd16_UPD, VLD2LNd32_UPD, VLD2LNd8_UPD, VLD2LNq16_UPD, VLD2LNq32_U...
     O << "]}, ";
     printAddrMode6Operand(MI, 3, STI, O);
     printAddrMode6OffsetOperand(MI, 5, STI, O);
     return;
     break;
-  case 10:
+  case 11:
     // VLD3LNd16, VLD3LNd32, VLD3LNd8, VLD3LNq16, VLD3LNq32
     O << "], ";
     printOperand(MI, 2, STI, O);
@@ -11310,25 +11556,25 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printAddrMode6Operand(MI, 3, STI, O);
     return;
     break;
-  case 11:
+  case 12:
     // VLD3d16, VLD3d16_UPD, VLD3d32, VLD3d32_UPD, VLD3d8, VLD3d8_UPD, VLD3q1...
     O << "}, ";
     break;
-  case 12:
+  case 13:
     // VLD4LNd16, VLD4LNd32, VLD4LNd8, VLD4LNq16, VLD4LNq32, VST2LNd16, VST2L...
     O << '[';
     break;
-  case 13:
+  case 14:
     // VMLALslsv2i32, VMLALslsv4i16, VMLALsluv2i32, VMLALsluv4i16, VMLAslfd, ...
     printVectorIndex(MI, 4, STI, O);
     return;
     break;
-  case 14:
+  case 15:
     // VST1LNd16_UPD, VST1LNd32_UPD, VST1LNd8_UPD
     printAddrMode6OffsetOperand(MI, 3, STI, O);
     return;
     break;
-  case 15:
+  case 16:
     // t2LDRD_POST, t2STRD_POST
     printT2AddrModeImm8s4OffsetOperand(MI, 4, STI, O);
     return;
@@ -11337,6 +11583,9 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
 
   switch (MI->getOpcode()) {
   default: llvm_unreachable("Unexpected opcode.");
+  case ARM::CDE_CX3A:
+  case ARM::CDE_VCX3A_vec:
+  case ARM::CDE_VCX3_vec:
   case ARM::LDRD_POST:
   case ARM::MLA:
   case ARM::MLS:
@@ -11474,6 +11723,34 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
   case ARM::t2USADA8:
     switch (MI->getOpcode()) {
     default: llvm_unreachable("Unexpected opcode.");
+    case ARM::CDE_CX3A:
+    case ARM::CDE_VCX3A_vec:
+    case ARM::MVE_VMLALDAVas16:
+    case ARM::MVE_VMLALDAVas32:
+    case ARM::MVE_VMLALDAVau16:
+    case ARM::MVE_VMLALDAVau32:
+    case ARM::MVE_VMLALDAVaxs16:
+    case ARM::MVE_VMLALDAVaxs32:
+    case ARM::MVE_VMLSLDAVas16:
+    case ARM::MVE_VMLSLDAVas32:
+    case ARM::MVE_VMLSLDAVaxs16:
+    case ARM::MVE_VMLSLDAVaxs32:
+    case ARM::MVE_VRMLALDAVHas32:
+    case ARM::MVE_VRMLALDAVHau32:
+    case ARM::MVE_VRMLALDAVHaxs32:
+    case ARM::MVE_VRMLSLDAVHas32:
+    case ARM::MVE_VRMLSLDAVHaxs32:
+      printOperand(MI, 5, STI, O);
+      break;
+    case ARM::CDE_VCX3_vec:
+    case ARM::MVE_VDWDUPu16:
+    case ARM::MVE_VDWDUPu32:
+    case ARM::MVE_VDWDUPu8:
+    case ARM::MVE_VIWDUPu16:
+    case ARM::MVE_VIWDUPu32:
+    case ARM::MVE_VIWDUPu8:
+      printOperand(MI, 4, STI, O);
+      break;
     case ARM::LDRD_POST:
     case ARM::STRD_POST:
       printAddrMode3OffsetOperand(MI, 4, STI, O);
@@ -11579,31 +11856,6 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     case ARM::MVE_VCMULf16:
     case ARM::MVE_VCMULf32:
       printComplexRotationOp<90, 0>(MI, 3, STI, O);
-      break;
-    case ARM::MVE_VDWDUPu16:
-    case ARM::MVE_VDWDUPu32:
-    case ARM::MVE_VDWDUPu8:
-    case ARM::MVE_VIWDUPu16:
-    case ARM::MVE_VIWDUPu32:
-    case ARM::MVE_VIWDUPu8:
-      printOperand(MI, 4, STI, O);
-      break;
-    case ARM::MVE_VMLALDAVas16:
-    case ARM::MVE_VMLALDAVas32:
-    case ARM::MVE_VMLALDAVau16:
-    case ARM::MVE_VMLALDAVau32:
-    case ARM::MVE_VMLALDAVaxs16:
-    case ARM::MVE_VMLALDAVaxs32:
-    case ARM::MVE_VMLSLDAVas16:
-    case ARM::MVE_VMLSLDAVas32:
-    case ARM::MVE_VMLSLDAVaxs16:
-    case ARM::MVE_VMLSLDAVaxs32:
-    case ARM::MVE_VRMLALDAVHas32:
-    case ARM::MVE_VRMLALDAVHau32:
-    case ARM::MVE_VRMLALDAVHaxs32:
-    case ARM::MVE_VRMLSLDAVHas32:
-    case ARM::MVE_VRMLSLDAVHaxs32:
-      printOperand(MI, 5, STI, O);
       break;
     case ARM::SBFX:
     case ARM::UBFX:
@@ -11715,6 +11967,17 @@ void ARMInstPrinter::printInstruction(const MCInst *MI, uint64_t Address, const 
     printNoHashImmediate(MI, 4, STI, O);
     O << "]}, ";
     printAddrMode6Operand(MI, 0, STI, O);
+    return;
+    break;
+  case ARM::VST2LNd16_UPD:
+  case ARM::VST2LNd32_UPD:
+  case ARM::VST2LNd8_UPD:
+  case ARM::VST2LNq16_UPD:
+  case ARM::VST2LNq32_UPD:
+    printNoHashImmediate(MI, 6, STI, O);
+    O << "]}, ";
+    printAddrMode6Operand(MI, 1, STI, O);
+    printAddrMode6OffsetOperand(MI, 3, STI, O);
     return;
     break;
   case ARM::VST3LNd16:
@@ -12055,7 +12318,7 @@ getRegisterName(unsigned RegNo, unsigned AltIdx) {
 #ifdef PRINT_ALIAS_INSTR
 #undef PRINT_ALIAS_INSTR
 
-bool ARMInstPrinter::printAliasInstr(const MCInst *MI, const MCSubtargetInfo &STI, raw_ostream &OS) {
+bool ARMInstPrinter::printAliasInstr(const MCInst *MI, uint64_t Address, const MCSubtargetInfo &STI, raw_ostream &OS) {
   static const PatternsForOpcode OpToPatterns[] = {
     {ARM::DSB, 0, 3 },
     {ARM::HINT, 3, 8 },
@@ -12615,7 +12878,7 @@ bool ARMInstPrinter::printAliasInstr(const MCInst *MI, const MCSubtargetInfo &ST
           ++I;
           int OpIdx = AsmString[I++] - 1;
           int PrintMethodIdx = AsmString[I++] - 1;
-          printCustomAliasOperand(MI, OpIdx, PrintMethodIdx, STI, OS);
+          printCustomAliasOperand(MI, Address, OpIdx, PrintMethodIdx, STI, OS);
         } else
           printOperand(MI, unsigned(AsmString[I++]) - 1, STI, OS);
       } else {
@@ -12628,7 +12891,7 @@ bool ARMInstPrinter::printAliasInstr(const MCInst *MI, const MCSubtargetInfo &ST
 }
 
 void ARMInstPrinter::printCustomAliasOperand(
-         const MCInst *MI, unsigned OpIdx,
+         const MCInst *MI, uint64_t Address, unsigned OpIdx,
          unsigned PrintMethodIdx,
          const MCSubtargetInfo &STI,
          raw_ostream &OS) {

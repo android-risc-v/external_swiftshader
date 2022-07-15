@@ -44,6 +44,8 @@ const uint32_t CCRegBankCoverageData[] = {
     0,
     // 96-127
     0,
+    // 128-159
+    0,
 };
 const uint32_t FPRRegBankCoverageData[] = {
     // 0-31
@@ -52,9 +54,10 @@ const uint32_t FPRRegBankCoverageData[] = {
     (1u << (AArch64::FPR32RegClassID - 0)) |
     (1u << (AArch64::FPR64RegClassID - 0)) |
     (1u << (AArch64::DDRegClassID - 0)) |
+    (1u << (AArch64::FPR16_loRegClassID - 0)) |
+    (1u << (AArch64::FPR32_with_hsub_in_FPR16_loRegClassID - 0)) |
     (1u << (AArch64::FPR64_loRegClassID - 0)) |
     (1u << (AArch64::DD_with_dsub0_in_FPR64_loRegClassID - 0)) |
-    (1u << (AArch64::DD_with_dsub1_in_FPR64_loRegClassID - 0)) |
     0,
     // 32-63
     (1u << (AArch64::FPR128RegClassID - 32)) |
@@ -63,6 +66,7 @@ const uint32_t FPRRegBankCoverageData[] = {
     (1u << (AArch64::FPR128_loRegClassID - 32)) |
     (1u << (AArch64::DDD_with_dsub0_in_FPR64_loRegClassID - 32)) |
     (1u << (AArch64::DDDD_with_dsub0_in_FPR64_loRegClassID - 32)) |
+    (1u << (AArch64::DD_with_dsub1_in_FPR64_loRegClassID - 32)) |
     (1u << (AArch64::DD_with_dsub0_in_FPR64_lo_and_DD_with_dsub1_in_FPR64_loRegClassID - 32)) |
     (1u << (AArch64::DDD_with_dsub1_in_FPR64_loRegClassID - 32)) |
     (1u << (AArch64::DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub1_in_FPR64_loRegClassID - 32)) |
@@ -73,10 +77,8 @@ const uint32_t FPRRegBankCoverageData[] = {
     (1u << (AArch64::DDD_with_dsub0_in_FPR64_lo_and_DDD_with_dsub2_in_FPR64_loRegClassID - 32)) |
     (1u << (AArch64::DDDD_with_dsub2_in_FPR64_loRegClassID - 32)) |
     (1u << (AArch64::DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClassID - 32)) |
-    (1u << (AArch64::DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClassID - 32)) |
     (1u << (AArch64::DDDD_with_dsub3_in_FPR64_loRegClassID - 32)) |
     (1u << (AArch64::DDDD_with_dsub2_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClassID - 32)) |
-    (1u << (AArch64::DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClassID - 32)) |
     0,
     // 64-95
     (1u << (AArch64::QQRegClassID - 64)) |
@@ -87,9 +89,11 @@ const uint32_t FPRRegBankCoverageData[] = {
     (1u << (AArch64::QQ_with_dsub_in_FPR64_lo_and_QQ_with_qsub1_in_FPR128_loRegClassID - 64)) |
     (1u << (AArch64::QQQ_with_qsub1_in_FPR128_loRegClassID - 64)) |
     (1u << (AArch64::QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub1_in_FPR128_loRegClassID - 64)) |
+    (1u << (AArch64::DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub2_in_FPR64_loRegClassID - 64)) |
     (1u << (AArch64::QQQ_with_qsub2_in_FPR128_loRegClassID - 64)) |
     (1u << (AArch64::QQQ_with_qsub1_in_FPR128_lo_and_QQQ_with_qsub2_in_FPR128_loRegClassID - 64)) |
     (1u << (AArch64::QQQ_with_dsub_in_FPR64_lo_and_QQQ_with_qsub2_in_FPR128_loRegClassID - 64)) |
+    (1u << (AArch64::DDDD_with_dsub1_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClassID - 64)) |
     (1u << (AArch64::DDDD_with_dsub0_in_FPR64_lo_and_DDDD_with_dsub3_in_FPR64_loRegClassID - 64)) |
     0,
     // 96-127
@@ -104,6 +108,8 @@ const uint32_t FPRRegBankCoverageData[] = {
     (1u << (AArch64::QQQQ_with_qsub2_in_FPR128_loRegClassID - 96)) |
     (1u << (AArch64::QQQQ_with_qsub2_in_FPR128_lo_and_QQQQ_with_qsub3_in_FPR128_loRegClassID - 96)) |
     (1u << (AArch64::QQQQ_with_qsub3_in_FPR128_loRegClassID - 96)) |
+    0,
+    // 128-159
     0,
 };
 const uint32_t GPRRegBankCoverageData[] = {
@@ -132,11 +138,13 @@ const uint32_t GPRRegBankCoverageData[] = {
     0,
     // 96-127
     0,
+    // 128-159
+    0,
 };
 
-RegisterBank CCRegBank(/* ID */ AArch64::CCRegBankID, /* Name */ "CC", /* Size */ 32, /* CoveredRegClasses */ CCRegBankCoverageData, /* NumRegClasses */ 128);
-RegisterBank FPRRegBank(/* ID */ AArch64::FPRRegBankID, /* Name */ "FPR", /* Size */ 512, /* CoveredRegClasses */ FPRRegBankCoverageData, /* NumRegClasses */ 128);
-RegisterBank GPRRegBank(/* ID */ AArch64::GPRRegBankID, /* Name */ "GPR", /* Size */ 64, /* CoveredRegClasses */ GPRRegBankCoverageData, /* NumRegClasses */ 128);
+RegisterBank CCRegBank(/* ID */ AArch64::CCRegBankID, /* Name */ "CC", /* Size */ 32, /* CoveredRegClasses */ CCRegBankCoverageData, /* NumRegClasses */ 130);
+RegisterBank FPRRegBank(/* ID */ AArch64::FPRRegBankID, /* Name */ "FPR", /* Size */ 512, /* CoveredRegClasses */ FPRRegBankCoverageData, /* NumRegClasses */ 130);
+RegisterBank GPRRegBank(/* ID */ AArch64::GPRRegBankID, /* Name */ "GPR", /* Size */ 64, /* CoveredRegClasses */ GPRRegBankCoverageData, /* NumRegClasses */ 130);
 } // end namespace AArch64
 
 RegisterBank *AArch64GenRegisterBankInfo::RegBanks[] = {

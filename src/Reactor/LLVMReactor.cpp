@@ -56,7 +56,7 @@ extern "C" void X86CompilationCallback()
 #	error "LLVM_ENABLE_THREADS needs to be enabled"
 #endif
 
-#if LLVM_VERSION_MAJOR < 11
+#if LLVM_VERSION_MAJOR < 10
 namespace llvm {
 using FixedVectorType = VectorType;
 }  // namespace llvm
@@ -184,7 +184,7 @@ llvm::Value *lowerRCP(llvm::Value *x)
 	if(llvm::FixedVectorType *vectorTy = llvm::dyn_cast<llvm::FixedVectorType>(ty))
 	{
 		one = llvm::ConstantVector::getSplat(
-		    vectorTy->getNumElements(),
+		    vectorTy->getElementCount(),
 		    llvm::ConstantFP::get(vectorTy->getElementType(), 1));
 	}
 	else
@@ -203,7 +203,7 @@ llvm::Value *lowerVectorShl(llvm::Value *x, uint64_t scalarY)
 {
 	llvm::FixedVectorType *ty = llvm::cast<llvm::FixedVectorType>(x->getType());
 	llvm::Value *y = llvm::ConstantVector::getSplat(
-	    ty->getNumElements(),
+	    ty->getElementCount(),
 	    llvm::ConstantInt::get(ty->getElementType(), scalarY));
 	return jit->builder->CreateShl(x, y);
 }
@@ -212,7 +212,7 @@ llvm::Value *lowerVectorAShr(llvm::Value *x, uint64_t scalarY)
 {
 	llvm::FixedVectorType *ty = llvm::cast<llvm::FixedVectorType>(x->getType());
 	llvm::Value *y = llvm::ConstantVector::getSplat(
-	    ty->getNumElements(),
+	    ty->getElementCount(),
 	    llvm::ConstantInt::get(ty->getElementType(), scalarY));
 	return jit->builder->CreateAShr(x, y);
 }
@@ -221,7 +221,7 @@ llvm::Value *lowerVectorLShr(llvm::Value *x, uint64_t scalarY)
 {
 	llvm::FixedVectorType *ty = llvm::cast<llvm::FixedVectorType>(x->getType());
 	llvm::Value *y = llvm::ConstantVector::getSplat(
-	    ty->getNumElements(),
+	    ty->getElementCount(),
 	    llvm::ConstantInt::get(ty->getElementType(), scalarY));
 	return jit->builder->CreateLShr(x, y);
 }
@@ -632,7 +632,7 @@ Value *Nucleus::allocateStackVariable(Type *type, int arraySize)
 
 	llvm::Instruction *declaration;
 
-#if LLVM_VERSION_MAJOR >= 11
+#if LLVM_VERSION_MAJOR >= 10
 	auto align = jit->module->getDataLayout().getPrefTypeAlign(T(type));
 #else
 	auto align = llvm::MaybeAlign(jit->module->getDataLayout().getPrefTypeAlignment(T(type)));

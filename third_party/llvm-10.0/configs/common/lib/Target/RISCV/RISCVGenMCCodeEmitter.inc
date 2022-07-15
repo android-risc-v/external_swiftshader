@@ -238,10 +238,29 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(0),
     UINT64_C(0),
     UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
+    UINT64_C(0),
     UINT64_C(51),	// ADD
     UINT64_C(19),	// ADDI
     UINT64_C(27),	// ADDIW
+    UINT64_C(16411),	// ADDIWU
+    UINT64_C(134217787),	// ADDUW
     UINT64_C(59),	// ADDW
+    UINT64_C(167772219),	// ADDWU
     UINT64_C(12335),	// AMOADD_D
     UINT64_C(67121199),	// AMOADD_D_AQ
     UINT64_C(100675631),	// AMOADD_D_AQ_RL
@@ -316,19 +335,49 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(570433583),	// AMOXOR_W_RL
     UINT64_C(28723),	// AND
     UINT64_C(28691),	// ANDI
+    UINT64_C(1073770547),	// ANDN
     UINT64_C(23),	// AUIPC
+    UINT64_C(1207984179),	// BDEP
+    UINT64_C(1207984187),	// BDEPW
     UINT64_C(99),	// BEQ
+    UINT64_C(134242355),	// BEXT
+    UINT64_C(134242363),	// BEXTW
+    UINT64_C(1207988275),	// BFP
+    UINT64_C(1207988283),	// BFPW
     UINT64_C(20579),	// BGE
     UINT64_C(28771),	// BGEU
     UINT64_C(16483),	// BLT
     UINT64_C(24675),	// BLTU
+    UINT64_C(1613762579),	// BMATFLIP
+    UINT64_C(134230067),	// BMATOR
+    UINT64_C(1207971891),	// BMATXOR
     UINT64_C(4195),	// BNE
+    UINT64_C(167776307),	// CLMUL
+    UINT64_C(167784499),	// CLMULH
+    UINT64_C(167784507),	// CLMULHW
+    UINT64_C(167780403),	// CLMULR
+    UINT64_C(167780411),	// CLMULRW
+    UINT64_C(167776315),	// CLMULW
+    UINT64_C(1610616851),	// CLZ
+    UINT64_C(1610616859),	// CLZW
+    UINT64_C(100667443),	// CMIX
+    UINT64_C(100683827),	// CMOV
+    UINT64_C(1627394067),	// CRC32B
+    UINT64_C(1635782675),	// CRC32CB
+    UINT64_C(1638928403),	// CRC32CD
+    UINT64_C(1636831251),	// CRC32CH
+    UINT64_C(1637879827),	// CRC32CW
+    UINT64_C(1630539795),	// CRC32D
+    UINT64_C(1628442643),	// CRC32H
+    UINT64_C(1629491219),	// CRC32W
     UINT64_C(12403),	// CSRRC
     UINT64_C(28787),	// CSRRCI
     UINT64_C(8307),	// CSRRS
     UINT64_C(24691),	// CSRRSI
     UINT64_C(4211),	// CSRRW
     UINT64_C(20595),	// CSRRWI
+    UINT64_C(1611665427),	// CTZ
+    UINT64_C(1611665435),	// CTZW
     UINT64_C(36866),	// C_ADD
     UINT64_C(1),	// C_ADDI
     UINT64_C(24833),	// C_ADDI16SP
@@ -366,8 +415,10 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(16386),	// C_LWSP
     UINT64_C(32770),	// C_MV
     UINT64_C(32770),	// C_MV_HINT
+    UINT64_C(25601),	// C_NEG
     UINT64_C(1),	// C_NOP
     UINT64_C(1),	// C_NOP_HINT
+    UINT64_C(24577),	// C_NOT
     UINT64_C(35905),	// C_OR
     UINT64_C(57344),	// C_SD
     UINT64_C(57346),	// C_SDSP
@@ -384,10 +435,12 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(49154),	// C_SWSP
     UINT64_C(0),	// C_UNIMP
     UINT64_C(35873),	// C_XOR
+    UINT64_C(26625),	// C_ZEXTW
     UINT64_C(33570867),	// DIV
     UINT64_C(33574963),	// DIVU
     UINT64_C(33574971),	// DIVUW
     UINT64_C(33570875),	// DIVW
+    UINT64_C(2065694835),	// DRET
     UINT64_C(1048691),	// EBREAK
     UINT64_C(115),	// ECALL
     UINT64_C(33554515),	// FADD_D
@@ -450,11 +503,25 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(536879187),	// FSGNJX_S
     UINT64_C(570425427),	// FSGNJ_D
     UINT64_C(536870995),	// FSGNJ_S
+    UINT64_C(67113011),	// FSL
+    UINT64_C(67113019),	// FSLW
     UINT64_C(1509949523),	// FSQRT_D
     UINT64_C(1476395091),	// FSQRT_S
+    UINT64_C(67129395),	// FSR
+    UINT64_C(67129363),	// FSRI
+    UINT64_C(67129371),	// FSRIW
+    UINT64_C(67129403),	// FSRW
     UINT64_C(167772243),	// FSUB_D
     UINT64_C(134217811),	// FSUB_S
     UINT64_C(8231),	// FSW
+    UINT64_C(671109171),	// GORC
+    UINT64_C(671109139),	// GORCI
+    UINT64_C(671109147),	// GORCIW
+    UINT64_C(671109179),	// GORCW
+    UINT64_C(1744850995),	// GREV
+    UINT64_C(1744850963),	// GREVI
+    UINT64_C(1744850971),	// GREVIW
+    UINT64_C(1744851003),	// GREVW
     UINT64_C(111),	// JAL
     UINT64_C(103),	// JALR
     UINT64_C(3),	// LB
@@ -473,6 +540,10 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(55),	// LUI
     UINT64_C(8195),	// LW
     UINT64_C(24579),	// LWU
+    UINT64_C(167792691),	// MAX
+    UINT64_C(167800883),	// MAXU
+    UINT64_C(167788595),	// MIN
+    UINT64_C(167796787),	// MINU
     UINT64_C(807403635),	// MRET
     UINT64_C(33554483),	// MUL
     UINT64_C(33558579),	// MULH
@@ -481,11 +552,40 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(33554491),	// MULW
     UINT64_C(24627),	// OR
     UINT64_C(24595),	// ORI
+    UINT64_C(1073766451),	// ORN
+    UINT64_C(134234163),	// PACK
+    UINT64_C(134246451),	// PACKH
+    UINT64_C(1207975987),	// PACKU
+    UINT64_C(1207975995),	// PACKUW
+    UINT64_C(134234171),	// PACKW
+    UINT64_C(1612714003),	// PCNT
+    UINT64_C(1612714011),	// PCNTW
     UINT64_C(33579059),	// REM
     UINT64_C(33583155),	// REMU
     UINT64_C(33583163),	// REMUW
     UINT64_C(33579067),	// REMW
+    UINT64_C(1610616883),	// ROL
+    UINT64_C(1610616891),	// ROLW
+    UINT64_C(1610633267),	// ROR
+    UINT64_C(1610633235),	// RORI
+    UINT64_C(1610633243),	// RORIW
+    UINT64_C(1610633275),	// RORW
     UINT64_C(35),	// SB
+    UINT64_C(1207963699),	// SBCLR
+    UINT64_C(1207963667),	// SBCLRI
+    UINT64_C(1207963675),	// SBCLRIW
+    UINT64_C(1207963707),	// SBCLRW
+    UINT64_C(1207980083),	// SBEXT
+    UINT64_C(1207980051),	// SBEXTI
+    UINT64_C(1207980091),	// SBEXTW
+    UINT64_C(1744834611),	// SBINV
+    UINT64_C(1744834579),	// SBINVI
+    UINT64_C(1744834587),	// SBINVIW
+    UINT64_C(1744834619),	// SBINVW
+    UINT64_C(671092787),	// SBSET
+    UINT64_C(671092755),	// SBSETI
+    UINT64_C(671092763),	// SBSETIW
+    UINT64_C(671092795),	// SBSETW
     UINT64_C(402665519),	// SC_D
     UINT64_C(469774383),	// SC_D_AQ
     UINT64_C(503328815),	// SC_D_AQ_RL
@@ -495,12 +595,22 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(503324719),	// SC_W_AQ_RL
     UINT64_C(436215855),	// SC_W_RL
     UINT64_C(12323),	// SD
+    UINT64_C(1614811155),	// SEXTB
+    UINT64_C(1615859731),	// SEXTH
     UINT64_C(301990003),	// SFENCE_VMA
     UINT64_C(4131),	// SH
+    UINT64_C(134221875),	// SHFL
+    UINT64_C(134221843),	// SHFLI
+    UINT64_C(134221883),	// SHFLW
     UINT64_C(4147),	// SLL
     UINT64_C(4115),	// SLLI
+    UINT64_C(134221851),	// SLLIUW
     UINT64_C(4123),	// SLLIW
     UINT64_C(4155),	// SLLW
+    UINT64_C(536875059),	// SLO
+    UINT64_C(536875027),	// SLOI
+    UINT64_C(536875035),	// SLOIW
+    UINT64_C(536875067),	// SLOW
     UINT64_C(8243),	// SLT
     UINT64_C(8211),	// SLTI
     UINT64_C(12307),	// SLTIU
@@ -514,12 +624,367 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     UINT64_C(20499),	// SRLI
     UINT64_C(20507),	// SRLIW
     UINT64_C(20539),	// SRLW
+    UINT64_C(536891443),	// SRO
+    UINT64_C(536891411),	// SROI
+    UINT64_C(536891419),	// SROIW
+    UINT64_C(536891451),	// SROW
     UINT64_C(1073741875),	// SUB
+    UINT64_C(1207959611),	// SUBUW
     UINT64_C(1073741883),	// SUBW
+    UINT64_C(1241514043),	// SUBWU
     UINT64_C(8227),	// SW
     UINT64_C(3221229683),	// UNIMP
+    UINT64_C(134238259),	// UNSHFL
+    UINT64_C(134238227),	// UNSHFLI
+    UINT64_C(134238267),	// UNSHFLW
     UINT64_C(2097267),	// URET
+    UINT64_C(536879191),	// VAADDU_VV
+    UINT64_C(536895575),	// VAADDU_VX
+    UINT64_C(603988055),	// VAADD_VV
+    UINT64_C(604004439),	// VAADD_VX
+    UINT64_C(1073754199),	// VADC_VIM
+    UINT64_C(1073741911),	// VADC_VVM
+    UINT64_C(1073758295),	// VADC_VXM
+    UINT64_C(12375),	// VADD_VI
+    UINT64_C(87),	// VADD_VV
+    UINT64_C(16471),	// VADD_VX
+    UINT64_C(603992151),	// VAND_VI
+    UINT64_C(603979863),	// VAND_VV
+    UINT64_C(603996247),	// VAND_VX
+    UINT64_C(671096919),	// VASUBU_VV
+    UINT64_C(671113303),	// VASUBU_VX
+    UINT64_C(738205783),	// VASUB_VV
+    UINT64_C(738222167),	// VASUB_VX
+    UINT64_C(1577066583),	// VCOMPRESS_VM
+    UINT64_C(2147491927),	// VDIVU_VV
+    UINT64_C(2147508311),	// VDIVU_VX
+    UINT64_C(2214600791),	// VDIV_VV
+    UINT64_C(2214617175),	// VDIV_VX
+    UINT64_C(20567),	// VFADD_VF
+    UINT64_C(4183),	// VFADD_VV
+    UINT64_C(2349338711),	// VFCLASS_V
+    UINT64_C(2281771095),	// VFCVT_F_XU_V
+    UINT64_C(2281803863),	// VFCVT_F_X_V
+    UINT64_C(2281705559),	// VFCVT_XU_F_V
+    UINT64_C(2281738327),	// VFCVT_X_F_V
+    UINT64_C(2147504215),	// VFDIV_VF
+    UINT64_C(2147487831),	// VFDIV_VV
+    UINT64_C(1074307159),	// VFIRST_M
+    UINT64_C(2952810583),	// VFMACC_VF
+    UINT64_C(2952794199),	// VFMACC_VV
+    UINT64_C(2684375127),	// VFMADD_VF
+    UINT64_C(2684358743),	// VFMADD_VV
+    UINT64_C(402673751),	// VFMAX_VF
+    UINT64_C(402657367),	// VFMAX_VV
+    UINT64_C(1543524439),	// VFMERGE_VFM
+    UINT64_C(268456023),	// VFMIN_VF
+    UINT64_C(268439639),	// VFMIN_VV
+    UINT64_C(3087028311),	// VFMSAC_VF
+    UINT64_C(3087011927),	// VFMSAC_VV
+    UINT64_C(2818592855),	// VFMSUB_VF
+    UINT64_C(2818576471),	// VFMSUB_VV
+    UINT64_C(2415939671),	// VFMUL_VF
+    UINT64_C(2415923287),	// VFMUL_VV
+    UINT64_C(1107300439),	// VFMV_F_S
+    UINT64_C(1107316823),	// VFMV_S_F
+    UINT64_C(1577078871),	// VFMV_V_F
+    UINT64_C(2282360919),	// VFNCVT_F_F_W
+    UINT64_C(2282295383),	// VFNCVT_F_XU_W
+    UINT64_C(2282328151),	// VFNCVT_F_X_W
+    UINT64_C(2282393687),	// VFNCVT_ROD_F_F_W
+    UINT64_C(2282229847),	// VFNCVT_XU_F_W
+    UINT64_C(2282262615),	// VFNCVT_X_F_W
+    UINT64_C(3019919447),	// VFNMACC_VF
+    UINT64_C(3019903063),	// VFNMACC_VV
+    UINT64_C(2751483991),	// VFNMADD_VF
+    UINT64_C(2751467607),	// VFNMADD_VV
+    UINT64_C(3154137175),	// VFNMSAC_VF
+    UINT64_C(3154120791),	// VFNMSAC_VV
+    UINT64_C(2885701719),	// VFNMSUB_VF
+    UINT64_C(2885685335),	// VFNMSUB_VV
+    UINT64_C(2214613079),	// VFRDIV_VF
+    UINT64_C(469766231),	// VFREDMAX_VS
+    UINT64_C(335548503),	// VFREDMIN_VS
+    UINT64_C(201330775),	// VFREDOSUM_VS
+    UINT64_C(67113047),	// VFREDSUM_VS
+    UINT64_C(2617266263),	// VFRSUB_VF
+    UINT64_C(604000343),	// VFSGNJN_VF
+    UINT64_C(603983959),	// VFSGNJN_VV
+    UINT64_C(671109207),	// VFSGNJX_VF
+    UINT64_C(671092823),	// VFSGNJX_VV
+    UINT64_C(536891479),	// VFSGNJ_VF
+    UINT64_C(536875095),	// VFSGNJ_VV
+    UINT64_C(2348814423),	// VFSQRT_V
+    UINT64_C(134238295),	// VFSUB_VF
+    UINT64_C(134221911),	// VFSUB_VV
+    UINT64_C(3221246039),	// VFWADD_VF
+    UINT64_C(3221229655),	// VFWADD_VV
+    UINT64_C(3489681495),	// VFWADD_WF
+    UINT64_C(3489665111),	// VFWADD_WV
+    UINT64_C(2282098775),	// VFWCVT_F_F_V
+    UINT64_C(2282033239),	// VFWCVT_F_XU_V
+    UINT64_C(2282066007),	// VFWCVT_F_X_V
+    UINT64_C(2281967703),	// VFWCVT_XU_F_V
+    UINT64_C(2282000471),	// VFWCVT_X_F_V
+    UINT64_C(4026552407),	// VFWMACC_VF
+    UINT64_C(4026536023),	// VFWMACC_VV
+    UINT64_C(4160770135),	// VFWMSAC_VF
+    UINT64_C(4160753751),	// VFWMSAC_VV
+    UINT64_C(3758116951),	// VFWMUL_VF
+    UINT64_C(3758100567),	// VFWMUL_VV
+    UINT64_C(4093661271),	// VFWNMACC_VF
+    UINT64_C(4093644887),	// VFWNMACC_VV
+    UINT64_C(4227878999),	// VFWNMSAC_VF
+    UINT64_C(4227862615),	// VFWNMSAC_VV
+    UINT64_C(3422556247),	// VFWREDOSUM_VS
+    UINT64_C(3288338519),	// VFWREDSUM_VS
+    UINT64_C(3355463767),	// VFWSUB_VF
+    UINT64_C(3355447383),	// VFWSUB_VV
+    UINT64_C(3623899223),	// VFWSUB_WF
+    UINT64_C(3623882839),	// VFWSUB_WV
+    UINT64_C(1342742615),	// VID_V
+    UINT64_C(1342709847),	// VIOTA_M
+    UINT64_C(41971719),	// VL1R_V
+    UINT64_C(285212679),	// VLBFF_V
+    UINT64_C(16777223),	// VLBUFF_V
+    UINT64_C(7),	// VLBU_V
+    UINT64_C(268435463),	// VLB_V
+    UINT64_C(16805895),	// VLEFF_V
+    UINT64_C(28679),	// VLE_V
+    UINT64_C(285233159),	// VLHFF_V
+    UINT64_C(16797703),	// VLHUFF_V
+    UINT64_C(20487),	// VLHU_V
+    UINT64_C(268455943),	// VLH_V
+    UINT64_C(134217735),	// VLSBU_V
+    UINT64_C(402653191),	// VLSB_V
+    UINT64_C(134246407),	// VLSE_V
+    UINT64_C(134238215),	// VLSHU_V
+    UINT64_C(402673671),	// VLSH_V
+    UINT64_C(134242311),	// VLSWU_V
+    UINT64_C(402677767),	// VLSW_V
+    UINT64_C(285237255),	// VLWFF_V
+    UINT64_C(16801799),	// VLWUFF_V
+    UINT64_C(24583),	// VLWU_V
+    UINT64_C(268460039),	// VLW_V
+    UINT64_C(201326599),	// VLXBU_V
+    UINT64_C(469762055),	// VLXB_V
+    UINT64_C(201355271),	// VLXE_V
+    UINT64_C(201347079),	// VLXHU_V
+    UINT64_C(469782535),	// VLXH_V
+    UINT64_C(201351175),	// VLXWU_V
+    UINT64_C(469786631),	// VLXW_V
+    UINT64_C(3019907159),	// VMACC_VV
+    UINT64_C(3019923543),	// VMACC_VX
+    UINT64_C(1174417495),	// VMADC_VI
+    UINT64_C(1140863063),	// VMADC_VIM
+    UINT64_C(1174405207),	// VMADC_VV
+    UINT64_C(1140850775),	// VMADC_VVM
+    UINT64_C(1174421591),	// VMADC_VX
+    UINT64_C(1140867159),	// VMADC_VXM
+    UINT64_C(2751471703),	// VMADD_VV
+    UINT64_C(2751488087),	// VMADD_VX
+    UINT64_C(1644175447),	// VMANDNOT_MM
+    UINT64_C(1711284311),	// VMAND_MM
+    UINT64_C(402653271),	// VMAXU_VV
+    UINT64_C(402669655),	// VMAXU_VX
+    UINT64_C(469762135),	// VMAX_VV
+    UINT64_C(469778519),	// VMAX_VX
+    UINT64_C(1543516247),	// VMERGE_VIM
+    UINT64_C(1543503959),	// VMERGE_VVM
+    UINT64_C(1543520343),	// VMERGE_VXM
+    UINT64_C(1610633303),	// VMFEQ_VF
+    UINT64_C(1610616919),	// VMFEQ_VV
+    UINT64_C(2080395351),	// VMFGE_VF
+    UINT64_C(1946177623),	// VMFGT_VF
+    UINT64_C(1677742167),	// VMFLE_VF
+    UINT64_C(1677725783),	// VMFLE_VV
+    UINT64_C(1811959895),	// VMFLT_VF
+    UINT64_C(1811943511),	// VMFLT_VV
+    UINT64_C(1879068759),	// VMFNE_VF
+    UINT64_C(1879052375),	// VMFNE_VV
+    UINT64_C(268435543),	// VMINU_VV
+    UINT64_C(268451927),	// VMINU_VX
+    UINT64_C(335544407),	// VMIN_VV
+    UINT64_C(335560791),	// VMIN_VX
+    UINT64_C(1979719767),	// VMNAND_MM
+    UINT64_C(2046828631),	// VMNOR_MM
+    UINT64_C(1912610903),	// VMORNOT_MM
+    UINT64_C(1778393175),	// VMOR_MM
+    UINT64_C(1308622935),	// VMSBC_VV
+    UINT64_C(1275068503),	// VMSBC_VVM
+    UINT64_C(1308639319),	// VMSBC_VX
+    UINT64_C(1275084887),	// VMSBC_VXM
+    UINT64_C(1342218327),	// VMSBF_M
+    UINT64_C(1610625111),	// VMSEQ_VI
+    UINT64_C(1610612823),	// VMSEQ_VV
+    UINT64_C(1610629207),	// VMSEQ_VX
+    UINT64_C(2013278295),	// VMSGTU_VI
+    UINT64_C(2013282391),	// VMSGTU_VX
+    UINT64_C(2080387159),	// VMSGT_VI
+    UINT64_C(2080391255),	// VMSGT_VX
+    UINT64_C(1342283863),	// VMSIF_M
+    UINT64_C(1879060567),	// VMSLEU_VI
+    UINT64_C(1879048279),	// VMSLEU_VV
+    UINT64_C(1879064663),	// VMSLEU_VX
+    UINT64_C(1946169431),	// VMSLE_VI
+    UINT64_C(1946157143),	// VMSLE_VV
+    UINT64_C(1946173527),	// VMSLE_VX
+    UINT64_C(1744830551),	// VMSLTU_VV
+    UINT64_C(1744846935),	// VMSLTU_VX
+    UINT64_C(1811939415),	// VMSLT_VV
+    UINT64_C(1811955799),	// VMSLT_VX
+    UINT64_C(1677733975),	// VMSNE_VI
+    UINT64_C(1677721687),	// VMSNE_VV
+    UINT64_C(1677738071),	// VMSNE_VX
+    UINT64_C(1342251095),	// VMSOF_M
+    UINT64_C(2550145111),	// VMULHSU_VV
+    UINT64_C(2550161495),	// VMULHSU_VX
+    UINT64_C(2415927383),	// VMULHU_VV
+    UINT64_C(2415943767),	// VMULHU_VX
+    UINT64_C(2617253975),	// VMULH_VV
+    UINT64_C(2617270359),	// VMULH_VX
+    UINT64_C(2483036247),	// VMUL_VV
+    UINT64_C(2483052631),	// VMUL_VX
+    UINT64_C(2650812503),	// VMV1R_V
+    UINT64_C(2650845271),	// VMV2R_V
+    UINT64_C(2650910807),	// VMV4R_V
+    UINT64_C(2651041879),	// VMV8R_V
+    UINT64_C(1107320919),	// VMV_S_X
+    UINT64_C(1577070679),	// VMV_V_I
+    UINT64_C(1577058391),	// VMV_V_V
+    UINT64_C(1577074775),	// VMV_V_X
+    UINT64_C(1107304535),	// VMV_X_S
+    UINT64_C(2113937495),	// VMXNOR_MM
+    UINT64_C(1845502039),	// VMXOR_MM
+    UINT64_C(3087020119),	// VNCLIPU_WI
+    UINT64_C(3087007831),	// VNCLIPU_WV
+    UINT64_C(3087024215),	// VNCLIPU_WX
+    UINT64_C(3154128983),	// VNCLIP_WI
+    UINT64_C(3154116695),	// VNCLIP_WV
+    UINT64_C(3154133079),	// VNCLIP_WX
+    UINT64_C(3154124887),	// VNMSAC_VV
+    UINT64_C(3154141271),	// VNMSAC_VX
+    UINT64_C(2885689431),	// VNMSUB_VV
+    UINT64_C(2885705815),	// VNMSUB_VX
+    UINT64_C(3019911255),	// VNSRA_WI
+    UINT64_C(3019898967),	// VNSRA_WV
+    UINT64_C(3019915351),	// VNSRA_WX
+    UINT64_C(2952802391),	// VNSRL_WI
+    UINT64_C(2952790103),	// VNSRL_WV
+    UINT64_C(2952806487),	// VNSRL_WX
+    UINT64_C(671101015),	// VOR_VI
+    UINT64_C(671088727),	// VOR_VV
+    UINT64_C(671105111),	// VOR_VX
+    UINT64_C(1074274391),	// VPOPC_M
+    UINT64_C(67117143),	// VREDAND_VS
+    UINT64_C(402661463),	// VREDMAXU_VS
+    UINT64_C(469770327),	// VREDMAX_VS
+    UINT64_C(268443735),	// VREDMINU_VS
+    UINT64_C(335552599),	// VREDMIN_VS
+    UINT64_C(134226007),	// VREDOR_VS
+    UINT64_C(8279),	// VREDSUM_VS
+    UINT64_C(201334871),	// VREDXOR_VS
+    UINT64_C(2281709655),	// VREMU_VV
+    UINT64_C(2281726039),	// VREMU_VX
+    UINT64_C(2348818519),	// VREM_VV
+    UINT64_C(2348834903),	// VREM_VX
+    UINT64_C(805318743),	// VRGATHER_VI
+    UINT64_C(805306455),	// VRGATHER_VV
+    UINT64_C(805322839),	// VRGATHER_VX
+    UINT64_C(201338967),	// VRSUB_VI
+    UINT64_C(201343063),	// VRSUB_VX
+    UINT64_C(41971751),	// VS1R_V
+    UINT64_C(2147496023),	// VSADDU_VI
+    UINT64_C(2147483735),	// VSADDU_VV
+    UINT64_C(2147500119),	// VSADDU_VX
+    UINT64_C(2214604887),	// VSADD_VI
+    UINT64_C(2214592599),	// VSADD_VV
+    UINT64_C(2214608983),	// VSADD_VX
+    UINT64_C(1207959639),	// VSBC_VVM
+    UINT64_C(1207976023),	// VSBC_VXM
+    UINT64_C(39),	// VSB_V
+    UINT64_C(2147512407),	// VSETVL
+    UINT64_C(28759),	// VSETVLI
+    UINT64_C(28711),	// VSE_V
+    UINT64_C(20519),	// VSH_V
+    UINT64_C(1006657623),	// VSLIDE1DOWN_VX
+    UINT64_C(939548759),	// VSLIDE1UP_VX
+    UINT64_C(1006645335),	// VSLIDEDOWN_VI
+    UINT64_C(1006649431),	// VSLIDEDOWN_VX
+    UINT64_C(939536471),	// VSLIDEUP_VI
+    UINT64_C(939540567),	// VSLIDEUP_VX
+    UINT64_C(2483040343),	// VSLL_VI
+    UINT64_C(2483028055),	// VSLL_VV
+    UINT64_C(2483044439),	// VSLL_VX
+    UINT64_C(2617245783),	// VSMUL_VV
+    UINT64_C(2617262167),	// VSMUL_VX
+    UINT64_C(2751475799),	// VSRA_VI
+    UINT64_C(2751463511),	// VSRA_VV
+    UINT64_C(2751479895),	// VSRA_VX
+    UINT64_C(2684366935),	// VSRL_VI
+    UINT64_C(2684354647),	// VSRL_VV
+    UINT64_C(2684371031),	// VSRL_VX
+    UINT64_C(134217767),	// VSSB_V
+    UINT64_C(134246439),	// VSSE_V
+    UINT64_C(134238247),	// VSSH_V
+    UINT64_C(2885693527),	// VSSRA_VI
+    UINT64_C(2885681239),	// VSSRA_VV
+    UINT64_C(2885697623),	// VSSRA_VX
+    UINT64_C(2818584663),	// VSSRL_VI
+    UINT64_C(2818572375),	// VSSRL_VV
+    UINT64_C(2818588759),	// VSSRL_VX
+    UINT64_C(2281701463),	// VSSUBU_VV
+    UINT64_C(2281717847),	// VSSUBU_VX
+    UINT64_C(2348810327),	// VSSUB_VV
+    UINT64_C(2348826711),	// VSSUB_VX
+    UINT64_C(134242343),	// VSSW_V
+    UINT64_C(134217815),	// VSUB_VV
+    UINT64_C(134234199),	// VSUB_VX
+    UINT64_C(469762087),	// VSUXB_V
+    UINT64_C(469790759),	// VSUXE_V
+    UINT64_C(469782567),	// VSUXH_V
+    UINT64_C(469786663),	// VSUXW_V
+    UINT64_C(24615),	// VSW_V
+    UINT64_C(201326631),	// VSXB_V
+    UINT64_C(201355303),	// VSXE_V
+    UINT64_C(201347111),	// VSXH_V
+    UINT64_C(201351207),	// VSXW_V
+    UINT64_C(3221233751),	// VWADDU_VV
+    UINT64_C(3221250135),	// VWADDU_VX
+    UINT64_C(3489669207),	// VWADDU_WV
+    UINT64_C(3489685591),	// VWADDU_WX
+    UINT64_C(3288342615),	// VWADD_VV
+    UINT64_C(3288358999),	// VWADD_VX
+    UINT64_C(3556778071),	// VWADD_WV
+    UINT64_C(3556794455),	// VWADD_WX
+    UINT64_C(4227866711),	// VWMACCSU_VV
+    UINT64_C(4227883095),	// VWMACCSU_VX
+    UINT64_C(4160774231),	// VWMACCUS_VX
+    UINT64_C(4026540119),	// VWMACCU_VV
+    UINT64_C(4026556503),	// VWMACCU_VX
+    UINT64_C(4093648983),	// VWMACC_VV
+    UINT64_C(4093665367),	// VWMACC_VX
+    UINT64_C(3892322391),	// VWMULSU_VV
+    UINT64_C(3892338775),	// VWMULSU_VX
+    UINT64_C(3758104663),	// VWMULU_VV
+    UINT64_C(3758121047),	// VWMULU_VX
+    UINT64_C(3959431255),	// VWMUL_VV
+    UINT64_C(3959447639),	// VWMUL_VX
+    UINT64_C(3221225559),	// VWREDSUMU_VS
+    UINT64_C(3288334423),	// VWREDSUM_VS
+    UINT64_C(3355451479),	// VWSUBU_VV
+    UINT64_C(3355467863),	// VWSUBU_VX
+    UINT64_C(3623886935),	// VWSUBU_WV
+    UINT64_C(3623903319),	// VWSUBU_WX
+    UINT64_C(3422560343),	// VWSUB_VV
+    UINT64_C(3422576727),	// VWSUB_VX
+    UINT64_C(3690995799),	// VWSUB_WV
+    UINT64_C(3691012183),	// VWSUB_WX
+    UINT64_C(738209879),	// VXOR_VI
+    UINT64_C(738197591),	// VXOR_VV
+    UINT64_C(738213975),	// VXOR_VX
     UINT64_C(273678451),	// WFI
+    UINT64_C(1073758259),	// XNOR
     UINT64_C(16435),	// XOR
     UINT64_C(16403),	// XORI
     UINT64_C(0)
@@ -532,6 +997,7 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     case RISCV::C_EBREAK:
     case RISCV::C_NOP:
     case RISCV::C_UNIMP:
+    case RISCV::DRET:
     case RISCV::EBREAK:
     case RISCV::ECALL:
     case RISCV::FENCE_I:
@@ -565,6 +1031,19 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       Value |= (op & UINT64_C(32)) << 7;
       Value |= (op & UINT64_C(31)) << 2;
       // op: rd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      break;
+    }
+    case RISCV::VMV_V_I: {
+      // op: imm
+      op = getImmOpValue(MI, 1, Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: vd
       op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
       op &= UINT64_C(31);
       op <<= 7;
@@ -761,6 +1240,7 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     }
     case RISCV::ADDI:
     case RISCV::ADDIW:
+    case RISCV::ADDIWU:
     case RISCV::ANDI:
     case RISCV::FLD:
     case RISCV::FLW:
@@ -949,6 +1429,16 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       Value |= op;
       break;
     }
+    case RISCV::C_NEG:
+    case RISCV::C_NOT:
+    case RISCV::C_ZEXTW: {
+      // op: rs
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(7);
+      op <<= 7;
+      Value |= op;
+      break;
+    }
     case RISCV::C_JALR:
     case RISCV::C_JR: {
       // op: rs1
@@ -1005,6 +1495,19 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       Value |= op;
       break;
     }
+    case RISCV::BMATFLIP:
+    case RISCV::CLZ:
+    case RISCV::CLZW:
+    case RISCV::CRC32B:
+    case RISCV::CRC32CB:
+    case RISCV::CRC32CD:
+    case RISCV::CRC32CH:
+    case RISCV::CRC32CW:
+    case RISCV::CRC32D:
+    case RISCV::CRC32H:
+    case RISCV::CRC32W:
+    case RISCV::CTZ:
+    case RISCV::CTZW:
     case RISCV::FCLASS_D:
     case RISCV::FCLASS_S:
     case RISCV::FCVT_D_S:
@@ -1021,7 +1524,11 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     case RISCV::LR_W:
     case RISCV::LR_W_AQ:
     case RISCV::LR_W_AQ_RL:
-    case RISCV::LR_W_RL: {
+    case RISCV::LR_W_RL:
+    case RISCV::PCNT:
+    case RISCV::PCNTW:
+    case RISCV::SEXTB:
+    case RISCV::SEXTH: {
       // op: rs1
       op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
       op &= UINT64_C(31);
@@ -1031,6 +1538,160 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
       op &= UINT64_C(31);
       op <<= 7;
+      Value |= op;
+      break;
+    }
+    case RISCV::GORCIW:
+    case RISCV::GREVIW:
+    case RISCV::RORIW:
+    case RISCV::SBCLRIW:
+    case RISCV::SBINVIW:
+    case RISCV::SBSETIW:
+    case RISCV::SLOIW:
+    case RISCV::SROIW: {
+      // op: rs1
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: rd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      // op: shamt
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 20;
+      Value |= op;
+      break;
+    }
+    case RISCV::GORCI:
+    case RISCV::GREVI:
+    case RISCV::RORI:
+    case RISCV::SBCLRI:
+    case RISCV::SBEXTI:
+    case RISCV::SBINVI:
+    case RISCV::SBSETI:
+    case RISCV::SHFLI:
+    case RISCV::SLLIUW:
+    case RISCV::SLOI:
+    case RISCV::SROI:
+    case RISCV::UNSHFLI: {
+      // op: rs1
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: rd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      // op: shamt
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(63);
+      op <<= 20;
+      Value |= op;
+      break;
+    }
+    case RISCV::VSETVLI: {
+      // op: rs1
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: rd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      // op: vtypei
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(2047);
+      op <<= 20;
+      Value |= op;
+      break;
+    }
+    case RISCV::VFMV_S_F:
+    case RISCV::VFMV_V_F:
+    case RISCV::VL1R_V:
+    case RISCV::VMV_S_X:
+    case RISCV::VMV_V_X: {
+      // op: rs1
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: vd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      break;
+    }
+    case RISCV::VLBFF_V:
+    case RISCV::VLBUFF_V:
+    case RISCV::VLBU_V:
+    case RISCV::VLB_V:
+    case RISCV::VLEFF_V:
+    case RISCV::VLE_V:
+    case RISCV::VLHFF_V:
+    case RISCV::VLHUFF_V:
+    case RISCV::VLHU_V:
+    case RISCV::VLH_V:
+    case RISCV::VLWFF_V:
+    case RISCV::VLWUFF_V:
+    case RISCV::VLWU_V:
+    case RISCV::VLW_V: {
+      // op: rs1
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: vd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      // op: vm
+      op = getVMaskReg(MI, 2, Fixups, STI);
+      op &= UINT64_C(1);
+      op <<= 25;
+      Value |= op;
+      break;
+    }
+    case RISCV::VS1R_V: {
+      // op: rs1
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: vs3
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      break;
+    }
+    case RISCV::VSB_V:
+    case RISCV::VSE_V:
+    case RISCV::VSH_V:
+    case RISCV::VSW_V: {
+      // op: rs1
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: vs3
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      // op: vm
+      op = getVMaskReg(MI, 2, Fixups, STI);
+      op &= UINT64_C(1);
+      op <<= 25;
       Value |= op;
       break;
     }
@@ -1136,7 +1797,9 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       break;
     }
     case RISCV::ADD:
+    case RISCV::ADDUW:
     case RISCV::ADDW:
+    case RISCV::ADDWU:
     case RISCV::AMOADD_D:
     case RISCV::AMOADD_D_AQ:
     case RISCV::AMOADD_D_AQ_RL:
@@ -1210,6 +1873,21 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     case RISCV::AMOXOR_W_AQ_RL:
     case RISCV::AMOXOR_W_RL:
     case RISCV::AND:
+    case RISCV::ANDN:
+    case RISCV::BDEP:
+    case RISCV::BDEPW:
+    case RISCV::BEXT:
+    case RISCV::BEXTW:
+    case RISCV::BFP:
+    case RISCV::BFPW:
+    case RISCV::BMATOR:
+    case RISCV::BMATXOR:
+    case RISCV::CLMUL:
+    case RISCV::CLMULH:
+    case RISCV::CLMULHW:
+    case RISCV::CLMULR:
+    case RISCV::CLMULRW:
+    case RISCV::CLMULW:
     case RISCV::DIV:
     case RISCV::DIVU:
     case RISCV::DIVUW:
@@ -1230,16 +1908,42 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     case RISCV::FSGNJX_S:
     case RISCV::FSGNJ_D:
     case RISCV::FSGNJ_S:
+    case RISCV::GORC:
+    case RISCV::GORCW:
+    case RISCV::GREV:
+    case RISCV::GREVW:
+    case RISCV::MAX:
+    case RISCV::MAXU:
+    case RISCV::MIN:
+    case RISCV::MINU:
     case RISCV::MUL:
     case RISCV::MULH:
     case RISCV::MULHSU:
     case RISCV::MULHU:
     case RISCV::MULW:
     case RISCV::OR:
+    case RISCV::ORN:
+    case RISCV::PACK:
+    case RISCV::PACKH:
+    case RISCV::PACKU:
+    case RISCV::PACKUW:
+    case RISCV::PACKW:
     case RISCV::REM:
     case RISCV::REMU:
     case RISCV::REMUW:
     case RISCV::REMW:
+    case RISCV::ROL:
+    case RISCV::ROLW:
+    case RISCV::ROR:
+    case RISCV::RORW:
+    case RISCV::SBCLR:
+    case RISCV::SBCLRW:
+    case RISCV::SBEXT:
+    case RISCV::SBEXTW:
+    case RISCV::SBINV:
+    case RISCV::SBINVW:
+    case RISCV::SBSET:
+    case RISCV::SBSETW:
     case RISCV::SC_D:
     case RISCV::SC_D_AQ:
     case RISCV::SC_D_AQ_RL:
@@ -1248,16 +1952,28 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
     case RISCV::SC_W_AQ:
     case RISCV::SC_W_AQ_RL:
     case RISCV::SC_W_RL:
+    case RISCV::SHFL:
+    case RISCV::SHFLW:
     case RISCV::SLL:
     case RISCV::SLLW:
+    case RISCV::SLO:
+    case RISCV::SLOW:
     case RISCV::SLT:
     case RISCV::SLTU:
     case RISCV::SRA:
     case RISCV::SRAW:
     case RISCV::SRL:
     case RISCV::SRLW:
+    case RISCV::SRO:
+    case RISCV::SROW:
     case RISCV::SUB:
+    case RISCV::SUBUW:
     case RISCV::SUBW:
+    case RISCV::SUBWU:
+    case RISCV::UNSHFL:
+    case RISCV::UNSHFLW:
+    case RISCV::VSETVL:
+    case RISCV::XNOR:
     case RISCV::XOR: {
       // op: rs2
       op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
@@ -1273,6 +1989,61 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
       op &= UINT64_C(31);
       op <<= 7;
+      Value |= op;
+      break;
+    }
+    case RISCV::VLSBU_V:
+    case RISCV::VLSB_V:
+    case RISCV::VLSE_V:
+    case RISCV::VLSHU_V:
+    case RISCV::VLSH_V:
+    case RISCV::VLSWU_V:
+    case RISCV::VLSW_V: {
+      // op: rs2
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 20;
+      Value |= op;
+      // op: rs1
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: vd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      // op: vm
+      op = getVMaskReg(MI, 3, Fixups, STI);
+      op &= UINT64_C(1);
+      op <<= 25;
+      Value |= op;
+      break;
+    }
+    case RISCV::VSSB_V:
+    case RISCV::VSSE_V:
+    case RISCV::VSSH_V:
+    case RISCV::VSSW_V: {
+      // op: rs2
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 20;
+      Value |= op;
+      // op: rs1
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: vs3
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      // op: vm
+      op = getVMaskReg(MI, 3, Fixups, STI);
+      op &= UINT64_C(1);
+      op <<= 25;
       Value |= op;
       break;
     }
@@ -1299,6 +2070,52 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
       op &= UINT64_C(7);
       op <<= 7;
+      Value |= op;
+      break;
+    }
+    case RISCV::FSRIW: {
+      // op: rs3
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 27;
+      Value |= op;
+      // op: rs1
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: rd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      // op: shamt
+      op = getMachineOpValue(MI, MI.getOperand(3), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 20;
+      Value |= op;
+      break;
+    }
+    case RISCV::FSRI: {
+      // op: rs3
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 27;
+      Value |= op;
+      // op: rs1
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: rd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      // op: shamt
+      op = getMachineOpValue(MI, MI.getOperand(3), Fixups, STI);
+      op &= UINT64_C(63);
+      op <<= 20;
       Value |= op;
       break;
     }
@@ -1329,6 +2146,34 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       op = getMachineOpValue(MI, MI.getOperand(4), Fixups, STI);
       op &= UINT64_C(7);
       op <<= 12;
+      Value |= op;
+      // op: rd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      break;
+    }
+    case RISCV::CMIX:
+    case RISCV::CMOV:
+    case RISCV::FSL:
+    case RISCV::FSLW:
+    case RISCV::FSR:
+    case RISCV::FSRW: {
+      // op: rs3
+      op = getMachineOpValue(MI, MI.getOperand(3), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 27;
+      Value |= op;
+      // op: rs2
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 20;
+      Value |= op;
+      // op: rs1
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
       Value |= op;
       // op: rd
       op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
@@ -1377,6 +2222,571 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
       Value |= op;
       break;
     }
+    case RISCV::VID_V: {
+      // op: vd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      // op: vm
+      op = getVMaskReg(MI, 1, Fixups, STI);
+      op &= UINT64_C(1);
+      op <<= 25;
+      Value |= op;
+      break;
+    }
+    case RISCV::VMV_V_V: {
+      // op: vs1
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: vd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      break;
+    }
+    case RISCV::VADC_VIM:
+    case RISCV::VMADC_VI:
+    case RISCV::VMADC_VIM:
+    case RISCV::VMERGE_VIM: {
+      // op: vs2
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 20;
+      Value |= op;
+      // op: imm
+      op = getImmOpValue(MI, 2, Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: vd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      break;
+    }
+    case RISCV::VADD_VI:
+    case RISCV::VAND_VI:
+    case RISCV::VMSEQ_VI:
+    case RISCV::VMSGTU_VI:
+    case RISCV::VMSGT_VI:
+    case RISCV::VMSLEU_VI:
+    case RISCV::VMSLE_VI:
+    case RISCV::VMSNE_VI:
+    case RISCV::VOR_VI:
+    case RISCV::VRSUB_VI:
+    case RISCV::VSADDU_VI:
+    case RISCV::VSADD_VI:
+    case RISCV::VXOR_VI: {
+      // op: vs2
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 20;
+      Value |= op;
+      // op: imm
+      op = getImmOpValue(MI, 2, Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: vd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      // op: vm
+      op = getVMaskReg(MI, 3, Fixups, STI);
+      op &= UINT64_C(1);
+      op <<= 25;
+      Value |= op;
+      break;
+    }
+    case RISCV::VNCLIPU_WI:
+    case RISCV::VNCLIP_WI:
+    case RISCV::VNSRA_WI:
+    case RISCV::VNSRL_WI:
+    case RISCV::VRGATHER_VI:
+    case RISCV::VSLIDEDOWN_VI:
+    case RISCV::VSLIDEUP_VI:
+    case RISCV::VSLL_VI:
+    case RISCV::VSRA_VI:
+    case RISCV::VSRL_VI:
+    case RISCV::VSSRA_VI:
+    case RISCV::VSSRL_VI: {
+      // op: vs2
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 20;
+      Value |= op;
+      // op: imm
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: vd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      // op: vm
+      op = getVMaskReg(MI, 3, Fixups, STI);
+      op &= UINT64_C(1);
+      op <<= 25;
+      Value |= op;
+      break;
+    }
+    case RISCV::VADC_VXM:
+    case RISCV::VFMERGE_VFM:
+    case RISCV::VMADC_VX:
+    case RISCV::VMADC_VXM:
+    case RISCV::VMERGE_VXM:
+    case RISCV::VMSBC_VX:
+    case RISCV::VMSBC_VXM:
+    case RISCV::VSBC_VXM: {
+      // op: vs2
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 20;
+      Value |= op;
+      // op: rs1
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: vd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      break;
+    }
+    case RISCV::VAADDU_VX:
+    case RISCV::VAADD_VX:
+    case RISCV::VADD_VX:
+    case RISCV::VAND_VX:
+    case RISCV::VASUBU_VX:
+    case RISCV::VASUB_VX:
+    case RISCV::VDIVU_VX:
+    case RISCV::VDIV_VX:
+    case RISCV::VFADD_VF:
+    case RISCV::VFDIV_VF:
+    case RISCV::VFMAX_VF:
+    case RISCV::VFMIN_VF:
+    case RISCV::VFMUL_VF:
+    case RISCV::VFRDIV_VF:
+    case RISCV::VFRSUB_VF:
+    case RISCV::VFSGNJN_VF:
+    case RISCV::VFSGNJX_VF:
+    case RISCV::VFSGNJ_VF:
+    case RISCV::VFSUB_VF:
+    case RISCV::VFWADD_VF:
+    case RISCV::VFWADD_WF:
+    case RISCV::VFWMUL_VF:
+    case RISCV::VFWSUB_VF:
+    case RISCV::VFWSUB_WF:
+    case RISCV::VMAXU_VX:
+    case RISCV::VMAX_VX:
+    case RISCV::VMFEQ_VF:
+    case RISCV::VMFGE_VF:
+    case RISCV::VMFGT_VF:
+    case RISCV::VMFLE_VF:
+    case RISCV::VMFLT_VF:
+    case RISCV::VMFNE_VF:
+    case RISCV::VMINU_VX:
+    case RISCV::VMIN_VX:
+    case RISCV::VMSEQ_VX:
+    case RISCV::VMSGTU_VX:
+    case RISCV::VMSGT_VX:
+    case RISCV::VMSLEU_VX:
+    case RISCV::VMSLE_VX:
+    case RISCV::VMSLTU_VX:
+    case RISCV::VMSLT_VX:
+    case RISCV::VMSNE_VX:
+    case RISCV::VMULHSU_VX:
+    case RISCV::VMULHU_VX:
+    case RISCV::VMULH_VX:
+    case RISCV::VMUL_VX:
+    case RISCV::VNCLIPU_WX:
+    case RISCV::VNCLIP_WX:
+    case RISCV::VNSRA_WX:
+    case RISCV::VNSRL_WX:
+    case RISCV::VOR_VX:
+    case RISCV::VREMU_VX:
+    case RISCV::VREM_VX:
+    case RISCV::VRGATHER_VX:
+    case RISCV::VRSUB_VX:
+    case RISCV::VSADDU_VX:
+    case RISCV::VSADD_VX:
+    case RISCV::VSLIDE1DOWN_VX:
+    case RISCV::VSLIDE1UP_VX:
+    case RISCV::VSLIDEDOWN_VX:
+    case RISCV::VSLIDEUP_VX:
+    case RISCV::VSLL_VX:
+    case RISCV::VSMUL_VX:
+    case RISCV::VSRA_VX:
+    case RISCV::VSRL_VX:
+    case RISCV::VSSRA_VX:
+    case RISCV::VSSRL_VX:
+    case RISCV::VSSUBU_VX:
+    case RISCV::VSSUB_VX:
+    case RISCV::VSUB_VX:
+    case RISCV::VWADDU_VX:
+    case RISCV::VWADDU_WX:
+    case RISCV::VWADD_VX:
+    case RISCV::VWADD_WX:
+    case RISCV::VWMULSU_VX:
+    case RISCV::VWMULU_VX:
+    case RISCV::VWMUL_VX:
+    case RISCV::VWSUBU_VX:
+    case RISCV::VWSUBU_WX:
+    case RISCV::VWSUB_VX:
+    case RISCV::VWSUB_WX:
+    case RISCV::VXOR_VX: {
+      // op: vs2
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 20;
+      Value |= op;
+      // op: rs1
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: vd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      // op: vm
+      op = getVMaskReg(MI, 3, Fixups, STI);
+      op &= UINT64_C(1);
+      op <<= 25;
+      Value |= op;
+      break;
+    }
+    case RISCV::VFMV_F_S:
+    case RISCV::VMV1R_V:
+    case RISCV::VMV2R_V:
+    case RISCV::VMV4R_V:
+    case RISCV::VMV8R_V:
+    case RISCV::VMV_X_S: {
+      // op: vs2
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 20;
+      Value |= op;
+      // op: vd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      break;
+    }
+    case RISCV::VFCLASS_V:
+    case RISCV::VFCVT_F_XU_V:
+    case RISCV::VFCVT_F_X_V:
+    case RISCV::VFCVT_XU_F_V:
+    case RISCV::VFCVT_X_F_V:
+    case RISCV::VFIRST_M:
+    case RISCV::VFNCVT_F_F_W:
+    case RISCV::VFNCVT_F_XU_W:
+    case RISCV::VFNCVT_F_X_W:
+    case RISCV::VFNCVT_ROD_F_F_W:
+    case RISCV::VFNCVT_XU_F_W:
+    case RISCV::VFNCVT_X_F_W:
+    case RISCV::VFSQRT_V:
+    case RISCV::VFWCVT_F_F_V:
+    case RISCV::VFWCVT_F_XU_V:
+    case RISCV::VFWCVT_F_X_V:
+    case RISCV::VFWCVT_XU_F_V:
+    case RISCV::VFWCVT_X_F_V:
+    case RISCV::VIOTA_M:
+    case RISCV::VMSBF_M:
+    case RISCV::VMSIF_M:
+    case RISCV::VMSOF_M:
+    case RISCV::VPOPC_M: {
+      // op: vs2
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 20;
+      Value |= op;
+      // op: vd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      // op: vm
+      op = getVMaskReg(MI, 2, Fixups, STI);
+      op &= UINT64_C(1);
+      op <<= 25;
+      Value |= op;
+      break;
+    }
+    case RISCV::VADC_VVM:
+    case RISCV::VCOMPRESS_VM:
+    case RISCV::VMADC_VV:
+    case RISCV::VMADC_VVM:
+    case RISCV::VMANDNOT_MM:
+    case RISCV::VMAND_MM:
+    case RISCV::VMERGE_VVM:
+    case RISCV::VMNAND_MM:
+    case RISCV::VMNOR_MM:
+    case RISCV::VMORNOT_MM:
+    case RISCV::VMOR_MM:
+    case RISCV::VMSBC_VV:
+    case RISCV::VMSBC_VVM:
+    case RISCV::VMXNOR_MM:
+    case RISCV::VMXOR_MM:
+    case RISCV::VSBC_VVM: {
+      // op: vs2
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 20;
+      Value |= op;
+      // op: vs1
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: vd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      break;
+    }
+    case RISCV::VAADDU_VV:
+    case RISCV::VAADD_VV:
+    case RISCV::VADD_VV:
+    case RISCV::VAND_VV:
+    case RISCV::VASUBU_VV:
+    case RISCV::VASUB_VV:
+    case RISCV::VDIVU_VV:
+    case RISCV::VDIV_VV:
+    case RISCV::VFADD_VV:
+    case RISCV::VFDIV_VV:
+    case RISCV::VFMAX_VV:
+    case RISCV::VFMIN_VV:
+    case RISCV::VFMUL_VV:
+    case RISCV::VFREDMAX_VS:
+    case RISCV::VFREDMIN_VS:
+    case RISCV::VFREDOSUM_VS:
+    case RISCV::VFREDSUM_VS:
+    case RISCV::VFSGNJN_VV:
+    case RISCV::VFSGNJX_VV:
+    case RISCV::VFSGNJ_VV:
+    case RISCV::VFSUB_VV:
+    case RISCV::VFWADD_VV:
+    case RISCV::VFWADD_WV:
+    case RISCV::VFWMUL_VV:
+    case RISCV::VFWREDOSUM_VS:
+    case RISCV::VFWREDSUM_VS:
+    case RISCV::VFWSUB_VV:
+    case RISCV::VFWSUB_WV:
+    case RISCV::VMAXU_VV:
+    case RISCV::VMAX_VV:
+    case RISCV::VMFEQ_VV:
+    case RISCV::VMFLE_VV:
+    case RISCV::VMFLT_VV:
+    case RISCV::VMFNE_VV:
+    case RISCV::VMINU_VV:
+    case RISCV::VMIN_VV:
+    case RISCV::VMSEQ_VV:
+    case RISCV::VMSLEU_VV:
+    case RISCV::VMSLE_VV:
+    case RISCV::VMSLTU_VV:
+    case RISCV::VMSLT_VV:
+    case RISCV::VMSNE_VV:
+    case RISCV::VMULHSU_VV:
+    case RISCV::VMULHU_VV:
+    case RISCV::VMULH_VV:
+    case RISCV::VMUL_VV:
+    case RISCV::VNCLIPU_WV:
+    case RISCV::VNCLIP_WV:
+    case RISCV::VNSRA_WV:
+    case RISCV::VNSRL_WV:
+    case RISCV::VOR_VV:
+    case RISCV::VREDAND_VS:
+    case RISCV::VREDMAXU_VS:
+    case RISCV::VREDMAX_VS:
+    case RISCV::VREDMINU_VS:
+    case RISCV::VREDMIN_VS:
+    case RISCV::VREDOR_VS:
+    case RISCV::VREDSUM_VS:
+    case RISCV::VREDXOR_VS:
+    case RISCV::VREMU_VV:
+    case RISCV::VREM_VV:
+    case RISCV::VRGATHER_VV:
+    case RISCV::VSADDU_VV:
+    case RISCV::VSADD_VV:
+    case RISCV::VSLL_VV:
+    case RISCV::VSMUL_VV:
+    case RISCV::VSRA_VV:
+    case RISCV::VSRL_VV:
+    case RISCV::VSSRA_VV:
+    case RISCV::VSSRL_VV:
+    case RISCV::VSSUBU_VV:
+    case RISCV::VSSUB_VV:
+    case RISCV::VSUB_VV:
+    case RISCV::VWADDU_VV:
+    case RISCV::VWADDU_WV:
+    case RISCV::VWADD_VV:
+    case RISCV::VWADD_WV:
+    case RISCV::VWMULSU_VV:
+    case RISCV::VWMULU_VV:
+    case RISCV::VWMUL_VV:
+    case RISCV::VWREDSUMU_VS:
+    case RISCV::VWREDSUM_VS:
+    case RISCV::VWSUBU_VV:
+    case RISCV::VWSUBU_WV:
+    case RISCV::VWSUB_VV:
+    case RISCV::VWSUB_WV:
+    case RISCV::VXOR_VV: {
+      // op: vs2
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 20;
+      Value |= op;
+      // op: vs1
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: vd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      // op: vm
+      op = getVMaskReg(MI, 3, Fixups, STI);
+      op &= UINT64_C(1);
+      op <<= 25;
+      Value |= op;
+      break;
+    }
+    case RISCV::VFMACC_VF:
+    case RISCV::VFMADD_VF:
+    case RISCV::VFMSAC_VF:
+    case RISCV::VFMSUB_VF:
+    case RISCV::VFNMACC_VF:
+    case RISCV::VFNMADD_VF:
+    case RISCV::VFNMSAC_VF:
+    case RISCV::VFNMSUB_VF:
+    case RISCV::VFWMACC_VF:
+    case RISCV::VFWMSAC_VF:
+    case RISCV::VFWNMACC_VF:
+    case RISCV::VFWNMSAC_VF:
+    case RISCV::VLXBU_V:
+    case RISCV::VLXB_V:
+    case RISCV::VLXE_V:
+    case RISCV::VLXHU_V:
+    case RISCV::VLXH_V:
+    case RISCV::VLXWU_V:
+    case RISCV::VLXW_V:
+    case RISCV::VMACC_VX:
+    case RISCV::VMADD_VX:
+    case RISCV::VNMSAC_VX:
+    case RISCV::VNMSUB_VX:
+    case RISCV::VWMACCSU_VX:
+    case RISCV::VWMACCUS_VX:
+    case RISCV::VWMACCU_VX:
+    case RISCV::VWMACC_VX: {
+      // op: vs2
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 20;
+      Value |= op;
+      // op: rs1
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: vd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      // op: vm
+      op = getVMaskReg(MI, 3, Fixups, STI);
+      op &= UINT64_C(1);
+      op <<= 25;
+      Value |= op;
+      break;
+    }
+    case RISCV::VSUXB_V:
+    case RISCV::VSUXE_V:
+    case RISCV::VSUXH_V:
+    case RISCV::VSUXW_V:
+    case RISCV::VSXB_V:
+    case RISCV::VSXE_V:
+    case RISCV::VSXH_V:
+    case RISCV::VSXW_V: {
+      // op: vs2
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 20;
+      Value |= op;
+      // op: rs1
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: vs3
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      // op: vm
+      op = getVMaskReg(MI, 3, Fixups, STI);
+      op &= UINT64_C(1);
+      op <<= 25;
+      Value |= op;
+      break;
+    }
+    case RISCV::VFMACC_VV:
+    case RISCV::VFMADD_VV:
+    case RISCV::VFMSAC_VV:
+    case RISCV::VFMSUB_VV:
+    case RISCV::VFNMACC_VV:
+    case RISCV::VFNMADD_VV:
+    case RISCV::VFNMSAC_VV:
+    case RISCV::VFNMSUB_VV:
+    case RISCV::VFWMACC_VV:
+    case RISCV::VFWMSAC_VV:
+    case RISCV::VFWNMACC_VV:
+    case RISCV::VFWNMSAC_VV:
+    case RISCV::VMACC_VV:
+    case RISCV::VMADD_VV:
+    case RISCV::VNMSAC_VV:
+    case RISCV::VNMSUB_VV:
+    case RISCV::VWMACCSU_VV:
+    case RISCV::VWMACCU_VV:
+    case RISCV::VWMACC_VV: {
+      // op: vs2
+      op = getMachineOpValue(MI, MI.getOperand(2), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 20;
+      Value |= op;
+      // op: vs1
+      op = getMachineOpValue(MI, MI.getOperand(1), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 15;
+      Value |= op;
+      // op: vd
+      op = getMachineOpValue(MI, MI.getOperand(0), Fixups, STI);
+      op &= UINT64_C(31);
+      op <<= 7;
+      Value |= op;
+      // op: vm
+      op = getVMaskReg(MI, 3, Fixups, STI);
+      op &= UINT64_C(1);
+      op <<= 25;
+      Value |= op;
+      break;
+    }
   default:
     std::string msg;
     raw_string_ostream Msg(msg);
@@ -1392,25 +2802,51 @@ uint64_t RISCVMCCodeEmitter::getBinaryCodeForInstr(const MCInst &MI,
 
 // Bits for subtarget features that participate in instruction matching.
 enum SubtargetFeatureBits : uint8_t {
-  Feature_HasStdExtMBit = 5,
+  Feature_HasStdExtMBit = 6,
   Feature_HasStdExtABit = 1,
-  Feature_HasStdExtFBit = 4,
-  Feature_HasStdExtDBit = 3,
-  Feature_HasStdExtCBit = 2,
+  Feature_HasStdExtFBit = 5,
+  Feature_HasStdExtDBit = 4,
+  Feature_HasStdExtCBit = 3,
+  Feature_HasStdExtZbbBit = 8,
+  Feature_HasStdExtZbcBit = 10,
+  Feature_HasStdExtZbeBit = 11,
+  Feature_HasStdExtZbfBit = 12,
+  Feature_HasStdExtZbmBit = 13,
+  Feature_HasStdExtZbpBit = 14,
+  Feature_HasStdExtZbrBit = 16,
+  Feature_HasStdExtZbsBit = 17,
+  Feature_HasStdExtZbtBit = 18,
+  Feature_HasStdExtZbbOrZbpBit = 9,
+  Feature_HasStdExtZbproposedcBit = 15,
+  Feature_HasStdExtBBit = 2,
   Feature_HasRVCHintsBit = 0,
-  Feature_IsRV64Bit = 8,
-  Feature_IsRV32Bit = 6,
-  Feature_IsRV32EBit = 7,
+  Feature_HasStdExtVBit = 7,
+  Feature_IsRV64Bit = 21,
+  Feature_IsRV32Bit = 19,
+  Feature_IsRV32EBit = 20,
 };
 
 #ifndef NDEBUG
 static const char *SubtargetFeatureNames[] = {
   "Feature_HasRVCHints",
   "Feature_HasStdExtA",
+  "Feature_HasStdExtB",
   "Feature_HasStdExtC",
   "Feature_HasStdExtD",
   "Feature_HasStdExtF",
   "Feature_HasStdExtM",
+  "Feature_HasStdExtV",
+  "Feature_HasStdExtZbb",
+  "Feature_HasStdExtZbbOrZbp",
+  "Feature_HasStdExtZbc",
+  "Feature_HasStdExtZbe",
+  "Feature_HasStdExtZbf",
+  "Feature_HasStdExtZbm",
+  "Feature_HasStdExtZbp",
+  "Feature_HasStdExtZbproposedc",
+  "Feature_HasStdExtZbr",
+  "Feature_HasStdExtZbs",
+  "Feature_HasStdExtZbt",
   "Feature_IsRV32",
   "Feature_IsRV32E",
   "Feature_IsRV64",
@@ -1421,23 +2857,49 @@ static const char *SubtargetFeatureNames[] = {
 FeatureBitset RISCVMCCodeEmitter::
 computeAvailableFeatures(const FeatureBitset& FB) const {
   FeatureBitset Features;
-  if ((FB[RISCV::FeatureStdExtM]))
+  if (FB[RISCV::FeatureStdExtM])
     Features.set(Feature_HasStdExtMBit);
-  if ((FB[RISCV::FeatureStdExtA]))
+  if (FB[RISCV::FeatureStdExtA])
     Features.set(Feature_HasStdExtABit);
-  if ((FB[RISCV::FeatureStdExtF]))
+  if (FB[RISCV::FeatureStdExtF])
     Features.set(Feature_HasStdExtFBit);
-  if ((FB[RISCV::FeatureStdExtD]))
+  if (FB[RISCV::FeatureStdExtD])
     Features.set(Feature_HasStdExtDBit);
-  if ((FB[RISCV::FeatureStdExtC]))
+  if (FB[RISCV::FeatureStdExtC])
     Features.set(Feature_HasStdExtCBit);
-  if ((FB[RISCV::FeatureRVCHints]))
+  if (FB[RISCV::FeatureExtZbb])
+    Features.set(Feature_HasStdExtZbbBit);
+  if (FB[RISCV::FeatureExtZbc])
+    Features.set(Feature_HasStdExtZbcBit);
+  if (FB[RISCV::FeatureExtZbe])
+    Features.set(Feature_HasStdExtZbeBit);
+  if (FB[RISCV::FeatureExtZbf])
+    Features.set(Feature_HasStdExtZbfBit);
+  if (FB[RISCV::FeatureExtZbm])
+    Features.set(Feature_HasStdExtZbmBit);
+  if (FB[RISCV::FeatureExtZbp])
+    Features.set(Feature_HasStdExtZbpBit);
+  if (FB[RISCV::FeatureExtZbr])
+    Features.set(Feature_HasStdExtZbrBit);
+  if (FB[RISCV::FeatureExtZbs])
+    Features.set(Feature_HasStdExtZbsBit);
+  if (FB[RISCV::FeatureExtZbt])
+    Features.set(Feature_HasStdExtZbtBit);
+  if ((FB[RISCV::FeatureExtZbb] || FB[RISCV::FeatureExtZbp]))
+    Features.set(Feature_HasStdExtZbbOrZbpBit);
+  if (FB[RISCV::FeatureExtZbproposedc])
+    Features.set(Feature_HasStdExtZbproposedcBit);
+  if (FB[RISCV::FeatureStdExtB])
+    Features.set(Feature_HasStdExtBBit);
+  if (!FB[RISCV::FeatureNoRVCHints])
     Features.set(Feature_HasRVCHintsBit);
-  if ((FB[RISCV::Feature64Bit]))
+  if (FB[RISCV::FeatureStdExtV])
+    Features.set(Feature_HasStdExtVBit);
+  if (FB[RISCV::Feature64Bit])
     Features.set(Feature_IsRV64Bit);
-  if ((!FB[RISCV::Feature64Bit]))
+  if (!FB[RISCV::Feature64Bit])
     Features.set(Feature_IsRV32Bit);
-  if ((FB[RISCV::FeatureRV32E]))
+  if (FB[RISCV::FeatureRV32E])
     Features.set(Feature_IsRV32EBit);
   return Features;
 }
@@ -1451,6 +2913,16 @@ enum : uint8_t {
   CEFBS_HasStdExtD,
   CEFBS_HasStdExtF,
   CEFBS_HasStdExtM,
+  CEFBS_HasStdExtV,
+  CEFBS_HasStdExtZbb,
+  CEFBS_HasStdExtZbbOrZbp,
+  CEFBS_HasStdExtZbc,
+  CEFBS_HasStdExtZbe,
+  CEFBS_HasStdExtZbf,
+  CEFBS_HasStdExtZbp,
+  CEFBS_HasStdExtZbr,
+  CEFBS_HasStdExtZbs,
+  CEFBS_HasStdExtZbt,
   CEFBS_IsRV32,
   CEFBS_IsRV64,
   CEFBS_HasStdExtA_IsRV64,
@@ -1461,7 +2933,19 @@ enum : uint8_t {
   CEFBS_HasStdExtD_IsRV64,
   CEFBS_HasStdExtF_IsRV64,
   CEFBS_HasStdExtM_IsRV64,
+  CEFBS_HasStdExtZbb_IsRV64,
+  CEFBS_HasStdExtZbbOrZbp_IsRV64,
+  CEFBS_HasStdExtZbc_IsRV64,
+  CEFBS_HasStdExtZbe_IsRV64,
+  CEFBS_HasStdExtZbf_IsRV64,
+  CEFBS_HasStdExtZbm_IsRV64,
+  CEFBS_HasStdExtZbp_IsRV64,
+  CEFBS_HasStdExtZbproposedc_HasStdExtC,
+  CEFBS_HasStdExtZbr_IsRV64,
+  CEFBS_HasStdExtZbs_IsRV64,
+  CEFBS_HasStdExtZbt_IsRV64,
   CEFBS_HasStdExtC_HasStdExtF_IsRV32,
+  CEFBS_HasStdExtZbproposedc_HasStdExtZbbOrZbp_HasStdExtC_IsRV64,
 };
 
 static constexpr FeatureBitset FeatureBitsets[] = {
@@ -1471,6 +2955,16 @@ static constexpr FeatureBitset FeatureBitsets[] = {
   {Feature_HasStdExtDBit, },
   {Feature_HasStdExtFBit, },
   {Feature_HasStdExtMBit, },
+  {Feature_HasStdExtVBit, },
+  {Feature_HasStdExtZbbBit, },
+  {Feature_HasStdExtZbbOrZbpBit, },
+  {Feature_HasStdExtZbcBit, },
+  {Feature_HasStdExtZbeBit, },
+  {Feature_HasStdExtZbfBit, },
+  {Feature_HasStdExtZbpBit, },
+  {Feature_HasStdExtZbrBit, },
+  {Feature_HasStdExtZbsBit, },
+  {Feature_HasStdExtZbtBit, },
   {Feature_IsRV32Bit, },
   {Feature_IsRV64Bit, },
   {Feature_HasStdExtABit, Feature_IsRV64Bit, },
@@ -1481,7 +2975,19 @@ static constexpr FeatureBitset FeatureBitsets[] = {
   {Feature_HasStdExtDBit, Feature_IsRV64Bit, },
   {Feature_HasStdExtFBit, Feature_IsRV64Bit, },
   {Feature_HasStdExtMBit, Feature_IsRV64Bit, },
+  {Feature_HasStdExtZbbBit, Feature_IsRV64Bit, },
+  {Feature_HasStdExtZbbOrZbpBit, Feature_IsRV64Bit, },
+  {Feature_HasStdExtZbcBit, Feature_IsRV64Bit, },
+  {Feature_HasStdExtZbeBit, Feature_IsRV64Bit, },
+  {Feature_HasStdExtZbfBit, Feature_IsRV64Bit, },
+  {Feature_HasStdExtZbmBit, Feature_IsRV64Bit, },
+  {Feature_HasStdExtZbpBit, Feature_IsRV64Bit, },
+  {Feature_HasStdExtZbproposedcBit, Feature_HasStdExtCBit, },
+  {Feature_HasStdExtZbrBit, Feature_IsRV64Bit, },
+  {Feature_HasStdExtZbsBit, Feature_IsRV64Bit, },
+  {Feature_HasStdExtZbtBit, Feature_IsRV64Bit, },
   {Feature_HasStdExtCBit, Feature_HasStdExtFBit, Feature_IsRV32Bit, },
+  {Feature_HasStdExtZbproposedcBit, Feature_HasStdExtZbbOrZbpBit, Feature_HasStdExtCBit, Feature_IsRV64Bit, },
 };
 #endif // NDEBUG
 
@@ -1513,497 +3019,962 @@ void RISCVMCCodeEmitter::verifyInstructionPredicates(
     CEFBS_None, // FENTRY_CALL = 21
     CEFBS_None, // PATCHPOINT = 22
     CEFBS_None, // LOAD_STACK_GUARD = 23
-    CEFBS_None, // STATEPOINT = 24
-    CEFBS_None, // LOCAL_ESCAPE = 25
-    CEFBS_None, // FAULTING_OP = 26
-    CEFBS_None, // PATCHABLE_OP = 27
-    CEFBS_None, // PATCHABLE_FUNCTION_ENTER = 28
-    CEFBS_None, // PATCHABLE_RET = 29
-    CEFBS_None, // PATCHABLE_FUNCTION_EXIT = 30
-    CEFBS_None, // PATCHABLE_TAIL_CALL = 31
-    CEFBS_None, // PATCHABLE_EVENT_CALL = 32
-    CEFBS_None, // PATCHABLE_TYPED_EVENT_CALL = 33
-    CEFBS_None, // ICALL_BRANCH_FUNNEL = 34
-    CEFBS_None, // G_ADD = 35
-    CEFBS_None, // G_SUB = 36
-    CEFBS_None, // G_MUL = 37
-    CEFBS_None, // G_SDIV = 38
-    CEFBS_None, // G_UDIV = 39
-    CEFBS_None, // G_SREM = 40
-    CEFBS_None, // G_UREM = 41
-    CEFBS_None, // G_AND = 42
-    CEFBS_None, // G_OR = 43
-    CEFBS_None, // G_XOR = 44
-    CEFBS_None, // G_IMPLICIT_DEF = 45
-    CEFBS_None, // G_PHI = 46
-    CEFBS_None, // G_FRAME_INDEX = 47
-    CEFBS_None, // G_GLOBAL_VALUE = 48
-    CEFBS_None, // G_EXTRACT = 49
-    CEFBS_None, // G_UNMERGE_VALUES = 50
-    CEFBS_None, // G_INSERT = 51
-    CEFBS_None, // G_MERGE_VALUES = 52
-    CEFBS_None, // G_BUILD_VECTOR = 53
-    CEFBS_None, // G_BUILD_VECTOR_TRUNC = 54
-    CEFBS_None, // G_CONCAT_VECTORS = 55
-    CEFBS_None, // G_PTRTOINT = 56
-    CEFBS_None, // G_INTTOPTR = 57
-    CEFBS_None, // G_BITCAST = 58
-    CEFBS_None, // G_INTRINSIC_TRUNC = 59
-    CEFBS_None, // G_INTRINSIC_ROUND = 60
-    CEFBS_None, // G_READCYCLECOUNTER = 61
-    CEFBS_None, // G_LOAD = 62
-    CEFBS_None, // G_SEXTLOAD = 63
-    CEFBS_None, // G_ZEXTLOAD = 64
-    CEFBS_None, // G_INDEXED_LOAD = 65
-    CEFBS_None, // G_INDEXED_SEXTLOAD = 66
-    CEFBS_None, // G_INDEXED_ZEXTLOAD = 67
-    CEFBS_None, // G_STORE = 68
-    CEFBS_None, // G_INDEXED_STORE = 69
-    CEFBS_None, // G_ATOMIC_CMPXCHG_WITH_SUCCESS = 70
-    CEFBS_None, // G_ATOMIC_CMPXCHG = 71
-    CEFBS_None, // G_ATOMICRMW_XCHG = 72
-    CEFBS_None, // G_ATOMICRMW_ADD = 73
-    CEFBS_None, // G_ATOMICRMW_SUB = 74
-    CEFBS_None, // G_ATOMICRMW_AND = 75
-    CEFBS_None, // G_ATOMICRMW_NAND = 76
-    CEFBS_None, // G_ATOMICRMW_OR = 77
-    CEFBS_None, // G_ATOMICRMW_XOR = 78
-    CEFBS_None, // G_ATOMICRMW_MAX = 79
-    CEFBS_None, // G_ATOMICRMW_MIN = 80
-    CEFBS_None, // G_ATOMICRMW_UMAX = 81
-    CEFBS_None, // G_ATOMICRMW_UMIN = 82
-    CEFBS_None, // G_ATOMICRMW_FADD = 83
-    CEFBS_None, // G_ATOMICRMW_FSUB = 84
-    CEFBS_None, // G_FENCE = 85
-    CEFBS_None, // G_BRCOND = 86
-    CEFBS_None, // G_BRINDIRECT = 87
-    CEFBS_None, // G_INTRINSIC = 88
-    CEFBS_None, // G_INTRINSIC_W_SIDE_EFFECTS = 89
-    CEFBS_None, // G_ANYEXT = 90
-    CEFBS_None, // G_TRUNC = 91
-    CEFBS_None, // G_CONSTANT = 92
-    CEFBS_None, // G_FCONSTANT = 93
-    CEFBS_None, // G_VASTART = 94
-    CEFBS_None, // G_VAARG = 95
-    CEFBS_None, // G_SEXT = 96
-    CEFBS_None, // G_SEXT_INREG = 97
-    CEFBS_None, // G_ZEXT = 98
-    CEFBS_None, // G_SHL = 99
-    CEFBS_None, // G_LSHR = 100
-    CEFBS_None, // G_ASHR = 101
-    CEFBS_None, // G_ICMP = 102
-    CEFBS_None, // G_FCMP = 103
-    CEFBS_None, // G_SELECT = 104
-    CEFBS_None, // G_UADDO = 105
-    CEFBS_None, // G_UADDE = 106
-    CEFBS_None, // G_USUBO = 107
-    CEFBS_None, // G_USUBE = 108
-    CEFBS_None, // G_SADDO = 109
-    CEFBS_None, // G_SADDE = 110
-    CEFBS_None, // G_SSUBO = 111
-    CEFBS_None, // G_SSUBE = 112
-    CEFBS_None, // G_UMULO = 113
-    CEFBS_None, // G_SMULO = 114
-    CEFBS_None, // G_UMULH = 115
-    CEFBS_None, // G_SMULH = 116
-    CEFBS_None, // G_FADD = 117
-    CEFBS_None, // G_FSUB = 118
-    CEFBS_None, // G_FMUL = 119
-    CEFBS_None, // G_FMA = 120
-    CEFBS_None, // G_FMAD = 121
-    CEFBS_None, // G_FDIV = 122
-    CEFBS_None, // G_FREM = 123
-    CEFBS_None, // G_FPOW = 124
-    CEFBS_None, // G_FEXP = 125
-    CEFBS_None, // G_FEXP2 = 126
-    CEFBS_None, // G_FLOG = 127
-    CEFBS_None, // G_FLOG2 = 128
-    CEFBS_None, // G_FLOG10 = 129
-    CEFBS_None, // G_FNEG = 130
-    CEFBS_None, // G_FPEXT = 131
-    CEFBS_None, // G_FPTRUNC = 132
-    CEFBS_None, // G_FPTOSI = 133
-    CEFBS_None, // G_FPTOUI = 134
-    CEFBS_None, // G_SITOFP = 135
-    CEFBS_None, // G_UITOFP = 136
-    CEFBS_None, // G_FABS = 137
-    CEFBS_None, // G_FCOPYSIGN = 138
-    CEFBS_None, // G_FCANONICALIZE = 139
-    CEFBS_None, // G_FMINNUM = 140
-    CEFBS_None, // G_FMAXNUM = 141
-    CEFBS_None, // G_FMINNUM_IEEE = 142
-    CEFBS_None, // G_FMAXNUM_IEEE = 143
-    CEFBS_None, // G_FMINIMUM = 144
-    CEFBS_None, // G_FMAXIMUM = 145
-    CEFBS_None, // G_PTR_ADD = 146
-    CEFBS_None, // G_PTR_MASK = 147
-    CEFBS_None, // G_SMIN = 148
-    CEFBS_None, // G_SMAX = 149
-    CEFBS_None, // G_UMIN = 150
-    CEFBS_None, // G_UMAX = 151
-    CEFBS_None, // G_BR = 152
-    CEFBS_None, // G_BRJT = 153
-    CEFBS_None, // G_INSERT_VECTOR_ELT = 154
-    CEFBS_None, // G_EXTRACT_VECTOR_ELT = 155
-    CEFBS_None, // G_SHUFFLE_VECTOR = 156
-    CEFBS_None, // G_CTTZ = 157
-    CEFBS_None, // G_CTTZ_ZERO_UNDEF = 158
-    CEFBS_None, // G_CTLZ = 159
-    CEFBS_None, // G_CTLZ_ZERO_UNDEF = 160
-    CEFBS_None, // G_CTPOP = 161
-    CEFBS_None, // G_BSWAP = 162
-    CEFBS_None, // G_BITREVERSE = 163
-    CEFBS_None, // G_FCEIL = 164
-    CEFBS_None, // G_FCOS = 165
-    CEFBS_None, // G_FSIN = 166
-    CEFBS_None, // G_FSQRT = 167
-    CEFBS_None, // G_FFLOOR = 168
-    CEFBS_None, // G_FRINT = 169
-    CEFBS_None, // G_FNEARBYINT = 170
-    CEFBS_None, // G_ADDRSPACE_CAST = 171
-    CEFBS_None, // G_BLOCK_ADDR = 172
-    CEFBS_None, // G_JUMP_TABLE = 173
-    CEFBS_None, // G_DYN_STACKALLOC = 174
-    CEFBS_None, // G_READ_REGISTER = 175
-    CEFBS_None, // G_WRITE_REGISTER = 176
-    CEFBS_None, // ADJCALLSTACKDOWN = 177
-    CEFBS_None, // ADJCALLSTACKUP = 178
-    CEFBS_HasStdExtD, // BuildPairF64Pseudo = 179
-    CEFBS_None, // PseudoAddTPRel = 180
-    CEFBS_HasStdExtA, // PseudoAtomicLoadNand32 = 181
-    CEFBS_HasStdExtA_IsRV64, // PseudoAtomicLoadNand64 = 182
-    CEFBS_None, // PseudoBR = 183
-    CEFBS_None, // PseudoBRIND = 184
-    CEFBS_None, // PseudoCALL = 185
-    CEFBS_None, // PseudoCALLIndirect = 186
-    CEFBS_None, // PseudoCALLReg = 187
-    CEFBS_HasStdExtA, // PseudoCmpXchg32 = 188
-    CEFBS_HasStdExtA_IsRV64, // PseudoCmpXchg64 = 189
-    CEFBS_HasStdExtD, // PseudoFLD = 190
-    CEFBS_HasStdExtF, // PseudoFLW = 191
-    CEFBS_HasStdExtD, // PseudoFSD = 192
-    CEFBS_HasStdExtF, // PseudoFSW = 193
-    CEFBS_None, // PseudoJump = 194
-    CEFBS_None, // PseudoLA = 195
-    CEFBS_None, // PseudoLA_TLS_GD = 196
-    CEFBS_None, // PseudoLA_TLS_IE = 197
-    CEFBS_None, // PseudoLB = 198
-    CEFBS_None, // PseudoLBU = 199
-    CEFBS_IsRV64, // PseudoLD = 200
-    CEFBS_None, // PseudoLH = 201
-    CEFBS_None, // PseudoLHU = 202
-    CEFBS_None, // PseudoLI = 203
-    CEFBS_None, // PseudoLLA = 204
-    CEFBS_None, // PseudoLW = 205
-    CEFBS_IsRV64, // PseudoLWU = 206
-    CEFBS_HasStdExtA, // PseudoMaskedAtomicLoadAdd32 = 207
-    CEFBS_HasStdExtA, // PseudoMaskedAtomicLoadMax32 = 208
-    CEFBS_HasStdExtA, // PseudoMaskedAtomicLoadMin32 = 209
-    CEFBS_HasStdExtA, // PseudoMaskedAtomicLoadNand32 = 210
-    CEFBS_HasStdExtA, // PseudoMaskedAtomicLoadSub32 = 211
-    CEFBS_HasStdExtA, // PseudoMaskedAtomicLoadUMax32 = 212
-    CEFBS_HasStdExtA, // PseudoMaskedAtomicLoadUMin32 = 213
-    CEFBS_HasStdExtA, // PseudoMaskedAtomicSwap32 = 214
-    CEFBS_HasStdExtA, // PseudoMaskedCmpXchg32 = 215
-    CEFBS_None, // PseudoRET = 216
-    CEFBS_None, // PseudoSB = 217
-    CEFBS_IsRV64, // PseudoSD = 218
-    CEFBS_None, // PseudoSH = 219
-    CEFBS_None, // PseudoSW = 220
-    CEFBS_None, // PseudoTAIL = 221
-    CEFBS_None, // PseudoTAILIndirect = 222
-    CEFBS_IsRV32, // ReadCycleWide = 223
-    CEFBS_HasStdExtF, // Select_FPR32_Using_CC_GPR = 224
-    CEFBS_HasStdExtD, // Select_FPR64_Using_CC_GPR = 225
-    CEFBS_None, // Select_GPR_Using_CC_GPR = 226
-    CEFBS_HasStdExtD, // SplitF64Pseudo = 227
-    CEFBS_None, // ADD = 228
-    CEFBS_None, // ADDI = 229
-    CEFBS_IsRV64, // ADDIW = 230
-    CEFBS_IsRV64, // ADDW = 231
-    CEFBS_HasStdExtA_IsRV64, // AMOADD_D = 232
-    CEFBS_HasStdExtA_IsRV64, // AMOADD_D_AQ = 233
-    CEFBS_HasStdExtA_IsRV64, // AMOADD_D_AQ_RL = 234
-    CEFBS_HasStdExtA_IsRV64, // AMOADD_D_RL = 235
-    CEFBS_HasStdExtA, // AMOADD_W = 236
-    CEFBS_HasStdExtA, // AMOADD_W_AQ = 237
-    CEFBS_HasStdExtA, // AMOADD_W_AQ_RL = 238
-    CEFBS_HasStdExtA, // AMOADD_W_RL = 239
-    CEFBS_HasStdExtA_IsRV64, // AMOAND_D = 240
-    CEFBS_HasStdExtA_IsRV64, // AMOAND_D_AQ = 241
-    CEFBS_HasStdExtA_IsRV64, // AMOAND_D_AQ_RL = 242
-    CEFBS_HasStdExtA_IsRV64, // AMOAND_D_RL = 243
-    CEFBS_HasStdExtA, // AMOAND_W = 244
-    CEFBS_HasStdExtA, // AMOAND_W_AQ = 245
-    CEFBS_HasStdExtA, // AMOAND_W_AQ_RL = 246
-    CEFBS_HasStdExtA, // AMOAND_W_RL = 247
-    CEFBS_HasStdExtA_IsRV64, // AMOMAXU_D = 248
-    CEFBS_HasStdExtA_IsRV64, // AMOMAXU_D_AQ = 249
-    CEFBS_HasStdExtA_IsRV64, // AMOMAXU_D_AQ_RL = 250
-    CEFBS_HasStdExtA_IsRV64, // AMOMAXU_D_RL = 251
-    CEFBS_HasStdExtA, // AMOMAXU_W = 252
-    CEFBS_HasStdExtA, // AMOMAXU_W_AQ = 253
-    CEFBS_HasStdExtA, // AMOMAXU_W_AQ_RL = 254
-    CEFBS_HasStdExtA, // AMOMAXU_W_RL = 255
-    CEFBS_HasStdExtA_IsRV64, // AMOMAX_D = 256
-    CEFBS_HasStdExtA_IsRV64, // AMOMAX_D_AQ = 257
-    CEFBS_HasStdExtA_IsRV64, // AMOMAX_D_AQ_RL = 258
-    CEFBS_HasStdExtA_IsRV64, // AMOMAX_D_RL = 259
-    CEFBS_HasStdExtA, // AMOMAX_W = 260
-    CEFBS_HasStdExtA, // AMOMAX_W_AQ = 261
-    CEFBS_HasStdExtA, // AMOMAX_W_AQ_RL = 262
-    CEFBS_HasStdExtA, // AMOMAX_W_RL = 263
-    CEFBS_HasStdExtA_IsRV64, // AMOMINU_D = 264
-    CEFBS_HasStdExtA_IsRV64, // AMOMINU_D_AQ = 265
-    CEFBS_HasStdExtA_IsRV64, // AMOMINU_D_AQ_RL = 266
-    CEFBS_HasStdExtA_IsRV64, // AMOMINU_D_RL = 267
-    CEFBS_HasStdExtA, // AMOMINU_W = 268
-    CEFBS_HasStdExtA, // AMOMINU_W_AQ = 269
-    CEFBS_HasStdExtA, // AMOMINU_W_AQ_RL = 270
-    CEFBS_HasStdExtA, // AMOMINU_W_RL = 271
-    CEFBS_HasStdExtA_IsRV64, // AMOMIN_D = 272
-    CEFBS_HasStdExtA_IsRV64, // AMOMIN_D_AQ = 273
-    CEFBS_HasStdExtA_IsRV64, // AMOMIN_D_AQ_RL = 274
-    CEFBS_HasStdExtA_IsRV64, // AMOMIN_D_RL = 275
-    CEFBS_HasStdExtA, // AMOMIN_W = 276
-    CEFBS_HasStdExtA, // AMOMIN_W_AQ = 277
-    CEFBS_HasStdExtA, // AMOMIN_W_AQ_RL = 278
-    CEFBS_HasStdExtA, // AMOMIN_W_RL = 279
-    CEFBS_HasStdExtA_IsRV64, // AMOOR_D = 280
-    CEFBS_HasStdExtA_IsRV64, // AMOOR_D_AQ = 281
-    CEFBS_HasStdExtA_IsRV64, // AMOOR_D_AQ_RL = 282
-    CEFBS_HasStdExtA_IsRV64, // AMOOR_D_RL = 283
-    CEFBS_HasStdExtA, // AMOOR_W = 284
-    CEFBS_HasStdExtA, // AMOOR_W_AQ = 285
-    CEFBS_HasStdExtA, // AMOOR_W_AQ_RL = 286
-    CEFBS_HasStdExtA, // AMOOR_W_RL = 287
-    CEFBS_HasStdExtA_IsRV64, // AMOSWAP_D = 288
-    CEFBS_HasStdExtA_IsRV64, // AMOSWAP_D_AQ = 289
-    CEFBS_HasStdExtA_IsRV64, // AMOSWAP_D_AQ_RL = 290
-    CEFBS_HasStdExtA_IsRV64, // AMOSWAP_D_RL = 291
-    CEFBS_HasStdExtA, // AMOSWAP_W = 292
-    CEFBS_HasStdExtA, // AMOSWAP_W_AQ = 293
-    CEFBS_HasStdExtA, // AMOSWAP_W_AQ_RL = 294
-    CEFBS_HasStdExtA, // AMOSWAP_W_RL = 295
-    CEFBS_HasStdExtA_IsRV64, // AMOXOR_D = 296
-    CEFBS_HasStdExtA_IsRV64, // AMOXOR_D_AQ = 297
-    CEFBS_HasStdExtA_IsRV64, // AMOXOR_D_AQ_RL = 298
-    CEFBS_HasStdExtA_IsRV64, // AMOXOR_D_RL = 299
-    CEFBS_HasStdExtA, // AMOXOR_W = 300
-    CEFBS_HasStdExtA, // AMOXOR_W_AQ = 301
-    CEFBS_HasStdExtA, // AMOXOR_W_AQ_RL = 302
-    CEFBS_HasStdExtA, // AMOXOR_W_RL = 303
-    CEFBS_None, // AND = 304
-    CEFBS_None, // ANDI = 305
-    CEFBS_None, // AUIPC = 306
-    CEFBS_None, // BEQ = 307
-    CEFBS_None, // BGE = 308
-    CEFBS_None, // BGEU = 309
-    CEFBS_None, // BLT = 310
-    CEFBS_None, // BLTU = 311
-    CEFBS_None, // BNE = 312
-    CEFBS_None, // CSRRC = 313
-    CEFBS_None, // CSRRCI = 314
-    CEFBS_None, // CSRRS = 315
-    CEFBS_None, // CSRRSI = 316
-    CEFBS_None, // CSRRW = 317
-    CEFBS_None, // CSRRWI = 318
-    CEFBS_HasStdExtC, // C_ADD = 319
-    CEFBS_HasStdExtC, // C_ADDI = 320
-    CEFBS_HasStdExtC, // C_ADDI16SP = 321
-    CEFBS_HasStdExtC, // C_ADDI4SPN = 322
-    CEFBS_HasStdExtC_IsRV64, // C_ADDIW = 323
-    CEFBS_HasStdExtC_HasRVCHints, // C_ADDI_HINT_IMM_ZERO = 324
-    CEFBS_HasStdExtC_HasRVCHints, // C_ADDI_HINT_X0 = 325
-    CEFBS_HasStdExtC, // C_ADDI_NOP = 326
-    CEFBS_HasStdExtC_IsRV64, // C_ADDW = 327
-    CEFBS_HasStdExtC_HasRVCHints, // C_ADD_HINT = 328
-    CEFBS_HasStdExtC, // C_AND = 329
-    CEFBS_HasStdExtC, // C_ANDI = 330
-    CEFBS_HasStdExtC, // C_BEQZ = 331
-    CEFBS_HasStdExtC, // C_BNEZ = 332
-    CEFBS_HasStdExtC, // C_EBREAK = 333
-    CEFBS_HasStdExtC_HasStdExtD, // C_FLD = 334
-    CEFBS_HasStdExtC_HasStdExtD, // C_FLDSP = 335
-    CEFBS_HasStdExtC_HasStdExtF_IsRV32, // C_FLW = 336
-    CEFBS_HasStdExtC_HasStdExtF_IsRV32, // C_FLWSP = 337
-    CEFBS_HasStdExtC_HasStdExtD, // C_FSD = 338
-    CEFBS_HasStdExtC_HasStdExtD, // C_FSDSP = 339
-    CEFBS_HasStdExtC_HasStdExtF_IsRV32, // C_FSW = 340
-    CEFBS_HasStdExtC_HasStdExtF_IsRV32, // C_FSWSP = 341
-    CEFBS_HasStdExtC, // C_J = 342
-    CEFBS_HasStdExtC_IsRV32, // C_JAL = 343
-    CEFBS_HasStdExtC, // C_JALR = 344
-    CEFBS_HasStdExtC, // C_JR = 345
-    CEFBS_HasStdExtC_IsRV64, // C_LD = 346
-    CEFBS_HasStdExtC_IsRV64, // C_LDSP = 347
-    CEFBS_HasStdExtC, // C_LI = 348
-    CEFBS_HasStdExtC_HasRVCHints, // C_LI_HINT = 349
-    CEFBS_HasStdExtC, // C_LUI = 350
-    CEFBS_HasStdExtC_HasRVCHints, // C_LUI_HINT = 351
-    CEFBS_HasStdExtC, // C_LW = 352
-    CEFBS_HasStdExtC, // C_LWSP = 353
-    CEFBS_HasStdExtC, // C_MV = 354
-    CEFBS_HasStdExtC_HasRVCHints, // C_MV_HINT = 355
-    CEFBS_HasStdExtC, // C_NOP = 356
-    CEFBS_HasStdExtC_HasRVCHints, // C_NOP_HINT = 357
-    CEFBS_HasStdExtC, // C_OR = 358
-    CEFBS_HasStdExtC_IsRV64, // C_SD = 359
-    CEFBS_HasStdExtC_IsRV64, // C_SDSP = 360
-    CEFBS_HasStdExtC, // C_SLLI = 361
-    CEFBS_HasStdExtC_HasRVCHints, // C_SLLI64_HINT = 362
-    CEFBS_HasStdExtC_HasRVCHints, // C_SLLI_HINT = 363
-    CEFBS_HasStdExtC, // C_SRAI = 364
-    CEFBS_HasStdExtC_HasRVCHints, // C_SRAI64_HINT = 365
-    CEFBS_HasStdExtC, // C_SRLI = 366
-    CEFBS_HasStdExtC_HasRVCHints, // C_SRLI64_HINT = 367
-    CEFBS_HasStdExtC, // C_SUB = 368
-    CEFBS_HasStdExtC_IsRV64, // C_SUBW = 369
-    CEFBS_HasStdExtC, // C_SW = 370
-    CEFBS_HasStdExtC, // C_SWSP = 371
-    CEFBS_HasStdExtC, // C_UNIMP = 372
-    CEFBS_HasStdExtC, // C_XOR = 373
-    CEFBS_HasStdExtM, // DIV = 374
-    CEFBS_HasStdExtM, // DIVU = 375
-    CEFBS_HasStdExtM_IsRV64, // DIVUW = 376
-    CEFBS_HasStdExtM_IsRV64, // DIVW = 377
-    CEFBS_None, // EBREAK = 378
-    CEFBS_None, // ECALL = 379
-    CEFBS_HasStdExtD, // FADD_D = 380
-    CEFBS_HasStdExtF, // FADD_S = 381
-    CEFBS_HasStdExtD, // FCLASS_D = 382
-    CEFBS_HasStdExtF, // FCLASS_S = 383
-    CEFBS_HasStdExtD_IsRV64, // FCVT_D_L = 384
-    CEFBS_HasStdExtD_IsRV64, // FCVT_D_LU = 385
-    CEFBS_HasStdExtD, // FCVT_D_S = 386
-    CEFBS_HasStdExtD, // FCVT_D_W = 387
-    CEFBS_HasStdExtD, // FCVT_D_WU = 388
-    CEFBS_HasStdExtD_IsRV64, // FCVT_LU_D = 389
-    CEFBS_HasStdExtF_IsRV64, // FCVT_LU_S = 390
-    CEFBS_HasStdExtD_IsRV64, // FCVT_L_D = 391
-    CEFBS_HasStdExtF_IsRV64, // FCVT_L_S = 392
-    CEFBS_HasStdExtD, // FCVT_S_D = 393
-    CEFBS_HasStdExtF_IsRV64, // FCVT_S_L = 394
-    CEFBS_HasStdExtF_IsRV64, // FCVT_S_LU = 395
-    CEFBS_HasStdExtF, // FCVT_S_W = 396
-    CEFBS_HasStdExtF, // FCVT_S_WU = 397
-    CEFBS_HasStdExtD, // FCVT_WU_D = 398
-    CEFBS_HasStdExtF, // FCVT_WU_S = 399
-    CEFBS_HasStdExtD, // FCVT_W_D = 400
-    CEFBS_HasStdExtF, // FCVT_W_S = 401
-    CEFBS_HasStdExtD, // FDIV_D = 402
-    CEFBS_HasStdExtF, // FDIV_S = 403
-    CEFBS_None, // FENCE = 404
-    CEFBS_None, // FENCE_I = 405
-    CEFBS_None, // FENCE_TSO = 406
-    CEFBS_HasStdExtD, // FEQ_D = 407
-    CEFBS_HasStdExtF, // FEQ_S = 408
-    CEFBS_HasStdExtD, // FLD = 409
-    CEFBS_HasStdExtD, // FLE_D = 410
-    CEFBS_HasStdExtF, // FLE_S = 411
-    CEFBS_HasStdExtD, // FLT_D = 412
-    CEFBS_HasStdExtF, // FLT_S = 413
-    CEFBS_HasStdExtF, // FLW = 414
-    CEFBS_HasStdExtD, // FMADD_D = 415
-    CEFBS_HasStdExtF, // FMADD_S = 416
-    CEFBS_HasStdExtD, // FMAX_D = 417
-    CEFBS_HasStdExtF, // FMAX_S = 418
-    CEFBS_HasStdExtD, // FMIN_D = 419
-    CEFBS_HasStdExtF, // FMIN_S = 420
-    CEFBS_HasStdExtD, // FMSUB_D = 421
-    CEFBS_HasStdExtF, // FMSUB_S = 422
-    CEFBS_HasStdExtD, // FMUL_D = 423
-    CEFBS_HasStdExtF, // FMUL_S = 424
-    CEFBS_HasStdExtD_IsRV64, // FMV_D_X = 425
-    CEFBS_HasStdExtF, // FMV_W_X = 426
-    CEFBS_HasStdExtD_IsRV64, // FMV_X_D = 427
-    CEFBS_HasStdExtF, // FMV_X_W = 428
-    CEFBS_HasStdExtD, // FNMADD_D = 429
-    CEFBS_HasStdExtF, // FNMADD_S = 430
-    CEFBS_HasStdExtD, // FNMSUB_D = 431
-    CEFBS_HasStdExtF, // FNMSUB_S = 432
-    CEFBS_HasStdExtD, // FSD = 433
-    CEFBS_HasStdExtD, // FSGNJN_D = 434
-    CEFBS_HasStdExtF, // FSGNJN_S = 435
-    CEFBS_HasStdExtD, // FSGNJX_D = 436
-    CEFBS_HasStdExtF, // FSGNJX_S = 437
-    CEFBS_HasStdExtD, // FSGNJ_D = 438
-    CEFBS_HasStdExtF, // FSGNJ_S = 439
-    CEFBS_HasStdExtD, // FSQRT_D = 440
-    CEFBS_HasStdExtF, // FSQRT_S = 441
-    CEFBS_HasStdExtD, // FSUB_D = 442
-    CEFBS_HasStdExtF, // FSUB_S = 443
-    CEFBS_HasStdExtF, // FSW = 444
-    CEFBS_None, // JAL = 445
-    CEFBS_None, // JALR = 446
-    CEFBS_None, // LB = 447
-    CEFBS_None, // LBU = 448
-    CEFBS_IsRV64, // LD = 449
-    CEFBS_None, // LH = 450
-    CEFBS_None, // LHU = 451
-    CEFBS_HasStdExtA_IsRV64, // LR_D = 452
-    CEFBS_HasStdExtA_IsRV64, // LR_D_AQ = 453
-    CEFBS_HasStdExtA_IsRV64, // LR_D_AQ_RL = 454
-    CEFBS_HasStdExtA_IsRV64, // LR_D_RL = 455
-    CEFBS_HasStdExtA, // LR_W = 456
-    CEFBS_HasStdExtA, // LR_W_AQ = 457
-    CEFBS_HasStdExtA, // LR_W_AQ_RL = 458
-    CEFBS_HasStdExtA, // LR_W_RL = 459
-    CEFBS_None, // LUI = 460
-    CEFBS_None, // LW = 461
-    CEFBS_IsRV64, // LWU = 462
-    CEFBS_None, // MRET = 463
-    CEFBS_HasStdExtM, // MUL = 464
-    CEFBS_HasStdExtM, // MULH = 465
-    CEFBS_HasStdExtM, // MULHSU = 466
-    CEFBS_HasStdExtM, // MULHU = 467
-    CEFBS_HasStdExtM_IsRV64, // MULW = 468
-    CEFBS_None, // OR = 469
-    CEFBS_None, // ORI = 470
-    CEFBS_HasStdExtM, // REM = 471
-    CEFBS_HasStdExtM, // REMU = 472
-    CEFBS_HasStdExtM_IsRV64, // REMUW = 473
-    CEFBS_HasStdExtM_IsRV64, // REMW = 474
-    CEFBS_None, // SB = 475
-    CEFBS_HasStdExtA_IsRV64, // SC_D = 476
-    CEFBS_HasStdExtA_IsRV64, // SC_D_AQ = 477
-    CEFBS_HasStdExtA_IsRV64, // SC_D_AQ_RL = 478
-    CEFBS_HasStdExtA_IsRV64, // SC_D_RL = 479
-    CEFBS_HasStdExtA, // SC_W = 480
-    CEFBS_HasStdExtA, // SC_W_AQ = 481
-    CEFBS_HasStdExtA, // SC_W_AQ_RL = 482
-    CEFBS_HasStdExtA, // SC_W_RL = 483
-    CEFBS_IsRV64, // SD = 484
-    CEFBS_None, // SFENCE_VMA = 485
-    CEFBS_None, // SH = 486
-    CEFBS_None, // SLL = 487
-    CEFBS_None, // SLLI = 488
-    CEFBS_IsRV64, // SLLIW = 489
-    CEFBS_IsRV64, // SLLW = 490
-    CEFBS_None, // SLT = 491
-    CEFBS_None, // SLTI = 492
-    CEFBS_None, // SLTIU = 493
-    CEFBS_None, // SLTU = 494
-    CEFBS_None, // SRA = 495
-    CEFBS_None, // SRAI = 496
-    CEFBS_IsRV64, // SRAIW = 497
-    CEFBS_IsRV64, // SRAW = 498
-    CEFBS_None, // SRET = 499
-    CEFBS_None, // SRL = 500
-    CEFBS_None, // SRLI = 501
-    CEFBS_IsRV64, // SRLIW = 502
-    CEFBS_IsRV64, // SRLW = 503
-    CEFBS_None, // SUB = 504
-    CEFBS_IsRV64, // SUBW = 505
-    CEFBS_None, // SW = 506
-    CEFBS_None, // UNIMP = 507
-    CEFBS_None, // URET = 508
-    CEFBS_None, // WFI = 509
-    CEFBS_None, // XOR = 510
-    CEFBS_None, // XORI = 511
+    CEFBS_None, // PREALLOCATED_SETUP = 24
+    CEFBS_None, // PREALLOCATED_ARG = 25
+    CEFBS_None, // STATEPOINT = 26
+    CEFBS_None, // LOCAL_ESCAPE = 27
+    CEFBS_None, // FAULTING_OP = 28
+    CEFBS_None, // PATCHABLE_OP = 29
+    CEFBS_None, // PATCHABLE_FUNCTION_ENTER = 30
+    CEFBS_None, // PATCHABLE_RET = 31
+    CEFBS_None, // PATCHABLE_FUNCTION_EXIT = 32
+    CEFBS_None, // PATCHABLE_TAIL_CALL = 33
+    CEFBS_None, // PATCHABLE_EVENT_CALL = 34
+    CEFBS_None, // PATCHABLE_TYPED_EVENT_CALL = 35
+    CEFBS_None, // ICALL_BRANCH_FUNNEL = 36
+    CEFBS_None, // G_ADD = 37
+    CEFBS_None, // G_SUB = 38
+    CEFBS_None, // G_MUL = 39
+    CEFBS_None, // G_SDIV = 40
+    CEFBS_None, // G_UDIV = 41
+    CEFBS_None, // G_SREM = 42
+    CEFBS_None, // G_UREM = 43
+    CEFBS_None, // G_AND = 44
+    CEFBS_None, // G_OR = 45
+    CEFBS_None, // G_XOR = 46
+    CEFBS_None, // G_IMPLICIT_DEF = 47
+    CEFBS_None, // G_PHI = 48
+    CEFBS_None, // G_FRAME_INDEX = 49
+    CEFBS_None, // G_GLOBAL_VALUE = 50
+    CEFBS_None, // G_EXTRACT = 51
+    CEFBS_None, // G_UNMERGE_VALUES = 52
+    CEFBS_None, // G_INSERT = 53
+    CEFBS_None, // G_MERGE_VALUES = 54
+    CEFBS_None, // G_BUILD_VECTOR = 55
+    CEFBS_None, // G_BUILD_VECTOR_TRUNC = 56
+    CEFBS_None, // G_CONCAT_VECTORS = 57
+    CEFBS_None, // G_PTRTOINT = 58
+    CEFBS_None, // G_INTTOPTR = 59
+    CEFBS_None, // G_BITCAST = 60
+    CEFBS_None, // G_FREEZE = 61
+    CEFBS_None, // G_INTRINSIC_TRUNC = 62
+    CEFBS_None, // G_INTRINSIC_ROUND = 63
+    CEFBS_None, // G_READCYCLECOUNTER = 64
+    CEFBS_None, // G_LOAD = 65
+    CEFBS_None, // G_SEXTLOAD = 66
+    CEFBS_None, // G_ZEXTLOAD = 67
+    CEFBS_None, // G_INDEXED_LOAD = 68
+    CEFBS_None, // G_INDEXED_SEXTLOAD = 69
+    CEFBS_None, // G_INDEXED_ZEXTLOAD = 70
+    CEFBS_None, // G_STORE = 71
+    CEFBS_None, // G_INDEXED_STORE = 72
+    CEFBS_None, // G_ATOMIC_CMPXCHG_WITH_SUCCESS = 73
+    CEFBS_None, // G_ATOMIC_CMPXCHG = 74
+    CEFBS_None, // G_ATOMICRMW_XCHG = 75
+    CEFBS_None, // G_ATOMICRMW_ADD = 76
+    CEFBS_None, // G_ATOMICRMW_SUB = 77
+    CEFBS_None, // G_ATOMICRMW_AND = 78
+    CEFBS_None, // G_ATOMICRMW_NAND = 79
+    CEFBS_None, // G_ATOMICRMW_OR = 80
+    CEFBS_None, // G_ATOMICRMW_XOR = 81
+    CEFBS_None, // G_ATOMICRMW_MAX = 82
+    CEFBS_None, // G_ATOMICRMW_MIN = 83
+    CEFBS_None, // G_ATOMICRMW_UMAX = 84
+    CEFBS_None, // G_ATOMICRMW_UMIN = 85
+    CEFBS_None, // G_ATOMICRMW_FADD = 86
+    CEFBS_None, // G_ATOMICRMW_FSUB = 87
+    CEFBS_None, // G_FENCE = 88
+    CEFBS_None, // G_BRCOND = 89
+    CEFBS_None, // G_BRINDIRECT = 90
+    CEFBS_None, // G_INTRINSIC = 91
+    CEFBS_None, // G_INTRINSIC_W_SIDE_EFFECTS = 92
+    CEFBS_None, // G_ANYEXT = 93
+    CEFBS_None, // G_TRUNC = 94
+    CEFBS_None, // G_CONSTANT = 95
+    CEFBS_None, // G_FCONSTANT = 96
+    CEFBS_None, // G_VASTART = 97
+    CEFBS_None, // G_VAARG = 98
+    CEFBS_None, // G_SEXT = 99
+    CEFBS_None, // G_SEXT_INREG = 100
+    CEFBS_None, // G_ZEXT = 101
+    CEFBS_None, // G_SHL = 102
+    CEFBS_None, // G_LSHR = 103
+    CEFBS_None, // G_ASHR = 104
+    CEFBS_None, // G_FSHL = 105
+    CEFBS_None, // G_FSHR = 106
+    CEFBS_None, // G_ICMP = 107
+    CEFBS_None, // G_FCMP = 108
+    CEFBS_None, // G_SELECT = 109
+    CEFBS_None, // G_UADDO = 110
+    CEFBS_None, // G_UADDE = 111
+    CEFBS_None, // G_USUBO = 112
+    CEFBS_None, // G_USUBE = 113
+    CEFBS_None, // G_SADDO = 114
+    CEFBS_None, // G_SADDE = 115
+    CEFBS_None, // G_SSUBO = 116
+    CEFBS_None, // G_SSUBE = 117
+    CEFBS_None, // G_UMULO = 118
+    CEFBS_None, // G_SMULO = 119
+    CEFBS_None, // G_UMULH = 120
+    CEFBS_None, // G_SMULH = 121
+    CEFBS_None, // G_UADDSAT = 122
+    CEFBS_None, // G_SADDSAT = 123
+    CEFBS_None, // G_USUBSAT = 124
+    CEFBS_None, // G_SSUBSAT = 125
+    CEFBS_None, // G_FADD = 126
+    CEFBS_None, // G_FSUB = 127
+    CEFBS_None, // G_FMUL = 128
+    CEFBS_None, // G_FMA = 129
+    CEFBS_None, // G_FMAD = 130
+    CEFBS_None, // G_FDIV = 131
+    CEFBS_None, // G_FREM = 132
+    CEFBS_None, // G_FPOW = 133
+    CEFBS_None, // G_FEXP = 134
+    CEFBS_None, // G_FEXP2 = 135
+    CEFBS_None, // G_FLOG = 136
+    CEFBS_None, // G_FLOG2 = 137
+    CEFBS_None, // G_FLOG10 = 138
+    CEFBS_None, // G_FNEG = 139
+    CEFBS_None, // G_FPEXT = 140
+    CEFBS_None, // G_FPTRUNC = 141
+    CEFBS_None, // G_FPTOSI = 142
+    CEFBS_None, // G_FPTOUI = 143
+    CEFBS_None, // G_SITOFP = 144
+    CEFBS_None, // G_UITOFP = 145
+    CEFBS_None, // G_FABS = 146
+    CEFBS_None, // G_FCOPYSIGN = 147
+    CEFBS_None, // G_FCANONICALIZE = 148
+    CEFBS_None, // G_FMINNUM = 149
+    CEFBS_None, // G_FMAXNUM = 150
+    CEFBS_None, // G_FMINNUM_IEEE = 151
+    CEFBS_None, // G_FMAXNUM_IEEE = 152
+    CEFBS_None, // G_FMINIMUM = 153
+    CEFBS_None, // G_FMAXIMUM = 154
+    CEFBS_None, // G_PTR_ADD = 155
+    CEFBS_None, // G_PTRMASK = 156
+    CEFBS_None, // G_SMIN = 157
+    CEFBS_None, // G_SMAX = 158
+    CEFBS_None, // G_UMIN = 159
+    CEFBS_None, // G_UMAX = 160
+    CEFBS_None, // G_BR = 161
+    CEFBS_None, // G_BRJT = 162
+    CEFBS_None, // G_INSERT_VECTOR_ELT = 163
+    CEFBS_None, // G_EXTRACT_VECTOR_ELT = 164
+    CEFBS_None, // G_SHUFFLE_VECTOR = 165
+    CEFBS_None, // G_CTTZ = 166
+    CEFBS_None, // G_CTTZ_ZERO_UNDEF = 167
+    CEFBS_None, // G_CTLZ = 168
+    CEFBS_None, // G_CTLZ_ZERO_UNDEF = 169
+    CEFBS_None, // G_CTPOP = 170
+    CEFBS_None, // G_BSWAP = 171
+    CEFBS_None, // G_BITREVERSE = 172
+    CEFBS_None, // G_FCEIL = 173
+    CEFBS_None, // G_FCOS = 174
+    CEFBS_None, // G_FSIN = 175
+    CEFBS_None, // G_FSQRT = 176
+    CEFBS_None, // G_FFLOOR = 177
+    CEFBS_None, // G_FRINT = 178
+    CEFBS_None, // G_FNEARBYINT = 179
+    CEFBS_None, // G_ADDRSPACE_CAST = 180
+    CEFBS_None, // G_BLOCK_ADDR = 181
+    CEFBS_None, // G_JUMP_TABLE = 182
+    CEFBS_None, // G_DYN_STACKALLOC = 183
+    CEFBS_None, // G_STRICT_FADD = 184
+    CEFBS_None, // G_STRICT_FSUB = 185
+    CEFBS_None, // G_STRICT_FMUL = 186
+    CEFBS_None, // G_STRICT_FDIV = 187
+    CEFBS_None, // G_STRICT_FREM = 188
+    CEFBS_None, // G_STRICT_FMA = 189
+    CEFBS_None, // G_STRICT_FSQRT = 190
+    CEFBS_None, // G_READ_REGISTER = 191
+    CEFBS_None, // G_WRITE_REGISTER = 192
+    CEFBS_None, // ADJCALLSTACKDOWN = 193
+    CEFBS_None, // ADJCALLSTACKUP = 194
+    CEFBS_HasStdExtD, // BuildPairF64Pseudo = 195
+    CEFBS_None, // PseudoAddTPRel = 196
+    CEFBS_HasStdExtA, // PseudoAtomicLoadNand32 = 197
+    CEFBS_HasStdExtA_IsRV64, // PseudoAtomicLoadNand64 = 198
+    CEFBS_None, // PseudoBR = 199
+    CEFBS_None, // PseudoBRIND = 200
+    CEFBS_None, // PseudoCALL = 201
+    CEFBS_None, // PseudoCALLIndirect = 202
+    CEFBS_None, // PseudoCALLReg = 203
+    CEFBS_HasStdExtA, // PseudoCmpXchg32 = 204
+    CEFBS_HasStdExtA_IsRV64, // PseudoCmpXchg64 = 205
+    CEFBS_HasStdExtD, // PseudoFLD = 206
+    CEFBS_HasStdExtF, // PseudoFLW = 207
+    CEFBS_HasStdExtD, // PseudoFSD = 208
+    CEFBS_HasStdExtF, // PseudoFSW = 209
+    CEFBS_None, // PseudoJump = 210
+    CEFBS_None, // PseudoLA = 211
+    CEFBS_None, // PseudoLA_TLS_GD = 212
+    CEFBS_None, // PseudoLA_TLS_IE = 213
+    CEFBS_None, // PseudoLB = 214
+    CEFBS_None, // PseudoLBU = 215
+    CEFBS_IsRV64, // PseudoLD = 216
+    CEFBS_None, // PseudoLH = 217
+    CEFBS_None, // PseudoLHU = 218
+    CEFBS_None, // PseudoLI = 219
+    CEFBS_None, // PseudoLLA = 220
+    CEFBS_None, // PseudoLW = 221
+    CEFBS_IsRV64, // PseudoLWU = 222
+    CEFBS_HasStdExtA, // PseudoMaskedAtomicLoadAdd32 = 223
+    CEFBS_HasStdExtA, // PseudoMaskedAtomicLoadMax32 = 224
+    CEFBS_HasStdExtA, // PseudoMaskedAtomicLoadMin32 = 225
+    CEFBS_HasStdExtA, // PseudoMaskedAtomicLoadNand32 = 226
+    CEFBS_HasStdExtA, // PseudoMaskedAtomicLoadSub32 = 227
+    CEFBS_HasStdExtA, // PseudoMaskedAtomicLoadUMax32 = 228
+    CEFBS_HasStdExtA, // PseudoMaskedAtomicLoadUMin32 = 229
+    CEFBS_HasStdExtA, // PseudoMaskedAtomicSwap32 = 230
+    CEFBS_HasStdExtA, // PseudoMaskedCmpXchg32 = 231
+    CEFBS_None, // PseudoRET = 232
+    CEFBS_None, // PseudoSB = 233
+    CEFBS_IsRV64, // PseudoSD = 234
+    CEFBS_None, // PseudoSH = 235
+    CEFBS_None, // PseudoSW = 236
+    CEFBS_None, // PseudoTAIL = 237
+    CEFBS_None, // PseudoTAILIndirect = 238
+    CEFBS_IsRV32, // ReadCycleWide = 239
+    CEFBS_HasStdExtF, // Select_FPR32_Using_CC_GPR = 240
+    CEFBS_HasStdExtD, // Select_FPR64_Using_CC_GPR = 241
+    CEFBS_None, // Select_GPR_Using_CC_GPR = 242
+    CEFBS_HasStdExtD, // SplitF64Pseudo = 243
+    CEFBS_None, // ADD = 244
+    CEFBS_None, // ADDI = 245
+    CEFBS_IsRV64, // ADDIW = 246
+    CEFBS_HasStdExtZbb_IsRV64, // ADDIWU = 247
+    CEFBS_HasStdExtZbb_IsRV64, // ADDUW = 248
+    CEFBS_IsRV64, // ADDW = 249
+    CEFBS_HasStdExtZbb_IsRV64, // ADDWU = 250
+    CEFBS_HasStdExtA_IsRV64, // AMOADD_D = 251
+    CEFBS_HasStdExtA_IsRV64, // AMOADD_D_AQ = 252
+    CEFBS_HasStdExtA_IsRV64, // AMOADD_D_AQ_RL = 253
+    CEFBS_HasStdExtA_IsRV64, // AMOADD_D_RL = 254
+    CEFBS_HasStdExtA, // AMOADD_W = 255
+    CEFBS_HasStdExtA, // AMOADD_W_AQ = 256
+    CEFBS_HasStdExtA, // AMOADD_W_AQ_RL = 257
+    CEFBS_HasStdExtA, // AMOADD_W_RL = 258
+    CEFBS_HasStdExtA_IsRV64, // AMOAND_D = 259
+    CEFBS_HasStdExtA_IsRV64, // AMOAND_D_AQ = 260
+    CEFBS_HasStdExtA_IsRV64, // AMOAND_D_AQ_RL = 261
+    CEFBS_HasStdExtA_IsRV64, // AMOAND_D_RL = 262
+    CEFBS_HasStdExtA, // AMOAND_W = 263
+    CEFBS_HasStdExtA, // AMOAND_W_AQ = 264
+    CEFBS_HasStdExtA, // AMOAND_W_AQ_RL = 265
+    CEFBS_HasStdExtA, // AMOAND_W_RL = 266
+    CEFBS_HasStdExtA_IsRV64, // AMOMAXU_D = 267
+    CEFBS_HasStdExtA_IsRV64, // AMOMAXU_D_AQ = 268
+    CEFBS_HasStdExtA_IsRV64, // AMOMAXU_D_AQ_RL = 269
+    CEFBS_HasStdExtA_IsRV64, // AMOMAXU_D_RL = 270
+    CEFBS_HasStdExtA, // AMOMAXU_W = 271
+    CEFBS_HasStdExtA, // AMOMAXU_W_AQ = 272
+    CEFBS_HasStdExtA, // AMOMAXU_W_AQ_RL = 273
+    CEFBS_HasStdExtA, // AMOMAXU_W_RL = 274
+    CEFBS_HasStdExtA_IsRV64, // AMOMAX_D = 275
+    CEFBS_HasStdExtA_IsRV64, // AMOMAX_D_AQ = 276
+    CEFBS_HasStdExtA_IsRV64, // AMOMAX_D_AQ_RL = 277
+    CEFBS_HasStdExtA_IsRV64, // AMOMAX_D_RL = 278
+    CEFBS_HasStdExtA, // AMOMAX_W = 279
+    CEFBS_HasStdExtA, // AMOMAX_W_AQ = 280
+    CEFBS_HasStdExtA, // AMOMAX_W_AQ_RL = 281
+    CEFBS_HasStdExtA, // AMOMAX_W_RL = 282
+    CEFBS_HasStdExtA_IsRV64, // AMOMINU_D = 283
+    CEFBS_HasStdExtA_IsRV64, // AMOMINU_D_AQ = 284
+    CEFBS_HasStdExtA_IsRV64, // AMOMINU_D_AQ_RL = 285
+    CEFBS_HasStdExtA_IsRV64, // AMOMINU_D_RL = 286
+    CEFBS_HasStdExtA, // AMOMINU_W = 287
+    CEFBS_HasStdExtA, // AMOMINU_W_AQ = 288
+    CEFBS_HasStdExtA, // AMOMINU_W_AQ_RL = 289
+    CEFBS_HasStdExtA, // AMOMINU_W_RL = 290
+    CEFBS_HasStdExtA_IsRV64, // AMOMIN_D = 291
+    CEFBS_HasStdExtA_IsRV64, // AMOMIN_D_AQ = 292
+    CEFBS_HasStdExtA_IsRV64, // AMOMIN_D_AQ_RL = 293
+    CEFBS_HasStdExtA_IsRV64, // AMOMIN_D_RL = 294
+    CEFBS_HasStdExtA, // AMOMIN_W = 295
+    CEFBS_HasStdExtA, // AMOMIN_W_AQ = 296
+    CEFBS_HasStdExtA, // AMOMIN_W_AQ_RL = 297
+    CEFBS_HasStdExtA, // AMOMIN_W_RL = 298
+    CEFBS_HasStdExtA_IsRV64, // AMOOR_D = 299
+    CEFBS_HasStdExtA_IsRV64, // AMOOR_D_AQ = 300
+    CEFBS_HasStdExtA_IsRV64, // AMOOR_D_AQ_RL = 301
+    CEFBS_HasStdExtA_IsRV64, // AMOOR_D_RL = 302
+    CEFBS_HasStdExtA, // AMOOR_W = 303
+    CEFBS_HasStdExtA, // AMOOR_W_AQ = 304
+    CEFBS_HasStdExtA, // AMOOR_W_AQ_RL = 305
+    CEFBS_HasStdExtA, // AMOOR_W_RL = 306
+    CEFBS_HasStdExtA_IsRV64, // AMOSWAP_D = 307
+    CEFBS_HasStdExtA_IsRV64, // AMOSWAP_D_AQ = 308
+    CEFBS_HasStdExtA_IsRV64, // AMOSWAP_D_AQ_RL = 309
+    CEFBS_HasStdExtA_IsRV64, // AMOSWAP_D_RL = 310
+    CEFBS_HasStdExtA, // AMOSWAP_W = 311
+    CEFBS_HasStdExtA, // AMOSWAP_W_AQ = 312
+    CEFBS_HasStdExtA, // AMOSWAP_W_AQ_RL = 313
+    CEFBS_HasStdExtA, // AMOSWAP_W_RL = 314
+    CEFBS_HasStdExtA_IsRV64, // AMOXOR_D = 315
+    CEFBS_HasStdExtA_IsRV64, // AMOXOR_D_AQ = 316
+    CEFBS_HasStdExtA_IsRV64, // AMOXOR_D_AQ_RL = 317
+    CEFBS_HasStdExtA_IsRV64, // AMOXOR_D_RL = 318
+    CEFBS_HasStdExtA, // AMOXOR_W = 319
+    CEFBS_HasStdExtA, // AMOXOR_W_AQ = 320
+    CEFBS_HasStdExtA, // AMOXOR_W_AQ_RL = 321
+    CEFBS_HasStdExtA, // AMOXOR_W_RL = 322
+    CEFBS_None, // AND = 323
+    CEFBS_None, // ANDI = 324
+    CEFBS_HasStdExtZbbOrZbp, // ANDN = 325
+    CEFBS_None, // AUIPC = 326
+    CEFBS_HasStdExtZbe, // BDEP = 327
+    CEFBS_HasStdExtZbe_IsRV64, // BDEPW = 328
+    CEFBS_None, // BEQ = 329
+    CEFBS_HasStdExtZbe, // BEXT = 330
+    CEFBS_HasStdExtZbe_IsRV64, // BEXTW = 331
+    CEFBS_HasStdExtZbf, // BFP = 332
+    CEFBS_HasStdExtZbf_IsRV64, // BFPW = 333
+    CEFBS_None, // BGE = 334
+    CEFBS_None, // BGEU = 335
+    CEFBS_None, // BLT = 336
+    CEFBS_None, // BLTU = 337
+    CEFBS_HasStdExtZbm_IsRV64, // BMATFLIP = 338
+    CEFBS_HasStdExtZbm_IsRV64, // BMATOR = 339
+    CEFBS_HasStdExtZbm_IsRV64, // BMATXOR = 340
+    CEFBS_None, // BNE = 341
+    CEFBS_HasStdExtZbc, // CLMUL = 342
+    CEFBS_HasStdExtZbc, // CLMULH = 343
+    CEFBS_HasStdExtZbc_IsRV64, // CLMULHW = 344
+    CEFBS_HasStdExtZbc, // CLMULR = 345
+    CEFBS_HasStdExtZbc_IsRV64, // CLMULRW = 346
+    CEFBS_HasStdExtZbc_IsRV64, // CLMULW = 347
+    CEFBS_HasStdExtZbb, // CLZ = 348
+    CEFBS_HasStdExtZbb_IsRV64, // CLZW = 349
+    CEFBS_HasStdExtZbt, // CMIX = 350
+    CEFBS_HasStdExtZbt, // CMOV = 351
+    CEFBS_HasStdExtZbr, // CRC32B = 352
+    CEFBS_HasStdExtZbr, // CRC32CB = 353
+    CEFBS_HasStdExtZbr_IsRV64, // CRC32CD = 354
+    CEFBS_HasStdExtZbr, // CRC32CH = 355
+    CEFBS_HasStdExtZbr, // CRC32CW = 356
+    CEFBS_HasStdExtZbr_IsRV64, // CRC32D = 357
+    CEFBS_HasStdExtZbr, // CRC32H = 358
+    CEFBS_HasStdExtZbr, // CRC32W = 359
+    CEFBS_None, // CSRRC = 360
+    CEFBS_None, // CSRRCI = 361
+    CEFBS_None, // CSRRS = 362
+    CEFBS_None, // CSRRSI = 363
+    CEFBS_None, // CSRRW = 364
+    CEFBS_None, // CSRRWI = 365
+    CEFBS_HasStdExtZbb, // CTZ = 366
+    CEFBS_HasStdExtZbb_IsRV64, // CTZW = 367
+    CEFBS_HasStdExtC, // C_ADD = 368
+    CEFBS_HasStdExtC, // C_ADDI = 369
+    CEFBS_HasStdExtC, // C_ADDI16SP = 370
+    CEFBS_HasStdExtC, // C_ADDI4SPN = 371
+    CEFBS_HasStdExtC_IsRV64, // C_ADDIW = 372
+    CEFBS_HasStdExtC_HasRVCHints, // C_ADDI_HINT_IMM_ZERO = 373
+    CEFBS_HasStdExtC_HasRVCHints, // C_ADDI_HINT_X0 = 374
+    CEFBS_HasStdExtC, // C_ADDI_NOP = 375
+    CEFBS_HasStdExtC_IsRV64, // C_ADDW = 376
+    CEFBS_HasStdExtC_HasRVCHints, // C_ADD_HINT = 377
+    CEFBS_HasStdExtC, // C_AND = 378
+    CEFBS_HasStdExtC, // C_ANDI = 379
+    CEFBS_HasStdExtC, // C_BEQZ = 380
+    CEFBS_HasStdExtC, // C_BNEZ = 381
+    CEFBS_HasStdExtC, // C_EBREAK = 382
+    CEFBS_HasStdExtC_HasStdExtD, // C_FLD = 383
+    CEFBS_HasStdExtC_HasStdExtD, // C_FLDSP = 384
+    CEFBS_HasStdExtC_HasStdExtF_IsRV32, // C_FLW = 385
+    CEFBS_HasStdExtC_HasStdExtF_IsRV32, // C_FLWSP = 386
+    CEFBS_HasStdExtC_HasStdExtD, // C_FSD = 387
+    CEFBS_HasStdExtC_HasStdExtD, // C_FSDSP = 388
+    CEFBS_HasStdExtC_HasStdExtF_IsRV32, // C_FSW = 389
+    CEFBS_HasStdExtC_HasStdExtF_IsRV32, // C_FSWSP = 390
+    CEFBS_HasStdExtC, // C_J = 391
+    CEFBS_HasStdExtC_IsRV32, // C_JAL = 392
+    CEFBS_HasStdExtC, // C_JALR = 393
+    CEFBS_HasStdExtC, // C_JR = 394
+    CEFBS_HasStdExtC_IsRV64, // C_LD = 395
+    CEFBS_HasStdExtC_IsRV64, // C_LDSP = 396
+    CEFBS_HasStdExtC, // C_LI = 397
+    CEFBS_HasStdExtC_HasRVCHints, // C_LI_HINT = 398
+    CEFBS_HasStdExtC, // C_LUI = 399
+    CEFBS_HasStdExtC_HasRVCHints, // C_LUI_HINT = 400
+    CEFBS_HasStdExtC, // C_LW = 401
+    CEFBS_HasStdExtC, // C_LWSP = 402
+    CEFBS_HasStdExtC, // C_MV = 403
+    CEFBS_HasStdExtC_HasRVCHints, // C_MV_HINT = 404
+    CEFBS_HasStdExtZbproposedc_HasStdExtC, // C_NEG = 405
+    CEFBS_HasStdExtC, // C_NOP = 406
+    CEFBS_HasStdExtC_HasRVCHints, // C_NOP_HINT = 407
+    CEFBS_HasStdExtZbproposedc_HasStdExtC, // C_NOT = 408
+    CEFBS_HasStdExtC, // C_OR = 409
+    CEFBS_HasStdExtC_IsRV64, // C_SD = 410
+    CEFBS_HasStdExtC_IsRV64, // C_SDSP = 411
+    CEFBS_HasStdExtC, // C_SLLI = 412
+    CEFBS_HasStdExtC_HasRVCHints, // C_SLLI64_HINT = 413
+    CEFBS_HasStdExtC_HasRVCHints, // C_SLLI_HINT = 414
+    CEFBS_HasStdExtC, // C_SRAI = 415
+    CEFBS_HasStdExtC_HasRVCHints, // C_SRAI64_HINT = 416
+    CEFBS_HasStdExtC, // C_SRLI = 417
+    CEFBS_HasStdExtC_HasRVCHints, // C_SRLI64_HINT = 418
+    CEFBS_HasStdExtC, // C_SUB = 419
+    CEFBS_HasStdExtC_IsRV64, // C_SUBW = 420
+    CEFBS_HasStdExtC, // C_SW = 421
+    CEFBS_HasStdExtC, // C_SWSP = 422
+    CEFBS_HasStdExtC, // C_UNIMP = 423
+    CEFBS_HasStdExtC, // C_XOR = 424
+    CEFBS_HasStdExtZbproposedc_HasStdExtZbbOrZbp_HasStdExtC_IsRV64, // C_ZEXTW = 425
+    CEFBS_HasStdExtM, // DIV = 426
+    CEFBS_HasStdExtM, // DIVU = 427
+    CEFBS_HasStdExtM_IsRV64, // DIVUW = 428
+    CEFBS_HasStdExtM_IsRV64, // DIVW = 429
+    CEFBS_None, // DRET = 430
+    CEFBS_None, // EBREAK = 431
+    CEFBS_None, // ECALL = 432
+    CEFBS_HasStdExtD, // FADD_D = 433
+    CEFBS_HasStdExtF, // FADD_S = 434
+    CEFBS_HasStdExtD, // FCLASS_D = 435
+    CEFBS_HasStdExtF, // FCLASS_S = 436
+    CEFBS_HasStdExtD_IsRV64, // FCVT_D_L = 437
+    CEFBS_HasStdExtD_IsRV64, // FCVT_D_LU = 438
+    CEFBS_HasStdExtD, // FCVT_D_S = 439
+    CEFBS_HasStdExtD, // FCVT_D_W = 440
+    CEFBS_HasStdExtD, // FCVT_D_WU = 441
+    CEFBS_HasStdExtD_IsRV64, // FCVT_LU_D = 442
+    CEFBS_HasStdExtF_IsRV64, // FCVT_LU_S = 443
+    CEFBS_HasStdExtD_IsRV64, // FCVT_L_D = 444
+    CEFBS_HasStdExtF_IsRV64, // FCVT_L_S = 445
+    CEFBS_HasStdExtD, // FCVT_S_D = 446
+    CEFBS_HasStdExtF_IsRV64, // FCVT_S_L = 447
+    CEFBS_HasStdExtF_IsRV64, // FCVT_S_LU = 448
+    CEFBS_HasStdExtF, // FCVT_S_W = 449
+    CEFBS_HasStdExtF, // FCVT_S_WU = 450
+    CEFBS_HasStdExtD, // FCVT_WU_D = 451
+    CEFBS_HasStdExtF, // FCVT_WU_S = 452
+    CEFBS_HasStdExtD, // FCVT_W_D = 453
+    CEFBS_HasStdExtF, // FCVT_W_S = 454
+    CEFBS_HasStdExtD, // FDIV_D = 455
+    CEFBS_HasStdExtF, // FDIV_S = 456
+    CEFBS_None, // FENCE = 457
+    CEFBS_None, // FENCE_I = 458
+    CEFBS_None, // FENCE_TSO = 459
+    CEFBS_HasStdExtD, // FEQ_D = 460
+    CEFBS_HasStdExtF, // FEQ_S = 461
+    CEFBS_HasStdExtD, // FLD = 462
+    CEFBS_HasStdExtD, // FLE_D = 463
+    CEFBS_HasStdExtF, // FLE_S = 464
+    CEFBS_HasStdExtD, // FLT_D = 465
+    CEFBS_HasStdExtF, // FLT_S = 466
+    CEFBS_HasStdExtF, // FLW = 467
+    CEFBS_HasStdExtD, // FMADD_D = 468
+    CEFBS_HasStdExtF, // FMADD_S = 469
+    CEFBS_HasStdExtD, // FMAX_D = 470
+    CEFBS_HasStdExtF, // FMAX_S = 471
+    CEFBS_HasStdExtD, // FMIN_D = 472
+    CEFBS_HasStdExtF, // FMIN_S = 473
+    CEFBS_HasStdExtD, // FMSUB_D = 474
+    CEFBS_HasStdExtF, // FMSUB_S = 475
+    CEFBS_HasStdExtD, // FMUL_D = 476
+    CEFBS_HasStdExtF, // FMUL_S = 477
+    CEFBS_HasStdExtD_IsRV64, // FMV_D_X = 478
+    CEFBS_HasStdExtF, // FMV_W_X = 479
+    CEFBS_HasStdExtD_IsRV64, // FMV_X_D = 480
+    CEFBS_HasStdExtF, // FMV_X_W = 481
+    CEFBS_HasStdExtD, // FNMADD_D = 482
+    CEFBS_HasStdExtF, // FNMADD_S = 483
+    CEFBS_HasStdExtD, // FNMSUB_D = 484
+    CEFBS_HasStdExtF, // FNMSUB_S = 485
+    CEFBS_HasStdExtD, // FSD = 486
+    CEFBS_HasStdExtD, // FSGNJN_D = 487
+    CEFBS_HasStdExtF, // FSGNJN_S = 488
+    CEFBS_HasStdExtD, // FSGNJX_D = 489
+    CEFBS_HasStdExtF, // FSGNJX_S = 490
+    CEFBS_HasStdExtD, // FSGNJ_D = 491
+    CEFBS_HasStdExtF, // FSGNJ_S = 492
+    CEFBS_HasStdExtZbt, // FSL = 493
+    CEFBS_HasStdExtZbt_IsRV64, // FSLW = 494
+    CEFBS_HasStdExtD, // FSQRT_D = 495
+    CEFBS_HasStdExtF, // FSQRT_S = 496
+    CEFBS_HasStdExtZbt, // FSR = 497
+    CEFBS_HasStdExtZbt, // FSRI = 498
+    CEFBS_HasStdExtZbt_IsRV64, // FSRIW = 499
+    CEFBS_HasStdExtZbt_IsRV64, // FSRW = 500
+    CEFBS_HasStdExtD, // FSUB_D = 501
+    CEFBS_HasStdExtF, // FSUB_S = 502
+    CEFBS_HasStdExtF, // FSW = 503
+    CEFBS_HasStdExtZbp, // GORC = 504
+    CEFBS_HasStdExtZbp, // GORCI = 505
+    CEFBS_HasStdExtZbp_IsRV64, // GORCIW = 506
+    CEFBS_HasStdExtZbp_IsRV64, // GORCW = 507
+    CEFBS_HasStdExtZbp, // GREV = 508
+    CEFBS_HasStdExtZbp, // GREVI = 509
+    CEFBS_HasStdExtZbp_IsRV64, // GREVIW = 510
+    CEFBS_HasStdExtZbp_IsRV64, // GREVW = 511
+    CEFBS_None, // JAL = 512
+    CEFBS_None, // JALR = 513
+    CEFBS_None, // LB = 514
+    CEFBS_None, // LBU = 515
+    CEFBS_IsRV64, // LD = 516
+    CEFBS_None, // LH = 517
+    CEFBS_None, // LHU = 518
+    CEFBS_HasStdExtA_IsRV64, // LR_D = 519
+    CEFBS_HasStdExtA_IsRV64, // LR_D_AQ = 520
+    CEFBS_HasStdExtA_IsRV64, // LR_D_AQ_RL = 521
+    CEFBS_HasStdExtA_IsRV64, // LR_D_RL = 522
+    CEFBS_HasStdExtA, // LR_W = 523
+    CEFBS_HasStdExtA, // LR_W_AQ = 524
+    CEFBS_HasStdExtA, // LR_W_AQ_RL = 525
+    CEFBS_HasStdExtA, // LR_W_RL = 526
+    CEFBS_None, // LUI = 527
+    CEFBS_None, // LW = 528
+    CEFBS_IsRV64, // LWU = 529
+    CEFBS_HasStdExtZbb, // MAX = 530
+    CEFBS_HasStdExtZbb, // MAXU = 531
+    CEFBS_HasStdExtZbb, // MIN = 532
+    CEFBS_HasStdExtZbb, // MINU = 533
+    CEFBS_None, // MRET = 534
+    CEFBS_HasStdExtM, // MUL = 535
+    CEFBS_HasStdExtM, // MULH = 536
+    CEFBS_HasStdExtM, // MULHSU = 537
+    CEFBS_HasStdExtM, // MULHU = 538
+    CEFBS_HasStdExtM_IsRV64, // MULW = 539
+    CEFBS_None, // OR = 540
+    CEFBS_None, // ORI = 541
+    CEFBS_HasStdExtZbbOrZbp, // ORN = 542
+    CEFBS_HasStdExtZbbOrZbp, // PACK = 543
+    CEFBS_HasStdExtZbbOrZbp, // PACKH = 544
+    CEFBS_HasStdExtZbbOrZbp, // PACKU = 545
+    CEFBS_HasStdExtZbbOrZbp_IsRV64, // PACKUW = 546
+    CEFBS_HasStdExtZbbOrZbp_IsRV64, // PACKW = 547
+    CEFBS_HasStdExtZbb, // PCNT = 548
+    CEFBS_HasStdExtZbb_IsRV64, // PCNTW = 549
+    CEFBS_HasStdExtM, // REM = 550
+    CEFBS_HasStdExtM, // REMU = 551
+    CEFBS_HasStdExtM_IsRV64, // REMUW = 552
+    CEFBS_HasStdExtM_IsRV64, // REMW = 553
+    CEFBS_HasStdExtZbbOrZbp, // ROL = 554
+    CEFBS_HasStdExtZbbOrZbp_IsRV64, // ROLW = 555
+    CEFBS_HasStdExtZbbOrZbp, // ROR = 556
+    CEFBS_HasStdExtZbbOrZbp, // RORI = 557
+    CEFBS_HasStdExtZbbOrZbp_IsRV64, // RORIW = 558
+    CEFBS_HasStdExtZbbOrZbp_IsRV64, // RORW = 559
+    CEFBS_None, // SB = 560
+    CEFBS_HasStdExtZbs, // SBCLR = 561
+    CEFBS_HasStdExtZbs, // SBCLRI = 562
+    CEFBS_HasStdExtZbs_IsRV64, // SBCLRIW = 563
+    CEFBS_HasStdExtZbs_IsRV64, // SBCLRW = 564
+    CEFBS_HasStdExtZbs, // SBEXT = 565
+    CEFBS_HasStdExtZbs, // SBEXTI = 566
+    CEFBS_HasStdExtZbs_IsRV64, // SBEXTW = 567
+    CEFBS_HasStdExtZbs, // SBINV = 568
+    CEFBS_HasStdExtZbs, // SBINVI = 569
+    CEFBS_HasStdExtZbs_IsRV64, // SBINVIW = 570
+    CEFBS_HasStdExtZbs_IsRV64, // SBINVW = 571
+    CEFBS_HasStdExtZbs, // SBSET = 572
+    CEFBS_HasStdExtZbs, // SBSETI = 573
+    CEFBS_HasStdExtZbs_IsRV64, // SBSETIW = 574
+    CEFBS_HasStdExtZbs_IsRV64, // SBSETW = 575
+    CEFBS_HasStdExtA_IsRV64, // SC_D = 576
+    CEFBS_HasStdExtA_IsRV64, // SC_D_AQ = 577
+    CEFBS_HasStdExtA_IsRV64, // SC_D_AQ_RL = 578
+    CEFBS_HasStdExtA_IsRV64, // SC_D_RL = 579
+    CEFBS_HasStdExtA, // SC_W = 580
+    CEFBS_HasStdExtA, // SC_W_AQ = 581
+    CEFBS_HasStdExtA, // SC_W_AQ_RL = 582
+    CEFBS_HasStdExtA, // SC_W_RL = 583
+    CEFBS_IsRV64, // SD = 584
+    CEFBS_HasStdExtZbb, // SEXTB = 585
+    CEFBS_HasStdExtZbb, // SEXTH = 586
+    CEFBS_None, // SFENCE_VMA = 587
+    CEFBS_None, // SH = 588
+    CEFBS_HasStdExtZbp, // SHFL = 589
+    CEFBS_HasStdExtZbp, // SHFLI = 590
+    CEFBS_HasStdExtZbp_IsRV64, // SHFLW = 591
+    CEFBS_None, // SLL = 592
+    CEFBS_None, // SLLI = 593
+    CEFBS_HasStdExtZbb_IsRV64, // SLLIUW = 594
+    CEFBS_IsRV64, // SLLIW = 595
+    CEFBS_IsRV64, // SLLW = 596
+    CEFBS_HasStdExtZbb, // SLO = 597
+    CEFBS_HasStdExtZbb, // SLOI = 598
+    CEFBS_HasStdExtZbb_IsRV64, // SLOIW = 599
+    CEFBS_HasStdExtZbb_IsRV64, // SLOW = 600
+    CEFBS_None, // SLT = 601
+    CEFBS_None, // SLTI = 602
+    CEFBS_None, // SLTIU = 603
+    CEFBS_None, // SLTU = 604
+    CEFBS_None, // SRA = 605
+    CEFBS_None, // SRAI = 606
+    CEFBS_IsRV64, // SRAIW = 607
+    CEFBS_IsRV64, // SRAW = 608
+    CEFBS_None, // SRET = 609
+    CEFBS_None, // SRL = 610
+    CEFBS_None, // SRLI = 611
+    CEFBS_IsRV64, // SRLIW = 612
+    CEFBS_IsRV64, // SRLW = 613
+    CEFBS_HasStdExtZbb, // SRO = 614
+    CEFBS_HasStdExtZbb, // SROI = 615
+    CEFBS_HasStdExtZbb_IsRV64, // SROIW = 616
+    CEFBS_HasStdExtZbb_IsRV64, // SROW = 617
+    CEFBS_None, // SUB = 618
+    CEFBS_HasStdExtZbb_IsRV64, // SUBUW = 619
+    CEFBS_IsRV64, // SUBW = 620
+    CEFBS_HasStdExtZbb_IsRV64, // SUBWU = 621
+    CEFBS_None, // SW = 622
+    CEFBS_None, // UNIMP = 623
+    CEFBS_HasStdExtZbp, // UNSHFL = 624
+    CEFBS_HasStdExtZbp, // UNSHFLI = 625
+    CEFBS_HasStdExtZbp_IsRV64, // UNSHFLW = 626
+    CEFBS_None, // URET = 627
+    CEFBS_HasStdExtV, // VAADDU_VV = 628
+    CEFBS_HasStdExtV, // VAADDU_VX = 629
+    CEFBS_HasStdExtV, // VAADD_VV = 630
+    CEFBS_HasStdExtV, // VAADD_VX = 631
+    CEFBS_HasStdExtV, // VADC_VIM = 632
+    CEFBS_HasStdExtV, // VADC_VVM = 633
+    CEFBS_HasStdExtV, // VADC_VXM = 634
+    CEFBS_HasStdExtV, // VADD_VI = 635
+    CEFBS_HasStdExtV, // VADD_VV = 636
+    CEFBS_HasStdExtV, // VADD_VX = 637
+    CEFBS_HasStdExtV, // VAND_VI = 638
+    CEFBS_HasStdExtV, // VAND_VV = 639
+    CEFBS_HasStdExtV, // VAND_VX = 640
+    CEFBS_HasStdExtV, // VASUBU_VV = 641
+    CEFBS_HasStdExtV, // VASUBU_VX = 642
+    CEFBS_HasStdExtV, // VASUB_VV = 643
+    CEFBS_HasStdExtV, // VASUB_VX = 644
+    CEFBS_HasStdExtV, // VCOMPRESS_VM = 645
+    CEFBS_HasStdExtV, // VDIVU_VV = 646
+    CEFBS_HasStdExtV, // VDIVU_VX = 647
+    CEFBS_HasStdExtV, // VDIV_VV = 648
+    CEFBS_HasStdExtV, // VDIV_VX = 649
+    CEFBS_HasStdExtV, // VFADD_VF = 650
+    CEFBS_HasStdExtV, // VFADD_VV = 651
+    CEFBS_HasStdExtV, // VFCLASS_V = 652
+    CEFBS_HasStdExtV, // VFCVT_F_XU_V = 653
+    CEFBS_HasStdExtV, // VFCVT_F_X_V = 654
+    CEFBS_HasStdExtV, // VFCVT_XU_F_V = 655
+    CEFBS_HasStdExtV, // VFCVT_X_F_V = 656
+    CEFBS_HasStdExtV, // VFDIV_VF = 657
+    CEFBS_HasStdExtV, // VFDIV_VV = 658
+    CEFBS_HasStdExtV, // VFIRST_M = 659
+    CEFBS_HasStdExtV, // VFMACC_VF = 660
+    CEFBS_HasStdExtV, // VFMACC_VV = 661
+    CEFBS_HasStdExtV, // VFMADD_VF = 662
+    CEFBS_HasStdExtV, // VFMADD_VV = 663
+    CEFBS_HasStdExtV, // VFMAX_VF = 664
+    CEFBS_HasStdExtV, // VFMAX_VV = 665
+    CEFBS_HasStdExtV, // VFMERGE_VFM = 666
+    CEFBS_HasStdExtV, // VFMIN_VF = 667
+    CEFBS_HasStdExtV, // VFMIN_VV = 668
+    CEFBS_HasStdExtV, // VFMSAC_VF = 669
+    CEFBS_HasStdExtV, // VFMSAC_VV = 670
+    CEFBS_HasStdExtV, // VFMSUB_VF = 671
+    CEFBS_HasStdExtV, // VFMSUB_VV = 672
+    CEFBS_HasStdExtV, // VFMUL_VF = 673
+    CEFBS_HasStdExtV, // VFMUL_VV = 674
+    CEFBS_HasStdExtV, // VFMV_F_S = 675
+    CEFBS_HasStdExtV, // VFMV_S_F = 676
+    CEFBS_HasStdExtV, // VFMV_V_F = 677
+    CEFBS_HasStdExtV, // VFNCVT_F_F_W = 678
+    CEFBS_HasStdExtV, // VFNCVT_F_XU_W = 679
+    CEFBS_HasStdExtV, // VFNCVT_F_X_W = 680
+    CEFBS_HasStdExtV, // VFNCVT_ROD_F_F_W = 681
+    CEFBS_HasStdExtV, // VFNCVT_XU_F_W = 682
+    CEFBS_HasStdExtV, // VFNCVT_X_F_W = 683
+    CEFBS_HasStdExtV, // VFNMACC_VF = 684
+    CEFBS_HasStdExtV, // VFNMACC_VV = 685
+    CEFBS_HasStdExtV, // VFNMADD_VF = 686
+    CEFBS_HasStdExtV, // VFNMADD_VV = 687
+    CEFBS_HasStdExtV, // VFNMSAC_VF = 688
+    CEFBS_HasStdExtV, // VFNMSAC_VV = 689
+    CEFBS_HasStdExtV, // VFNMSUB_VF = 690
+    CEFBS_HasStdExtV, // VFNMSUB_VV = 691
+    CEFBS_HasStdExtV, // VFRDIV_VF = 692
+    CEFBS_HasStdExtV, // VFREDMAX_VS = 693
+    CEFBS_HasStdExtV, // VFREDMIN_VS = 694
+    CEFBS_HasStdExtV, // VFREDOSUM_VS = 695
+    CEFBS_HasStdExtV, // VFREDSUM_VS = 696
+    CEFBS_HasStdExtV, // VFRSUB_VF = 697
+    CEFBS_HasStdExtV, // VFSGNJN_VF = 698
+    CEFBS_HasStdExtV, // VFSGNJN_VV = 699
+    CEFBS_HasStdExtV, // VFSGNJX_VF = 700
+    CEFBS_HasStdExtV, // VFSGNJX_VV = 701
+    CEFBS_HasStdExtV, // VFSGNJ_VF = 702
+    CEFBS_HasStdExtV, // VFSGNJ_VV = 703
+    CEFBS_HasStdExtV, // VFSQRT_V = 704
+    CEFBS_HasStdExtV, // VFSUB_VF = 705
+    CEFBS_HasStdExtV, // VFSUB_VV = 706
+    CEFBS_HasStdExtV, // VFWADD_VF = 707
+    CEFBS_HasStdExtV, // VFWADD_VV = 708
+    CEFBS_HasStdExtV, // VFWADD_WF = 709
+    CEFBS_HasStdExtV, // VFWADD_WV = 710
+    CEFBS_HasStdExtV, // VFWCVT_F_F_V = 711
+    CEFBS_HasStdExtV, // VFWCVT_F_XU_V = 712
+    CEFBS_HasStdExtV, // VFWCVT_F_X_V = 713
+    CEFBS_HasStdExtV, // VFWCVT_XU_F_V = 714
+    CEFBS_HasStdExtV, // VFWCVT_X_F_V = 715
+    CEFBS_HasStdExtV, // VFWMACC_VF = 716
+    CEFBS_HasStdExtV, // VFWMACC_VV = 717
+    CEFBS_HasStdExtV, // VFWMSAC_VF = 718
+    CEFBS_HasStdExtV, // VFWMSAC_VV = 719
+    CEFBS_HasStdExtV, // VFWMUL_VF = 720
+    CEFBS_HasStdExtV, // VFWMUL_VV = 721
+    CEFBS_HasStdExtV, // VFWNMACC_VF = 722
+    CEFBS_HasStdExtV, // VFWNMACC_VV = 723
+    CEFBS_HasStdExtV, // VFWNMSAC_VF = 724
+    CEFBS_HasStdExtV, // VFWNMSAC_VV = 725
+    CEFBS_HasStdExtV, // VFWREDOSUM_VS = 726
+    CEFBS_HasStdExtV, // VFWREDSUM_VS = 727
+    CEFBS_HasStdExtV, // VFWSUB_VF = 728
+    CEFBS_HasStdExtV, // VFWSUB_VV = 729
+    CEFBS_HasStdExtV, // VFWSUB_WF = 730
+    CEFBS_HasStdExtV, // VFWSUB_WV = 731
+    CEFBS_HasStdExtV, // VID_V = 732
+    CEFBS_HasStdExtV, // VIOTA_M = 733
+    CEFBS_HasStdExtV, // VL1R_V = 734
+    CEFBS_HasStdExtV, // VLBFF_V = 735
+    CEFBS_HasStdExtV, // VLBUFF_V = 736
+    CEFBS_HasStdExtV, // VLBU_V = 737
+    CEFBS_HasStdExtV, // VLB_V = 738
+    CEFBS_HasStdExtV, // VLEFF_V = 739
+    CEFBS_HasStdExtV, // VLE_V = 740
+    CEFBS_HasStdExtV, // VLHFF_V = 741
+    CEFBS_HasStdExtV, // VLHUFF_V = 742
+    CEFBS_HasStdExtV, // VLHU_V = 743
+    CEFBS_HasStdExtV, // VLH_V = 744
+    CEFBS_HasStdExtV, // VLSBU_V = 745
+    CEFBS_HasStdExtV, // VLSB_V = 746
+    CEFBS_HasStdExtV, // VLSE_V = 747
+    CEFBS_HasStdExtV, // VLSHU_V = 748
+    CEFBS_HasStdExtV, // VLSH_V = 749
+    CEFBS_HasStdExtV, // VLSWU_V = 750
+    CEFBS_HasStdExtV, // VLSW_V = 751
+    CEFBS_HasStdExtV, // VLWFF_V = 752
+    CEFBS_HasStdExtV, // VLWUFF_V = 753
+    CEFBS_HasStdExtV, // VLWU_V = 754
+    CEFBS_HasStdExtV, // VLW_V = 755
+    CEFBS_HasStdExtV, // VLXBU_V = 756
+    CEFBS_HasStdExtV, // VLXB_V = 757
+    CEFBS_HasStdExtV, // VLXE_V = 758
+    CEFBS_HasStdExtV, // VLXHU_V = 759
+    CEFBS_HasStdExtV, // VLXH_V = 760
+    CEFBS_HasStdExtV, // VLXWU_V = 761
+    CEFBS_HasStdExtV, // VLXW_V = 762
+    CEFBS_HasStdExtV, // VMACC_VV = 763
+    CEFBS_HasStdExtV, // VMACC_VX = 764
+    CEFBS_HasStdExtV, // VMADC_VI = 765
+    CEFBS_HasStdExtV, // VMADC_VIM = 766
+    CEFBS_HasStdExtV, // VMADC_VV = 767
+    CEFBS_HasStdExtV, // VMADC_VVM = 768
+    CEFBS_HasStdExtV, // VMADC_VX = 769
+    CEFBS_HasStdExtV, // VMADC_VXM = 770
+    CEFBS_HasStdExtV, // VMADD_VV = 771
+    CEFBS_HasStdExtV, // VMADD_VX = 772
+    CEFBS_HasStdExtV, // VMANDNOT_MM = 773
+    CEFBS_HasStdExtV, // VMAND_MM = 774
+    CEFBS_HasStdExtV, // VMAXU_VV = 775
+    CEFBS_HasStdExtV, // VMAXU_VX = 776
+    CEFBS_HasStdExtV, // VMAX_VV = 777
+    CEFBS_HasStdExtV, // VMAX_VX = 778
+    CEFBS_HasStdExtV, // VMERGE_VIM = 779
+    CEFBS_HasStdExtV, // VMERGE_VVM = 780
+    CEFBS_HasStdExtV, // VMERGE_VXM = 781
+    CEFBS_HasStdExtV, // VMFEQ_VF = 782
+    CEFBS_HasStdExtV, // VMFEQ_VV = 783
+    CEFBS_HasStdExtV, // VMFGE_VF = 784
+    CEFBS_HasStdExtV, // VMFGT_VF = 785
+    CEFBS_HasStdExtV, // VMFLE_VF = 786
+    CEFBS_HasStdExtV, // VMFLE_VV = 787
+    CEFBS_HasStdExtV, // VMFLT_VF = 788
+    CEFBS_HasStdExtV, // VMFLT_VV = 789
+    CEFBS_HasStdExtV, // VMFNE_VF = 790
+    CEFBS_HasStdExtV, // VMFNE_VV = 791
+    CEFBS_HasStdExtV, // VMINU_VV = 792
+    CEFBS_HasStdExtV, // VMINU_VX = 793
+    CEFBS_HasStdExtV, // VMIN_VV = 794
+    CEFBS_HasStdExtV, // VMIN_VX = 795
+    CEFBS_HasStdExtV, // VMNAND_MM = 796
+    CEFBS_HasStdExtV, // VMNOR_MM = 797
+    CEFBS_HasStdExtV, // VMORNOT_MM = 798
+    CEFBS_HasStdExtV, // VMOR_MM = 799
+    CEFBS_HasStdExtV, // VMSBC_VV = 800
+    CEFBS_HasStdExtV, // VMSBC_VVM = 801
+    CEFBS_HasStdExtV, // VMSBC_VX = 802
+    CEFBS_HasStdExtV, // VMSBC_VXM = 803
+    CEFBS_HasStdExtV, // VMSBF_M = 804
+    CEFBS_HasStdExtV, // VMSEQ_VI = 805
+    CEFBS_HasStdExtV, // VMSEQ_VV = 806
+    CEFBS_HasStdExtV, // VMSEQ_VX = 807
+    CEFBS_HasStdExtV, // VMSGTU_VI = 808
+    CEFBS_HasStdExtV, // VMSGTU_VX = 809
+    CEFBS_HasStdExtV, // VMSGT_VI = 810
+    CEFBS_HasStdExtV, // VMSGT_VX = 811
+    CEFBS_HasStdExtV, // VMSIF_M = 812
+    CEFBS_HasStdExtV, // VMSLEU_VI = 813
+    CEFBS_HasStdExtV, // VMSLEU_VV = 814
+    CEFBS_HasStdExtV, // VMSLEU_VX = 815
+    CEFBS_HasStdExtV, // VMSLE_VI = 816
+    CEFBS_HasStdExtV, // VMSLE_VV = 817
+    CEFBS_HasStdExtV, // VMSLE_VX = 818
+    CEFBS_HasStdExtV, // VMSLTU_VV = 819
+    CEFBS_HasStdExtV, // VMSLTU_VX = 820
+    CEFBS_HasStdExtV, // VMSLT_VV = 821
+    CEFBS_HasStdExtV, // VMSLT_VX = 822
+    CEFBS_HasStdExtV, // VMSNE_VI = 823
+    CEFBS_HasStdExtV, // VMSNE_VV = 824
+    CEFBS_HasStdExtV, // VMSNE_VX = 825
+    CEFBS_HasStdExtV, // VMSOF_M = 826
+    CEFBS_HasStdExtV, // VMULHSU_VV = 827
+    CEFBS_HasStdExtV, // VMULHSU_VX = 828
+    CEFBS_HasStdExtV, // VMULHU_VV = 829
+    CEFBS_HasStdExtV, // VMULHU_VX = 830
+    CEFBS_HasStdExtV, // VMULH_VV = 831
+    CEFBS_HasStdExtV, // VMULH_VX = 832
+    CEFBS_HasStdExtV, // VMUL_VV = 833
+    CEFBS_HasStdExtV, // VMUL_VX = 834
+    CEFBS_HasStdExtV, // VMV1R_V = 835
+    CEFBS_HasStdExtV, // VMV2R_V = 836
+    CEFBS_HasStdExtV, // VMV4R_V = 837
+    CEFBS_HasStdExtV, // VMV8R_V = 838
+    CEFBS_HasStdExtV, // VMV_S_X = 839
+    CEFBS_HasStdExtV, // VMV_V_I = 840
+    CEFBS_HasStdExtV, // VMV_V_V = 841
+    CEFBS_HasStdExtV, // VMV_V_X = 842
+    CEFBS_HasStdExtV, // VMV_X_S = 843
+    CEFBS_HasStdExtV, // VMXNOR_MM = 844
+    CEFBS_HasStdExtV, // VMXOR_MM = 845
+    CEFBS_HasStdExtV, // VNCLIPU_WI = 846
+    CEFBS_HasStdExtV, // VNCLIPU_WV = 847
+    CEFBS_HasStdExtV, // VNCLIPU_WX = 848
+    CEFBS_HasStdExtV, // VNCLIP_WI = 849
+    CEFBS_HasStdExtV, // VNCLIP_WV = 850
+    CEFBS_HasStdExtV, // VNCLIP_WX = 851
+    CEFBS_HasStdExtV, // VNMSAC_VV = 852
+    CEFBS_HasStdExtV, // VNMSAC_VX = 853
+    CEFBS_HasStdExtV, // VNMSUB_VV = 854
+    CEFBS_HasStdExtV, // VNMSUB_VX = 855
+    CEFBS_HasStdExtV, // VNSRA_WI = 856
+    CEFBS_HasStdExtV, // VNSRA_WV = 857
+    CEFBS_HasStdExtV, // VNSRA_WX = 858
+    CEFBS_HasStdExtV, // VNSRL_WI = 859
+    CEFBS_HasStdExtV, // VNSRL_WV = 860
+    CEFBS_HasStdExtV, // VNSRL_WX = 861
+    CEFBS_HasStdExtV, // VOR_VI = 862
+    CEFBS_HasStdExtV, // VOR_VV = 863
+    CEFBS_HasStdExtV, // VOR_VX = 864
+    CEFBS_HasStdExtV, // VPOPC_M = 865
+    CEFBS_HasStdExtV, // VREDAND_VS = 866
+    CEFBS_HasStdExtV, // VREDMAXU_VS = 867
+    CEFBS_HasStdExtV, // VREDMAX_VS = 868
+    CEFBS_HasStdExtV, // VREDMINU_VS = 869
+    CEFBS_HasStdExtV, // VREDMIN_VS = 870
+    CEFBS_HasStdExtV, // VREDOR_VS = 871
+    CEFBS_HasStdExtV, // VREDSUM_VS = 872
+    CEFBS_HasStdExtV, // VREDXOR_VS = 873
+    CEFBS_HasStdExtV, // VREMU_VV = 874
+    CEFBS_HasStdExtV, // VREMU_VX = 875
+    CEFBS_HasStdExtV, // VREM_VV = 876
+    CEFBS_HasStdExtV, // VREM_VX = 877
+    CEFBS_HasStdExtV, // VRGATHER_VI = 878
+    CEFBS_HasStdExtV, // VRGATHER_VV = 879
+    CEFBS_HasStdExtV, // VRGATHER_VX = 880
+    CEFBS_HasStdExtV, // VRSUB_VI = 881
+    CEFBS_HasStdExtV, // VRSUB_VX = 882
+    CEFBS_HasStdExtV, // VS1R_V = 883
+    CEFBS_HasStdExtV, // VSADDU_VI = 884
+    CEFBS_HasStdExtV, // VSADDU_VV = 885
+    CEFBS_HasStdExtV, // VSADDU_VX = 886
+    CEFBS_HasStdExtV, // VSADD_VI = 887
+    CEFBS_HasStdExtV, // VSADD_VV = 888
+    CEFBS_HasStdExtV, // VSADD_VX = 889
+    CEFBS_HasStdExtV, // VSBC_VVM = 890
+    CEFBS_HasStdExtV, // VSBC_VXM = 891
+    CEFBS_HasStdExtV, // VSB_V = 892
+    CEFBS_HasStdExtV, // VSETVL = 893
+    CEFBS_HasStdExtV, // VSETVLI = 894
+    CEFBS_HasStdExtV, // VSE_V = 895
+    CEFBS_HasStdExtV, // VSH_V = 896
+    CEFBS_HasStdExtV, // VSLIDE1DOWN_VX = 897
+    CEFBS_HasStdExtV, // VSLIDE1UP_VX = 898
+    CEFBS_HasStdExtV, // VSLIDEDOWN_VI = 899
+    CEFBS_HasStdExtV, // VSLIDEDOWN_VX = 900
+    CEFBS_HasStdExtV, // VSLIDEUP_VI = 901
+    CEFBS_HasStdExtV, // VSLIDEUP_VX = 902
+    CEFBS_HasStdExtV, // VSLL_VI = 903
+    CEFBS_HasStdExtV, // VSLL_VV = 904
+    CEFBS_HasStdExtV, // VSLL_VX = 905
+    CEFBS_HasStdExtV, // VSMUL_VV = 906
+    CEFBS_HasStdExtV, // VSMUL_VX = 907
+    CEFBS_HasStdExtV, // VSRA_VI = 908
+    CEFBS_HasStdExtV, // VSRA_VV = 909
+    CEFBS_HasStdExtV, // VSRA_VX = 910
+    CEFBS_HasStdExtV, // VSRL_VI = 911
+    CEFBS_HasStdExtV, // VSRL_VV = 912
+    CEFBS_HasStdExtV, // VSRL_VX = 913
+    CEFBS_HasStdExtV, // VSSB_V = 914
+    CEFBS_HasStdExtV, // VSSE_V = 915
+    CEFBS_HasStdExtV, // VSSH_V = 916
+    CEFBS_HasStdExtV, // VSSRA_VI = 917
+    CEFBS_HasStdExtV, // VSSRA_VV = 918
+    CEFBS_HasStdExtV, // VSSRA_VX = 919
+    CEFBS_HasStdExtV, // VSSRL_VI = 920
+    CEFBS_HasStdExtV, // VSSRL_VV = 921
+    CEFBS_HasStdExtV, // VSSRL_VX = 922
+    CEFBS_HasStdExtV, // VSSUBU_VV = 923
+    CEFBS_HasStdExtV, // VSSUBU_VX = 924
+    CEFBS_HasStdExtV, // VSSUB_VV = 925
+    CEFBS_HasStdExtV, // VSSUB_VX = 926
+    CEFBS_HasStdExtV, // VSSW_V = 927
+    CEFBS_HasStdExtV, // VSUB_VV = 928
+    CEFBS_HasStdExtV, // VSUB_VX = 929
+    CEFBS_HasStdExtV, // VSUXB_V = 930
+    CEFBS_HasStdExtV, // VSUXE_V = 931
+    CEFBS_HasStdExtV, // VSUXH_V = 932
+    CEFBS_HasStdExtV, // VSUXW_V = 933
+    CEFBS_HasStdExtV, // VSW_V = 934
+    CEFBS_HasStdExtV, // VSXB_V = 935
+    CEFBS_HasStdExtV, // VSXE_V = 936
+    CEFBS_HasStdExtV, // VSXH_V = 937
+    CEFBS_HasStdExtV, // VSXW_V = 938
+    CEFBS_HasStdExtV, // VWADDU_VV = 939
+    CEFBS_HasStdExtV, // VWADDU_VX = 940
+    CEFBS_HasStdExtV, // VWADDU_WV = 941
+    CEFBS_HasStdExtV, // VWADDU_WX = 942
+    CEFBS_HasStdExtV, // VWADD_VV = 943
+    CEFBS_HasStdExtV, // VWADD_VX = 944
+    CEFBS_HasStdExtV, // VWADD_WV = 945
+    CEFBS_HasStdExtV, // VWADD_WX = 946
+    CEFBS_HasStdExtV, // VWMACCSU_VV = 947
+    CEFBS_HasStdExtV, // VWMACCSU_VX = 948
+    CEFBS_HasStdExtV, // VWMACCUS_VX = 949
+    CEFBS_HasStdExtV, // VWMACCU_VV = 950
+    CEFBS_HasStdExtV, // VWMACCU_VX = 951
+    CEFBS_HasStdExtV, // VWMACC_VV = 952
+    CEFBS_HasStdExtV, // VWMACC_VX = 953
+    CEFBS_HasStdExtV, // VWMULSU_VV = 954
+    CEFBS_HasStdExtV, // VWMULSU_VX = 955
+    CEFBS_HasStdExtV, // VWMULU_VV = 956
+    CEFBS_HasStdExtV, // VWMULU_VX = 957
+    CEFBS_HasStdExtV, // VWMUL_VV = 958
+    CEFBS_HasStdExtV, // VWMUL_VX = 959
+    CEFBS_HasStdExtV, // VWREDSUMU_VS = 960
+    CEFBS_HasStdExtV, // VWREDSUM_VS = 961
+    CEFBS_HasStdExtV, // VWSUBU_VV = 962
+    CEFBS_HasStdExtV, // VWSUBU_VX = 963
+    CEFBS_HasStdExtV, // VWSUBU_WV = 964
+    CEFBS_HasStdExtV, // VWSUBU_WX = 965
+    CEFBS_HasStdExtV, // VWSUB_VV = 966
+    CEFBS_HasStdExtV, // VWSUB_VX = 967
+    CEFBS_HasStdExtV, // VWSUB_WV = 968
+    CEFBS_HasStdExtV, // VWSUB_WX = 969
+    CEFBS_HasStdExtV, // VXOR_VI = 970
+    CEFBS_HasStdExtV, // VXOR_VV = 971
+    CEFBS_HasStdExtV, // VXOR_VX = 972
+    CEFBS_None, // WFI = 973
+    CEFBS_HasStdExtZbbOrZbp, // XNOR = 974
+    CEFBS_None, // XOR = 975
+    CEFBS_None, // XORI = 976
   };
 
-  assert(Inst.getOpcode() < 512);
+  assert(Inst.getOpcode() < 977);
   const FeatureBitset &RequiredFeatures = FeatureBitsets[RequiredFeaturesRefs[Inst.getOpcode()]];
   FeatureBitset MissingFeatures =
       (AvailableFeatures & RequiredFeatures) ^

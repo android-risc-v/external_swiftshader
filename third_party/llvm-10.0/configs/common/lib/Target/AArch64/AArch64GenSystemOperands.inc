@@ -187,342 +187,6 @@ enum SVEPRFMValues {
 
 #ifdef GET_SYSREG_DECL
 enum SysRegValues {
-  TRCRSCTLR15 = 35064,
-  TRCRSCTLR16 = 34945,
-  TRCRSCTLR17 = 34953,
-  TRCRSCTLR18 = 34961,
-  TRCRSCTLR19 = 34969,
-  TRCRSCTLR20 = 34977,
-  TRCRSCTLR21 = 34985,
-  TRCRSCTLR22 = 34993,
-  TRCRSCTLR23 = 35001,
-  TRCRSCTLR24 = 35009,
-  TRCRSCTLR25 = 35017,
-  TRCRSCTLR26 = 35025,
-  TRCRSCTLR27 = 35033,
-  TRCRSCTLR28 = 35041,
-  TRCRSCTLR29 = 35049,
-  TRCRSCTLR30 = 35057,
-  TRCRSCTLR31 = 35065,
-  TRCSSCCR0 = 34946,
-  TRCSSCCR1 = 34954,
-  TRCSSCCR2 = 34962,
-  TRCSSCCR3 = 34970,
-  TRCSSCCR4 = 34978,
-  TRCSSCCR5 = 34986,
-  TRCSSCCR6 = 34994,
-  TRCSSCCR7 = 35002,
-  TRCSSCSR0 = 35010,
-  TRCSSCSR1 = 35018,
-  TRCSSCSR2 = 35026,
-  TRCSSCSR3 = 35034,
-  TRCSSCSR4 = 35042,
-  TRCSSCSR5 = 35050,
-  TRCSSCSR6 = 35058,
-  TRCSSCSR7 = 35066,
-  TRCSSPCICR0 = 34947,
-  TRCSSPCICR1 = 34955,
-  TRCSSPCICR2 = 34963,
-  TRCSSPCICR3 = 34971,
-  TRCSSPCICR4 = 34979,
-  TRCSSPCICR5 = 34987,
-  TRCSSPCICR6 = 34995,
-  TRCSSPCICR7 = 35003,
-  TRCPDCR = 34980,
-  TRCACVR0 = 35072,
-  TRCACVR1 = 35088,
-  TRCACVR2 = 35104,
-  TRCACVR3 = 35120,
-  TRCACVR4 = 35136,
-  TRCACVR5 = 35152,
-  TRCACVR6 = 35168,
-  TRCACVR7 = 35184,
-  TRCACVR8 = 35073,
-  TRCACVR9 = 35089,
-  TRCACVR10 = 35105,
-  TRCACVR11 = 35121,
-  TRCACVR12 = 35137,
-  TRCACVR13 = 35153,
-  TRCACVR14 = 35169,
-  TRCACVR15 = 35185,
-  TRCACATR0 = 35074,
-  TRCACATR1 = 35090,
-  TRCACATR2 = 35106,
-  TRCACATR3 = 35122,
-  TRCACATR4 = 35138,
-  TRCACATR5 = 35154,
-  TRCACATR6 = 35170,
-  TRCACATR7 = 35186,
-  TRCACATR8 = 35075,
-  TRCACATR9 = 35091,
-  TRCACATR10 = 35107,
-  TRCACATR11 = 35123,
-  TRCACATR12 = 35139,
-  TRCACATR13 = 35155,
-  TRCACATR14 = 35171,
-  TRCACATR15 = 35187,
-  TRCDVCVR0 = 35076,
-  TRCDVCVR1 = 35108,
-  TRCDVCVR2 = 35140,
-  TRCDVCVR3 = 35172,
-  TRCDVCVR4 = 35077,
-  TRCDVCVR5 = 35109,
-  TRCDVCVR6 = 35141,
-  TRCDVCVR7 = 35173,
-  TRCDVCMR0 = 35078,
-  TRCDVCMR1 = 35110,
-  TRCDVCMR2 = 35142,
-  TRCDVCMR3 = 35174,
-  TRCDVCMR4 = 35079,
-  TRCDVCMR5 = 35111,
-  TRCDVCMR6 = 35143,
-  TRCDVCMR7 = 35175,
-  TRCCIDCVR0 = 35200,
-  TRCCIDCVR1 = 35216,
-  TRCCIDCVR2 = 35232,
-  TRCCIDCVR3 = 35248,
-  TRCCIDCVR4 = 35264,
-  TRCCIDCVR5 = 35280,
-  TRCCIDCVR6 = 35296,
-  TRCCIDCVR7 = 35312,
-  TRCVMIDCVR0 = 35201,
-  TRCVMIDCVR1 = 35217,
-  TRCVMIDCVR2 = 35233,
-  TRCVMIDCVR3 = 35249,
-  TRCVMIDCVR4 = 35265,
-  TRCVMIDCVR5 = 35281,
-  TRCVMIDCVR6 = 35297,
-  TRCVMIDCVR7 = 35313,
-  TRCCIDCCTLR0 = 35202,
-  TRCCIDCCTLR1 = 35210,
-  TRCVMIDCCTLR0 = 35218,
-  TRCVMIDCCTLR1 = 35226,
-  TRCITCTRL = 35716,
-  TRCCLAIMSET = 35782,
-  TRCCLAIMCLR = 35790,
-  ICC_BPR1_EL1 = 50787,
-  ICC_BPR0_EL1 = 50755,
-  ICC_PMR_EL1 = 49712,
-  ICC_CTLR_EL1 = 50788,
-  ICC_CTLR_EL3 = 63076,
-  ICC_SRE_EL1 = 50789,
-  ICC_SRE_EL2 = 58957,
-  ICC_SRE_EL3 = 63077,
-  ICC_IGRPEN0_EL1 = 50790,
-  ICC_IGRPEN1_EL1 = 50791,
-  ICC_IGRPEN1_EL3 = 63079,
-  ICC_AP0R0_EL1 = 50756,
-  ICC_AP0R1_EL1 = 50757,
-  ICC_AP0R2_EL1 = 50758,
-  ICC_AP0R3_EL1 = 50759,
-  ICC_AP1R0_EL1 = 50760,
-  ICC_AP1R1_EL1 = 50761,
-  ICC_AP1R2_EL1 = 50762,
-  ICC_AP1R3_EL1 = 50763,
-  ICH_AP0R0_EL2 = 58944,
-  ICH_AP0R1_EL2 = 58945,
-  ICH_AP0R2_EL2 = 58946,
-  ICH_AP0R3_EL2 = 58947,
-  ICH_AP1R0_EL2 = 58952,
-  ICH_AP1R1_EL2 = 58953,
-  ICH_AP1R2_EL2 = 58954,
-  ICH_AP1R3_EL2 = 58955,
-  ICH_HCR_EL2 = 58968,
-  ICH_MISR_EL2 = 58970,
-  ICH_VMCR_EL2 = 58975,
-  ICH_LR0_EL2 = 58976,
-  ICH_LR1_EL2 = 58977,
-  ICH_LR2_EL2 = 58978,
-  ICH_LR3_EL2 = 58979,
-  ICH_LR4_EL2 = 58980,
-  ICH_LR5_EL2 = 58981,
-  ICH_LR6_EL2 = 58982,
-  ICH_LR7_EL2 = 58983,
-  ICH_LR8_EL2 = 58984,
-  ICH_LR9_EL2 = 58985,
-  ICH_LR10_EL2 = 58986,
-  ICH_LR11_EL2 = 58987,
-  ICH_LR12_EL2 = 58988,
-  ICH_LR13_EL2 = 58989,
-  ICH_LR14_EL2 = 58990,
-  ICH_LR15_EL2 = 58991,
-  PAN = 49683,
-  LORSA_EL1 = 50464,
-  LOREA_EL1 = 50465,
-  LORN_EL1 = 50466,
-  LORC_EL1 = 50467,
-  TTBR1_EL2 = 57601,
-  CONTEXTIDR_EL2 = 59009,
-  CNTHV_TVAL_EL2 = 59160,
-  CNTHV_CVAL_EL2 = 59162,
-  CNTHV_CTL_EL2 = 59161,
-  SCTLR_EL12 = 59520,
-  CPACR_EL12 = 59522,
-  TTBR0_EL12 = 59648,
-  TTBR1_EL12 = 59649,
-  TCR_EL12 = 59650,
-  AFSR0_EL12 = 60040,
-  AFSR1_EL12 = 60041,
-  ESR_EL12 = 60048,
-  FAR_EL12 = 60160,
-  MAIR_EL12 = 60688,
-  AMAIR_EL12 = 60696,
-  VBAR_EL12 = 60928,
-  CONTEXTIDR_EL12 = 61057,
-  CNTKCTL_EL12 = 61192,
-  CNTP_TVAL_EL02 = 61200,
-  CNTP_CTL_EL02 = 61201,
-  CNTP_CVAL_EL02 = 61202,
-  CNTV_TVAL_EL02 = 61208,
-  CNTV_CTL_EL02 = 61209,
-  CNTV_CVAL_EL02 = 61210,
-  SPSR_EL12 = 59904,
-  ELR_EL12 = 59905,
-  UAO = 49684,
-  PMBLIMITR_EL1 = 50384,
-  PMBPTR_EL1 = 50385,
-  PMBSR_EL1 = 50387,
-  PMBIDR_EL1 = 50391,
-  PMSCR_EL2 = 58568,
-  PMSCR_EL12 = 60616,
-  PMSCR_EL1 = 50376,
-  PMSICR_EL1 = 50378,
-  PMSIRR_EL1 = 50379,
-  PMSFCR_EL1 = 50380,
-  PMSEVFR_EL1 = 50381,
-  PMSLATFR_EL1 = 50382,
-  PMSIDR_EL1 = 50383,
-  ERRSELR_EL1 = 49817,
-  ERXCTLR_EL1 = 49825,
-  ERXSTATUS_EL1 = 49826,
-  ERXADDR_EL1 = 49827,
-  ERXMISC0_EL1 = 49832,
-  ERXMISC1_EL1 = 49833,
-  DISR_EL1 = 50697,
-  VDISR_EL2 = 58889,
-  VSESR_EL2 = 58003,
-  APIAKeyLo_EL1 = 49416,
-  APIAKeyHi_EL1 = 49417,
-  APIBKeyLo_EL1 = 49418,
-  APIBKeyHi_EL1 = 49419,
-  APDAKeyLo_EL1 = 49424,
-  APDAKeyHi_EL1 = 49425,
-  APDBKeyLo_EL1 = 49426,
-  APDBKeyHi_EL1 = 49427,
-  APGAKeyLo_EL1 = 49432,
-  APGAKeyHi_EL1 = 49433,
-  VSTCR_EL2 = 57650,
-  VSTTBR_EL2 = 57648,
-  CNTHVS_TVAL_EL2 = 59168,
-  CNTHVS_CVAL_EL2 = 59170,
-  CNTHVS_CTL_EL2 = 59169,
-  CNTHPS_TVAL_EL2 = 59176,
-  CNTHPS_CVAL_EL2 = 59178,
-  CNTHPS_CTL_EL2 = 59177,
-  SDER32_EL2 = 57497,
-  PMMIR_EL1 = 50422,
-  ERXPFGCTL_EL1 = 49829,
-  ERXPFGCDN_EL1 = 49830,
-  ERXTS_EL1 = 49839,
-  ERXMISC2_EL1 = 49834,
-  ERXMISC3_EL1 = 49835,
-  ERXPFGF_EL1 = 49828,
-  MPAM0_EL1 = 50473,
-  MPAM1_EL1 = 50472,
-  MPAM2_EL2 = 58664,
-  MPAM3_EL3 = 62760,
-  MPAM1_EL12 = 60712,
-  MPAMHCR_EL2 = 58656,
-  MPAMVPMV_EL2 = 58657,
-  MPAMVPM0_EL2 = 58672,
-  MPAMVPM1_EL2 = 58673,
-  MPAMVPM2_EL2 = 58674,
-  MPAMVPM3_EL2 = 58675,
-  MPAMVPM4_EL2 = 58676,
-  MPAMVPM5_EL2 = 58677,
-  MPAMVPM6_EL2 = 58678,
-  MPAMVPM7_EL2 = 58679,
-  MPAMIDR_EL1 = 50468,
-  AMCR_EL0 = 56976,
-  AMCFGR_EL0 = 56977,
-  AMCGCR_EL0 = 56978,
-  AMUSERENR_EL0 = 56979,
-  AMCNTENCLR0_EL0 = 56980,
-  AMCNTENSET0_EL0 = 56981,
-  AMEVCNTR00_EL0 = 56992,
-  AMEVCNTR01_EL0 = 56993,
-  AMEVCNTR02_EL0 = 56994,
-  AMEVCNTR03_EL0 = 56995,
-  AMEVTYPER00_EL0 = 57008,
-  AMEVTYPER01_EL0 = 57009,
-  AMEVTYPER02_EL0 = 57010,
-  AMEVTYPER03_EL0 = 57011,
-  AMCNTENCLR1_EL0 = 56984,
-  AMCNTENSET1_EL0 = 56985,
-  AMEVCNTR10_EL0 = 57056,
-  AMEVCNTR11_EL0 = 57057,
-  AMEVCNTR12_EL0 = 57058,
-  AMEVCNTR13_EL0 = 57059,
-  AMEVCNTR14_EL0 = 57060,
-  AMEVCNTR15_EL0 = 57061,
-  AMEVCNTR16_EL0 = 57062,
-  AMEVCNTR17_EL0 = 57063,
-  AMEVCNTR18_EL0 = 57064,
-  AMEVCNTR19_EL0 = 57065,
-  AMEVCNTR110_EL0 = 57066,
-  AMEVCNTR111_EL0 = 57067,
-  AMEVCNTR112_EL0 = 57068,
-  AMEVCNTR113_EL0 = 57069,
-  AMEVCNTR114_EL0 = 57070,
-  AMEVCNTR115_EL0 = 57071,
-  AMEVTYPER10_EL0 = 57072,
-  AMEVTYPER11_EL0 = 57073,
-  AMEVTYPER12_EL0 = 57074,
-  AMEVTYPER13_EL0 = 57075,
-  AMEVTYPER14_EL0 = 57076,
-  AMEVTYPER15_EL0 = 57077,
-  AMEVTYPER16_EL0 = 57078,
-  AMEVTYPER17_EL0 = 57079,
-  AMEVTYPER18_EL0 = 57080,
-  AMEVTYPER19_EL0 = 57081,
-  AMEVTYPER110_EL0 = 57082,
-  AMEVTYPER111_EL0 = 57083,
-  AMEVTYPER112_EL0 = 57084,
-  AMEVTYPER113_EL0 = 57085,
-  AMEVTYPER114_EL0 = 57086,
-  AMEVTYPER115_EL0 = 57087,
-  TRFCR_EL1 = 49297,
-  TRFCR_EL2 = 57489,
-  TRFCR_EL12 = 59537,
-  DIT = 55829,
-  VNCR_EL2 = 57616,
-  ZCR_EL1 = 49296,
-  ZCR_EL2 = 57488,
-  ZCR_EL3 = 61584,
-  ZCR_EL12 = 59536,
-  SSBS = 55830,
-  TCO = 55831,
-  GCR_EL1 = 49286,
-  RGSR_EL1 = 49285,
-  TFSR_EL1 = 49840,
-  TFSR_EL2 = 58032,
-  TFSR_EL3 = 62128,
-  TFSR_EL12 = 60080,
-  TFSRE0_EL1 = 49841,
-  GMID_EL1 = 51204,
-  TRCRSR = 34896,
-  TRCEXTINSELR0 = 34884,
-  TRCEXTINSELR1 = 34892,
-  TRCEXTINSELR2 = 34900,
-  TRCEXTINSELR3 = 34908,
-  TRBLIMITR_EL1 = 50392,
-  TRBPTR_EL1 = 50393,
-  TRBBASER_EL1 = 50394,
-  TRBSR_EL1 = 50395,
-  TRBMAR_EL1 = 50396,
-  TRBTRG_EL1 = 50398,
-  TRBIDR_EL1 = 50399,
-  CPM_IOACC_CTL_EL3 = 65424,
   MDCCSR_EL0 = 38920,
   DBGDTRRX_EL0 = 38952,
   MDRAR_EL1 = 32896,
@@ -954,6 +618,384 @@ enum SysRegValues {
   TRCRSCTLR12 = 35040,
   TRCRSCTLR13 = 35048,
   TRCRSCTLR14 = 35056,
+  TRCRSCTLR15 = 35064,
+  TRCRSCTLR16 = 34945,
+  TRCRSCTLR17 = 34953,
+  TRCRSCTLR18 = 34961,
+  TRCRSCTLR19 = 34969,
+  TRCRSCTLR20 = 34977,
+  TRCRSCTLR21 = 34985,
+  TRCRSCTLR22 = 34993,
+  TRCRSCTLR23 = 35001,
+  TRCRSCTLR24 = 35009,
+  TRCRSCTLR25 = 35017,
+  TRCRSCTLR26 = 35025,
+  TRCRSCTLR27 = 35033,
+  TRCRSCTLR28 = 35041,
+  TRCRSCTLR29 = 35049,
+  TRCRSCTLR30 = 35057,
+  TRCRSCTLR31 = 35065,
+  TRCSSCCR0 = 34946,
+  TRCSSCCR1 = 34954,
+  TRCSSCCR2 = 34962,
+  TRCSSCCR3 = 34970,
+  TRCSSCCR4 = 34978,
+  TRCSSCCR5 = 34986,
+  TRCSSCCR6 = 34994,
+  TRCSSCCR7 = 35002,
+  TRCSSCSR0 = 35010,
+  TRCSSCSR1 = 35018,
+  TRCSSCSR2 = 35026,
+  TRCSSCSR3 = 35034,
+  TRCSSCSR4 = 35042,
+  TRCSSCSR5 = 35050,
+  TRCSSCSR6 = 35058,
+  TRCSSCSR7 = 35066,
+  TRCSSPCICR0 = 34947,
+  TRCSSPCICR1 = 34955,
+  TRCSSPCICR2 = 34963,
+  TRCSSPCICR3 = 34971,
+  TRCSSPCICR4 = 34979,
+  TRCSSPCICR5 = 34987,
+  TRCSSPCICR6 = 34995,
+  TRCSSPCICR7 = 35003,
+  TRCPDCR = 34980,
+  TRCACVR0 = 35072,
+  TRCACVR1 = 35088,
+  TRCACVR2 = 35104,
+  TRCACVR3 = 35120,
+  TRCACVR4 = 35136,
+  TRCACVR5 = 35152,
+  TRCACVR6 = 35168,
+  TRCACVR7 = 35184,
+  TRCACVR8 = 35073,
+  TRCACVR9 = 35089,
+  TRCACVR10 = 35105,
+  TRCACVR11 = 35121,
+  TRCACVR12 = 35137,
+  TRCACVR13 = 35153,
+  TRCACVR14 = 35169,
+  TRCACVR15 = 35185,
+  TRCACATR0 = 35074,
+  TRCACATR1 = 35090,
+  TRCACATR2 = 35106,
+  TRCACATR3 = 35122,
+  TRCACATR4 = 35138,
+  TRCACATR5 = 35154,
+  TRCACATR6 = 35170,
+  TRCACATR7 = 35186,
+  TRCACATR8 = 35075,
+  TRCACATR9 = 35091,
+  TRCACATR10 = 35107,
+  TRCACATR11 = 35123,
+  TRCACATR12 = 35139,
+  TRCACATR13 = 35155,
+  TRCACATR14 = 35171,
+  TRCACATR15 = 35187,
+  TRCDVCVR0 = 35076,
+  TRCDVCVR1 = 35108,
+  TRCDVCVR2 = 35140,
+  TRCDVCVR3 = 35172,
+  TRCDVCVR4 = 35077,
+  TRCDVCVR5 = 35109,
+  TRCDVCVR6 = 35141,
+  TRCDVCVR7 = 35173,
+  TRCDVCMR0 = 35078,
+  TRCDVCMR1 = 35110,
+  TRCDVCMR2 = 35142,
+  TRCDVCMR3 = 35174,
+  TRCDVCMR4 = 35079,
+  TRCDVCMR5 = 35111,
+  TRCDVCMR6 = 35143,
+  TRCDVCMR7 = 35175,
+  TRCCIDCVR0 = 35200,
+  TRCCIDCVR1 = 35216,
+  TRCCIDCVR2 = 35232,
+  TRCCIDCVR3 = 35248,
+  TRCCIDCVR4 = 35264,
+  TRCCIDCVR5 = 35280,
+  TRCCIDCVR6 = 35296,
+  TRCCIDCVR7 = 35312,
+  TRCVMIDCVR0 = 35201,
+  TRCVMIDCVR1 = 35217,
+  TRCVMIDCVR2 = 35233,
+  TRCVMIDCVR3 = 35249,
+  TRCVMIDCVR4 = 35265,
+  TRCVMIDCVR5 = 35281,
+  TRCVMIDCVR6 = 35297,
+  TRCVMIDCVR7 = 35313,
+  TRCCIDCCTLR0 = 35202,
+  TRCCIDCCTLR1 = 35210,
+  TRCVMIDCCTLR0 = 35218,
+  TRCVMIDCCTLR1 = 35226,
+  TRCITCTRL = 35716,
+  TRCCLAIMSET = 35782,
+  TRCCLAIMCLR = 35790,
+  ICC_BPR1_EL1 = 50787,
+  ICC_BPR0_EL1 = 50755,
+  ICC_PMR_EL1 = 49712,
+  ICC_CTLR_EL1 = 50788,
+  ICC_CTLR_EL3 = 63076,
+  ICC_SRE_EL1 = 50789,
+  ICC_SRE_EL2 = 58957,
+  ICC_SRE_EL3 = 63077,
+  ICC_IGRPEN0_EL1 = 50790,
+  ICC_IGRPEN1_EL1 = 50791,
+  ICC_IGRPEN1_EL3 = 63079,
+  ICC_AP0R0_EL1 = 50756,
+  ICC_AP0R1_EL1 = 50757,
+  ICC_AP0R2_EL1 = 50758,
+  ICC_AP0R3_EL1 = 50759,
+  ICC_AP1R0_EL1 = 50760,
+  ICC_AP1R1_EL1 = 50761,
+  ICC_AP1R2_EL1 = 50762,
+  ICC_AP1R3_EL1 = 50763,
+  ICH_AP0R0_EL2 = 58944,
+  ICH_AP0R1_EL2 = 58945,
+  ICH_AP0R2_EL2 = 58946,
+  ICH_AP0R3_EL2 = 58947,
+  ICH_AP1R0_EL2 = 58952,
+  ICH_AP1R1_EL2 = 58953,
+  ICH_AP1R2_EL2 = 58954,
+  ICH_AP1R3_EL2 = 58955,
+  ICH_HCR_EL2 = 58968,
+  ICH_MISR_EL2 = 58970,
+  ICH_VMCR_EL2 = 58975,
+  ICH_LR0_EL2 = 58976,
+  ICH_LR1_EL2 = 58977,
+  ICH_LR2_EL2 = 58978,
+  ICH_LR3_EL2 = 58979,
+  ICH_LR4_EL2 = 58980,
+  ICH_LR5_EL2 = 58981,
+  ICH_LR6_EL2 = 58982,
+  ICH_LR7_EL2 = 58983,
+  ICH_LR8_EL2 = 58984,
+  ICH_LR9_EL2 = 58985,
+  ICH_LR10_EL2 = 58986,
+  ICH_LR11_EL2 = 58987,
+  ICH_LR12_EL2 = 58988,
+  ICH_LR13_EL2 = 58989,
+  ICH_LR14_EL2 = 58990,
+  ICH_LR15_EL2 = 58991,
+  PAN = 49683,
+  LORSA_EL1 = 50464,
+  LOREA_EL1 = 50465,
+  LORN_EL1 = 50466,
+  LORC_EL1 = 50467,
+  TTBR1_EL2 = 57601,
+  CONTEXTIDR_EL2 = 59009,
+  CNTHV_TVAL_EL2 = 59160,
+  CNTHV_CVAL_EL2 = 59162,
+  CNTHV_CTL_EL2 = 59161,
+  SCTLR_EL12 = 59520,
+  CPACR_EL12 = 59522,
+  TTBR0_EL12 = 59648,
+  TTBR1_EL12 = 59649,
+  TCR_EL12 = 59650,
+  AFSR0_EL12 = 60040,
+  AFSR1_EL12 = 60041,
+  ESR_EL12 = 60048,
+  FAR_EL12 = 60160,
+  MAIR_EL12 = 60688,
+  AMAIR_EL12 = 60696,
+  VBAR_EL12 = 60928,
+  CONTEXTIDR_EL12 = 61057,
+  CNTKCTL_EL12 = 61192,
+  CNTP_TVAL_EL02 = 61200,
+  CNTP_CTL_EL02 = 61201,
+  CNTP_CVAL_EL02 = 61202,
+  CNTV_TVAL_EL02 = 61208,
+  CNTV_CTL_EL02 = 61209,
+  CNTV_CVAL_EL02 = 61210,
+  SPSR_EL12 = 59904,
+  ELR_EL12 = 59905,
+  UAO = 49684,
+  PMBLIMITR_EL1 = 50384,
+  PMBPTR_EL1 = 50385,
+  PMBSR_EL1 = 50387,
+  PMBIDR_EL1 = 50391,
+  PMSCR_EL2 = 58568,
+  PMSCR_EL12 = 60616,
+  PMSCR_EL1 = 50376,
+  PMSICR_EL1 = 50378,
+  PMSIRR_EL1 = 50379,
+  PMSFCR_EL1 = 50380,
+  PMSEVFR_EL1 = 50381,
+  PMSLATFR_EL1 = 50382,
+  PMSIDR_EL1 = 50383,
+  ERRSELR_EL1 = 49817,
+  ERXCTLR_EL1 = 49825,
+  ERXSTATUS_EL1 = 49826,
+  ERXADDR_EL1 = 49827,
+  ERXMISC0_EL1 = 49832,
+  ERXMISC1_EL1 = 49833,
+  DISR_EL1 = 50697,
+  VDISR_EL2 = 58889,
+  VSESR_EL2 = 58003,
+  APIAKeyLo_EL1 = 49416,
+  APIAKeyHi_EL1 = 49417,
+  APIBKeyLo_EL1 = 49418,
+  APIBKeyHi_EL1 = 49419,
+  APDAKeyLo_EL1 = 49424,
+  APDAKeyHi_EL1 = 49425,
+  APDBKeyLo_EL1 = 49426,
+  APDBKeyHi_EL1 = 49427,
+  APGAKeyLo_EL1 = 49432,
+  APGAKeyHi_EL1 = 49433,
+  VSTCR_EL2 = 57650,
+  VSTTBR_EL2 = 57648,
+  CNTHVS_TVAL_EL2 = 59168,
+  CNTHVS_CVAL_EL2 = 59170,
+  CNTHVS_CTL_EL2 = 59169,
+  CNTHPS_TVAL_EL2 = 59176,
+  CNTHPS_CVAL_EL2 = 59178,
+  CNTHPS_CTL_EL2 = 59177,
+  SDER32_EL2 = 57497,
+  PMMIR_EL1 = 50422,
+  ERXPFGCTL_EL1 = 49829,
+  ERXPFGCDN_EL1 = 49830,
+  ERXMISC2_EL1 = 49834,
+  ERXMISC3_EL1 = 49835,
+  ERXPFGF_EL1 = 49828,
+  MPAM0_EL1 = 50473,
+  MPAM1_EL1 = 50472,
+  MPAM2_EL2 = 58664,
+  MPAM3_EL3 = 62760,
+  MPAM1_EL12 = 60712,
+  MPAMHCR_EL2 = 58656,
+  MPAMVPMV_EL2 = 58657,
+  MPAMVPM0_EL2 = 58672,
+  MPAMVPM1_EL2 = 58673,
+  MPAMVPM2_EL2 = 58674,
+  MPAMVPM3_EL2 = 58675,
+  MPAMVPM4_EL2 = 58676,
+  MPAMVPM5_EL2 = 58677,
+  MPAMVPM6_EL2 = 58678,
+  MPAMVPM7_EL2 = 58679,
+  MPAMIDR_EL1 = 50468,
+  AMCR_EL0 = 56976,
+  AMCFGR_EL0 = 56977,
+  AMCGCR_EL0 = 56978,
+  AMUSERENR_EL0 = 56979,
+  AMCNTENCLR0_EL0 = 56980,
+  AMCNTENSET0_EL0 = 56981,
+  AMEVCNTR00_EL0 = 56992,
+  AMEVCNTR01_EL0 = 56993,
+  AMEVCNTR02_EL0 = 56994,
+  AMEVCNTR03_EL0 = 56995,
+  AMEVTYPER00_EL0 = 57008,
+  AMEVTYPER01_EL0 = 57009,
+  AMEVTYPER02_EL0 = 57010,
+  AMEVTYPER03_EL0 = 57011,
+  AMCNTENCLR1_EL0 = 56984,
+  AMCNTENSET1_EL0 = 56985,
+  AMEVCNTR10_EL0 = 57056,
+  AMEVCNTR11_EL0 = 57057,
+  AMEVCNTR12_EL0 = 57058,
+  AMEVCNTR13_EL0 = 57059,
+  AMEVCNTR14_EL0 = 57060,
+  AMEVCNTR15_EL0 = 57061,
+  AMEVCNTR16_EL0 = 57062,
+  AMEVCNTR17_EL0 = 57063,
+  AMEVCNTR18_EL0 = 57064,
+  AMEVCNTR19_EL0 = 57065,
+  AMEVCNTR110_EL0 = 57066,
+  AMEVCNTR111_EL0 = 57067,
+  AMEVCNTR112_EL0 = 57068,
+  AMEVCNTR113_EL0 = 57069,
+  AMEVCNTR114_EL0 = 57070,
+  AMEVCNTR115_EL0 = 57071,
+  AMEVTYPER10_EL0 = 57072,
+  AMEVTYPER11_EL0 = 57073,
+  AMEVTYPER12_EL0 = 57074,
+  AMEVTYPER13_EL0 = 57075,
+  AMEVTYPER14_EL0 = 57076,
+  AMEVTYPER15_EL0 = 57077,
+  AMEVTYPER16_EL0 = 57078,
+  AMEVTYPER17_EL0 = 57079,
+  AMEVTYPER18_EL0 = 57080,
+  AMEVTYPER19_EL0 = 57081,
+  AMEVTYPER110_EL0 = 57082,
+  AMEVTYPER111_EL0 = 57083,
+  AMEVTYPER112_EL0 = 57084,
+  AMEVTYPER113_EL0 = 57085,
+  AMEVTYPER114_EL0 = 57086,
+  AMEVTYPER115_EL0 = 57087,
+  TRFCR_EL1 = 49297,
+  TRFCR_EL2 = 57489,
+  TRFCR_EL12 = 59537,
+  DIT = 55829,
+  VNCR_EL2 = 57616,
+  ZCR_EL1 = 49296,
+  ZCR_EL2 = 57488,
+  ZCR_EL3 = 61584,
+  ZCR_EL12 = 59536,
+  SSBS = 55830,
+  TCO = 55831,
+  GCR_EL1 = 49286,
+  RGSR_EL1 = 49285,
+  TFSR_EL1 = 49840,
+  TFSR_EL2 = 58032,
+  TFSR_EL3 = 62128,
+  TFSR_EL12 = 60080,
+  TFSRE0_EL1 = 49841,
+  GMID_EL1 = 51204,
+  TRCRSR = 34896,
+  TRCEXTINSELR0 = 34884,
+  TRCEXTINSELR1 = 34892,
+  TRCEXTINSELR2 = 34900,
+  TRCEXTINSELR3 = 34908,
+  TRBLIMITR_EL1 = 50392,
+  TRBPTR_EL1 = 50393,
+  TRBBASER_EL1 = 50394,
+  TRBSR_EL1 = 50395,
+  TRBMAR_EL1 = 50396,
+  TRBTRG_EL1 = 50398,
+  TRBIDR_EL1 = 50399,
+  AMEVCNTVOFF00_EL2 = 59072,
+  AMEVCNTVOFF10_EL2 = 59088,
+  AMEVCNTVOFF01_EL2 = 59073,
+  AMEVCNTVOFF11_EL2 = 59089,
+  AMEVCNTVOFF02_EL2 = 59074,
+  AMEVCNTVOFF12_EL2 = 59090,
+  AMEVCNTVOFF03_EL2 = 59075,
+  AMEVCNTVOFF13_EL2 = 59091,
+  AMEVCNTVOFF04_EL2 = 59076,
+  AMEVCNTVOFF14_EL2 = 59092,
+  AMEVCNTVOFF05_EL2 = 59077,
+  AMEVCNTVOFF15_EL2 = 59093,
+  AMEVCNTVOFF06_EL2 = 59078,
+  AMEVCNTVOFF16_EL2 = 59094,
+  AMEVCNTVOFF07_EL2 = 59079,
+  AMEVCNTVOFF17_EL2 = 59095,
+  AMEVCNTVOFF08_EL2 = 59080,
+  AMEVCNTVOFF18_EL2 = 59096,
+  AMEVCNTVOFF09_EL2 = 59081,
+  AMEVCNTVOFF19_EL2 = 59097,
+  AMEVCNTVOFF010_EL2 = 59082,
+  AMEVCNTVOFF110_EL2 = 59098,
+  AMEVCNTVOFF011_EL2 = 59083,
+  AMEVCNTVOFF111_EL2 = 59099,
+  AMEVCNTVOFF012_EL2 = 59084,
+  AMEVCNTVOFF112_EL2 = 59100,
+  AMEVCNTVOFF013_EL2 = 59085,
+  AMEVCNTVOFF113_EL2 = 59101,
+  AMEVCNTVOFF014_EL2 = 59086,
+  AMEVCNTVOFF114_EL2 = 59102,
+  AMEVCNTVOFF015_EL2 = 59087,
+  AMEVCNTVOFF115_EL2 = 59103,
+  HFGRTR_EL2 = 57484,
+  HFGWTR_EL2 = 57485,
+  HFGITR_EL2 = 57486,
+  HDFGRTR_EL2 = 57740,
+  HDFGWTR_EL2 = 57741,
+  CNTSCALE_EL2 = 59140,
+  CNTISCALE_EL2 = 59141,
+  CNTPOFF_EL2 = 59142,
+  CNTVFRQ_EL2 = 59143,
+  CNTPCTSS_EL0 = 57093,
+  CNTVCTSS_EL0 = 57094,
+  CPM_IOACC_CTL_EL3 = 65424,
 };
 #endif
 
@@ -2249,773 +2291,815 @@ const SysReg *lookupSysRegByEncoding(uint16_t Encoding);
 
 #ifdef GET_SYSREG_IMPL
 constexpr SysReg SysRegsList[] = {
-  { "TRCRSCTLR15", 0x88F8, true, true,  {}  }, // 0
-  { "TRCRSCTLR16", 0x8881, true, true,  {}  }, // 1
-  { "TRCRSCTLR17", 0x8889, true, true,  {}  }, // 2
-  { "TRCRSCTLR18", 0x8891, true, true,  {}  }, // 3
-  { "TRCRSCTLR19", 0x8899, true, true,  {}  }, // 4
-  { "TRCRSCTLR20", 0x88A1, true, true,  {}  }, // 5
-  { "TRCRSCTLR21", 0x88A9, true, true,  {}  }, // 6
-  { "TRCRSCTLR22", 0x88B1, true, true,  {}  }, // 7
-  { "TRCRSCTLR23", 0x88B9, true, true,  {}  }, // 8
-  { "TRCRSCTLR24", 0x88C1, true, true,  {}  }, // 9
-  { "TRCRSCTLR25", 0x88C9, true, true,  {}  }, // 10
-  { "TRCRSCTLR26", 0x88D1, true, true,  {}  }, // 11
-  { "TRCRSCTLR27", 0x88D9, true, true,  {}  }, // 12
-  { "TRCRSCTLR28", 0x88E1, true, true,  {}  }, // 13
-  { "TRCRSCTLR29", 0x88E9, true, true,  {}  }, // 14
-  { "TRCRSCTLR30", 0x88F1, true, true,  {}  }, // 15
-  { "TRCRSCTLR31", 0x88F9, true, true,  {}  }, // 16
-  { "TRCSSCCR0", 0x8882, true, true,  {}  }, // 17
-  { "TRCSSCCR1", 0x888A, true, true,  {}  }, // 18
-  { "TRCSSCCR2", 0x8892, true, true,  {}  }, // 19
-  { "TRCSSCCR3", 0x889A, true, true,  {}  }, // 20
-  { "TRCSSCCR4", 0x88A2, true, true,  {}  }, // 21
-  { "TRCSSCCR5", 0x88AA, true, true,  {}  }, // 22
-  { "TRCSSCCR6", 0x88B2, true, true,  {}  }, // 23
-  { "TRCSSCCR7", 0x88BA, true, true,  {}  }, // 24
-  { "TRCSSCSR0", 0x88C2, true, true,  {}  }, // 25
-  { "TRCSSCSR1", 0x88CA, true, true,  {}  }, // 26
-  { "TRCSSCSR2", 0x88D2, true, true,  {}  }, // 27
-  { "TRCSSCSR3", 0x88DA, true, true,  {}  }, // 28
-  { "TRCSSCSR4", 0x88E2, true, true,  {}  }, // 29
-  { "TRCSSCSR5", 0x88EA, true, true,  {}  }, // 30
-  { "TRCSSCSR6", 0x88F2, true, true,  {}  }, // 31
-  { "TRCSSCSR7", 0x88FA, true, true,  {}  }, // 32
-  { "TRCSSPCICR0", 0x8883, true, true,  {}  }, // 33
-  { "TRCSSPCICR1", 0x888B, true, true,  {}  }, // 34
-  { "TRCSSPCICR2", 0x8893, true, true,  {}  }, // 35
-  { "TRCSSPCICR3", 0x889B, true, true,  {}  }, // 36
-  { "TRCSSPCICR4", 0x88A3, true, true,  {}  }, // 37
-  { "TRCSSPCICR5", 0x88AB, true, true,  {}  }, // 38
-  { "TRCSSPCICR6", 0x88B3, true, true,  {}  }, // 39
-  { "TRCSSPCICR7", 0x88BB, true, true,  {}  }, // 40
-  { "TRCPDCR", 0x88A4, true, true,  {}  }, // 41
-  { "TRCACVR0", 0x8900, true, true,  {}  }, // 42
-  { "TRCACVR1", 0x8910, true, true,  {}  }, // 43
-  { "TRCACVR2", 0x8920, true, true,  {}  }, // 44
-  { "TRCACVR3", 0x8930, true, true,  {}  }, // 45
-  { "TRCACVR4", 0x8940, true, true,  {}  }, // 46
-  { "TRCACVR5", 0x8950, true, true,  {}  }, // 47
-  { "TRCACVR6", 0x8960, true, true,  {}  }, // 48
-  { "TRCACVR7", 0x8970, true, true,  {}  }, // 49
-  { "TRCACVR8", 0x8901, true, true,  {}  }, // 50
-  { "TRCACVR9", 0x8911, true, true,  {}  }, // 51
-  { "TRCACVR10", 0x8921, true, true,  {}  }, // 52
-  { "TRCACVR11", 0x8931, true, true,  {}  }, // 53
-  { "TRCACVR12", 0x8941, true, true,  {}  }, // 54
-  { "TRCACVR13", 0x8951, true, true,  {}  }, // 55
-  { "TRCACVR14", 0x8961, true, true,  {}  }, // 56
-  { "TRCACVR15", 0x8971, true, true,  {}  }, // 57
-  { "TRCACATR0", 0x8902, true, true,  {}  }, // 58
-  { "TRCACATR1", 0x8912, true, true,  {}  }, // 59
-  { "TRCACATR2", 0x8922, true, true,  {}  }, // 60
-  { "TRCACATR3", 0x8932, true, true,  {}  }, // 61
-  { "TRCACATR4", 0x8942, true, true,  {}  }, // 62
-  { "TRCACATR5", 0x8952, true, true,  {}  }, // 63
-  { "TRCACATR6", 0x8962, true, true,  {}  }, // 64
-  { "TRCACATR7", 0x8972, true, true,  {}  }, // 65
-  { "TRCACATR8", 0x8903, true, true,  {}  }, // 66
-  { "TRCACATR9", 0x8913, true, true,  {}  }, // 67
-  { "TRCACATR10", 0x8923, true, true,  {}  }, // 68
-  { "TRCACATR11", 0x8933, true, true,  {}  }, // 69
-  { "TRCACATR12", 0x8943, true, true,  {}  }, // 70
-  { "TRCACATR13", 0x8953, true, true,  {}  }, // 71
-  { "TRCACATR14", 0x8963, true, true,  {}  }, // 72
-  { "TRCACATR15", 0x8973, true, true,  {}  }, // 73
-  { "TRCDVCVR0", 0x8904, true, true,  {}  }, // 74
-  { "TRCDVCVR1", 0x8924, true, true,  {}  }, // 75
-  { "TRCDVCVR2", 0x8944, true, true,  {}  }, // 76
-  { "TRCDVCVR3", 0x8964, true, true,  {}  }, // 77
-  { "TRCDVCVR4", 0x8905, true, true,  {}  }, // 78
-  { "TRCDVCVR5", 0x8925, true, true,  {}  }, // 79
-  { "TRCDVCVR6", 0x8945, true, true,  {}  }, // 80
-  { "TRCDVCVR7", 0x8965, true, true,  {}  }, // 81
-  { "TRCDVCMR0", 0x8906, true, true,  {}  }, // 82
-  { "TRCDVCMR1", 0x8926, true, true,  {}  }, // 83
-  { "TRCDVCMR2", 0x8946, true, true,  {}  }, // 84
-  { "TRCDVCMR3", 0x8966, true, true,  {}  }, // 85
-  { "TRCDVCMR4", 0x8907, true, true,  {}  }, // 86
-  { "TRCDVCMR5", 0x8927, true, true,  {}  }, // 87
-  { "TRCDVCMR6", 0x8947, true, true,  {}  }, // 88
-  { "TRCDVCMR7", 0x8967, true, true,  {}  }, // 89
-  { "TRCCIDCVR0", 0x8980, true, true,  {}  }, // 90
-  { "TRCCIDCVR1", 0x8990, true, true,  {}  }, // 91
-  { "TRCCIDCVR2", 0x89A0, true, true,  {}  }, // 92
-  { "TRCCIDCVR3", 0x89B0, true, true,  {}  }, // 93
-  { "TRCCIDCVR4", 0x89C0, true, true,  {}  }, // 94
-  { "TRCCIDCVR5", 0x89D0, true, true,  {}  }, // 95
-  { "TRCCIDCVR6", 0x89E0, true, true,  {}  }, // 96
-  { "TRCCIDCVR7", 0x89F0, true, true,  {}  }, // 97
-  { "TRCVMIDCVR0", 0x8981, true, true,  {}  }, // 98
-  { "TRCVMIDCVR1", 0x8991, true, true,  {}  }, // 99
-  { "TRCVMIDCVR2", 0x89A1, true, true,  {}  }, // 100
-  { "TRCVMIDCVR3", 0x89B1, true, true,  {}  }, // 101
-  { "TRCVMIDCVR4", 0x89C1, true, true,  {}  }, // 102
-  { "TRCVMIDCVR5", 0x89D1, true, true,  {}  }, // 103
-  { "TRCVMIDCVR6", 0x89E1, true, true,  {}  }, // 104
-  { "TRCVMIDCVR7", 0x89F1, true, true,  {}  }, // 105
-  { "TRCCIDCCTLR0", 0x8982, true, true,  {}  }, // 106
-  { "TRCCIDCCTLR1", 0x898A, true, true,  {}  }, // 107
-  { "TRCVMIDCCTLR0", 0x8992, true, true,  {}  }, // 108
-  { "TRCVMIDCCTLR1", 0x899A, true, true,  {}  }, // 109
-  { "TRCITCTRL", 0x8B84, true, true,  {}  }, // 110
-  { "TRCCLAIMSET", 0x8BC6, true, true,  {}  }, // 111
-  { "TRCCLAIMCLR", 0x8BCE, true, true,  {}  }, // 112
-  { "ICC_BPR1_EL1", 0xC663, true, true,  {}  }, // 113
-  { "ICC_BPR0_EL1", 0xC643, true, true,  {}  }, // 114
-  { "ICC_PMR_EL1", 0xC230, true, true,  {}  }, // 115
-  { "ICC_CTLR_EL1", 0xC664, true, true,  {}  }, // 116
-  { "ICC_CTLR_EL3", 0xF664, true, true,  {}  }, // 117
-  { "ICC_SRE_EL1", 0xC665, true, true,  {}  }, // 118
-  { "ICC_SRE_EL2", 0xE64D, true, true,  {}  }, // 119
-  { "ICC_SRE_EL3", 0xF665, true, true,  {}  }, // 120
-  { "ICC_IGRPEN0_EL1", 0xC666, true, true,  {}  }, // 121
-  { "ICC_IGRPEN1_EL1", 0xC667, true, true,  {}  }, // 122
-  { "ICC_IGRPEN1_EL3", 0xF667, true, true,  {}  }, // 123
-  { "ICC_AP0R0_EL1", 0xC644, true, true,  {}  }, // 124
-  { "ICC_AP0R1_EL1", 0xC645, true, true,  {}  }, // 125
-  { "ICC_AP0R2_EL1", 0xC646, true, true,  {}  }, // 126
-  { "ICC_AP0R3_EL1", 0xC647, true, true,  {}  }, // 127
-  { "ICC_AP1R0_EL1", 0xC648, true, true,  {}  }, // 128
-  { "ICC_AP1R1_EL1", 0xC649, true, true,  {}  }, // 129
-  { "ICC_AP1R2_EL1", 0xC64A, true, true,  {}  }, // 130
-  { "ICC_AP1R3_EL1", 0xC64B, true, true,  {}  }, // 131
-  { "ICH_AP0R0_EL2", 0xE640, true, true,  {}  }, // 132
-  { "ICH_AP0R1_EL2", 0xE641, true, true,  {}  }, // 133
-  { "ICH_AP0R2_EL2", 0xE642, true, true,  {}  }, // 134
-  { "ICH_AP0R3_EL2", 0xE643, true, true,  {}  }, // 135
-  { "ICH_AP1R0_EL2", 0xE648, true, true,  {}  }, // 136
-  { "ICH_AP1R1_EL2", 0xE649, true, true,  {}  }, // 137
-  { "ICH_AP1R2_EL2", 0xE64A, true, true,  {}  }, // 138
-  { "ICH_AP1R3_EL2", 0xE64B, true, true,  {}  }, // 139
-  { "ICH_HCR_EL2", 0xE658, true, true,  {}  }, // 140
-  { "ICH_MISR_EL2", 0xE65A, true, true,  {}  }, // 141
-  { "ICH_VMCR_EL2", 0xE65F, true, true,  {}  }, // 142
-  { "ICH_LR0_EL2", 0xE660, true, true,  {}  }, // 143
-  { "ICH_LR1_EL2", 0xE661, true, true,  {}  }, // 144
-  { "ICH_LR2_EL2", 0xE662, true, true,  {}  }, // 145
-  { "ICH_LR3_EL2", 0xE663, true, true,  {}  }, // 146
-  { "ICH_LR4_EL2", 0xE664, true, true,  {}  }, // 147
-  { "ICH_LR5_EL2", 0xE665, true, true,  {}  }, // 148
-  { "ICH_LR6_EL2", 0xE666, true, true,  {}  }, // 149
-  { "ICH_LR7_EL2", 0xE667, true, true,  {}  }, // 150
-  { "ICH_LR8_EL2", 0xE668, true, true,  {}  }, // 151
-  { "ICH_LR9_EL2", 0xE669, true, true,  {}  }, // 152
-  { "ICH_LR10_EL2", 0xE66A, true, true,  {}  }, // 153
-  { "ICH_LR11_EL2", 0xE66B, true, true,  {}  }, // 154
-  { "ICH_LR12_EL2", 0xE66C, true, true,  {}  }, // 155
-  { "ICH_LR13_EL2", 0xE66D, true, true,  {}  }, // 156
-  { "ICH_LR14_EL2", 0xE66E, true, true,  {}  }, // 157
-  { "ICH_LR15_EL2", 0xE66F, true, true,  {}  }, // 158
-  { "PAN", 0xC213, true, true,  {AArch64::FeaturePAN}  }, // 159
-  { "LORSA_EL1", 0xC520, true, true,  {AArch64::FeatureLOR}  }, // 160
-  { "LOREA_EL1", 0xC521, true, true,  {AArch64::FeatureLOR}  }, // 161
-  { "LORN_EL1", 0xC522, true, true,  {AArch64::FeatureLOR}  }, // 162
-  { "LORC_EL1", 0xC523, true, true,  {AArch64::FeatureLOR}  }, // 163
-  { "TTBR1_EL2", 0xE101, true, true,  {AArch64::FeatureVH}  }, // 164
-  { "CONTEXTIDR_EL2", 0xE681, true, true,  {AArch64::FeatureVH}  }, // 165
-  { "CNTHV_TVAL_EL2", 0xE718, true, true,  {AArch64::FeatureVH}  }, // 166
-  { "CNTHV_CVAL_EL2", 0xE71A, true, true,  {AArch64::FeatureVH}  }, // 167
-  { "CNTHV_CTL_EL2", 0xE719, true, true,  {AArch64::FeatureVH}  }, // 168
-  { "SCTLR_EL12", 0xE880, true, true,  {AArch64::FeatureVH}  }, // 169
-  { "CPACR_EL12", 0xE882, true, true,  {AArch64::FeatureVH}  }, // 170
-  { "TTBR0_EL12", 0xE900, true, true,  {AArch64::FeatureVH}  }, // 171
-  { "TTBR1_EL12", 0xE901, true, true,  {AArch64::FeatureVH}  }, // 172
-  { "TCR_EL12", 0xE902, true, true,  {AArch64::FeatureVH}  }, // 173
-  { "AFSR0_EL12", 0xEA88, true, true,  {AArch64::FeatureVH}  }, // 174
-  { "AFSR1_EL12", 0xEA89, true, true,  {AArch64::FeatureVH}  }, // 175
-  { "ESR_EL12", 0xEA90, true, true,  {AArch64::FeatureVH}  }, // 176
-  { "FAR_EL12", 0xEB00, true, true,  {AArch64::FeatureVH}  }, // 177
-  { "MAIR_EL12", 0xED10, true, true,  {AArch64::FeatureVH}  }, // 178
-  { "AMAIR_EL12", 0xED18, true, true,  {AArch64::FeatureVH}  }, // 179
-  { "VBAR_EL12", 0xEE00, true, true,  {AArch64::FeatureVH}  }, // 180
-  { "CONTEXTIDR_EL12", 0xEE81, true, true,  {AArch64::FeatureVH}  }, // 181
-  { "CNTKCTL_EL12", 0xEF08, true, true,  {AArch64::FeatureVH}  }, // 182
-  { "CNTP_TVAL_EL02", 0xEF10, true, true,  {AArch64::FeatureVH}  }, // 183
-  { "CNTP_CTL_EL02", 0xEF11, true, true,  {AArch64::FeatureVH}  }, // 184
-  { "CNTP_CVAL_EL02", 0xEF12, true, true,  {AArch64::FeatureVH}  }, // 185
-  { "CNTV_TVAL_EL02", 0xEF18, true, true,  {AArch64::FeatureVH}  }, // 186
-  { "CNTV_CTL_EL02", 0xEF19, true, true,  {AArch64::FeatureVH}  }, // 187
-  { "CNTV_CVAL_EL02", 0xEF1A, true, true,  {AArch64::FeatureVH}  }, // 188
-  { "SPSR_EL12", 0xEA00, true, true,  {AArch64::FeatureVH}  }, // 189
-  { "ELR_EL12", 0xEA01, true, true,  {AArch64::FeatureVH}  }, // 190
-  { "UAO", 0xC214, true, true,  {AArch64::FeaturePsUAO}  }, // 191
-  { "PMBLIMITR_EL1", 0xC4D0, true, true,  {AArch64::FeatureSPE}  }, // 192
-  { "PMBPTR_EL1", 0xC4D1, true, true,  {AArch64::FeatureSPE}  }, // 193
-  { "PMBSR_EL1", 0xC4D3, true, true,  {AArch64::FeatureSPE}  }, // 194
-  { "PMBIDR_EL1", 0xC4D7, true, true,  {AArch64::FeatureSPE}  }, // 195
-  { "PMSCR_EL2", 0xE4C8, true, true,  {AArch64::FeatureSPE}  }, // 196
-  { "PMSCR_EL12", 0xECC8, true, true,  {AArch64::FeatureSPE}  }, // 197
-  { "PMSCR_EL1", 0xC4C8, true, true,  {AArch64::FeatureSPE}  }, // 198
-  { "PMSICR_EL1", 0xC4CA, true, true,  {AArch64::FeatureSPE}  }, // 199
-  { "PMSIRR_EL1", 0xC4CB, true, true,  {AArch64::FeatureSPE}  }, // 200
-  { "PMSFCR_EL1", 0xC4CC, true, true,  {AArch64::FeatureSPE}  }, // 201
-  { "PMSEVFR_EL1", 0xC4CD, true, true,  {AArch64::FeatureSPE}  }, // 202
-  { "PMSLATFR_EL1", 0xC4CE, true, true,  {AArch64::FeatureSPE}  }, // 203
-  { "PMSIDR_EL1", 0xC4CF, true, true,  {AArch64::FeatureSPE}  }, // 204
-  { "ERRSELR_EL1", 0xC299, true, true,  {AArch64::FeatureRAS}  }, // 205
-  { "ERXCTLR_EL1", 0xC2A1, true, true,  {AArch64::FeatureRAS}  }, // 206
-  { "ERXSTATUS_EL1", 0xC2A2, true, true,  {AArch64::FeatureRAS}  }, // 207
-  { "ERXADDR_EL1", 0xC2A3, true, true,  {AArch64::FeatureRAS}  }, // 208
-  { "ERXMISC0_EL1", 0xC2A8, true, true,  {AArch64::FeatureRAS}  }, // 209
-  { "ERXMISC1_EL1", 0xC2A9, true, true,  {AArch64::FeatureRAS}  }, // 210
-  { "DISR_EL1", 0xC609, true, true,  {AArch64::FeatureRAS}  }, // 211
-  { "VDISR_EL2", 0xE609, true, true,  {AArch64::FeatureRAS}  }, // 212
-  { "VSESR_EL2", 0xE293, true, true,  {AArch64::FeatureRAS}  }, // 213
-  { "APIAKeyLo_EL1", 0xC108, true, true,  {AArch64::FeaturePA}  }, // 214
-  { "APIAKeyHi_EL1", 0xC109, true, true,  {AArch64::FeaturePA}  }, // 215
-  { "APIBKeyLo_EL1", 0xC10A, true, true,  {AArch64::FeaturePA}  }, // 216
-  { "APIBKeyHi_EL1", 0xC10B, true, true,  {AArch64::FeaturePA}  }, // 217
-  { "APDAKeyLo_EL1", 0xC110, true, true,  {AArch64::FeaturePA}  }, // 218
-  { "APDAKeyHi_EL1", 0xC111, true, true,  {AArch64::FeaturePA}  }, // 219
-  { "APDBKeyLo_EL1", 0xC112, true, true,  {AArch64::FeaturePA}  }, // 220
-  { "APDBKeyHi_EL1", 0xC113, true, true,  {AArch64::FeaturePA}  }, // 221
-  { "APGAKeyLo_EL1", 0xC118, true, true,  {AArch64::FeaturePA}  }, // 222
-  { "APGAKeyHi_EL1", 0xC119, true, true,  {AArch64::FeaturePA}  }, // 223
-  { "VSTCR_EL2", 0xE132, true, true,  {AArch64::FeatureSEL2}  }, // 224
-  { "VSTTBR_EL2", 0xE130, true, true,  {AArch64::FeatureSEL2}  }, // 225
-  { "CNTHVS_TVAL_EL2", 0xE720, true, true,  {AArch64::FeatureSEL2}  }, // 226
-  { "CNTHVS_CVAL_EL2", 0xE722, true, true,  {AArch64::FeatureSEL2}  }, // 227
-  { "CNTHVS_CTL_EL2", 0xE721, true, true,  {AArch64::FeatureSEL2}  }, // 228
-  { "CNTHPS_TVAL_EL2", 0xE728, true, true,  {AArch64::FeatureSEL2}  }, // 229
-  { "CNTHPS_CVAL_EL2", 0xE72A, true, true,  {AArch64::FeatureSEL2}  }, // 230
-  { "CNTHPS_CTL_EL2", 0xE729, true, true,  {AArch64::FeatureSEL2}  }, // 231
-  { "SDER32_EL2", 0xE099, true, true,  {AArch64::FeatureSEL2}  }, // 232
-  { "PMMIR_EL1", 0xC4F6, true, true,  {AArch64::FeaturePMU}  }, // 233
-  { "ERXPFGCTL_EL1", 0xC2A5, true, true,  {AArch64::FeatureRASv8_4}  }, // 234
-  { "ERXPFGCDN_EL1", 0xC2A6, true, true,  {AArch64::FeatureRASv8_4}  }, // 235
-  { "ERXTS_EL1", 0xC2AF, true, true,  {AArch64::FeatureRASv8_4}  }, // 236
-  { "ERXMISC2_EL1", 0xC2AA, true, true,  {AArch64::FeatureRASv8_4}  }, // 237
-  { "ERXMISC3_EL1", 0xC2AB, true, true,  {AArch64::FeatureRASv8_4}  }, // 238
-  { "ERXPFGF_EL1", 0xC2A4, true, false,  {AArch64::FeatureRASv8_4}  }, // 239
-  { "MPAM0_EL1", 0xC529, true, true,  {AArch64::FeatureMPAM}  }, // 240
-  { "MPAM1_EL1", 0xC528, true, true,  {AArch64::FeatureMPAM}  }, // 241
-  { "MPAM2_EL2", 0xE528, true, true,  {AArch64::FeatureMPAM}  }, // 242
-  { "MPAM3_EL3", 0xF528, true, true,  {AArch64::FeatureMPAM}  }, // 243
-  { "MPAM1_EL12", 0xED28, true, true,  {AArch64::FeatureMPAM}  }, // 244
-  { "MPAMHCR_EL2", 0xE520, true, true,  {AArch64::FeatureMPAM}  }, // 245
-  { "MPAMVPMV_EL2", 0xE521, true, true,  {AArch64::FeatureMPAM}  }, // 246
-  { "MPAMVPM0_EL2", 0xE530, true, true,  {AArch64::FeatureMPAM}  }, // 247
-  { "MPAMVPM1_EL2", 0xE531, true, true,  {AArch64::FeatureMPAM}  }, // 248
-  { "MPAMVPM2_EL2", 0xE532, true, true,  {AArch64::FeatureMPAM}  }, // 249
-  { "MPAMVPM3_EL2", 0xE533, true, true,  {AArch64::FeatureMPAM}  }, // 250
-  { "MPAMVPM4_EL2", 0xE534, true, true,  {AArch64::FeatureMPAM}  }, // 251
-  { "MPAMVPM5_EL2", 0xE535, true, true,  {AArch64::FeatureMPAM}  }, // 252
-  { "MPAMVPM6_EL2", 0xE536, true, true,  {AArch64::FeatureMPAM}  }, // 253
-  { "MPAMVPM7_EL2", 0xE537, true, true,  {AArch64::FeatureMPAM}  }, // 254
-  { "MPAMIDR_EL1", 0xC524, true, false,  {AArch64::FeatureMPAM}  }, // 255
-  { "AMCR_EL0", 0xDE90, true, true,  {AArch64::FeatureAM}  }, // 256
-  { "AMCFGR_EL0", 0xDE91, true, false,  {AArch64::FeatureAM}  }, // 257
-  { "AMCGCR_EL0", 0xDE92, true, false,  {AArch64::FeatureAM}  }, // 258
-  { "AMUSERENR_EL0", 0xDE93, true, true,  {AArch64::FeatureAM}  }, // 259
-  { "AMCNTENCLR0_EL0", 0xDE94, true, true,  {AArch64::FeatureAM}  }, // 260
-  { "AMCNTENSET0_EL0", 0xDE95, true, true,  {AArch64::FeatureAM}  }, // 261
-  { "AMEVCNTR00_EL0", 0xDEA0, true, true,  {AArch64::FeatureAM}  }, // 262
-  { "AMEVCNTR01_EL0", 0xDEA1, true, true,  {AArch64::FeatureAM}  }, // 263
-  { "AMEVCNTR02_EL0", 0xDEA2, true, true,  {AArch64::FeatureAM}  }, // 264
-  { "AMEVCNTR03_EL0", 0xDEA3, true, true,  {AArch64::FeatureAM}  }, // 265
-  { "AMEVTYPER00_EL0", 0xDEB0, true, false,  {AArch64::FeatureAM}  }, // 266
-  { "AMEVTYPER01_EL0", 0xDEB1, true, false,  {AArch64::FeatureAM}  }, // 267
-  { "AMEVTYPER02_EL0", 0xDEB2, true, false,  {AArch64::FeatureAM}  }, // 268
-  { "AMEVTYPER03_EL0", 0xDEB3, true, false,  {AArch64::FeatureAM}  }, // 269
-  { "AMCNTENCLR1_EL0", 0xDE98, true, true,  {AArch64::FeatureAM}  }, // 270
-  { "AMCNTENSET1_EL0", 0xDE99, true, true,  {AArch64::FeatureAM}  }, // 271
-  { "AMEVCNTR10_EL0", 0xDEE0, true, true,  {AArch64::FeatureAM}  }, // 272
-  { "AMEVCNTR11_EL0", 0xDEE1, true, true,  {AArch64::FeatureAM}  }, // 273
-  { "AMEVCNTR12_EL0", 0xDEE2, true, true,  {AArch64::FeatureAM}  }, // 274
-  { "AMEVCNTR13_EL0", 0xDEE3, true, true,  {AArch64::FeatureAM}  }, // 275
-  { "AMEVCNTR14_EL0", 0xDEE4, true, true,  {AArch64::FeatureAM}  }, // 276
-  { "AMEVCNTR15_EL0", 0xDEE5, true, true,  {AArch64::FeatureAM}  }, // 277
-  { "AMEVCNTR16_EL0", 0xDEE6, true, true,  {AArch64::FeatureAM}  }, // 278
-  { "AMEVCNTR17_EL0", 0xDEE7, true, true,  {AArch64::FeatureAM}  }, // 279
-  { "AMEVCNTR18_EL0", 0xDEE8, true, true,  {AArch64::FeatureAM}  }, // 280
-  { "AMEVCNTR19_EL0", 0xDEE9, true, true,  {AArch64::FeatureAM}  }, // 281
-  { "AMEVCNTR110_EL0", 0xDEEA, true, true,  {AArch64::FeatureAM}  }, // 282
-  { "AMEVCNTR111_EL0", 0xDEEB, true, true,  {AArch64::FeatureAM}  }, // 283
-  { "AMEVCNTR112_EL0", 0xDEEC, true, true,  {AArch64::FeatureAM}  }, // 284
-  { "AMEVCNTR113_EL0", 0xDEED, true, true,  {AArch64::FeatureAM}  }, // 285
-  { "AMEVCNTR114_EL0", 0xDEEE, true, true,  {AArch64::FeatureAM}  }, // 286
-  { "AMEVCNTR115_EL0", 0xDEEF, true, true,  {AArch64::FeatureAM}  }, // 287
-  { "AMEVTYPER10_EL0", 0xDEF0, true, true,  {AArch64::FeatureAM}  }, // 288
-  { "AMEVTYPER11_EL0", 0xDEF1, true, true,  {AArch64::FeatureAM}  }, // 289
-  { "AMEVTYPER12_EL0", 0xDEF2, true, true,  {AArch64::FeatureAM}  }, // 290
-  { "AMEVTYPER13_EL0", 0xDEF3, true, true,  {AArch64::FeatureAM}  }, // 291
-  { "AMEVTYPER14_EL0", 0xDEF4, true, true,  {AArch64::FeatureAM}  }, // 292
-  { "AMEVTYPER15_EL0", 0xDEF5, true, true,  {AArch64::FeatureAM}  }, // 293
-  { "AMEVTYPER16_EL0", 0xDEF6, true, true,  {AArch64::FeatureAM}  }, // 294
-  { "AMEVTYPER17_EL0", 0xDEF7, true, true,  {AArch64::FeatureAM}  }, // 295
-  { "AMEVTYPER18_EL0", 0xDEF8, true, true,  {AArch64::FeatureAM}  }, // 296
-  { "AMEVTYPER19_EL0", 0xDEF9, true, true,  {AArch64::FeatureAM}  }, // 297
-  { "AMEVTYPER110_EL0", 0xDEFA, true, true,  {AArch64::FeatureAM}  }, // 298
-  { "AMEVTYPER111_EL0", 0xDEFB, true, true,  {AArch64::FeatureAM}  }, // 299
-  { "AMEVTYPER112_EL0", 0xDEFC, true, true,  {AArch64::FeatureAM}  }, // 300
-  { "AMEVTYPER113_EL0", 0xDEFD, true, true,  {AArch64::FeatureAM}  }, // 301
-  { "AMEVTYPER114_EL0", 0xDEFE, true, true,  {AArch64::FeatureAM}  }, // 302
-  { "AMEVTYPER115_EL0", 0xDEFF, true, true,  {AArch64::FeatureAM}  }, // 303
-  { "TRFCR_EL1", 0xC091, true, true,  {AArch64::FeatureTRACEV8_4}  }, // 304
-  { "TRFCR_EL2", 0xE091, true, true,  {AArch64::FeatureTRACEV8_4}  }, // 305
-  { "TRFCR_EL12", 0xE891, true, true,  {AArch64::FeatureTRACEV8_4}  }, // 306
-  { "DIT", 0xDA15, true, true,  {AArch64::FeatureDIT}  }, // 307
-  { "VNCR_EL2", 0xE110, true, true,  {AArch64::FeatureNV}  }, // 308
-  { "ZCR_EL1", 0xC090, true, true,  {AArch64::FeatureSVE}  }, // 309
-  { "ZCR_EL2", 0xE090, true, true,  {AArch64::FeatureSVE}  }, // 310
-  { "ZCR_EL3", 0xF090, true, true,  {AArch64::FeatureSVE}  }, // 311
-  { "ZCR_EL12", 0xE890, true, true,  {AArch64::FeatureSVE}  }, // 312
-  { "SSBS", 0xDA16, true, true,  {AArch64::FeatureSSBS}  }, // 313
-  { "TCO", 0xDA17, true, true,  {AArch64::FeatureMTE}  }, // 314
-  { "GCR_EL1", 0xC086, true, true,  {AArch64::FeatureMTE}  }, // 315
-  { "RGSR_EL1", 0xC085, true, true,  {AArch64::FeatureMTE}  }, // 316
-  { "TFSR_EL1", 0xC2B0, true, true,  {AArch64::FeatureMTE}  }, // 317
-  { "TFSR_EL2", 0xE2B0, true, true,  {AArch64::FeatureMTE}  }, // 318
-  { "TFSR_EL3", 0xF2B0, true, true,  {AArch64::FeatureMTE}  }, // 319
-  { "TFSR_EL12", 0xEAB0, true, true,  {AArch64::FeatureMTE}  }, // 320
-  { "TFSRE0_EL1", 0xC2B1, true, true,  {AArch64::FeatureMTE}  }, // 321
-  { "GMID_EL1", 0xC804, true, false,  {AArch64::FeatureMTE}  }, // 322
-  { "TRCRSR", 0x8850, true, true,  {AArch64::FeatureETE}  }, // 323
-  { "TRCEXTINSELR0", 0x8844, true, true,  {AArch64::FeatureETE}  }, // 324
-  { "TRCEXTINSELR1", 0x884C, true, true,  {AArch64::FeatureETE}  }, // 325
-  { "TRCEXTINSELR2", 0x8854, true, true,  {AArch64::FeatureETE}  }, // 326
-  { "TRCEXTINSELR3", 0x885C, true, true,  {AArch64::FeatureETE}  }, // 327
-  { "TRBLIMITR_EL1", 0xC4D8, true, true,  {AArch64::FeatureTRBE}  }, // 328
-  { "TRBPTR_EL1", 0xC4D9, true, true,  {AArch64::FeatureTRBE}  }, // 329
-  { "TRBBASER_EL1", 0xC4DA, true, true,  {AArch64::FeatureTRBE}  }, // 330
-  { "TRBSR_EL1", 0xC4DB, true, true,  {AArch64::FeatureTRBE}  }, // 331
-  { "TRBMAR_EL1", 0xC4DC, true, true,  {AArch64::FeatureTRBE}  }, // 332
-  { "TRBTRG_EL1", 0xC4DE, true, true,  {AArch64::FeatureTRBE}  }, // 333
-  { "TRBIDR_EL1", 0xC4DF, true, false,  {AArch64::FeatureTRBE}  }, // 334
-  { "CPM_IOACC_CTL_EL3", 0xFF90, true, true,  {AArch64::ProcAppleA7}  }, // 335
-  { "MDCCSR_EL0", 0x9808, true, false,  {}  }, // 336
-  { "DBGDTRRX_EL0", 0x9828, true, false,  {}  }, // 337
-  { "MDRAR_EL1", 0x8080, true, false,  {}  }, // 338
-  { "OSLSR_EL1", 0x808C, true, false,  {}  }, // 339
-  { "DBGAUTHSTATUS_EL1", 0x83F6, true, false,  {}  }, // 340
-  { "PMCEID0_EL0", 0xDCE6, true, false,  {}  }, // 341
-  { "PMCEID1_EL0", 0xDCE7, true, false,  {}  }, // 342
-  { "MIDR_EL1", 0xC000, true, false,  {}  }, // 343
-  { "CCSIDR_EL1", 0xC800, true, false,  {}  }, // 344
-  { "CCSIDR2_EL1", 0xC802, true, false,  {AArch64::FeatureCCIDX}  }, // 345
-  { "CLIDR_EL1", 0xC801, true, false,  {}  }, // 346
-  { "CTR_EL0", 0xD801, true, false,  {}  }, // 347
-  { "MPIDR_EL1", 0xC005, true, false,  {}  }, // 348
-  { "REVIDR_EL1", 0xC006, true, false,  {}  }, // 349
-  { "AIDR_EL1", 0xC807, true, false,  {}  }, // 350
-  { "DCZID_EL0", 0xD807, true, false,  {}  }, // 351
-  { "ID_PFR0_EL1", 0xC008, true, false,  {}  }, // 352
-  { "ID_PFR1_EL1", 0xC009, true, false,  {}  }, // 353
-  { "ID_PFR2_EL1", 0xC01C, true, false,  {AArch64::FeatureSpecRestrict}  }, // 354
-  { "ID_DFR0_EL1", 0xC00A, true, false,  {}  }, // 355
-  { "ID_AFR0_EL1", 0xC00B, true, false,  {}  }, // 356
-  { "ID_MMFR0_EL1", 0xC00C, true, false,  {}  }, // 357
-  { "ID_MMFR1_EL1", 0xC00D, true, false,  {}  }, // 358
-  { "ID_MMFR2_EL1", 0xC00E, true, false,  {}  }, // 359
-  { "ID_MMFR3_EL1", 0xC00F, true, false,  {}  }, // 360
-  { "ID_ISAR0_EL1", 0xC010, true, false,  {}  }, // 361
-  { "ID_ISAR1_EL1", 0xC011, true, false,  {}  }, // 362
-  { "ID_ISAR2_EL1", 0xC012, true, false,  {}  }, // 363
-  { "ID_ISAR3_EL1", 0xC013, true, false,  {}  }, // 364
-  { "ID_ISAR4_EL1", 0xC014, true, false,  {}  }, // 365
-  { "ID_ISAR5_EL1", 0xC015, true, false,  {}  }, // 366
-  { "ID_ISAR6_EL1", 0xC017, true, false,  {AArch64::HasV8_2aOps}  }, // 367
-  { "ID_AA64PFR0_EL1", 0xC020, true, false,  {}  }, // 368
-  { "ID_AA64PFR1_EL1", 0xC021, true, false,  {}  }, // 369
-  { "ID_AA64DFR0_EL1", 0xC028, true, false,  {}  }, // 370
-  { "ID_AA64DFR1_EL1", 0xC029, true, false,  {}  }, // 371
-  { "ID_AA64AFR0_EL1", 0xC02C, true, false,  {}  }, // 372
-  { "ID_AA64AFR1_EL1", 0xC02D, true, false,  {}  }, // 373
-  { "ID_AA64ISAR0_EL1", 0xC030, true, false,  {}  }, // 374
-  { "ID_AA64ISAR1_EL1", 0xC031, true, false,  {}  }, // 375
-  { "ID_AA64MMFR0_EL1", 0xC038, true, false,  {}  }, // 376
-  { "ID_AA64MMFR1_EL1", 0xC039, true, false,  {}  }, // 377
-  { "ID_AA64MMFR2_EL1", 0xC03A, true, false,  {}  }, // 378
-  { "MVFR0_EL1", 0xC018, true, false,  {}  }, // 379
-  { "MVFR1_EL1", 0xC019, true, false,  {}  }, // 380
-  { "MVFR2_EL1", 0xC01A, true, false,  {}  }, // 381
-  { "RVBAR_EL1", 0xC601, true, false,  {}  }, // 382
-  { "RVBAR_EL2", 0xE601, true, false,  {}  }, // 383
-  { "RVBAR_EL3", 0xF601, true, false,  {}  }, // 384
-  { "ISR_EL1", 0xC608, true, false,  {}  }, // 385
-  { "CNTPCT_EL0", 0xDF01, true, false,  {}  }, // 386
-  { "CNTVCT_EL0", 0xDF02, true, false,  {}  }, // 387
-  { "ID_MMFR4_EL1", 0xC016, true, false,  {}  }, // 388
-  { "ID_MMFR5_EL1", 0xC01E, true, false,  {}  }, // 389
-  { "TRCSTATR", 0x8818, true, false,  {}  }, // 390
-  { "TRCIDR8", 0x8806, true, false,  {}  }, // 391
-  { "TRCIDR9", 0x880E, true, false,  {}  }, // 392
-  { "TRCIDR10", 0x8816, true, false,  {}  }, // 393
-  { "TRCIDR11", 0x881E, true, false,  {}  }, // 394
-  { "TRCIDR12", 0x8826, true, false,  {}  }, // 395
-  { "TRCIDR13", 0x882E, true, false,  {}  }, // 396
-  { "TRCIDR0", 0x8847, true, false,  {}  }, // 397
-  { "TRCIDR1", 0x884F, true, false,  {}  }, // 398
-  { "TRCIDR2", 0x8857, true, false,  {}  }, // 399
-  { "TRCIDR3", 0x885F, true, false,  {}  }, // 400
-  { "TRCIDR4", 0x8867, true, false,  {}  }, // 401
-  { "TRCIDR5", 0x886F, true, false,  {}  }, // 402
-  { "TRCIDR6", 0x8877, true, false,  {}  }, // 403
-  { "TRCIDR7", 0x887F, true, false,  {}  }, // 404
-  { "TRCOSLSR", 0x888C, true, false,  {}  }, // 405
-  { "TRCPDSR", 0x88AC, true, false,  {}  }, // 406
-  { "TRCDEVAFF0", 0x8BD6, true, false,  {}  }, // 407
-  { "TRCDEVAFF1", 0x8BDE, true, false,  {}  }, // 408
-  { "TRCLSR", 0x8BEE, true, false,  {}  }, // 409
-  { "TRCAUTHSTATUS", 0x8BF6, true, false,  {}  }, // 410
-  { "TRCDEVARCH", 0x8BFE, true, false,  {}  }, // 411
-  { "TRCDEVID", 0x8B97, true, false,  {}  }, // 412
-  { "TRCDEVTYPE", 0x8B9F, true, false,  {}  }, // 413
-  { "TRCPIDR4", 0x8BA7, true, false,  {}  }, // 414
-  { "TRCPIDR5", 0x8BAF, true, false,  {}  }, // 415
-  { "TRCPIDR6", 0x8BB7, true, false,  {}  }, // 416
-  { "TRCPIDR7", 0x8BBF, true, false,  {}  }, // 417
-  { "TRCPIDR0", 0x8BC7, true, false,  {}  }, // 418
-  { "TRCPIDR1", 0x8BCF, true, false,  {}  }, // 419
-  { "TRCPIDR2", 0x8BD7, true, false,  {}  }, // 420
-  { "TRCPIDR3", 0x8BDF, true, false,  {}  }, // 421
-  { "TRCCIDR0", 0x8BE7, true, false,  {}  }, // 422
-  { "TRCCIDR1", 0x8BEF, true, false,  {}  }, // 423
-  { "TRCCIDR2", 0x8BF7, true, false,  {}  }, // 424
-  { "TRCCIDR3", 0x8BFF, true, false,  {}  }, // 425
-  { "ICC_IAR1_EL1", 0xC660, true, false,  {}  }, // 426
-  { "ICC_IAR0_EL1", 0xC640, true, false,  {}  }, // 427
-  { "ICC_HPPIR1_EL1", 0xC662, true, false,  {}  }, // 428
-  { "ICC_HPPIR0_EL1", 0xC642, true, false,  {}  }, // 429
-  { "ICC_RPR_EL1", 0xC65B, true, false,  {}  }, // 430
-  { "ICH_VTR_EL2", 0xE659, true, false,  {}  }, // 431
-  { "ICH_EISR_EL2", 0xE65B, true, false,  {}  }, // 432
-  { "ICH_ELRSR_EL2", 0xE65D, true, false,  {}  }, // 433
-  { "ID_AA64ZFR0_EL1", 0xC024, true, false,  {AArch64::FeatureSVE}  }, // 434
-  { "LORID_EL1", 0xC527, true, false,  {AArch64::FeatureLOR}  }, // 435
-  { "ERRIDR_EL1", 0xC298, true, false,  {AArch64::FeatureRAS}  }, // 436
-  { "ERXFR_EL1", 0xC2A0, true, false,  {AArch64::FeatureRAS}  }, // 437
-  { "RNDR", 0xD920, true, false,  {AArch64::FeatureRandGen}  }, // 438
-  { "RNDRRS", 0xD921, true, false,  {AArch64::FeatureRandGen}  }, // 439
-  { "SCXTNUM_EL0", 0xDE87, true, true,  {AArch64::FeatureSpecRestrict}  }, // 440
-  { "SCXTNUM_EL1", 0xC687, true, true,  {AArch64::FeatureSpecRestrict}  }, // 441
-  { "SCXTNUM_EL2", 0xE687, true, true,  {AArch64::FeatureSpecRestrict}  }, // 442
-  { "SCXTNUM_EL3", 0xF687, true, true,  {AArch64::FeatureSpecRestrict}  }, // 443
-  { "SCXTNUM_EL12", 0xEE87, true, true,  {AArch64::FeatureSpecRestrict}  }, // 444
-  { "DBGDTRTX_EL0", 0x9828, false, true,  {}  }, // 445
-  { "OSLAR_EL1", 0x8084, false, true,  {}  }, // 446
-  { "PMSWINC_EL0", 0xDCE4, false, true,  {}  }, // 447
-  { "TRCOSLAR", 0x8884, false, true,  {}  }, // 448
-  { "TRCLAR", 0x8BE6, false, true,  {}  }, // 449
-  { "ICC_EOIR1_EL1", 0xC661, false, true,  {}  }, // 450
-  { "ICC_EOIR0_EL1", 0xC641, false, true,  {}  }, // 451
-  { "ICC_DIR_EL1", 0xC659, false, true,  {}  }, // 452
-  { "ICC_SGI1R_EL1", 0xC65D, false, true,  {}  }, // 453
-  { "ICC_ASGI1R_EL1", 0xC65E, false, true,  {}  }, // 454
-  { "ICC_SGI0R_EL1", 0xC65F, false, true,  {}  }, // 455
-  { "OSDTRRX_EL1", 0x8002, true, true,  {}  }, // 456
-  { "OSDTRTX_EL1", 0x801A, true, true,  {}  }, // 457
-  { "TEECR32_EL1", 0x9000, true, true,  {}  }, // 458
-  { "MDCCINT_EL1", 0x8010, true, true,  {}  }, // 459
-  { "MDSCR_EL1", 0x8012, true, true,  {}  }, // 460
-  { "DBGDTR_EL0", 0x9820, true, true,  {}  }, // 461
-  { "OSECCR_EL1", 0x8032, true, true,  {}  }, // 462
-  { "DBGVCR32_EL2", 0xA038, true, true,  {}  }, // 463
-  { "DBGBVR0_EL1", 0x8004, true, true,  {}  }, // 464
-  { "DBGBVR1_EL1", 0x800C, true, true,  {}  }, // 465
-  { "DBGBVR2_EL1", 0x8014, true, true,  {}  }, // 466
-  { "DBGBVR3_EL1", 0x801C, true, true,  {}  }, // 467
-  { "DBGBVR4_EL1", 0x8024, true, true,  {}  }, // 468
-  { "DBGBVR5_EL1", 0x802C, true, true,  {}  }, // 469
-  { "DBGBVR6_EL1", 0x8034, true, true,  {}  }, // 470
-  { "DBGBVR7_EL1", 0x803C, true, true,  {}  }, // 471
-  { "DBGBVR8_EL1", 0x8044, true, true,  {}  }, // 472
-  { "DBGBVR9_EL1", 0x804C, true, true,  {}  }, // 473
-  { "DBGBVR10_EL1", 0x8054, true, true,  {}  }, // 474
-  { "DBGBVR11_EL1", 0x805C, true, true,  {}  }, // 475
-  { "DBGBVR12_EL1", 0x8064, true, true,  {}  }, // 476
-  { "DBGBVR13_EL1", 0x806C, true, true,  {}  }, // 477
-  { "DBGBVR14_EL1", 0x8074, true, true,  {}  }, // 478
-  { "DBGBVR15_EL1", 0x807C, true, true,  {}  }, // 479
-  { "DBGBCR0_EL1", 0x8005, true, true,  {}  }, // 480
-  { "DBGBCR1_EL1", 0x800D, true, true,  {}  }, // 481
-  { "DBGBCR2_EL1", 0x8015, true, true,  {}  }, // 482
-  { "DBGBCR3_EL1", 0x801D, true, true,  {}  }, // 483
-  { "DBGBCR4_EL1", 0x8025, true, true,  {}  }, // 484
-  { "DBGBCR5_EL1", 0x802D, true, true,  {}  }, // 485
-  { "DBGBCR6_EL1", 0x8035, true, true,  {}  }, // 486
-  { "DBGBCR7_EL1", 0x803D, true, true,  {}  }, // 487
-  { "DBGBCR8_EL1", 0x8045, true, true,  {}  }, // 488
-  { "DBGBCR9_EL1", 0x804D, true, true,  {}  }, // 489
-  { "DBGBCR10_EL1", 0x8055, true, true,  {}  }, // 490
-  { "DBGBCR11_EL1", 0x805D, true, true,  {}  }, // 491
-  { "DBGBCR12_EL1", 0x8065, true, true,  {}  }, // 492
-  { "DBGBCR13_EL1", 0x806D, true, true,  {}  }, // 493
-  { "DBGBCR14_EL1", 0x8075, true, true,  {}  }, // 494
-  { "DBGBCR15_EL1", 0x807D, true, true,  {}  }, // 495
-  { "DBGWVR0_EL1", 0x8006, true, true,  {}  }, // 496
-  { "DBGWVR1_EL1", 0x800E, true, true,  {}  }, // 497
-  { "DBGWVR2_EL1", 0x8016, true, true,  {}  }, // 498
-  { "DBGWVR3_EL1", 0x801E, true, true,  {}  }, // 499
-  { "DBGWVR4_EL1", 0x8026, true, true,  {}  }, // 500
-  { "DBGWVR5_EL1", 0x802E, true, true,  {}  }, // 501
-  { "DBGWVR6_EL1", 0x8036, true, true,  {}  }, // 502
-  { "DBGWVR7_EL1", 0x803E, true, true,  {}  }, // 503
-  { "DBGWVR8_EL1", 0x8046, true, true,  {}  }, // 504
-  { "DBGWVR9_EL1", 0x804E, true, true,  {}  }, // 505
-  { "DBGWVR10_EL1", 0x8056, true, true,  {}  }, // 506
-  { "DBGWVR11_EL1", 0x805E, true, true,  {}  }, // 507
-  { "DBGWVR12_EL1", 0x8066, true, true,  {}  }, // 508
-  { "DBGWVR13_EL1", 0x806E, true, true,  {}  }, // 509
-  { "DBGWVR14_EL1", 0x8076, true, true,  {}  }, // 510
-  { "DBGWVR15_EL1", 0x807E, true, true,  {}  }, // 511
-  { "DBGWCR0_EL1", 0x8007, true, true,  {}  }, // 512
-  { "DBGWCR1_EL1", 0x800F, true, true,  {}  }, // 513
-  { "DBGWCR2_EL1", 0x8017, true, true,  {}  }, // 514
-  { "DBGWCR3_EL1", 0x801F, true, true,  {}  }, // 515
-  { "DBGWCR4_EL1", 0x8027, true, true,  {}  }, // 516
-  { "DBGWCR5_EL1", 0x802F, true, true,  {}  }, // 517
-  { "DBGWCR6_EL1", 0x8037, true, true,  {}  }, // 518
-  { "DBGWCR7_EL1", 0x803F, true, true,  {}  }, // 519
-  { "DBGWCR8_EL1", 0x8047, true, true,  {}  }, // 520
-  { "DBGWCR9_EL1", 0x804F, true, true,  {}  }, // 521
-  { "DBGWCR10_EL1", 0x8057, true, true,  {}  }, // 522
-  { "DBGWCR11_EL1", 0x805F, true, true,  {}  }, // 523
-  { "DBGWCR12_EL1", 0x8067, true, true,  {}  }, // 524
-  { "DBGWCR13_EL1", 0x806F, true, true,  {}  }, // 525
-  { "DBGWCR14_EL1", 0x8077, true, true,  {}  }, // 526
-  { "DBGWCR15_EL1", 0x807F, true, true,  {}  }, // 527
-  { "TEEHBR32_EL1", 0x9080, true, true,  {}  }, // 528
-  { "OSDLR_EL1", 0x809C, true, true,  {}  }, // 529
-  { "DBGPRCR_EL1", 0x80A4, true, true,  {}  }, // 530
-  { "DBGCLAIMSET_EL1", 0x83C6, true, true,  {}  }, // 531
-  { "DBGCLAIMCLR_EL1", 0x83CE, true, true,  {}  }, // 532
-  { "CSSELR_EL1", 0xD000, true, true,  {}  }, // 533
-  { "VPIDR_EL2", 0xE000, true, true,  {}  }, // 534
-  { "VMPIDR_EL2", 0xE005, true, true,  {}  }, // 535
-  { "CPACR_EL1", 0xC082, true, true,  {}  }, // 536
-  { "SCTLR_EL1", 0xC080, true, true,  {}  }, // 537
-  { "SCTLR_EL2", 0xE080, true, true,  {}  }, // 538
-  { "SCTLR_EL3", 0xF080, true, true,  {}  }, // 539
-  { "ACTLR_EL1", 0xC081, true, true,  {}  }, // 540
-  { "ACTLR_EL2", 0xE081, true, true,  {}  }, // 541
-  { "ACTLR_EL3", 0xF081, true, true,  {}  }, // 542
-  { "HCR_EL2", 0xE088, true, true,  {}  }, // 543
-  { "SCR_EL3", 0xF088, true, true,  {}  }, // 544
-  { "MDCR_EL2", 0xE089, true, true,  {}  }, // 545
-  { "SDER32_EL3", 0xF089, true, true,  {}  }, // 546
-  { "CPTR_EL2", 0xE08A, true, true,  {}  }, // 547
-  { "CPTR_EL3", 0xF08A, true, true,  {}  }, // 548
-  { "HSTR_EL2", 0xE08B, true, true,  {}  }, // 549
-  { "HACR_EL2", 0xE08F, true, true,  {}  }, // 550
-  { "MDCR_EL3", 0xF099, true, true,  {}  }, // 551
-  { "TTBR0_EL1", 0xC100, true, true,  {}  }, // 552
-  { "TTBR0_EL2", 0xE100, true, true,  {}  }, // 553
-  { "TTBR0_EL3", 0xF100, true, true,  {}  }, // 554
-  { "TTBR1_EL1", 0xC101, true, true,  {}  }, // 555
-  { "TCR_EL1", 0xC102, true, true,  {}  }, // 556
-  { "TCR_EL2", 0xE102, true, true,  {}  }, // 557
-  { "TCR_EL3", 0xF102, true, true,  {}  }, // 558
-  { "VTTBR_EL2", 0xE108, true, true,  {}  }, // 559
-  { "VTCR_EL2", 0xE10A, true, true,  {}  }, // 560
-  { "DACR32_EL2", 0xE180, true, true,  {}  }, // 561
-  { "SPSR_EL1", 0xC200, true, true,  {}  }, // 562
-  { "SPSR_EL2", 0xE200, true, true,  {}  }, // 563
-  { "SPSR_EL3", 0xF200, true, true,  {}  }, // 564
-  { "ELR_EL1", 0xC201, true, true,  {}  }, // 565
-  { "ELR_EL2", 0xE201, true, true,  {}  }, // 566
-  { "ELR_EL3", 0xF201, true, true,  {}  }, // 567
-  { "SP_EL0", 0xC208, true, true,  {}  }, // 568
-  { "SP_EL1", 0xE208, true, true,  {}  }, // 569
-  { "SP_EL2", 0xF208, true, true,  {}  }, // 570
-  { "SPSel", 0xC210, true, true,  {}  }, // 571
-  { "NZCV", 0xDA10, true, true,  {}  }, // 572
-  { "DAIF", 0xDA11, true, true,  {}  }, // 573
-  { "CurrentEL", 0xC212, true, true,  {}  }, // 574
-  { "SPSR_irq", 0xE218, true, true,  {}  }, // 575
-  { "SPSR_abt", 0xE219, true, true,  {}  }, // 576
-  { "SPSR_und", 0xE21A, true, true,  {}  }, // 577
-  { "SPSR_fiq", 0xE21B, true, true,  {}  }, // 578
-  { "FPCR", 0xDA20, true, true,  {}  }, // 579
-  { "FPSR", 0xDA21, true, true,  {}  }, // 580
-  { "DSPSR_EL0", 0xDA28, true, true,  {}  }, // 581
-  { "DLR_EL0", 0xDA29, true, true,  {}  }, // 582
-  { "IFSR32_EL2", 0xE281, true, true,  {}  }, // 583
-  { "AFSR0_EL1", 0xC288, true, true,  {}  }, // 584
-  { "AFSR0_EL2", 0xE288, true, true,  {}  }, // 585
-  { "AFSR0_EL3", 0xF288, true, true,  {}  }, // 586
-  { "AFSR1_EL1", 0xC289, true, true,  {}  }, // 587
-  { "AFSR1_EL2", 0xE289, true, true,  {}  }, // 588
-  { "AFSR1_EL3", 0xF289, true, true,  {}  }, // 589
-  { "ESR_EL1", 0xC290, true, true,  {}  }, // 590
-  { "ESR_EL2", 0xE290, true, true,  {}  }, // 591
-  { "ESR_EL3", 0xF290, true, true,  {}  }, // 592
-  { "FPEXC32_EL2", 0xE298, true, true,  {}  }, // 593
-  { "FAR_EL1", 0xC300, true, true,  {}  }, // 594
-  { "FAR_EL2", 0xE300, true, true,  {}  }, // 595
-  { "FAR_EL3", 0xF300, true, true,  {}  }, // 596
-  { "HPFAR_EL2", 0xE304, true, true,  {}  }, // 597
-  { "PAR_EL1", 0xC3A0, true, true,  {}  }, // 598
-  { "PMCR_EL0", 0xDCE0, true, true,  {}  }, // 599
-  { "PMCNTENSET_EL0", 0xDCE1, true, true,  {}  }, // 600
-  { "PMCNTENCLR_EL0", 0xDCE2, true, true,  {}  }, // 601
-  { "PMOVSCLR_EL0", 0xDCE3, true, true,  {}  }, // 602
-  { "PMSELR_EL0", 0xDCE5, true, true,  {}  }, // 603
-  { "PMCCNTR_EL0", 0xDCE8, true, true,  {}  }, // 604
-  { "PMXEVTYPER_EL0", 0xDCE9, true, true,  {}  }, // 605
-  { "PMXEVCNTR_EL0", 0xDCEA, true, true,  {}  }, // 606
-  { "PMUSERENR_EL0", 0xDCF0, true, true,  {}  }, // 607
-  { "PMINTENSET_EL1", 0xC4F1, true, true,  {}  }, // 608
-  { "PMINTENCLR_EL1", 0xC4F2, true, true,  {}  }, // 609
-  { "PMOVSSET_EL0", 0xDCF3, true, true,  {}  }, // 610
-  { "MAIR_EL1", 0xC510, true, true,  {}  }, // 611
-  { "MAIR_EL2", 0xE510, true, true,  {}  }, // 612
-  { "MAIR_EL3", 0xF510, true, true,  {}  }, // 613
-  { "AMAIR_EL1", 0xC518, true, true,  {}  }, // 614
-  { "AMAIR_EL2", 0xE518, true, true,  {}  }, // 615
-  { "AMAIR_EL3", 0xF518, true, true,  {}  }, // 616
-  { "VBAR_EL1", 0xC600, true, true,  {}  }, // 617
-  { "VBAR_EL2", 0xE600, true, true,  {}  }, // 618
-  { "VBAR_EL3", 0xF600, true, true,  {}  }, // 619
-  { "RMR_EL1", 0xC602, true, true,  {}  }, // 620
-  { "RMR_EL2", 0xE602, true, true,  {}  }, // 621
-  { "RMR_EL3", 0xF602, true, true,  {}  }, // 622
-  { "CONTEXTIDR_EL1", 0xC681, true, true,  {}  }, // 623
-  { "TPIDR_EL0", 0xDE82, true, true,  {}  }, // 624
-  { "TPIDR_EL2", 0xE682, true, true,  {}  }, // 625
-  { "TPIDR_EL3", 0xF682, true, true,  {}  }, // 626
-  { "TPIDRRO_EL0", 0xDE83, true, true,  {}  }, // 627
-  { "TPIDR_EL1", 0xC684, true, true,  {}  }, // 628
-  { "CNTFRQ_EL0", 0xDF00, true, true,  {}  }, // 629
-  { "CNTVOFF_EL2", 0xE703, true, true,  {}  }, // 630
-  { "CNTKCTL_EL1", 0xC708, true, true,  {}  }, // 631
-  { "CNTHCTL_EL2", 0xE708, true, true,  {}  }, // 632
-  { "CNTP_TVAL_EL0", 0xDF10, true, true,  {}  }, // 633
-  { "CNTHP_TVAL_EL2", 0xE710, true, true,  {}  }, // 634
-  { "CNTPS_TVAL_EL1", 0xFF10, true, true,  {}  }, // 635
-  { "CNTP_CTL_EL0", 0xDF11, true, true,  {}  }, // 636
-  { "CNTHP_CTL_EL2", 0xE711, true, true,  {}  }, // 637
-  { "CNTPS_CTL_EL1", 0xFF11, true, true,  {}  }, // 638
-  { "CNTP_CVAL_EL0", 0xDF12, true, true,  {}  }, // 639
-  { "CNTHP_CVAL_EL2", 0xE712, true, true,  {}  }, // 640
-  { "CNTPS_CVAL_EL1", 0xFF12, true, true,  {}  }, // 641
-  { "CNTV_TVAL_EL0", 0xDF18, true, true,  {}  }, // 642
-  { "CNTV_CTL_EL0", 0xDF19, true, true,  {}  }, // 643
-  { "CNTV_CVAL_EL0", 0xDF1A, true, true,  {}  }, // 644
-  { "PMEVCNTR0_EL0", 0xDF40, true, true,  {}  }, // 645
-  { "PMEVCNTR1_EL0", 0xDF41, true, true,  {}  }, // 646
-  { "PMEVCNTR2_EL0", 0xDF42, true, true,  {}  }, // 647
-  { "PMEVCNTR3_EL0", 0xDF43, true, true,  {}  }, // 648
-  { "PMEVCNTR4_EL0", 0xDF44, true, true,  {}  }, // 649
-  { "PMEVCNTR5_EL0", 0xDF45, true, true,  {}  }, // 650
-  { "PMEVCNTR6_EL0", 0xDF46, true, true,  {}  }, // 651
-  { "PMEVCNTR7_EL0", 0xDF47, true, true,  {}  }, // 652
-  { "PMEVCNTR8_EL0", 0xDF48, true, true,  {}  }, // 653
-  { "PMEVCNTR9_EL0", 0xDF49, true, true,  {}  }, // 654
-  { "PMEVCNTR10_EL0", 0xDF4A, true, true,  {}  }, // 655
-  { "PMEVCNTR11_EL0", 0xDF4B, true, true,  {}  }, // 656
-  { "PMEVCNTR12_EL0", 0xDF4C, true, true,  {}  }, // 657
-  { "PMEVCNTR13_EL0", 0xDF4D, true, true,  {}  }, // 658
-  { "PMEVCNTR14_EL0", 0xDF4E, true, true,  {}  }, // 659
-  { "PMEVCNTR15_EL0", 0xDF4F, true, true,  {}  }, // 660
-  { "PMEVCNTR16_EL0", 0xDF50, true, true,  {}  }, // 661
-  { "PMEVCNTR17_EL0", 0xDF51, true, true,  {}  }, // 662
-  { "PMEVCNTR18_EL0", 0xDF52, true, true,  {}  }, // 663
-  { "PMEVCNTR19_EL0", 0xDF53, true, true,  {}  }, // 664
-  { "PMEVCNTR20_EL0", 0xDF54, true, true,  {}  }, // 665
-  { "PMEVCNTR21_EL0", 0xDF55, true, true,  {}  }, // 666
-  { "PMEVCNTR22_EL0", 0xDF56, true, true,  {}  }, // 667
-  { "PMEVCNTR23_EL0", 0xDF57, true, true,  {}  }, // 668
-  { "PMEVCNTR24_EL0", 0xDF58, true, true,  {}  }, // 669
-  { "PMEVCNTR25_EL0", 0xDF59, true, true,  {}  }, // 670
-  { "PMEVCNTR26_EL0", 0xDF5A, true, true,  {}  }, // 671
-  { "PMEVCNTR27_EL0", 0xDF5B, true, true,  {}  }, // 672
-  { "PMEVCNTR28_EL0", 0xDF5C, true, true,  {}  }, // 673
-  { "PMEVCNTR29_EL0", 0xDF5D, true, true,  {}  }, // 674
-  { "PMEVCNTR30_EL0", 0xDF5E, true, true,  {}  }, // 675
-  { "PMCCFILTR_EL0", 0xDF7F, true, true,  {}  }, // 676
-  { "PMEVTYPER0_EL0", 0xDF60, true, true,  {}  }, // 677
-  { "PMEVTYPER1_EL0", 0xDF61, true, true,  {}  }, // 678
-  { "PMEVTYPER2_EL0", 0xDF62, true, true,  {}  }, // 679
-  { "PMEVTYPER3_EL0", 0xDF63, true, true,  {}  }, // 680
-  { "PMEVTYPER4_EL0", 0xDF64, true, true,  {}  }, // 681
-  { "PMEVTYPER5_EL0", 0xDF65, true, true,  {}  }, // 682
-  { "PMEVTYPER6_EL0", 0xDF66, true, true,  {}  }, // 683
-  { "PMEVTYPER7_EL0", 0xDF67, true, true,  {}  }, // 684
-  { "PMEVTYPER8_EL0", 0xDF68, true, true,  {}  }, // 685
-  { "PMEVTYPER9_EL0", 0xDF69, true, true,  {}  }, // 686
-  { "PMEVTYPER10_EL0", 0xDF6A, true, true,  {}  }, // 687
-  { "PMEVTYPER11_EL0", 0xDF6B, true, true,  {}  }, // 688
-  { "PMEVTYPER12_EL0", 0xDF6C, true, true,  {}  }, // 689
-  { "PMEVTYPER13_EL0", 0xDF6D, true, true,  {}  }, // 690
-  { "PMEVTYPER14_EL0", 0xDF6E, true, true,  {}  }, // 691
-  { "PMEVTYPER15_EL0", 0xDF6F, true, true,  {}  }, // 692
-  { "PMEVTYPER16_EL0", 0xDF70, true, true,  {}  }, // 693
-  { "PMEVTYPER17_EL0", 0xDF71, true, true,  {}  }, // 694
-  { "PMEVTYPER18_EL0", 0xDF72, true, true,  {}  }, // 695
-  { "PMEVTYPER19_EL0", 0xDF73, true, true,  {}  }, // 696
-  { "PMEVTYPER20_EL0", 0xDF74, true, true,  {}  }, // 697
-  { "PMEVTYPER21_EL0", 0xDF75, true, true,  {}  }, // 698
-  { "PMEVTYPER22_EL0", 0xDF76, true, true,  {}  }, // 699
-  { "PMEVTYPER23_EL0", 0xDF77, true, true,  {}  }, // 700
-  { "PMEVTYPER24_EL0", 0xDF78, true, true,  {}  }, // 701
-  { "PMEVTYPER25_EL0", 0xDF79, true, true,  {}  }, // 702
-  { "PMEVTYPER26_EL0", 0xDF7A, true, true,  {}  }, // 703
-  { "PMEVTYPER27_EL0", 0xDF7B, true, true,  {}  }, // 704
-  { "PMEVTYPER28_EL0", 0xDF7C, true, true,  {}  }, // 705
-  { "PMEVTYPER29_EL0", 0xDF7D, true, true,  {}  }, // 706
-  { "PMEVTYPER30_EL0", 0xDF7E, true, true,  {}  }, // 707
-  { "TRCPRGCTLR", 0x8808, true, true,  {}  }, // 708
-  { "TRCPROCSELR", 0x8810, true, true,  {}  }, // 709
-  { "TRCCONFIGR", 0x8820, true, true,  {}  }, // 710
-  { "TRCAUXCTLR", 0x8830, true, true,  {}  }, // 711
-  { "TRCEVENTCTL0R", 0x8840, true, true,  {}  }, // 712
-  { "TRCEVENTCTL1R", 0x8848, true, true,  {}  }, // 713
-  { "TRCSTALLCTLR", 0x8858, true, true,  {}  }, // 714
-  { "TRCTSCTLR", 0x8860, true, true,  {}  }, // 715
-  { "TRCSYNCPR", 0x8868, true, true,  {}  }, // 716
-  { "TRCCCCTLR", 0x8870, true, true,  {}  }, // 717
-  { "TRCBBCTLR", 0x8878, true, true,  {}  }, // 718
-  { "TRCTRACEIDR", 0x8801, true, true,  {}  }, // 719
-  { "TRCQCTLR", 0x8809, true, true,  {}  }, // 720
-  { "TRCVICTLR", 0x8802, true, true,  {}  }, // 721
-  { "TRCVIIECTLR", 0x880A, true, true,  {}  }, // 722
-  { "TRCVISSCTLR", 0x8812, true, true,  {}  }, // 723
-  { "TRCVIPCSSCTLR", 0x881A, true, true,  {}  }, // 724
-  { "TRCVDCTLR", 0x8842, true, true,  {}  }, // 725
-  { "TRCVDSACCTLR", 0x884A, true, true,  {}  }, // 726
-  { "TRCVDARCCTLR", 0x8852, true, true,  {}  }, // 727
-  { "TRCSEQEVR0", 0x8804, true, true,  {}  }, // 728
-  { "TRCSEQEVR1", 0x880C, true, true,  {}  }, // 729
-  { "TRCSEQEVR2", 0x8814, true, true,  {}  }, // 730
-  { "TRCSEQRSTEVR", 0x8834, true, true,  {}  }, // 731
-  { "TRCSEQSTR", 0x883C, true, true,  {}  }, // 732
-  { "TRCEXTINSELR", 0x8844, true, true,  {}  }, // 733
-  { "TRCCNTRLDVR0", 0x8805, true, true,  {}  }, // 734
-  { "TRCCNTRLDVR1", 0x880D, true, true,  {}  }, // 735
-  { "TRCCNTRLDVR2", 0x8815, true, true,  {}  }, // 736
-  { "TRCCNTRLDVR3", 0x881D, true, true,  {}  }, // 737
-  { "TRCCNTCTLR0", 0x8825, true, true,  {}  }, // 738
-  { "TRCCNTCTLR1", 0x882D, true, true,  {}  }, // 739
-  { "TRCCNTCTLR2", 0x8835, true, true,  {}  }, // 740
-  { "TRCCNTCTLR3", 0x883D, true, true,  {}  }, // 741
-  { "TRCCNTVR0", 0x8845, true, true,  {}  }, // 742
-  { "TRCCNTVR1", 0x884D, true, true,  {}  }, // 743
-  { "TRCCNTVR2", 0x8855, true, true,  {}  }, // 744
-  { "TRCCNTVR3", 0x885D, true, true,  {}  }, // 745
-  { "TRCIMSPEC0", 0x8807, true, true,  {}  }, // 746
-  { "TRCIMSPEC1", 0x880F, true, true,  {}  }, // 747
-  { "TRCIMSPEC2", 0x8817, true, true,  {}  }, // 748
-  { "TRCIMSPEC3", 0x881F, true, true,  {}  }, // 749
-  { "TRCIMSPEC4", 0x8827, true, true,  {}  }, // 750
-  { "TRCIMSPEC5", 0x882F, true, true,  {}  }, // 751
-  { "TRCIMSPEC6", 0x8837, true, true,  {}  }, // 752
-  { "TRCIMSPEC7", 0x883F, true, true,  {}  }, // 753
-  { "TRCRSCTLR2", 0x8890, true, true,  {}  }, // 754
-  { "TRCRSCTLR3", 0x8898, true, true,  {}  }, // 755
-  { "TRCRSCTLR4", 0x88A0, true, true,  {}  }, // 756
-  { "TRCRSCTLR5", 0x88A8, true, true,  {}  }, // 757
-  { "TRCRSCTLR6", 0x88B0, true, true,  {}  }, // 758
-  { "TRCRSCTLR7", 0x88B8, true, true,  {}  }, // 759
-  { "TRCRSCTLR8", 0x88C0, true, true,  {}  }, // 760
-  { "TRCRSCTLR9", 0x88C8, true, true,  {}  }, // 761
-  { "TRCRSCTLR10", 0x88D0, true, true,  {}  }, // 762
-  { "TRCRSCTLR11", 0x88D8, true, true,  {}  }, // 763
-  { "TRCRSCTLR12", 0x88E0, true, true,  {}  }, // 764
-  { "TRCRSCTLR13", 0x88E8, true, true,  {}  }, // 765
-  { "TRCRSCTLR14", 0x88F0, true, true,  {}  }, // 766
+  { "MDCCSR_EL0", 0x9808, true, false,  {}  }, // 0
+  { "DBGDTRRX_EL0", 0x9828, true, false,  {}  }, // 1
+  { "MDRAR_EL1", 0x8080, true, false,  {}  }, // 2
+  { "OSLSR_EL1", 0x808C, true, false,  {}  }, // 3
+  { "DBGAUTHSTATUS_EL1", 0x83F6, true, false,  {}  }, // 4
+  { "PMCEID0_EL0", 0xDCE6, true, false,  {}  }, // 5
+  { "PMCEID1_EL0", 0xDCE7, true, false,  {}  }, // 6
+  { "MIDR_EL1", 0xC000, true, false,  {}  }, // 7
+  { "CCSIDR_EL1", 0xC800, true, false,  {}  }, // 8
+  { "CCSIDR2_EL1", 0xC802, true, false,  {AArch64::FeatureCCIDX}  }, // 9
+  { "CLIDR_EL1", 0xC801, true, false,  {}  }, // 10
+  { "CTR_EL0", 0xD801, true, false,  {}  }, // 11
+  { "MPIDR_EL1", 0xC005, true, false,  {}  }, // 12
+  { "REVIDR_EL1", 0xC006, true, false,  {}  }, // 13
+  { "AIDR_EL1", 0xC807, true, false,  {}  }, // 14
+  { "DCZID_EL0", 0xD807, true, false,  {}  }, // 15
+  { "ID_PFR0_EL1", 0xC008, true, false,  {}  }, // 16
+  { "ID_PFR1_EL1", 0xC009, true, false,  {}  }, // 17
+  { "ID_PFR2_EL1", 0xC01C, true, false,  {AArch64::FeatureSpecRestrict}  }, // 18
+  { "ID_DFR0_EL1", 0xC00A, true, false,  {}  }, // 19
+  { "ID_AFR0_EL1", 0xC00B, true, false,  {}  }, // 20
+  { "ID_MMFR0_EL1", 0xC00C, true, false,  {}  }, // 21
+  { "ID_MMFR1_EL1", 0xC00D, true, false,  {}  }, // 22
+  { "ID_MMFR2_EL1", 0xC00E, true, false,  {}  }, // 23
+  { "ID_MMFR3_EL1", 0xC00F, true, false,  {}  }, // 24
+  { "ID_ISAR0_EL1", 0xC010, true, false,  {}  }, // 25
+  { "ID_ISAR1_EL1", 0xC011, true, false,  {}  }, // 26
+  { "ID_ISAR2_EL1", 0xC012, true, false,  {}  }, // 27
+  { "ID_ISAR3_EL1", 0xC013, true, false,  {}  }, // 28
+  { "ID_ISAR4_EL1", 0xC014, true, false,  {}  }, // 29
+  { "ID_ISAR5_EL1", 0xC015, true, false,  {}  }, // 30
+  { "ID_ISAR6_EL1", 0xC017, true, false,  {AArch64::HasV8_2aOps}  }, // 31
+  { "ID_AA64PFR0_EL1", 0xC020, true, false,  {}  }, // 32
+  { "ID_AA64PFR1_EL1", 0xC021, true, false,  {}  }, // 33
+  { "ID_AA64DFR0_EL1", 0xC028, true, false,  {}  }, // 34
+  { "ID_AA64DFR1_EL1", 0xC029, true, false,  {}  }, // 35
+  { "ID_AA64AFR0_EL1", 0xC02C, true, false,  {}  }, // 36
+  { "ID_AA64AFR1_EL1", 0xC02D, true, false,  {}  }, // 37
+  { "ID_AA64ISAR0_EL1", 0xC030, true, false,  {}  }, // 38
+  { "ID_AA64ISAR1_EL1", 0xC031, true, false,  {}  }, // 39
+  { "ID_AA64MMFR0_EL1", 0xC038, true, false,  {}  }, // 40
+  { "ID_AA64MMFR1_EL1", 0xC039, true, false,  {}  }, // 41
+  { "ID_AA64MMFR2_EL1", 0xC03A, true, false,  {}  }, // 42
+  { "MVFR0_EL1", 0xC018, true, false,  {}  }, // 43
+  { "MVFR1_EL1", 0xC019, true, false,  {}  }, // 44
+  { "MVFR2_EL1", 0xC01A, true, false,  {}  }, // 45
+  { "RVBAR_EL1", 0xC601, true, false,  {}  }, // 46
+  { "RVBAR_EL2", 0xE601, true, false,  {}  }, // 47
+  { "RVBAR_EL3", 0xF601, true, false,  {}  }, // 48
+  { "ISR_EL1", 0xC608, true, false,  {}  }, // 49
+  { "CNTPCT_EL0", 0xDF01, true, false,  {}  }, // 50
+  { "CNTVCT_EL0", 0xDF02, true, false,  {}  }, // 51
+  { "ID_MMFR4_EL1", 0xC016, true, false,  {}  }, // 52
+  { "ID_MMFR5_EL1", 0xC01E, true, false,  {}  }, // 53
+  { "TRCSTATR", 0x8818, true, false,  {}  }, // 54
+  { "TRCIDR8", 0x8806, true, false,  {}  }, // 55
+  { "TRCIDR9", 0x880E, true, false,  {}  }, // 56
+  { "TRCIDR10", 0x8816, true, false,  {}  }, // 57
+  { "TRCIDR11", 0x881E, true, false,  {}  }, // 58
+  { "TRCIDR12", 0x8826, true, false,  {}  }, // 59
+  { "TRCIDR13", 0x882E, true, false,  {}  }, // 60
+  { "TRCIDR0", 0x8847, true, false,  {}  }, // 61
+  { "TRCIDR1", 0x884F, true, false,  {}  }, // 62
+  { "TRCIDR2", 0x8857, true, false,  {}  }, // 63
+  { "TRCIDR3", 0x885F, true, false,  {}  }, // 64
+  { "TRCIDR4", 0x8867, true, false,  {}  }, // 65
+  { "TRCIDR5", 0x886F, true, false,  {}  }, // 66
+  { "TRCIDR6", 0x8877, true, false,  {}  }, // 67
+  { "TRCIDR7", 0x887F, true, false,  {}  }, // 68
+  { "TRCOSLSR", 0x888C, true, false,  {}  }, // 69
+  { "TRCPDSR", 0x88AC, true, false,  {}  }, // 70
+  { "TRCDEVAFF0", 0x8BD6, true, false,  {}  }, // 71
+  { "TRCDEVAFF1", 0x8BDE, true, false,  {}  }, // 72
+  { "TRCLSR", 0x8BEE, true, false,  {}  }, // 73
+  { "TRCAUTHSTATUS", 0x8BF6, true, false,  {}  }, // 74
+  { "TRCDEVARCH", 0x8BFE, true, false,  {}  }, // 75
+  { "TRCDEVID", 0x8B97, true, false,  {}  }, // 76
+  { "TRCDEVTYPE", 0x8B9F, true, false,  {}  }, // 77
+  { "TRCPIDR4", 0x8BA7, true, false,  {}  }, // 78
+  { "TRCPIDR5", 0x8BAF, true, false,  {}  }, // 79
+  { "TRCPIDR6", 0x8BB7, true, false,  {}  }, // 80
+  { "TRCPIDR7", 0x8BBF, true, false,  {}  }, // 81
+  { "TRCPIDR0", 0x8BC7, true, false,  {}  }, // 82
+  { "TRCPIDR1", 0x8BCF, true, false,  {}  }, // 83
+  { "TRCPIDR2", 0x8BD7, true, false,  {}  }, // 84
+  { "TRCPIDR3", 0x8BDF, true, false,  {}  }, // 85
+  { "TRCCIDR0", 0x8BE7, true, false,  {}  }, // 86
+  { "TRCCIDR1", 0x8BEF, true, false,  {}  }, // 87
+  { "TRCCIDR2", 0x8BF7, true, false,  {}  }, // 88
+  { "TRCCIDR3", 0x8BFF, true, false,  {}  }, // 89
+  { "ICC_IAR1_EL1", 0xC660, true, false,  {}  }, // 90
+  { "ICC_IAR0_EL1", 0xC640, true, false,  {}  }, // 91
+  { "ICC_HPPIR1_EL1", 0xC662, true, false,  {}  }, // 92
+  { "ICC_HPPIR0_EL1", 0xC642, true, false,  {}  }, // 93
+  { "ICC_RPR_EL1", 0xC65B, true, false,  {}  }, // 94
+  { "ICH_VTR_EL2", 0xE659, true, false,  {}  }, // 95
+  { "ICH_EISR_EL2", 0xE65B, true, false,  {}  }, // 96
+  { "ICH_ELRSR_EL2", 0xE65D, true, false,  {}  }, // 97
+  { "ID_AA64ZFR0_EL1", 0xC024, true, false,  {AArch64::FeatureSVE}  }, // 98
+  { "LORID_EL1", 0xC527, true, false,  {AArch64::FeatureLOR}  }, // 99
+  { "ERRIDR_EL1", 0xC298, true, false,  {AArch64::FeatureRAS}  }, // 100
+  { "ERXFR_EL1", 0xC2A0, true, false,  {AArch64::FeatureRAS}  }, // 101
+  { "RNDR", 0xD920, true, false,  {AArch64::FeatureRandGen}  }, // 102
+  { "RNDRRS", 0xD921, true, false,  {AArch64::FeatureRandGen}  }, // 103
+  { "SCXTNUM_EL0", 0xDE87, true, true,  {AArch64::FeatureSpecRestrict}  }, // 104
+  { "SCXTNUM_EL1", 0xC687, true, true,  {AArch64::FeatureSpecRestrict}  }, // 105
+  { "SCXTNUM_EL2", 0xE687, true, true,  {AArch64::FeatureSpecRestrict}  }, // 106
+  { "SCXTNUM_EL3", 0xF687, true, true,  {AArch64::FeatureSpecRestrict}  }, // 107
+  { "SCXTNUM_EL12", 0xEE87, true, true,  {AArch64::FeatureSpecRestrict}  }, // 108
+  { "DBGDTRTX_EL0", 0x9828, false, true,  {}  }, // 109
+  { "OSLAR_EL1", 0x8084, false, true,  {}  }, // 110
+  { "PMSWINC_EL0", 0xDCE4, false, true,  {}  }, // 111
+  { "TRCOSLAR", 0x8884, false, true,  {}  }, // 112
+  { "TRCLAR", 0x8BE6, false, true,  {}  }, // 113
+  { "ICC_EOIR1_EL1", 0xC661, false, true,  {}  }, // 114
+  { "ICC_EOIR0_EL1", 0xC641, false, true,  {}  }, // 115
+  { "ICC_DIR_EL1", 0xC659, false, true,  {}  }, // 116
+  { "ICC_SGI1R_EL1", 0xC65D, false, true,  {}  }, // 117
+  { "ICC_ASGI1R_EL1", 0xC65E, false, true,  {}  }, // 118
+  { "ICC_SGI0R_EL1", 0xC65F, false, true,  {}  }, // 119
+  { "OSDTRRX_EL1", 0x8002, true, true,  {}  }, // 120
+  { "OSDTRTX_EL1", 0x801A, true, true,  {}  }, // 121
+  { "TEECR32_EL1", 0x9000, true, true,  {}  }, // 122
+  { "MDCCINT_EL1", 0x8010, true, true,  {}  }, // 123
+  { "MDSCR_EL1", 0x8012, true, true,  {}  }, // 124
+  { "DBGDTR_EL0", 0x9820, true, true,  {}  }, // 125
+  { "OSECCR_EL1", 0x8032, true, true,  {}  }, // 126
+  { "DBGVCR32_EL2", 0xA038, true, true,  {}  }, // 127
+  { "DBGBVR0_EL1", 0x8004, true, true,  {}  }, // 128
+  { "DBGBVR1_EL1", 0x800C, true, true,  {}  }, // 129
+  { "DBGBVR2_EL1", 0x8014, true, true,  {}  }, // 130
+  { "DBGBVR3_EL1", 0x801C, true, true,  {}  }, // 131
+  { "DBGBVR4_EL1", 0x8024, true, true,  {}  }, // 132
+  { "DBGBVR5_EL1", 0x802C, true, true,  {}  }, // 133
+  { "DBGBVR6_EL1", 0x8034, true, true,  {}  }, // 134
+  { "DBGBVR7_EL1", 0x803C, true, true,  {}  }, // 135
+  { "DBGBVR8_EL1", 0x8044, true, true,  {}  }, // 136
+  { "DBGBVR9_EL1", 0x804C, true, true,  {}  }, // 137
+  { "DBGBVR10_EL1", 0x8054, true, true,  {}  }, // 138
+  { "DBGBVR11_EL1", 0x805C, true, true,  {}  }, // 139
+  { "DBGBVR12_EL1", 0x8064, true, true,  {}  }, // 140
+  { "DBGBVR13_EL1", 0x806C, true, true,  {}  }, // 141
+  { "DBGBVR14_EL1", 0x8074, true, true,  {}  }, // 142
+  { "DBGBVR15_EL1", 0x807C, true, true,  {}  }, // 143
+  { "DBGBCR0_EL1", 0x8005, true, true,  {}  }, // 144
+  { "DBGBCR1_EL1", 0x800D, true, true,  {}  }, // 145
+  { "DBGBCR2_EL1", 0x8015, true, true,  {}  }, // 146
+  { "DBGBCR3_EL1", 0x801D, true, true,  {}  }, // 147
+  { "DBGBCR4_EL1", 0x8025, true, true,  {}  }, // 148
+  { "DBGBCR5_EL1", 0x802D, true, true,  {}  }, // 149
+  { "DBGBCR6_EL1", 0x8035, true, true,  {}  }, // 150
+  { "DBGBCR7_EL1", 0x803D, true, true,  {}  }, // 151
+  { "DBGBCR8_EL1", 0x8045, true, true,  {}  }, // 152
+  { "DBGBCR9_EL1", 0x804D, true, true,  {}  }, // 153
+  { "DBGBCR10_EL1", 0x8055, true, true,  {}  }, // 154
+  { "DBGBCR11_EL1", 0x805D, true, true,  {}  }, // 155
+  { "DBGBCR12_EL1", 0x8065, true, true,  {}  }, // 156
+  { "DBGBCR13_EL1", 0x806D, true, true,  {}  }, // 157
+  { "DBGBCR14_EL1", 0x8075, true, true,  {}  }, // 158
+  { "DBGBCR15_EL1", 0x807D, true, true,  {}  }, // 159
+  { "DBGWVR0_EL1", 0x8006, true, true,  {}  }, // 160
+  { "DBGWVR1_EL1", 0x800E, true, true,  {}  }, // 161
+  { "DBGWVR2_EL1", 0x8016, true, true,  {}  }, // 162
+  { "DBGWVR3_EL1", 0x801E, true, true,  {}  }, // 163
+  { "DBGWVR4_EL1", 0x8026, true, true,  {}  }, // 164
+  { "DBGWVR5_EL1", 0x802E, true, true,  {}  }, // 165
+  { "DBGWVR6_EL1", 0x8036, true, true,  {}  }, // 166
+  { "DBGWVR7_EL1", 0x803E, true, true,  {}  }, // 167
+  { "DBGWVR8_EL1", 0x8046, true, true,  {}  }, // 168
+  { "DBGWVR9_EL1", 0x804E, true, true,  {}  }, // 169
+  { "DBGWVR10_EL1", 0x8056, true, true,  {}  }, // 170
+  { "DBGWVR11_EL1", 0x805E, true, true,  {}  }, // 171
+  { "DBGWVR12_EL1", 0x8066, true, true,  {}  }, // 172
+  { "DBGWVR13_EL1", 0x806E, true, true,  {}  }, // 173
+  { "DBGWVR14_EL1", 0x8076, true, true,  {}  }, // 174
+  { "DBGWVR15_EL1", 0x807E, true, true,  {}  }, // 175
+  { "DBGWCR0_EL1", 0x8007, true, true,  {}  }, // 176
+  { "DBGWCR1_EL1", 0x800F, true, true,  {}  }, // 177
+  { "DBGWCR2_EL1", 0x8017, true, true,  {}  }, // 178
+  { "DBGWCR3_EL1", 0x801F, true, true,  {}  }, // 179
+  { "DBGWCR4_EL1", 0x8027, true, true,  {}  }, // 180
+  { "DBGWCR5_EL1", 0x802F, true, true,  {}  }, // 181
+  { "DBGWCR6_EL1", 0x8037, true, true,  {}  }, // 182
+  { "DBGWCR7_EL1", 0x803F, true, true,  {}  }, // 183
+  { "DBGWCR8_EL1", 0x8047, true, true,  {}  }, // 184
+  { "DBGWCR9_EL1", 0x804F, true, true,  {}  }, // 185
+  { "DBGWCR10_EL1", 0x8057, true, true,  {}  }, // 186
+  { "DBGWCR11_EL1", 0x805F, true, true,  {}  }, // 187
+  { "DBGWCR12_EL1", 0x8067, true, true,  {}  }, // 188
+  { "DBGWCR13_EL1", 0x806F, true, true,  {}  }, // 189
+  { "DBGWCR14_EL1", 0x8077, true, true,  {}  }, // 190
+  { "DBGWCR15_EL1", 0x807F, true, true,  {}  }, // 191
+  { "TEEHBR32_EL1", 0x9080, true, true,  {}  }, // 192
+  { "OSDLR_EL1", 0x809C, true, true,  {}  }, // 193
+  { "DBGPRCR_EL1", 0x80A4, true, true,  {}  }, // 194
+  { "DBGCLAIMSET_EL1", 0x83C6, true, true,  {}  }, // 195
+  { "DBGCLAIMCLR_EL1", 0x83CE, true, true,  {}  }, // 196
+  { "CSSELR_EL1", 0xD000, true, true,  {}  }, // 197
+  { "VPIDR_EL2", 0xE000, true, true,  {}  }, // 198
+  { "VMPIDR_EL2", 0xE005, true, true,  {}  }, // 199
+  { "CPACR_EL1", 0xC082, true, true,  {}  }, // 200
+  { "SCTLR_EL1", 0xC080, true, true,  {}  }, // 201
+  { "SCTLR_EL2", 0xE080, true, true,  {}  }, // 202
+  { "SCTLR_EL3", 0xF080, true, true,  {}  }, // 203
+  { "ACTLR_EL1", 0xC081, true, true,  {}  }, // 204
+  { "ACTLR_EL2", 0xE081, true, true,  {}  }, // 205
+  { "ACTLR_EL3", 0xF081, true, true,  {}  }, // 206
+  { "HCR_EL2", 0xE088, true, true,  {}  }, // 207
+  { "SCR_EL3", 0xF088, true, true,  {}  }, // 208
+  { "MDCR_EL2", 0xE089, true, true,  {}  }, // 209
+  { "SDER32_EL3", 0xF089, true, true,  {}  }, // 210
+  { "CPTR_EL2", 0xE08A, true, true,  {}  }, // 211
+  { "CPTR_EL3", 0xF08A, true, true,  {}  }, // 212
+  { "HSTR_EL2", 0xE08B, true, true,  {}  }, // 213
+  { "HACR_EL2", 0xE08F, true, true,  {}  }, // 214
+  { "MDCR_EL3", 0xF099, true, true,  {}  }, // 215
+  { "TTBR0_EL1", 0xC100, true, true,  {}  }, // 216
+  { "TTBR0_EL2", 0xE100, true, true,  {}  }, // 217
+  { "TTBR0_EL3", 0xF100, true, true,  {}  }, // 218
+  { "TTBR1_EL1", 0xC101, true, true,  {}  }, // 219
+  { "TCR_EL1", 0xC102, true, true,  {}  }, // 220
+  { "TCR_EL2", 0xE102, true, true,  {}  }, // 221
+  { "TCR_EL3", 0xF102, true, true,  {}  }, // 222
+  { "VTTBR_EL2", 0xE108, true, true,  {}  }, // 223
+  { "VTCR_EL2", 0xE10A, true, true,  {}  }, // 224
+  { "DACR32_EL2", 0xE180, true, true,  {}  }, // 225
+  { "SPSR_EL1", 0xC200, true, true,  {}  }, // 226
+  { "SPSR_EL2", 0xE200, true, true,  {}  }, // 227
+  { "SPSR_EL3", 0xF200, true, true,  {}  }, // 228
+  { "ELR_EL1", 0xC201, true, true,  {}  }, // 229
+  { "ELR_EL2", 0xE201, true, true,  {}  }, // 230
+  { "ELR_EL3", 0xF201, true, true,  {}  }, // 231
+  { "SP_EL0", 0xC208, true, true,  {}  }, // 232
+  { "SP_EL1", 0xE208, true, true,  {}  }, // 233
+  { "SP_EL2", 0xF208, true, true,  {}  }, // 234
+  { "SPSel", 0xC210, true, true,  {}  }, // 235
+  { "NZCV", 0xDA10, true, true,  {}  }, // 236
+  { "DAIF", 0xDA11, true, true,  {}  }, // 237
+  { "CurrentEL", 0xC212, true, false,  {}  }, // 238
+  { "SPSR_irq", 0xE218, true, true,  {}  }, // 239
+  { "SPSR_abt", 0xE219, true, true,  {}  }, // 240
+  { "SPSR_und", 0xE21A, true, true,  {}  }, // 241
+  { "SPSR_fiq", 0xE21B, true, true,  {}  }, // 242
+  { "FPCR", 0xDA20, true, true,  {}  }, // 243
+  { "FPSR", 0xDA21, true, true,  {}  }, // 244
+  { "DSPSR_EL0", 0xDA28, true, true,  {}  }, // 245
+  { "DLR_EL0", 0xDA29, true, true,  {}  }, // 246
+  { "IFSR32_EL2", 0xE281, true, true,  {}  }, // 247
+  { "AFSR0_EL1", 0xC288, true, true,  {}  }, // 248
+  { "AFSR0_EL2", 0xE288, true, true,  {}  }, // 249
+  { "AFSR0_EL3", 0xF288, true, true,  {}  }, // 250
+  { "AFSR1_EL1", 0xC289, true, true,  {}  }, // 251
+  { "AFSR1_EL2", 0xE289, true, true,  {}  }, // 252
+  { "AFSR1_EL3", 0xF289, true, true,  {}  }, // 253
+  { "ESR_EL1", 0xC290, true, true,  {}  }, // 254
+  { "ESR_EL2", 0xE290, true, true,  {}  }, // 255
+  { "ESR_EL3", 0xF290, true, true,  {}  }, // 256
+  { "FPEXC32_EL2", 0xE298, true, true,  {}  }, // 257
+  { "FAR_EL1", 0xC300, true, true,  {}  }, // 258
+  { "FAR_EL2", 0xE300, true, true,  {}  }, // 259
+  { "FAR_EL3", 0xF300, true, true,  {}  }, // 260
+  { "HPFAR_EL2", 0xE304, true, true,  {}  }, // 261
+  { "PAR_EL1", 0xC3A0, true, true,  {}  }, // 262
+  { "PMCR_EL0", 0xDCE0, true, true,  {}  }, // 263
+  { "PMCNTENSET_EL0", 0xDCE1, true, true,  {}  }, // 264
+  { "PMCNTENCLR_EL0", 0xDCE2, true, true,  {}  }, // 265
+  { "PMOVSCLR_EL0", 0xDCE3, true, true,  {}  }, // 266
+  { "PMSELR_EL0", 0xDCE5, true, true,  {}  }, // 267
+  { "PMCCNTR_EL0", 0xDCE8, true, true,  {}  }, // 268
+  { "PMXEVTYPER_EL0", 0xDCE9, true, true,  {}  }, // 269
+  { "PMXEVCNTR_EL0", 0xDCEA, true, true,  {}  }, // 270
+  { "PMUSERENR_EL0", 0xDCF0, true, true,  {}  }, // 271
+  { "PMINTENSET_EL1", 0xC4F1, true, true,  {}  }, // 272
+  { "PMINTENCLR_EL1", 0xC4F2, true, true,  {}  }, // 273
+  { "PMOVSSET_EL0", 0xDCF3, true, true,  {}  }, // 274
+  { "MAIR_EL1", 0xC510, true, true,  {}  }, // 275
+  { "MAIR_EL2", 0xE510, true, true,  {}  }, // 276
+  { "MAIR_EL3", 0xF510, true, true,  {}  }, // 277
+  { "AMAIR_EL1", 0xC518, true, true,  {}  }, // 278
+  { "AMAIR_EL2", 0xE518, true, true,  {}  }, // 279
+  { "AMAIR_EL3", 0xF518, true, true,  {}  }, // 280
+  { "VBAR_EL1", 0xC600, true, true,  {}  }, // 281
+  { "VBAR_EL2", 0xE600, true, true,  {}  }, // 282
+  { "VBAR_EL3", 0xF600, true, true,  {}  }, // 283
+  { "RMR_EL1", 0xC602, true, true,  {}  }, // 284
+  { "RMR_EL2", 0xE602, true, true,  {}  }, // 285
+  { "RMR_EL3", 0xF602, true, true,  {}  }, // 286
+  { "CONTEXTIDR_EL1", 0xC681, true, true,  {}  }, // 287
+  { "TPIDR_EL0", 0xDE82, true, true,  {}  }, // 288
+  { "TPIDR_EL2", 0xE682, true, true,  {}  }, // 289
+  { "TPIDR_EL3", 0xF682, true, true,  {}  }, // 290
+  { "TPIDRRO_EL0", 0xDE83, true, true,  {}  }, // 291
+  { "TPIDR_EL1", 0xC684, true, true,  {}  }, // 292
+  { "CNTFRQ_EL0", 0xDF00, true, true,  {}  }, // 293
+  { "CNTVOFF_EL2", 0xE703, true, true,  {}  }, // 294
+  { "CNTKCTL_EL1", 0xC708, true, true,  {}  }, // 295
+  { "CNTHCTL_EL2", 0xE708, true, true,  {}  }, // 296
+  { "CNTP_TVAL_EL0", 0xDF10, true, true,  {}  }, // 297
+  { "CNTHP_TVAL_EL2", 0xE710, true, true,  {}  }, // 298
+  { "CNTPS_TVAL_EL1", 0xFF10, true, true,  {}  }, // 299
+  { "CNTP_CTL_EL0", 0xDF11, true, true,  {}  }, // 300
+  { "CNTHP_CTL_EL2", 0xE711, true, true,  {}  }, // 301
+  { "CNTPS_CTL_EL1", 0xFF11, true, true,  {}  }, // 302
+  { "CNTP_CVAL_EL0", 0xDF12, true, true,  {}  }, // 303
+  { "CNTHP_CVAL_EL2", 0xE712, true, true,  {}  }, // 304
+  { "CNTPS_CVAL_EL1", 0xFF12, true, true,  {}  }, // 305
+  { "CNTV_TVAL_EL0", 0xDF18, true, true,  {}  }, // 306
+  { "CNTV_CTL_EL0", 0xDF19, true, true,  {}  }, // 307
+  { "CNTV_CVAL_EL0", 0xDF1A, true, true,  {}  }, // 308
+  { "PMEVCNTR0_EL0", 0xDF40, true, true,  {}  }, // 309
+  { "PMEVCNTR1_EL0", 0xDF41, true, true,  {}  }, // 310
+  { "PMEVCNTR2_EL0", 0xDF42, true, true,  {}  }, // 311
+  { "PMEVCNTR3_EL0", 0xDF43, true, true,  {}  }, // 312
+  { "PMEVCNTR4_EL0", 0xDF44, true, true,  {}  }, // 313
+  { "PMEVCNTR5_EL0", 0xDF45, true, true,  {}  }, // 314
+  { "PMEVCNTR6_EL0", 0xDF46, true, true,  {}  }, // 315
+  { "PMEVCNTR7_EL0", 0xDF47, true, true,  {}  }, // 316
+  { "PMEVCNTR8_EL0", 0xDF48, true, true,  {}  }, // 317
+  { "PMEVCNTR9_EL0", 0xDF49, true, true,  {}  }, // 318
+  { "PMEVCNTR10_EL0", 0xDF4A, true, true,  {}  }, // 319
+  { "PMEVCNTR11_EL0", 0xDF4B, true, true,  {}  }, // 320
+  { "PMEVCNTR12_EL0", 0xDF4C, true, true,  {}  }, // 321
+  { "PMEVCNTR13_EL0", 0xDF4D, true, true,  {}  }, // 322
+  { "PMEVCNTR14_EL0", 0xDF4E, true, true,  {}  }, // 323
+  { "PMEVCNTR15_EL0", 0xDF4F, true, true,  {}  }, // 324
+  { "PMEVCNTR16_EL0", 0xDF50, true, true,  {}  }, // 325
+  { "PMEVCNTR17_EL0", 0xDF51, true, true,  {}  }, // 326
+  { "PMEVCNTR18_EL0", 0xDF52, true, true,  {}  }, // 327
+  { "PMEVCNTR19_EL0", 0xDF53, true, true,  {}  }, // 328
+  { "PMEVCNTR20_EL0", 0xDF54, true, true,  {}  }, // 329
+  { "PMEVCNTR21_EL0", 0xDF55, true, true,  {}  }, // 330
+  { "PMEVCNTR22_EL0", 0xDF56, true, true,  {}  }, // 331
+  { "PMEVCNTR23_EL0", 0xDF57, true, true,  {}  }, // 332
+  { "PMEVCNTR24_EL0", 0xDF58, true, true,  {}  }, // 333
+  { "PMEVCNTR25_EL0", 0xDF59, true, true,  {}  }, // 334
+  { "PMEVCNTR26_EL0", 0xDF5A, true, true,  {}  }, // 335
+  { "PMEVCNTR27_EL0", 0xDF5B, true, true,  {}  }, // 336
+  { "PMEVCNTR28_EL0", 0xDF5C, true, true,  {}  }, // 337
+  { "PMEVCNTR29_EL0", 0xDF5D, true, true,  {}  }, // 338
+  { "PMEVCNTR30_EL0", 0xDF5E, true, true,  {}  }, // 339
+  { "PMCCFILTR_EL0", 0xDF7F, true, true,  {}  }, // 340
+  { "PMEVTYPER0_EL0", 0xDF60, true, true,  {}  }, // 341
+  { "PMEVTYPER1_EL0", 0xDF61, true, true,  {}  }, // 342
+  { "PMEVTYPER2_EL0", 0xDF62, true, true,  {}  }, // 343
+  { "PMEVTYPER3_EL0", 0xDF63, true, true,  {}  }, // 344
+  { "PMEVTYPER4_EL0", 0xDF64, true, true,  {}  }, // 345
+  { "PMEVTYPER5_EL0", 0xDF65, true, true,  {}  }, // 346
+  { "PMEVTYPER6_EL0", 0xDF66, true, true,  {}  }, // 347
+  { "PMEVTYPER7_EL0", 0xDF67, true, true,  {}  }, // 348
+  { "PMEVTYPER8_EL0", 0xDF68, true, true,  {}  }, // 349
+  { "PMEVTYPER9_EL0", 0xDF69, true, true,  {}  }, // 350
+  { "PMEVTYPER10_EL0", 0xDF6A, true, true,  {}  }, // 351
+  { "PMEVTYPER11_EL0", 0xDF6B, true, true,  {}  }, // 352
+  { "PMEVTYPER12_EL0", 0xDF6C, true, true,  {}  }, // 353
+  { "PMEVTYPER13_EL0", 0xDF6D, true, true,  {}  }, // 354
+  { "PMEVTYPER14_EL0", 0xDF6E, true, true,  {}  }, // 355
+  { "PMEVTYPER15_EL0", 0xDF6F, true, true,  {}  }, // 356
+  { "PMEVTYPER16_EL0", 0xDF70, true, true,  {}  }, // 357
+  { "PMEVTYPER17_EL0", 0xDF71, true, true,  {}  }, // 358
+  { "PMEVTYPER18_EL0", 0xDF72, true, true,  {}  }, // 359
+  { "PMEVTYPER19_EL0", 0xDF73, true, true,  {}  }, // 360
+  { "PMEVTYPER20_EL0", 0xDF74, true, true,  {}  }, // 361
+  { "PMEVTYPER21_EL0", 0xDF75, true, true,  {}  }, // 362
+  { "PMEVTYPER22_EL0", 0xDF76, true, true,  {}  }, // 363
+  { "PMEVTYPER23_EL0", 0xDF77, true, true,  {}  }, // 364
+  { "PMEVTYPER24_EL0", 0xDF78, true, true,  {}  }, // 365
+  { "PMEVTYPER25_EL0", 0xDF79, true, true,  {}  }, // 366
+  { "PMEVTYPER26_EL0", 0xDF7A, true, true,  {}  }, // 367
+  { "PMEVTYPER27_EL0", 0xDF7B, true, true,  {}  }, // 368
+  { "PMEVTYPER28_EL0", 0xDF7C, true, true,  {}  }, // 369
+  { "PMEVTYPER29_EL0", 0xDF7D, true, true,  {}  }, // 370
+  { "PMEVTYPER30_EL0", 0xDF7E, true, true,  {}  }, // 371
+  { "TRCPRGCTLR", 0x8808, true, true,  {}  }, // 372
+  { "TRCPROCSELR", 0x8810, true, true,  {}  }, // 373
+  { "TRCCONFIGR", 0x8820, true, true,  {}  }, // 374
+  { "TRCAUXCTLR", 0x8830, true, true,  {}  }, // 375
+  { "TRCEVENTCTL0R", 0x8840, true, true,  {}  }, // 376
+  { "TRCEVENTCTL1R", 0x8848, true, true,  {}  }, // 377
+  { "TRCSTALLCTLR", 0x8858, true, true,  {}  }, // 378
+  { "TRCTSCTLR", 0x8860, true, true,  {}  }, // 379
+  { "TRCSYNCPR", 0x8868, true, true,  {}  }, // 380
+  { "TRCCCCTLR", 0x8870, true, true,  {}  }, // 381
+  { "TRCBBCTLR", 0x8878, true, true,  {}  }, // 382
+  { "TRCTRACEIDR", 0x8801, true, true,  {}  }, // 383
+  { "TRCQCTLR", 0x8809, true, true,  {}  }, // 384
+  { "TRCVICTLR", 0x8802, true, true,  {}  }, // 385
+  { "TRCVIIECTLR", 0x880A, true, true,  {}  }, // 386
+  { "TRCVISSCTLR", 0x8812, true, true,  {}  }, // 387
+  { "TRCVIPCSSCTLR", 0x881A, true, true,  {}  }, // 388
+  { "TRCVDCTLR", 0x8842, true, true,  {}  }, // 389
+  { "TRCVDSACCTLR", 0x884A, true, true,  {}  }, // 390
+  { "TRCVDARCCTLR", 0x8852, true, true,  {}  }, // 391
+  { "TRCSEQEVR0", 0x8804, true, true,  {}  }, // 392
+  { "TRCSEQEVR1", 0x880C, true, true,  {}  }, // 393
+  { "TRCSEQEVR2", 0x8814, true, true,  {}  }, // 394
+  { "TRCSEQRSTEVR", 0x8834, true, true,  {}  }, // 395
+  { "TRCSEQSTR", 0x883C, true, true,  {}  }, // 396
+  { "TRCEXTINSELR", 0x8844, true, true,  {}  }, // 397
+  { "TRCCNTRLDVR0", 0x8805, true, true,  {}  }, // 398
+  { "TRCCNTRLDVR1", 0x880D, true, true,  {}  }, // 399
+  { "TRCCNTRLDVR2", 0x8815, true, true,  {}  }, // 400
+  { "TRCCNTRLDVR3", 0x881D, true, true,  {}  }, // 401
+  { "TRCCNTCTLR0", 0x8825, true, true,  {}  }, // 402
+  { "TRCCNTCTLR1", 0x882D, true, true,  {}  }, // 403
+  { "TRCCNTCTLR2", 0x8835, true, true,  {}  }, // 404
+  { "TRCCNTCTLR3", 0x883D, true, true,  {}  }, // 405
+  { "TRCCNTVR0", 0x8845, true, true,  {}  }, // 406
+  { "TRCCNTVR1", 0x884D, true, true,  {}  }, // 407
+  { "TRCCNTVR2", 0x8855, true, true,  {}  }, // 408
+  { "TRCCNTVR3", 0x885D, true, true,  {}  }, // 409
+  { "TRCIMSPEC0", 0x8807, true, true,  {}  }, // 410
+  { "TRCIMSPEC1", 0x880F, true, true,  {}  }, // 411
+  { "TRCIMSPEC2", 0x8817, true, true,  {}  }, // 412
+  { "TRCIMSPEC3", 0x881F, true, true,  {}  }, // 413
+  { "TRCIMSPEC4", 0x8827, true, true,  {}  }, // 414
+  { "TRCIMSPEC5", 0x882F, true, true,  {}  }, // 415
+  { "TRCIMSPEC6", 0x8837, true, true,  {}  }, // 416
+  { "TRCIMSPEC7", 0x883F, true, true,  {}  }, // 417
+  { "TRCRSCTLR2", 0x8890, true, true,  {}  }, // 418
+  { "TRCRSCTLR3", 0x8898, true, true,  {}  }, // 419
+  { "TRCRSCTLR4", 0x88A0, true, true,  {}  }, // 420
+  { "TRCRSCTLR5", 0x88A8, true, true,  {}  }, // 421
+  { "TRCRSCTLR6", 0x88B0, true, true,  {}  }, // 422
+  { "TRCRSCTLR7", 0x88B8, true, true,  {}  }, // 423
+  { "TRCRSCTLR8", 0x88C0, true, true,  {}  }, // 424
+  { "TRCRSCTLR9", 0x88C8, true, true,  {}  }, // 425
+  { "TRCRSCTLR10", 0x88D0, true, true,  {}  }, // 426
+  { "TRCRSCTLR11", 0x88D8, true, true,  {}  }, // 427
+  { "TRCRSCTLR12", 0x88E0, true, true,  {}  }, // 428
+  { "TRCRSCTLR13", 0x88E8, true, true,  {}  }, // 429
+  { "TRCRSCTLR14", 0x88F0, true, true,  {}  }, // 430
+  { "TRCRSCTLR15", 0x88F8, true, true,  {}  }, // 431
+  { "TRCRSCTLR16", 0x8881, true, true,  {}  }, // 432
+  { "TRCRSCTLR17", 0x8889, true, true,  {}  }, // 433
+  { "TRCRSCTLR18", 0x8891, true, true,  {}  }, // 434
+  { "TRCRSCTLR19", 0x8899, true, true,  {}  }, // 435
+  { "TRCRSCTLR20", 0x88A1, true, true,  {}  }, // 436
+  { "TRCRSCTLR21", 0x88A9, true, true,  {}  }, // 437
+  { "TRCRSCTLR22", 0x88B1, true, true,  {}  }, // 438
+  { "TRCRSCTLR23", 0x88B9, true, true,  {}  }, // 439
+  { "TRCRSCTLR24", 0x88C1, true, true,  {}  }, // 440
+  { "TRCRSCTLR25", 0x88C9, true, true,  {}  }, // 441
+  { "TRCRSCTLR26", 0x88D1, true, true,  {}  }, // 442
+  { "TRCRSCTLR27", 0x88D9, true, true,  {}  }, // 443
+  { "TRCRSCTLR28", 0x88E1, true, true,  {}  }, // 444
+  { "TRCRSCTLR29", 0x88E9, true, true,  {}  }, // 445
+  { "TRCRSCTLR30", 0x88F1, true, true,  {}  }, // 446
+  { "TRCRSCTLR31", 0x88F9, true, true,  {}  }, // 447
+  { "TRCSSCCR0", 0x8882, true, true,  {}  }, // 448
+  { "TRCSSCCR1", 0x888A, true, true,  {}  }, // 449
+  { "TRCSSCCR2", 0x8892, true, true,  {}  }, // 450
+  { "TRCSSCCR3", 0x889A, true, true,  {}  }, // 451
+  { "TRCSSCCR4", 0x88A2, true, true,  {}  }, // 452
+  { "TRCSSCCR5", 0x88AA, true, true,  {}  }, // 453
+  { "TRCSSCCR6", 0x88B2, true, true,  {}  }, // 454
+  { "TRCSSCCR7", 0x88BA, true, true,  {}  }, // 455
+  { "TRCSSCSR0", 0x88C2, true, true,  {}  }, // 456
+  { "TRCSSCSR1", 0x88CA, true, true,  {}  }, // 457
+  { "TRCSSCSR2", 0x88D2, true, true,  {}  }, // 458
+  { "TRCSSCSR3", 0x88DA, true, true,  {}  }, // 459
+  { "TRCSSCSR4", 0x88E2, true, true,  {}  }, // 460
+  { "TRCSSCSR5", 0x88EA, true, true,  {}  }, // 461
+  { "TRCSSCSR6", 0x88F2, true, true,  {}  }, // 462
+  { "TRCSSCSR7", 0x88FA, true, true,  {}  }, // 463
+  { "TRCSSPCICR0", 0x8883, true, true,  {}  }, // 464
+  { "TRCSSPCICR1", 0x888B, true, true,  {}  }, // 465
+  { "TRCSSPCICR2", 0x8893, true, true,  {}  }, // 466
+  { "TRCSSPCICR3", 0x889B, true, true,  {}  }, // 467
+  { "TRCSSPCICR4", 0x88A3, true, true,  {}  }, // 468
+  { "TRCSSPCICR5", 0x88AB, true, true,  {}  }, // 469
+  { "TRCSSPCICR6", 0x88B3, true, true,  {}  }, // 470
+  { "TRCSSPCICR7", 0x88BB, true, true,  {}  }, // 471
+  { "TRCPDCR", 0x88A4, true, true,  {}  }, // 472
+  { "TRCACVR0", 0x8900, true, true,  {}  }, // 473
+  { "TRCACVR1", 0x8910, true, true,  {}  }, // 474
+  { "TRCACVR2", 0x8920, true, true,  {}  }, // 475
+  { "TRCACVR3", 0x8930, true, true,  {}  }, // 476
+  { "TRCACVR4", 0x8940, true, true,  {}  }, // 477
+  { "TRCACVR5", 0x8950, true, true,  {}  }, // 478
+  { "TRCACVR6", 0x8960, true, true,  {}  }, // 479
+  { "TRCACVR7", 0x8970, true, true,  {}  }, // 480
+  { "TRCACVR8", 0x8901, true, true,  {}  }, // 481
+  { "TRCACVR9", 0x8911, true, true,  {}  }, // 482
+  { "TRCACVR10", 0x8921, true, true,  {}  }, // 483
+  { "TRCACVR11", 0x8931, true, true,  {}  }, // 484
+  { "TRCACVR12", 0x8941, true, true,  {}  }, // 485
+  { "TRCACVR13", 0x8951, true, true,  {}  }, // 486
+  { "TRCACVR14", 0x8961, true, true,  {}  }, // 487
+  { "TRCACVR15", 0x8971, true, true,  {}  }, // 488
+  { "TRCACATR0", 0x8902, true, true,  {}  }, // 489
+  { "TRCACATR1", 0x8912, true, true,  {}  }, // 490
+  { "TRCACATR2", 0x8922, true, true,  {}  }, // 491
+  { "TRCACATR3", 0x8932, true, true,  {}  }, // 492
+  { "TRCACATR4", 0x8942, true, true,  {}  }, // 493
+  { "TRCACATR5", 0x8952, true, true,  {}  }, // 494
+  { "TRCACATR6", 0x8962, true, true,  {}  }, // 495
+  { "TRCACATR7", 0x8972, true, true,  {}  }, // 496
+  { "TRCACATR8", 0x8903, true, true,  {}  }, // 497
+  { "TRCACATR9", 0x8913, true, true,  {}  }, // 498
+  { "TRCACATR10", 0x8923, true, true,  {}  }, // 499
+  { "TRCACATR11", 0x8933, true, true,  {}  }, // 500
+  { "TRCACATR12", 0x8943, true, true,  {}  }, // 501
+  { "TRCACATR13", 0x8953, true, true,  {}  }, // 502
+  { "TRCACATR14", 0x8963, true, true,  {}  }, // 503
+  { "TRCACATR15", 0x8973, true, true,  {}  }, // 504
+  { "TRCDVCVR0", 0x8904, true, true,  {}  }, // 505
+  { "TRCDVCVR1", 0x8924, true, true,  {}  }, // 506
+  { "TRCDVCVR2", 0x8944, true, true,  {}  }, // 507
+  { "TRCDVCVR3", 0x8964, true, true,  {}  }, // 508
+  { "TRCDVCVR4", 0x8905, true, true,  {}  }, // 509
+  { "TRCDVCVR5", 0x8925, true, true,  {}  }, // 510
+  { "TRCDVCVR6", 0x8945, true, true,  {}  }, // 511
+  { "TRCDVCVR7", 0x8965, true, true,  {}  }, // 512
+  { "TRCDVCMR0", 0x8906, true, true,  {}  }, // 513
+  { "TRCDVCMR1", 0x8926, true, true,  {}  }, // 514
+  { "TRCDVCMR2", 0x8946, true, true,  {}  }, // 515
+  { "TRCDVCMR3", 0x8966, true, true,  {}  }, // 516
+  { "TRCDVCMR4", 0x8907, true, true,  {}  }, // 517
+  { "TRCDVCMR5", 0x8927, true, true,  {}  }, // 518
+  { "TRCDVCMR6", 0x8947, true, true,  {}  }, // 519
+  { "TRCDVCMR7", 0x8967, true, true,  {}  }, // 520
+  { "TRCCIDCVR0", 0x8980, true, true,  {}  }, // 521
+  { "TRCCIDCVR1", 0x8990, true, true,  {}  }, // 522
+  { "TRCCIDCVR2", 0x89A0, true, true,  {}  }, // 523
+  { "TRCCIDCVR3", 0x89B0, true, true,  {}  }, // 524
+  { "TRCCIDCVR4", 0x89C0, true, true,  {}  }, // 525
+  { "TRCCIDCVR5", 0x89D0, true, true,  {}  }, // 526
+  { "TRCCIDCVR6", 0x89E0, true, true,  {}  }, // 527
+  { "TRCCIDCVR7", 0x89F0, true, true,  {}  }, // 528
+  { "TRCVMIDCVR0", 0x8981, true, true,  {}  }, // 529
+  { "TRCVMIDCVR1", 0x8991, true, true,  {}  }, // 530
+  { "TRCVMIDCVR2", 0x89A1, true, true,  {}  }, // 531
+  { "TRCVMIDCVR3", 0x89B1, true, true,  {}  }, // 532
+  { "TRCVMIDCVR4", 0x89C1, true, true,  {}  }, // 533
+  { "TRCVMIDCVR5", 0x89D1, true, true,  {}  }, // 534
+  { "TRCVMIDCVR6", 0x89E1, true, true,  {}  }, // 535
+  { "TRCVMIDCVR7", 0x89F1, true, true,  {}  }, // 536
+  { "TRCCIDCCTLR0", 0x8982, true, true,  {}  }, // 537
+  { "TRCCIDCCTLR1", 0x898A, true, true,  {}  }, // 538
+  { "TRCVMIDCCTLR0", 0x8992, true, true,  {}  }, // 539
+  { "TRCVMIDCCTLR1", 0x899A, true, true,  {}  }, // 540
+  { "TRCITCTRL", 0x8B84, true, true,  {}  }, // 541
+  { "TRCCLAIMSET", 0x8BC6, true, true,  {}  }, // 542
+  { "TRCCLAIMCLR", 0x8BCE, true, true,  {}  }, // 543
+  { "ICC_BPR1_EL1", 0xC663, true, true,  {}  }, // 544
+  { "ICC_BPR0_EL1", 0xC643, true, true,  {}  }, // 545
+  { "ICC_PMR_EL1", 0xC230, true, true,  {}  }, // 546
+  { "ICC_CTLR_EL1", 0xC664, true, true,  {}  }, // 547
+  { "ICC_CTLR_EL3", 0xF664, true, true,  {}  }, // 548
+  { "ICC_SRE_EL1", 0xC665, true, true,  {}  }, // 549
+  { "ICC_SRE_EL2", 0xE64D, true, true,  {}  }, // 550
+  { "ICC_SRE_EL3", 0xF665, true, true,  {}  }, // 551
+  { "ICC_IGRPEN0_EL1", 0xC666, true, true,  {}  }, // 552
+  { "ICC_IGRPEN1_EL1", 0xC667, true, true,  {}  }, // 553
+  { "ICC_IGRPEN1_EL3", 0xF667, true, true,  {}  }, // 554
+  { "ICC_AP0R0_EL1", 0xC644, true, true,  {}  }, // 555
+  { "ICC_AP0R1_EL1", 0xC645, true, true,  {}  }, // 556
+  { "ICC_AP0R2_EL1", 0xC646, true, true,  {}  }, // 557
+  { "ICC_AP0R3_EL1", 0xC647, true, true,  {}  }, // 558
+  { "ICC_AP1R0_EL1", 0xC648, true, true,  {}  }, // 559
+  { "ICC_AP1R1_EL1", 0xC649, true, true,  {}  }, // 560
+  { "ICC_AP1R2_EL1", 0xC64A, true, true,  {}  }, // 561
+  { "ICC_AP1R3_EL1", 0xC64B, true, true,  {}  }, // 562
+  { "ICH_AP0R0_EL2", 0xE640, true, true,  {}  }, // 563
+  { "ICH_AP0R1_EL2", 0xE641, true, true,  {}  }, // 564
+  { "ICH_AP0R2_EL2", 0xE642, true, true,  {}  }, // 565
+  { "ICH_AP0R3_EL2", 0xE643, true, true,  {}  }, // 566
+  { "ICH_AP1R0_EL2", 0xE648, true, true,  {}  }, // 567
+  { "ICH_AP1R1_EL2", 0xE649, true, true,  {}  }, // 568
+  { "ICH_AP1R2_EL2", 0xE64A, true, true,  {}  }, // 569
+  { "ICH_AP1R3_EL2", 0xE64B, true, true,  {}  }, // 570
+  { "ICH_HCR_EL2", 0xE658, true, true,  {}  }, // 571
+  { "ICH_MISR_EL2", 0xE65A, true, false,  {}  }, // 572
+  { "ICH_VMCR_EL2", 0xE65F, true, true,  {}  }, // 573
+  { "ICH_LR0_EL2", 0xE660, true, true,  {}  }, // 574
+  { "ICH_LR1_EL2", 0xE661, true, true,  {}  }, // 575
+  { "ICH_LR2_EL2", 0xE662, true, true,  {}  }, // 576
+  { "ICH_LR3_EL2", 0xE663, true, true,  {}  }, // 577
+  { "ICH_LR4_EL2", 0xE664, true, true,  {}  }, // 578
+  { "ICH_LR5_EL2", 0xE665, true, true,  {}  }, // 579
+  { "ICH_LR6_EL2", 0xE666, true, true,  {}  }, // 580
+  { "ICH_LR7_EL2", 0xE667, true, true,  {}  }, // 581
+  { "ICH_LR8_EL2", 0xE668, true, true,  {}  }, // 582
+  { "ICH_LR9_EL2", 0xE669, true, true,  {}  }, // 583
+  { "ICH_LR10_EL2", 0xE66A, true, true,  {}  }, // 584
+  { "ICH_LR11_EL2", 0xE66B, true, true,  {}  }, // 585
+  { "ICH_LR12_EL2", 0xE66C, true, true,  {}  }, // 586
+  { "ICH_LR13_EL2", 0xE66D, true, true,  {}  }, // 587
+  { "ICH_LR14_EL2", 0xE66E, true, true,  {}  }, // 588
+  { "ICH_LR15_EL2", 0xE66F, true, true,  {}  }, // 589
+  { "PAN", 0xC213, true, true,  {AArch64::FeaturePAN}  }, // 590
+  { "LORSA_EL1", 0xC520, true, true,  {AArch64::FeatureLOR}  }, // 591
+  { "LOREA_EL1", 0xC521, true, true,  {AArch64::FeatureLOR}  }, // 592
+  { "LORN_EL1", 0xC522, true, true,  {AArch64::FeatureLOR}  }, // 593
+  { "LORC_EL1", 0xC523, true, true,  {AArch64::FeatureLOR}  }, // 594
+  { "TTBR1_EL2", 0xE101, true, true,  {AArch64::FeatureVH}  }, // 595
+  { "CONTEXTIDR_EL2", 0xE681, true, true,  {AArch64::FeatureVH}  }, // 596
+  { "CNTHV_TVAL_EL2", 0xE718, true, true,  {AArch64::FeatureVH}  }, // 597
+  { "CNTHV_CVAL_EL2", 0xE71A, true, true,  {AArch64::FeatureVH}  }, // 598
+  { "CNTHV_CTL_EL2", 0xE719, true, true,  {AArch64::FeatureVH}  }, // 599
+  { "SCTLR_EL12", 0xE880, true, true,  {AArch64::FeatureVH}  }, // 600
+  { "CPACR_EL12", 0xE882, true, true,  {AArch64::FeatureVH}  }, // 601
+  { "TTBR0_EL12", 0xE900, true, true,  {AArch64::FeatureVH}  }, // 602
+  { "TTBR1_EL12", 0xE901, true, true,  {AArch64::FeatureVH}  }, // 603
+  { "TCR_EL12", 0xE902, true, true,  {AArch64::FeatureVH}  }, // 604
+  { "AFSR0_EL12", 0xEA88, true, true,  {AArch64::FeatureVH}  }, // 605
+  { "AFSR1_EL12", 0xEA89, true, true,  {AArch64::FeatureVH}  }, // 606
+  { "ESR_EL12", 0xEA90, true, true,  {AArch64::FeatureVH}  }, // 607
+  { "FAR_EL12", 0xEB00, true, true,  {AArch64::FeatureVH}  }, // 608
+  { "MAIR_EL12", 0xED10, true, true,  {AArch64::FeatureVH}  }, // 609
+  { "AMAIR_EL12", 0xED18, true, true,  {AArch64::FeatureVH}  }, // 610
+  { "VBAR_EL12", 0xEE00, true, true,  {AArch64::FeatureVH}  }, // 611
+  { "CONTEXTIDR_EL12", 0xEE81, true, true,  {AArch64::FeatureVH}  }, // 612
+  { "CNTKCTL_EL12", 0xEF08, true, true,  {AArch64::FeatureVH}  }, // 613
+  { "CNTP_TVAL_EL02", 0xEF10, true, true,  {AArch64::FeatureVH}  }, // 614
+  { "CNTP_CTL_EL02", 0xEF11, true, true,  {AArch64::FeatureVH}  }, // 615
+  { "CNTP_CVAL_EL02", 0xEF12, true, true,  {AArch64::FeatureVH}  }, // 616
+  { "CNTV_TVAL_EL02", 0xEF18, true, true,  {AArch64::FeatureVH}  }, // 617
+  { "CNTV_CTL_EL02", 0xEF19, true, true,  {AArch64::FeatureVH}  }, // 618
+  { "CNTV_CVAL_EL02", 0xEF1A, true, true,  {AArch64::FeatureVH}  }, // 619
+  { "SPSR_EL12", 0xEA00, true, true,  {AArch64::FeatureVH}  }, // 620
+  { "ELR_EL12", 0xEA01, true, true,  {AArch64::FeatureVH}  }, // 621
+  { "UAO", 0xC214, true, true,  {AArch64::FeaturePsUAO}  }, // 622
+  { "PMBLIMITR_EL1", 0xC4D0, true, true,  {AArch64::FeatureSPE}  }, // 623
+  { "PMBPTR_EL1", 0xC4D1, true, true,  {AArch64::FeatureSPE}  }, // 624
+  { "PMBSR_EL1", 0xC4D3, true, true,  {AArch64::FeatureSPE}  }, // 625
+  { "PMBIDR_EL1", 0xC4D7, true, false,  {AArch64::FeatureSPE}  }, // 626
+  { "PMSCR_EL2", 0xE4C8, true, true,  {AArch64::FeatureSPE}  }, // 627
+  { "PMSCR_EL12", 0xECC8, true, true,  {AArch64::FeatureSPE}  }, // 628
+  { "PMSCR_EL1", 0xC4C8, true, true,  {AArch64::FeatureSPE}  }, // 629
+  { "PMSICR_EL1", 0xC4CA, true, true,  {AArch64::FeatureSPE}  }, // 630
+  { "PMSIRR_EL1", 0xC4CB, true, true,  {AArch64::FeatureSPE}  }, // 631
+  { "PMSFCR_EL1", 0xC4CC, true, true,  {AArch64::FeatureSPE}  }, // 632
+  { "PMSEVFR_EL1", 0xC4CD, true, true,  {AArch64::FeatureSPE}  }, // 633
+  { "PMSLATFR_EL1", 0xC4CE, true, true,  {AArch64::FeatureSPE}  }, // 634
+  { "PMSIDR_EL1", 0xC4CF, true, false,  {AArch64::FeatureSPE}  }, // 635
+  { "ERRSELR_EL1", 0xC299, true, true,  {AArch64::FeatureRAS}  }, // 636
+  { "ERXCTLR_EL1", 0xC2A1, true, true,  {AArch64::FeatureRAS}  }, // 637
+  { "ERXSTATUS_EL1", 0xC2A2, true, true,  {AArch64::FeatureRAS}  }, // 638
+  { "ERXADDR_EL1", 0xC2A3, true, true,  {AArch64::FeatureRAS}  }, // 639
+  { "ERXMISC0_EL1", 0xC2A8, true, true,  {AArch64::FeatureRAS}  }, // 640
+  { "ERXMISC1_EL1", 0xC2A9, true, true,  {AArch64::FeatureRAS}  }, // 641
+  { "DISR_EL1", 0xC609, true, true,  {AArch64::FeatureRAS}  }, // 642
+  { "VDISR_EL2", 0xE609, true, true,  {AArch64::FeatureRAS}  }, // 643
+  { "VSESR_EL2", 0xE293, true, true,  {AArch64::FeatureRAS}  }, // 644
+  { "APIAKeyLo_EL1", 0xC108, true, true,  {AArch64::FeaturePA}  }, // 645
+  { "APIAKeyHi_EL1", 0xC109, true, true,  {AArch64::FeaturePA}  }, // 646
+  { "APIBKeyLo_EL1", 0xC10A, true, true,  {AArch64::FeaturePA}  }, // 647
+  { "APIBKeyHi_EL1", 0xC10B, true, true,  {AArch64::FeaturePA}  }, // 648
+  { "APDAKeyLo_EL1", 0xC110, true, true,  {AArch64::FeaturePA}  }, // 649
+  { "APDAKeyHi_EL1", 0xC111, true, true,  {AArch64::FeaturePA}  }, // 650
+  { "APDBKeyLo_EL1", 0xC112, true, true,  {AArch64::FeaturePA}  }, // 651
+  { "APDBKeyHi_EL1", 0xC113, true, true,  {AArch64::FeaturePA}  }, // 652
+  { "APGAKeyLo_EL1", 0xC118, true, true,  {AArch64::FeaturePA}  }, // 653
+  { "APGAKeyHi_EL1", 0xC119, true, true,  {AArch64::FeaturePA}  }, // 654
+  { "VSTCR_EL2", 0xE132, true, true,  {AArch64::FeatureSEL2}  }, // 655
+  { "VSTTBR_EL2", 0xE130, true, true,  {AArch64::FeatureSEL2}  }, // 656
+  { "CNTHVS_TVAL_EL2", 0xE720, true, true,  {AArch64::FeatureSEL2}  }, // 657
+  { "CNTHVS_CVAL_EL2", 0xE722, true, true,  {AArch64::FeatureSEL2}  }, // 658
+  { "CNTHVS_CTL_EL2", 0xE721, true, true,  {AArch64::FeatureSEL2}  }, // 659
+  { "CNTHPS_TVAL_EL2", 0xE728, true, true,  {AArch64::FeatureSEL2}  }, // 660
+  { "CNTHPS_CVAL_EL2", 0xE72A, true, true,  {AArch64::FeatureSEL2}  }, // 661
+  { "CNTHPS_CTL_EL2", 0xE729, true, true,  {AArch64::FeatureSEL2}  }, // 662
+  { "SDER32_EL2", 0xE099, true, true,  {AArch64::FeatureSEL2}  }, // 663
+  { "PMMIR_EL1", 0xC4F6, true, true,  {AArch64::FeaturePMU}  }, // 664
+  { "ERXPFGCTL_EL1", 0xC2A5, true, true,  {AArch64::FeatureRASv8_4}  }, // 665
+  { "ERXPFGCDN_EL1", 0xC2A6, true, true,  {AArch64::FeatureRASv8_4}  }, // 666
+  { "ERXMISC2_EL1", 0xC2AA, true, true,  {AArch64::FeatureRASv8_4}  }, // 667
+  { "ERXMISC3_EL1", 0xC2AB, true, true,  {AArch64::FeatureRASv8_4}  }, // 668
+  { "ERXPFGF_EL1", 0xC2A4, true, false,  {AArch64::FeatureRASv8_4}  }, // 669
+  { "MPAM0_EL1", 0xC529, true, true,  {AArch64::FeatureMPAM}  }, // 670
+  { "MPAM1_EL1", 0xC528, true, true,  {AArch64::FeatureMPAM}  }, // 671
+  { "MPAM2_EL2", 0xE528, true, true,  {AArch64::FeatureMPAM}  }, // 672
+  { "MPAM3_EL3", 0xF528, true, true,  {AArch64::FeatureMPAM}  }, // 673
+  { "MPAM1_EL12", 0xED28, true, true,  {AArch64::FeatureMPAM}  }, // 674
+  { "MPAMHCR_EL2", 0xE520, true, true,  {AArch64::FeatureMPAM}  }, // 675
+  { "MPAMVPMV_EL2", 0xE521, true, true,  {AArch64::FeatureMPAM}  }, // 676
+  { "MPAMVPM0_EL2", 0xE530, true, true,  {AArch64::FeatureMPAM}  }, // 677
+  { "MPAMVPM1_EL2", 0xE531, true, true,  {AArch64::FeatureMPAM}  }, // 678
+  { "MPAMVPM2_EL2", 0xE532, true, true,  {AArch64::FeatureMPAM}  }, // 679
+  { "MPAMVPM3_EL2", 0xE533, true, true,  {AArch64::FeatureMPAM}  }, // 680
+  { "MPAMVPM4_EL2", 0xE534, true, true,  {AArch64::FeatureMPAM}  }, // 681
+  { "MPAMVPM5_EL2", 0xE535, true, true,  {AArch64::FeatureMPAM}  }, // 682
+  { "MPAMVPM6_EL2", 0xE536, true, true,  {AArch64::FeatureMPAM}  }, // 683
+  { "MPAMVPM7_EL2", 0xE537, true, true,  {AArch64::FeatureMPAM}  }, // 684
+  { "MPAMIDR_EL1", 0xC524, true, false,  {AArch64::FeatureMPAM}  }, // 685
+  { "AMCR_EL0", 0xDE90, true, true,  {AArch64::FeatureAM}  }, // 686
+  { "AMCFGR_EL0", 0xDE91, true, false,  {AArch64::FeatureAM}  }, // 687
+  { "AMCGCR_EL0", 0xDE92, true, false,  {AArch64::FeatureAM}  }, // 688
+  { "AMUSERENR_EL0", 0xDE93, true, true,  {AArch64::FeatureAM}  }, // 689
+  { "AMCNTENCLR0_EL0", 0xDE94, true, true,  {AArch64::FeatureAM}  }, // 690
+  { "AMCNTENSET0_EL0", 0xDE95, true, true,  {AArch64::FeatureAM}  }, // 691
+  { "AMEVCNTR00_EL0", 0xDEA0, true, true,  {AArch64::FeatureAM}  }, // 692
+  { "AMEVCNTR01_EL0", 0xDEA1, true, true,  {AArch64::FeatureAM}  }, // 693
+  { "AMEVCNTR02_EL0", 0xDEA2, true, true,  {AArch64::FeatureAM}  }, // 694
+  { "AMEVCNTR03_EL0", 0xDEA3, true, true,  {AArch64::FeatureAM}  }, // 695
+  { "AMEVTYPER00_EL0", 0xDEB0, true, false,  {AArch64::FeatureAM}  }, // 696
+  { "AMEVTYPER01_EL0", 0xDEB1, true, false,  {AArch64::FeatureAM}  }, // 697
+  { "AMEVTYPER02_EL0", 0xDEB2, true, false,  {AArch64::FeatureAM}  }, // 698
+  { "AMEVTYPER03_EL0", 0xDEB3, true, false,  {AArch64::FeatureAM}  }, // 699
+  { "AMCNTENCLR1_EL0", 0xDE98, true, true,  {AArch64::FeatureAM}  }, // 700
+  { "AMCNTENSET1_EL0", 0xDE99, true, true,  {AArch64::FeatureAM}  }, // 701
+  { "AMEVCNTR10_EL0", 0xDEE0, true, true,  {AArch64::FeatureAM}  }, // 702
+  { "AMEVCNTR11_EL0", 0xDEE1, true, true,  {AArch64::FeatureAM}  }, // 703
+  { "AMEVCNTR12_EL0", 0xDEE2, true, true,  {AArch64::FeatureAM}  }, // 704
+  { "AMEVCNTR13_EL0", 0xDEE3, true, true,  {AArch64::FeatureAM}  }, // 705
+  { "AMEVCNTR14_EL0", 0xDEE4, true, true,  {AArch64::FeatureAM}  }, // 706
+  { "AMEVCNTR15_EL0", 0xDEE5, true, true,  {AArch64::FeatureAM}  }, // 707
+  { "AMEVCNTR16_EL0", 0xDEE6, true, true,  {AArch64::FeatureAM}  }, // 708
+  { "AMEVCNTR17_EL0", 0xDEE7, true, true,  {AArch64::FeatureAM}  }, // 709
+  { "AMEVCNTR18_EL0", 0xDEE8, true, true,  {AArch64::FeatureAM}  }, // 710
+  { "AMEVCNTR19_EL0", 0xDEE9, true, true,  {AArch64::FeatureAM}  }, // 711
+  { "AMEVCNTR110_EL0", 0xDEEA, true, true,  {AArch64::FeatureAM}  }, // 712
+  { "AMEVCNTR111_EL0", 0xDEEB, true, true,  {AArch64::FeatureAM}  }, // 713
+  { "AMEVCNTR112_EL0", 0xDEEC, true, true,  {AArch64::FeatureAM}  }, // 714
+  { "AMEVCNTR113_EL0", 0xDEED, true, true,  {AArch64::FeatureAM}  }, // 715
+  { "AMEVCNTR114_EL0", 0xDEEE, true, true,  {AArch64::FeatureAM}  }, // 716
+  { "AMEVCNTR115_EL0", 0xDEEF, true, true,  {AArch64::FeatureAM}  }, // 717
+  { "AMEVTYPER10_EL0", 0xDEF0, true, true,  {AArch64::FeatureAM}  }, // 718
+  { "AMEVTYPER11_EL0", 0xDEF1, true, true,  {AArch64::FeatureAM}  }, // 719
+  { "AMEVTYPER12_EL0", 0xDEF2, true, true,  {AArch64::FeatureAM}  }, // 720
+  { "AMEVTYPER13_EL0", 0xDEF3, true, true,  {AArch64::FeatureAM}  }, // 721
+  { "AMEVTYPER14_EL0", 0xDEF4, true, true,  {AArch64::FeatureAM}  }, // 722
+  { "AMEVTYPER15_EL0", 0xDEF5, true, true,  {AArch64::FeatureAM}  }, // 723
+  { "AMEVTYPER16_EL0", 0xDEF6, true, true,  {AArch64::FeatureAM}  }, // 724
+  { "AMEVTYPER17_EL0", 0xDEF7, true, true,  {AArch64::FeatureAM}  }, // 725
+  { "AMEVTYPER18_EL0", 0xDEF8, true, true,  {AArch64::FeatureAM}  }, // 726
+  { "AMEVTYPER19_EL0", 0xDEF9, true, true,  {AArch64::FeatureAM}  }, // 727
+  { "AMEVTYPER110_EL0", 0xDEFA, true, true,  {AArch64::FeatureAM}  }, // 728
+  { "AMEVTYPER111_EL0", 0xDEFB, true, true,  {AArch64::FeatureAM}  }, // 729
+  { "AMEVTYPER112_EL0", 0xDEFC, true, true,  {AArch64::FeatureAM}  }, // 730
+  { "AMEVTYPER113_EL0", 0xDEFD, true, true,  {AArch64::FeatureAM}  }, // 731
+  { "AMEVTYPER114_EL0", 0xDEFE, true, true,  {AArch64::FeatureAM}  }, // 732
+  { "AMEVTYPER115_EL0", 0xDEFF, true, true,  {AArch64::FeatureAM}  }, // 733
+  { "TRFCR_EL1", 0xC091, true, true,  {AArch64::FeatureTRACEV8_4}  }, // 734
+  { "TRFCR_EL2", 0xE091, true, true,  {AArch64::FeatureTRACEV8_4}  }, // 735
+  { "TRFCR_EL12", 0xE891, true, true,  {AArch64::FeatureTRACEV8_4}  }, // 736
+  { "DIT", 0xDA15, true, true,  {AArch64::FeatureDIT}  }, // 737
+  { "VNCR_EL2", 0xE110, true, true,  {AArch64::FeatureNV}  }, // 738
+  { "ZCR_EL1", 0xC090, true, true,  {AArch64::FeatureSVE}  }, // 739
+  { "ZCR_EL2", 0xE090, true, true,  {AArch64::FeatureSVE}  }, // 740
+  { "ZCR_EL3", 0xF090, true, true,  {AArch64::FeatureSVE}  }, // 741
+  { "ZCR_EL12", 0xE890, true, true,  {AArch64::FeatureSVE}  }, // 742
+  { "SSBS", 0xDA16, true, true,  {AArch64::FeatureSSBS}  }, // 743
+  { "TCO", 0xDA17, true, true,  {AArch64::FeatureMTE}  }, // 744
+  { "GCR_EL1", 0xC086, true, true,  {AArch64::FeatureMTE}  }, // 745
+  { "RGSR_EL1", 0xC085, true, true,  {AArch64::FeatureMTE}  }, // 746
+  { "TFSR_EL1", 0xC2B0, true, true,  {AArch64::FeatureMTE}  }, // 747
+  { "TFSR_EL2", 0xE2B0, true, true,  {AArch64::FeatureMTE}  }, // 748
+  { "TFSR_EL3", 0xF2B0, true, true,  {AArch64::FeatureMTE}  }, // 749
+  { "TFSR_EL12", 0xEAB0, true, true,  {AArch64::FeatureMTE}  }, // 750
+  { "TFSRE0_EL1", 0xC2B1, true, true,  {AArch64::FeatureMTE}  }, // 751
+  { "GMID_EL1", 0xC804, true, false,  {AArch64::FeatureMTE}  }, // 752
+  { "TRCRSR", 0x8850, true, true,  {AArch64::FeatureETE}  }, // 753
+  { "TRCEXTINSELR0", 0x8844, true, true,  {AArch64::FeatureETE}  }, // 754
+  { "TRCEXTINSELR1", 0x884C, true, true,  {AArch64::FeatureETE}  }, // 755
+  { "TRCEXTINSELR2", 0x8854, true, true,  {AArch64::FeatureETE}  }, // 756
+  { "TRCEXTINSELR3", 0x885C, true, true,  {AArch64::FeatureETE}  }, // 757
+  { "TRBLIMITR_EL1", 0xC4D8, true, true,  {AArch64::FeatureTRBE}  }, // 758
+  { "TRBPTR_EL1", 0xC4D9, true, true,  {AArch64::FeatureTRBE}  }, // 759
+  { "TRBBASER_EL1", 0xC4DA, true, true,  {AArch64::FeatureTRBE}  }, // 760
+  { "TRBSR_EL1", 0xC4DB, true, true,  {AArch64::FeatureTRBE}  }, // 761
+  { "TRBMAR_EL1", 0xC4DC, true, true,  {AArch64::FeatureTRBE}  }, // 762
+  { "TRBTRG_EL1", 0xC4DE, true, true,  {AArch64::FeatureTRBE}  }, // 763
+  { "TRBIDR_EL1", 0xC4DF, true, false,  {AArch64::FeatureTRBE}  }, // 764
+  { "AMEVCNTVOFF00_EL2", 0xE6C0, true, true,  {AArch64::FeatureAMVS}  }, // 765
+  { "AMEVCNTVOFF10_EL2", 0xE6D0, true, true,  {AArch64::FeatureAMVS}  }, // 766
+  { "AMEVCNTVOFF01_EL2", 0xE6C1, true, true,  {AArch64::FeatureAMVS}  }, // 767
+  { "AMEVCNTVOFF11_EL2", 0xE6D1, true, true,  {AArch64::FeatureAMVS}  }, // 768
+  { "AMEVCNTVOFF02_EL2", 0xE6C2, true, true,  {AArch64::FeatureAMVS}  }, // 769
+  { "AMEVCNTVOFF12_EL2", 0xE6D2, true, true,  {AArch64::FeatureAMVS}  }, // 770
+  { "AMEVCNTVOFF03_EL2", 0xE6C3, true, true,  {AArch64::FeatureAMVS}  }, // 771
+  { "AMEVCNTVOFF13_EL2", 0xE6D3, true, true,  {AArch64::FeatureAMVS}  }, // 772
+  { "AMEVCNTVOFF04_EL2", 0xE6C4, true, true,  {AArch64::FeatureAMVS}  }, // 773
+  { "AMEVCNTVOFF14_EL2", 0xE6D4, true, true,  {AArch64::FeatureAMVS}  }, // 774
+  { "AMEVCNTVOFF05_EL2", 0xE6C5, true, true,  {AArch64::FeatureAMVS}  }, // 775
+  { "AMEVCNTVOFF15_EL2", 0xE6D5, true, true,  {AArch64::FeatureAMVS}  }, // 776
+  { "AMEVCNTVOFF06_EL2", 0xE6C6, true, true,  {AArch64::FeatureAMVS}  }, // 777
+  { "AMEVCNTVOFF16_EL2", 0xE6D6, true, true,  {AArch64::FeatureAMVS}  }, // 778
+  { "AMEVCNTVOFF07_EL2", 0xE6C7, true, true,  {AArch64::FeatureAMVS}  }, // 779
+  { "AMEVCNTVOFF17_EL2", 0xE6D7, true, true,  {AArch64::FeatureAMVS}  }, // 780
+  { "AMEVCNTVOFF08_EL2", 0xE6C8, true, true,  {AArch64::FeatureAMVS}  }, // 781
+  { "AMEVCNTVOFF18_EL2", 0xE6D8, true, true,  {AArch64::FeatureAMVS}  }, // 782
+  { "AMEVCNTVOFF09_EL2", 0xE6C9, true, true,  {AArch64::FeatureAMVS}  }, // 783
+  { "AMEVCNTVOFF19_EL2", 0xE6D9, true, true,  {AArch64::FeatureAMVS}  }, // 784
+  { "AMEVCNTVOFF010_EL2", 0xE6CA, true, true,  {AArch64::FeatureAMVS}  }, // 785
+  { "AMEVCNTVOFF110_EL2", 0xE6DA, true, true,  {AArch64::FeatureAMVS}  }, // 786
+  { "AMEVCNTVOFF011_EL2", 0xE6CB, true, true,  {AArch64::FeatureAMVS}  }, // 787
+  { "AMEVCNTVOFF111_EL2", 0xE6DB, true, true,  {AArch64::FeatureAMVS}  }, // 788
+  { "AMEVCNTVOFF012_EL2", 0xE6CC, true, true,  {AArch64::FeatureAMVS}  }, // 789
+  { "AMEVCNTVOFF112_EL2", 0xE6DC, true, true,  {AArch64::FeatureAMVS}  }, // 790
+  { "AMEVCNTVOFF013_EL2", 0xE6CD, true, true,  {AArch64::FeatureAMVS}  }, // 791
+  { "AMEVCNTVOFF113_EL2", 0xE6DD, true, true,  {AArch64::FeatureAMVS}  }, // 792
+  { "AMEVCNTVOFF014_EL2", 0xE6CE, true, true,  {AArch64::FeatureAMVS}  }, // 793
+  { "AMEVCNTVOFF114_EL2", 0xE6DE, true, true,  {AArch64::FeatureAMVS}  }, // 794
+  { "AMEVCNTVOFF015_EL2", 0xE6CF, true, true,  {AArch64::FeatureAMVS}  }, // 795
+  { "AMEVCNTVOFF115_EL2", 0xE6DF, true, true,  {AArch64::FeatureAMVS}  }, // 796
+  { "HFGRTR_EL2", 0xE08C, true, true,  {AArch64::FeatureFineGrainedTraps}  }, // 797
+  { "HFGWTR_EL2", 0xE08D, true, true,  {AArch64::FeatureFineGrainedTraps}  }, // 798
+  { "HFGITR_EL2", 0xE08E, true, true,  {AArch64::FeatureFineGrainedTraps}  }, // 799
+  { "HDFGRTR_EL2", 0xE18C, true, true,  {AArch64::FeatureFineGrainedTraps}  }, // 800
+  { "HDFGWTR_EL2", 0xE18D, true, true,  {AArch64::FeatureFineGrainedTraps}  }, // 801
+  { "CNTSCALE_EL2", 0xE704, true, true,  {AArch64::FeatureEnhancedCounterVirtualization}  }, // 802
+  { "CNTISCALE_EL2", 0xE705, true, true,  {AArch64::FeatureEnhancedCounterVirtualization}  }, // 803
+  { "CNTPOFF_EL2", 0xE706, true, true,  {AArch64::FeatureEnhancedCounterVirtualization}  }, // 804
+  { "CNTVFRQ_EL2", 0xE707, true, true,  {AArch64::FeatureEnhancedCounterVirtualization}  }, // 805
+  { "CNTPCTSS_EL0", 0xDF05, true, true,  {AArch64::FeatureEnhancedCounterVirtualization}  }, // 806
+  { "CNTVCTSS_EL0", 0xDF06, true, true,  {AArch64::FeatureEnhancedCounterVirtualization}  }, // 807
+  { "CPM_IOACC_CTL_EL3", 0xFF90, true, true,  {AArch64::ProcAppleA7}  }, // 808
  };
 
 const SysReg *lookupSysRegByName(StringRef Name) {
@@ -3024,773 +3108,815 @@ const SysReg *lookupSysRegByName(StringRef Name) {
     unsigned _index;
   };
   static const struct IndexType Index[] = {
-    { "ACTLR_EL1", 540 },
-    { "ACTLR_EL2", 541 },
-    { "ACTLR_EL3", 542 },
-    { "AFSR0_EL1", 584 },
-    { "AFSR0_EL12", 174 },
-    { "AFSR0_EL2", 585 },
-    { "AFSR0_EL3", 586 },
-    { "AFSR1_EL1", 587 },
-    { "AFSR1_EL12", 175 },
-    { "AFSR1_EL2", 588 },
-    { "AFSR1_EL3", 589 },
-    { "AIDR_EL1", 350 },
-    { "AMAIR_EL1", 614 },
-    { "AMAIR_EL12", 179 },
-    { "AMAIR_EL2", 615 },
-    { "AMAIR_EL3", 616 },
-    { "AMCFGR_EL0", 257 },
-    { "AMCGCR_EL0", 258 },
-    { "AMCNTENCLR0_EL0", 260 },
-    { "AMCNTENCLR1_EL0", 270 },
-    { "AMCNTENSET0_EL0", 261 },
-    { "AMCNTENSET1_EL0", 271 },
-    { "AMCR_EL0", 256 },
-    { "AMEVCNTR00_EL0", 262 },
-    { "AMEVCNTR01_EL0", 263 },
-    { "AMEVCNTR02_EL0", 264 },
-    { "AMEVCNTR03_EL0", 265 },
-    { "AMEVCNTR10_EL0", 272 },
-    { "AMEVCNTR110_EL0", 282 },
-    { "AMEVCNTR111_EL0", 283 },
-    { "AMEVCNTR112_EL0", 284 },
-    { "AMEVCNTR113_EL0", 285 },
-    { "AMEVCNTR114_EL0", 286 },
-    { "AMEVCNTR115_EL0", 287 },
-    { "AMEVCNTR11_EL0", 273 },
-    { "AMEVCNTR12_EL0", 274 },
-    { "AMEVCNTR13_EL0", 275 },
-    { "AMEVCNTR14_EL0", 276 },
-    { "AMEVCNTR15_EL0", 277 },
-    { "AMEVCNTR16_EL0", 278 },
-    { "AMEVCNTR17_EL0", 279 },
-    { "AMEVCNTR18_EL0", 280 },
-    { "AMEVCNTR19_EL0", 281 },
-    { "AMEVTYPER00_EL0", 266 },
-    { "AMEVTYPER01_EL0", 267 },
-    { "AMEVTYPER02_EL0", 268 },
-    { "AMEVTYPER03_EL0", 269 },
-    { "AMEVTYPER10_EL0", 288 },
-    { "AMEVTYPER110_EL0", 298 },
-    { "AMEVTYPER111_EL0", 299 },
-    { "AMEVTYPER112_EL0", 300 },
-    { "AMEVTYPER113_EL0", 301 },
-    { "AMEVTYPER114_EL0", 302 },
-    { "AMEVTYPER115_EL0", 303 },
-    { "AMEVTYPER11_EL0", 289 },
-    { "AMEVTYPER12_EL0", 290 },
-    { "AMEVTYPER13_EL0", 291 },
-    { "AMEVTYPER14_EL0", 292 },
-    { "AMEVTYPER15_EL0", 293 },
-    { "AMEVTYPER16_EL0", 294 },
-    { "AMEVTYPER17_EL0", 295 },
-    { "AMEVTYPER18_EL0", 296 },
-    { "AMEVTYPER19_EL0", 297 },
-    { "AMUSERENR_EL0", 259 },
-    { "APDAKEYHI_EL1", 219 },
-    { "APDAKEYLO_EL1", 218 },
-    { "APDBKEYHI_EL1", 221 },
-    { "APDBKEYLO_EL1", 220 },
-    { "APGAKEYHI_EL1", 223 },
-    { "APGAKEYLO_EL1", 222 },
-    { "APIAKEYHI_EL1", 215 },
-    { "APIAKEYLO_EL1", 214 },
-    { "APIBKEYHI_EL1", 217 },
-    { "APIBKEYLO_EL1", 216 },
-    { "CCSIDR2_EL1", 345 },
-    { "CCSIDR_EL1", 344 },
-    { "CLIDR_EL1", 346 },
-    { "CNTFRQ_EL0", 629 },
-    { "CNTHCTL_EL2", 632 },
-    { "CNTHPS_CTL_EL2", 231 },
-    { "CNTHPS_CVAL_EL2", 230 },
-    { "CNTHPS_TVAL_EL2", 229 },
-    { "CNTHP_CTL_EL2", 637 },
-    { "CNTHP_CVAL_EL2", 640 },
-    { "CNTHP_TVAL_EL2", 634 },
-    { "CNTHVS_CTL_EL2", 228 },
-    { "CNTHVS_CVAL_EL2", 227 },
-    { "CNTHVS_TVAL_EL2", 226 },
-    { "CNTHV_CTL_EL2", 168 },
-    { "CNTHV_CVAL_EL2", 167 },
-    { "CNTHV_TVAL_EL2", 166 },
-    { "CNTKCTL_EL1", 631 },
-    { "CNTKCTL_EL12", 182 },
-    { "CNTPCT_EL0", 386 },
-    { "CNTPS_CTL_EL1", 638 },
-    { "CNTPS_CVAL_EL1", 641 },
-    { "CNTPS_TVAL_EL1", 635 },
-    { "CNTP_CTL_EL0", 636 },
-    { "CNTP_CTL_EL02", 184 },
-    { "CNTP_CVAL_EL0", 639 },
-    { "CNTP_CVAL_EL02", 185 },
-    { "CNTP_TVAL_EL0", 633 },
-    { "CNTP_TVAL_EL02", 183 },
-    { "CNTVCT_EL0", 387 },
-    { "CNTVOFF_EL2", 630 },
-    { "CNTV_CTL_EL0", 643 },
-    { "CNTV_CTL_EL02", 187 },
-    { "CNTV_CVAL_EL0", 644 },
-    { "CNTV_CVAL_EL02", 188 },
-    { "CNTV_TVAL_EL0", 642 },
-    { "CNTV_TVAL_EL02", 186 },
-    { "CONTEXTIDR_EL1", 623 },
-    { "CONTEXTIDR_EL12", 181 },
-    { "CONTEXTIDR_EL2", 165 },
-    { "CPACR_EL1", 536 },
-    { "CPACR_EL12", 170 },
-    { "CPM_IOACC_CTL_EL3", 335 },
-    { "CPTR_EL2", 547 },
-    { "CPTR_EL3", 548 },
-    { "CSSELR_EL1", 533 },
-    { "CTR_EL0", 347 },
-    { "CURRENTEL", 574 },
-    { "DACR32_EL2", 561 },
-    { "DAIF", 573 },
-    { "DBGAUTHSTATUS_EL1", 340 },
-    { "DBGBCR0_EL1", 480 },
-    { "DBGBCR10_EL1", 490 },
-    { "DBGBCR11_EL1", 491 },
-    { "DBGBCR12_EL1", 492 },
-    { "DBGBCR13_EL1", 493 },
-    { "DBGBCR14_EL1", 494 },
-    { "DBGBCR15_EL1", 495 },
-    { "DBGBCR1_EL1", 481 },
-    { "DBGBCR2_EL1", 482 },
-    { "DBGBCR3_EL1", 483 },
-    { "DBGBCR4_EL1", 484 },
-    { "DBGBCR5_EL1", 485 },
-    { "DBGBCR6_EL1", 486 },
-    { "DBGBCR7_EL1", 487 },
-    { "DBGBCR8_EL1", 488 },
-    { "DBGBCR9_EL1", 489 },
-    { "DBGBVR0_EL1", 464 },
-    { "DBGBVR10_EL1", 474 },
-    { "DBGBVR11_EL1", 475 },
-    { "DBGBVR12_EL1", 476 },
-    { "DBGBVR13_EL1", 477 },
-    { "DBGBVR14_EL1", 478 },
-    { "DBGBVR15_EL1", 479 },
-    { "DBGBVR1_EL1", 465 },
-    { "DBGBVR2_EL1", 466 },
-    { "DBGBVR3_EL1", 467 },
-    { "DBGBVR4_EL1", 468 },
-    { "DBGBVR5_EL1", 469 },
-    { "DBGBVR6_EL1", 470 },
-    { "DBGBVR7_EL1", 471 },
-    { "DBGBVR8_EL1", 472 },
-    { "DBGBVR9_EL1", 473 },
-    { "DBGCLAIMCLR_EL1", 532 },
-    { "DBGCLAIMSET_EL1", 531 },
-    { "DBGDTRRX_EL0", 337 },
-    { "DBGDTRTX_EL0", 445 },
-    { "DBGDTR_EL0", 461 },
-    { "DBGPRCR_EL1", 530 },
-    { "DBGVCR32_EL2", 463 },
-    { "DBGWCR0_EL1", 512 },
-    { "DBGWCR10_EL1", 522 },
-    { "DBGWCR11_EL1", 523 },
-    { "DBGWCR12_EL1", 524 },
-    { "DBGWCR13_EL1", 525 },
-    { "DBGWCR14_EL1", 526 },
-    { "DBGWCR15_EL1", 527 },
-    { "DBGWCR1_EL1", 513 },
-    { "DBGWCR2_EL1", 514 },
-    { "DBGWCR3_EL1", 515 },
-    { "DBGWCR4_EL1", 516 },
-    { "DBGWCR5_EL1", 517 },
-    { "DBGWCR6_EL1", 518 },
-    { "DBGWCR7_EL1", 519 },
-    { "DBGWCR8_EL1", 520 },
-    { "DBGWCR9_EL1", 521 },
-    { "DBGWVR0_EL1", 496 },
-    { "DBGWVR10_EL1", 506 },
-    { "DBGWVR11_EL1", 507 },
-    { "DBGWVR12_EL1", 508 },
-    { "DBGWVR13_EL1", 509 },
-    { "DBGWVR14_EL1", 510 },
-    { "DBGWVR15_EL1", 511 },
-    { "DBGWVR1_EL1", 497 },
-    { "DBGWVR2_EL1", 498 },
-    { "DBGWVR3_EL1", 499 },
-    { "DBGWVR4_EL1", 500 },
-    { "DBGWVR5_EL1", 501 },
-    { "DBGWVR6_EL1", 502 },
-    { "DBGWVR7_EL1", 503 },
-    { "DBGWVR8_EL1", 504 },
-    { "DBGWVR9_EL1", 505 },
-    { "DCZID_EL0", 351 },
-    { "DISR_EL1", 211 },
-    { "DIT", 307 },
-    { "DLR_EL0", 582 },
-    { "DSPSR_EL0", 581 },
-    { "ELR_EL1", 565 },
-    { "ELR_EL12", 190 },
-    { "ELR_EL2", 566 },
-    { "ELR_EL3", 567 },
-    { "ERRIDR_EL1", 436 },
-    { "ERRSELR_EL1", 205 },
-    { "ERXADDR_EL1", 208 },
-    { "ERXCTLR_EL1", 206 },
-    { "ERXFR_EL1", 437 },
-    { "ERXMISC0_EL1", 209 },
-    { "ERXMISC1_EL1", 210 },
-    { "ERXMISC2_EL1", 237 },
-    { "ERXMISC3_EL1", 238 },
-    { "ERXPFGCDN_EL1", 235 },
-    { "ERXPFGCTL_EL1", 234 },
-    { "ERXPFGF_EL1", 239 },
-    { "ERXSTATUS_EL1", 207 },
-    { "ERXTS_EL1", 236 },
-    { "ESR_EL1", 590 },
-    { "ESR_EL12", 176 },
-    { "ESR_EL2", 591 },
-    { "ESR_EL3", 592 },
-    { "FAR_EL1", 594 },
-    { "FAR_EL12", 177 },
-    { "FAR_EL2", 595 },
-    { "FAR_EL3", 596 },
-    { "FPCR", 579 },
-    { "FPEXC32_EL2", 593 },
-    { "FPSR", 580 },
-    { "GCR_EL1", 315 },
-    { "GMID_EL1", 322 },
-    { "HACR_EL2", 550 },
-    { "HCR_EL2", 543 },
-    { "HPFAR_EL2", 597 },
-    { "HSTR_EL2", 549 },
-    { "ICC_AP0R0_EL1", 124 },
-    { "ICC_AP0R1_EL1", 125 },
-    { "ICC_AP0R2_EL1", 126 },
-    { "ICC_AP0R3_EL1", 127 },
-    { "ICC_AP1R0_EL1", 128 },
-    { "ICC_AP1R1_EL1", 129 },
-    { "ICC_AP1R2_EL1", 130 },
-    { "ICC_AP1R3_EL1", 131 },
-    { "ICC_ASGI1R_EL1", 454 },
-    { "ICC_BPR0_EL1", 114 },
-    { "ICC_BPR1_EL1", 113 },
-    { "ICC_CTLR_EL1", 116 },
-    { "ICC_CTLR_EL3", 117 },
-    { "ICC_DIR_EL1", 452 },
-    { "ICC_EOIR0_EL1", 451 },
-    { "ICC_EOIR1_EL1", 450 },
-    { "ICC_HPPIR0_EL1", 429 },
-    { "ICC_HPPIR1_EL1", 428 },
-    { "ICC_IAR0_EL1", 427 },
-    { "ICC_IAR1_EL1", 426 },
-    { "ICC_IGRPEN0_EL1", 121 },
-    { "ICC_IGRPEN1_EL1", 122 },
-    { "ICC_IGRPEN1_EL3", 123 },
-    { "ICC_PMR_EL1", 115 },
-    { "ICC_RPR_EL1", 430 },
-    { "ICC_SGI0R_EL1", 455 },
-    { "ICC_SGI1R_EL1", 453 },
-    { "ICC_SRE_EL1", 118 },
-    { "ICC_SRE_EL2", 119 },
-    { "ICC_SRE_EL3", 120 },
-    { "ICH_AP0R0_EL2", 132 },
-    { "ICH_AP0R1_EL2", 133 },
-    { "ICH_AP0R2_EL2", 134 },
-    { "ICH_AP0R3_EL2", 135 },
-    { "ICH_AP1R0_EL2", 136 },
-    { "ICH_AP1R1_EL2", 137 },
-    { "ICH_AP1R2_EL2", 138 },
-    { "ICH_AP1R3_EL2", 139 },
-    { "ICH_EISR_EL2", 432 },
-    { "ICH_ELRSR_EL2", 433 },
-    { "ICH_HCR_EL2", 140 },
-    { "ICH_LR0_EL2", 143 },
-    { "ICH_LR10_EL2", 153 },
-    { "ICH_LR11_EL2", 154 },
-    { "ICH_LR12_EL2", 155 },
-    { "ICH_LR13_EL2", 156 },
-    { "ICH_LR14_EL2", 157 },
-    { "ICH_LR15_EL2", 158 },
-    { "ICH_LR1_EL2", 144 },
-    { "ICH_LR2_EL2", 145 },
-    { "ICH_LR3_EL2", 146 },
-    { "ICH_LR4_EL2", 147 },
-    { "ICH_LR5_EL2", 148 },
-    { "ICH_LR6_EL2", 149 },
-    { "ICH_LR7_EL2", 150 },
-    { "ICH_LR8_EL2", 151 },
-    { "ICH_LR9_EL2", 152 },
-    { "ICH_MISR_EL2", 141 },
-    { "ICH_VMCR_EL2", 142 },
-    { "ICH_VTR_EL2", 431 },
-    { "ID_AA64AFR0_EL1", 372 },
-    { "ID_AA64AFR1_EL1", 373 },
-    { "ID_AA64DFR0_EL1", 370 },
-    { "ID_AA64DFR1_EL1", 371 },
-    { "ID_AA64ISAR0_EL1", 374 },
-    { "ID_AA64ISAR1_EL1", 375 },
-    { "ID_AA64MMFR0_EL1", 376 },
-    { "ID_AA64MMFR1_EL1", 377 },
-    { "ID_AA64MMFR2_EL1", 378 },
-    { "ID_AA64PFR0_EL1", 368 },
-    { "ID_AA64PFR1_EL1", 369 },
-    { "ID_AA64ZFR0_EL1", 434 },
-    { "ID_AFR0_EL1", 356 },
-    { "ID_DFR0_EL1", 355 },
-    { "ID_ISAR0_EL1", 361 },
-    { "ID_ISAR1_EL1", 362 },
-    { "ID_ISAR2_EL1", 363 },
-    { "ID_ISAR3_EL1", 364 },
-    { "ID_ISAR4_EL1", 365 },
-    { "ID_ISAR5_EL1", 366 },
-    { "ID_ISAR6_EL1", 367 },
-    { "ID_MMFR0_EL1", 357 },
-    { "ID_MMFR1_EL1", 358 },
-    { "ID_MMFR2_EL1", 359 },
-    { "ID_MMFR3_EL1", 360 },
-    { "ID_MMFR4_EL1", 388 },
-    { "ID_MMFR5_EL1", 389 },
-    { "ID_PFR0_EL1", 352 },
-    { "ID_PFR1_EL1", 353 },
-    { "ID_PFR2_EL1", 354 },
-    { "IFSR32_EL2", 583 },
-    { "ISR_EL1", 385 },
-    { "LORC_EL1", 163 },
-    { "LOREA_EL1", 161 },
-    { "LORID_EL1", 435 },
-    { "LORN_EL1", 162 },
-    { "LORSA_EL1", 160 },
-    { "MAIR_EL1", 611 },
-    { "MAIR_EL12", 178 },
-    { "MAIR_EL2", 612 },
-    { "MAIR_EL3", 613 },
-    { "MDCCINT_EL1", 459 },
-    { "MDCCSR_EL0", 336 },
-    { "MDCR_EL2", 545 },
-    { "MDCR_EL3", 551 },
-    { "MDRAR_EL1", 338 },
-    { "MDSCR_EL1", 460 },
-    { "MIDR_EL1", 343 },
-    { "MPAM0_EL1", 240 },
-    { "MPAM1_EL1", 241 },
-    { "MPAM1_EL12", 244 },
-    { "MPAM2_EL2", 242 },
-    { "MPAM3_EL3", 243 },
-    { "MPAMHCR_EL2", 245 },
-    { "MPAMIDR_EL1", 255 },
-    { "MPAMVPM0_EL2", 247 },
-    { "MPAMVPM1_EL2", 248 },
-    { "MPAMVPM2_EL2", 249 },
-    { "MPAMVPM3_EL2", 250 },
-    { "MPAMVPM4_EL2", 251 },
-    { "MPAMVPM5_EL2", 252 },
-    { "MPAMVPM6_EL2", 253 },
-    { "MPAMVPM7_EL2", 254 },
-    { "MPAMVPMV_EL2", 246 },
-    { "MPIDR_EL1", 348 },
-    { "MVFR0_EL1", 379 },
-    { "MVFR1_EL1", 380 },
-    { "MVFR2_EL1", 381 },
-    { "NZCV", 572 },
-    { "OSDLR_EL1", 529 },
-    { "OSDTRRX_EL1", 456 },
-    { "OSDTRTX_EL1", 457 },
-    { "OSECCR_EL1", 462 },
-    { "OSLAR_EL1", 446 },
-    { "OSLSR_EL1", 339 },
-    { "PAN", 159 },
-    { "PAR_EL1", 598 },
-    { "PMBIDR_EL1", 195 },
-    { "PMBLIMITR_EL1", 192 },
-    { "PMBPTR_EL1", 193 },
-    { "PMBSR_EL1", 194 },
-    { "PMCCFILTR_EL0", 676 },
-    { "PMCCNTR_EL0", 604 },
-    { "PMCEID0_EL0", 341 },
-    { "PMCEID1_EL0", 342 },
-    { "PMCNTENCLR_EL0", 601 },
-    { "PMCNTENSET_EL0", 600 },
-    { "PMCR_EL0", 599 },
-    { "PMEVCNTR0_EL0", 645 },
-    { "PMEVCNTR10_EL0", 655 },
-    { "PMEVCNTR11_EL0", 656 },
-    { "PMEVCNTR12_EL0", 657 },
-    { "PMEVCNTR13_EL0", 658 },
-    { "PMEVCNTR14_EL0", 659 },
-    { "PMEVCNTR15_EL0", 660 },
-    { "PMEVCNTR16_EL0", 661 },
-    { "PMEVCNTR17_EL0", 662 },
-    { "PMEVCNTR18_EL0", 663 },
-    { "PMEVCNTR19_EL0", 664 },
-    { "PMEVCNTR1_EL0", 646 },
-    { "PMEVCNTR20_EL0", 665 },
-    { "PMEVCNTR21_EL0", 666 },
-    { "PMEVCNTR22_EL0", 667 },
-    { "PMEVCNTR23_EL0", 668 },
-    { "PMEVCNTR24_EL0", 669 },
-    { "PMEVCNTR25_EL0", 670 },
-    { "PMEVCNTR26_EL0", 671 },
-    { "PMEVCNTR27_EL0", 672 },
-    { "PMEVCNTR28_EL0", 673 },
-    { "PMEVCNTR29_EL0", 674 },
-    { "PMEVCNTR2_EL0", 647 },
-    { "PMEVCNTR30_EL0", 675 },
-    { "PMEVCNTR3_EL0", 648 },
-    { "PMEVCNTR4_EL0", 649 },
-    { "PMEVCNTR5_EL0", 650 },
-    { "PMEVCNTR6_EL0", 651 },
-    { "PMEVCNTR7_EL0", 652 },
-    { "PMEVCNTR8_EL0", 653 },
-    { "PMEVCNTR9_EL0", 654 },
-    { "PMEVTYPER0_EL0", 677 },
-    { "PMEVTYPER10_EL0", 687 },
-    { "PMEVTYPER11_EL0", 688 },
-    { "PMEVTYPER12_EL0", 689 },
-    { "PMEVTYPER13_EL0", 690 },
-    { "PMEVTYPER14_EL0", 691 },
-    { "PMEVTYPER15_EL0", 692 },
-    { "PMEVTYPER16_EL0", 693 },
-    { "PMEVTYPER17_EL0", 694 },
-    { "PMEVTYPER18_EL0", 695 },
-    { "PMEVTYPER19_EL0", 696 },
-    { "PMEVTYPER1_EL0", 678 },
-    { "PMEVTYPER20_EL0", 697 },
-    { "PMEVTYPER21_EL0", 698 },
-    { "PMEVTYPER22_EL0", 699 },
-    { "PMEVTYPER23_EL0", 700 },
-    { "PMEVTYPER24_EL0", 701 },
-    { "PMEVTYPER25_EL0", 702 },
-    { "PMEVTYPER26_EL0", 703 },
-    { "PMEVTYPER27_EL0", 704 },
-    { "PMEVTYPER28_EL0", 705 },
-    { "PMEVTYPER29_EL0", 706 },
-    { "PMEVTYPER2_EL0", 679 },
-    { "PMEVTYPER30_EL0", 707 },
-    { "PMEVTYPER3_EL0", 680 },
-    { "PMEVTYPER4_EL0", 681 },
-    { "PMEVTYPER5_EL0", 682 },
-    { "PMEVTYPER6_EL0", 683 },
-    { "PMEVTYPER7_EL0", 684 },
-    { "PMEVTYPER8_EL0", 685 },
-    { "PMEVTYPER9_EL0", 686 },
-    { "PMINTENCLR_EL1", 609 },
-    { "PMINTENSET_EL1", 608 },
-    { "PMMIR_EL1", 233 },
-    { "PMOVSCLR_EL0", 602 },
-    { "PMOVSSET_EL0", 610 },
-    { "PMSCR_EL1", 198 },
-    { "PMSCR_EL12", 197 },
-    { "PMSCR_EL2", 196 },
-    { "PMSELR_EL0", 603 },
-    { "PMSEVFR_EL1", 202 },
-    { "PMSFCR_EL1", 201 },
-    { "PMSICR_EL1", 199 },
-    { "PMSIDR_EL1", 204 },
-    { "PMSIRR_EL1", 200 },
-    { "PMSLATFR_EL1", 203 },
-    { "PMSWINC_EL0", 447 },
-    { "PMUSERENR_EL0", 607 },
-    { "PMXEVCNTR_EL0", 606 },
-    { "PMXEVTYPER_EL0", 605 },
-    { "REVIDR_EL1", 349 },
-    { "RGSR_EL1", 316 },
-    { "RMR_EL1", 620 },
-    { "RMR_EL2", 621 },
-    { "RMR_EL3", 622 },
-    { "RNDR", 438 },
-    { "RNDRRS", 439 },
-    { "RVBAR_EL1", 382 },
-    { "RVBAR_EL2", 383 },
-    { "RVBAR_EL3", 384 },
-    { "SCR_EL3", 544 },
-    { "SCTLR_EL1", 537 },
-    { "SCTLR_EL12", 169 },
-    { "SCTLR_EL2", 538 },
-    { "SCTLR_EL3", 539 },
-    { "SCXTNUM_EL0", 440 },
-    { "SCXTNUM_EL1", 441 },
-    { "SCXTNUM_EL12", 444 },
-    { "SCXTNUM_EL2", 442 },
-    { "SCXTNUM_EL3", 443 },
-    { "SDER32_EL2", 232 },
-    { "SDER32_EL3", 546 },
-    { "SPSEL", 571 },
-    { "SPSR_ABT", 576 },
-    { "SPSR_EL1", 562 },
-    { "SPSR_EL12", 189 },
-    { "SPSR_EL2", 563 },
-    { "SPSR_EL3", 564 },
-    { "SPSR_FIQ", 578 },
-    { "SPSR_IRQ", 575 },
-    { "SPSR_UND", 577 },
-    { "SP_EL0", 568 },
-    { "SP_EL1", 569 },
-    { "SP_EL2", 570 },
-    { "SSBS", 313 },
-    { "TCO", 314 },
-    { "TCR_EL1", 556 },
-    { "TCR_EL12", 173 },
-    { "TCR_EL2", 557 },
-    { "TCR_EL3", 558 },
-    { "TEECR32_EL1", 458 },
-    { "TEEHBR32_EL1", 528 },
-    { "TFSRE0_EL1", 321 },
-    { "TFSR_EL1", 317 },
-    { "TFSR_EL12", 320 },
-    { "TFSR_EL2", 318 },
-    { "TFSR_EL3", 319 },
-    { "TPIDRRO_EL0", 627 },
-    { "TPIDR_EL0", 624 },
-    { "TPIDR_EL1", 628 },
-    { "TPIDR_EL2", 625 },
-    { "TPIDR_EL3", 626 },
-    { "TRBBASER_EL1", 330 },
-    { "TRBIDR_EL1", 334 },
-    { "TRBLIMITR_EL1", 328 },
-    { "TRBMAR_EL1", 332 },
-    { "TRBPTR_EL1", 329 },
-    { "TRBSR_EL1", 331 },
-    { "TRBTRG_EL1", 333 },
-    { "TRCACATR0", 58 },
-    { "TRCACATR1", 59 },
-    { "TRCACATR10", 68 },
-    { "TRCACATR11", 69 },
-    { "TRCACATR12", 70 },
-    { "TRCACATR13", 71 },
-    { "TRCACATR14", 72 },
-    { "TRCACATR15", 73 },
-    { "TRCACATR2", 60 },
-    { "TRCACATR3", 61 },
-    { "TRCACATR4", 62 },
-    { "TRCACATR5", 63 },
-    { "TRCACATR6", 64 },
-    { "TRCACATR7", 65 },
-    { "TRCACATR8", 66 },
-    { "TRCACATR9", 67 },
-    { "TRCACVR0", 42 },
-    { "TRCACVR1", 43 },
-    { "TRCACVR10", 52 },
-    { "TRCACVR11", 53 },
-    { "TRCACVR12", 54 },
-    { "TRCACVR13", 55 },
-    { "TRCACVR14", 56 },
-    { "TRCACVR15", 57 },
-    { "TRCACVR2", 44 },
-    { "TRCACVR3", 45 },
-    { "TRCACVR4", 46 },
-    { "TRCACVR5", 47 },
-    { "TRCACVR6", 48 },
-    { "TRCACVR7", 49 },
-    { "TRCACVR8", 50 },
-    { "TRCACVR9", 51 },
-    { "TRCAUTHSTATUS", 410 },
-    { "TRCAUXCTLR", 711 },
-    { "TRCBBCTLR", 718 },
-    { "TRCCCCTLR", 717 },
-    { "TRCCIDCCTLR0", 106 },
-    { "TRCCIDCCTLR1", 107 },
-    { "TRCCIDCVR0", 90 },
-    { "TRCCIDCVR1", 91 },
-    { "TRCCIDCVR2", 92 },
-    { "TRCCIDCVR3", 93 },
-    { "TRCCIDCVR4", 94 },
-    { "TRCCIDCVR5", 95 },
-    { "TRCCIDCVR6", 96 },
-    { "TRCCIDCVR7", 97 },
-    { "TRCCIDR0", 422 },
-    { "TRCCIDR1", 423 },
-    { "TRCCIDR2", 424 },
-    { "TRCCIDR3", 425 },
-    { "TRCCLAIMCLR", 112 },
-    { "TRCCLAIMSET", 111 },
-    { "TRCCNTCTLR0", 738 },
-    { "TRCCNTCTLR1", 739 },
-    { "TRCCNTCTLR2", 740 },
-    { "TRCCNTCTLR3", 741 },
-    { "TRCCNTRLDVR0", 734 },
-    { "TRCCNTRLDVR1", 735 },
-    { "TRCCNTRLDVR2", 736 },
-    { "TRCCNTRLDVR3", 737 },
-    { "TRCCNTVR0", 742 },
-    { "TRCCNTVR1", 743 },
-    { "TRCCNTVR2", 744 },
-    { "TRCCNTVR3", 745 },
-    { "TRCCONFIGR", 710 },
-    { "TRCDEVAFF0", 407 },
-    { "TRCDEVAFF1", 408 },
-    { "TRCDEVARCH", 411 },
-    { "TRCDEVID", 412 },
-    { "TRCDEVTYPE", 413 },
-    { "TRCDVCMR0", 82 },
-    { "TRCDVCMR1", 83 },
-    { "TRCDVCMR2", 84 },
-    { "TRCDVCMR3", 85 },
-    { "TRCDVCMR4", 86 },
-    { "TRCDVCMR5", 87 },
-    { "TRCDVCMR6", 88 },
-    { "TRCDVCMR7", 89 },
-    { "TRCDVCVR0", 74 },
-    { "TRCDVCVR1", 75 },
-    { "TRCDVCVR2", 76 },
-    { "TRCDVCVR3", 77 },
-    { "TRCDVCVR4", 78 },
-    { "TRCDVCVR5", 79 },
-    { "TRCDVCVR6", 80 },
-    { "TRCDVCVR7", 81 },
-    { "TRCEVENTCTL0R", 712 },
-    { "TRCEVENTCTL1R", 713 },
-    { "TRCEXTINSELR", 733 },
-    { "TRCEXTINSELR0", 324 },
-    { "TRCEXTINSELR1", 325 },
-    { "TRCEXTINSELR2", 326 },
-    { "TRCEXTINSELR3", 327 },
-    { "TRCIDR0", 397 },
-    { "TRCIDR1", 398 },
-    { "TRCIDR10", 393 },
-    { "TRCIDR11", 394 },
-    { "TRCIDR12", 395 },
-    { "TRCIDR13", 396 },
-    { "TRCIDR2", 399 },
-    { "TRCIDR3", 400 },
-    { "TRCIDR4", 401 },
-    { "TRCIDR5", 402 },
-    { "TRCIDR6", 403 },
-    { "TRCIDR7", 404 },
-    { "TRCIDR8", 391 },
-    { "TRCIDR9", 392 },
-    { "TRCIMSPEC0", 746 },
-    { "TRCIMSPEC1", 747 },
-    { "TRCIMSPEC2", 748 },
-    { "TRCIMSPEC3", 749 },
-    { "TRCIMSPEC4", 750 },
-    { "TRCIMSPEC5", 751 },
-    { "TRCIMSPEC6", 752 },
-    { "TRCIMSPEC7", 753 },
-    { "TRCITCTRL", 110 },
-    { "TRCLAR", 449 },
-    { "TRCLSR", 409 },
-    { "TRCOSLAR", 448 },
-    { "TRCOSLSR", 405 },
-    { "TRCPDCR", 41 },
-    { "TRCPDSR", 406 },
-    { "TRCPIDR0", 418 },
-    { "TRCPIDR1", 419 },
-    { "TRCPIDR2", 420 },
-    { "TRCPIDR3", 421 },
-    { "TRCPIDR4", 414 },
-    { "TRCPIDR5", 415 },
-    { "TRCPIDR6", 416 },
-    { "TRCPIDR7", 417 },
-    { "TRCPRGCTLR", 708 },
-    { "TRCPROCSELR", 709 },
-    { "TRCQCTLR", 720 },
-    { "TRCRSCTLR10", 762 },
-    { "TRCRSCTLR11", 763 },
-    { "TRCRSCTLR12", 764 },
-    { "TRCRSCTLR13", 765 },
-    { "TRCRSCTLR14", 766 },
-    { "TRCRSCTLR15", 0 },
-    { "TRCRSCTLR16", 1 },
-    { "TRCRSCTLR17", 2 },
-    { "TRCRSCTLR18", 3 },
-    { "TRCRSCTLR19", 4 },
-    { "TRCRSCTLR2", 754 },
-    { "TRCRSCTLR20", 5 },
-    { "TRCRSCTLR21", 6 },
-    { "TRCRSCTLR22", 7 },
-    { "TRCRSCTLR23", 8 },
-    { "TRCRSCTLR24", 9 },
-    { "TRCRSCTLR25", 10 },
-    { "TRCRSCTLR26", 11 },
-    { "TRCRSCTLR27", 12 },
-    { "TRCRSCTLR28", 13 },
-    { "TRCRSCTLR29", 14 },
-    { "TRCRSCTLR3", 755 },
-    { "TRCRSCTLR30", 15 },
-    { "TRCRSCTLR31", 16 },
-    { "TRCRSCTLR4", 756 },
-    { "TRCRSCTLR5", 757 },
-    { "TRCRSCTLR6", 758 },
-    { "TRCRSCTLR7", 759 },
-    { "TRCRSCTLR8", 760 },
-    { "TRCRSCTLR9", 761 },
-    { "TRCRSR", 323 },
-    { "TRCSEQEVR0", 728 },
-    { "TRCSEQEVR1", 729 },
-    { "TRCSEQEVR2", 730 },
-    { "TRCSEQRSTEVR", 731 },
-    { "TRCSEQSTR", 732 },
-    { "TRCSSCCR0", 17 },
-    { "TRCSSCCR1", 18 },
-    { "TRCSSCCR2", 19 },
-    { "TRCSSCCR3", 20 },
-    { "TRCSSCCR4", 21 },
-    { "TRCSSCCR5", 22 },
-    { "TRCSSCCR6", 23 },
-    { "TRCSSCCR7", 24 },
-    { "TRCSSCSR0", 25 },
-    { "TRCSSCSR1", 26 },
-    { "TRCSSCSR2", 27 },
-    { "TRCSSCSR3", 28 },
-    { "TRCSSCSR4", 29 },
-    { "TRCSSCSR5", 30 },
-    { "TRCSSCSR6", 31 },
-    { "TRCSSCSR7", 32 },
-    { "TRCSSPCICR0", 33 },
-    { "TRCSSPCICR1", 34 },
-    { "TRCSSPCICR2", 35 },
-    { "TRCSSPCICR3", 36 },
-    { "TRCSSPCICR4", 37 },
-    { "TRCSSPCICR5", 38 },
-    { "TRCSSPCICR6", 39 },
-    { "TRCSSPCICR7", 40 },
-    { "TRCSTALLCTLR", 714 },
-    { "TRCSTATR", 390 },
-    { "TRCSYNCPR", 716 },
-    { "TRCTRACEIDR", 719 },
-    { "TRCTSCTLR", 715 },
-    { "TRCVDARCCTLR", 727 },
-    { "TRCVDCTLR", 725 },
-    { "TRCVDSACCTLR", 726 },
-    { "TRCVICTLR", 721 },
-    { "TRCVIIECTLR", 722 },
-    { "TRCVIPCSSCTLR", 724 },
-    { "TRCVISSCTLR", 723 },
-    { "TRCVMIDCCTLR0", 108 },
-    { "TRCVMIDCCTLR1", 109 },
-    { "TRCVMIDCVR0", 98 },
-    { "TRCVMIDCVR1", 99 },
-    { "TRCVMIDCVR2", 100 },
-    { "TRCVMIDCVR3", 101 },
-    { "TRCVMIDCVR4", 102 },
-    { "TRCVMIDCVR5", 103 },
-    { "TRCVMIDCVR6", 104 },
-    { "TRCVMIDCVR7", 105 },
-    { "TRFCR_EL1", 304 },
-    { "TRFCR_EL12", 306 },
-    { "TRFCR_EL2", 305 },
-    { "TTBR0_EL1", 552 },
-    { "TTBR0_EL12", 171 },
-    { "TTBR0_EL2", 553 },
-    { "TTBR0_EL3", 554 },
-    { "TTBR1_EL1", 555 },
-    { "TTBR1_EL12", 172 },
-    { "TTBR1_EL2", 164 },
-    { "UAO", 191 },
-    { "VBAR_EL1", 617 },
-    { "VBAR_EL12", 180 },
-    { "VBAR_EL2", 618 },
-    { "VBAR_EL3", 619 },
-    { "VDISR_EL2", 212 },
-    { "VMPIDR_EL2", 535 },
-    { "VNCR_EL2", 308 },
-    { "VPIDR_EL2", 534 },
-    { "VSESR_EL2", 213 },
-    { "VSTCR_EL2", 224 },
-    { "VSTTBR_EL2", 225 },
-    { "VTCR_EL2", 560 },
-    { "VTTBR_EL2", 559 },
-    { "ZCR_EL1", 309 },
-    { "ZCR_EL12", 312 },
-    { "ZCR_EL2", 310 },
-    { "ZCR_EL3", 311 },
+    { "ACTLR_EL1", 204 },
+    { "ACTLR_EL2", 205 },
+    { "ACTLR_EL3", 206 },
+    { "AFSR0_EL1", 248 },
+    { "AFSR0_EL12", 605 },
+    { "AFSR0_EL2", 249 },
+    { "AFSR0_EL3", 250 },
+    { "AFSR1_EL1", 251 },
+    { "AFSR1_EL12", 606 },
+    { "AFSR1_EL2", 252 },
+    { "AFSR1_EL3", 253 },
+    { "AIDR_EL1", 14 },
+    { "AMAIR_EL1", 278 },
+    { "AMAIR_EL12", 610 },
+    { "AMAIR_EL2", 279 },
+    { "AMAIR_EL3", 280 },
+    { "AMCFGR_EL0", 687 },
+    { "AMCGCR_EL0", 688 },
+    { "AMCNTENCLR0_EL0", 690 },
+    { "AMCNTENCLR1_EL0", 700 },
+    { "AMCNTENSET0_EL0", 691 },
+    { "AMCNTENSET1_EL0", 701 },
+    { "AMCR_EL0", 686 },
+    { "AMEVCNTR00_EL0", 692 },
+    { "AMEVCNTR01_EL0", 693 },
+    { "AMEVCNTR02_EL0", 694 },
+    { "AMEVCNTR03_EL0", 695 },
+    { "AMEVCNTR10_EL0", 702 },
+    { "AMEVCNTR110_EL0", 712 },
+    { "AMEVCNTR111_EL0", 713 },
+    { "AMEVCNTR112_EL0", 714 },
+    { "AMEVCNTR113_EL0", 715 },
+    { "AMEVCNTR114_EL0", 716 },
+    { "AMEVCNTR115_EL0", 717 },
+    { "AMEVCNTR11_EL0", 703 },
+    { "AMEVCNTR12_EL0", 704 },
+    { "AMEVCNTR13_EL0", 705 },
+    { "AMEVCNTR14_EL0", 706 },
+    { "AMEVCNTR15_EL0", 707 },
+    { "AMEVCNTR16_EL0", 708 },
+    { "AMEVCNTR17_EL0", 709 },
+    { "AMEVCNTR18_EL0", 710 },
+    { "AMEVCNTR19_EL0", 711 },
+    { "AMEVCNTVOFF00_EL2", 765 },
+    { "AMEVCNTVOFF010_EL2", 785 },
+    { "AMEVCNTVOFF011_EL2", 787 },
+    { "AMEVCNTVOFF012_EL2", 789 },
+    { "AMEVCNTVOFF013_EL2", 791 },
+    { "AMEVCNTVOFF014_EL2", 793 },
+    { "AMEVCNTVOFF015_EL2", 795 },
+    { "AMEVCNTVOFF01_EL2", 767 },
+    { "AMEVCNTVOFF02_EL2", 769 },
+    { "AMEVCNTVOFF03_EL2", 771 },
+    { "AMEVCNTVOFF04_EL2", 773 },
+    { "AMEVCNTVOFF05_EL2", 775 },
+    { "AMEVCNTVOFF06_EL2", 777 },
+    { "AMEVCNTVOFF07_EL2", 779 },
+    { "AMEVCNTVOFF08_EL2", 781 },
+    { "AMEVCNTVOFF09_EL2", 783 },
+    { "AMEVCNTVOFF10_EL2", 766 },
+    { "AMEVCNTVOFF110_EL2", 786 },
+    { "AMEVCNTVOFF111_EL2", 788 },
+    { "AMEVCNTVOFF112_EL2", 790 },
+    { "AMEVCNTVOFF113_EL2", 792 },
+    { "AMEVCNTVOFF114_EL2", 794 },
+    { "AMEVCNTVOFF115_EL2", 796 },
+    { "AMEVCNTVOFF11_EL2", 768 },
+    { "AMEVCNTVOFF12_EL2", 770 },
+    { "AMEVCNTVOFF13_EL2", 772 },
+    { "AMEVCNTVOFF14_EL2", 774 },
+    { "AMEVCNTVOFF15_EL2", 776 },
+    { "AMEVCNTVOFF16_EL2", 778 },
+    { "AMEVCNTVOFF17_EL2", 780 },
+    { "AMEVCNTVOFF18_EL2", 782 },
+    { "AMEVCNTVOFF19_EL2", 784 },
+    { "AMEVTYPER00_EL0", 696 },
+    { "AMEVTYPER01_EL0", 697 },
+    { "AMEVTYPER02_EL0", 698 },
+    { "AMEVTYPER03_EL0", 699 },
+    { "AMEVTYPER10_EL0", 718 },
+    { "AMEVTYPER110_EL0", 728 },
+    { "AMEVTYPER111_EL0", 729 },
+    { "AMEVTYPER112_EL0", 730 },
+    { "AMEVTYPER113_EL0", 731 },
+    { "AMEVTYPER114_EL0", 732 },
+    { "AMEVTYPER115_EL0", 733 },
+    { "AMEVTYPER11_EL0", 719 },
+    { "AMEVTYPER12_EL0", 720 },
+    { "AMEVTYPER13_EL0", 721 },
+    { "AMEVTYPER14_EL0", 722 },
+    { "AMEVTYPER15_EL0", 723 },
+    { "AMEVTYPER16_EL0", 724 },
+    { "AMEVTYPER17_EL0", 725 },
+    { "AMEVTYPER18_EL0", 726 },
+    { "AMEVTYPER19_EL0", 727 },
+    { "AMUSERENR_EL0", 689 },
+    { "APDAKEYHI_EL1", 650 },
+    { "APDAKEYLO_EL1", 649 },
+    { "APDBKEYHI_EL1", 652 },
+    { "APDBKEYLO_EL1", 651 },
+    { "APGAKEYHI_EL1", 654 },
+    { "APGAKEYLO_EL1", 653 },
+    { "APIAKEYHI_EL1", 646 },
+    { "APIAKEYLO_EL1", 645 },
+    { "APIBKEYHI_EL1", 648 },
+    { "APIBKEYLO_EL1", 647 },
+    { "CCSIDR2_EL1", 9 },
+    { "CCSIDR_EL1", 8 },
+    { "CLIDR_EL1", 10 },
+    { "CNTFRQ_EL0", 293 },
+    { "CNTHCTL_EL2", 296 },
+    { "CNTHPS_CTL_EL2", 662 },
+    { "CNTHPS_CVAL_EL2", 661 },
+    { "CNTHPS_TVAL_EL2", 660 },
+    { "CNTHP_CTL_EL2", 301 },
+    { "CNTHP_CVAL_EL2", 304 },
+    { "CNTHP_TVAL_EL2", 298 },
+    { "CNTHVS_CTL_EL2", 659 },
+    { "CNTHVS_CVAL_EL2", 658 },
+    { "CNTHVS_TVAL_EL2", 657 },
+    { "CNTHV_CTL_EL2", 599 },
+    { "CNTHV_CVAL_EL2", 598 },
+    { "CNTHV_TVAL_EL2", 597 },
+    { "CNTISCALE_EL2", 803 },
+    { "CNTKCTL_EL1", 295 },
+    { "CNTKCTL_EL12", 613 },
+    { "CNTPCTSS_EL0", 806 },
+    { "CNTPCT_EL0", 50 },
+    { "CNTPOFF_EL2", 804 },
+    { "CNTPS_CTL_EL1", 302 },
+    { "CNTPS_CVAL_EL1", 305 },
+    { "CNTPS_TVAL_EL1", 299 },
+    { "CNTP_CTL_EL0", 300 },
+    { "CNTP_CTL_EL02", 615 },
+    { "CNTP_CVAL_EL0", 303 },
+    { "CNTP_CVAL_EL02", 616 },
+    { "CNTP_TVAL_EL0", 297 },
+    { "CNTP_TVAL_EL02", 614 },
+    { "CNTSCALE_EL2", 802 },
+    { "CNTVCTSS_EL0", 807 },
+    { "CNTVCT_EL0", 51 },
+    { "CNTVFRQ_EL2", 805 },
+    { "CNTVOFF_EL2", 294 },
+    { "CNTV_CTL_EL0", 307 },
+    { "CNTV_CTL_EL02", 618 },
+    { "CNTV_CVAL_EL0", 308 },
+    { "CNTV_CVAL_EL02", 619 },
+    { "CNTV_TVAL_EL0", 306 },
+    { "CNTV_TVAL_EL02", 617 },
+    { "CONTEXTIDR_EL1", 287 },
+    { "CONTEXTIDR_EL12", 612 },
+    { "CONTEXTIDR_EL2", 596 },
+    { "CPACR_EL1", 200 },
+    { "CPACR_EL12", 601 },
+    { "CPM_IOACC_CTL_EL3", 808 },
+    { "CPTR_EL2", 211 },
+    { "CPTR_EL3", 212 },
+    { "CSSELR_EL1", 197 },
+    { "CTR_EL0", 11 },
+    { "CURRENTEL", 238 },
+    { "DACR32_EL2", 225 },
+    { "DAIF", 237 },
+    { "DBGAUTHSTATUS_EL1", 4 },
+    { "DBGBCR0_EL1", 144 },
+    { "DBGBCR10_EL1", 154 },
+    { "DBGBCR11_EL1", 155 },
+    { "DBGBCR12_EL1", 156 },
+    { "DBGBCR13_EL1", 157 },
+    { "DBGBCR14_EL1", 158 },
+    { "DBGBCR15_EL1", 159 },
+    { "DBGBCR1_EL1", 145 },
+    { "DBGBCR2_EL1", 146 },
+    { "DBGBCR3_EL1", 147 },
+    { "DBGBCR4_EL1", 148 },
+    { "DBGBCR5_EL1", 149 },
+    { "DBGBCR6_EL1", 150 },
+    { "DBGBCR7_EL1", 151 },
+    { "DBGBCR8_EL1", 152 },
+    { "DBGBCR9_EL1", 153 },
+    { "DBGBVR0_EL1", 128 },
+    { "DBGBVR10_EL1", 138 },
+    { "DBGBVR11_EL1", 139 },
+    { "DBGBVR12_EL1", 140 },
+    { "DBGBVR13_EL1", 141 },
+    { "DBGBVR14_EL1", 142 },
+    { "DBGBVR15_EL1", 143 },
+    { "DBGBVR1_EL1", 129 },
+    { "DBGBVR2_EL1", 130 },
+    { "DBGBVR3_EL1", 131 },
+    { "DBGBVR4_EL1", 132 },
+    { "DBGBVR5_EL1", 133 },
+    { "DBGBVR6_EL1", 134 },
+    { "DBGBVR7_EL1", 135 },
+    { "DBGBVR8_EL1", 136 },
+    { "DBGBVR9_EL1", 137 },
+    { "DBGCLAIMCLR_EL1", 196 },
+    { "DBGCLAIMSET_EL1", 195 },
+    { "DBGDTRRX_EL0", 1 },
+    { "DBGDTRTX_EL0", 109 },
+    { "DBGDTR_EL0", 125 },
+    { "DBGPRCR_EL1", 194 },
+    { "DBGVCR32_EL2", 127 },
+    { "DBGWCR0_EL1", 176 },
+    { "DBGWCR10_EL1", 186 },
+    { "DBGWCR11_EL1", 187 },
+    { "DBGWCR12_EL1", 188 },
+    { "DBGWCR13_EL1", 189 },
+    { "DBGWCR14_EL1", 190 },
+    { "DBGWCR15_EL1", 191 },
+    { "DBGWCR1_EL1", 177 },
+    { "DBGWCR2_EL1", 178 },
+    { "DBGWCR3_EL1", 179 },
+    { "DBGWCR4_EL1", 180 },
+    { "DBGWCR5_EL1", 181 },
+    { "DBGWCR6_EL1", 182 },
+    { "DBGWCR7_EL1", 183 },
+    { "DBGWCR8_EL1", 184 },
+    { "DBGWCR9_EL1", 185 },
+    { "DBGWVR0_EL1", 160 },
+    { "DBGWVR10_EL1", 170 },
+    { "DBGWVR11_EL1", 171 },
+    { "DBGWVR12_EL1", 172 },
+    { "DBGWVR13_EL1", 173 },
+    { "DBGWVR14_EL1", 174 },
+    { "DBGWVR15_EL1", 175 },
+    { "DBGWVR1_EL1", 161 },
+    { "DBGWVR2_EL1", 162 },
+    { "DBGWVR3_EL1", 163 },
+    { "DBGWVR4_EL1", 164 },
+    { "DBGWVR5_EL1", 165 },
+    { "DBGWVR6_EL1", 166 },
+    { "DBGWVR7_EL1", 167 },
+    { "DBGWVR8_EL1", 168 },
+    { "DBGWVR9_EL1", 169 },
+    { "DCZID_EL0", 15 },
+    { "DISR_EL1", 642 },
+    { "DIT", 737 },
+    { "DLR_EL0", 246 },
+    { "DSPSR_EL0", 245 },
+    { "ELR_EL1", 229 },
+    { "ELR_EL12", 621 },
+    { "ELR_EL2", 230 },
+    { "ELR_EL3", 231 },
+    { "ERRIDR_EL1", 100 },
+    { "ERRSELR_EL1", 636 },
+    { "ERXADDR_EL1", 639 },
+    { "ERXCTLR_EL1", 637 },
+    { "ERXFR_EL1", 101 },
+    { "ERXMISC0_EL1", 640 },
+    { "ERXMISC1_EL1", 641 },
+    { "ERXMISC2_EL1", 667 },
+    { "ERXMISC3_EL1", 668 },
+    { "ERXPFGCDN_EL1", 666 },
+    { "ERXPFGCTL_EL1", 665 },
+    { "ERXPFGF_EL1", 669 },
+    { "ERXSTATUS_EL1", 638 },
+    { "ESR_EL1", 254 },
+    { "ESR_EL12", 607 },
+    { "ESR_EL2", 255 },
+    { "ESR_EL3", 256 },
+    { "FAR_EL1", 258 },
+    { "FAR_EL12", 608 },
+    { "FAR_EL2", 259 },
+    { "FAR_EL3", 260 },
+    { "FPCR", 243 },
+    { "FPEXC32_EL2", 257 },
+    { "FPSR", 244 },
+    { "GCR_EL1", 745 },
+    { "GMID_EL1", 752 },
+    { "HACR_EL2", 214 },
+    { "HCR_EL2", 207 },
+    { "HDFGRTR_EL2", 800 },
+    { "HDFGWTR_EL2", 801 },
+    { "HFGITR_EL2", 799 },
+    { "HFGRTR_EL2", 797 },
+    { "HFGWTR_EL2", 798 },
+    { "HPFAR_EL2", 261 },
+    { "HSTR_EL2", 213 },
+    { "ICC_AP0R0_EL1", 555 },
+    { "ICC_AP0R1_EL1", 556 },
+    { "ICC_AP0R2_EL1", 557 },
+    { "ICC_AP0R3_EL1", 558 },
+    { "ICC_AP1R0_EL1", 559 },
+    { "ICC_AP1R1_EL1", 560 },
+    { "ICC_AP1R2_EL1", 561 },
+    { "ICC_AP1R3_EL1", 562 },
+    { "ICC_ASGI1R_EL1", 118 },
+    { "ICC_BPR0_EL1", 545 },
+    { "ICC_BPR1_EL1", 544 },
+    { "ICC_CTLR_EL1", 547 },
+    { "ICC_CTLR_EL3", 548 },
+    { "ICC_DIR_EL1", 116 },
+    { "ICC_EOIR0_EL1", 115 },
+    { "ICC_EOIR1_EL1", 114 },
+    { "ICC_HPPIR0_EL1", 93 },
+    { "ICC_HPPIR1_EL1", 92 },
+    { "ICC_IAR0_EL1", 91 },
+    { "ICC_IAR1_EL1", 90 },
+    { "ICC_IGRPEN0_EL1", 552 },
+    { "ICC_IGRPEN1_EL1", 553 },
+    { "ICC_IGRPEN1_EL3", 554 },
+    { "ICC_PMR_EL1", 546 },
+    { "ICC_RPR_EL1", 94 },
+    { "ICC_SGI0R_EL1", 119 },
+    { "ICC_SGI1R_EL1", 117 },
+    { "ICC_SRE_EL1", 549 },
+    { "ICC_SRE_EL2", 550 },
+    { "ICC_SRE_EL3", 551 },
+    { "ICH_AP0R0_EL2", 563 },
+    { "ICH_AP0R1_EL2", 564 },
+    { "ICH_AP0R2_EL2", 565 },
+    { "ICH_AP0R3_EL2", 566 },
+    { "ICH_AP1R0_EL2", 567 },
+    { "ICH_AP1R1_EL2", 568 },
+    { "ICH_AP1R2_EL2", 569 },
+    { "ICH_AP1R3_EL2", 570 },
+    { "ICH_EISR_EL2", 96 },
+    { "ICH_ELRSR_EL2", 97 },
+    { "ICH_HCR_EL2", 571 },
+    { "ICH_LR0_EL2", 574 },
+    { "ICH_LR10_EL2", 584 },
+    { "ICH_LR11_EL2", 585 },
+    { "ICH_LR12_EL2", 586 },
+    { "ICH_LR13_EL2", 587 },
+    { "ICH_LR14_EL2", 588 },
+    { "ICH_LR15_EL2", 589 },
+    { "ICH_LR1_EL2", 575 },
+    { "ICH_LR2_EL2", 576 },
+    { "ICH_LR3_EL2", 577 },
+    { "ICH_LR4_EL2", 578 },
+    { "ICH_LR5_EL2", 579 },
+    { "ICH_LR6_EL2", 580 },
+    { "ICH_LR7_EL2", 581 },
+    { "ICH_LR8_EL2", 582 },
+    { "ICH_LR9_EL2", 583 },
+    { "ICH_MISR_EL2", 572 },
+    { "ICH_VMCR_EL2", 573 },
+    { "ICH_VTR_EL2", 95 },
+    { "ID_AA64AFR0_EL1", 36 },
+    { "ID_AA64AFR1_EL1", 37 },
+    { "ID_AA64DFR0_EL1", 34 },
+    { "ID_AA64DFR1_EL1", 35 },
+    { "ID_AA64ISAR0_EL1", 38 },
+    { "ID_AA64ISAR1_EL1", 39 },
+    { "ID_AA64MMFR0_EL1", 40 },
+    { "ID_AA64MMFR1_EL1", 41 },
+    { "ID_AA64MMFR2_EL1", 42 },
+    { "ID_AA64PFR0_EL1", 32 },
+    { "ID_AA64PFR1_EL1", 33 },
+    { "ID_AA64ZFR0_EL1", 98 },
+    { "ID_AFR0_EL1", 20 },
+    { "ID_DFR0_EL1", 19 },
+    { "ID_ISAR0_EL1", 25 },
+    { "ID_ISAR1_EL1", 26 },
+    { "ID_ISAR2_EL1", 27 },
+    { "ID_ISAR3_EL1", 28 },
+    { "ID_ISAR4_EL1", 29 },
+    { "ID_ISAR5_EL1", 30 },
+    { "ID_ISAR6_EL1", 31 },
+    { "ID_MMFR0_EL1", 21 },
+    { "ID_MMFR1_EL1", 22 },
+    { "ID_MMFR2_EL1", 23 },
+    { "ID_MMFR3_EL1", 24 },
+    { "ID_MMFR4_EL1", 52 },
+    { "ID_MMFR5_EL1", 53 },
+    { "ID_PFR0_EL1", 16 },
+    { "ID_PFR1_EL1", 17 },
+    { "ID_PFR2_EL1", 18 },
+    { "IFSR32_EL2", 247 },
+    { "ISR_EL1", 49 },
+    { "LORC_EL1", 594 },
+    { "LOREA_EL1", 592 },
+    { "LORID_EL1", 99 },
+    { "LORN_EL1", 593 },
+    { "LORSA_EL1", 591 },
+    { "MAIR_EL1", 275 },
+    { "MAIR_EL12", 609 },
+    { "MAIR_EL2", 276 },
+    { "MAIR_EL3", 277 },
+    { "MDCCINT_EL1", 123 },
+    { "MDCCSR_EL0", 0 },
+    { "MDCR_EL2", 209 },
+    { "MDCR_EL3", 215 },
+    { "MDRAR_EL1", 2 },
+    { "MDSCR_EL1", 124 },
+    { "MIDR_EL1", 7 },
+    { "MPAM0_EL1", 670 },
+    { "MPAM1_EL1", 671 },
+    { "MPAM1_EL12", 674 },
+    { "MPAM2_EL2", 672 },
+    { "MPAM3_EL3", 673 },
+    { "MPAMHCR_EL2", 675 },
+    { "MPAMIDR_EL1", 685 },
+    { "MPAMVPM0_EL2", 677 },
+    { "MPAMVPM1_EL2", 678 },
+    { "MPAMVPM2_EL2", 679 },
+    { "MPAMVPM3_EL2", 680 },
+    { "MPAMVPM4_EL2", 681 },
+    { "MPAMVPM5_EL2", 682 },
+    { "MPAMVPM6_EL2", 683 },
+    { "MPAMVPM7_EL2", 684 },
+    { "MPAMVPMV_EL2", 676 },
+    { "MPIDR_EL1", 12 },
+    { "MVFR0_EL1", 43 },
+    { "MVFR1_EL1", 44 },
+    { "MVFR2_EL1", 45 },
+    { "NZCV", 236 },
+    { "OSDLR_EL1", 193 },
+    { "OSDTRRX_EL1", 120 },
+    { "OSDTRTX_EL1", 121 },
+    { "OSECCR_EL1", 126 },
+    { "OSLAR_EL1", 110 },
+    { "OSLSR_EL1", 3 },
+    { "PAN", 590 },
+    { "PAR_EL1", 262 },
+    { "PMBIDR_EL1", 626 },
+    { "PMBLIMITR_EL1", 623 },
+    { "PMBPTR_EL1", 624 },
+    { "PMBSR_EL1", 625 },
+    { "PMCCFILTR_EL0", 340 },
+    { "PMCCNTR_EL0", 268 },
+    { "PMCEID0_EL0", 5 },
+    { "PMCEID1_EL0", 6 },
+    { "PMCNTENCLR_EL0", 265 },
+    { "PMCNTENSET_EL0", 264 },
+    { "PMCR_EL0", 263 },
+    { "PMEVCNTR0_EL0", 309 },
+    { "PMEVCNTR10_EL0", 319 },
+    { "PMEVCNTR11_EL0", 320 },
+    { "PMEVCNTR12_EL0", 321 },
+    { "PMEVCNTR13_EL0", 322 },
+    { "PMEVCNTR14_EL0", 323 },
+    { "PMEVCNTR15_EL0", 324 },
+    { "PMEVCNTR16_EL0", 325 },
+    { "PMEVCNTR17_EL0", 326 },
+    { "PMEVCNTR18_EL0", 327 },
+    { "PMEVCNTR19_EL0", 328 },
+    { "PMEVCNTR1_EL0", 310 },
+    { "PMEVCNTR20_EL0", 329 },
+    { "PMEVCNTR21_EL0", 330 },
+    { "PMEVCNTR22_EL0", 331 },
+    { "PMEVCNTR23_EL0", 332 },
+    { "PMEVCNTR24_EL0", 333 },
+    { "PMEVCNTR25_EL0", 334 },
+    { "PMEVCNTR26_EL0", 335 },
+    { "PMEVCNTR27_EL0", 336 },
+    { "PMEVCNTR28_EL0", 337 },
+    { "PMEVCNTR29_EL0", 338 },
+    { "PMEVCNTR2_EL0", 311 },
+    { "PMEVCNTR30_EL0", 339 },
+    { "PMEVCNTR3_EL0", 312 },
+    { "PMEVCNTR4_EL0", 313 },
+    { "PMEVCNTR5_EL0", 314 },
+    { "PMEVCNTR6_EL0", 315 },
+    { "PMEVCNTR7_EL0", 316 },
+    { "PMEVCNTR8_EL0", 317 },
+    { "PMEVCNTR9_EL0", 318 },
+    { "PMEVTYPER0_EL0", 341 },
+    { "PMEVTYPER10_EL0", 351 },
+    { "PMEVTYPER11_EL0", 352 },
+    { "PMEVTYPER12_EL0", 353 },
+    { "PMEVTYPER13_EL0", 354 },
+    { "PMEVTYPER14_EL0", 355 },
+    { "PMEVTYPER15_EL0", 356 },
+    { "PMEVTYPER16_EL0", 357 },
+    { "PMEVTYPER17_EL0", 358 },
+    { "PMEVTYPER18_EL0", 359 },
+    { "PMEVTYPER19_EL0", 360 },
+    { "PMEVTYPER1_EL0", 342 },
+    { "PMEVTYPER20_EL0", 361 },
+    { "PMEVTYPER21_EL0", 362 },
+    { "PMEVTYPER22_EL0", 363 },
+    { "PMEVTYPER23_EL0", 364 },
+    { "PMEVTYPER24_EL0", 365 },
+    { "PMEVTYPER25_EL0", 366 },
+    { "PMEVTYPER26_EL0", 367 },
+    { "PMEVTYPER27_EL0", 368 },
+    { "PMEVTYPER28_EL0", 369 },
+    { "PMEVTYPER29_EL0", 370 },
+    { "PMEVTYPER2_EL0", 343 },
+    { "PMEVTYPER30_EL0", 371 },
+    { "PMEVTYPER3_EL0", 344 },
+    { "PMEVTYPER4_EL0", 345 },
+    { "PMEVTYPER5_EL0", 346 },
+    { "PMEVTYPER6_EL0", 347 },
+    { "PMEVTYPER7_EL0", 348 },
+    { "PMEVTYPER8_EL0", 349 },
+    { "PMEVTYPER9_EL0", 350 },
+    { "PMINTENCLR_EL1", 273 },
+    { "PMINTENSET_EL1", 272 },
+    { "PMMIR_EL1", 664 },
+    { "PMOVSCLR_EL0", 266 },
+    { "PMOVSSET_EL0", 274 },
+    { "PMSCR_EL1", 629 },
+    { "PMSCR_EL12", 628 },
+    { "PMSCR_EL2", 627 },
+    { "PMSELR_EL0", 267 },
+    { "PMSEVFR_EL1", 633 },
+    { "PMSFCR_EL1", 632 },
+    { "PMSICR_EL1", 630 },
+    { "PMSIDR_EL1", 635 },
+    { "PMSIRR_EL1", 631 },
+    { "PMSLATFR_EL1", 634 },
+    { "PMSWINC_EL0", 111 },
+    { "PMUSERENR_EL0", 271 },
+    { "PMXEVCNTR_EL0", 270 },
+    { "PMXEVTYPER_EL0", 269 },
+    { "REVIDR_EL1", 13 },
+    { "RGSR_EL1", 746 },
+    { "RMR_EL1", 284 },
+    { "RMR_EL2", 285 },
+    { "RMR_EL3", 286 },
+    { "RNDR", 102 },
+    { "RNDRRS", 103 },
+    { "RVBAR_EL1", 46 },
+    { "RVBAR_EL2", 47 },
+    { "RVBAR_EL3", 48 },
+    { "SCR_EL3", 208 },
+    { "SCTLR_EL1", 201 },
+    { "SCTLR_EL12", 600 },
+    { "SCTLR_EL2", 202 },
+    { "SCTLR_EL3", 203 },
+    { "SCXTNUM_EL0", 104 },
+    { "SCXTNUM_EL1", 105 },
+    { "SCXTNUM_EL12", 108 },
+    { "SCXTNUM_EL2", 106 },
+    { "SCXTNUM_EL3", 107 },
+    { "SDER32_EL2", 663 },
+    { "SDER32_EL3", 210 },
+    { "SPSEL", 235 },
+    { "SPSR_ABT", 240 },
+    { "SPSR_EL1", 226 },
+    { "SPSR_EL12", 620 },
+    { "SPSR_EL2", 227 },
+    { "SPSR_EL3", 228 },
+    { "SPSR_FIQ", 242 },
+    { "SPSR_IRQ", 239 },
+    { "SPSR_UND", 241 },
+    { "SP_EL0", 232 },
+    { "SP_EL1", 233 },
+    { "SP_EL2", 234 },
+    { "SSBS", 743 },
+    { "TCO", 744 },
+    { "TCR_EL1", 220 },
+    { "TCR_EL12", 604 },
+    { "TCR_EL2", 221 },
+    { "TCR_EL3", 222 },
+    { "TEECR32_EL1", 122 },
+    { "TEEHBR32_EL1", 192 },
+    { "TFSRE0_EL1", 751 },
+    { "TFSR_EL1", 747 },
+    { "TFSR_EL12", 750 },
+    { "TFSR_EL2", 748 },
+    { "TFSR_EL3", 749 },
+    { "TPIDRRO_EL0", 291 },
+    { "TPIDR_EL0", 288 },
+    { "TPIDR_EL1", 292 },
+    { "TPIDR_EL2", 289 },
+    { "TPIDR_EL3", 290 },
+    { "TRBBASER_EL1", 760 },
+    { "TRBIDR_EL1", 764 },
+    { "TRBLIMITR_EL1", 758 },
+    { "TRBMAR_EL1", 762 },
+    { "TRBPTR_EL1", 759 },
+    { "TRBSR_EL1", 761 },
+    { "TRBTRG_EL1", 763 },
+    { "TRCACATR0", 489 },
+    { "TRCACATR1", 490 },
+    { "TRCACATR10", 499 },
+    { "TRCACATR11", 500 },
+    { "TRCACATR12", 501 },
+    { "TRCACATR13", 502 },
+    { "TRCACATR14", 503 },
+    { "TRCACATR15", 504 },
+    { "TRCACATR2", 491 },
+    { "TRCACATR3", 492 },
+    { "TRCACATR4", 493 },
+    { "TRCACATR5", 494 },
+    { "TRCACATR6", 495 },
+    { "TRCACATR7", 496 },
+    { "TRCACATR8", 497 },
+    { "TRCACATR9", 498 },
+    { "TRCACVR0", 473 },
+    { "TRCACVR1", 474 },
+    { "TRCACVR10", 483 },
+    { "TRCACVR11", 484 },
+    { "TRCACVR12", 485 },
+    { "TRCACVR13", 486 },
+    { "TRCACVR14", 487 },
+    { "TRCACVR15", 488 },
+    { "TRCACVR2", 475 },
+    { "TRCACVR3", 476 },
+    { "TRCACVR4", 477 },
+    { "TRCACVR5", 478 },
+    { "TRCACVR6", 479 },
+    { "TRCACVR7", 480 },
+    { "TRCACVR8", 481 },
+    { "TRCACVR9", 482 },
+    { "TRCAUTHSTATUS", 74 },
+    { "TRCAUXCTLR", 375 },
+    { "TRCBBCTLR", 382 },
+    { "TRCCCCTLR", 381 },
+    { "TRCCIDCCTLR0", 537 },
+    { "TRCCIDCCTLR1", 538 },
+    { "TRCCIDCVR0", 521 },
+    { "TRCCIDCVR1", 522 },
+    { "TRCCIDCVR2", 523 },
+    { "TRCCIDCVR3", 524 },
+    { "TRCCIDCVR4", 525 },
+    { "TRCCIDCVR5", 526 },
+    { "TRCCIDCVR6", 527 },
+    { "TRCCIDCVR7", 528 },
+    { "TRCCIDR0", 86 },
+    { "TRCCIDR1", 87 },
+    { "TRCCIDR2", 88 },
+    { "TRCCIDR3", 89 },
+    { "TRCCLAIMCLR", 543 },
+    { "TRCCLAIMSET", 542 },
+    { "TRCCNTCTLR0", 402 },
+    { "TRCCNTCTLR1", 403 },
+    { "TRCCNTCTLR2", 404 },
+    { "TRCCNTCTLR3", 405 },
+    { "TRCCNTRLDVR0", 398 },
+    { "TRCCNTRLDVR1", 399 },
+    { "TRCCNTRLDVR2", 400 },
+    { "TRCCNTRLDVR3", 401 },
+    { "TRCCNTVR0", 406 },
+    { "TRCCNTVR1", 407 },
+    { "TRCCNTVR2", 408 },
+    { "TRCCNTVR3", 409 },
+    { "TRCCONFIGR", 374 },
+    { "TRCDEVAFF0", 71 },
+    { "TRCDEVAFF1", 72 },
+    { "TRCDEVARCH", 75 },
+    { "TRCDEVID", 76 },
+    { "TRCDEVTYPE", 77 },
+    { "TRCDVCMR0", 513 },
+    { "TRCDVCMR1", 514 },
+    { "TRCDVCMR2", 515 },
+    { "TRCDVCMR3", 516 },
+    { "TRCDVCMR4", 517 },
+    { "TRCDVCMR5", 518 },
+    { "TRCDVCMR6", 519 },
+    { "TRCDVCMR7", 520 },
+    { "TRCDVCVR0", 505 },
+    { "TRCDVCVR1", 506 },
+    { "TRCDVCVR2", 507 },
+    { "TRCDVCVR3", 508 },
+    { "TRCDVCVR4", 509 },
+    { "TRCDVCVR5", 510 },
+    { "TRCDVCVR6", 511 },
+    { "TRCDVCVR7", 512 },
+    { "TRCEVENTCTL0R", 376 },
+    { "TRCEVENTCTL1R", 377 },
+    { "TRCEXTINSELR", 397 },
+    { "TRCEXTINSELR0", 754 },
+    { "TRCEXTINSELR1", 755 },
+    { "TRCEXTINSELR2", 756 },
+    { "TRCEXTINSELR3", 757 },
+    { "TRCIDR0", 61 },
+    { "TRCIDR1", 62 },
+    { "TRCIDR10", 57 },
+    { "TRCIDR11", 58 },
+    { "TRCIDR12", 59 },
+    { "TRCIDR13", 60 },
+    { "TRCIDR2", 63 },
+    { "TRCIDR3", 64 },
+    { "TRCIDR4", 65 },
+    { "TRCIDR5", 66 },
+    { "TRCIDR6", 67 },
+    { "TRCIDR7", 68 },
+    { "TRCIDR8", 55 },
+    { "TRCIDR9", 56 },
+    { "TRCIMSPEC0", 410 },
+    { "TRCIMSPEC1", 411 },
+    { "TRCIMSPEC2", 412 },
+    { "TRCIMSPEC3", 413 },
+    { "TRCIMSPEC4", 414 },
+    { "TRCIMSPEC5", 415 },
+    { "TRCIMSPEC6", 416 },
+    { "TRCIMSPEC7", 417 },
+    { "TRCITCTRL", 541 },
+    { "TRCLAR", 113 },
+    { "TRCLSR", 73 },
+    { "TRCOSLAR", 112 },
+    { "TRCOSLSR", 69 },
+    { "TRCPDCR", 472 },
+    { "TRCPDSR", 70 },
+    { "TRCPIDR0", 82 },
+    { "TRCPIDR1", 83 },
+    { "TRCPIDR2", 84 },
+    { "TRCPIDR3", 85 },
+    { "TRCPIDR4", 78 },
+    { "TRCPIDR5", 79 },
+    { "TRCPIDR6", 80 },
+    { "TRCPIDR7", 81 },
+    { "TRCPRGCTLR", 372 },
+    { "TRCPROCSELR", 373 },
+    { "TRCQCTLR", 384 },
+    { "TRCRSCTLR10", 426 },
+    { "TRCRSCTLR11", 427 },
+    { "TRCRSCTLR12", 428 },
+    { "TRCRSCTLR13", 429 },
+    { "TRCRSCTLR14", 430 },
+    { "TRCRSCTLR15", 431 },
+    { "TRCRSCTLR16", 432 },
+    { "TRCRSCTLR17", 433 },
+    { "TRCRSCTLR18", 434 },
+    { "TRCRSCTLR19", 435 },
+    { "TRCRSCTLR2", 418 },
+    { "TRCRSCTLR20", 436 },
+    { "TRCRSCTLR21", 437 },
+    { "TRCRSCTLR22", 438 },
+    { "TRCRSCTLR23", 439 },
+    { "TRCRSCTLR24", 440 },
+    { "TRCRSCTLR25", 441 },
+    { "TRCRSCTLR26", 442 },
+    { "TRCRSCTLR27", 443 },
+    { "TRCRSCTLR28", 444 },
+    { "TRCRSCTLR29", 445 },
+    { "TRCRSCTLR3", 419 },
+    { "TRCRSCTLR30", 446 },
+    { "TRCRSCTLR31", 447 },
+    { "TRCRSCTLR4", 420 },
+    { "TRCRSCTLR5", 421 },
+    { "TRCRSCTLR6", 422 },
+    { "TRCRSCTLR7", 423 },
+    { "TRCRSCTLR8", 424 },
+    { "TRCRSCTLR9", 425 },
+    { "TRCRSR", 753 },
+    { "TRCSEQEVR0", 392 },
+    { "TRCSEQEVR1", 393 },
+    { "TRCSEQEVR2", 394 },
+    { "TRCSEQRSTEVR", 395 },
+    { "TRCSEQSTR", 396 },
+    { "TRCSSCCR0", 448 },
+    { "TRCSSCCR1", 449 },
+    { "TRCSSCCR2", 450 },
+    { "TRCSSCCR3", 451 },
+    { "TRCSSCCR4", 452 },
+    { "TRCSSCCR5", 453 },
+    { "TRCSSCCR6", 454 },
+    { "TRCSSCCR7", 455 },
+    { "TRCSSCSR0", 456 },
+    { "TRCSSCSR1", 457 },
+    { "TRCSSCSR2", 458 },
+    { "TRCSSCSR3", 459 },
+    { "TRCSSCSR4", 460 },
+    { "TRCSSCSR5", 461 },
+    { "TRCSSCSR6", 462 },
+    { "TRCSSCSR7", 463 },
+    { "TRCSSPCICR0", 464 },
+    { "TRCSSPCICR1", 465 },
+    { "TRCSSPCICR2", 466 },
+    { "TRCSSPCICR3", 467 },
+    { "TRCSSPCICR4", 468 },
+    { "TRCSSPCICR5", 469 },
+    { "TRCSSPCICR6", 470 },
+    { "TRCSSPCICR7", 471 },
+    { "TRCSTALLCTLR", 378 },
+    { "TRCSTATR", 54 },
+    { "TRCSYNCPR", 380 },
+    { "TRCTRACEIDR", 383 },
+    { "TRCTSCTLR", 379 },
+    { "TRCVDARCCTLR", 391 },
+    { "TRCVDCTLR", 389 },
+    { "TRCVDSACCTLR", 390 },
+    { "TRCVICTLR", 385 },
+    { "TRCVIIECTLR", 386 },
+    { "TRCVIPCSSCTLR", 388 },
+    { "TRCVISSCTLR", 387 },
+    { "TRCVMIDCCTLR0", 539 },
+    { "TRCVMIDCCTLR1", 540 },
+    { "TRCVMIDCVR0", 529 },
+    { "TRCVMIDCVR1", 530 },
+    { "TRCVMIDCVR2", 531 },
+    { "TRCVMIDCVR3", 532 },
+    { "TRCVMIDCVR4", 533 },
+    { "TRCVMIDCVR5", 534 },
+    { "TRCVMIDCVR6", 535 },
+    { "TRCVMIDCVR7", 536 },
+    { "TRFCR_EL1", 734 },
+    { "TRFCR_EL12", 736 },
+    { "TRFCR_EL2", 735 },
+    { "TTBR0_EL1", 216 },
+    { "TTBR0_EL12", 602 },
+    { "TTBR0_EL2", 217 },
+    { "TTBR0_EL3", 218 },
+    { "TTBR1_EL1", 219 },
+    { "TTBR1_EL12", 603 },
+    { "TTBR1_EL2", 595 },
+    { "UAO", 622 },
+    { "VBAR_EL1", 281 },
+    { "VBAR_EL12", 611 },
+    { "VBAR_EL2", 282 },
+    { "VBAR_EL3", 283 },
+    { "VDISR_EL2", 643 },
+    { "VMPIDR_EL2", 199 },
+    { "VNCR_EL2", 738 },
+    { "VPIDR_EL2", 198 },
+    { "VSESR_EL2", 644 },
+    { "VSTCR_EL2", 655 },
+    { "VSTTBR_EL2", 656 },
+    { "VTCR_EL2", 224 },
+    { "VTTBR_EL2", 223 },
+    { "ZCR_EL1", 739 },
+    { "ZCR_EL12", 742 },
+    { "ZCR_EL2", 740 },
+    { "ZCR_EL3", 741 },
   };
 
   struct KeyType {
@@ -3818,773 +3944,815 @@ const SysReg *lookupSysRegByEncoding(uint16_t Encoding) {
     unsigned _index;
   };
   static const struct IndexType Index[] = {
-    { 0x8002, 456 },
-    { 0x8004, 464 },
-    { 0x8005, 480 },
-    { 0x8006, 496 },
-    { 0x8007, 512 },
-    { 0x800C, 465 },
-    { 0x800D, 481 },
-    { 0x800E, 497 },
-    { 0x800F, 513 },
-    { 0x8010, 459 },
-    { 0x8012, 460 },
-    { 0x8014, 466 },
-    { 0x8015, 482 },
-    { 0x8016, 498 },
-    { 0x8017, 514 },
-    { 0x801A, 457 },
-    { 0x801C, 467 },
-    { 0x801D, 483 },
-    { 0x801E, 499 },
-    { 0x801F, 515 },
-    { 0x8024, 468 },
-    { 0x8025, 484 },
-    { 0x8026, 500 },
-    { 0x8027, 516 },
-    { 0x802C, 469 },
-    { 0x802D, 485 },
-    { 0x802E, 501 },
-    { 0x802F, 517 },
-    { 0x8032, 462 },
-    { 0x8034, 470 },
-    { 0x8035, 486 },
-    { 0x8036, 502 },
-    { 0x8037, 518 },
-    { 0x803C, 471 },
-    { 0x803D, 487 },
-    { 0x803E, 503 },
-    { 0x803F, 519 },
-    { 0x8044, 472 },
-    { 0x8045, 488 },
-    { 0x8046, 504 },
-    { 0x8047, 520 },
-    { 0x804C, 473 },
-    { 0x804D, 489 },
-    { 0x804E, 505 },
-    { 0x804F, 521 },
-    { 0x8054, 474 },
-    { 0x8055, 490 },
-    { 0x8056, 506 },
-    { 0x8057, 522 },
-    { 0x805C, 475 },
-    { 0x805D, 491 },
-    { 0x805E, 507 },
-    { 0x805F, 523 },
-    { 0x8064, 476 },
-    { 0x8065, 492 },
-    { 0x8066, 508 },
-    { 0x8067, 524 },
-    { 0x806C, 477 },
-    { 0x806D, 493 },
-    { 0x806E, 509 },
-    { 0x806F, 525 },
-    { 0x8074, 478 },
-    { 0x8075, 494 },
-    { 0x8076, 510 },
-    { 0x8077, 526 },
-    { 0x807C, 479 },
-    { 0x807D, 495 },
-    { 0x807E, 511 },
-    { 0x807F, 527 },
-    { 0x8080, 338 },
-    { 0x8084, 446 },
-    { 0x808C, 339 },
-    { 0x809C, 529 },
-    { 0x80A4, 530 },
-    { 0x83C6, 531 },
-    { 0x83CE, 532 },
-    { 0x83F6, 340 },
-    { 0x8801, 719 },
-    { 0x8802, 721 },
-    { 0x8804, 728 },
-    { 0x8805, 734 },
-    { 0x8806, 391 },
-    { 0x8807, 746 },
-    { 0x8808, 708 },
-    { 0x8809, 720 },
-    { 0x880A, 722 },
-    { 0x880C, 729 },
-    { 0x880D, 735 },
-    { 0x880E, 392 },
-    { 0x880F, 747 },
-    { 0x8810, 709 },
-    { 0x8812, 723 },
-    { 0x8814, 730 },
-    { 0x8815, 736 },
-    { 0x8816, 393 },
-    { 0x8817, 748 },
-    { 0x8818, 390 },
-    { 0x881A, 724 },
-    { 0x881D, 737 },
-    { 0x881E, 394 },
-    { 0x881F, 749 },
-    { 0x8820, 710 },
-    { 0x8825, 738 },
-    { 0x8826, 395 },
-    { 0x8827, 750 },
-    { 0x882D, 739 },
-    { 0x882E, 396 },
-    { 0x882F, 751 },
-    { 0x8830, 711 },
-    { 0x8834, 731 },
-    { 0x8835, 740 },
-    { 0x8837, 752 },
-    { 0x883C, 732 },
-    { 0x883D, 741 },
-    { 0x883F, 753 },
-    { 0x8840, 712 },
-    { 0x8842, 725 },
-    { 0x8844, 324 },
-    { 0x8844, 733 },
-    { 0x8845, 742 },
-    { 0x8847, 397 },
-    { 0x8848, 713 },
-    { 0x884A, 726 },
-    { 0x884C, 325 },
-    { 0x884D, 743 },
-    { 0x884F, 398 },
-    { 0x8850, 323 },
-    { 0x8852, 727 },
-    { 0x8854, 326 },
-    { 0x8855, 744 },
-    { 0x8857, 399 },
-    { 0x8858, 714 },
-    { 0x885C, 327 },
-    { 0x885D, 745 },
-    { 0x885F, 400 },
-    { 0x8860, 715 },
-    { 0x8867, 401 },
-    { 0x8868, 716 },
-    { 0x886F, 402 },
-    { 0x8870, 717 },
-    { 0x8877, 403 },
-    { 0x8878, 718 },
-    { 0x887F, 404 },
-    { 0x8881, 1 },
-    { 0x8882, 17 },
-    { 0x8883, 33 },
-    { 0x8884, 448 },
-    { 0x8889, 2 },
-    { 0x888A, 18 },
-    { 0x888B, 34 },
-    { 0x888C, 405 },
-    { 0x8890, 754 },
-    { 0x8891, 3 },
-    { 0x8892, 19 },
-    { 0x8893, 35 },
-    { 0x8898, 755 },
-    { 0x8899, 4 },
-    { 0x889A, 20 },
-    { 0x889B, 36 },
-    { 0x88A0, 756 },
-    { 0x88A1, 5 },
-    { 0x88A2, 21 },
-    { 0x88A3, 37 },
-    { 0x88A4, 41 },
-    { 0x88A8, 757 },
-    { 0x88A9, 6 },
-    { 0x88AA, 22 },
-    { 0x88AB, 38 },
-    { 0x88AC, 406 },
-    { 0x88B0, 758 },
-    { 0x88B1, 7 },
-    { 0x88B2, 23 },
-    { 0x88B3, 39 },
-    { 0x88B8, 759 },
-    { 0x88B9, 8 },
-    { 0x88BA, 24 },
-    { 0x88BB, 40 },
-    { 0x88C0, 760 },
-    { 0x88C1, 9 },
-    { 0x88C2, 25 },
-    { 0x88C8, 761 },
-    { 0x88C9, 10 },
-    { 0x88CA, 26 },
-    { 0x88D0, 762 },
-    { 0x88D1, 11 },
-    { 0x88D2, 27 },
-    { 0x88D8, 763 },
-    { 0x88D9, 12 },
-    { 0x88DA, 28 },
-    { 0x88E0, 764 },
-    { 0x88E1, 13 },
-    { 0x88E2, 29 },
-    { 0x88E8, 765 },
-    { 0x88E9, 14 },
-    { 0x88EA, 30 },
-    { 0x88F0, 766 },
-    { 0x88F1, 15 },
-    { 0x88F2, 31 },
-    { 0x88F8, 0 },
-    { 0x88F9, 16 },
-    { 0x88FA, 32 },
-    { 0x8900, 42 },
-    { 0x8901, 50 },
-    { 0x8902, 58 },
-    { 0x8903, 66 },
-    { 0x8904, 74 },
-    { 0x8905, 78 },
-    { 0x8906, 82 },
-    { 0x8907, 86 },
-    { 0x8910, 43 },
-    { 0x8911, 51 },
-    { 0x8912, 59 },
-    { 0x8913, 67 },
-    { 0x8920, 44 },
-    { 0x8921, 52 },
-    { 0x8922, 60 },
-    { 0x8923, 68 },
-    { 0x8924, 75 },
-    { 0x8925, 79 },
-    { 0x8926, 83 },
-    { 0x8927, 87 },
-    { 0x8930, 45 },
-    { 0x8931, 53 },
-    { 0x8932, 61 },
-    { 0x8933, 69 },
-    { 0x8940, 46 },
-    { 0x8941, 54 },
-    { 0x8942, 62 },
-    { 0x8943, 70 },
-    { 0x8944, 76 },
-    { 0x8945, 80 },
-    { 0x8946, 84 },
-    { 0x8947, 88 },
-    { 0x8950, 47 },
-    { 0x8951, 55 },
-    { 0x8952, 63 },
-    { 0x8953, 71 },
-    { 0x8960, 48 },
-    { 0x8961, 56 },
-    { 0x8962, 64 },
-    { 0x8963, 72 },
-    { 0x8964, 77 },
-    { 0x8965, 81 },
-    { 0x8966, 85 },
-    { 0x8967, 89 },
-    { 0x8970, 49 },
-    { 0x8971, 57 },
-    { 0x8972, 65 },
-    { 0x8973, 73 },
-    { 0x8980, 90 },
-    { 0x8981, 98 },
-    { 0x8982, 106 },
-    { 0x898A, 107 },
-    { 0x8990, 91 },
-    { 0x8991, 99 },
-    { 0x8992, 108 },
-    { 0x899A, 109 },
-    { 0x89A0, 92 },
-    { 0x89A1, 100 },
-    { 0x89B0, 93 },
-    { 0x89B1, 101 },
-    { 0x89C0, 94 },
-    { 0x89C1, 102 },
-    { 0x89D0, 95 },
-    { 0x89D1, 103 },
-    { 0x89E0, 96 },
-    { 0x89E1, 104 },
-    { 0x89F0, 97 },
-    { 0x89F1, 105 },
-    { 0x8B84, 110 },
-    { 0x8B97, 412 },
-    { 0x8B9F, 413 },
-    { 0x8BA7, 414 },
-    { 0x8BAF, 415 },
-    { 0x8BB7, 416 },
-    { 0x8BBF, 417 },
-    { 0x8BC6, 111 },
-    { 0x8BC7, 418 },
-    { 0x8BCE, 112 },
-    { 0x8BCF, 419 },
-    { 0x8BD6, 407 },
-    { 0x8BD7, 420 },
-    { 0x8BDE, 408 },
-    { 0x8BDF, 421 },
-    { 0x8BE6, 449 },
-    { 0x8BE7, 422 },
-    { 0x8BEE, 409 },
-    { 0x8BEF, 423 },
-    { 0x8BF6, 410 },
-    { 0x8BF7, 424 },
-    { 0x8BFE, 411 },
-    { 0x8BFF, 425 },
-    { 0x9000, 458 },
-    { 0x9080, 528 },
-    { 0x9808, 336 },
-    { 0x9820, 461 },
-    { 0x9828, 337 },
-    { 0x9828, 445 },
-    { 0xA038, 463 },
-    { 0xC000, 343 },
-    { 0xC005, 348 },
-    { 0xC006, 349 },
-    { 0xC008, 352 },
-    { 0xC009, 353 },
-    { 0xC00A, 355 },
-    { 0xC00B, 356 },
-    { 0xC00C, 357 },
-    { 0xC00D, 358 },
-    { 0xC00E, 359 },
-    { 0xC00F, 360 },
-    { 0xC010, 361 },
-    { 0xC011, 362 },
-    { 0xC012, 363 },
-    { 0xC013, 364 },
-    { 0xC014, 365 },
-    { 0xC015, 366 },
-    { 0xC016, 388 },
-    { 0xC017, 367 },
-    { 0xC018, 379 },
-    { 0xC019, 380 },
-    { 0xC01A, 381 },
-    { 0xC01C, 354 },
-    { 0xC01E, 389 },
-    { 0xC020, 368 },
-    { 0xC021, 369 },
-    { 0xC024, 434 },
-    { 0xC028, 370 },
-    { 0xC029, 371 },
-    { 0xC02C, 372 },
-    { 0xC02D, 373 },
-    { 0xC030, 374 },
-    { 0xC031, 375 },
-    { 0xC038, 376 },
-    { 0xC039, 377 },
-    { 0xC03A, 378 },
-    { 0xC080, 537 },
-    { 0xC081, 540 },
-    { 0xC082, 536 },
-    { 0xC085, 316 },
-    { 0xC086, 315 },
-    { 0xC090, 309 },
-    { 0xC091, 304 },
-    { 0xC100, 552 },
-    { 0xC101, 555 },
-    { 0xC102, 556 },
-    { 0xC108, 214 },
-    { 0xC109, 215 },
-    { 0xC10A, 216 },
-    { 0xC10B, 217 },
-    { 0xC110, 218 },
-    { 0xC111, 219 },
-    { 0xC112, 220 },
-    { 0xC113, 221 },
-    { 0xC118, 222 },
-    { 0xC119, 223 },
-    { 0xC200, 562 },
-    { 0xC201, 565 },
-    { 0xC208, 568 },
-    { 0xC210, 571 },
-    { 0xC212, 574 },
-    { 0xC213, 159 },
-    { 0xC214, 191 },
-    { 0xC230, 115 },
-    { 0xC288, 584 },
-    { 0xC289, 587 },
-    { 0xC290, 590 },
-    { 0xC298, 436 },
-    { 0xC299, 205 },
-    { 0xC2A0, 437 },
-    { 0xC2A1, 206 },
-    { 0xC2A2, 207 },
-    { 0xC2A3, 208 },
-    { 0xC2A4, 239 },
-    { 0xC2A5, 234 },
-    { 0xC2A6, 235 },
-    { 0xC2A8, 209 },
-    { 0xC2A9, 210 },
-    { 0xC2AA, 237 },
-    { 0xC2AB, 238 },
-    { 0xC2AF, 236 },
-    { 0xC2B0, 317 },
-    { 0xC2B1, 321 },
-    { 0xC300, 594 },
-    { 0xC3A0, 598 },
-    { 0xC4C8, 198 },
-    { 0xC4CA, 199 },
-    { 0xC4CB, 200 },
-    { 0xC4CC, 201 },
-    { 0xC4CD, 202 },
-    { 0xC4CE, 203 },
-    { 0xC4CF, 204 },
-    { 0xC4D0, 192 },
-    { 0xC4D1, 193 },
-    { 0xC4D3, 194 },
-    { 0xC4D7, 195 },
-    { 0xC4D8, 328 },
-    { 0xC4D9, 329 },
-    { 0xC4DA, 330 },
-    { 0xC4DB, 331 },
-    { 0xC4DC, 332 },
-    { 0xC4DE, 333 },
-    { 0xC4DF, 334 },
-    { 0xC4F1, 608 },
-    { 0xC4F2, 609 },
-    { 0xC4F6, 233 },
-    { 0xC510, 611 },
-    { 0xC518, 614 },
-    { 0xC520, 160 },
-    { 0xC521, 161 },
-    { 0xC522, 162 },
-    { 0xC523, 163 },
-    { 0xC524, 255 },
-    { 0xC527, 435 },
-    { 0xC528, 241 },
-    { 0xC529, 240 },
-    { 0xC600, 617 },
-    { 0xC601, 382 },
-    { 0xC602, 620 },
-    { 0xC608, 385 },
-    { 0xC609, 211 },
-    { 0xC640, 427 },
-    { 0xC641, 451 },
-    { 0xC642, 429 },
-    { 0xC643, 114 },
-    { 0xC644, 124 },
-    { 0xC645, 125 },
-    { 0xC646, 126 },
-    { 0xC647, 127 },
-    { 0xC648, 128 },
-    { 0xC649, 129 },
-    { 0xC64A, 130 },
-    { 0xC64B, 131 },
-    { 0xC659, 452 },
-    { 0xC65B, 430 },
-    { 0xC65D, 453 },
-    { 0xC65E, 454 },
-    { 0xC65F, 455 },
-    { 0xC660, 426 },
-    { 0xC661, 450 },
-    { 0xC662, 428 },
-    { 0xC663, 113 },
-    { 0xC664, 116 },
-    { 0xC665, 118 },
-    { 0xC666, 121 },
-    { 0xC667, 122 },
-    { 0xC681, 623 },
-    { 0xC684, 628 },
-    { 0xC687, 441 },
-    { 0xC708, 631 },
-    { 0xC800, 344 },
-    { 0xC801, 346 },
-    { 0xC802, 345 },
-    { 0xC804, 322 },
-    { 0xC807, 350 },
-    { 0xD000, 533 },
-    { 0xD801, 347 },
-    { 0xD807, 351 },
-    { 0xD920, 438 },
-    { 0xD921, 439 },
-    { 0xDA10, 572 },
-    { 0xDA11, 573 },
-    { 0xDA15, 307 },
-    { 0xDA16, 313 },
-    { 0xDA17, 314 },
-    { 0xDA20, 579 },
-    { 0xDA21, 580 },
-    { 0xDA28, 581 },
-    { 0xDA29, 582 },
-    { 0xDCE0, 599 },
-    { 0xDCE1, 600 },
-    { 0xDCE2, 601 },
-    { 0xDCE3, 602 },
-    { 0xDCE4, 447 },
-    { 0xDCE5, 603 },
-    { 0xDCE6, 341 },
-    { 0xDCE7, 342 },
-    { 0xDCE8, 604 },
-    { 0xDCE9, 605 },
-    { 0xDCEA, 606 },
-    { 0xDCF0, 607 },
-    { 0xDCF3, 610 },
-    { 0xDE82, 624 },
-    { 0xDE83, 627 },
-    { 0xDE87, 440 },
-    { 0xDE90, 256 },
-    { 0xDE91, 257 },
-    { 0xDE92, 258 },
-    { 0xDE93, 259 },
-    { 0xDE94, 260 },
-    { 0xDE95, 261 },
-    { 0xDE98, 270 },
-    { 0xDE99, 271 },
-    { 0xDEA0, 262 },
-    { 0xDEA1, 263 },
-    { 0xDEA2, 264 },
-    { 0xDEA3, 265 },
-    { 0xDEB0, 266 },
-    { 0xDEB1, 267 },
-    { 0xDEB2, 268 },
-    { 0xDEB3, 269 },
-    { 0xDEE0, 272 },
-    { 0xDEE1, 273 },
-    { 0xDEE2, 274 },
-    { 0xDEE3, 275 },
-    { 0xDEE4, 276 },
-    { 0xDEE5, 277 },
-    { 0xDEE6, 278 },
-    { 0xDEE7, 279 },
-    { 0xDEE8, 280 },
-    { 0xDEE9, 281 },
-    { 0xDEEA, 282 },
-    { 0xDEEB, 283 },
-    { 0xDEEC, 284 },
-    { 0xDEED, 285 },
-    { 0xDEEE, 286 },
-    { 0xDEEF, 287 },
-    { 0xDEF0, 288 },
-    { 0xDEF1, 289 },
-    { 0xDEF2, 290 },
-    { 0xDEF3, 291 },
-    { 0xDEF4, 292 },
-    { 0xDEF5, 293 },
-    { 0xDEF6, 294 },
-    { 0xDEF7, 295 },
-    { 0xDEF8, 296 },
-    { 0xDEF9, 297 },
-    { 0xDEFA, 298 },
-    { 0xDEFB, 299 },
-    { 0xDEFC, 300 },
-    { 0xDEFD, 301 },
-    { 0xDEFE, 302 },
-    { 0xDEFF, 303 },
-    { 0xDF00, 629 },
-    { 0xDF01, 386 },
-    { 0xDF02, 387 },
-    { 0xDF10, 633 },
-    { 0xDF11, 636 },
-    { 0xDF12, 639 },
-    { 0xDF18, 642 },
-    { 0xDF19, 643 },
-    { 0xDF1A, 644 },
-    { 0xDF40, 645 },
-    { 0xDF41, 646 },
-    { 0xDF42, 647 },
-    { 0xDF43, 648 },
-    { 0xDF44, 649 },
-    { 0xDF45, 650 },
-    { 0xDF46, 651 },
-    { 0xDF47, 652 },
-    { 0xDF48, 653 },
-    { 0xDF49, 654 },
-    { 0xDF4A, 655 },
-    { 0xDF4B, 656 },
-    { 0xDF4C, 657 },
-    { 0xDF4D, 658 },
-    { 0xDF4E, 659 },
-    { 0xDF4F, 660 },
-    { 0xDF50, 661 },
-    { 0xDF51, 662 },
-    { 0xDF52, 663 },
-    { 0xDF53, 664 },
-    { 0xDF54, 665 },
-    { 0xDF55, 666 },
-    { 0xDF56, 667 },
-    { 0xDF57, 668 },
-    { 0xDF58, 669 },
-    { 0xDF59, 670 },
-    { 0xDF5A, 671 },
-    { 0xDF5B, 672 },
-    { 0xDF5C, 673 },
-    { 0xDF5D, 674 },
-    { 0xDF5E, 675 },
-    { 0xDF60, 677 },
-    { 0xDF61, 678 },
-    { 0xDF62, 679 },
-    { 0xDF63, 680 },
-    { 0xDF64, 681 },
-    { 0xDF65, 682 },
-    { 0xDF66, 683 },
-    { 0xDF67, 684 },
-    { 0xDF68, 685 },
-    { 0xDF69, 686 },
-    { 0xDF6A, 687 },
-    { 0xDF6B, 688 },
-    { 0xDF6C, 689 },
-    { 0xDF6D, 690 },
-    { 0xDF6E, 691 },
-    { 0xDF6F, 692 },
-    { 0xDF70, 693 },
-    { 0xDF71, 694 },
-    { 0xDF72, 695 },
-    { 0xDF73, 696 },
-    { 0xDF74, 697 },
-    { 0xDF75, 698 },
-    { 0xDF76, 699 },
-    { 0xDF77, 700 },
-    { 0xDF78, 701 },
-    { 0xDF79, 702 },
-    { 0xDF7A, 703 },
-    { 0xDF7B, 704 },
-    { 0xDF7C, 705 },
-    { 0xDF7D, 706 },
-    { 0xDF7E, 707 },
-    { 0xDF7F, 676 },
-    { 0xE000, 534 },
-    { 0xE005, 535 },
-    { 0xE080, 538 },
-    { 0xE081, 541 },
-    { 0xE088, 543 },
-    { 0xE089, 545 },
-    { 0xE08A, 547 },
-    { 0xE08B, 549 },
-    { 0xE08F, 550 },
-    { 0xE090, 310 },
-    { 0xE091, 305 },
-    { 0xE099, 232 },
-    { 0xE100, 553 },
-    { 0xE101, 164 },
-    { 0xE102, 557 },
-    { 0xE108, 559 },
-    { 0xE10A, 560 },
-    { 0xE110, 308 },
-    { 0xE130, 225 },
-    { 0xE132, 224 },
-    { 0xE180, 561 },
-    { 0xE200, 563 },
-    { 0xE201, 566 },
-    { 0xE208, 569 },
-    { 0xE218, 575 },
-    { 0xE219, 576 },
-    { 0xE21A, 577 },
-    { 0xE21B, 578 },
-    { 0xE281, 583 },
-    { 0xE288, 585 },
-    { 0xE289, 588 },
-    { 0xE290, 591 },
-    { 0xE293, 213 },
-    { 0xE298, 593 },
-    { 0xE2B0, 318 },
-    { 0xE300, 595 },
-    { 0xE304, 597 },
-    { 0xE4C8, 196 },
-    { 0xE510, 612 },
-    { 0xE518, 615 },
-    { 0xE520, 245 },
-    { 0xE521, 246 },
-    { 0xE528, 242 },
-    { 0xE530, 247 },
-    { 0xE531, 248 },
-    { 0xE532, 249 },
-    { 0xE533, 250 },
-    { 0xE534, 251 },
-    { 0xE535, 252 },
-    { 0xE536, 253 },
-    { 0xE537, 254 },
-    { 0xE600, 618 },
-    { 0xE601, 383 },
-    { 0xE602, 621 },
-    { 0xE609, 212 },
-    { 0xE640, 132 },
-    { 0xE641, 133 },
-    { 0xE642, 134 },
-    { 0xE643, 135 },
-    { 0xE648, 136 },
-    { 0xE649, 137 },
-    { 0xE64A, 138 },
-    { 0xE64B, 139 },
-    { 0xE64D, 119 },
-    { 0xE658, 140 },
-    { 0xE659, 431 },
-    { 0xE65A, 141 },
-    { 0xE65B, 432 },
-    { 0xE65D, 433 },
-    { 0xE65F, 142 },
-    { 0xE660, 143 },
-    { 0xE661, 144 },
-    { 0xE662, 145 },
-    { 0xE663, 146 },
-    { 0xE664, 147 },
-    { 0xE665, 148 },
-    { 0xE666, 149 },
-    { 0xE667, 150 },
-    { 0xE668, 151 },
-    { 0xE669, 152 },
-    { 0xE66A, 153 },
-    { 0xE66B, 154 },
-    { 0xE66C, 155 },
-    { 0xE66D, 156 },
-    { 0xE66E, 157 },
-    { 0xE66F, 158 },
-    { 0xE681, 165 },
-    { 0xE682, 625 },
-    { 0xE687, 442 },
-    { 0xE703, 630 },
-    { 0xE708, 632 },
-    { 0xE710, 634 },
-    { 0xE711, 637 },
-    { 0xE712, 640 },
-    { 0xE718, 166 },
-    { 0xE719, 168 },
-    { 0xE71A, 167 },
-    { 0xE720, 226 },
-    { 0xE721, 228 },
-    { 0xE722, 227 },
-    { 0xE728, 229 },
-    { 0xE729, 231 },
-    { 0xE72A, 230 },
-    { 0xE880, 169 },
-    { 0xE882, 170 },
-    { 0xE890, 312 },
-    { 0xE891, 306 },
-    { 0xE900, 171 },
-    { 0xE901, 172 },
-    { 0xE902, 173 },
-    { 0xEA00, 189 },
-    { 0xEA01, 190 },
-    { 0xEA88, 174 },
-    { 0xEA89, 175 },
-    { 0xEA90, 176 },
-    { 0xEAB0, 320 },
-    { 0xEB00, 177 },
-    { 0xECC8, 197 },
-    { 0xED10, 178 },
-    { 0xED18, 179 },
-    { 0xED28, 244 },
-    { 0xEE00, 180 },
-    { 0xEE81, 181 },
-    { 0xEE87, 444 },
-    { 0xEF08, 182 },
-    { 0xEF10, 183 },
-    { 0xEF11, 184 },
-    { 0xEF12, 185 },
-    { 0xEF18, 186 },
-    { 0xEF19, 187 },
-    { 0xEF1A, 188 },
-    { 0xF080, 539 },
-    { 0xF081, 542 },
-    { 0xF088, 544 },
-    { 0xF089, 546 },
-    { 0xF08A, 548 },
-    { 0xF090, 311 },
-    { 0xF099, 551 },
-    { 0xF100, 554 },
-    { 0xF102, 558 },
-    { 0xF200, 564 },
-    { 0xF201, 567 },
-    { 0xF208, 570 },
-    { 0xF288, 586 },
-    { 0xF289, 589 },
-    { 0xF290, 592 },
-    { 0xF2B0, 319 },
-    { 0xF300, 596 },
-    { 0xF510, 613 },
-    { 0xF518, 616 },
-    { 0xF528, 243 },
-    { 0xF600, 619 },
-    { 0xF601, 384 },
-    { 0xF602, 622 },
-    { 0xF664, 117 },
-    { 0xF665, 120 },
-    { 0xF667, 123 },
-    { 0xF682, 626 },
-    { 0xF687, 443 },
-    { 0xFF10, 635 },
-    { 0xFF11, 638 },
-    { 0xFF12, 641 },
-    { 0xFF90, 335 },
+    { 0x8002, 120 },
+    { 0x8004, 128 },
+    { 0x8005, 144 },
+    { 0x8006, 160 },
+    { 0x8007, 176 },
+    { 0x800C, 129 },
+    { 0x800D, 145 },
+    { 0x800E, 161 },
+    { 0x800F, 177 },
+    { 0x8010, 123 },
+    { 0x8012, 124 },
+    { 0x8014, 130 },
+    { 0x8015, 146 },
+    { 0x8016, 162 },
+    { 0x8017, 178 },
+    { 0x801A, 121 },
+    { 0x801C, 131 },
+    { 0x801D, 147 },
+    { 0x801E, 163 },
+    { 0x801F, 179 },
+    { 0x8024, 132 },
+    { 0x8025, 148 },
+    { 0x8026, 164 },
+    { 0x8027, 180 },
+    { 0x802C, 133 },
+    { 0x802D, 149 },
+    { 0x802E, 165 },
+    { 0x802F, 181 },
+    { 0x8032, 126 },
+    { 0x8034, 134 },
+    { 0x8035, 150 },
+    { 0x8036, 166 },
+    { 0x8037, 182 },
+    { 0x803C, 135 },
+    { 0x803D, 151 },
+    { 0x803E, 167 },
+    { 0x803F, 183 },
+    { 0x8044, 136 },
+    { 0x8045, 152 },
+    { 0x8046, 168 },
+    { 0x8047, 184 },
+    { 0x804C, 137 },
+    { 0x804D, 153 },
+    { 0x804E, 169 },
+    { 0x804F, 185 },
+    { 0x8054, 138 },
+    { 0x8055, 154 },
+    { 0x8056, 170 },
+    { 0x8057, 186 },
+    { 0x805C, 139 },
+    { 0x805D, 155 },
+    { 0x805E, 171 },
+    { 0x805F, 187 },
+    { 0x8064, 140 },
+    { 0x8065, 156 },
+    { 0x8066, 172 },
+    { 0x8067, 188 },
+    { 0x806C, 141 },
+    { 0x806D, 157 },
+    { 0x806E, 173 },
+    { 0x806F, 189 },
+    { 0x8074, 142 },
+    { 0x8075, 158 },
+    { 0x8076, 174 },
+    { 0x8077, 190 },
+    { 0x807C, 143 },
+    { 0x807D, 159 },
+    { 0x807E, 175 },
+    { 0x807F, 191 },
+    { 0x8080, 2 },
+    { 0x8084, 110 },
+    { 0x808C, 3 },
+    { 0x809C, 193 },
+    { 0x80A4, 194 },
+    { 0x83C6, 195 },
+    { 0x83CE, 196 },
+    { 0x83F6, 4 },
+    { 0x8801, 383 },
+    { 0x8802, 385 },
+    { 0x8804, 392 },
+    { 0x8805, 398 },
+    { 0x8806, 55 },
+    { 0x8807, 410 },
+    { 0x8808, 372 },
+    { 0x8809, 384 },
+    { 0x880A, 386 },
+    { 0x880C, 393 },
+    { 0x880D, 399 },
+    { 0x880E, 56 },
+    { 0x880F, 411 },
+    { 0x8810, 373 },
+    { 0x8812, 387 },
+    { 0x8814, 394 },
+    { 0x8815, 400 },
+    { 0x8816, 57 },
+    { 0x8817, 412 },
+    { 0x8818, 54 },
+    { 0x881A, 388 },
+    { 0x881D, 401 },
+    { 0x881E, 58 },
+    { 0x881F, 413 },
+    { 0x8820, 374 },
+    { 0x8825, 402 },
+    { 0x8826, 59 },
+    { 0x8827, 414 },
+    { 0x882D, 403 },
+    { 0x882E, 60 },
+    { 0x882F, 415 },
+    { 0x8830, 375 },
+    { 0x8834, 395 },
+    { 0x8835, 404 },
+    { 0x8837, 416 },
+    { 0x883C, 396 },
+    { 0x883D, 405 },
+    { 0x883F, 417 },
+    { 0x8840, 376 },
+    { 0x8842, 389 },
+    { 0x8844, 397 },
+    { 0x8844, 754 },
+    { 0x8845, 406 },
+    { 0x8847, 61 },
+    { 0x8848, 377 },
+    { 0x884A, 390 },
+    { 0x884C, 755 },
+    { 0x884D, 407 },
+    { 0x884F, 62 },
+    { 0x8850, 753 },
+    { 0x8852, 391 },
+    { 0x8854, 756 },
+    { 0x8855, 408 },
+    { 0x8857, 63 },
+    { 0x8858, 378 },
+    { 0x885C, 757 },
+    { 0x885D, 409 },
+    { 0x885F, 64 },
+    { 0x8860, 379 },
+    { 0x8867, 65 },
+    { 0x8868, 380 },
+    { 0x886F, 66 },
+    { 0x8870, 381 },
+    { 0x8877, 67 },
+    { 0x8878, 382 },
+    { 0x887F, 68 },
+    { 0x8881, 432 },
+    { 0x8882, 448 },
+    { 0x8883, 464 },
+    { 0x8884, 112 },
+    { 0x8889, 433 },
+    { 0x888A, 449 },
+    { 0x888B, 465 },
+    { 0x888C, 69 },
+    { 0x8890, 418 },
+    { 0x8891, 434 },
+    { 0x8892, 450 },
+    { 0x8893, 466 },
+    { 0x8898, 419 },
+    { 0x8899, 435 },
+    { 0x889A, 451 },
+    { 0x889B, 467 },
+    { 0x88A0, 420 },
+    { 0x88A1, 436 },
+    { 0x88A2, 452 },
+    { 0x88A3, 468 },
+    { 0x88A4, 472 },
+    { 0x88A8, 421 },
+    { 0x88A9, 437 },
+    { 0x88AA, 453 },
+    { 0x88AB, 469 },
+    { 0x88AC, 70 },
+    { 0x88B0, 422 },
+    { 0x88B1, 438 },
+    { 0x88B2, 454 },
+    { 0x88B3, 470 },
+    { 0x88B8, 423 },
+    { 0x88B9, 439 },
+    { 0x88BA, 455 },
+    { 0x88BB, 471 },
+    { 0x88C0, 424 },
+    { 0x88C1, 440 },
+    { 0x88C2, 456 },
+    { 0x88C8, 425 },
+    { 0x88C9, 441 },
+    { 0x88CA, 457 },
+    { 0x88D0, 426 },
+    { 0x88D1, 442 },
+    { 0x88D2, 458 },
+    { 0x88D8, 427 },
+    { 0x88D9, 443 },
+    { 0x88DA, 459 },
+    { 0x88E0, 428 },
+    { 0x88E1, 444 },
+    { 0x88E2, 460 },
+    { 0x88E8, 429 },
+    { 0x88E9, 445 },
+    { 0x88EA, 461 },
+    { 0x88F0, 430 },
+    { 0x88F1, 446 },
+    { 0x88F2, 462 },
+    { 0x88F8, 431 },
+    { 0x88F9, 447 },
+    { 0x88FA, 463 },
+    { 0x8900, 473 },
+    { 0x8901, 481 },
+    { 0x8902, 489 },
+    { 0x8903, 497 },
+    { 0x8904, 505 },
+    { 0x8905, 509 },
+    { 0x8906, 513 },
+    { 0x8907, 517 },
+    { 0x8910, 474 },
+    { 0x8911, 482 },
+    { 0x8912, 490 },
+    { 0x8913, 498 },
+    { 0x8920, 475 },
+    { 0x8921, 483 },
+    { 0x8922, 491 },
+    { 0x8923, 499 },
+    { 0x8924, 506 },
+    { 0x8925, 510 },
+    { 0x8926, 514 },
+    { 0x8927, 518 },
+    { 0x8930, 476 },
+    { 0x8931, 484 },
+    { 0x8932, 492 },
+    { 0x8933, 500 },
+    { 0x8940, 477 },
+    { 0x8941, 485 },
+    { 0x8942, 493 },
+    { 0x8943, 501 },
+    { 0x8944, 507 },
+    { 0x8945, 511 },
+    { 0x8946, 515 },
+    { 0x8947, 519 },
+    { 0x8950, 478 },
+    { 0x8951, 486 },
+    { 0x8952, 494 },
+    { 0x8953, 502 },
+    { 0x8960, 479 },
+    { 0x8961, 487 },
+    { 0x8962, 495 },
+    { 0x8963, 503 },
+    { 0x8964, 508 },
+    { 0x8965, 512 },
+    { 0x8966, 516 },
+    { 0x8967, 520 },
+    { 0x8970, 480 },
+    { 0x8971, 488 },
+    { 0x8972, 496 },
+    { 0x8973, 504 },
+    { 0x8980, 521 },
+    { 0x8981, 529 },
+    { 0x8982, 537 },
+    { 0x898A, 538 },
+    { 0x8990, 522 },
+    { 0x8991, 530 },
+    { 0x8992, 539 },
+    { 0x899A, 540 },
+    { 0x89A0, 523 },
+    { 0x89A1, 531 },
+    { 0x89B0, 524 },
+    { 0x89B1, 532 },
+    { 0x89C0, 525 },
+    { 0x89C1, 533 },
+    { 0x89D0, 526 },
+    { 0x89D1, 534 },
+    { 0x89E0, 527 },
+    { 0x89E1, 535 },
+    { 0x89F0, 528 },
+    { 0x89F1, 536 },
+    { 0x8B84, 541 },
+    { 0x8B97, 76 },
+    { 0x8B9F, 77 },
+    { 0x8BA7, 78 },
+    { 0x8BAF, 79 },
+    { 0x8BB7, 80 },
+    { 0x8BBF, 81 },
+    { 0x8BC6, 542 },
+    { 0x8BC7, 82 },
+    { 0x8BCE, 543 },
+    { 0x8BCF, 83 },
+    { 0x8BD6, 71 },
+    { 0x8BD7, 84 },
+    { 0x8BDE, 72 },
+    { 0x8BDF, 85 },
+    { 0x8BE6, 113 },
+    { 0x8BE7, 86 },
+    { 0x8BEE, 73 },
+    { 0x8BEF, 87 },
+    { 0x8BF6, 74 },
+    { 0x8BF7, 88 },
+    { 0x8BFE, 75 },
+    { 0x8BFF, 89 },
+    { 0x9000, 122 },
+    { 0x9080, 192 },
+    { 0x9808, 0 },
+    { 0x9820, 125 },
+    { 0x9828, 1 },
+    { 0x9828, 109 },
+    { 0xA038, 127 },
+    { 0xC000, 7 },
+    { 0xC005, 12 },
+    { 0xC006, 13 },
+    { 0xC008, 16 },
+    { 0xC009, 17 },
+    { 0xC00A, 19 },
+    { 0xC00B, 20 },
+    { 0xC00C, 21 },
+    { 0xC00D, 22 },
+    { 0xC00E, 23 },
+    { 0xC00F, 24 },
+    { 0xC010, 25 },
+    { 0xC011, 26 },
+    { 0xC012, 27 },
+    { 0xC013, 28 },
+    { 0xC014, 29 },
+    { 0xC015, 30 },
+    { 0xC016, 52 },
+    { 0xC017, 31 },
+    { 0xC018, 43 },
+    { 0xC019, 44 },
+    { 0xC01A, 45 },
+    { 0xC01C, 18 },
+    { 0xC01E, 53 },
+    { 0xC020, 32 },
+    { 0xC021, 33 },
+    { 0xC024, 98 },
+    { 0xC028, 34 },
+    { 0xC029, 35 },
+    { 0xC02C, 36 },
+    { 0xC02D, 37 },
+    { 0xC030, 38 },
+    { 0xC031, 39 },
+    { 0xC038, 40 },
+    { 0xC039, 41 },
+    { 0xC03A, 42 },
+    { 0xC080, 201 },
+    { 0xC081, 204 },
+    { 0xC082, 200 },
+    { 0xC085, 746 },
+    { 0xC086, 745 },
+    { 0xC090, 739 },
+    { 0xC091, 734 },
+    { 0xC100, 216 },
+    { 0xC101, 219 },
+    { 0xC102, 220 },
+    { 0xC108, 645 },
+    { 0xC109, 646 },
+    { 0xC10A, 647 },
+    { 0xC10B, 648 },
+    { 0xC110, 649 },
+    { 0xC111, 650 },
+    { 0xC112, 651 },
+    { 0xC113, 652 },
+    { 0xC118, 653 },
+    { 0xC119, 654 },
+    { 0xC200, 226 },
+    { 0xC201, 229 },
+    { 0xC208, 232 },
+    { 0xC210, 235 },
+    { 0xC212, 238 },
+    { 0xC213, 590 },
+    { 0xC214, 622 },
+    { 0xC230, 546 },
+    { 0xC288, 248 },
+    { 0xC289, 251 },
+    { 0xC290, 254 },
+    { 0xC298, 100 },
+    { 0xC299, 636 },
+    { 0xC2A0, 101 },
+    { 0xC2A1, 637 },
+    { 0xC2A2, 638 },
+    { 0xC2A3, 639 },
+    { 0xC2A4, 669 },
+    { 0xC2A5, 665 },
+    { 0xC2A6, 666 },
+    { 0xC2A8, 640 },
+    { 0xC2A9, 641 },
+    { 0xC2AA, 667 },
+    { 0xC2AB, 668 },
+    { 0xC2B0, 747 },
+    { 0xC2B1, 751 },
+    { 0xC300, 258 },
+    { 0xC3A0, 262 },
+    { 0xC4C8, 629 },
+    { 0xC4CA, 630 },
+    { 0xC4CB, 631 },
+    { 0xC4CC, 632 },
+    { 0xC4CD, 633 },
+    { 0xC4CE, 634 },
+    { 0xC4CF, 635 },
+    { 0xC4D0, 623 },
+    { 0xC4D1, 624 },
+    { 0xC4D3, 625 },
+    { 0xC4D7, 626 },
+    { 0xC4D8, 758 },
+    { 0xC4D9, 759 },
+    { 0xC4DA, 760 },
+    { 0xC4DB, 761 },
+    { 0xC4DC, 762 },
+    { 0xC4DE, 763 },
+    { 0xC4DF, 764 },
+    { 0xC4F1, 272 },
+    { 0xC4F2, 273 },
+    { 0xC4F6, 664 },
+    { 0xC510, 275 },
+    { 0xC518, 278 },
+    { 0xC520, 591 },
+    { 0xC521, 592 },
+    { 0xC522, 593 },
+    { 0xC523, 594 },
+    { 0xC524, 685 },
+    { 0xC527, 99 },
+    { 0xC528, 671 },
+    { 0xC529, 670 },
+    { 0xC600, 281 },
+    { 0xC601, 46 },
+    { 0xC602, 284 },
+    { 0xC608, 49 },
+    { 0xC609, 642 },
+    { 0xC640, 91 },
+    { 0xC641, 115 },
+    { 0xC642, 93 },
+    { 0xC643, 545 },
+    { 0xC644, 555 },
+    { 0xC645, 556 },
+    { 0xC646, 557 },
+    { 0xC647, 558 },
+    { 0xC648, 559 },
+    { 0xC649, 560 },
+    { 0xC64A, 561 },
+    { 0xC64B, 562 },
+    { 0xC659, 116 },
+    { 0xC65B, 94 },
+    { 0xC65D, 117 },
+    { 0xC65E, 118 },
+    { 0xC65F, 119 },
+    { 0xC660, 90 },
+    { 0xC661, 114 },
+    { 0xC662, 92 },
+    { 0xC663, 544 },
+    { 0xC664, 547 },
+    { 0xC665, 549 },
+    { 0xC666, 552 },
+    { 0xC667, 553 },
+    { 0xC681, 287 },
+    { 0xC684, 292 },
+    { 0xC687, 105 },
+    { 0xC708, 295 },
+    { 0xC800, 8 },
+    { 0xC801, 10 },
+    { 0xC802, 9 },
+    { 0xC804, 752 },
+    { 0xC807, 14 },
+    { 0xD000, 197 },
+    { 0xD801, 11 },
+    { 0xD807, 15 },
+    { 0xD920, 102 },
+    { 0xD921, 103 },
+    { 0xDA10, 236 },
+    { 0xDA11, 237 },
+    { 0xDA15, 737 },
+    { 0xDA16, 743 },
+    { 0xDA17, 744 },
+    { 0xDA20, 243 },
+    { 0xDA21, 244 },
+    { 0xDA28, 245 },
+    { 0xDA29, 246 },
+    { 0xDCE0, 263 },
+    { 0xDCE1, 264 },
+    { 0xDCE2, 265 },
+    { 0xDCE3, 266 },
+    { 0xDCE4, 111 },
+    { 0xDCE5, 267 },
+    { 0xDCE6, 5 },
+    { 0xDCE7, 6 },
+    { 0xDCE8, 268 },
+    { 0xDCE9, 269 },
+    { 0xDCEA, 270 },
+    { 0xDCF0, 271 },
+    { 0xDCF3, 274 },
+    { 0xDE82, 288 },
+    { 0xDE83, 291 },
+    { 0xDE87, 104 },
+    { 0xDE90, 686 },
+    { 0xDE91, 687 },
+    { 0xDE92, 688 },
+    { 0xDE93, 689 },
+    { 0xDE94, 690 },
+    { 0xDE95, 691 },
+    { 0xDE98, 700 },
+    { 0xDE99, 701 },
+    { 0xDEA0, 692 },
+    { 0xDEA1, 693 },
+    { 0xDEA2, 694 },
+    { 0xDEA3, 695 },
+    { 0xDEB0, 696 },
+    { 0xDEB1, 697 },
+    { 0xDEB2, 698 },
+    { 0xDEB3, 699 },
+    { 0xDEE0, 702 },
+    { 0xDEE1, 703 },
+    { 0xDEE2, 704 },
+    { 0xDEE3, 705 },
+    { 0xDEE4, 706 },
+    { 0xDEE5, 707 },
+    { 0xDEE6, 708 },
+    { 0xDEE7, 709 },
+    { 0xDEE8, 710 },
+    { 0xDEE9, 711 },
+    { 0xDEEA, 712 },
+    { 0xDEEB, 713 },
+    { 0xDEEC, 714 },
+    { 0xDEED, 715 },
+    { 0xDEEE, 716 },
+    { 0xDEEF, 717 },
+    { 0xDEF0, 718 },
+    { 0xDEF1, 719 },
+    { 0xDEF2, 720 },
+    { 0xDEF3, 721 },
+    { 0xDEF4, 722 },
+    { 0xDEF5, 723 },
+    { 0xDEF6, 724 },
+    { 0xDEF7, 725 },
+    { 0xDEF8, 726 },
+    { 0xDEF9, 727 },
+    { 0xDEFA, 728 },
+    { 0xDEFB, 729 },
+    { 0xDEFC, 730 },
+    { 0xDEFD, 731 },
+    { 0xDEFE, 732 },
+    { 0xDEFF, 733 },
+    { 0xDF00, 293 },
+    { 0xDF01, 50 },
+    { 0xDF02, 51 },
+    { 0xDF05, 806 },
+    { 0xDF06, 807 },
+    { 0xDF10, 297 },
+    { 0xDF11, 300 },
+    { 0xDF12, 303 },
+    { 0xDF18, 306 },
+    { 0xDF19, 307 },
+    { 0xDF1A, 308 },
+    { 0xDF40, 309 },
+    { 0xDF41, 310 },
+    { 0xDF42, 311 },
+    { 0xDF43, 312 },
+    { 0xDF44, 313 },
+    { 0xDF45, 314 },
+    { 0xDF46, 315 },
+    { 0xDF47, 316 },
+    { 0xDF48, 317 },
+    { 0xDF49, 318 },
+    { 0xDF4A, 319 },
+    { 0xDF4B, 320 },
+    { 0xDF4C, 321 },
+    { 0xDF4D, 322 },
+    { 0xDF4E, 323 },
+    { 0xDF4F, 324 },
+    { 0xDF50, 325 },
+    { 0xDF51, 326 },
+    { 0xDF52, 327 },
+    { 0xDF53, 328 },
+    { 0xDF54, 329 },
+    { 0xDF55, 330 },
+    { 0xDF56, 331 },
+    { 0xDF57, 332 },
+    { 0xDF58, 333 },
+    { 0xDF59, 334 },
+    { 0xDF5A, 335 },
+    { 0xDF5B, 336 },
+    { 0xDF5C, 337 },
+    { 0xDF5D, 338 },
+    { 0xDF5E, 339 },
+    { 0xDF60, 341 },
+    { 0xDF61, 342 },
+    { 0xDF62, 343 },
+    { 0xDF63, 344 },
+    { 0xDF64, 345 },
+    { 0xDF65, 346 },
+    { 0xDF66, 347 },
+    { 0xDF67, 348 },
+    { 0xDF68, 349 },
+    { 0xDF69, 350 },
+    { 0xDF6A, 351 },
+    { 0xDF6B, 352 },
+    { 0xDF6C, 353 },
+    { 0xDF6D, 354 },
+    { 0xDF6E, 355 },
+    { 0xDF6F, 356 },
+    { 0xDF70, 357 },
+    { 0xDF71, 358 },
+    { 0xDF72, 359 },
+    { 0xDF73, 360 },
+    { 0xDF74, 361 },
+    { 0xDF75, 362 },
+    { 0xDF76, 363 },
+    { 0xDF77, 364 },
+    { 0xDF78, 365 },
+    { 0xDF79, 366 },
+    { 0xDF7A, 367 },
+    { 0xDF7B, 368 },
+    { 0xDF7C, 369 },
+    { 0xDF7D, 370 },
+    { 0xDF7E, 371 },
+    { 0xDF7F, 340 },
+    { 0xE000, 198 },
+    { 0xE005, 199 },
+    { 0xE080, 202 },
+    { 0xE081, 205 },
+    { 0xE088, 207 },
+    { 0xE089, 209 },
+    { 0xE08A, 211 },
+    { 0xE08B, 213 },
+    { 0xE08C, 797 },
+    { 0xE08D, 798 },
+    { 0xE08E, 799 },
+    { 0xE08F, 214 },
+    { 0xE090, 740 },
+    { 0xE091, 735 },
+    { 0xE099, 663 },
+    { 0xE100, 217 },
+    { 0xE101, 595 },
+    { 0xE102, 221 },
+    { 0xE108, 223 },
+    { 0xE10A, 224 },
+    { 0xE110, 738 },
+    { 0xE130, 656 },
+    { 0xE132, 655 },
+    { 0xE180, 225 },
+    { 0xE18C, 800 },
+    { 0xE18D, 801 },
+    { 0xE200, 227 },
+    { 0xE201, 230 },
+    { 0xE208, 233 },
+    { 0xE218, 239 },
+    { 0xE219, 240 },
+    { 0xE21A, 241 },
+    { 0xE21B, 242 },
+    { 0xE281, 247 },
+    { 0xE288, 249 },
+    { 0xE289, 252 },
+    { 0xE290, 255 },
+    { 0xE293, 644 },
+    { 0xE298, 257 },
+    { 0xE2B0, 748 },
+    { 0xE300, 259 },
+    { 0xE304, 261 },
+    { 0xE4C8, 627 },
+    { 0xE510, 276 },
+    { 0xE518, 279 },
+    { 0xE520, 675 },
+    { 0xE521, 676 },
+    { 0xE528, 672 },
+    { 0xE530, 677 },
+    { 0xE531, 678 },
+    { 0xE532, 679 },
+    { 0xE533, 680 },
+    { 0xE534, 681 },
+    { 0xE535, 682 },
+    { 0xE536, 683 },
+    { 0xE537, 684 },
+    { 0xE600, 282 },
+    { 0xE601, 47 },
+    { 0xE602, 285 },
+    { 0xE609, 643 },
+    { 0xE640, 563 },
+    { 0xE641, 564 },
+    { 0xE642, 565 },
+    { 0xE643, 566 },
+    { 0xE648, 567 },
+    { 0xE649, 568 },
+    { 0xE64A, 569 },
+    { 0xE64B, 570 },
+    { 0xE64D, 550 },
+    { 0xE658, 571 },
+    { 0xE659, 95 },
+    { 0xE65A, 572 },
+    { 0xE65B, 96 },
+    { 0xE65D, 97 },
+    { 0xE65F, 573 },
+    { 0xE660, 574 },
+    { 0xE661, 575 },
+    { 0xE662, 576 },
+    { 0xE663, 577 },
+    { 0xE664, 578 },
+    { 0xE665, 579 },
+    { 0xE666, 580 },
+    { 0xE667, 581 },
+    { 0xE668, 582 },
+    { 0xE669, 583 },
+    { 0xE66A, 584 },
+    { 0xE66B, 585 },
+    { 0xE66C, 586 },
+    { 0xE66D, 587 },
+    { 0xE66E, 588 },
+    { 0xE66F, 589 },
+    { 0xE681, 596 },
+    { 0xE682, 289 },
+    { 0xE687, 106 },
+    { 0xE6C0, 765 },
+    { 0xE6C1, 767 },
+    { 0xE6C2, 769 },
+    { 0xE6C3, 771 },
+    { 0xE6C4, 773 },
+    { 0xE6C5, 775 },
+    { 0xE6C6, 777 },
+    { 0xE6C7, 779 },
+    { 0xE6C8, 781 },
+    { 0xE6C9, 783 },
+    { 0xE6CA, 785 },
+    { 0xE6CB, 787 },
+    { 0xE6CC, 789 },
+    { 0xE6CD, 791 },
+    { 0xE6CE, 793 },
+    { 0xE6CF, 795 },
+    { 0xE6D0, 766 },
+    { 0xE6D1, 768 },
+    { 0xE6D2, 770 },
+    { 0xE6D3, 772 },
+    { 0xE6D4, 774 },
+    { 0xE6D5, 776 },
+    { 0xE6D6, 778 },
+    { 0xE6D7, 780 },
+    { 0xE6D8, 782 },
+    { 0xE6D9, 784 },
+    { 0xE6DA, 786 },
+    { 0xE6DB, 788 },
+    { 0xE6DC, 790 },
+    { 0xE6DD, 792 },
+    { 0xE6DE, 794 },
+    { 0xE6DF, 796 },
+    { 0xE703, 294 },
+    { 0xE704, 802 },
+    { 0xE705, 803 },
+    { 0xE706, 804 },
+    { 0xE707, 805 },
+    { 0xE708, 296 },
+    { 0xE710, 298 },
+    { 0xE711, 301 },
+    { 0xE712, 304 },
+    { 0xE718, 597 },
+    { 0xE719, 599 },
+    { 0xE71A, 598 },
+    { 0xE720, 657 },
+    { 0xE721, 659 },
+    { 0xE722, 658 },
+    { 0xE728, 660 },
+    { 0xE729, 662 },
+    { 0xE72A, 661 },
+    { 0xE880, 600 },
+    { 0xE882, 601 },
+    { 0xE890, 742 },
+    { 0xE891, 736 },
+    { 0xE900, 602 },
+    { 0xE901, 603 },
+    { 0xE902, 604 },
+    { 0xEA00, 620 },
+    { 0xEA01, 621 },
+    { 0xEA88, 605 },
+    { 0xEA89, 606 },
+    { 0xEA90, 607 },
+    { 0xEAB0, 750 },
+    { 0xEB00, 608 },
+    { 0xECC8, 628 },
+    { 0xED10, 609 },
+    { 0xED18, 610 },
+    { 0xED28, 674 },
+    { 0xEE00, 611 },
+    { 0xEE81, 612 },
+    { 0xEE87, 108 },
+    { 0xEF08, 613 },
+    { 0xEF10, 614 },
+    { 0xEF11, 615 },
+    { 0xEF12, 616 },
+    { 0xEF18, 617 },
+    { 0xEF19, 618 },
+    { 0xEF1A, 619 },
+    { 0xF080, 203 },
+    { 0xF081, 206 },
+    { 0xF088, 208 },
+    { 0xF089, 210 },
+    { 0xF08A, 212 },
+    { 0xF090, 741 },
+    { 0xF099, 215 },
+    { 0xF100, 218 },
+    { 0xF102, 222 },
+    { 0xF200, 228 },
+    { 0xF201, 231 },
+    { 0xF208, 234 },
+    { 0xF288, 250 },
+    { 0xF289, 253 },
+    { 0xF290, 256 },
+    { 0xF2B0, 749 },
+    { 0xF300, 260 },
+    { 0xF510, 277 },
+    { 0xF518, 280 },
+    { 0xF528, 673 },
+    { 0xF600, 283 },
+    { 0xF601, 48 },
+    { 0xF602, 286 },
+    { 0xF664, 548 },
+    { 0xF665, 551 },
+    { 0xF667, 554 },
+    { 0xF682, 290 },
+    { 0xF687, 107 },
+    { 0xFF10, 299 },
+    { 0xFF11, 302 },
+    { 0xFF12, 305 },
+    { 0xFF90, 808 },
   };
 
   struct KeyType {

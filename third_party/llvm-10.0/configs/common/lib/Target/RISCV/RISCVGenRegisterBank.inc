@@ -45,7 +45,7 @@ const uint32_t GPRRegBankCoverageData[] = {
     0,
 };
 
-RegisterBank GPRRegBank(/* ID */ RISCV::GPRRegBankID, /* Name */ "GPRB", /* Size */ 32, /* CoveredRegClasses */ GPRRegBankCoverageData, /* NumRegClasses */ 12);
+RegisterBank GPRRegBank(/* ID */ RISCV::GPRRegBankID, /* Name */ "GPRB", /* Size */ 32, /* CoveredRegClasses */ GPRRegBankCoverageData, /* NumRegClasses */ 21);
 } // end namespace RISCV
 
 RegisterBank *RISCVGenRegisterBankInfo::RegBanks[] = {

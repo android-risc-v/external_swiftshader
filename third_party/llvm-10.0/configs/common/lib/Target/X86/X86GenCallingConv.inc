@@ -217,7 +217,7 @@ static bool CC_Intel_OCL_BI(unsigned ValNo, MVT ValVT,
   }
 
   if (LocVT == MVT::i32) {
-    unsigned Offset5 = State.AllocateStack(4, 4);
+    unsigned Offset5 = State.AllocateStack(4, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset5, LocVT, LocInfo));
     return false;
   }
@@ -425,7 +425,12 @@ static bool CC_X86_32_Common(unsigned ValNo, MVT ValVT,
                              ISD::ArgFlagsTy ArgFlags, CCState &State) {
 
   if (ArgFlags.isByVal()) {
-    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, 4, ArgFlags);
+    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, Align(4), ArgFlags);
+    return false;
+  }
+
+  if (ArgFlags.isPreallocated()) {
+    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, Align(4), ArgFlags);
     return false;
   }
 
@@ -460,20 +465,20 @@ static bool CC_X86_32_Common(unsigned ValNo, MVT ValVT,
 
   if (LocVT == MVT::i32 ||
       LocVT == MVT::f32) {
-    unsigned Offset3 = State.AllocateStack(4, 4);
+    unsigned Offset3 = State.AllocateStack(4, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset3, LocVT, LocInfo));
     return false;
   }
 
   if (LocVT == MVT::f64) {
-    unsigned Offset4 = State.AllocateStack(8, 4);
+    unsigned Offset4 = State.AllocateStack(8, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset4, LocVT, LocInfo));
     return false;
   }
 
   if (LocVT == MVT::f80) {
     unsigned Offset5 = State.AllocateStack(
-      State.getMachineFunction().getDataLayout().getTypeAllocSize(EVT(LocVT).getTypeForEVT(State.getContext())), 4);
+      State.getMachineFunction().getDataLayout().getTypeAllocSize(EVT(LocVT).getTypeForEVT(State.getContext())), Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset5, LocVT, LocInfo));
     return false;
   }
@@ -539,7 +544,7 @@ static bool CC_X86_32_Common(unsigned ValNo, MVT ValVT,
   }
 
   if (LocVT == MVT::x86mmx) {
-    unsigned Offset6 = State.AllocateStack(8, 4);
+    unsigned Offset6 = State.AllocateStack(8, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset6, LocVT, LocInfo));
     return false;
   }
@@ -561,7 +566,7 @@ static bool CC_X86_32_FastCC(unsigned ValNo, MVT ValVT,
                              ISD::ArgFlagsTy ArgFlags, CCState &State) {
 
   if (ArgFlags.isByVal()) {
-    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, 4, ArgFlags);
+    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, Align(4), ArgFlags);
     return false;
   }
 
@@ -611,7 +616,7 @@ static bool CC_X86_32_FastCC(unsigned ValNo, MVT ValVT,
   }
 
   if (LocVT == MVT::f64) {
-    unsigned Offset3 = State.AllocateStack(8, 8);
+    unsigned Offset3 = State.AllocateStack(8, Align(8));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset3, LocVT, LocInfo));
     return false;
   }
@@ -743,7 +748,7 @@ static bool CC_X86_32_HiPE(unsigned ValNo, MVT ValVT,
 
   if (LocVT == MVT::i32 ||
       LocVT == MVT::f32) {
-    unsigned Offset2 = State.AllocateStack(4, 4);
+    unsigned Offset2 = State.AllocateStack(4, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset2, LocVT, LocInfo));
     return false;
   }
@@ -757,7 +762,7 @@ static bool CC_X86_32_MCU(unsigned ValNo, MVT ValVT,
                           ISD::ArgFlagsTy ArgFlags, CCState &State) {
 
   if (ArgFlags.isByVal()) {
-    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, 4, ArgFlags);
+    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, Align(4), ArgFlags);
     return false;
   }
 
@@ -794,13 +799,13 @@ static bool CC_X86_32_RegCall(unsigned ValNo, MVT ValVT,
 
   if (static_cast<const X86Subtarget&>(State.getMachineFunction().getSubtarget()).is64Bit()) {
     if (ArgFlags.isByVal()) {
-      State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 8, 8, ArgFlags);
+      State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 8, Align(8), ArgFlags);
       return false;
     }
   }
 
   if (ArgFlags.isByVal()) {
-    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, 4, ArgFlags);
+    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, Align(4), ArgFlags);
     return false;
   }
 
@@ -949,7 +954,7 @@ static bool CC_X86_32_RegCall(unsigned ValNo, MVT ValVT,
         LocVT == MVT::i64 ||
         LocVT == MVT::f32 ||
         LocVT == MVT::f64) {
-      unsigned Offset6 = State.AllocateStack(8, 8);
+      unsigned Offset6 = State.AllocateStack(8, Align(8));
       State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset6, LocVT, LocInfo));
       return false;
     }
@@ -957,28 +962,28 @@ static bool CC_X86_32_RegCall(unsigned ValNo, MVT ValVT,
 
   if (LocVT == MVT::i32 ||
       LocVT == MVT::f32) {
-    unsigned Offset7 = State.AllocateStack(4, 4);
+    unsigned Offset7 = State.AllocateStack(4, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset7, LocVT, LocInfo));
     return false;
   }
 
   if (LocVT == MVT::i64 ||
       LocVT == MVT::f64) {
-    unsigned Offset8 = State.AllocateStack(8, 4);
+    unsigned Offset8 = State.AllocateStack(8, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset8, LocVT, LocInfo));
     return false;
   }
 
   if (static_cast<const X86Subtarget&>(State.getMachineFunction().getSubtarget()).is64Bit()) {
     if (LocVT == MVT::x86mmx) {
-      unsigned Offset9 = State.AllocateStack(8, 8);
+      unsigned Offset9 = State.AllocateStack(8, Align(8));
       State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset9, LocVT, LocInfo));
       return false;
     }
   }
 
   if (LocVT == MVT::x86mmx) {
-    unsigned Offset10 = State.AllocateStack(8, 4);
+    unsigned Offset10 = State.AllocateStack(8, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset10, LocVT, LocInfo));
     return false;
   }
@@ -987,7 +992,7 @@ static bool CC_X86_32_RegCall(unsigned ValNo, MVT ValVT,
       LocVT == MVT::f128) {
     unsigned Offset11 = State.AllocateStack(
       State.getMachineFunction().getDataLayout().getTypeAllocSize(EVT(LocVT).getTypeForEVT(State.getContext())), 
-      State.getMachineFunction().getDataLayout().getABITypeAlignment(EVT(LocVT).getTypeForEVT(State.getContext())));
+      State.getMachineFunction().getDataLayout().getABITypeAlign(EVT(LocVT).getTypeForEVT(State.getContext())));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset11, LocVT, LocInfo));
     return false;
   }
@@ -998,7 +1003,7 @@ static bool CC_X86_32_RegCall(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v2i64 ||
       LocVT == MVT::v4f32 ||
       LocVT == MVT::v2f64) {
-    unsigned Offset12 = State.AllocateStack(16, 16);
+    unsigned Offset12 = State.AllocateStack(16, Align(16));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset12, LocVT, LocInfo));
     return false;
   }
@@ -1009,7 +1014,7 @@ static bool CC_X86_32_RegCall(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v4i64 ||
       LocVT == MVT::v8f32 ||
       LocVT == MVT::v4f64) {
-    unsigned Offset13 = State.AllocateStack(32, 32);
+    unsigned Offset13 = State.AllocateStack(32, Align(32));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset13, LocVT, LocInfo));
     return false;
   }
@@ -1020,7 +1025,7 @@ static bool CC_X86_32_RegCall(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v8i64 ||
       LocVT == MVT::v16f32 ||
       LocVT == MVT::v8f64) {
-    unsigned Offset14 = State.AllocateStack(64, 64);
+    unsigned Offset14 = State.AllocateStack(64, Align(64));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset14, LocVT, LocInfo));
     return false;
   }
@@ -1105,7 +1110,7 @@ static bool CC_X86_32_ThisCall_Win(unsigned ValNo, MVT ValVT,
   }
 
   if (ArgFlags.isSRet()) {
-    unsigned Offset1 = State.AllocateStack(4, 4);
+    unsigned Offset1 = State.AllocateStack(4, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset1, LocVT, LocInfo));
     return false;
   }
@@ -1127,7 +1132,7 @@ static bool CC_X86_32_Vector_Common(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v2i64 ||
       LocVT == MVT::v4f32 ||
       LocVT == MVT::v2f64) {
-    unsigned Offset1 = State.AllocateStack(16, 16);
+    unsigned Offset1 = State.AllocateStack(16, Align(16));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset1, LocVT, LocInfo));
     return false;
   }
@@ -1138,7 +1143,7 @@ static bool CC_X86_32_Vector_Common(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v4i64 ||
       LocVT == MVT::v8f32 ||
       LocVT == MVT::v4f64) {
-    unsigned Offset2 = State.AllocateStack(32, 32);
+    unsigned Offset2 = State.AllocateStack(32, Align(32));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset2, LocVT, LocInfo));
     return false;
   }
@@ -1149,7 +1154,7 @@ static bool CC_X86_32_Vector_Common(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v8i64 ||
       LocVT == MVT::v16f32 ||
       LocVT == MVT::v8f64) {
-    unsigned Offset3 = State.AllocateStack(64, 64);
+    unsigned Offset3 = State.AllocateStack(64, Align(64));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset3, LocVT, LocInfo));
     return false;
   }
@@ -1380,7 +1385,7 @@ static bool CC_X86_64_C(unsigned ValNo, MVT ValVT,
                         ISD::ArgFlagsTy ArgFlags, CCState &State) {
 
   if (ArgFlags.isByVal()) {
-    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 8, 8, ArgFlags);
+    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 8, Align(8), ArgFlags);
     return false;
   }
 
@@ -1598,7 +1603,7 @@ static bool CC_X86_64_C(unsigned ValNo, MVT ValVT,
       LocVT == MVT::i64 ||
       LocVT == MVT::f32 ||
       LocVT == MVT::f64) {
-    unsigned Offset6 = State.AllocateStack(8, 8);
+    unsigned Offset6 = State.AllocateStack(8, Align(8));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset6, LocVT, LocInfo));
     return false;
   }
@@ -1607,7 +1612,7 @@ static bool CC_X86_64_C(unsigned ValNo, MVT ValVT,
       LocVT == MVT::f128) {
     unsigned Offset7 = State.AllocateStack(
       State.getMachineFunction().getDataLayout().getTypeAllocSize(EVT(LocVT).getTypeForEVT(State.getContext())), 
-      State.getMachineFunction().getDataLayout().getABITypeAlignment(EVT(LocVT).getTypeForEVT(State.getContext())));
+      State.getMachineFunction().getDataLayout().getABITypeAlign(EVT(LocVT).getTypeForEVT(State.getContext())));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset7, LocVT, LocInfo));
     return false;
   }
@@ -1618,7 +1623,7 @@ static bool CC_X86_64_C(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v2i64 ||
       LocVT == MVT::v4f32 ||
       LocVT == MVT::v2f64) {
-    unsigned Offset8 = State.AllocateStack(16, 16);
+    unsigned Offset8 = State.AllocateStack(16, Align(16));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset8, LocVT, LocInfo));
     return false;
   }
@@ -1629,7 +1634,7 @@ static bool CC_X86_64_C(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v4i64 ||
       LocVT == MVT::v8f32 ||
       LocVT == MVT::v4f64) {
-    unsigned Offset9 = State.AllocateStack(32, 32);
+    unsigned Offset9 = State.AllocateStack(32, Align(32));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset9, LocVT, LocInfo));
     return false;
   }
@@ -1640,7 +1645,7 @@ static bool CC_X86_64_C(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v8i64 ||
       LocVT == MVT::v16f32 ||
       LocVT == MVT::v8f64) {
-    unsigned Offset10 = State.AllocateStack(64, 64);
+    unsigned Offset10 = State.AllocateStack(64, Align(64));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset10, LocVT, LocInfo));
     return false;
   }
@@ -1798,7 +1803,7 @@ static bool CC_X86_64_HiPE(unsigned ValNo, MVT ValVT,
       LocVT == MVT::i64 ||
       LocVT == MVT::f32 ||
       LocVT == MVT::f64) {
-    unsigned Offset2 = State.AllocateStack(8, 8);
+    unsigned Offset2 = State.AllocateStack(8, Align(8));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset2, LocVT, LocInfo));
     return false;
   }
@@ -1838,14 +1843,14 @@ static bool CC_X86_64_WebKit_JS(unsigned ValNo, MVT ValVT,
 
   if (LocVT == MVT::i32 ||
       LocVT == MVT::f32) {
-    unsigned Offset1 = State.AllocateStack(4, 4);
+    unsigned Offset1 = State.AllocateStack(4, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset1, LocVT, LocInfo));
     return false;
   }
 
   if (LocVT == MVT::i64 ||
       LocVT == MVT::f64) {
-    unsigned Offset2 = State.AllocateStack(8, 8);
+    unsigned Offset2 = State.AllocateStack(8, Align(8));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset2, LocVT, LocInfo));
     return false;
   }
@@ -1860,13 +1865,13 @@ static bool CC_X86_SysV64_RegCall(unsigned ValNo, MVT ValVT,
 
   if (static_cast<const X86Subtarget&>(State.getMachineFunction().getSubtarget()).is64Bit()) {
     if (ArgFlags.isByVal()) {
-      State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 8, 8, ArgFlags);
+      State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 8, Align(8), ArgFlags);
       return false;
     }
   }
 
   if (ArgFlags.isByVal()) {
-    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, 4, ArgFlags);
+    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, Align(4), ArgFlags);
     return false;
   }
 
@@ -2021,7 +2026,7 @@ static bool CC_X86_SysV64_RegCall(unsigned ValNo, MVT ValVT,
         LocVT == MVT::i64 ||
         LocVT == MVT::f32 ||
         LocVT == MVT::f64) {
-      unsigned Offset8 = State.AllocateStack(8, 8);
+      unsigned Offset8 = State.AllocateStack(8, Align(8));
       State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset8, LocVT, LocInfo));
       return false;
     }
@@ -2029,28 +2034,28 @@ static bool CC_X86_SysV64_RegCall(unsigned ValNo, MVT ValVT,
 
   if (LocVT == MVT::i32 ||
       LocVT == MVT::f32) {
-    unsigned Offset9 = State.AllocateStack(4, 4);
+    unsigned Offset9 = State.AllocateStack(4, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset9, LocVT, LocInfo));
     return false;
   }
 
   if (LocVT == MVT::i64 ||
       LocVT == MVT::f64) {
-    unsigned Offset10 = State.AllocateStack(8, 4);
+    unsigned Offset10 = State.AllocateStack(8, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset10, LocVT, LocInfo));
     return false;
   }
 
   if (static_cast<const X86Subtarget&>(State.getMachineFunction().getSubtarget()).is64Bit()) {
     if (LocVT == MVT::x86mmx) {
-      unsigned Offset11 = State.AllocateStack(8, 8);
+      unsigned Offset11 = State.AllocateStack(8, Align(8));
       State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset11, LocVT, LocInfo));
       return false;
     }
   }
 
   if (LocVT == MVT::x86mmx) {
-    unsigned Offset12 = State.AllocateStack(8, 4);
+    unsigned Offset12 = State.AllocateStack(8, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset12, LocVT, LocInfo));
     return false;
   }
@@ -2059,7 +2064,7 @@ static bool CC_X86_SysV64_RegCall(unsigned ValNo, MVT ValVT,
       LocVT == MVT::f128) {
     unsigned Offset13 = State.AllocateStack(
       State.getMachineFunction().getDataLayout().getTypeAllocSize(EVT(LocVT).getTypeForEVT(State.getContext())), 
-      State.getMachineFunction().getDataLayout().getABITypeAlignment(EVT(LocVT).getTypeForEVT(State.getContext())));
+      State.getMachineFunction().getDataLayout().getABITypeAlign(EVT(LocVT).getTypeForEVT(State.getContext())));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset13, LocVT, LocInfo));
     return false;
   }
@@ -2070,7 +2075,7 @@ static bool CC_X86_SysV64_RegCall(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v2i64 ||
       LocVT == MVT::v4f32 ||
       LocVT == MVT::v2f64) {
-    unsigned Offset14 = State.AllocateStack(16, 16);
+    unsigned Offset14 = State.AllocateStack(16, Align(16));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset14, LocVT, LocInfo));
     return false;
   }
@@ -2081,7 +2086,7 @@ static bool CC_X86_SysV64_RegCall(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v4i64 ||
       LocVT == MVT::v8f32 ||
       LocVT == MVT::v4f64) {
-    unsigned Offset15 = State.AllocateStack(32, 32);
+    unsigned Offset15 = State.AllocateStack(32, Align(32));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset15, LocVT, LocInfo));
     return false;
   }
@@ -2092,7 +2097,7 @@ static bool CC_X86_SysV64_RegCall(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v8i64 ||
       LocVT == MVT::v16f32 ||
       LocVT == MVT::v8f64) {
-    unsigned Offset16 = State.AllocateStack(64, 64);
+    unsigned Offset16 = State.AllocateStack(64, Align(64));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset16, LocVT, LocInfo));
     return false;
   }
@@ -2316,7 +2321,7 @@ static bool CC_X86_Win64_C(unsigned ValNo, MVT ValVT,
       LocVT == MVT::i64 ||
       LocVT == MVT::f32 ||
       LocVT == MVT::f64) {
-    unsigned Offset13 = State.AllocateStack(8, 8);
+    unsigned Offset13 = State.AllocateStack(8, Align(8));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset13, LocVT, LocInfo));
     return false;
   }
@@ -2331,13 +2336,13 @@ static bool CC_X86_Win64_RegCall(unsigned ValNo, MVT ValVT,
 
   if (static_cast<const X86Subtarget&>(State.getMachineFunction().getSubtarget()).is64Bit()) {
     if (ArgFlags.isByVal()) {
-      State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 8, 8, ArgFlags);
+      State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 8, Align(8), ArgFlags);
       return false;
     }
   }
 
   if (ArgFlags.isByVal()) {
-    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, 4, ArgFlags);
+    State.HandleByVal(ValNo, ValVT, LocVT, LocInfo, 4, Align(4), ArgFlags);
     return false;
   }
 
@@ -2492,7 +2497,7 @@ static bool CC_X86_Win64_RegCall(unsigned ValNo, MVT ValVT,
         LocVT == MVT::i64 ||
         LocVT == MVT::f32 ||
         LocVT == MVT::f64) {
-      unsigned Offset8 = State.AllocateStack(8, 8);
+      unsigned Offset8 = State.AllocateStack(8, Align(8));
       State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset8, LocVT, LocInfo));
       return false;
     }
@@ -2500,28 +2505,28 @@ static bool CC_X86_Win64_RegCall(unsigned ValNo, MVT ValVT,
 
   if (LocVT == MVT::i32 ||
       LocVT == MVT::f32) {
-    unsigned Offset9 = State.AllocateStack(4, 4);
+    unsigned Offset9 = State.AllocateStack(4, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset9, LocVT, LocInfo));
     return false;
   }
 
   if (LocVT == MVT::i64 ||
       LocVT == MVT::f64) {
-    unsigned Offset10 = State.AllocateStack(8, 4);
+    unsigned Offset10 = State.AllocateStack(8, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset10, LocVT, LocInfo));
     return false;
   }
 
   if (static_cast<const X86Subtarget&>(State.getMachineFunction().getSubtarget()).is64Bit()) {
     if (LocVT == MVT::x86mmx) {
-      unsigned Offset11 = State.AllocateStack(8, 8);
+      unsigned Offset11 = State.AllocateStack(8, Align(8));
       State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset11, LocVT, LocInfo));
       return false;
     }
   }
 
   if (LocVT == MVT::x86mmx) {
-    unsigned Offset12 = State.AllocateStack(8, 4);
+    unsigned Offset12 = State.AllocateStack(8, Align(4));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset12, LocVT, LocInfo));
     return false;
   }
@@ -2530,7 +2535,7 @@ static bool CC_X86_Win64_RegCall(unsigned ValNo, MVT ValVT,
       LocVT == MVT::f128) {
     unsigned Offset13 = State.AllocateStack(
       State.getMachineFunction().getDataLayout().getTypeAllocSize(EVT(LocVT).getTypeForEVT(State.getContext())), 
-      State.getMachineFunction().getDataLayout().getABITypeAlignment(EVT(LocVT).getTypeForEVT(State.getContext())));
+      State.getMachineFunction().getDataLayout().getABITypeAlign(EVT(LocVT).getTypeForEVT(State.getContext())));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset13, LocVT, LocInfo));
     return false;
   }
@@ -2541,7 +2546,7 @@ static bool CC_X86_Win64_RegCall(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v2i64 ||
       LocVT == MVT::v4f32 ||
       LocVT == MVT::v2f64) {
-    unsigned Offset14 = State.AllocateStack(16, 16);
+    unsigned Offset14 = State.AllocateStack(16, Align(16));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset14, LocVT, LocInfo));
     return false;
   }
@@ -2552,7 +2557,7 @@ static bool CC_X86_Win64_RegCall(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v4i64 ||
       LocVT == MVT::v8f32 ||
       LocVT == MVT::v4f64) {
-    unsigned Offset15 = State.AllocateStack(32, 32);
+    unsigned Offset15 = State.AllocateStack(32, Align(32));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset15, LocVT, LocInfo));
     return false;
   }
@@ -2563,7 +2568,7 @@ static bool CC_X86_Win64_RegCall(unsigned ValNo, MVT ValVT,
       LocVT == MVT::v8i64 ||
       LocVT == MVT::v16f32 ||
       LocVT == MVT::v8f64) {
-    unsigned Offset16 = State.AllocateStack(64, 64);
+    unsigned Offset16 = State.AllocateStack(64, Align(64));
     State.addLoc(CCValAssign::getMem(ValNo, ValVT, Offset16, LocVT, LocInfo));
     return false;
   }
