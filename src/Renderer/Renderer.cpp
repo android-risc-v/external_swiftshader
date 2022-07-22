@@ -31,6 +31,8 @@
 #include "Common/Timer.hpp"
 #include "Common/Debug.hpp"
 
+#include <log/log.h>
+
 #undef max
 
 bool disableServer = true;
@@ -1559,7 +1561,8 @@ namespace sw
 
 		task->primitiveStart = start;
 		task->vertexCount = triangleCount * 3;
-		vertexRoutine(&triangle->v0, (unsigned int*)&batch, task, data);
+		ALOGD("Renderer::processPrimitiveVertices() -> vertexRoutine() : SEGV_ACCERR ");
+		//vertexRoutine(&triangle->v0, (unsigned int*)&batch, task, data);
 	}
 
 	int Renderer::setupSolidTriangles(int unit, int count)
